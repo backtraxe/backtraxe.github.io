@@ -6,6 +6,7 @@
     <description>Recent content in go on Backsided&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <copyright>Backsided</copyright>
     <lastBuildDate>Wed, 02 Apr 2014 02:13:50 +0000</lastBuildDate><atom:link href="https://backsided.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(Hu)go Template Primer</title>
