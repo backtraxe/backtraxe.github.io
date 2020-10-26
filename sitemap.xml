@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://backsided.github.io/page/about/</loc>
+    <lastmod>2015-04-03T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/</loc>
+    <lastmod>2015-04-03T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/page/contact/</loc>
+    <lastmod>2015-04-03T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/page/</loc>
+    <lastmod>2015-04-03T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/2014/09/28/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/post/</loc>
+    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/2014/04/02/goisforlovers/</loc>
+    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/tags/development/</loc>
+    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/tags/go/</loc>
+    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/tags/golang/</loc>
+    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/2014/04/02/migrate-from-jekyll/</loc>
+    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/tags/</loc>
+    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/tags/templates/</loc>
+    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/tags/themes/</loc>
+    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://backsided.github.io/categories/</loc>
+  </url>
+  
+</urlset>
