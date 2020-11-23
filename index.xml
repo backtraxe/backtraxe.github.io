@@ -78,25 +78,5 @@ This document is a brief primer on using go templates.</description>
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://backsided.github.io/1/01/01/hackintosh-install-tutorial/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://backsided.github.io/1/01/01/hackintosh-install-tutorial/</guid>
-      <description>黑苹果安装教程 一、工具  U盘（≥16G） Mac OS镜像（.dmg） 适合你的电脑的EFI文件 balenaEtcher（刻录工具） DiskGenius（分区工具）  二、制作U盘启动盘  插入U盘，然后打开balenaEtcher软件。  点击Select image选择Mac OS镜像。  软件会自动识别出你的U盘，最后点击Flash!。  等待刻录完成（20min左右），之后会有一个完整性检测（15min左右）。  当软件显示Flash Complete!时表示刻录成功。  三、配置Clover引导驱动  打开DiskGenius，找到U盘上的ESP分区，删除EFI文件夹。 把适合自己电脑EFI文件夹复制进去。（这里只能用快捷键复制粘贴） 保存更改。  四、制作黑苹果系统盘 硬盘分区安装 压缩卷（≥25G）。
-选中压缩出的空闲分区，右键新建简单卷，一直点击下一步但选择不要格式化这个卷。
-整块硬盘安装 删除磁盘所有分区即可。
-五、BIOS设置 以技嘉（Gigabyte）主板为例：
-  BIOS-&amp;gt;FastBoot-&amp;gt;Disable
-  BIOS-&amp;gt;Windows 8/10 Features-&amp;gt;Windows 8/10
-将操作系统类型设置为其他操作系统。从不支持Microsoft签名安全启动的第三方操作系统启动时，将“操作系统类型”设置为“其他操作系统”以获取优化的功能。
-  BIOS-&amp;gt;CSM Support-&amp;gt;Disabled
-禁用CSM。兼容性支持模块（CSM）是UEFI固件的组件，该组件通过模拟BIOS环境来提供旧版BIOS兼容性，从而允许仍使用旧版操作系统和某些不支持UEFI的选件ROM。Clover和OpenCore引导都支持UEFI引导。禁用CSM使BIOS可以轻松发现Bootloader。
-  BIOS-&amp;gt;LAN PXE Boot Option ROM-&amp;gt;Disabled
-  BIOS-&amp;gt;Storage Boot Option Control-&amp;gt;UEFI
-  BIOS-&amp;gt;Other PCI devices-&amp;gt;UEFI</description>
-    </item>
-    
   </channel>
 </rss>
