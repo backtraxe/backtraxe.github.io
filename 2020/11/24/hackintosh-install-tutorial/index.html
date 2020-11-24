@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hackintosh Install Tutorial &middot; Backsided</title>
+        <meta name="description" content="一、工具  U盘（≥16G） Mac OS镜像（.dmg） 适合你的电脑的EFI文件 balenaEtcher（刻录工具） DiskGenius（分区工具）   二、制作U盘启动盘  插入U盘，然后打开balenaEtcher软件。  点击Select image选择Mac OS镜像。  软件会自动识别出你的U盘，最后点击Flash!。  等待刻录完成（20min左右），之后会有一个完整性检测（15min左右）。  当软件显示Flash Complete!时表示刻录成功。    三、配置Clover引导驱动  打开DiskGenius，找到U盘上的ESP分区，删除EFI文件夹。 把适合自己电脑EFI文件夹复制进去。（这里只能用快捷键复制粘贴） 保存更改。  四、制作黑苹果系统盘 硬盘分区安装  压缩卷（≥25G）。 选中压缩出的空闲分区，右键新建简单卷，一直点击下一步但选择不要格式化这个卷。  整块硬盘安装 删除磁盘所有分区即可。
+ 五、BIOS设置 以技嘉（Gigabyte）主板为例：
+ BIOS-&gt;FastBoot-&gt;Disable BIOS-&gt;Windows 8/10 Features-&gt;Windows 8/10 将操作系统类型设置为其他操作系统。从不支持Microsoft签名安全启动的第三方操作系统启动时，将“操作系统类型”设置为“其他操作系统”以获取优化的功能。 BIOS-&gt;CSM Support-&gt;Disabled 禁用CSM。兼容性支持模块（CSM）是UEFI固件的组件，该组件通过模拟BIOS环境来提供旧版BIOS兼容性，从而允许仍使用旧版操作系统和某些不支持UEFI的选件ROM。Clover和OpenCore引导都支持UEFI引导。禁用CSM使BIOS可以轻松发现Bootloader。 BIOS-&gt;LAN PXE Boot Option ROM-&gt;Disabled BIOS-&gt;Storage Boot Option Control-&gt;UEFI BIOS-&gt;Other PCI devices-&gt;UEFI Peripherals-&gt;Initial Display Output-&gt;PCIe Slot(独显)/IGFX(核显) Peripherals-&gt;Above 4G Decoding-&gt;Disabled Peripherals-&gt;Trusted Computing-&gt;Security Device Support-&gt;Disable Peripherals-&gt;USB Configuration-&gt;Legacy USB Support-&gt;Disabled 禁用旧版USB支持。 Peripherals-&gt;USB Configuration-&gt;XHCI Hand-off-&gt;Enabled 启用XHCI切换。 Peripherals-&gt;Network Stack Configuration-&gt;Disabled Peripherals-&gt;SATA and RST Configuration-&gt;SATA Mode Selection-&gt;AHCI 将SATA设置为AHCI。通过高级主机控制器接口（AHCI）模式，可以在SATA驱动器上使用高级功能，例如热插拔和本机命令队列（NCQ）。AHCI还允许硬盘以比传统IDE模式更高的速度运行。 Chipset-&gt;VT-d-&gt;Disabled 禁用VT-D。VT-d特别是IOMMU规范。扩展允许您访问虚拟机下的物理硬件（例如，运行Linux的系统可以在虚拟机上运行Windows。如果没有VT-d，则视频卡会被仿真，并且游戏速度会很慢。视频卡可以进入直通模式，并且可以在Windows下作为真实硬件（可以安装nvidia驱动程序）进行访问，并且视频卡的性能类似于运行本机Windows实时预览的情况。但是对于许多黑苹果用户，VT-D不会造成任何问题，但是如果您是新手，则尝试安装和配置Hackintosh禁用VT-D并安装。您可以在安装后根据需要启用VT-D。 Chipset-&gt;IOAPIC 24-119 Entries-&gt;Enabled   六、黑苹果安装  七、更改硬盘启动  八、其他问题 EFI分区扩容  分出合适空间大小，可使用Windows自带的磁盘管理或者DiskGenius。 打开DiskGenius。 找到ESP分区，右键选择备份分区到镜像文件，选择合适的文件路径并保存（选择热备份）。 删除ESP分区。 在任意分区上右键选择建立ESP/MSR分区，调整合适的分区大小并确认。 保存更改。 找到ESP分区，右键选择从镜像文件还原分区，选择刚才备份的镜像文件即可。   九、参考  黑果小兵的部落阁 黑苹果MacOS Big Sur 11.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.78.2" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Hackintosh Install Tutorial">
+<meta property="og:description" content="一、工具  U盘（≥16G） Mac OS镜像（.dmg） 适合你的电脑的EFI文件 balenaEtcher（刻录工具） DiskGenius（分区工具）   二、制作U盘启动盘  插入U盘，然后打开balenaEtcher软件。  点击Select image选择Mac OS镜像。  软件会自动识别出你的U盘，最后点击Flash!。  等待刻录完成（20min左右），之后会有一个完整性检测（15min左右）。  当软件显示Flash Complete!时表示刻录成功。    三、配置Clover引导驱动  打开DiskGenius，找到U盘上的ESP分区，删除EFI文件夹。 把适合自己电脑EFI文件夹复制进去。（这里只能用快捷键复制粘贴） 保存更改。  四、制作黑苹果系统盘 硬盘分区安装  压缩卷（≥25G）。 选中压缩出的空闲分区，右键新建简单卷，一直点击下一步但选择不要格式化这个卷。  整块硬盘安装 删除磁盘所有分区即可。
+ 五、BIOS设置 以技嘉（Gigabyte）主板为例：
+ BIOS-&gt;FastBoot-&gt;Disable BIOS-&gt;Windows 8/10 Features-&gt;Windows 8/10 将操作系统类型设置为其他操作系统。从不支持Microsoft签名安全启动的第三方操作系统启动时，将“操作系统类型”设置为“其他操作系统”以获取优化的功能。 BIOS-&gt;CSM Support-&gt;Disabled 禁用CSM。兼容性支持模块（CSM）是UEFI固件的组件，该组件通过模拟BIOS环境来提供旧版BIOS兼容性，从而允许仍使用旧版操作系统和某些不支持UEFI的选件ROM。Clover和OpenCore引导都支持UEFI引导。禁用CSM使BIOS可以轻松发现Bootloader。 BIOS-&gt;LAN PXE Boot Option ROM-&gt;Disabled BIOS-&gt;Storage Boot Option Control-&gt;UEFI BIOS-&gt;Other PCI devices-&gt;UEFI Peripherals-&gt;Initial Display Output-&gt;PCIe Slot(独显)/IGFX(核显) Peripherals-&gt;Above 4G Decoding-&gt;Disabled Peripherals-&gt;Trusted Computing-&gt;Security Device Support-&gt;Disable Peripherals-&gt;USB Configuration-&gt;Legacy USB Support-&gt;Disabled 禁用旧版USB支持。 Peripherals-&gt;USB Configuration-&gt;XHCI Hand-off-&gt;Enabled 启用XHCI切换。 Peripherals-&gt;Network Stack Configuration-&gt;Disabled Peripherals-&gt;SATA and RST Configuration-&gt;SATA Mode Selection-&gt;AHCI 将SATA设置为AHCI。通过高级主机控制器接口（AHCI）模式，可以在SATA驱动器上使用高级功能，例如热插拔和本机命令队列（NCQ）。AHCI还允许硬盘以比传统IDE模式更高的速度运行。 Chipset-&gt;VT-d-&gt;Disabled 禁用VT-D。VT-d特别是IOMMU规范。扩展允许您访问虚拟机下的物理硬件（例如，运行Linux的系统可以在虚拟机上运行Windows。如果没有VT-d，则视频卡会被仿真，并且游戏速度会很慢。视频卡可以进入直通模式，并且可以在Windows下作为真实硬件（可以安装nvidia驱动程序）进行访问，并且视频卡的性能类似于运行本机Windows实时预览的情况。但是对于许多黑苹果用户，VT-D不会造成任何问题，但是如果您是新手，则尝试安装和配置Hackintosh禁用VT-D并安装。您可以在安装后根据需要启用VT-D。 Chipset-&gt;IOAPIC 24-119 Entries-&gt;Enabled   六、黑苹果安装  七、更改硬盘启动  八、其他问题 EFI分区扩容  分出合适空间大小，可使用Windows自带的磁盘管理或者DiskGenius。 打开DiskGenius。 找到ESP分区，右键选择备份分区到镜像文件，选择合适的文件路径并保存（选择热备份）。 删除ESP分区。 在任意分区上右键选择建立ESP/MSR分区，调整合适的分区大小并确认。 保存更改。 找到ESP分区，右键选择从镜像文件还原分区，选择刚才备份的镜像文件即可。   九、参考  黑果小兵的部落阁 黑苹果MacOS Big Sur 11.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://backsided.github.io/2020/11/24/hackintosh-install-tutorial/">
+        <link rel="stylesheet" href="https://backsided.github.io/dist/site.css">
+        <link rel="stylesheet" href="https://backsided.github.io/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="https://backsided.github.io/">Backsided&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                            <a class="button-square" href="https://backsided.github.io/index.xml" aria-label="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/backsided" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:backsided@outlook.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/projects/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/page/contact/">Contact</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/page/about/">About</a>
+    </li>
+
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Hackintosh Install Tutorial</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2020-11-24" itemprop="datePublished">2020-11-24</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Backsided</a>
+            </span>
+        </span>
+    </p>
+    
+        <p class="post-reading post-line">
+            <span>预计阅读时间： 1 min</span>
+        </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h2 id="一工具">一、工具</h2>
+<ul>
+<li>U盘（≥16G）</li>
+<li>Mac OS镜像（.dmg）</li>
+<li><strong>适合你的电脑的EFI文件</strong></li>
+<li><a href="https://www.balena.io/etcher/">balenaEtcher</a>（刻录工具）</li>
+<li><a href="https://www.diskgenius.cn/">DiskGenius</a>（分区工具）</li>
+</ul>
+<hr>
+<h2 id="二制作u盘启动盘">二、制作U盘启动盘</h2>
+<ol>
+<li>插入U盘，然后打开balenaEtcher软件。
+<img src="hackintosh-install-tutorial/image-20201123194153284.png" alt="image-20201123194153284"></li>
+<li>点击<code>Select image</code>选择Mac OS镜像。
+<img src="hackintosh-install-tutorial/image-20201123194619134.png" alt="image-20201123194619134"></li>
+<li>软件会自动识别出你的U盘，最后点击<code>Flash!</code>。
+<img src="hackintosh-install-tutorial/image-20201123194643257.png" alt="image-20201123194643257"></li>
+<li>等待刻录完成（20min左右），之后会有一个完整性检测（15min左右）。
+<img src="hackintosh-install-tutorial/image-20201123200153948.png" alt="image-20201123200153948"></li>
+<li>当软件显示<code>Flash Complete!</code>时表示刻录成功。
+<img src="hackintosh-install-tutorial/image-20201123201524888.png" alt="image-20201123201524888"></li>
+</ol>
+<hr>
+<h2 id="三配置clover引导驱动">三、配置Clover引导驱动</h2>
+<ol>
+<li>打开DiskGenius，找到U盘上的<code>ESP</code>分区，删除<code>EFI</code>文件夹。</li>
+<li>把适合自己电脑<code>EFI</code>文件夹复制进去。（这里只能用快捷键复制粘贴）</li>
+<li>保存更改。</li>
+</ol>
+<h2 id="四制作黑苹果系统盘">四、制作黑苹果系统盘</h2>
+<h3 id="硬盘分区安装">硬盘分区安装</h3>
+<ol>
+<li>压缩卷（≥25G）。</li>
+<li>选中压缩出的空闲分区，右键<code>新建简单卷</code>，一直点击<code>下一步</code>但选择<code>不要格式化这个卷</code>。</li>
+</ol>
+<h3 id="整块硬盘安装">整块硬盘安装</h3>
+<p>删除磁盘所有分区即可。</p>
+<hr>
+<h2 id="五bios设置">五、BIOS设置</h2>
+<p>以技嘉（Gigabyte）主板为例：</p>
+<ol>
+<li><code>BIOS</code>-&gt;<code>FastBoot</code>-&gt;<code>Disable</code></li>
+<li><code>BIOS</code>-&gt;<code>Windows 8/10 Features</code>-&gt;<code>Windows 8/10</code>
+将操作系统类型设置为其他操作系统。从不支持Microsoft签名安全启动的第三方操作系统启动时，将“操作系统类型”设置为“其他操作系统”以获取优化的功能。</li>
+<li><code>BIOS</code>-&gt;<code>CSM Support</code>-&gt;<code>Disabled</code>
+禁用CSM。兼容性支持模块（CSM）是UEFI固件的组件，该组件通过模拟BIOS环境来提供旧版BIOS兼容性，从而允许仍使用旧版操作系统和某些不支持UEFI的选件ROM。Clover和OpenCore引导都支持UEFI引导。禁用CSM使BIOS可以轻松发现Bootloader。</li>
+<li><code>BIOS</code>-&gt;<code>LAN PXE Boot Option ROM</code>-&gt;<code>Disabled</code></li>
+<li><code>BIOS</code>-&gt;<code>Storage Boot Option Control</code>-&gt;<code>UEFI</code></li>
+<li><code>BIOS</code>-&gt;<code>Other PCI devices</code>-&gt;<code>UEFI</code></li>
+<li><code>Peripherals</code>-&gt;<code>Initial Display Output</code>-&gt;<code>PCIe Slot</code>(独显)/<code>IGFX</code>(核显)</li>
+<li><code>Peripherals</code>-&gt;<code>Above 4G Decoding</code>-&gt;<code>Disabled</code></li>
+<li><code>Peripherals</code>-&gt;<code>Trusted Computing</code>-&gt;<code>Security Device Support</code>-&gt;<code>Disable</code></li>
+<li><code>Peripherals</code>-&gt;<code>USB Configuration</code>-&gt;<code>Legacy USB Support</code>-&gt;<code>Disabled</code>
+禁用旧版USB支持。</li>
+<li><code>Peripherals</code>-&gt;<code>USB Configuration</code>-&gt;<code>XHCI Hand-off</code>-&gt;<code>Enabled</code>
+启用XHCI切换。</li>
+<li><code>Peripherals</code>-&gt;<code>Network Stack Configuration</code>-&gt;<code>Disabled</code></li>
+<li><code>Peripherals</code>-&gt;<code>SATA and RST Configuration</code>-&gt;<code>SATA Mode Selection</code>-&gt;<code>AHCI</code>
+将SATA设置为AHCI。通过高级主机控制器接口（AHCI）模式，可以在SATA驱动器上使用高级功能，例如热插拔和本机命令队列（NCQ）。AHCI还允许硬盘以比传统IDE模式更高的速度运行。</li>
+<li><code>Chipset</code>-&gt;<code>VT-d</code>-&gt;<code>Disabled</code>
+禁用VT-D。VT-d特别是IOMMU规范。扩展允许您访问虚拟机下的物理硬件（例如，运行Linux的系统可以在虚拟机上运行Windows。如果没有VT-d，则视频卡会被仿真，并且游戏速度会很慢。视频卡可以进入直通模式，并且可以在Windows下作为真实硬件（可以安装nvidia驱动程序）进行访问，并且视频卡的性能类似于运行本机Windows实时预览的情况。但是对于许多黑苹果用户，VT-D不会造成任何问题，但是如果您是新手，则尝试安装和配置Hackintosh禁用VT-D并安装。您可以在安装后根据需要启用VT-D。</li>
+<li><code>Chipset</code>-&gt;<code>IOAPIC 24-119 Entries</code>-&gt;<code>Enabled</code></li>
+</ol>
+<hr>
+<h2 id="六黑苹果安装">六、黑苹果安装</h2>
+<hr>
+<h2 id="七更改硬盘启动">七、更改硬盘启动</h2>
+<hr>
+<h2 id="八其他问题">八、其他问题</h2>
+<h3 id="efi分区扩容">EFI分区扩容</h3>
+<ol>
+<li>分出合适空间大小，可使用Windows自带的<code>磁盘管理</code>或者<code>DiskGenius</code>。</li>
+<li>打开DiskGenius。</li>
+<li>找到<code>ESP</code>分区，右键选择<code>备份分区到镜像文件</code>，选择合适的文件路径并保存（选择<code>热备份</code>）。</li>
+<li>删除<code>ESP</code>分区。</li>
+<li>在任意分区上右键选择<code>建立ESP/MSR分区</code>，调整合适的分区大小并确认。</li>
+<li>保存更改。</li>
+<li>找到<code>ESP</code>分区，右键选择<code>从镜像文件还原分区</code>，选择刚才备份的镜像文件即可。</li>
+</ol>
+<hr>
+<h2 id="九参考">九、参考</h2>
+<ul>
+<li><a href="https://blog.daliansky.net/">黑果小兵的部落阁</a></li>
+<li><a href="https://blog.csdn.net/qq_28735663/article/details/107149730">黑苹果MacOS Big Sur 11.0 安装教程及驱动工具</a></li>
+<li><a href="https://blog.csdn.net/qq_28735663/article/details/109062067">主流电脑配置的通用引导文件，包含CLOVER与OpenCorer双引导</a></li>
+</ul>
+
+</div>
+
+        <footer class="post-footer clearfix"><div class="share">
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="https://backsided.github.io/">Backsided&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2020 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://backsided.github.io/js/jquery-1.11.3.min.js"></script>
+        <script src="https://backsided.github.io/js/jquery.fitvids.js"></script>
+        <script src="https://backsided.github.io/js/scripts.js"></script>
+    </body>
+</html>
+
