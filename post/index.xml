@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Backsided</copyright>
-    <lastBuildDate>Tue, 24 Nov 2020 23:38:26 +0800</lastBuildDate><atom:link href="https://backsided.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Nov 2020 22:42:13 +0800</lastBuildDate><atom:link href="https://backsided.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Csharp Beginner Project 01 Mac Address Modifier</title>
+      <link>https://backsided.github.io/2020/11/25/csharp-beginner-project-01-mac-address-modifier/</link>
+      <pubDate>Wed, 25 Nov 2020 22:42:13 +0800</pubDate>
+      
+      <guid>https://backsided.github.io/2020/11/25/csharp-beginner-project-01-mac-address-modifier/</guid>
+      <description>TextBox默认启用英文输入
+1  TextBox1.ImeMode = Windows.Forms.ImeMode.Off;   参考  C#修改MAC地址类的实例 C#修改Mac地址  </description>
+    </item>
+    
     <item>
       <title>Clash for Linux</title>
       <link>https://backsided.github.io/2020/11/24/clash-for-linux/</link>
@@ -47,7 +57,11 @@ for Linux</description>
       <pubDate>Mon, 26 Oct 2020 10:31:15 +0800</pubDate>
       
       <guid>https://backsided.github.io/2020/10/26/create-blog-by-hugo-on-github/</guid>
-      <description>效果 安装 安装Git 安装Hugo Hugo搭建博客 1  hugo version   1  Hugo Static Site Generator v0.76.5-60F0725B windows/amd64 BuildDate: 2020-10-14T15:16:53Z   1  hugo new site myblog   1 2 3  cd myblog git init git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even   复制exampleSite文件夹中的配置文件config.toml和content文件夹到当前目录
+      <description>效果 安装 安装Git 安装Hugo 点击进入Hugo的官方Github项目地址，找到hugo_X.XX.X_Windows-64bit.zip点击下载。
+解压，将hugo.exe添加到环境变量。
+Hugo搭建博客 输入hugo version，若出现如下输出则成功。
+1  Hugo Static Site Generator v0.76.5-60F0725B windows/amd64 BuildDate: 2020-10-14T15:16:53Z   输入hugo new site myblog
+1 2 3  cd myblog git init git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even   复制exampleSite文件夹中的配置文件config.toml和content文件夹到当前目录
 1  cp -r themes/even/exampleSite/con* .   本地
 1  hugo server -D   主题：  主题库 Even LoveIt Ghostwriter Maupassant  部署到 Github git remote origin add git add .</description>
     </item>
