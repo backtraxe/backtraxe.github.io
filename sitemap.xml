@@ -1,115 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://backsided.github.io/</loc>
-    <lastmod>2020-11-25T22:42:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2020/11/25/csharp-beginner-project-01-mac-address-modifier/</loc>
-    <lastmod>2020-11-25T22:42:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/post/</loc>
-    <lastmod>2020-11-25T22:42:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2020/11/24/clash-for-linux/</loc>
-    <lastmod>2020-11-24T23:38:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2020/11/24/hackintosh-install-tutorial/</loc>
-    <lastmod>2020-11-24T09:30:40+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/page/about/</loc>
-    <lastmod>2020-10-26T21:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/page/</loc>
-    <lastmod>2020-10-26T21:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/tags/cheatsheet/</loc>
-    <lastmod>2020-10-26T10:53:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/tags/markdown/</loc>
-    <lastmod>2020-10-26T10:53:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2020/10/26/markdown-cheatsheet/</loc>
-    <lastmod>2020-10-26T10:53:44+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-02-24T11:18:50+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/c&#43;&#43;-%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/</loc>
+    <lastmod>2021-02-24T11:18:50+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/</loc>
+    <lastmod>2021-02-24T11:18:50+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/chrome-%E6%88%96-edge-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/</loc>
+    <lastmod>2021-02-21T19:45:45+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/windows-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2021-02-20T01:48:44+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/c&#43;&#43;-%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-02-19T15:07:44+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/freecodecamp-2018/</loc>
+    <lastmod>2021-02-15T11:12:35+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/latex-%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7/</loc>
+    <lastmod>2021-02-11T19:42:24+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-02-09T10:52:53+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/%E8%B0%B7%E6%AD%8C%E4%B8%89%E4%BB%B6%E5%A5%97%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-02-08T10:51:10+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/adb-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2021-02-08T10:37:48+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/java-se-%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-02-07T21:41:06+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/c&#43;&#43;-stl-%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-02-06T19:38:27+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/python-%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-02-06T15:20:20+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/windows-terminal-%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-02-04T22:37:10+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/powershell-%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-02-04T22:00:28+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2021-02-04T13:32:15+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2021-02-04T00:56:14+08:00</lastmod>
+  </url><url>
+    <loc>https://backsided.github.io/categories/</loc>
+  </url><url>
     <loc>https://backsided.github.io/tags/</loc>
-    <lastmod>2020-10-26T10:53:44+08:00</lastmod>
   </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2020/10/26/create-blog-by-hugo-on-github/</loc>
-    <lastmod>2020-10-26T10:31:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2020/10/26/test/</loc>
-    <lastmod>2020-10-26T10:22:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/page/contact/</loc>
-    <lastmod>2015-04-03T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2014/09/28/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2014/04/02/goisforlovers/</loc>
-    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/tags/development/</loc>
-    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/tags/go/</loc>
-    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/tags/golang/</loc>
-    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/2014/04/02/migrate-from-jekyll/</loc>
-    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/tags/templates/</loc>
-    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://backsided.github.io/tags/themes/</loc>
-    <lastmod>2014-04-02T02:13:50+00:00</lastmod>
-  </url>
-  
 </urlset>
