@@ -1,0 +1,1701 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>C++ 竞赛算法集合 - Backsided's World</title><meta name=Description content="这是Backsided的博客"><meta property="og:title" content="C++ 竞赛算法集合"><meta property="og:description" content="用于算法竞赛（如ACM、ICPC）的不同算法的集合。"><meta property="og:type" content="article"><meta property="og:url" content="https://backsided.github.io/posts/c++-%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-02-24T11:18:50+08:00"><meta property="article:modified_time" content="2021-02-24T11:18:50+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="C++ 竞赛算法集合"><meta name=twitter:description content="用于算法竞赛（如ACM、ICPC）的不同算法的集合。"><meta name=application-name content="Backsided's World"><meta name=apple-mobile-web-app-title content="Backsided's World"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backsided.github.io/posts/c++-%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/><link rel=prev href=https://backsided.github.io/posts/chrome-%E6%88%96-edge-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/><link rel=next href=https://backsided.github.io/posts/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++ 竞赛算法集合","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backsided.github.io\/posts\/c\u002b\u002b-%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88\/"},"genre":"posts","wordcount":5520,"url":"https:\/\/backsided.github.io\/posts\/c\u002b\u002b-%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88\/","datePublished":"2021-02-24T11:18:50+08:00","dateModified":"2021-02-24T11:18:50+08:00","publisher":{"@type":"Organization","name":"Backsided"},"author":{"@type":"Person","name":"Backsided"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Backsided's World">Backsided's World</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Backsided's World">Backsided's World</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">C++ 竞赛算法集合</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Backsided</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-02-24>2021-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5520 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#动态规划>动态规划</a><ul><li><a href=#凸包技巧>凸包技巧</a></li><li><a href=#最长递增序列>最长递增序列</a></li></ul></li><li><a href=#数据结构>数据结构</a><ul><li><a href=#笛卡尔树>笛卡尔树</a></li><li><a href=#带有隐式键的笛卡尔树>带有隐式键的笛卡尔树</a></li><li><a href=#树状数组>树状数组</a></li><li><a href=#二维树状数组>二维树状数组</a></li><li><a href=#隐式的线段树>隐式的线段树</a></li><li><a href=#最小队列>最小队列</a></li><li><a href=#线段树加法-最小间隔-最大间隔>线段树（加法-最小间隔-最大间隔）</a></li><li><a href=#线段树分配-求和>线段树（分配-求和）</a></li><li><a href=#线段树最小值-值更新>线段树（最小值-值更新）</a></li><li><a href=#稀疏表>稀疏表</a></li></ul></li><li><a href=#几何>几何</a><ul><li><a href=#最近点对>最近点对</a></li><li><a href=#凸包>凸包</a></li></ul></li><li><a href=#图>图</a><ul><li><a href=#bellman-ford-算法>Bellman-Ford 算法</a></li><li><a href=#二部图匹配>二部图匹配</a></li><li><a href=#桥搜索>桥搜索</a></li><li><a href=#heading></a></li></ul></li><li><a href=#参考资料>参考资料</a></li></ul></nav></div></div><div class=content id=content><p>用于算法竞赛（如ACM、ICPC）的不同算法的集合。</p><h2 id=动态规划>动态规划</h2><h3 id=凸包技巧>凸包技巧</h3><p><a href=https://codeforces.com/contest/319/problem/C>https://codeforces.com/contest/319/problem/C</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> ll;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105000</span>;
+
+<span style=color:#66d9ef>int</span> n;
+ll height[MAXN], tax[MAXN];
+ll dp[MAXN];
+vector<span style=color:#f92672>&lt;</span>ll<span style=color:#f92672>&gt;</span> mvals, bvals;
+<span style=color:#66d9ef>int</span> cur <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+
+<span style=color:#75715e>// Suppose the last 3 lines added are : (l1, l2, l3)
+</span><span style=color:#75715e>// Line l2 becomes irrelevant, if l1/l3 x-intersection is to the left of l1/l2 x-intersection
+</span><span style=color:#75715e></span><span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>bad</span>(ll m1, ll b1, ll m2, ll b2, ll m3, ll b3) {
+    <span style=color:#75715e>// 转为 double 避免溢出
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>*</span> (b1 <span style=color:#f92672>-</span> b3) <span style=color:#f92672>*</span> (m2 <span style=color:#f92672>-</span> m1) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>*</span> (b1 <span style=color:#f92672>-</span> b2) <span style=color:#f92672>*</span> (m3 <span style=color:#f92672>-</span> m1);
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>add</span>(ll m, ll b) {
+    <span style=color:#66d9ef>while</span> ( (<span style=color:#66d9ef>int</span>) mvals.size() <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>&amp;&amp;</span> bad(mvals[mvals.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>], bvals[bvals.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>], mvals[mvals.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>], bvals[bvals.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>], m, b)) {
+        mvals.pop_back();
+        bvals.pop_back();
+    }
+    mvals.push_back(m);
+    bvals.push_back(b);
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setCur</span>(ll x) {
+    <span style=color:#66d9ef>if</span> (cur <span style=color:#f92672>&gt;</span> (<span style=color:#66d9ef>int</span>) mvals.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+        cur <span style=color:#f92672>=</span> (<span style=color:#66d9ef>int</span>) mvals.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#75715e>// Best-line pointer goes to the right only when queries are non-decreasing (x argument grows)
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>while</span> (cur <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>) mvals.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>*</span> mvals[cur <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>] <span style=color:#f92672>*</span> x <span style=color:#f92672>+</span> bvals[cur <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>] <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>*</span> mvals[cur] <span style=color:#f92672>*</span> x <span style=color:#f92672>+</span> bvals[cur])
+        cur<span style=color:#f92672>++</span>;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//freopen(&#34;input.txt&#34;, &#34;r&#34;, stdin);
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//freopen(&#34;output.txt&#34;, &#34;w&#34;, stdout);
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        scanf(<span style=color:#e6db74>&#34;%I64d&#34;</span>, <span style=color:#f92672>&amp;</span>height[i]);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        scanf(<span style=color:#e6db74>&#34;%I64d&#34;</span>, <span style=color:#f92672>&amp;</span>tax[i]);
+
+    <span style=color:#75715e>// Formula is dp[i] = min(tax[j] * height[i] + dp[j] | j = 1 .. i - 1)
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// Here tax[j] is considered as m value, and dp[j] as b value in line equation y = m * x + b
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>if</span> (i <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) {
+            dp[i] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+        } <span style=color:#66d9ef>else</span> {
+            setCur(height[i]);
+            dp[i] <span style=color:#f92672>=</span> mvals[cur] <span style=color:#f92672>*</span> height[i] <span style=color:#f92672>+</span> bvals[cur];
+        }
+        add(tax[i], dp[i]);
+    }
+
+    cout <span style=color:#f92672>&lt;&lt;</span> dp[n];
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=最长递增序列>最长递增序列</h3><p><a href="https://informatics.msk.ru/mod/statements/view3.php?id=766&chapterid=1794">https://informatics.msk.ru/mod/statements/view3.php?id=766&chapterid=1794</a></p><p>$O(N \log N)$</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105000</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> INF <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span>;
+
+<span style=color:#66d9ef>int</span> n;
+<span style=color:#66d9ef>int</span> k, b, m;
+<span style=color:#66d9ef>int</span> a[MAXN];
+<span style=color:#66d9ef>int</span> d[MAXN];
+<span style=color:#66d9ef>int</span> ind[MAXN], pr[MAXN];
+vector <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> ansv;
+<span style=color:#66d9ef>int</span> ans <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    scanf(<span style=color:#e6db74>&#34;%d %d %d %d&#34;</span>, <span style=color:#f92672>&amp;</span>a[<span style=color:#ae81ff>1</span>], <span style=color:#f92672>&amp;</span>k, <span style=color:#f92672>&amp;</span>b, <span style=color:#f92672>&amp;</span>m);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        a[i] <span style=color:#f92672>=</span> (k <span style=color:#f92672>*</span> a[i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>] <span style=color:#f92672>+</span> b) <span style=color:#f92672>%</span> m;
+
+    d[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>INF;
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        d[i] <span style=color:#f92672>=</span> INF;
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>int</span> pos <span style=color:#f92672>=</span> upper_bound(d <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, d <span style=color:#f92672>+</span> n <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, a[i]) <span style=color:#f92672>-</span> d;
+        <span style=color:#66d9ef>if</span> (d[pos <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>] <span style=color:#f92672>&lt;</span> a[i] <span style=color:#f92672>&amp;&amp;</span> a[i] <span style=color:#f92672>&lt;</span> d[pos]) {
+            d[pos] <span style=color:#f92672>=</span> a[i];
+            ind[pos] <span style=color:#f92672>=</span> i;
+            pr[i] <span style=color:#f92672>=</span> ind[pos <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>];
+            <span style=color:#66d9ef>if</span> (pos <span style=color:#f92672>&gt;</span> ans) {
+                ans <span style=color:#f92672>=</span> pos;
+            }
+        }
+    }
+
+    <span style=color:#66d9ef>if</span> (ans <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) {
+        printf(<span style=color:#e6db74>&#34;%d&#34;</span>, a[<span style=color:#ae81ff>1</span>]);
+    }
+    <span style=color:#66d9ef>else</span> {
+        <span style=color:#66d9ef>int</span> cur <span style=color:#f92672>=</span> ind[ans];
+        <span style=color:#66d9ef>while</span> (cur <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>) {
+            ansv.push_back(a[cur]);
+            cur <span style=color:#f92672>=</span> pr[cur];
+        }
+
+        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> (<span style=color:#66d9ef>int</span>) ansv.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>; i<span style=color:#f92672>--</span>)
+            printf(<span style=color:#e6db74>&#34;%d &#34;</span>, ansv[i]);
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h2 id=数据结构>数据结构</h2><h3 id=笛卡尔树>笛卡尔树</h3><p>Balanced Binary Search Tree</p><p><a href="https://informatics.msk.ru/mod/statements/view3.php?chapterid=2782">https://informatics.msk.ru/mod/statements/view3.php?chapterid=2782</a></p><p>$O(\log N)$</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> mod <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span>;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>node</span> {
+    <span style=color:#66d9ef>int</span> x, y;
+    node <span style=color:#f92672>*</span>l, <span style=color:#f92672>*</span>r;
+    node(<span style=color:#66d9ef>int</span> new_x, <span style=color:#66d9ef>int</span> new_y) {
+        x <span style=color:#f92672>=</span> new_x; y <span style=color:#f92672>=</span> new_y;
+        l <span style=color:#f92672>=</span> NULL; r <span style=color:#f92672>=</span> NULL;
+    }
+};
+
+<span style=color:#66d9ef>typedef</span> node <span style=color:#f92672>*</span> pnode;
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>merge</span>(pnode <span style=color:#f92672>&amp;</span>t, pnode l, pnode r) {
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>==</span> NULL)
+        t <span style=color:#f92672>=</span> r;
+    <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (r <span style=color:#f92672>==</span> NULL)
+        t <span style=color:#f92672>=</span> l;
+    <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (l<span style=color:#f92672>-&gt;</span>y <span style=color:#f92672>&gt;</span> r<span style=color:#f92672>-&gt;</span>y) {
+        merge(l<span style=color:#f92672>-&gt;</span>r, l<span style=color:#f92672>-&gt;</span>r, r);
+        t <span style=color:#f92672>=</span> l;
+    }
+    <span style=color:#66d9ef>else</span> {
+        merge(r<span style=color:#f92672>-&gt;</span>l, l, r<span style=color:#f92672>-&gt;</span>l);
+        t <span style=color:#f92672>=</span> r;
+    }
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>split</span>(pnode t, <span style=color:#66d9ef>int</span> x, pnode <span style=color:#f92672>&amp;</span>l, pnode <span style=color:#f92672>&amp;</span>r) {
+    <span style=color:#66d9ef>if</span> (t <span style=color:#f92672>==</span> NULL)
+        l <span style=color:#f92672>=</span> r <span style=color:#f92672>=</span> NULL;
+    <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (t<span style=color:#f92672>-&gt;</span>x <span style=color:#f92672>&gt;</span> x) {
+        split(t<span style=color:#f92672>-&gt;</span>l, x, l, t<span style=color:#f92672>-&gt;</span>l);
+        r <span style=color:#f92672>=</span> t;
+    }
+    <span style=color:#66d9ef>else</span> {
+        split(t<span style=color:#f92672>-&gt;</span>r, x, t<span style=color:#f92672>-&gt;</span>r, r);
+        l <span style=color:#f92672>=</span> t;
+    }
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>add</span>(pnode <span style=color:#f92672>&amp;</span>t, pnode a) {
+    <span style=color:#66d9ef>if</span> (t <span style=color:#f92672>==</span> NULL)
+        t <span style=color:#f92672>=</span> a;
+    <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (a<span style=color:#f92672>-&gt;</span>y <span style=color:#f92672>&gt;</span> t<span style=color:#f92672>-&gt;</span>y) {
+        split(t, a<span style=color:#f92672>-&gt;</span>x, a<span style=color:#f92672>-&gt;</span>l, a<span style=color:#f92672>-&gt;</span>r);
+        t <span style=color:#f92672>=</span> a;
+    }
+    <span style=color:#66d9ef>else</span> {
+        <span style=color:#66d9ef>if</span> (t<span style=color:#f92672>-&gt;</span>x <span style=color:#f92672>&lt;</span> a<span style=color:#f92672>-&gt;</span>x)
+            add(t<span style=color:#f92672>-&gt;</span>r, a);
+        <span style=color:#66d9ef>else</span>
+            add(t<span style=color:#f92672>-&gt;</span>l, a);
+    }
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>next</span>(pnode t, <span style=color:#66d9ef>int</span> x) {
+    <span style=color:#66d9ef>int</span> ans <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+    <span style=color:#66d9ef>while</span> (t <span style=color:#f92672>!=</span> NULL) {
+        <span style=color:#66d9ef>if</span> (t<span style=color:#f92672>-&gt;</span>x <span style=color:#f92672>&lt;</span> x)
+            t <span style=color:#f92672>=</span> t<span style=color:#f92672>-&gt;</span>r;
+        <span style=color:#66d9ef>else</span> {
+            <span style=color:#66d9ef>if</span> (ans <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>||</span> ans <span style=color:#f92672>&gt;</span> t<span style=color:#f92672>-&gt;</span>x)
+                ans <span style=color:#f92672>=</span> t<span style=color:#f92672>-&gt;</span>x;
+            t <span style=color:#f92672>=</span> t<span style=color:#f92672>-&gt;</span>l;
+        }
+    }
+    <span style=color:#66d9ef>return</span> ans;
+}
+
+<span style=color:#66d9ef>int</span> n, ans, x;
+<span style=color:#66d9ef>char</span> qt, prev_qt;
+pnode root <span style=color:#f92672>=</span> NULL, num;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout);
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%c %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>qt, <span style=color:#f92672>&amp;</span>x);
+        <span style=color:#66d9ef>if</span> (qt <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;+&#39;</span>) {
+            <span style=color:#66d9ef>if</span> (prev_qt <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;?&#39;</span>)
+                x <span style=color:#f92672>=</span> (x <span style=color:#f92672>+</span> ans) <span style=color:#f92672>%</span> mod;
+            num <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> node(x, rand());
+            add(root, num);
+        }
+        <span style=color:#66d9ef>else</span> {
+            ans <span style=color:#f92672>=</span> next(root, x);
+            printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, ans);
+        }
+        prev_qt <span style=color:#f92672>=</span> qt;
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=带有隐式键的笛卡尔树>带有隐式键的笛卡尔树</h3><p><a href="https://informatics.msk.ru/mod/statements/view3.php?chapterid=111240">https://informatics.msk.ru/mod/statements/view3.php?chapterid=111240</a></p><p>$O(\log N)$</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> INF <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span>;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>node</span> {
+    <span style=color:#66d9ef>int</span> y, val;
+    <span style=color:#66d9ef>int</span> sz, mn;
+    <span style=color:#66d9ef>bool</span> rev;
+    node <span style=color:#f92672>*</span>l, <span style=color:#f92672>*</span>r;
+    node (<span style=color:#66d9ef>int</span> new_val, <span style=color:#66d9ef>int</span> new_y) {
+        y <span style=color:#f92672>=</span> new_y; val <span style=color:#f92672>=</span> new_val;
+        sz <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; mn <span style=color:#f92672>=</span> val;
+        rev <span style=color:#f92672>=</span> false;
+        l <span style=color:#f92672>=</span> NULL; r <span style=color:#f92672>=</span> NULL;
+    }
+};
+
+<span style=color:#66d9ef>typedef</span> node <span style=color:#f92672>*</span> pnode;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getsize</span>(pnode t) {
+    <span style=color:#66d9ef>if</span> (t <span style=color:#f92672>==</span> NULL)
+        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>return</span> t<span style=color:#f92672>-&gt;</span>sz;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getmin</span>(pnode t) {
+    <span style=color:#66d9ef>if</span> (t <span style=color:#f92672>==</span> NULL)
+        <span style=color:#66d9ef>return</span> INF;
+    <span style=color:#66d9ef>return</span> t<span style=color:#f92672>-&gt;</span>mn;
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>update</span>(pnode t) {
+    <span style=color:#66d9ef>if</span> (t <span style=color:#f92672>==</span> NULL)
+        <span style=color:#66d9ef>return</span>;
+    t<span style=color:#f92672>-&gt;</span>sz <span style=color:#f92672>=</span> getsize(t<span style=color:#f92672>-&gt;</span>l) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> getsize(t<span style=color:#f92672>-&gt;</span>r);
+    t<span style=color:#f92672>-&gt;</span>mn <span style=color:#f92672>=</span> min(t<span style=color:#f92672>-&gt;</span>val, min(getmin(t<span style=color:#f92672>-&gt;</span>r), getmin(t<span style=color:#f92672>-&gt;</span>l)));
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>push</span>(pnode t) {
+    <span style=color:#66d9ef>if</span> (t <span style=color:#f92672>&amp;&amp;</span> t<span style=color:#f92672>-&gt;</span>rev) {
+        swap(t<span style=color:#f92672>-&gt;</span>l, t<span style=color:#f92672>-&gt;</span>r);
+        <span style=color:#66d9ef>if</span> (t<span style=color:#f92672>-&gt;</span>l)
+            t<span style=color:#f92672>-&gt;</span>l<span style=color:#f92672>-&gt;</span>rev <span style=color:#f92672>^=</span> true;
+        <span style=color:#66d9ef>if</span> (t<span style=color:#f92672>-&gt;</span>r)
+            t<span style=color:#f92672>-&gt;</span>r<span style=color:#f92672>-&gt;</span>rev <span style=color:#f92672>^=</span> true;
+        t<span style=color:#f92672>-&gt;</span>rev <span style=color:#f92672>=</span> false;
+    }
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>merge</span>(pnode <span style=color:#f92672>&amp;</span>t, pnode l, pnode r) {
+    push(l); push(r);
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>==</span> NULL)
+        t <span style=color:#f92672>=</span> r;
+    <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (r <span style=color:#f92672>==</span> NULL)
+        t <span style=color:#f92672>=</span> l;
+    <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (l<span style=color:#f92672>-&gt;</span>y <span style=color:#f92672>&gt;</span> r<span style=color:#f92672>-&gt;</span>y) {
+        merge(l<span style=color:#f92672>-&gt;</span>r, l<span style=color:#f92672>-&gt;</span>r, r);
+        t <span style=color:#f92672>=</span> l;
+    }
+    <span style=color:#66d9ef>else</span> {
+        merge(r<span style=color:#f92672>-&gt;</span>l, l, r<span style=color:#f92672>-&gt;</span>l);
+        t <span style=color:#f92672>=</span> r;
+    }
+    update(t);
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>split</span>(pnode t, pnode <span style=color:#f92672>&amp;</span>l, pnode <span style=color:#f92672>&amp;</span>r, <span style=color:#66d9ef>int</span> x, <span style=color:#66d9ef>int</span> add <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>) {
+    push(t);
+    <span style=color:#66d9ef>if</span> (t <span style=color:#f92672>==</span> NULL) {
+        l <span style=color:#f92672>=</span> r <span style=color:#f92672>=</span> NULL;
+        <span style=color:#66d9ef>return</span>;
+    }
+    <span style=color:#66d9ef>int</span> key <span style=color:#f92672>=</span> getsize(t<span style=color:#f92672>-&gt;</span>l) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> add;
+    <span style=color:#66d9ef>if</span> (x <span style=color:#f92672>&lt;=</span> key) {
+        split(t<span style=color:#f92672>-&gt;</span>l, l, t<span style=color:#f92672>-&gt;</span>l, x, add);
+        r <span style=color:#f92672>=</span> t;
+    }
+    <span style=color:#66d9ef>else</span> {
+        split(t<span style=color:#f92672>-&gt;</span>r, t<span style=color:#f92672>-&gt;</span>r, r, x, add <span style=color:#f92672>+</span> getsize(t<span style=color:#f92672>-&gt;</span>l) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>);
+        l <span style=color:#f92672>=</span> t;
+    }
+    update(t);
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>reverse</span>(pnode t, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    pnode a, b;
+    split(t, t, a, l, <span style=color:#ae81ff>0</span>);
+    split(a, a, b, r <span style=color:#f92672>-</span> l <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>);
+    a<span style=color:#f92672>-&gt;</span>rev <span style=color:#f92672>^=</span> true;
+    merge(t, t, a);
+    merge(t, t, b);
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getmin</span>(pnode t, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    <span style=color:#66d9ef>int</span> ans;
+    pnode a, b;
+    split(t, t, a, l, <span style=color:#ae81ff>0</span>);
+    split(a, a, b, r <span style=color:#f92672>-</span> l <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>);
+    ans <span style=color:#f92672>=</span> getmin(a);
+    merge(t, t, a);
+    merge(t, t, b);
+    <span style=color:#66d9ef>return</span> ans;
+}
+
+<span style=color:#66d9ef>int</span> n, m;
+<span style=color:#66d9ef>int</span> qt, l, r;
+pnode root <span style=color:#f92672>=</span> NULL, add;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout);
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>n, <span style=color:#f92672>&amp;</span>m);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>int</span> x;
+        scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>x);
+        add <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> node(x, rand());
+        merge(root, root, add);
+    }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> m; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%d %d %d&#34;</span>,<span style=color:#f92672>&amp;</span>qt, <span style=color:#f92672>&amp;</span>l, <span style=color:#f92672>&amp;</span>r);
+        <span style=color:#66d9ef>if</span> (qt <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) {
+            reverse(root, l, r);
+        }
+        <span style=color:#66d9ef>else</span> {
+            printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, getmin(root, l, r));
+        }
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=树状数组>树状数组</h3><p>$O(\log N)$</p><p><a href="https://informatics.msk.ru/mod/statements/view.php?chapterid=3317">https://informatics.msk.ru/mod/statements/view.php?chapterid=3317</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105000</span>;
+
+<span style=color:#66d9ef>int</span> n, m;
+<span style=color:#66d9ef>int</span> a[MAXN];
+<span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> f[MAXN];
+<span style=color:#66d9ef>char</span> q;
+<span style=color:#66d9ef>int</span> l, r;
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>update</span>(<span style=color:#66d9ef>int</span> pos, <span style=color:#66d9ef>int</span> delta) {
+    <span style=color:#66d9ef>for</span> (; pos <span style=color:#f92672>&lt;=</span> n; pos <span style=color:#f92672>=</span> (pos <span style=color:#f92672>|</span> (pos <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)))
+        f[pos] <span style=color:#f92672>+=</span> delta;
+}
+
+<span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>sum</span>(<span style=color:#66d9ef>int</span> pos) {
+    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> res <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>for</span> (; pos <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>; pos <span style=color:#f92672>=</span> (pos <span style=color:#f92672>&amp;</span> (pos <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+        res <span style=color:#f92672>+=</span> f[pos];
+    <span style=color:#66d9ef>return</span> res;
+}
+
+<span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>sum</span>(<span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    <span style=color:#66d9ef>return</span> sum(r) <span style=color:#f92672>-</span> sum(l <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>);
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>a[i]);
+        update(i, a[i]);
+    }
+
+    scanf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>m);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> m; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%c %d %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>q, <span style=color:#f92672>&amp;</span>l, <span style=color:#f92672>&amp;</span>r);
+        <span style=color:#66d9ef>if</span> (q <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;s&#39;</span>) {
+            cout <span style=color:#f92672>&lt;&lt;</span> sum(l, r) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span>;
+        }
+        <span style=color:#66d9ef>else</span> {
+            <span style=color:#66d9ef>int</span> delta <span style=color:#f92672>=</span> r <span style=color:#f92672>-</span> a[l];
+            a[l] <span style=color:#f92672>=</span> r;
+            update(l, delta);
+        }
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=二维树状数组>二维树状数组</h3><p>$O((\log N)^2)$</p><p><a href="https://informatics.msk.ru/mod/statements/view.php?chapterid=3013">https://informatics.msk.ru/mod/statements/view.php?chapterid=3013</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>1050</span>;
+
+<span style=color:#66d9ef>int</span> n, m;
+<span style=color:#66d9ef>int</span> qn;
+<span style=color:#66d9ef>char</span> q[<span style=color:#ae81ff>10</span>];
+<span style=color:#66d9ef>int</span> f[MAXN][MAXN];
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>update</span>(<span style=color:#66d9ef>int</span> x, <span style=color:#66d9ef>int</span> y, <span style=color:#66d9ef>int</span> delta) {
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> x; i <span style=color:#f92672>&lt;=</span> n; i <span style=color:#f92672>=</span> i <span style=color:#f92672>|</span> (i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>))
+        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> y; j <span style=color:#f92672>&lt;=</span> m; j <span style=color:#f92672>=</span> j <span style=color:#f92672>|</span> (j <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>))
+            f[i][j] <span style=color:#f92672>+=</span> delta;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getSum</span>(<span style=color:#66d9ef>int</span> x, <span style=color:#66d9ef>int</span> y) {
+    <span style=color:#66d9ef>int</span> res <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> x; i <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>=</span> (i <span style=color:#f92672>&amp;</span> (i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> y; j <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>; j <span style=color:#f92672>=</span> (j <span style=color:#f92672>&amp;</span> (j <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+            res <span style=color:#f92672>+=</span> f[i][j];
+    <span style=color:#66d9ef>return</span> res;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getSum</span>(<span style=color:#66d9ef>int</span> xFrom, <span style=color:#66d9ef>int</span> xTo, <span style=color:#66d9ef>int</span> yFrom, <span style=color:#66d9ef>int</span> yTo) {
+    <span style=color:#66d9ef>return</span> getSum(xTo, yTo) <span style=color:#f92672>-</span> getSum(xTo, yFrom <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>-</span> getSum(xFrom <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, yTo) <span style=color:#f92672>+</span> getSum(xFrom <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, yFrom <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>);
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>n, <span style=color:#f92672>&amp;</span>qn);
+    m <span style=color:#f92672>=</span> n;
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> qn; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%s&#34;</span>, <span style=color:#f92672>&amp;</span>q);
+        <span style=color:#66d9ef>if</span> (q[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;A&#39;</span>) {
+            <span style=color:#66d9ef>int</span> x, y;
+            scanf(<span style=color:#e6db74>&#34;%d %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>x, <span style=color:#f92672>&amp;</span>y);
+            update(x, y, <span style=color:#ae81ff>1</span>);
+        }
+        <span style=color:#66d9ef>else</span> {
+            <span style=color:#66d9ef>int</span> xFrom, xTo, yFrom, yTo;
+            scanf(<span style=color:#e6db74>&#34;%d %d %d %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>xFrom, <span style=color:#f92672>&amp;</span>yFrom, <span style=color:#f92672>&amp;</span>xTo, <span style=color:#f92672>&amp;</span>yTo);
+            <span style=color:#66d9ef>if</span> (xFrom <span style=color:#f92672>&gt;</span> xTo)
+                swap(xFrom, xTo);
+            <span style=color:#66d9ef>if</span> (yFrom <span style=color:#f92672>&gt;</span> yTo)
+                swap(yFrom, yTo);
+            printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, getSum(xFrom, xTo, yFrom, yTo));
+        }
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=隐式的线段树>隐式的线段树</h3><ul><li>时间复杂度：$O(\log N)$</li><li>空间复杂度：$O(N \log N)$</li></ul><p><a href="https://informatics.msk.ru/mod/statements/view.php?chapterid=3327">https://informatics.msk.ru/mod/statements/view.php?chapterid=3327</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> ll;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>Node</span> {
+    ll sum;
+    Node <span style=color:#f92672>*</span>l, <span style=color:#f92672>*</span>r;
+
+    Node() <span style=color:#f92672>:</span> sum(<span style=color:#ae81ff>0</span>), l(NULL), r(NULL) { }
+};
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>add</span>(Node <span style=color:#f92672>*</span>v, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r, <span style=color:#66d9ef>int</span> q_l, <span style=color:#66d9ef>int</span> q_r, ll val) {
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>&gt;</span> r <span style=color:#f92672>||</span> q_r <span style=color:#f92672>&lt;</span> l <span style=color:#f92672>||</span> q_l <span style=color:#f92672>&gt;</span> r)
+        <span style=color:#66d9ef>return</span>;
+
+    <span style=color:#66d9ef>if</span> (q_l <span style=color:#f92672>&lt;=</span> l <span style=color:#f92672>&amp;&amp;</span> r <span style=color:#f92672>&lt;=</span> q_r) {
+        v <span style=color:#f92672>-&gt;</span> sum <span style=color:#f92672>+=</span> val;
+        <span style=color:#66d9ef>return</span>;
+    }
+
+    <span style=color:#66d9ef>int</span> mid <span style=color:#f92672>=</span> (l <span style=color:#f92672>+</span> r) <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>1</span>;
+
+    <span style=color:#66d9ef>if</span> (v <span style=color:#f92672>-&gt;</span> l <span style=color:#f92672>==</span> NULL)
+        v <span style=color:#f92672>-&gt;</span> l <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Node();
+
+    <span style=color:#66d9ef>if</span> (v <span style=color:#f92672>-&gt;</span> r <span style=color:#f92672>==</span> NULL)
+        v <span style=color:#f92672>-&gt;</span> r <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Node();
+
+    add(v <span style=color:#f92672>-&gt;</span> l, l, mid, q_l, q_r, val);
+    add(v <span style=color:#f92672>-&gt;</span> r, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, r, q_l, q_r, val);
+}
+
+ll <span style=color:#a6e22e>get</span>(Node <span style=color:#f92672>*</span>v, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r, <span style=color:#66d9ef>int</span> pos) {
+    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>v <span style=color:#f92672>||</span> l <span style=color:#f92672>&gt;</span> r <span style=color:#f92672>||</span> pos <span style=color:#f92672>&lt;</span> l <span style=color:#f92672>||</span> pos <span style=color:#f92672>&gt;</span> r)
+        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>==</span> r)
+        <span style=color:#66d9ef>return</span> v <span style=color:#f92672>-&gt;</span> sum;
+
+    <span style=color:#66d9ef>int</span> mid <span style=color:#f92672>=</span> (l <span style=color:#f92672>+</span> r) <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>1</span>;
+
+    <span style=color:#66d9ef>return</span> v <span style=color:#f92672>-&gt;</span> sum <span style=color:#f92672>+</span> get(v <span style=color:#f92672>-&gt;</span> l, l, mid, pos) <span style=color:#f92672>+</span> get(v <span style=color:#f92672>-&gt;</span> r, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, r, pos);
+}
+
+<span style=color:#66d9ef>int</span> n, m, t, x, y, val;
+<span style=color:#66d9ef>char</span> c;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//freopen(&#34;input.txt&#34;, &#34;r&#34;, stdin);
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//freopen(&#34;output.txt&#34;, &#34;w&#34;, stdout);
+</span><span style=color:#75715e></span>
+    Node <span style=color:#f92672>*</span>root <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Node();
+
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> n; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>x);
+        add(root, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, i, i, x);
+    }
+
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>m);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> m; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>%c&#34;</span>, <span style=color:#f92672>&amp;</span>c);
+
+        <span style=color:#66d9ef>if</span> (c <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;a&#39;</span>) {
+            scanf(<span style=color:#e6db74>&#34;%d%d%d&#34;</span>, <span style=color:#f92672>&amp;</span>x, <span style=color:#f92672>&amp;</span>y, <span style=color:#f92672>&amp;</span>val);
+
+            add(root, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, <span style=color:#f92672>--</span>x, <span style=color:#f92672>--</span>y, val);
+        } <span style=color:#66d9ef>else</span> {
+            scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>x);
+
+            printf(<span style=color:#e6db74>&#34;%I64d &#34;</span>, get(root, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, <span style=color:#f92672>--</span>x));
+        }
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=最小队列>最小队列</h3><ul><li>时间复杂度：$O(1)$</li></ul><p><a href="https://informatics.msk.ru//mod/statements/view.php?chapterid=756">https://informatics.msk.ru//mod/statements/view.php?chapterid=756</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>205000</span>;
+
+<span style=color:#66d9ef>int</span> n, m;
+deque <span style=color:#f92672>&lt;</span> pair <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> d;
+<span style=color:#66d9ef>int</span> a[MAXN];
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>enqueue</span>(<span style=color:#66d9ef>int</span> x) {
+    <span style=color:#66d9ef>int</span> num <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#66d9ef>while</span> (<span style=color:#f92672>!</span>d.empty() <span style=color:#f92672>&amp;&amp;</span> d.back().first <span style=color:#f92672>&gt;</span> x) {
+        num <span style=color:#f92672>+=</span> d.back().second;
+        d.pop_back();
+    }
+    d.push_back(make_pair(x, num));
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>dequeue</span>() {
+    <span style=color:#66d9ef>if</span> (d.front().second <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) {
+        d.pop_front();
+    }
+    <span style=color:#66d9ef>else</span> {
+        d.front().second<span style=color:#f92672>--</span>;
+    }
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getMin</span>() {
+    <span style=color:#66d9ef>return</span> d.front().first;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d %d&#34;</span>, <span style=color:#f92672>&amp;</span>n, <span style=color:#f92672>&amp;</span>m);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>a[i]);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> m; i<span style=color:#f92672>++</span>) {
+        enqueue(a[i]);
+    }
+
+    printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, getMin());
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> m <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        dequeue();
+        enqueue(a[i]);
+        printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, getMin());
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=线段树加法-最小间隔-最大间隔>线段树（加法-最小间隔-最大间隔）</h3><p><a href=https://codeforces.com/contest/1263/problem/E>https://codeforces.com/contest/1263/problem/E</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1000</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>100</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> INF <span style=color:#f92672>=</span> (<span style=color:#66d9ef>int</span>) <span style=color:#ae81ff>1e9</span>;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>node</span> {
+    <span style=color:#66d9ef>int</span> mx, mn;
+    <span style=color:#66d9ef>int</span> add;
+};
+
+<span style=color:#66d9ef>int</span> n;
+<span style=color:#66d9ef>int</span> val[MAXN];
+string s;
+<span style=color:#66d9ef>int</span> pos;
+node tree[<span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> MAXN];
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>add</span>(<span style=color:#66d9ef>int</span> v, <span style=color:#66d9ef>int</span> L, <span style=color:#66d9ef>int</span> R, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r, <span style=color:#66d9ef>int</span> val) {
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>&gt;</span> r)
+        <span style=color:#66d9ef>return</span>;
+    <span style=color:#66d9ef>if</span> (L <span style=color:#f92672>==</span> l <span style=color:#f92672>&amp;&amp;</span> R <span style=color:#f92672>==</span> r) {
+        tree[v].add <span style=color:#f92672>+=</span> val;
+    } <span style=color:#66d9ef>else</span> {
+        <span style=color:#66d9ef>int</span> mid <span style=color:#f92672>=</span> L <span style=color:#f92672>+</span> (R <span style=color:#f92672>-</span> L) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+        add(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, L, mid, l, min(mid, r), val);
+        add(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, R, max(mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, l), r, val);
+        tree[v].mx <span style=color:#f92672>=</span> max(tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].mx <span style=color:#f92672>+</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].add, tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>].mx <span style=color:#f92672>+</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>].add);
+        tree[v].mn <span style=color:#f92672>=</span> min(tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].mn <span style=color:#f92672>+</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].add, tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>].mn <span style=color:#f92672>+</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>].add);
+    }
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getMin</span>(<span style=color:#66d9ef>int</span> v, <span style=color:#66d9ef>int</span> L, <span style=color:#66d9ef>int</span> R, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>&gt;</span> r) {
+        <span style=color:#66d9ef>return</span> INF;
+    }
+    <span style=color:#66d9ef>if</span> (L <span style=color:#f92672>==</span> l <span style=color:#f92672>&amp;&amp;</span> R <span style=color:#f92672>==</span> r) {
+        <span style=color:#66d9ef>return</span> tree[v].mn <span style=color:#f92672>+</span> tree[v].add;
+    }
+    <span style=color:#66d9ef>int</span> mid <span style=color:#f92672>=</span> L <span style=color:#f92672>+</span> (R <span style=color:#f92672>-</span> L) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+    <span style=color:#66d9ef>return</span> tree[v].add <span style=color:#f92672>+</span> min(getMin(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, L, mid, l, min(mid, r)), getMin(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, R, max(l, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>), r));
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getMax</span>(<span style=color:#66d9ef>int</span> v, <span style=color:#66d9ef>int</span> L, <span style=color:#66d9ef>int</span> R, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>&gt;</span> r) {
+        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>INF;
+    }
+    <span style=color:#66d9ef>if</span> (L <span style=color:#f92672>==</span> l <span style=color:#f92672>&amp;&amp;</span> R <span style=color:#f92672>==</span> r) {
+        <span style=color:#66d9ef>return</span> tree[v].mx <span style=color:#f92672>+</span> tree[v].add;
+    }
+    <span style=color:#66d9ef>int</span> mid <span style=color:#f92672>=</span> L <span style=color:#f92672>+</span> (R <span style=color:#f92672>-</span> L) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+    <span style=color:#66d9ef>return</span> tree[v].add <span style=color:#f92672>+</span> max(getMax(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, L, mid, l, min(mid, r)), getMax(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, R, max(l, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>), r));
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    getline(cin, s);
+    pos <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>) s.length(); i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>if</span> (s[i] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;L&#39;</span>) {
+            <span style=color:#66d9ef>if</span> (pos <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) pos<span style=color:#f92672>--</span>;
+        } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (s[i] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;R&#39;</span>) {
+            pos<span style=color:#f92672>++</span>;
+        } <span style=color:#66d9ef>else</span> {
+            <span style=color:#66d9ef>int</span> newVal <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+            <span style=color:#66d9ef>if</span> (s[i] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;(&#39;</span>) {
+                newVal <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+            } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (s[i] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;)&#39;</span>) {
+                newVal <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+            }
+            <span style=color:#66d9ef>int</span> delta <span style=color:#f92672>=</span> newVal <span style=color:#f92672>-</span> val[pos];
+            val[pos] <span style=color:#f92672>=</span> newVal;
+            add(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, pos, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, delta);
+        }
+        <span style=color:#66d9ef>int</span> mn <span style=color:#f92672>=</span> getMin(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>);
+        <span style=color:#66d9ef>int</span> lastVal <span style=color:#f92672>=</span> getMin(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>);
+        <span style=color:#66d9ef>if</span> (mn <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>||</span> lastVal <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>) {
+            printf(<span style=color:#e6db74>&#34;%d &#34;</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>);
+        } <span style=color:#66d9ef>else</span> {
+            printf(<span style=color:#e6db74>&#34;%d &#34;</span>, getMax(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>));
+        }
+    }
+
+    cout <span style=color:#f92672>&lt;&lt;</span> endl;
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=线段树分配-求和>线段树（分配-求和）</h3><p><a href=https://codeforces.com/gym/100093>https://codeforces.com/gym/100093</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105000</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> zero <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>node</span> {
+    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> sum;
+    <span style=color:#66d9ef>int</span> val;
+    <span style=color:#66d9ef>int</span> size;
+};
+
+<span style=color:#66d9ef>int</span> n, m;
+<span style=color:#66d9ef>char</span> qt;
+<span style=color:#66d9ef>int</span> x, l, r;
+<span style=color:#66d9ef>int</span> a[MAXN];
+vector <span style=color:#f92672>&lt;</span>node<span style=color:#f92672>&gt;</span> tree;
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>build</span> (<span style=color:#66d9ef>int</span> v, <span style=color:#66d9ef>int</span> L, <span style=color:#66d9ef>int</span> R, <span style=color:#66d9ef>int</span> a[]) {
+    <span style=color:#66d9ef>if</span> (L <span style=color:#f92672>==</span> R) {
+        tree[v].sum <span style=color:#f92672>=</span> tree[v].val <span style=color:#f92672>=</span> a[L];
+        tree[v].size <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+    }
+    <span style=color:#66d9ef>else</span> {
+        <span style=color:#66d9ef>int</span> mid <span style=color:#f92672>=</span> L <span style=color:#f92672>+</span> (R <span style=color:#f92672>-</span> L) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+        build(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v, L, mid, a);
+        build(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, R, a);
+        tree[v].sum <span style=color:#f92672>=</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v].sum <span style=color:#f92672>+</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].sum;
+        tree[v].val <span style=color:#f92672>=</span> zero;
+        tree[v].size <span style=color:#f92672>=</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].size <span style=color:#f92672>+</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v].size;
+    }
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>push</span>(<span style=color:#66d9ef>int</span> v) {
+    <span style=color:#66d9ef>if</span> (tree[v].val <span style=color:#f92672>==</span> zero)
+        <span style=color:#66d9ef>return</span>;
+    <span style=color:#66d9ef>if</span> (tree[v].size <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>) {
+        tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v].val <span style=color:#f92672>=</span> tree[v].val;
+        tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].val <span style=color:#f92672>=</span> tree[v].val;
+    }
+    tree[v].sum <span style=color:#f92672>=</span> <span style=color:#ae81ff>1ll</span> <span style=color:#f92672>*</span> tree[v].size <span style=color:#f92672>*</span> tree[v].val;
+    tree[v].val <span style=color:#f92672>=</span> zero;
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>assign</span>(<span style=color:#66d9ef>int</span> v, <span style=color:#66d9ef>int</span> L, <span style=color:#66d9ef>int</span> R, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r, <span style=color:#66d9ef>int</span> val) {
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>&gt;</span> r)
+        <span style=color:#66d9ef>return</span>;
+    push(v);
+    <span style=color:#66d9ef>if</span> (L <span style=color:#f92672>==</span> l <span style=color:#f92672>&amp;&amp;</span> R <span style=color:#f92672>==</span> r) {
+        tree[v].val <span style=color:#f92672>=</span> val;
+        tree[v].sum <span style=color:#f92672>=</span> <span style=color:#ae81ff>1ll</span> <span style=color:#f92672>*</span> val <span style=color:#f92672>*</span> tree[v].size;
+    } <span style=color:#66d9ef>else</span> {
+        <span style=color:#66d9ef>int</span> mid <span style=color:#f92672>=</span> L <span style=color:#f92672>+</span> (R <span style=color:#f92672>-</span> L) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+        assign(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v, L, mid, l, min(mid, r), val);
+        assign(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, R, max(mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, l), r, val);
+        push(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v);
+        push(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>);
+        tree[v].sum <span style=color:#f92672>=</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v].sum <span style=color:#f92672>+</span> tree[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].sum;
+    }
+    push(v);
+}
+
+<span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>getsum</span>(<span style=color:#66d9ef>int</span> v, <span style=color:#66d9ef>int</span> L, <span style=color:#66d9ef>int</span> R, <span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>&gt;</span> r)
+        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+    push(v);
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>==</span> L <span style=color:#f92672>&amp;&amp;</span> r <span style=color:#f92672>==</span> R)
+        <span style=color:#66d9ef>return</span> tree[v].sum;
+    <span style=color:#66d9ef>int</span> mid <span style=color:#f92672>=</span> L <span style=color:#f92672>+</span> (R <span style=color:#f92672>-</span> L) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> res <span style=color:#f92672>=</span> getsum(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v, L, mid, l, min(mid, r)) <span style=color:#f92672>+</span> getsum(<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> v <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, R, max(l, mid <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>), r);
+    <span style=color:#66d9ef>return</span> res;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    assert(freopen(<span style=color:#e6db74>&#34;sum.in&#34;</span>,<span style=color:#e6db74>&#34;r&#34;</span>,stdin));
+    assert(freopen(<span style=color:#e6db74>&#34;sum.out&#34;</span>,<span style=color:#e6db74>&#34;w&#34;</span>,stdout));
+
+    scanf(<span style=color:#e6db74>&#34;%d %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>n, <span style=color:#f92672>&amp;</span>m);
+
+    tree.resize(<span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> n);
+    build(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, n, a);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> m; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%c&#34;</span>, <span style=color:#f92672>&amp;</span>qt);
+        <span style=color:#66d9ef>if</span> (qt <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;A&#39;</span>) {
+            scanf(<span style=color:#e6db74>&#34;%d %d %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>l, <span style=color:#f92672>&amp;</span>r, <span style=color:#f92672>&amp;</span>x);
+            assign(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, n, l, r, x);
+        }
+        <span style=color:#66d9ef>else</span> {
+            scanf(<span style=color:#e6db74>&#34;%d %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, <span style=color:#f92672>&amp;</span>l, <span style=color:#f92672>&amp;</span>r);
+            cout <span style=color:#f92672>&lt;&lt;</span> getsum(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, n, l, r) <span style=color:#f92672>&lt;&lt;</span> endl;
+        }
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=线段树最小值-值更新>线段树（最小值-值更新）</h3><ul><li>预先计算：$O(N \log N)$</li><li>查询：$O(1)$</li></ul><p><a href="https://informatics.msk.ru/mod/statements/view.php?chapterid=3309">https://informatics.msk.ru/mod/statements/view.php?chapterid=3309</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105000</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> INF <span style=color:#f92672>=</span> (<span style=color:#66d9ef>int</span>) <span style=color:#ae81ff>1e9</span>;
+
+<span style=color:#66d9ef>int</span> n, num, qn;
+<span style=color:#66d9ef>int</span> a[MAXN];
+<span style=color:#66d9ef>int</span> tree[<span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> MAXN];
+<span style=color:#66d9ef>int</span> l, r;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getMax</span>(<span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    l <span style=color:#f92672>=</span> num <span style=color:#f92672>+</span> l <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>; r <span style=color:#f92672>=</span> num <span style=color:#f92672>+</span> r <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#66d9ef>int</span> res <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>INF;
+
+    <span style=color:#66d9ef>while</span> (l <span style=color:#f92672>&lt;=</span> r) {
+        <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>1</span>) {
+            res <span style=color:#f92672>=</span> max(res, tree[l]);
+            l<span style=color:#f92672>++</span>;
+        }
+        <span style=color:#66d9ef>if</span> (r <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) {
+            res <span style=color:#f92672>=</span> max(res, tree[r]);
+            r<span style=color:#f92672>--</span>;
+        }
+        l <span style=color:#f92672>/=</span> <span style=color:#ae81ff>2</span>; r <span style=color:#f92672>/=</span> <span style=color:#ae81ff>2</span>;
+    }
+
+    <span style=color:#66d9ef>return</span> res;
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>update</span>(<span style=color:#66d9ef>int</span> pos, <span style=color:#66d9ef>int</span> val) {
+    pos <span style=color:#f92672>=</span> num <span style=color:#f92672>+</span> pos <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
+    tree[pos] <span style=color:#f92672>=</span> val;
+    pos <span style=color:#f92672>/=</span> <span style=color:#ae81ff>2</span>;
+    <span style=color:#66d9ef>while</span> (pos <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>1</span>) {
+        tree[pos] <span style=color:#f92672>=</span> max(tree[pos <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>], tree[pos <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>]);
+        pos <span style=color:#f92672>/=</span> <span style=color:#ae81ff>2</span>;
+    }
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>a[i]);
+
+    num <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#66d9ef>while</span> (num <span style=color:#f92672>&lt;</span> n)
+        num <span style=color:#f92672>*=</span> <span style=color:#ae81ff>2</span>;
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> num; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> num; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>if</span> (i <span style=color:#f92672>-</span> num <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;=</span> n)
+            tree[i] <span style=color:#f92672>=</span> a[i <span style=color:#f92672>-</span> num <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>];
+        <span style=color:#66d9ef>else</span>
+            tree[i] <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>INF;
+    }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> num <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>1</span>; i<span style=color:#f92672>--</span>) {
+        tree[i] <span style=color:#f92672>=</span> max(tree[i <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>], tree[i <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>]);
+    }
+
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>qn);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> qn; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%d %d&#34;</span>, <span style=color:#f92672>&amp;</span>l, <span style=color:#f92672>&amp;</span>r);
+        printf(<span style=color:#e6db74>&#34;%d &#34;</span>, getMax(l, r));
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=稀疏表>稀疏表</h3><ul><li>预先计算：$O(N)$</li><li>查询：$O(\log N)$</li></ul><p><a href="https://informatics.msk.ru/mod/statements/view.php?chapterid=3309">https://informatics.msk.ru/mod/statements/view.php?chapterid=3309</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>105000</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXLOG <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>;
+
+<span style=color:#66d9ef>int</span> n, m;
+<span style=color:#66d9ef>int</span> a[MAXN];
+<span style=color:#66d9ef>int</span> table[MAXLOG][MAXN];
+<span style=color:#66d9ef>int</span> numlog[MAXN];
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>buildTable</span>() {
+    numlog[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        numlog[i] <span style=color:#f92672>=</span> numlog[i <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>] <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;=</span> numlog[n]; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>int</span> curlen <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;&lt;</span> i;
+        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; j <span style=color:#f92672>&lt;=</span> n; j<span style=color:#f92672>++</span>) {
+            <span style=color:#66d9ef>if</span> (i <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) {
+                table[i][j] <span style=color:#f92672>=</span> a[j];
+                <span style=color:#66d9ef>continue</span>;
+            }
+            table[i][j] <span style=color:#f92672>=</span> max(table[i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>][j], table[i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>][j <span style=color:#f92672>+</span> curlen <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>]);
+        }
+    }
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>getMax</span>(<span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    <span style=color:#66d9ef>int</span> curlog <span style=color:#f92672>=</span> numlog[r <span style=color:#f92672>-</span> l <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>];
+    <span style=color:#66d9ef>return</span> max(table[curlog][l], table[curlog][r <span style=color:#f92672>-</span> (<span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;&lt;</span> curlog) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>]);
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>a[i]);
+
+    buildTable();
+
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>m);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> m; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>int</span> l, r;
+        scanf(<span style=color:#e6db74>&#34;%d %d&#34;</span>, <span style=color:#f92672>&amp;</span>l, <span style=color:#f92672>&amp;</span>r);
+        printf(<span style=color:#e6db74>&#34;%d &#34;</span>, getMax(l, r));
+    }
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h2 id=几何>几何</h2><h3 id=最近点对>最近点对</h3><ul><li>时间复杂度：$O(N \log N)$</li></ul><p><a href=https://www.spoj.com/problems/CLOPPAIR/>https://www.spoj.com/problems/CLOPPAIR/</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#75715e>#define sqr(x) ((x) * (x))
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>double</span> inf <span style=color:#f92672>=</span> <span style=color:#ae81ff>1e100</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105000</span>;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>point</span> {
+    <span style=color:#66d9ef>double</span> x, y;
+    <span style=color:#66d9ef>int</span> ind;
+};
+
+<span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>cmp</span>(point a, point b) {
+    <span style=color:#66d9ef>return</span> (a.x <span style=color:#f92672>&lt;</span> b.x <span style=color:#f92672>||</span> (a.x <span style=color:#f92672>==</span> b.x <span style=color:#f92672>&amp;&amp;</span> a.y <span style=color:#f92672>&lt;</span> b.y));
+}
+
+<span style=color:#66d9ef>double</span> <span style=color:#a6e22e>dist</span>(point a, point b) {
+    <span style=color:#66d9ef>return</span> sqrt(sqr(a.x <span style=color:#f92672>-</span> b.x) <span style=color:#f92672>+</span> sqr(a.y <span style=color:#f92672>-</span> b.y));
+}
+
+<span style=color:#66d9ef>int</span> n;
+<span style=color:#66d9ef>int</span> a[MAXN];
+point p[MAXN], tmp[MAXN];
+<span style=color:#66d9ef>double</span> ans <span style=color:#f92672>=</span> inf;
+<span style=color:#66d9ef>int</span> p1, p2;
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>updateAnswer</span>(point a, point b) {
+    <span style=color:#66d9ef>double</span> d <span style=color:#f92672>=</span> dist(a, b);
+    <span style=color:#66d9ef>if</span> (d <span style=color:#f92672>&lt;</span> ans) {
+        ans <span style=color:#f92672>=</span> d;
+        p1 <span style=color:#f92672>=</span> a.ind; p2 <span style=color:#f92672>=</span> b.ind;
+    }
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>closestPair</span>(<span style=color:#66d9ef>int</span> l, <span style=color:#66d9ef>int</span> r) {
+    <span style=color:#66d9ef>if</span> (l <span style=color:#f92672>&gt;=</span> r)
+        <span style=color:#66d9ef>return</span>;
+
+    <span style=color:#66d9ef>if</span> (r <span style=color:#f92672>-</span> l <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) {
+        <span style=color:#66d9ef>if</span> (p[l].y <span style=color:#f92672>&gt;</span> p[r].y)
+            swap(p[l], p[r]);
+        updateAnswer(p[l], p[r]);
+        <span style=color:#66d9ef>return</span>;
+    }
+
+    <span style=color:#66d9ef>int</span> m <span style=color:#f92672>=</span> (l <span style=color:#f92672>+</span> r) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+    <span style=color:#66d9ef>double</span> mx <span style=color:#f92672>=</span> p[m].x;
+
+    closestPair(l, m);
+    closestPair(m <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, r);
+
+    <span style=color:#66d9ef>int</span> lp <span style=color:#f92672>=</span> l, rp <span style=color:#f92672>=</span> m <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, sz <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#66d9ef>while</span> (lp <span style=color:#f92672>&lt;=</span> m <span style=color:#f92672>||</span> rp <span style=color:#f92672>&lt;=</span> r) {
+        <span style=color:#66d9ef>if</span> (lp <span style=color:#f92672>&gt;</span> m <span style=color:#f92672>||</span> ((rp <span style=color:#f92672>&lt;=</span> r <span style=color:#f92672>&amp;&amp;</span> p[rp].y <span style=color:#f92672>&lt;</span> p[lp].y))) {
+            tmp[sz] <span style=color:#f92672>=</span> p[rp];
+            rp<span style=color:#f92672>++</span>;
+        }
+        <span style=color:#66d9ef>else</span> {
+            tmp[sz] <span style=color:#f92672>=</span> p[lp];
+            lp<span style=color:#f92672>++</span>;
+        }
+        sz<span style=color:#f92672>++</span>;
+    }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> l; i <span style=color:#f92672>&lt;=</span> r; i<span style=color:#f92672>++</span>)
+        p[i] <span style=color:#f92672>=</span> tmp[i <span style=color:#f92672>-</span> l <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>];
+
+    sz <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> l; i <span style=color:#f92672>&lt;=</span> r; i<span style=color:#f92672>++</span>)
+        <span style=color:#66d9ef>if</span> (abs(p[i].x <span style=color:#f92672>-</span> mx) <span style=color:#f92672>&lt;</span> ans) {
+            sz<span style=color:#f92672>++</span>;
+            tmp[sz] <span style=color:#f92672>=</span> p[i];
+        }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> sz; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>; j <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>1</span>; j<span style=color:#f92672>--</span>) {
+            <span style=color:#66d9ef>if</span> (tmp[i].y <span style=color:#f92672>-</span> tmp[j].y <span style=color:#f92672>&gt;=</span> ans)
+                <span style=color:#66d9ef>break</span>;
+            updateAnswer(tmp[i], tmp[j]);
+        }
+    }
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        scanf(<span style=color:#e6db74>&#34;%lf %lf&#34;</span>, <span style=color:#f92672>&amp;</span>p[i].x, <span style=color:#f92672>&amp;</span>p[i].y);
+        p[i].ind <span style=color:#f92672>=</span> i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
+    }
+
+    sort(p <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, p <span style=color:#f92672>+</span> n <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, cmp);
+
+    closestPair(<span style=color:#ae81ff>1</span>, n);
+
+    printf(<span style=color:#e6db74>&#34;%d %d %.6lf</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, min(p1, p2), max(p1, p2), ans);
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#75715e>#define sqr(a) ((a)*(a))
+</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#66d9ef>double</span> inf <span style=color:#f92672>=</span> <span style=color:#ae81ff>1e100</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>55000</span>;
+
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>point</span> {
+    <span style=color:#66d9ef>double</span> x, y;
+    <span style=color:#66d9ef>int</span> ind;
+    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>read</span>() {
+        scanf(<span style=color:#e6db74>&#34;%lf%lf&#34;</span>, <span style=color:#f92672>&amp;</span>x, <span style=color:#f92672>&amp;</span>y);
+    }
+    <span style=color:#66d9ef>double</span> <span style=color:#a6e22e>dist_to</span>(point<span style=color:#f92672>&amp;</span> r) {
+        <span style=color:#66d9ef>return</span> sqrt(sqr(x <span style=color:#f92672>-</span> r.x) <span style=color:#f92672>+</span> sqr(y <span style=color:#f92672>-</span> r.y));
+    }
+    <span style=color:#66d9ef>bool</span> <span style=color:#66d9ef>operator</span><span style=color:#f92672>&lt;</span>(<span style=color:#66d9ef>const</span> point<span style=color:#f92672>&amp;</span>r) <span style=color:#66d9ef>const</span> {
+        <span style=color:#66d9ef>return</span> x <span style=color:#f92672>&lt;</span> r.x <span style=color:#f92672>||</span> (x <span style=color:#f92672>==</span> r.x <span style=color:#f92672>&amp;&amp;</span> y <span style=color:#f92672>&lt;</span> r.y);
+    }
+};
+
+point aux[MAXN], P[MAXN], v[MAXN]; <span style=color:#66d9ef>int</span> vn;
+
+<span style=color:#66d9ef>int</span> a, b, n;
+<span style=color:#66d9ef>double</span> ans <span style=color:#f92672>=</span> inf;
+
+<span style=color:#75715e>// ans contains closest distance, a, b - indices of points.
+</span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>closest_pair</span>(point p[], <span style=color:#66d9ef>int</span> n) {
+    <span style=color:#66d9ef>if</span> (n <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>return</span> ;
+    <span style=color:#66d9ef>if</span> (n <span style=color:#f92672>==</span> <span style=color:#ae81ff>2</span>) {
+        <span style=color:#66d9ef>if</span> (p[<span style=color:#ae81ff>0</span>].y <span style=color:#f92672>&gt;</span> p[<span style=color:#ae81ff>1</span>].y)
+            swap(p[<span style=color:#ae81ff>0</span>], p[<span style=color:#ae81ff>1</span>]);
+        <span style=color:#66d9ef>double</span> d <span style=color:#f92672>=</span> p[<span style=color:#ae81ff>0</span>].dist_to(p[<span style=color:#ae81ff>1</span>]);
+        <span style=color:#66d9ef>if</span> (d <span style=color:#f92672>&lt;</span> ans)
+            ans <span style=color:#f92672>=</span> d, a <span style=color:#f92672>=</span> p[<span style=color:#ae81ff>0</span>].ind, b <span style=color:#f92672>=</span> p[<span style=color:#ae81ff>1</span>].ind;
+        <span style=color:#66d9ef>return</span>;
+    }
+    <span style=color:#66d9ef>int</span> m <span style=color:#f92672>=</span> n <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+    <span style=color:#66d9ef>double</span> x <span style=color:#f92672>=</span> p[m].x;
+    closest_pair(p, m); <span style=color:#75715e>// left
+</span><span style=color:#75715e></span>    closest_pair(p <span style=color:#f92672>+</span> m, n <span style=color:#f92672>-</span> m); <span style=color:#75715e>//right
+</span><span style=color:#75715e></span>
+    <span style=color:#66d9ef>int</span> il <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, ir <span style=color:#f92672>=</span> m, i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>while</span> (il <span style=color:#f92672>&lt;</span> m <span style=color:#f92672>&amp;&amp;</span> ir <span style=color:#f92672>&lt;</span> n) { <span style=color:#75715e>// merging two halves
+</span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (p[il].y <span style=color:#f92672>&lt;</span> p[ir].y) aux[i <span style=color:#f92672>++</span>] <span style=color:#f92672>=</span> p[il <span style=color:#f92672>++</span>];
+        <span style=color:#66d9ef>else</span> aux[i <span style=color:#f92672>++</span>] <span style=color:#f92672>=</span> p[ir <span style=color:#f92672>++</span>];
+    }
+    <span style=color:#66d9ef>while</span> (il <span style=color:#f92672>&lt;</span> m)
+        aux[i <span style=color:#f92672>++</span>] <span style=color:#f92672>=</span> p[il <span style=color:#f92672>++</span>];
+    <span style=color:#66d9ef>while</span> (ir <span style=color:#f92672>&lt;</span> n)
+        aux[i <span style=color:#f92672>++</span>] <span style=color:#f92672>=</span> p[ir <span style=color:#f92672>++</span>];
+
+    vn <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> n ; j <span style=color:#f92672>++</span>) { <span style=color:#75715e>// copying back into p
+</span><span style=color:#75715e></span>        p[j] <span style=color:#f92672>=</span> aux[j];
+        <span style=color:#66d9ef>if</span> (fabs(p[j].x <span style=color:#f92672>-</span> x) <span style=color:#f92672>&lt;</span> ans) <span style=color:#75715e>// looking at the strip of width 2*ans
+</span><span style=color:#75715e></span>            v[vn <span style=color:#f92672>++</span>] <span style=color:#f92672>=</span> p[j];
+    }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> vn ; j <span style=color:#f92672>++</span>) { <span style=color:#75715e>// (2*ans) x (ans) box
+</span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> k <span style=color:#f92672>=</span> j <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> ; k <span style=color:#f92672>&lt;</span> vn <span style=color:#f92672>&amp;&amp;</span> v[k].y <span style=color:#f92672>-</span> v[j].y <span style=color:#f92672>&lt;</span> ans ; k <span style=color:#f92672>++</span>) {
+            <span style=color:#66d9ef>double</span> d <span style=color:#f92672>=</span> v[j].dist_to(v[k]);
+            <span style=color:#66d9ef>if</span> (ans <span style=color:#f92672>&gt;</span> d) {
+                ans <span style=color:#f92672>=</span> d;
+                a <span style=color:#f92672>=</span> v[k].ind, b <span style=color:#f92672>=</span> v[j].ind;
+            }
+        }
+    }
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> n ; i<span style=color:#f92672>++</span>) {
+        P[i].read();
+        P[i].ind <span style=color:#f92672>=</span> i;
+    }
+    sort(P, P <span style=color:#f92672>+</span> n);
+    closest_pair(P, n);
+    printf(<span style=color:#e6db74>&#34;%d %d %lf</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, min(a, b), max(a, b), ans);
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=凸包>凸包</h3><p>Graham-Andrew 方法</p><ul><li>时间复杂度：$O(N \log N)$</li></ul><p><a href="https://informatics.msk.ru/mod/statements/view3.php?chapterid=638">https://informatics.msk.ru/mod/statements/view3.php?chapterid=638</a></p><p><a href="https://informatics.msk.ru/mod/statements/view3.php?id=&chapterid=290">https://informatics.msk.ru/mod/statements/view3.php?id=&chapterid=290</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#75715e>#define sqr(x) ((x) * (x))
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>double</span> pi <span style=color:#f92672>=</span> acos(<span style=color:#f92672>-</span><span style=color:#ae81ff>1.0</span>);
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>point</span> {
+    <span style=color:#66d9ef>double</span> x, y;
+};
+
+<span style=color:#66d9ef>int</span> n;
+vector <span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span> p, hull;
+<span style=color:#66d9ef>double</span> ans;
+
+<span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>cmp</span>(point a, point b) {
+    <span style=color:#66d9ef>return</span> (a.x <span style=color:#f92672>&lt;</span> b.x <span style=color:#f92672>||</span> (a.x <span style=color:#f92672>==</span> b.x <span style=color:#f92672>&amp;&amp;</span> a.y <span style=color:#f92672>&lt;</span> b.y));
+}
+
+<span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>eq</span>(point a, point b) {
+    <span style=color:#66d9ef>return</span> (a.x <span style=color:#f92672>==</span> b.x <span style=color:#f92672>&amp;&amp;</span> a.y <span style=color:#f92672>==</span> b.y);
+}
+
+<span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>isCCW</span>(point a, point b, point c) {
+    <span style=color:#66d9ef>return</span> a.x <span style=color:#f92672>*</span> (b.y <span style=color:#f92672>-</span> c.y) <span style=color:#f92672>+</span> b.x <span style=color:#f92672>*</span> (c.y <span style=color:#f92672>-</span> a.y) <span style=color:#f92672>+</span> c.x <span style=color:#f92672>*</span> (a.y <span style=color:#f92672>-</span> b.y) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>;
+}
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setConvexHull</span>(vector <span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span> p, vector <span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span> <span style=color:#f92672>&amp;</span>h) {
+    sort(p.begin(), p.end(), cmp);
+    p.erase(unique(p.begin(), p.end(), eq), p.end());
+
+    vector <span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span> up, down;
+    point head <span style=color:#f92672>=</span> p[<span style=color:#ae81ff>0</span>], tail <span style=color:#f92672>=</span> p.back();
+
+    up.push_back(head); down.push_back(head);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>) p.size(); i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>if</span> (i <span style=color:#f92672>==</span> (<span style=color:#66d9ef>int</span>) p.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>||</span> <span style=color:#f92672>!</span>isCCW(tail, head, p[i])) {
+            <span style=color:#66d9ef>while</span> ( (<span style=color:#66d9ef>int</span>) up.size() <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>&amp;&amp;</span> isCCW(up[up.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>], up.back(), p[i]) )
+                up.pop_back();
+            up.push_back(p[i]);
+        }
+        <span style=color:#66d9ef>if</span> (i <span style=color:#f92672>==</span> (<span style=color:#66d9ef>int</span>) p.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>||</span> isCCW(tail, head, p[i])) {
+            <span style=color:#66d9ef>while</span> ( (<span style=color:#66d9ef>int</span>) down.size() <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>isCCW(down[down.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>], down.back(), p[i]) )
+                down.pop_back();
+            down.push_back(p[i]);
+        }
+    }
+
+    h.clear();
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>) up.size(); i<span style=color:#f92672>++</span>)
+        h.push_back(up[i]);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> (<span style=color:#66d9ef>int</span>) down.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span>; i <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>; i<span style=color:#f92672>--</span>)
+        h.push_back(down[i]);
+
+}
+
+<span style=color:#66d9ef>double</span> <span style=color:#a6e22e>dist</span>(point a, point b) {
+    <span style=color:#66d9ef>return</span> sqrt(sqr(a.x <span style=color:#f92672>-</span> b.x) <span style=color:#f92672>+</span> sqr(a.y <span style=color:#f92672>-</span> b.y));
+}
+
+<span style=color:#66d9ef>double</span> <span style=color:#a6e22e>getPerimeter</span>(vector <span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span> p) {
+    <span style=color:#66d9ef>double</span> per <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>) p.size(); i<span style=color:#f92672>++</span>)
+        per <span style=color:#f92672>+=</span> dist(p[i <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>], p[i]);
+    per <span style=color:#f92672>+=</span> dist(p.back(), p[<span style=color:#ae81ff>0</span>]);
+
+    <span style=color:#66d9ef>return</span> per;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    freopen(<span style=color:#e6db74>&#34;input.txt&#34;</span>,<span style=color:#e6db74>&#34;r&#34;</span>,stdin);
+    freopen(<span style=color:#e6db74>&#34;output.txt&#34;</span>,<span style=color:#e6db74>&#34;w&#34;</span>,stdout);
+
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        point tmp;
+        scanf(<span style=color:#e6db74>&#34;%lf %lf&#34;</span>, <span style=color:#f92672>&amp;</span>tmp.x, <span style=color:#f92672>&amp;</span>tmp.y);
+        p.push_back(tmp);
+    }
+
+    setConvexHull(p, hull);
+    ans <span style=color:#f92672>=</span> getPerimeter(hull);
+
+    printf(<span style=color:#e6db74>&#34;%.1lf&#34;</span>, ans);
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><ul><li>时间复杂度：$O(sort) + O(N)$</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#75715e>#define sqr(x) ((x) * (x))
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>double</span> inf <span style=color:#f92672>=</span> <span style=color:#ae81ff>1e100</span>, eps <span style=color:#f92672>=</span> <span style=color:#ae81ff>1e-12</span>;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>point</span> {
+    <span style=color:#66d9ef>double</span> x, y;
+    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>read</span>() {
+        scanf(<span style=color:#e6db74>&#34;%lf%lf&#34;</span>, <span style=color:#f92672>&amp;</span>x, <span style=color:#f92672>&amp;</span>y);
+    }
+    <span style=color:#66d9ef>double</span> <span style=color:#a6e22e>r</span>() {
+        <span style=color:#66d9ef>return</span> sqrt(x<span style=color:#f92672>*</span>x<span style=color:#f92672>+</span>y<span style=color:#f92672>*</span>y);
+    }
+    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>print</span>() {
+        printf(<span style=color:#e6db74>&#34;%lf %lf</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, x, y);
+    }
+    <span style=color:#66d9ef>bool</span> <span style=color:#66d9ef>operator</span><span style=color:#f92672>&lt;</span>(<span style=color:#66d9ef>const</span> point<span style=color:#f92672>&amp;</span> r) <span style=color:#66d9ef>const</span> {
+        <span style=color:#66d9ef>if</span> (x <span style=color:#f92672>&lt;</span> r.x) <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>;
+        <span style=color:#66d9ef>if</span> (x <span style=color:#f92672>&gt;</span> r.x) <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+        <span style=color:#66d9ef>return</span> y <span style=color:#f92672>&lt;</span> r.y;
+    }
+    point <span style=color:#66d9ef>operator</span><span style=color:#f92672>-</span>(point<span style=color:#f92672>&amp;</span> r) {
+        point res <span style=color:#f92672>=</span> {x <span style=color:#f92672>-</span> r.x, y <span style=color:#f92672>-</span> r.y};
+        <span style=color:#66d9ef>return</span> res;
+    }
+    <span style=color:#66d9ef>double</span> <span style=color:#a6e22e>slope</span>() {
+        <span style=color:#66d9ef>if</span> (x <span style=color:#f92672>==</span> <span style=color:#ae81ff>0.0</span> <span style=color:#f92672>&amp;&amp;</span> y <span style=color:#f92672>==</span> <span style=color:#ae81ff>0.0</span>) <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>inf;
+        <span style=color:#66d9ef>if</span> (x <span style=color:#f92672>==</span> <span style=color:#ae81ff>0.0</span>) <span style=color:#66d9ef>return</span> inf;
+        <span style=color:#66d9ef>return</span> y<span style=color:#f92672>/</span>x;
+    }
+    <span style=color:#66d9ef>double</span> <span style=color:#66d9ef>operator</span><span style=color:#f92672>*</span>(<span style=color:#66d9ef>const</span> point<span style=color:#f92672>&amp;</span> r) {
+        <span style=color:#66d9ef>return</span> x<span style=color:#f92672>*</span>r.y <span style=color:#f92672>-</span> y<span style=color:#f92672>*</span>r.x;
+    }
+    <span style=color:#66d9ef>double</span> <span style=color:#a6e22e>dist_to</span>(point<span style=color:#f92672>&amp;</span> r) {
+        <span style=color:#66d9ef>return</span> sqrt(sqr(x<span style=color:#f92672>-</span>r.x)<span style=color:#f92672>+</span>sqr(y<span style=color:#f92672>-</span>r.y));
+    }
+};
+
+point O; <span style=color:#75715e>// left-most lower point
+</span><span style=color:#75715e></span><span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>BY_SLOPE</span>(point l, point r) {
+    <span style=color:#66d9ef>double</span> ls <span style=color:#f92672>=</span> (l<span style=color:#f92672>-</span>O).slope(),  rs <span style=color:#f92672>=</span> (r<span style=color:#f92672>-</span>O).slope();
+    <span style=color:#66d9ef>if</span> (ls <span style=color:#f92672>&lt;</span> rs) <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#66d9ef>if</span> (ls <span style=color:#f92672>&gt;</span> rs) <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>return</span> l.dist_to(O) <span style=color:#f92672>&lt;</span> r.dist_to(O);
+}
+<span style=color:#75715e>// pre: N &gt;= 0, [p, p + N) - points
+</span><span style=color:#75715e></span>vector<span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span> convex_hull(point <span style=color:#f92672>*</span>p, <span style=color:#66d9ef>int</span> N) {
+    <span style=color:#66d9ef>if</span> (N <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>2</span>) <span style=color:#66d9ef>return</span> vector<span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span>(p, p <span style=color:#f92672>+</span> N);
+    sort(p, p <span style=color:#f92672>+</span> N);
+    O <span style=color:#f92672>=</span> p[<span style=color:#ae81ff>0</span>];
+    sort(p <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, p <span style=color:#f92672>+</span> N, BY_SLOPE);
+    vector<span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span> hull;
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i <span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>if</span> (i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span>) hull.push_back(p[i]);
+        <span style=color:#66d9ef>else</span> {
+            <span style=color:#66d9ef>int</span> sz <span style=color:#f92672>=</span> hull.size();
+            <span style=color:#66d9ef>while</span> (sz <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>&amp;&amp;</span> (p[i] <span style=color:#f92672>-</span> hull[sz<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>])<span style=color:#f92672>*</span>(hull[sz<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>-</span>hull[sz<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]) <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>)
+                hull.pop_back(), sz <span style=color:#f92672>--</span>;
+            hull.push_back(p[i]);
+        }
+    }
+    <span style=color:#66d9ef>return</span> hull;
+}<span style=color:#75715e>// post: convex hull in hull, given in ccw order
+</span><span style=color:#75715e></span>
+
+vector<span style=color:#f92672>&lt;</span>point<span style=color:#f92672>&gt;</span> v;
+<span style=color:#66d9ef>int</span>  n;
+point P[<span style=color:#ae81ff>21100</span>];
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>n);
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> n ; i <span style=color:#f92672>++</span>)
+        P[i].read();
+    v <span style=color:#f92672>=</span> convex_hull(P, n);
+    <span style=color:#66d9ef>double</span> p <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>, s <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>;
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> v.size() ; i <span style=color:#f92672>++</span>) {
+        p <span style=color:#f92672>+=</span> (v[i]<span style=color:#f92672>-</span>v[(i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>%</span>v.size()]).r();
+        s <span style=color:#f92672>+=</span> <span style=color:#ae81ff>.5</span><span style=color:#f92672>*</span>(v[i]<span style=color:#f92672>*</span>v[(i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>%</span>v.size()]);
+    }
+    printf(<span style=color:#e6db74>&#34;%e</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>%e</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, p, s);
+    <span style=color:#75715e>//printf(&#34;%.1lf\n&#34;, p);
+</span><span style=color:#75715e></span>
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h2 id=图>图</h2><h3 id=bellman-ford-算法>Bellman-Ford 算法</h3><ul><li>时间复杂度：$O(N \times M)$</li></ul><p><a href="https://informatics.msk.ru/mod/statements/view3.php?id=260&chapterid=178">https://informatics.msk.ru/mod/statements/view3.php?id=260&chapterid=178</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> INF <span style=color:#f92672>=</span> <span style=color:#ae81ff>30000</span>;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>edge</span> {
+    <span style=color:#66d9ef>int</span> from, to;
+    <span style=color:#66d9ef>int</span> w;
+};
+
+<span style=color:#66d9ef>int</span> n, m;
+<span style=color:#66d9ef>int</span> dist[MAXN];
+vector <span style=color:#f92672>&lt;</span>edge<span style=color:#f92672>&gt;</span> e;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d %d&#34;</span>, <span style=color:#f92672>&amp;</span>n, <span style=color:#f92672>&amp;</span>m);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> m; i<span style=color:#f92672>++</span>) {
+        edge curEdge;
+        scanf(<span style=color:#e6db74>&#34;%d %d %d&#34;</span>, <span style=color:#f92672>&amp;</span>curEdge.from, <span style=color:#f92672>&amp;</span>curEdge.to, <span style=color:#f92672>&amp;</span>curEdge.w);
+        e.push_back(curEdge);
+    }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        dist[i] <span style=color:#f92672>=</span> INF;
+    dist[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>bool</span> changed <span style=color:#f92672>=</span> false;
+        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; j <span style=color:#f92672>&lt;</span> m; j<span style=color:#f92672>++</span>) {
+            <span style=color:#66d9ef>int</span> from <span style=color:#f92672>=</span> e[j].from, to <span style=color:#f92672>=</span> e[j].to, w <span style=color:#f92672>=</span> e[j].w;
+            <span style=color:#66d9ef>if</span> (dist[from] <span style=color:#f92672>!=</span> INF <span style=color:#f92672>&amp;&amp;</span> dist[from] <span style=color:#f92672>+</span> w <span style=color:#f92672>&lt;</span> dist[to]) {
+                dist[to] <span style=color:#f92672>=</span> dist[from] <span style=color:#f92672>+</span> w;
+                changed <span style=color:#f92672>=</span> true;
+            }
+        }
+        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>changed)
+            <span style=color:#66d9ef>break</span>;
+    }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        printf(<span style=color:#e6db74>&#34;%d &#34;</span>, dist[i]);
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=二部图匹配>二部图匹配</h3><p>Kuhn 算法</p><ul><li>时间复杂度：$O(N \times M)$</li></ul><p><a href="https://informatics.msk.ru/mod/statements/view.php?chapterid=1683">https://informatics.msk.ru/mod/statements/view.php?chapterid=1683</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105</span>;
+
+<span style=color:#66d9ef>int</span> n, m;
+vector <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> g[MAXN];
+<span style=color:#66d9ef>bool</span> used[MAXN];
+<span style=color:#66d9ef>int</span> mt[MAXN];
+<span style=color:#66d9ef>int</span> ans;
+
+<span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>kuhn</span>(<span style=color:#66d9ef>int</span> v) {
+    <span style=color:#66d9ef>if</span> (used[v])
+        <span style=color:#66d9ef>return</span> false;
+    used[v] <span style=color:#f92672>=</span> true;
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>) g[v].size(); i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>int</span> to <span style=color:#f92672>=</span> g[v][i];
+        <span style=color:#66d9ef>if</span> (mt[to] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>||</span> kuhn(mt[to])) {
+            mt[to] <span style=color:#f92672>=</span> v;
+            <span style=color:#66d9ef>return</span> true;
+        }
+    }
+    <span style=color:#66d9ef>return</span> false;
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    <span style=color:#75715e>//assert(freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin));
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//assert(freopen(&#34;output.txt&#34;,&#34;w&#34;,stdout));
+</span><span style=color:#75715e></span>
+    scanf(<span style=color:#e6db74>&#34;%d %d&#34;</span>, <span style=color:#f92672>&amp;</span>n, <span style=color:#f92672>&amp;</span>m);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; j <span style=color:#f92672>&lt;=</span> m; j<span style=color:#f92672>++</span>) {
+            <span style=color:#66d9ef>int</span> can;
+            scanf(<span style=color:#e6db74>&#34;%d&#34;</span>, <span style=color:#f92672>&amp;</span>can);
+            <span style=color:#66d9ef>if</span> (can)
+                g[i].push_back(j);
+        }
+    }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>) {
+        memset(used, <span style=color:#ae81ff>0</span>, <span style=color:#66d9ef>sizeof</span>(used));
+        <span style=color:#66d9ef>if</span> (kuhn(i))
+            ans<span style=color:#f92672>++</span>;
+    }
+
+    printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, ans);
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=桥搜索>桥搜索</h3><ul><li>时间复杂度：$O(M)$</li></ul><p><a href=https://codeforces.com/gym/100083>https://codeforces.com/gym/100083</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;fstream&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;set&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;map&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stack&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;queue&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdlib&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstdio&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cassert&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;utility&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std;
+
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAXN <span style=color:#f92672>=</span> <span style=color:#ae81ff>105000</span>;
+
+<span style=color:#66d9ef>int</span> n, m;
+vector <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> g[MAXN];
+vector <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> ind[MAXN];
+<span style=color:#66d9ef>int</span> tin[MAXN], mn[MAXN];
+<span style=color:#66d9ef>bool</span> used[MAXN];
+vector <span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> bridges;
+<span style=color:#66d9ef>int</span> timer;
+
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>dfs</span>(<span style=color:#66d9ef>int</span> v, <span style=color:#66d9ef>int</span> par <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) {
+    used[v] <span style=color:#f92672>=</span> true;
+    timer<span style=color:#f92672>++</span>;
+    tin[v] <span style=color:#f92672>=</span> timer;
+    mn[v] <span style=color:#f92672>=</span> tin[v];
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>) g[v].size(); i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>int</span> to <span style=color:#f92672>=</span> g[v][i];
+        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>used[to]) {
+            dfs(to, v);
+            <span style=color:#66d9ef>if</span> (mn[to] <span style=color:#f92672>==</span> tin[to]) {
+                bridges.push_back(ind[v][i]);
+            }
+            mn[v] <span style=color:#f92672>=</span> min(mn[v], mn[to]);
+        }
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (to <span style=color:#f92672>!=</span> par) {
+            mn[v] <span style=color:#f92672>=</span> min(mn[v], mn[to]);
+        }
+    }
+}
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+    assert(freopen(<span style=color:#e6db74>&#34;bridges.in&#34;</span>,<span style=color:#e6db74>&#34;r&#34;</span>,stdin));
+    assert(freopen(<span style=color:#e6db74>&#34;bridges.out&#34;</span>,<span style=color:#e6db74>&#34;w&#34;</span>,stdout));
+
+    scanf(<span style=color:#e6db74>&#34;%d %d&#34;</span>, <span style=color:#f92672>&amp;</span>n, <span style=color:#f92672>&amp;</span>m);
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> m; i<span style=color:#f92672>++</span>) {
+        <span style=color:#66d9ef>int</span> from, to;
+        scanf(<span style=color:#e6db74>&#34;%d %d&#34;</span>, <span style=color:#f92672>&amp;</span>from, <span style=color:#f92672>&amp;</span>to);
+
+        g[from].push_back(to);
+        ind[from].push_back(i);
+
+        g[to].push_back(from);
+        ind[to].push_back(i);
+    }
+
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;=</span> n; i<span style=color:#f92672>++</span>)
+        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>used[i])
+            dfs(i);
+
+    sort(bridges.begin(), bridges.end());
+
+    printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, (<span style=color:#66d9ef>int</span>) bridges.size());
+    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>) bridges.size(); i<span style=color:#f92672>++</span>)
+        printf(<span style=color:#e6db74>&#34;%d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, bridges[i]);
+
+    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+}
+</code></pre></div><h3 id=heading></h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
+</code></pre></div><h2 id=参考资料>参考资料</h2><ul><li><a href=https://github.com/ADJA/algos target=_blank rel="noopener noreffer">ADJA/algos: Competitive programming algorithms in C++ - GitHub</a></li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-02-24</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/chrome-%E6%88%96-edge-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/ class=prev rel=prev title="Chrome 或 Edge 浏览器扩展"><i class="fas fa-angle-left fa-fw"></i>Chrome 或 Edge 浏览器扩展</a>
+<a href=/posts/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/ class=next rel=next title=科学上网>科学上网<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.81.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Backsided</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>

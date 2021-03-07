@@ -1,0 +1,145 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Hugo 博客搭建 - Backsided's World</title><meta name=Description content="这是Backsided的博客"><meta property="og:title" content="Hugo 博客搭建"><meta property="og:description" content="Windows 10 下用 Hugo 的 LoveIt 主题搭建一个博客，并使用 Github Action 自动发布到 Github Pages。"><meta property="og:type" content="article"><meta property="og:url" content="https://backsided.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-02-04T13:32:15+08:00"><meta property="article:modified_time" content="2021-02-04T13:32:15+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Hugo 博客搭建"><meta name=twitter:description content="Windows 10 下用 Hugo 的 LoveIt 主题搭建一个博客，并使用 Github Action 自动发布到 Github Pages。"><meta name=application-name content="Backsided's World"><meta name=apple-mobile-web-app-title content="Backsided's World"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backsided.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/><link rel=prev href=https://backsided.github.io/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/><link rel=next href=https://backsided.github.io/posts/powershell-%E6%95%99%E7%A8%8B/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hugo 博客搭建","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backsided.github.io\/posts\/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA\/"},"genre":"posts","wordcount":1277,"url":"https:\/\/backsided.github.io\/posts\/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA\/","datePublished":"2021-02-04T13:32:15+08:00","dateModified":"2021-02-04T13:32:15+08:00","publisher":{"@type":"Organization","name":"Backsided"},"author":{"@type":"Person","name":"Backsided"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Backsided's World">Backsided's World</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Backsided's World">Backsided's World</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Hugo 博客搭建</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Backsided</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-02-04>2021-02-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1277 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#一安装>一、安装</a></li><li><a href=#二创建网站>二、创建网站</a></li><li><a href=#三添加内容>三、添加内容</a><ul><li><a href=#文章中添加图片>文章中添加图片</a></li></ul></li><li><a href=#四本地部署>四、本地部署</a></li><li><a href=#五主题自定义>五、主题自定义</a><ul><li><a href=#简单配置>简单配置</a></li><li><a href=#进阶配置>进阶配置</a></li></ul></li><li><a href=#六发布>六、发布</a><ul><li><a href=#静态页面发布>静态页面发布</a></li><li><a href=#github-pages-发布>Github Pages 发布</a></li><li><a href=#netlify-发布>Netlify 发布</a></li></ul></li><li><a href=#参考文章>参考文章</a></li></ul></nav></div></div><div class=content id=content><p>Windows 10 下用 Hugo 的 LoveIt 主题搭建一个博客，并使用 Github Action 自动发布到 Github Pages。</p><h2 id=一安装>一、安装</h2><ol><li>到 <a href=https://github.com/gohugoio/hugo/releases/latest target=_blank rel="noopener noreffer">Hugo官方Github</a> 下载 <code>hugo_extended_0.XX.X_Windows-64bit.zip</code>，解压并添加到系统环境变量，在命令行输入 <code>hugo version</code>，若出现如下内容即为配置成功。</li></ol><pre><code>Hugo Static Site Generator v0.80.0/extended windows/amd64 BuildDate: unknown
+</code></pre><ol start=2><li>到 <a href=https://git-scm.com/downloads target=_blank rel="noopener noreffer">Git官网</a> 下载 <code>64-bit Git for Windows Setup</code>，安装。</li></ol><h2 id=二创建网站>二、创建网站</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo new site quickstart
+cd quickstart
+git init
+git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+</code></pre></div><blockquote><ul><li>未安装 Git 的用户可以直接下载 <a href=https://github.com/dillonzq/LoveIt/archive/master.zip target=_blank rel="noopener noreffer">LoveIt 主题</a>，然后解压到 <code>themes</code> 文件夹下，并重命名为 <code>LoveIt</code>。</li><li>在这里为了使用 Git 对站点进行管理，实现在不同的设备上方便的对站点进行维护，我们使用 Git 的 <code>submodule</code> 功能。</li></ul></blockquote><h2 id=三添加内容>三、添加内容</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo new posts/blog-title.md
+</code></pre></div><p>打开刚创建的文件，显示如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown>---
+title: &#34;Blog Title&#34;
+date: 2021-02-04T16:18:47+08:00
+draft: true
+---
+</code></pre></div><blockquote><p>所有页面均作为草稿创建。文章完成后，如果想要渲染这些页面, 请修改为 <code>draft: false</code>。</p></blockquote><h3 id=文章中添加图片>文章中添加图片</h3><p>Hugo 的配置文件和文章中引用图片都是以 <code>static</code> 文件夹作为根目录的。也就是说文章中插入 <code>/xxx/yyy.jpg</code> 图片，实际图片位置是 <code>./static/xxx/yyy.jpg</code>。</p><h2 id=四本地部署>四、本地部署</h2><p>以渲染草稿的形式本地部署：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo server -D
+</code></pre></div><p>显示如下内容：</p><pre><code>Start building sites …
+WARN 2021/02/04 16:18:50
+
+Current environment is &quot;development&quot;. The &quot;comment system&quot;, &quot;CDN&quot; and &quot;fingerprint&quot; will be disabled.
+当前运行环境是 &quot;development&quot;. &quot;评论系统&quot;, &quot;CDN&quot; 和 &quot;fingerprint&quot; 不会启用.
+
+
+                   | ZH-CN
+-------------------+--------
+  Pages            |    11
+  Paginator pages  |     0
+  Non-page files   |     0
+  Static files     |    83
+  Processed images |     0
+  Aliases          |     2
+  Sitemaps         |     1
+  Cleaned          |     0
+
+Built in 160 ms
+Watching for changes in C:\Users\backs\Downloads\docs\quickstart\{archetypes,content,data,layouts,static,themes}
+Watching for config changes in C:\Users\backs\Downloads\docs\quickstart\config.toml
+Environment: &quot;development&quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre><p>浏览器打开 <a href=http://localhost:1313/>http://localhost:1313/</a> 即可看到部署在本地的网站。</p><blockquote><p>网站部署后，当配置或文件内容发生更改时，页面会自动刷新。</p></blockquote><h2 id=五主题自定义>五、主题自定义</h2><h3 id=简单配置>简单配置</h3><p>编辑 <code>quickstart</code> 根目录下的 <code>config.toml</code> 文件，内容如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml><span style=color:#75715e># 域名</span>
+<span style=color:#a6e22e>baseURL</span> = <span style=color:#e6db74>&#34;http://example.org/&#34;</span>
+
+<span style=color:#75715e># 网站默认语言 [en, zh-cn, ...]</span>
+<span style=color:#a6e22e>defaultContentLanguage</span> = <span style=color:#e6db74>&#34;zh-cn&#34;</span>
+
+<span style=color:#75715e># 网站语言</span>
+<span style=color:#a6e22e>languageCode</span> = <span style=color:#e6db74>&#34;zh-CN&#34;</span>
+
+<span style=color:#75715e># 是否包括中日韩文字</span>
+<span style=color:#a6e22e>hasCJKLanguage</span> = <span style=color:#66d9ef>true</span>
+
+<span style=color:#75715e># 标题</span>
+<span style=color:#a6e22e>title</span> = <span style=color:#e6db74>&#34;Backsided&#39;s World&#34;</span>
+
+<span style=color:#75715e># 主题</span>
+<span style=color:#a6e22e>theme</span> = <span style=color:#e6db74>&#34;LoveIt&#34;</span>
+
+[<span style=color:#a6e22e>params</span>]
+  <span style=color:#75715e># LoveIt 主题版本</span>
+  <span style=color:#a6e22e>version</span> = <span style=color:#e6db74>&#34;0.2.X&#34;</span>
+
+  <span style=color:#75715e># 网站描述</span>
+  <span style=color:#a6e22e>description</span> = <span style=color:#e6db74>&#34;这是Backsided的博客&#34;</span>
+
+<span style=color:#75715e># 作者配置</span>
+[<span style=color:#a6e22e>author</span>]
+  <span style=color:#a6e22e>name</span> = <span style=color:#e6db74>&#34;Backsided&#34;</span>
+  <span style=color:#a6e22e>email</span> = <span style=color:#e6db74>&#34;&#34;</span>
+  <span style=color:#a6e22e>link</span> = <span style=color:#e6db74>&#34;&#34;</span>
+
+[<span style=color:#a6e22e>menu</span>]
+  [[<span style=color:#a6e22e>menu</span>.<span style=color:#a6e22e>main</span>]]
+    <span style=color:#a6e22e>identifier</span> = <span style=color:#e6db74>&#34;posts&#34;</span>
+
+    <span style=color:#75715e># 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标</span>
+    <span style=color:#a6e22e>pre</span> = <span style=color:#e6db74>&#34;&#34;</span>
+
+    <span style=color:#75715e># 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标</span>
+    <span style=color:#a6e22e>post</span> = <span style=color:#e6db74>&#34;&#34;</span>
+
+    <span style=color:#a6e22e>name</span> = <span style=color:#e6db74>&#34;文章&#34;</span>
+    <span style=color:#a6e22e>url</span> = <span style=color:#e6db74>&#34;/posts/&#34;</span>
+
+    <span style=color:#75715e># 当你将鼠标悬停在此菜单链接上时, 将显示的标题</span>
+    <span style=color:#a6e22e>title</span> = <span style=color:#e6db74>&#34;&#34;</span>
+    <span style=color:#a6e22e>weight</span> = <span style=color:#ae81ff>1</span>
+
+  [[<span style=color:#a6e22e>menu</span>.<span style=color:#a6e22e>main</span>]]
+    <span style=color:#a6e22e>identifier</span> = <span style=color:#e6db74>&#34;tags&#34;</span>
+    <span style=color:#a6e22e>pre</span> = <span style=color:#e6db74>&#34;&#34;</span>
+    <span style=color:#a6e22e>post</span> = <span style=color:#e6db74>&#34;&#34;</span>
+    <span style=color:#a6e22e>name</span> = <span style=color:#e6db74>&#34;标签&#34;</span>
+    <span style=color:#a6e22e>url</span> = <span style=color:#e6db74>&#34;/tags/&#34;</span>
+    <span style=color:#a6e22e>title</span> = <span style=color:#e6db74>&#34;&#34;</span>
+    <span style=color:#a6e22e>weight</span> = <span style=color:#ae81ff>2</span>
+
+  [[<span style=color:#a6e22e>menu</span>.<span style=color:#a6e22e>main</span>]]
+    <span style=color:#a6e22e>identifier</span> = <span style=color:#e6db74>&#34;categories&#34;</span>
+    <span style=color:#a6e22e>pre</span> = <span style=color:#e6db74>&#34;&#34;</span>
+    <span style=color:#a6e22e>post</span> = <span style=color:#e6db74>&#34;&#34;</span>
+    <span style=color:#a6e22e>name</span> = <span style=color:#e6db74>&#34;分类&#34;</span>
+    <span style=color:#a6e22e>url</span> = <span style=color:#e6db74>&#34;/categories/&#34;</span>
+    <span style=color:#a6e22e>title</span> = <span style=color:#e6db74>&#34;&#34;</span>
+    <span style=color:#a6e22e>weight</span> = <span style=color:#ae81ff>3</span>
+</code></pre></div><h3 id=进阶配置>进阶配置</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>
+</code></pre></div><h2 id=六发布>六、发布</h2><h3 id=静态页面发布>静态页面发布</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo
+</code></pre></div><p>渲染后的静态页面在 <code>public</code> 文件夹中，可将该文件夹中的内容发布。</p><h3 id=github-pages-发布>Github Pages 发布</h3><p>在 Github 新建两个仓库，<code>&lt;USERNAME>.github.io.sources</code> 存放内容，<code>&lt;USERNAME>.github.io</code> 部署页面。其中，存放内容的仓库可以设为私人，也可随意命名。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git remote add origin https://github.com/backsided/backsided.github.io.data.git
+git add --all
+git commit -m <span style=color:#e6db74>&#34;init blog&#34;</span>
+git push --set-upstream origin master -f
+</code></pre></div><p>进入 Github 仓库，点击<code>Actions</code>-><code>New workflow</code>-><code>set up a workflow yourself</code>。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Hugo Deploy</span>
+
+<span style=color:#f92672>on</span>:
+  <span style=color:#f92672>push</span>:
+    <span style=color:#f92672>branches</span>: [ <span style=color:#ae81ff>master ]</span>
+
+<span style=color:#f92672>jobs</span>:
+  <span style=color:#f92672>build</span>:
+    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+
+    <span style=color:#f92672>steps</span>:
+      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v2</span>
+        <span style=color:#f92672>with</span>:
+          <span style=color:#f92672>submodules</span>: <span style=color:#66d9ef>true</span>
+          <span style=color:#f92672>fetch-depth</span>: <span style=color:#ae81ff>1</span>
+
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Setup Hugo</span>
+        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-hugo@v2</span>
+        <span style=color:#f92672>with</span>:
+          <span style=color:#f92672>hugo-version</span>: <span style=color:#e6db74>&#39;latest&#39;</span>
+
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build Hugo</span>
+        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>hugo</span>
+
+      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy Hugo</span>
+        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-gh-pages@v3</span>
+        <span style=color:#f92672>with</span>:
+          <span style=color:#f92672>personal_token</span>: <span style=color:#ae81ff>${{ secrets.ACCESS_TOKEN }}</span>
+          <span style=color:#f92672>external_repository</span>: <span style=color:#ae81ff>backsided/backsided.github.io</span>
+          <span style=color:#f92672>publish_branch</span>: <span style=color:#ae81ff>master</span>
+          <span style=color:#f92672>publish_dir</span>: <span style=color:#ae81ff>./public</span>
+</code></pre></div><h3 id=netlify-发布>Netlify 发布</h3><h2 id=参考文章>参考文章</h2><ol><li><a href=https://gohugo.io/getting-started/quick-start/ target=_blank rel="noopener noreffer">Quick Start - Hugo</a></li><li><a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/ target=_blank rel="noopener noreffer">Host on GitHub - Hugo</a></li><li><a href=https://themes.gohugo.io/ target=_blank rel="noopener noreffer">Hugo Themes - Hugo</a></li><li><a href=https://github.com/dillonzq/LoveIt/ target=_blank rel="noopener noreffer">LoveIt Theme | Hugo - Github</a></li><li><a href=https://hugoloveit.com/zh-cn/theme-documentation-basics/ target=_blank rel="noopener noreffer">主题文档 - 基本概念 - LoveIt</a></li><li><a href=https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/ target=_blank rel="noopener noreffer">How to Create Your First Hugo Blog: a Practical Guide - freeCodeCamp</a></li><li><a href=https://docs.github.com/cn/github/working-with-github-pages/creating-a-github-pages-site/ target=_blank rel="noopener noreffer">创建 GitHub Pages 站点 - Github</a></li><li><a href=https://zhangfelix.medium.com/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-cbd1d57fcfbf target=_blank rel="noopener noreffer">使用Hugo和GitHub搭建博客 - Félix | Medium</a></li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-02-04</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/ class=prev rel=prev title="Markdown 基本语法"><i class="fas fa-angle-left fa-fw"></i>Markdown 基本语法</a>
+<a href=/posts/powershell-%E6%95%99%E7%A8%8B/ class=next rel=next title="PowerShell 教程">PowerShell 教程<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.81.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Backsided</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
