@@ -160,6 +160,8 @@ theme = "LoveIt"
     noClasses = false
 ```
 
+### 高级配置（可选）
+
 ### [params]
 
 ```toml
@@ -863,37 +865,37 @@ git push --set-upstream origin master -f
 进入 Github 仓库，点击`Actions`->`New workflow`->`set up a workflow yourself`。
 
 ```yml
-name: Hugo Deploy
+name: Hugo Deploy  # 名称随意修改
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master ]  # 修改为你当前分支
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 指定系统版本
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2  # 克隆仓库
         with:
-          submodules: true
+          submodules: true  # 启用子模块
           fetch-depth: 1
 
-      - name: Setup Hugo
+      - name: Setup Hugo  # 安装 hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: 'latest'  # 指定 hugo 版本
 
-      - name: Build Hugo
+      - name: Build Hugo  # hugo 生成网站
         run: hugo
 
-      - name: Deploy Hugo
+      - name: Deploy Hugo  # 部署网站
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.ACCESS_TOKEN }}
-          external_repository: backsided/backsided.github.io
-          publish_branch: master
-          publish_dir: ./public
+          personal_token: ${{ secrets.ACCESS_TOKEN }}  # 与 secrets 里的 token 名称对应
+          external_repository: backsided/backsided.github.io  # 指定发布的仓库
+          publish_branch: master  # 指定发布仓库的分支
+          publish_dir: ./public  # 指定要发布的目录
 ```
 
 ## 参考资料
