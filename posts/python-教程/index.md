@@ -128,6 +128,12 @@ os.path.split(path)
 os.path.splitext(path)
 ```
 
+### 文件操作
+
+```python
+open()
+```
+
 ## tricks
 
 ### python 自动给数字前面补 0 的方法
@@ -142,4 +148,16 @@ s2.zfill(4)  # "-0012"
 a = 12
 '%04d' % a   # "0012"
 ```
+
+## Q&A
+
+### UnicodeDecodeError
+
+问题描述:
+
+`UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 7: illegal multibyte sequence`
+
+解决方案:
+
+将`open(filename, 'r')`改为`open(filename, 'r', encoding='utf-8')`
 
