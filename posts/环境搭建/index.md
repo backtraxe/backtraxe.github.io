@@ -1,0 +1,111 @@
+# 环境搭建
+
+
+<!--more-->
+
+## Windows 添加环境变量
+
+1. 打开`我的电脑`，右键点击左侧的`此电脑`，点击`属性`。
+
+<img src="/Windows添加环境变量/Windows添加环境变量01.png" alt="Windows添加环境变量01">
+
+2. 点击最下方的`高级系统设置`，然后点击`环境变量`。
+
+<img src="/Windows添加环境变量/Windows添加环境变量02.png" alt="Windows添加环境变量02">
+
+3. 修改系统变量：下方选择需要修改的变量，点击`编辑`，然后`新建`或者`编辑`变量。
+
+<img src="/Windows添加环境变量/Windows添加环境变量03.png" alt="Windows添加环境变量03">
+
+<img src="/Windows添加环境变量/Windows添加环境变量04.png" alt="Windows添加环境变量04">
+
+4. 新建系统变量：直接点击`新建`，输入`变量名`和`变量值`，然后`确定`。
+
+<img src="/Windows添加环境变量/Windows添加环境变量05.png" alt="Windows添加环境变量05">
+
+<img src="/Windows添加环境变量/Windows添加环境变量06.png" alt="Windows添加环境变量06">
+
+## VS Code
+
+### C++
+
+1. 编译器（二选一）
+    - 安装 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/)
+    - 安装 [MinGW-w64](http://mingw-w64.org/doku.php/download)，[SourceForge](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/)
+2. VS Code
+    - ms-cpp-tools
+
+**关闭 Windows Defender “首次看到时阻止”：**
+
+问题描述：
+
+编译运行程序的时候总是弹出一个 Microsoft Defender 防病毒程序窗口，提示“需要扫描当前程序”。
+
+解决方法：
+
+1. 按`Win+R`，输入`gpedit.msc`，打开本地组策略编辑器。
+2. 左侧选择`计算机配置`->`管理模板`->`Windows 组件`-`Microsoft Defender 防病毒`->`MAPS`。
+3. 右侧双击`配置“首次看到时阻止”功能`，选择`已禁用`，然后点击`确定`，保存退出。
+
+## Anaconda
+
+```bash
+# 更新 Anaconda，C:\ProgramData\Anaconda3 为安装目录
+conda update --prefix C:\ProgramData\Anaconda3 anaconda
+
+# 创建环境
+conda create -n ENVNAME python=3.X
+
+# 启用环境
+conda activate ENVNAME
+
+# 退出环境
+conda deactivate
+
+# 删除环境
+conda remove -n ENVNAME --all -y
+
+# 查看环境列表
+conda info -e
+# 或者
+conda env list
+
+
+```
+
+## PyTorch
+
+https://pytorch.org/get-started/locally/
+
+```bash
+
+```
+
+```python
+import torch
+torch.__version__
+torch.cuda.is_available()
+```
+
+## TensorFlow
+
+https://tensorflow.google.cn/install
+
+```bash
+pip install tensorflow
+```
+
+## CUDA
+
+> 以笔记本 RTX2060 显卡为例
+
+1. [NVIDIA 驱动程序下载](https://www.nvidia.cn/Download/index.aspx?lang=cn)，选择对应版本，下载安装。
+
+<img src="/NVIDIA驱动程序下载.png" alt="NVIDIA 驱动程序下载">
+
+2. [CUDA 工具包下载](https://developer.nvidia.com/cuda-toolkit-archive)，下载最新版安装。
+
+<img src="/CUDA工具包下载.png" alt="CUDA 工具包下载">
+
+3. [CUDNN]()
+

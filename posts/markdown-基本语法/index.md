@@ -55,9 +55,12 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 
 ```markdown
 ![Backsided's World](https://backsided.github.io/apple-touch-icon.png "Backsided's World")
+<img src="https://backsided.github.io/apple-touch-icon.png" alt="Backsided's World" width="30%" height="30%">
 ```
 
 ![Backsided's World](https://backsided.github.io/apple-touch-icon.png "Backsided's World")
+
+<img src="https://backsided.github.io/apple-touch-icon.png" alt="Backsided's World" width="30%" height="30%">
 
 ## 六、超链接
 
