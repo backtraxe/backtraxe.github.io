@@ -5,6 +5,15 @@
 
 ## Windows 添加环境变量
 
+### CMD 操作
+
+```bash
+# SET PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;%PATH%
+SET PATH=your_folder_path;%PATH%
+```
+
+### 窗口操作
+
 1. 打开`我的电脑`，右键点击左侧的`此电脑`，点击`属性`。
 
 <img src="/Windows添加环境变量/Windows添加环境变量01.png" alt="Windows添加环境变量01">
@@ -34,6 +43,13 @@
     - 安装 [MinGW-w64](http://mingw-w64.org/doku.php/download)，[SourceForge](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/)
 2. VS Code
     - ms-cpp-tools
+
+```bash
+# Linux
+gcc -v -E -x c++ -
+```
+
+[参考](https://code.visualstudio.com/docs/cpp/config-msvc)
 
 **关闭 Windows Defender “首次看到时阻止”：**
 
@@ -70,32 +86,65 @@ conda info -e
 # 或者
 conda env list
 
-
+# 设置 proxy_server
+conda config --set proxy_servers.http http://127.0.0.1:10809
+conda config --set proxy_servers.https http://127.0.0.1:10809
 ```
 
 ## PyTorch
 
 https://pytorch.org/get-started/locally/
 
-```bash
+**CPU：**
 
+```bash
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
 ```
+
+```bash
+pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio===0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+**GPU：**
+
+```bash
+conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge
+```
+
+```bash
+pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio===0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+检查是否安装成功：
 
 ```python
 import torch
-torch.__version__
-torch.cuda.is_available()
+# 检查 pytorch 是否安装成功
+print(torch.__version__)
+# 检查 CUDA 是否可用
+print(torch.cuda.is_available())
 ```
 
 ## TensorFlow
 
 https://tensorflow.google.cn/install
 
+安装时下载：
+
 ```bash
-pip install tensorflow
+pip install tensorflow  # for CPU and GPU
 ```
 
-## CUDA
+下载后安装：
+
+```bash
+# https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow_cpu-2.4.0-cp38-cp38-win_amd64.whl
+pip install tensorflow_cpu-2.4.1-cp38-cp38-win_amd64.whl  # CPU
+# https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-2.4.0-cp38-cp38-win_amd64.whl
+pip install tensorflow_gpu-2.4.0-cp38-cp38-win_amd64.whl  # GPU
+```
+
+## CUDA & cuDNN
 
 > 以笔记本 RTX2060 显卡为例
 
@@ -107,5 +156,15 @@ pip install tensorflow
 
 <img src="/CUDA工具包下载.png" alt="CUDA 工具包下载">
 
-3. [CUDNN]()
+在`CMD`输入`nvcc -V`，出现如下输出表示安装成功。
+
+```bash
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2020 NVIDIA Corporation
+Built on Tue_Sep_15_19:12:04_Pacific_Daylight_Time_2020
+Cuda compilation tools, release 11.1, V11.1.74
+Build cuda_11.1.relgpu_drvr455TC455_06.29069683_0
+```
+
+3. [cuDNN 下载](https://developer.nvidia.com/rdp/cudnn-download)，需要登陆账号，登陆后下载解压将`bin`、`include`和`lib`三个文件夹的内容复制到 CUDA 安装目录下。
 
