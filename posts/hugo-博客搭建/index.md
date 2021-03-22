@@ -898,7 +898,121 @@ jobs:
           publish_dir: ./public  # 指定要发布的目录
 ```
 
-## 参考资料
+## 全局详细配置
+
+```toml
+# 域名
+baseURL = ""
+
+# 构建时包含草稿
+buildDrafts = false
+
+# 内容文件夹
+contentDir = "content"
+
+# 数据文件夹
+dataDir = "data"
+
+# 内容默认语言（中文：zh-cn）
+defaultContentLanguage = "en"
+
+# 根目录跳转到默认语言目录
+defaultContentLanguageInSubdir = false
+
+# 禁用指定类型页面：page, home, section, taxonomy, term, RSS, sitemap, robotsTXT, 404
+disableKinds = []
+
+# 禁用实时重载
+disableLiveReload = false
+
+# 禁用将 url/path 转小写字母
+disablePathToLower = false
+
+# 启用 Emoji
+enableEmoji = false
+
+# 使用文件的最后 git 提交日期更新 Lastmod 参数
+enableGitInfo = false
+
+# 启用 inline shortcode
+enableInlineShortcodes = false
+
+# 是否生成 robots.txt 文件
+enableRobotsTXT = false
+
+# 日期设置
+[frontmatter]
+
+# 脚注锚的前缀
+footnoteAnchorPrefix = ""
+
+# 脚注返回链接显示的文本
+footnoteReturnLinkContents = ""
+
+# Google Analytics 跟踪 ID
+googleAnalytics = ""
+
+# 自动检测内容中的中文/日文/韩文
+hasCJKLanguage = false
+
+# 图片设置
+[imaging]
+
+# 语言设置
+[languages]
+
+# 启用日志
+log = false
+
+# 日志保存目录
+logFile = ""
+
+# 主题设置
+[markup]
+
+# 目录设置
+[menu]
+
+# 最小化构建设置
+[minify]
+
+# 模块设置
+[module]
+
+# 每页的默认文章数量
+paginate = 10
+
+# 固定链接
+[permalinks]
+
+# 生成静态网页的目录
+publishDir = "public"
+
+# 相关设置
+[related]
+
+# 网站地图设置
+[sitemap]
+
+# 静态文件目录设置
+staticDir = "static"
+
+# 分类设置
+[taxonomies]
+
+# 主题
+theme = ""
+
+# 主题目录
+themesDir = "themes"
+
+# 标题
+title = ""
+```
+
+参考：[Configure Hugo](https://gohugo.io/getting-started/configuration/)
+
+## 参考
 
 1. [Quick Start - Hugo](https://gohugo.io/getting-started/quick-start/)
 1. [Host on GitHub - Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-github/)

@@ -673,7 +673,7 @@ make_tuple(2, string("two"));
 
 ```
 
-## 参考资料
+## 参考
 
 1. [Standard C++ Library Reference - cplusplus.com](https://www.cplusplus.com/reference/)
 
