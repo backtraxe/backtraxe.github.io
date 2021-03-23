@@ -12,7 +12,7 @@
 SET PATH=your_folder_path;%PATH%
 ```
 
-### 窗口操作
+### 窗口化操作
 
 1. 打开`我的电脑`，右键点击左侧的`此电脑`，点击`属性`。
 
@@ -70,7 +70,7 @@ gcc -v -E -x c++ -
 conda update --prefix C:\ProgramData\Anaconda3 anaconda
 
 # 创建环境
-conda create -n ENVNAME python=3.X
+conda create -n ENVNAME python=3.X -y
 
 # 启用环境
 conda activate ENVNAME
@@ -93,27 +93,27 @@ conda config --set proxy_servers.https http://127.0.0.1:10809
 
 ## PyTorch
 
-https://pytorch.org/get-started/locally/
+[PyTorch 官网](https://pytorch.org/get-started/locally/)
 
 **CPU：**
 
-```bash
-conda install pytorch torchvision torchaudio cpuonly -c pytorch
-```
+Anaconda:
 
-```bash
-pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio===0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
-```
+`conda install pytorch torchvision torchaudio cpuonly -c pytorch`
 
-**GPU：**
+Pip:
 
-```bash
-conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge
-```
+`pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio===0.8.0 -f https://download.pytorch.org/whl/torch_stable.html`
 
-```bash
-pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio===0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
-```
+**GPU (CUDA 11.0)：**
+
+Anaconda:
+
+`conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch`
+
+Pip:
+
+`pip install torch==1.8.0+cu110 torchvision==0.9.0+cu110 torchaudio===0.8.0 -f https://download.pytorch.org/whl/torch_stable.html`
 
 检查是否安装成功：
 
@@ -127,15 +127,13 @@ print(torch.cuda.is_available())
 
 ## TensorFlow
 
-https://tensorflow.google.cn/install
+[TensorFlow 官网](https://tensorflow.google.cn/install)
 
-安装时下载：
+Pip:
 
-```bash
-pip install tensorflow  # for CPU and GPU
-```
+CPU and GPU: `pip install tensorflow`
 
-下载后安装：
+Wheel:
 
 ```bash
 # https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow_cpu-2.4.0-cp38-cp38-win_amd64.whl
@@ -144,15 +142,39 @@ pip install tensorflow_cpu-2.4.1-cp38-cp38-win_amd64.whl  # CPU
 pip install tensorflow_gpu-2.4.0-cp38-cp38-win_amd64.whl  # GPU
 ```
 
+检查是否安装成功：
+
+```python
+import tensorflow as tf
+# 检查 tensorflow 是否安装成功
+print(tf.__version__)
+# 检查 CUDA 是否可用
+# 输出最后一行显示 [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+print(tf.config.experimental.list_physical_devices('GPU'))
+```
+
+### Q&A
+
+**问题描述：**
+
+安装 CUDA 11.1 + cuDNN 8.1，tensorflow 2.4.1 检查 GPU 时报错：
+
+`Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found`
+
+**解决方案：**
+
+卸载重新安装 CUDA 11.0 + cuDNN 8.0，参考 [Windows 经过测试的构建配置](https://www.tensorflow.org/install/source_windows#gpu)。
+
 ## CUDA & cuDNN
 
-> 以笔记本 RTX2060 显卡为例
+> - CUDA 和 cuDNN 版本：[Windows 经过测试的构建配置](https://www.tensorflow.org/install/source_windows#gpu)
+> - 以笔记本 RTX2060 显卡为例
 
 1. [NVIDIA 驱动程序下载](https://www.nvidia.cn/Download/index.aspx?lang=cn)，选择对应版本，下载安装。
 
 <img src="/NVIDIA驱动程序下载.png" alt="NVIDIA 驱动程序下载">
 
-2. [CUDA 工具包下载](https://developer.nvidia.com/cuda-toolkit-archive)，下载最新版安装。
+2. [CUDA 工具包下载](https://developer.nvidia.com/cuda-toolkit-archive)，下载对应版本安装。
 
 <img src="/CUDA工具包下载.png" alt="CUDA 工具包下载">
 
@@ -166,5 +188,5 @@ Cuda compilation tools, release 11.1, V11.1.74
 Build cuda_11.1.relgpu_drvr455TC455_06.29069683_0
 ```
 
-3. [cuDNN 下载](https://developer.nvidia.com/rdp/cudnn-download)，需要登陆账号，登陆后下载解压将`bin`、`include`和`lib`三个文件夹的内容复制到 CUDA 安装目录下。
+3. [cuDNN 下载](https://developer.nvidia.com/rdp/cudnn-download)，需要登陆账号，登陆后下载对应版本，解压将`bin`、`include`和`lib`三个文件夹的内容复制到 CUDA 安装目录下。
 
