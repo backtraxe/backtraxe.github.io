@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/home/runner/work/backsided.github.io.data/backsided.github.io.data",
+	"sourceRoot": "/home/runner/work/backtraxe.github.io.data/backtraxe.github.io.data",
 	"sources": [
 		"themes/LoveIt/assets/css/style.scss",
 		"themes/LoveIt/assets/css/_variables.scss",
