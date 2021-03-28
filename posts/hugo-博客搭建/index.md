@@ -893,7 +893,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}  # 与 secrets 里的 token 名称对应
-          external_repository: backsided/backsided.github.io  # 指定发布的仓库
+          external_repository: backtraxe/backtraxe.github.io  # 指定发布的仓库
           publish_branch: master  # 指定发布仓库的分支
           publish_dir: ./public  # 指定要发布的目录
 ```

@@ -1,9 +1,15 @@
 # Markdown 基本语法
 
 
-Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。
+Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例。
 
 <!--more-->
+
+{{< admonition >}}
+这篇文章借鉴了一篇很棒的[来自 Grav 的文章](http://learn.getgrav.org/content/markdown).
+
+如果你想了解 **Loveit** 主题的扩展 Markdown 语法, 请阅读[扩展 Markdown 语法页面](../theme-documentation-content#extended-markdown-syntax).
+{{< /admonition >}}
 
 ## 一、标题
 

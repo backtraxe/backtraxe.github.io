@@ -136,7 +136,26 @@ LaTeX 常用数学符号、公式。
 
 ## 矩阵
 
-## 参考资料
+## 一行多个公式
+
+$$
+\begin{align}
+x&=t & x&=\cos t & x&=t \notag \\
+y&=2t & y&=\sin(t+1) & y&=\sin t
+\end{align}
+$$
+
+## 大括号多行公式
+
+$$
+f(x)=\begin{cases}
+2x+1, & \text{if} & x \lt 0; \\
+0, & \text{if} & x = 0; \\
+x^2-1, & \text{if} & x \gt 0.
+\end{cases}
+$$
+
+## 参考
 
 1. [Supported Functions - KaTeX](https://katex.org/docs/supported.html)
 

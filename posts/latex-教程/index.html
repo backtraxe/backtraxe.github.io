@@ -1,0 +1,338 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>LaTeX 教程 - traXe</title><meta name=Description content="这是Backsided的博客"><meta property="og:title" content="LaTeX 教程"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://backtraxe.github.io/posts/latex-%E6%95%99%E7%A8%8B/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-03-28T00:00:00+00:00"><meta property="article:modified_time" content="2021-03-28T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="LaTeX 教程"><meta name=twitter:description content><meta name=application-name content="traXe"><meta name=apple-mobile-web-app-title content="traXe"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/latex-%E6%95%99%E7%A8%8B/><link rel=prev href=https://backtraxe.github.io/posts/markdown-for-ppt/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LaTeX 教程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/latex-%E6%95%99%E7%A8%8B\/"},"genre":"posts","keywords":"LaTeX","wordcount":913,"url":"https:\/\/backtraxe.github.io\/posts\/latex-%E6%95%99%E7%A8%8B\/","datePublished":"2021-03-28T00:00:00+00:00","dateModified":"2021-03-28T00:00:00+00:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=traXe>traXe</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=traXe>traXe</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">LaTeX 教程</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Backtraxe</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/latex/><i class="far fa-folder fa-fw"></i>LaTeX</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-28>2021-03-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 913 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#preamble>Preamble</a></li><li><a href=#title>Title</a></li><li><a href=#abstract-paragraphs-and-newlines>Abstract, paragraphs and newlines</a></li><li><a href=#comments>Comments</a></li><li><a href=#chinese-for-overleaf>Chinese for Overleaf</a><ul><li><a href=#ctex>ctex</a></li><li><a href=#xecjk-with-xelatex>xeCJK with XeLaTeX</a></li><li><a href=#cjkutf8-with-pdflatex>CJKutf8 with pdfLaTeX</a></li></ul></li><li><a href=#algorithms>Algorithms</a><ul><li><a href=#algorithm2e>Algorithm2e</a></li><li><a href=#algorithmic>Algorithmic</a></li><li><a href=#listings>Listings</a></li></ul></li></ul></nav></div></div><div class=content id=content><p>源文件：<code>.tex</code></p><p>生成文件：<code>.pdf</code></p><h2 id=preamble>Preamble</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=c>% preamble start
+</span><span class=c></span><span class=k>\documentclass</span><span class=na>[12pt, letterpaper]</span><span class=nb>{</span>article<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=na>[utf8]</span><span class=nb>{</span>inputenc<span class=nb>}</span>
+
+<span class=k>\title</span><span class=nb>{</span>LaTeX Tutorials<span class=nb>}</span>
+<span class=k>\author</span><span class=nb>{</span>Backsided <span class=k>\thanks</span><span class=nb>{</span>funded by the Overleaf team<span class=nb>}}</span>
+<span class=k>\date</span><span class=nb>{</span>December 2020<span class=nb>}</span>
+<span class=c>% preamble end
+</span><span class=c></span>
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+Hello World LaTeX!
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=na>[12pt, letterpaper]</span><span class=nb>{</span>article<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>define the type of document (<code>article</code>).<ul><li><code>article</code> for short documents and journal articles, most commonly used.</li><li><code>report</code> for longer documents and dissertations.</li><li><code>book</code> for write books.</li><li><code>letter</code> for letters.</li><li><code>slides</code> for slides, rarely used.</li><li><code>beamer</code> for slides in the Beamer class format.</li></ul></li><li>set the font size (<code>12pt</code>), the default size is <code>10pt</code>.</li><li>set the paper size (<code>letterpaper</code>), others like: <code>A4</code>(default), <code>legalpaper</code>.</li><li><code>twocolumn</code> for two-column format.</li><li><code>twoside</code> for two-side paper sheet printing.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\usepackage</span><span class=na>[utf8]</span><span class=nb>{</span>inputenc<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>the encoding for the document.</li><li><code>utf8</code> is recommended.</li></ul><h2 id=title>Title</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=na>[12pt, letterpaper, twoside]</span><span class=nb>{</span>article<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=na>[utf8]</span><span class=nb>{</span>inputenc<span class=nb>}</span>
+
+<span class=k>\title</span><span class=nb>{</span>LaTeX Tutorials<span class=nb>}</span>
+<span class=k>\author</span><span class=nb>{</span>Backsided <span class=k>\thanks</span><span class=nb>{</span>funded by the Overleaf team<span class=nb>}}</span>
+<span class=k>\date</span><span class=nb>{</span>December 2020<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>titlepage<span class=nb>}</span>
+<span class=k>\maketitle</span>
+<span class=k>\end</span><span class=nb>{</span>titlepage<span class=nb>}</span>
+
+Hello World LaTeX!
+
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\title</span><span class=nb>{</span>LaTeX Tutorials<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>title</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\author</span><span class=nb>{</span>Backsided <span class=k>\thanks</span><span class=nb>{</span>funded by the Overleaf team<span class=nb>}}</span>
+</code></pre></td></tr></table></div></div><ul><li>author</li><li>(optional) <code>\thanks{}</code> for a superscript and a footnote.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\date</span><span class=nb>{</span>December 2020<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>date</li><li><code>\today</code> for updated automatically each time compiled.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\begin</span><span class=nb>{</span>titlepage<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>titlepage<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>individual first page</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\maketitle</span>
+</code></pre></td></tr></table></div></div><ul><li>print the title, the author and the date</li></ul><h2 id=abstract-paragraphs-and-newlines>Abstract, paragraphs and newlines</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\begin</span><span class=nb>{</span>abstract<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>abstract<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>abstract</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+paragraph 1
+
+paragraph <span class=k>\\</span> 2
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>a blank line for new paragraph</li><li>paragraphs indent before the first line</li><li><code>\\</code> or <code>\newline</code> for a new line</li></ul><h2 id=comments>Comments</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+Hello World LaTeX!  <span class=c>% This is a single line comment.
+</span><span class=c></span><span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\usepackage</span><span class=nb>{</span>comment<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>comment<span class=nb>}</span>
+This is a multi-line comment.
+<span class=k>\end</span><span class=nb>{</span>comment<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><h2 id=chinese-for-overleaf>Chinese for Overleaf</h2><p><a href=https://cn.overleaf.com/learn/how-to/Changing_compiler>https://cn.overleaf.com/learn/how-to/Changing_compiler</a></p><p><code>Menu->Compiler->XeLaTeX</code></p><h3 id=ctex>ctex</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>ctexart<span class=nb>}</span>  <span class=c>% 中文article
+</span><span class=c></span>
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+
+<span class=k>\tableofcontents</span>  <span class=c>% 目录
+</span><span class=c></span>
+<span class=k>\begin</span><span class=nb>{</span>abstract<span class=nb>}</span>  <span class=c>% 摘要
+</span><span class=c></span>这是简介及摘要。
+<span class=k>\end</span><span class=nb>{</span>abstract<span class=nb>}</span>
+
+<span class=k>\section</span><span class=nb>{</span>前言<span class=nb>}</span>  <span class=c>% 第一章
+</span><span class=c></span>
+<span class=k>\section</span><span class=nb>{</span>关于数学部分<span class=nb>}</span>  <span class=c>% 第二章
+</span><span class=c></span>
+数学、中英文皆可以混排。You can intersperse math, Chinese and English (Latin script) without adding extra environments.
+
+這是繁體中文。
+
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>ctexart<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>文章类型：<code>ctexart</code>、<code>ctexrep</code>、<code>ctexbook</code>、<code>ctexbeamer</code></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\setCJKmainfont</span><span class=nb>{}</span>  <span class=c>% 全局字体
+</span><span class=c></span><span class=k>\setCJKsansfont</span><span class=nb>{}</span>  <span class=c>% 英文字体
+</span><span class=c></span><span class=k>\setCJKmonofont</span><span class=nb>{}</span>  <span class=c>% 等宽字体
+</span></code></pre></td></tr></table></div></div><ul><li><a href=https://cn.overleaf.com/learn/latex/Questions/Which%20OTF%20or%20TTF%20fonts%20are%20supported%20via%20fontspec%3F#Chinese target=_blank rel="noopener noreffer">Chinese fonts available on Overleaf</a></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>UniThesis<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=nb>{</span>ctex<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>different document class still like to use the <code>ctex</code> bundle</li></ul><h3 id=xecjk-with-xelatex>xeCJK with XeLaTeX</h3><p>you just want to typeset some Chinese characters</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>article<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=nb>{</span>xeCJK<span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+
+<span class=k>\section</span><span class=nb>{</span>前言<span class=nb>}</span>
+
+<span class=k>\section</span><span class=nb>{</span>关于数学部分<span class=nb>}</span>
+数学、中英文皆可以混排。You can intersperse math, Chinese and English (Latin script) without adding extra environments.
+
+這是繁體中文。
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>The <code>xeCJK</code> package only works when compiled with XeLaTeX.</li></ul><h3 id=cjkutf8-with-pdflatex>CJKutf8 with pdfLaTeX</h3><p>only convenient for documents in English with bits of Chinese text or vice-versa</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>article<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=nb>{</span>CJKutf8<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>CJK*<span class=nb>}{</span>UTF8<span class=nb>}{</span>gbsn<span class=nb>}</span>
+
+<span class=k>\section</span><span class=nb>{</span>前言<span class=nb>}</span>
+
+<span class=k>\section</span><span class=nb>{</span>关于数学部分<span class=nb>}</span>
+数学、中英文皆可以混排。You can intersperse math, Chinese and English (Latin script) without adding extra environments.
+
+<span class=k>\end</span><span class=nb>{</span>CJK*<span class=nb>}</span>
+
+<span class=k>\bigskip</span>  <span class=c>%% Just some white space
+</span><span class=c></span>
+You can also insert Latin text in your document
+
+<span class=k>\bigskip</span>  <span class=c>%% Just some white space
+</span><span class=c></span>
+<span class=k>\begin</span><span class=nb>{</span>CJK*<span class=nb>}{</span>UTF8<span class=nb>}{</span>bsmi<span class=nb>}</span>
+這是繁體中文。
+<span class=k>\end</span><span class=nb>{</span>CJK*<span class=nb>}</span>
+
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\usepackage</span><span class=nb>{</span>CJKutf8<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>enables utf8 encoding for Chinese, Japanese and Korean fonts.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\begin</span><span class=nb>{</span>CJK*<span class=nb>}{</span>UTF8<span class=nb>}{</span>gbsn<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>CJK*<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li><code>gbsn</code> or <code>gkai</code> fonts for simplified characters.</li><li><code>bsmi</code> or <code>bkai</code> fonts for traditional characters.</li><li><a href=https://www.overleaf.com/project/5fdc5824f829edba17051664 target=_blank rel="noopener noreffer">Using the CTeX Package on Overleaf (在Overleaf平台上使用CTeX)</a></li></ul><h2 id=algorithms>Algorithms</h2><h3 id=algorithm2e>Algorithm2e</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>article<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=na>[ruled,vlined]</span><span class=nb>{</span>algorithm2e<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>algorithm<span class=nb>}</span>[H]
+<span class=k>\SetAlgoLined</span>
+<span class=k>\KwResult</span><span class=nb>{</span>Write here the result <span class=nb>}</span>
+ initialization<span class=k>\;</span>
+ <span class=k>\While</span><span class=nb>{</span>While condition<span class=nb>}{</span>
+  instructions<span class=k>\;</span>
+  <span class=k>\eIf</span><span class=nb>{</span>condition<span class=nb>}{</span>
+   instructions1<span class=k>\;</span>
+   instructions2<span class=k>\;</span>
+   <span class=nb>}{</span>
+   instructions3<span class=k>\;</span>
+  <span class=nb>}</span>
+ <span class=nb>}</span>
+ <span class=k>\caption</span><span class=nb>{</span>How to write algorithms<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>algorithm<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><h3 id=algorithmic>Algorithmic</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>article<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=nb>{</span>algorithmic<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>algorithmic<span class=nb>}</span>
+<span class=k>\STATE</span> <span class=s>$</span><span class=nb>i</span><span class=nv>\gets</span><span class=nb> </span><span class=m>10</span><span class=s>$</span>
+<span class=k>\IF</span> <span class=nb>{</span><span class=s>$</span><span class=nb>i</span><span class=nv>\geq</span><span class=nb> </span><span class=m>5</span><span class=s>$</span><span class=nb>}</span>
+        <span class=k>\STATE</span> <span class=s>$</span><span class=nb>i</span><span class=nv>\gets</span><span class=nb> i</span><span class=o>-</span><span class=m>1</span><span class=s>$</span>
+<span class=k>\ELSE</span>
+        <span class=k>\IF</span> <span class=nb>{</span><span class=s>$</span><span class=nb>i</span><span class=nv>\leq</span><span class=nb> </span><span class=m>3</span><span class=s>$</span><span class=nb>}</span>
+                <span class=k>\STATE</span> <span class=s>$</span><span class=nb>i</span><span class=nv>\gets</span><span class=nb> i</span><span class=o>+</span><span class=m>2</span><span class=s>$</span>
+        <span class=k>\ENDIF</span>
+<span class=k>\ENDIF</span>
+<span class=k>\end</span><span class=nb>{</span>algorithmic<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><h3 id=listings>Listings</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>article<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=nb>{</span>listings<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+
+<span class=k>\lstset</span><span class=nb>{</span>numbers=left, numberstyle=<span class=k>\tiny</span>, stepnumber=1, numbersep=5pt<span class=nb>}</span>
+
+<span class=k>\lstinputlisting</span><span class=na>[language=c]</span><span class=nb>{</span>c.c<span class=nb>}</span>
+
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\lstinputlisting</span><span class=na>[language=c]</span><span class=nb>{</span>c.c<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\lstset</span><span class=nb>{</span>language=Pascal<span class=nb>}</span>
+</code></pre></td></tr></table></div></div><ul><li>tiny line numbers on the left, each second line, with 5pt distance to the listing:</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-latex data-lang=latex><span class=k>\lstset</span><span class=nb>{</span>numbers=left, numberstyle=<span class=k>\tiny</span>, stepnumber=1, numbersep=5pt<span class=nb>}</span>
+</code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-03-28</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/latex/>LaTeX</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/markdown-for-ppt/ class=prev rel=prev title="Markdown for PPT"><i class="fas fa-angle-left fa-fw"></i>Markdown for PPT</a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Backtraxe</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>

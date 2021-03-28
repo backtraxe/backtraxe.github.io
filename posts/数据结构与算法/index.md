@@ -228,6 +228,120 @@ void quickSort(vector<int> arr, int low, int high) {
 | 计数排序 | $O\(n\)$ | 稳定 |
 | 基数排序 | $O\(n\)$ | 稳定 |
 
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+<table>
+    <tr>
+    	<th rowspan='2'>名称</th>
+    	<th rowspan='2'>数据对象</th>
+    	<th rowspan='2'>稳定性</th>
+    	<th colspan='2'>时间复杂度</th>
+    	<th rowspan='2'>额外空间复杂度</th>
+    	<th rowspan='2'>描述</th>
+    </tr>
+    <tr>
+    	<th>平均</th>
+    	<th>最坏</th>
+    </tr>
+    <tr>
+    	<td>冒泡排序</td>
+    	<td>数组</td>
+    	<td>是</td>
+    	<td colspan='2'>O(n^2)</td>
+    	<td>O(1)</td>
+    	<td>(无序区，有序区)<br/>从无序区通过交换找出最大元素放到有序区前端。</td>
+    </tr>
+    <tr>
+    	<td rowspan='2'>选择排序</td>
+    	<td>数组</td>
+    	<td>否</td>
+    	<td rowspan='2' colspan='2'>O(n^2)</td>
+    	<td rowspan='2'>O(1)</td>
+    	<td rowspan='2'>(有序区，无序区)<br/>在无序区里找一个最小的元素放到有序区后端。<br/>对数组：比较多，交换少</td>
+    </tr>
+    <tr>
+    	<td>链表</td>
+    	<td>是</td>
+    </tr>
+    <tr>
+    	<td>插入排序</td>
+    	<td>数组、链表</td>
+        <td>是</td>
+    	<td colspan='2'>O(n^2)</td>
+    	<td>O(1)</td>
+    	<td>(有序区，无序区)<br/>把无序区的第一个元素插入到有序区的合适位置。<br/>对数组：比较少，交换多</td>
+    </tr>
+    <tr>
+    	<td>堆排序</td>
+    	<td>数组</td>
+        <td>否</td>
+    	<td colspan='2'>O(nlogn)</td>
+    	<td>O(1)</td>
+    	<td>(最大堆，有序区)<br/>从堆顶把最大值弹出到有序区前端，然后调整堆。</td>
+    </tr>
+    <tr>
+    	<td rowspan='3'>归并排序</td>
+    	<td rowspan='2'>数组</td>
+        <td rowspan='3'>是</td>
+        <td colspan='2'>O(nloglogn)</td>
+        <td>O(1)</td>
+        <td rowspan='3'>将数据分为两段，再从两段中逐个选最小的元素移入新数据段的末尾。<br/>可自上而下，也可自下而上</td>
+    </tr>
+    <tr>
+        <td rowspan='2' colspan='2'>O(nlogn)</td>
+    	<td>自上而下：O(n)+O(logn)</td>
+    </tr>
+    <tr>
+        <td>链表</td>
+    	<td>自下而上：O(1)</td>
+    </tr>
+    <tr>
+    	<td>快速排序</td>
+    	<td>数组</td>
+        <td>否</td>
+    	<td>O(nlogn)</td>
+        <td>O(n^2)</td>
+    	<td>O(logn)</td>
+    	<td>(小数区，基准元素，大数区)<br/>在区间中随机挑选一个元素作为基准元素，将小于该基准的元素放到基准之前，大于的放到基准之后，然后递归地对小数区和大数区进行快速排序。</td>
+    </tr>
+    <tr>
+    	<td>希尔排序</td>
+    	<td>数组</td>
+        <td>否</td>
+    	<td>O(nloglogn)</td>
+    	<td>O(n^2)</td>
+        <td>O(1)</td>
+    	<td>按从大到小的间距进行多次插入排序，最后一次的间距为1。</td>
+    </tr>
+    <tr>
+    	<td>计数排序</td>
+    	<td>数组、链表</td>
+        <td>是</td>
+    	<td colspan='2'>O(n+m)</td>
+    	<td>O(n+m)</td>
+    	<td>统计小于等于该元素值的元素的个数i，然后将该元素放在目标数组的第i个位置。</td>
+    </tr>
+    <tr>
+    	<td>桶排序</td>
+    	<td>数组、链表</td>
+        <td>是</td>
+    	<td colspan='2'>O(n)</td>
+    	<td>O(m)</td>
+    	<td>将值为i的元素放入第i号桶，然后依次把桶里的元素倒出来。</td>
+    </tr>
+    <tr>
+    	<td>基数排序</td>
+    	<td>数组、链表</td>
+        <td>是</td>
+    	<td>O(k*n)</td>
+    	<td>O(n^2)</td>
+        <td></td>
+    	<td>一种多关键字的排序算法，可用桶排序实现。</td>
+    </tr>
+</table>
+
+[当我谈排序时，我在谈些什么🤔](https://leetcode-cn.com/problems/sort-an-array/solution/dang-wo-tan-pai-xu-shi-wo-zai-tan-xie-shi-yao-by-s/)
+
 ## 回溯算法
 
 ### N 皇后问题
