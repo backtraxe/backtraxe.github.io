@@ -1,14 +1,15 @@
 # C++ STL 教程
 
 
-标准模板库（Standard Template Library，STL）是一套功能强大的 C++ 模板类，提供了通用的模板类和函数，这些模板类和函数可以实现多种流行和常用的算法和数据结构，如向量、链表、队列、栈等。
+标准模板库（Standard Template Library，STL）是一组 C++ 模板类，提供常见的数据结构和函数，如列表、堆栈、数组等。它是由容器类、算法和迭代器构成的一个通用库，它的组件是参数化的。
 
 <!--more-->
 
-C++ 标准模板库的核心包括以下三个组件：
+STL 包含以下四个组件：
 
+1. 算法（Algorithms）：头文件`<algorithm>`定义了一组函数，作用于容器，并为容器中的内容提供各种操作方法。
 1. 容器（Containers）：用来管理某一类对象的集合。C++ 提供了各种不同类型的容器，如 deque、list、vector、map、set、bitset 等。
-1. 算法（Algorithms）：对容器执行各种操作，包括初始化、排序、搜索和翻转等。
+1. 函数（Functions）：
 1. 迭代器（Iterators）：遍历容器。
 
 ## `<vector>`
