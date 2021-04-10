@@ -60,21 +60,39 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 ## 五、图片
 
 ```markdown
-![Backsided's World](https://backsided.github.io/apple-touch-icon.png "Backsided's World")
-<img src="https://backsided.github.io/apple-touch-icon.png" alt="Backsided's World" width="30%" height="30%">
+![Backsided's World](https://backtraxe.github.io/apple-touch-icon.png "Backtraxe's World")
+<img src="https://backtraxe.github.io/apple-touch-icon.png" alt="Backtraxe's World" width="30%" height="30%">
 ```
 
-![Backsided's World](https://backsided.github.io/apple-touch-icon.png "Backsided's World")
+![Backsided's World](https://backtraxe.github.io/apple-touch-icon.png "Backtraxe's World")
 
-<img src="https://backsided.github.io/apple-touch-icon.png" alt="Backsided's World" width="30%" height="30%">
+<img src="https://backtraxe.github.io/apple-touch-icon.png" alt="Backtraxe's World" width="30%" height="30%">
 
 ## 六、超链接
 
 ```markdown
-[Backsided's World](https://backsided.github.io/)
+[Backsided's World](https://backtraxe.github.io/)
+<https://backtraxe.github.io/>
+这个链接用 1 作为网址变量 [Google][1]
+这个链接用 runoob 作为网址变量 [Runoob][runoob]
+然后在文档的结尾为变量赋值（网址）
+[1]: http://www.google.com/
+[runoob]: http://www.runoob.com/
 ```
 
-[Backsided's World](https://backsided.github.io/)
+[Backsided's World](https://backtraxe.github.io/)
+
+<https://backtraxe.github.io/>
+
+这个链接用 1 作为网址变量 [traXe][1]
+
+这个链接用 runoob 作为网址变量 [traXe][traxe]
+
+然后在文档的结尾为变量赋值（网址）
+
+[1]: https://backtraxe.github.io/
+
+[traxe]: https://backtraxe.github.io/
 
 ## 七、列表
 
