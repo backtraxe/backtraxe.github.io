@@ -5,13 +5,6 @@
 
 ## Windows 添加环境变量
 
-### CMD 操作
-
-```bash
-# SET PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;%PATH%
-SET PATH=your_folder_path;%PATH%
-```
-
 ### 窗口化操作
 
 1. 打开`我的电脑`，右键点击左侧的`此电脑`，点击`属性`。
@@ -33,6 +26,16 @@ SET PATH=your_folder_path;%PATH%
 <img src="/Windows添加环境变量/Windows添加环境变量05.png" alt="Windows添加环境变量05">
 
 <img src="/Windows添加环境变量/Windows添加环境变量06.png" alt="Windows添加环境变量06">
+
+### 误删系统环境变量的补救措施
+
+1. **若未关闭当前CMD**。输入`echo %PATH%`会显示原来的 PATH 值。
+
+1. **若已关闭当前CMD**。每个正在运行的 Windows 程序都会有自己已加载的 PATH，可以使用[Process Explorer](https://docs.microsoft.com/zh-cn/sysinternals/downloads/process-explorer)来查看当前正在运行的程序的环境变量。例如：如果你之前打开了 Chrome，且一直未关闭，按`Ctrl+O`打开`C:\Windows\System32\cmd.exe`，然后输入`echo %PATH%`会显示原来的 PATH 值。恢复之后删除`C:\Program Files\Google\Chrome\Application`和用户变量中的PATH值即可。
+
+1. **若已重启电脑**。手动恢复 PATH 到默认值`%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0`，其他值已丢失。
+
+参考：[如何恢复我删除的Path环境变量？](https://qastack.cn/superuser/523688/deleted-path-environment-variable-how-to-restore)
 
 ## VS Code
 
@@ -189,4 +192,18 @@ Build cuda_11.1.relgpu_drvr455TC455_06.29069683_0
 ```
 
 3. [cuDNN 下载](https://developer.nvidia.com/rdp/cudnn-download)，需要登陆账号，登陆后下载对应版本，解压将`bin`、`include`和`lib`三个文件夹的内容复制到 CUDA 安装目录下。
+
+## FFmpeg
+
+1. 进入[官网](https://ffmpeg.org/download.html)，点击`Windows builds from gyan.dev`。
+
+<img src="/ffmpeg下载/ffmpeg下载1.png" alt="ffmpeg下载1">
+
+2. 点击下图链接下载，然后解压，并把`bin`目录添加环境变量。
+
+<img src="/ffmpeg下载/ffmpeg下载2.png" alt="ffmpeg下载2">
+
+3. 重新打开 CMD，输入`ffmpeg -version`验证安装。
+
+<img src="/ffmpeg下载/ffmpeg下载3.png" alt="ffmpeg下载3">
 
