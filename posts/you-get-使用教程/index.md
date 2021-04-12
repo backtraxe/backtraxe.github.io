@@ -7,31 +7,36 @@ You-Get 是一个轻量级命令行工具，可以方便的从一些网站上下
 
 ## 安装
 
-```bash
-pip install you-get
-# pip install -i https://pypi.tuna.tsinghua.edu.cn/simple you-get
-```
+`pip install you-get`
 
 ## 教程
 
-### 参数
+### 查看所有可选质量与格式
 
-- `-i/--info`：查看所有可用质量与格式
-- `-o`：自定义文件名
+命令：`you-get -i/--info [URL]`
 
-### 查看 cookie
+示例：`you-get -i https://www.bilibili.com/video/BV1es41197aW`
 
-
-
-### 导入 cookies
+### 自定义下载文件路径和名称
 
 命令：
 
-`you-get --cookies/-c cookies.txt/cookies.sqlite url`
+- `you-get -o/--output-dir [PATH] [URL]`
+- `you-get -O/--output-filename [FILENAME] [URL]`
+
+示例：`you-get -o "钢笔换本子" -O "钢笔换本子" https://www.bilibili.com/video/BV1es41197aW`
+
+### 设置代理
+
+命令：`you-get -x/--http-proxy [PROXY_IP:PORT] [URL]`
+
+示例：`you-get -x 127.0.0.1:10809 https://www.youtube.com/watch?v=mixodgV2ERg`
+
+### 导入 cookies
+
+命令：`you-get --cookies/-c [cookies.txt/cookies.sqlite] [URL]`
 
 示例：
-
-``
 
 ## 支持网站
 

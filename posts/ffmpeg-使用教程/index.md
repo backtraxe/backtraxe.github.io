@@ -55,3 +55,17 @@ ffmpeg -i video.mp4 -i audio.aac -c:v copy -c:a copy -strict experimental output
 ffmpeg -i video.mp4 -i audio.aac -c:v copy -c:a copy -strict experimental -map 0:v:0 -map 1:a:0 output.mp4
 ```
 
+## 视频截图
+
+在第 4.5s 截取一帧图片
+
+```bash
+ffmpeg -i input.mp4 -ss 4.5 -vframes 1 output.png
+```
+
+在第 4.5s 截取 10 帧图片
+
+```bash
+ffmpeg -i input.mp4 -ss 4.5 -vframes 10 output%d.png
+```
+
