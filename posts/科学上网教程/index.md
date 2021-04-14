@@ -5,6 +5,16 @@
 
 <!--more-->
 
+## 常用网站
+
+- 免费域名：[freenom](https://www.freenom.com/zh/index.html)
+- DNS & CDN：[Cloudflare](https://www.cloudflare.com/zh-cn/)
+
+VPS：
+
+- [Banwagon Host](https://bwh88.net)
+- [UUUVPS](https://uuuvps.com/)
+
 ## 脚本
 
 ### 七合一共存脚本
