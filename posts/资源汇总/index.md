@@ -30,3 +30,16 @@
 
 - [Deep Learning](https://www.deeplearningbook.org/)
 
+
+## 论文
+
+- ImageNet Classification with Deep Convolutional Neural Networks
+    - [原文](https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) [翻译](http://noahsnail.com/2017/07/04/2017-07-04-AlexNet%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/)
+    - AlexNet
+
+
+## 其他
+
+- <https://github.com/SnailTyan/deep-learning-papers-translation>
+- <https://github.com/huaxz1986/network_resource_url/blob/master/resourse.md>
+
