@@ -1,4 +1,4 @@
-# 资源汇总
+# 资源汇总[置顶]
 
 
 汇集网上的各种学习资料。
@@ -19,7 +19,7 @@
 
 中文
 
-- [labuladong 的算法小抄](https://github.com/labuladong/fucking-algorithm)：[github.io](https://labuladong.github.io/algo) [gitbook.io](https://labuladong.gitbook.io/algo) [gitee.io](https://labuladong.gitee.io/algo)
+- [labuladong 的算法小抄](https://github.com/labuladong/fucking-algorithm)：在线阅读：[GitHub Pages](https://labuladong.github.io/algo)，[Gitbook](https://labuladong.gitbook.io/algo)，[Gitee Pages](https://labuladong.gitee.io/algo)
 - [算法珠玑](https://github.com/soulmachine/algorithm-essentials)：[在线](https://algorithm-essentials.soulmachine.me/)
 
 ## 机器学习
