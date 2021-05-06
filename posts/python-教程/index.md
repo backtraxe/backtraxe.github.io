@@ -241,3 +241,170 @@ a = 12
 
 将`open(filename, 'r')`改为`open(filename, 'r', encoding='utf-8')`
 
+## Python 风格规范
+
+- 不要在行尾加分号，也不要用分号将两条命令放在同一行。
+- 每行不超过80个字符。（导入和注释例外）
+- 不要使用反斜杠连接行。（Python 会将括号中的行隐式连接起来）
+
+```python
+foo_bar(self, width, height, color='black', design=None, x='foo',
+        emphasis=None, highlight=0)
+if (width == 0 and height == 0 and
+    color == 'red' and emphasis == 'strong'):
+```
+
+- 文本字符串在一行放不下，可以使用括号来实现隐式行连接。
+
+```python
+s = ('This will build a very long long '
+     'long long long long long long string')
+```
+
+- 除非是用于实现行连接，否则不要在返回语句或条件语句中使用括号。
+- 用4个空格来缩进代码
+
+```python
+# Aligned with opening delimiter
+foo = long_function_name(var_one, var_two,
+                         var_three, var_four)
+
+# Aligned with opening delimiter in a dictionary
+foo = {
+    long_dictionary_key: value1 +
+                         value2,
+    ...
+}
+
+# 4-space hanging indent; nothing on first line
+foo = long_function_name(
+    var_one, var_two, var_three,
+    var_four)
+
+# 4-space hanging indent in a dictionary
+foo = {
+    long_dictionary_key:
+        long_dictionary_value,
+    ...
+}
+```
+
+- 顶级定义之间空两行（全局类、全局函数、全局变量），方法定义之间空一行（类内函数之间、类与第一个函数之间）。
+- 括号内表达式两端不要有空格。
+- 在逗号、分号、冒号后面加空格，前面不加。（行尾除外）
+- 参数列表、索引或切片的左括号前不加空格。
+- 二元操作符两边都加上一个空格。
+- '='用于指示参数值或默认值时，不在其两侧使用空格。
+- 不要用空格来垂直对齐多行间的标记。（如'#'、'='、':'等）
+- 类注释和函数注释规范
+
+```python
+class SampleClass(object):
+    """Summary of class here.
+
+    Longer class information....
+    Longer class information....
+
+    Attributes:
+        likes_spam: A boolean indicating if we like SPAM or not.
+        eggs: An integer count of the eggs we have laid.
+    """
+
+    def __init__(self, likes_spam=False):
+        """Inits SampleClass with blah."""
+        self.likes_spam = likes_spam
+        self.eggs = 0
+
+    def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
+        """Fetches rows from a Bigtable.
+
+        Retrieves rows pertaining to the given keys from the Table instance
+        represented by big_table.  Silly things may happen if
+        other_silly_variable is not None.
+
+        Args:
+            big_table: An open Bigtable Table instance.
+            keys: A sequence of strings representing the key of each table row
+                to fetch.
+            other_silly_variable: Another optional variable, that has a much
+                longer name than the other args, and which does nothing.
+
+        Returns:
+            A dict mapping keys to the corresponding table row data
+            fetched. Each row is represented as a tuple of strings. For
+            example:
+
+            {'Serak': ('Rigel VII', 'Preparer'),
+            'Zim': ('Irk', 'Invader'),
+            'Lrrr': ('Omicron Persei 8', 'Emperor')}
+
+            If a key from the keys argument is missing from the dictionary,
+            then that row was not found in the table.
+
+        Raises:
+            IOError: An error occurred accessing the bigtable.Table object.
+        """
+        pass
+```
+
+- 行注释应距离代码2个空格。
+- 为临时代码使用 TODO 注释。
+
+```python
+# TODO(kl@gmail.com): Use a "*" here for string repetition.
+# TODO(Zeke) Change this to use relations.
+```
+
+- 如果一个类不继承其它类，就显式继承 object。
+- 字符串合并规范
+
+```python
+x = a + b  # not %
+x = '%s, %s!' % (imperative, expletive)
+x = '{}, {}!'.format(imperative, expletive)  # not +
+x = 'name: %s; score: %d' % (name, n)  # not +
+x = 'name: {}; score: {}'.format(name, n)  # not +
+```
+
+- 避免在循环中用+和+=操作符来累加字符串。可以将每个子串加入列表，然后在循环结束后用 ''.join() 连接列表。
+- 在文件和 sockets 结束时，显式的关闭它。
+- 推荐使用 with 打开文件。
+
+```python
+with open("hello.txt") as hello_file:
+    for line in hello_file:
+        print line
+```
+
+- 不支持使用 with 语句的类似文件的对象，使用 contextlib.closing()。
+
+```python
+import contextlib
+
+with contextlib.closing(urllib.urlopen("http://www.python.org/")) as front_page:
+    for line in front_page:
+        print line
+```
+
+- 每个导入应该独占一行。
+- 导入总应该放在文件顶部，位于模块注释和文档字符串之后，模块全局变量和常量之前。
+- 导入应该按照标准库、第三方库、应用程序指定导入的顺序分组。每种分组中, 应该根据每个模块的完整包路径按字典序排序, 忽略大小写。
+- 通常每个语句应该独占一行。（if 语句只有在没有 else 时才能同处一行）
+- 命名规范：module_name, package_name, ClassName, method_name, ExceptionName, function_name, GLOBAL_VAR_NAME, instance_var_name, function_parameter_name, local_var_name。
+- 命名约定：
+    - 单下划线开头的变量或函数表示 protected（使用 from module import * 时不会包含）。
+    - 双下划线开头的变量或函数表示 private。
+    - 将相关的类和全局函数放在同一个模块里。
+- 主功能应该放在一个 main() 函数中。
+
+```python
+def main():
+    pass
+
+if __name__ == '__main__':
+    main()
+```
+
+**参考：**
+- [Google Python 风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/contents/)
+

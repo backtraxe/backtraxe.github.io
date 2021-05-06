@@ -1,6 +1,8 @@
 # 环境搭建
 
 
+常用软件或程序语言环境搭建。
+
 <!--more-->
 
 ## Windows 添加环境变量
@@ -66,11 +68,25 @@ gcc -v -E -x c++ -
 2. 左侧选择`计算机配置`->`管理模板`->`Windows 组件`-`Microsoft Defender 防病毒`->`MAPS`。
 3. 右侧双击`配置“首次看到时阻止”功能`，选择`已禁用`，然后点击`确定`，保存退出。
 
-## Anaconda
+## Python
+
+1. [Python 官网](https://www.python.org/downloads/)，建议安装`3.8`版本。
+1. [Anaconda 官网](https://www.anaconda.com/products/individual#Downloads)。
+
+### pip 设置代理
+
+- Windows：`%APPDATA%\pip\pip.ini`
+
+```ini
+[global]
+proxy = http://user:password@proxy_name:port
+```
+
+### Anaconda
 
 ```bash
-# 更新 Anaconda，C:\ProgramData\Anaconda3 为安装目录
-conda update --prefix C:\ProgramData\Anaconda3 anaconda
+# 更新
+conda update
 
 # 创建环境
 conda create -n ENVNAME python=3.X -y
@@ -106,7 +122,7 @@ Anaconda:
 
 Pip:
 
-`pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio===0.8.0 -f https://download.pytorch.org/whl/torch_stable.html`
+`pip install torch==1.8.1+cpu torchvision==0.9.1+cpu torchaudio===0.8.1 -f https://download.pytorch.org/whl/torch_stable.html`
 
 **GPU (CUDA 11.0)：**
 
@@ -116,7 +132,7 @@ Anaconda:
 
 Pip:
 
-`pip install torch==1.8.0+cu110 torchvision==0.9.0+cu110 torchaudio===0.8.0 -f https://download.pytorch.org/whl/torch_stable.html`
+`pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html`
 
 检查是否安装成功：
 
