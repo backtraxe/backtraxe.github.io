@@ -60,3 +60,9 @@ Android 提供了 ViewGroup 和 View 类的 XML 词汇表，因此界面的大�
 1. 打开`app > res > values > strings.xml`。这是一个字符串资源文件，您可在此文件中指定所有界面字符串。您可以利用该文件在一个位置管理所有界面字符串，使字符串的查找、更新和本地化变得更加容易。
 1. 点击窗口顶部的 Open editor。此时将打开 Translations Editor，它提供了一个可以添加和修改默认字符串的简单界面。它还有助于让所有已翻译的字符串井然有序。
 1.
+
+
+- [Material Design](https://material.io/)
+- [Training Courses | Android Developers](https://developer.android.com/courses?hl=zh-cn)
+- []()
+

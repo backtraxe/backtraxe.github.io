@@ -27,10 +27,16 @@
 
 ## 在线观看
 
-- **电影|剧集**：[低端影视](https://ddrk.me)|[奈菲影视](https://www.nfmovies.com)|[看片狂人](https://www.kpkuang.com)|[NO视频](https://www.novipnoad.com)
-- **动漫**：[AGE动漫](https://www.agefans.net)|[ZzzFun](http://www.zzzfun.com)|[樱花动漫](http://www.yhdm.so)|[EDD动漫](http://www.edddh.com)
-- **漫画**：[漫画DB](https://www.manhuadb.com)|[动漫之家](https://www.dmzj.com)
-- **体育**：[CCTV-5 直播](https://tv.cctv.com/live/cctv5/?spm=C28340.PVHhfLOBmR4I.ExidtyEJcS5K.16)|[JRKAN直播](http://jrkan.com)
+| 网站 | 支持类型 |
+|---|---|
+| [低端影视](https://ddrk.me) | 电影、剧集、动漫 |
+| [低端影视](https://ddrk.me) | 电影、剧集、动漫 |
+| [低端影视](https://ddrk.me) | 电影、剧集、动漫 |
+
+- **电影|剧集**：、[奈菲影视](https://www.nfmovies.com)、[看片狂人](https://www.kpkuang.com)、[NO视频](https://www.novipnoad.com)
+- **动漫**：[AGE动漫](https://www.agefans.net)、[ZzzFun](http://www.zzzfun.com)、[樱花动漫](http://www.yhdm.so)、[EDD动漫](http://www.edddh.com)、[漫岛动漫](https://www.mandao.tv)
+- **漫画**：[漫画DB](https://www.manhuadb.com)、[动漫之家](https://www.dmzj.com)
+- **体育**：[CCTV-5 直播](https://tv.cctv.com/live/cctv5/?spm=C28340.PVHhfLOBmR4I.ExidtyEJcS5K.16)、[JRKAN直播](http://jrkan.com)
 
 ## 资源下载
 
