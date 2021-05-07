@@ -1,5 +1,7 @@
-# 力扣每日一题 115 不同的子序列
+# 力扣每日一题 0115 不同的子序列
 
+
+[题目链接](https://leetcode-cn.com/problems/distinct-subsequences/)
 
 <!--more-->
 

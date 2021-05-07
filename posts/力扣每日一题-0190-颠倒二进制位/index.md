@@ -1,4 +1,4 @@
-# 力扣每日一题 190 颠倒二进制位
+# 力扣每日一题 0190 颠倒二进制位
 
 
 [题目链接](https://leetcode-cn.com/problems/reverse-bits/)
