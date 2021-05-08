@@ -5,6 +5,7 @@
 
 ## 在线工具
 
+- [小米风格Logo生成器](https://mi-logo.lvwzhen.com)
 - [Overleaf](https://cn.overleaf.com)：在线LaTeX编辑器
 - [KaTeX](https://katex.org/docs/supported.html)
 - [Linux 命令搜索引擎](https://wangchujiang.com/linux-command/hot.html)
@@ -47,6 +48,7 @@
 
 | 网站 | 支持类型 | 下载方式 |
 |---|---|---|
+| [片源网](http://pianyuan.org) | 电影、剧集 | 磁力下载 |
 | [音范丝](https://www.yinfans.me) | 电影 | 磁力下载 |
 | [牛牛美剧](http://www.nnmeiju.com) | 美剧、英剧 | 磁力下载 |
 | [BT天堂](https://www.bt-tt.com) | 电影、剧集、动漫、综艺、纪录片 | 磁力下载 |
@@ -66,6 +68,13 @@
 | [wallhaven](https://wallhaven.cc) | 壁纸 | HTTP下载 |
 | [Iconfont](https://www.iconfont.cn) | 图标、插画 | HTTP下载 |
 | [StickPNG](https://www.stickpng.com) | 图标、透明图片 | HTTP下载 |
+
+- [Dribbble](https://dribbble.com)
+- [Pinterest](https://www.pinterest.com)
+- [Freepik](https://www.freepik.com)
+- [Unsplash](https://unsplash.com)
+- [DeviantArt](https://www.deviantart.com)
+- [Behance](https://www.behance.net)
 
 ## 游戏
 
