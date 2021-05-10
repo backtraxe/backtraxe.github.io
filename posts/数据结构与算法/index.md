@@ -14,6 +14,75 @@
 
 ## 2.排序
 
+### 1.选择排序
+
+```cpp
+void selectionSort(vector<int>& arr) {
+    for (int i = 0; i < arr.size(); i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < arr.size(); j++) {
+            minIdx = (arr[j] < arr[minIdx]) ? j : minIdx;
+        }
+        int temp = arr[i];
+        arr[i] = arr[minIdx];
+        arr[minIdx] = temp;
+    }
+}
+```
+
+- 时间复杂度：$ O(n^2) $
+- 空间复杂度：$ O(1) $
+
+特点：
+
+- 不稳定
+- 每一轮有一个元素（当前最小元素）归位
+
+### 2.冒泡排序
+
+```cpp
+void bubbleSort(vector<int>& arr) {
+    for (int step = 1; step < arr.size(); step++) {
+        for (int i = 0; i < arr.size() - step; i++) {
+            if (arr[i] > arr[i + 1]) {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+    }
+}
+```
+
+- 时间复杂度：$ O(n^2) $
+- 空间复杂度：$ O(1) $
+
+特点：
+
+- 稳定
+- 每一轮有一个元素（当前最大元素）归位
+
+### 3.插入排序
+
+```cpp
+void insertionSort(vector<int>& arr) {
+    for (int i = 1; i < arr.size(); i++) {
+        int temp = arr[i], j;
+        for (j = i - 1; j >= 0 && arr[j] > arr[i]; j--) {
+            arr[j + 1] = arr[j];
+        }
+        arr[j + 1] = temp;
+    }
+}
+```
+
+- 时间复杂度：$ O(n^2) $
+- 空间复杂度：$ O(1) $
+
+特点：
+
+- 稳定
+
 ### 归并排序
 
 ```cpp

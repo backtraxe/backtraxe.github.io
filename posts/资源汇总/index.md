@@ -21,6 +21,7 @@
 
 - [labuladong 的算法小抄](https://github.com/labuladong/fucking-algorithm)：在线阅读：[GitHub Pages](https://labuladong.github.io/algo)，[Gitbook](https://labuladong.gitbook.io/algo)，[Gitee Pages](https://labuladong.gitee.io/algo)
 - [算法珠玑](https://github.com/soulmachine/algorithm-essentials)：[在线](https://algorithm-essentials.soulmachine.me/)
+- [《algorithm-note》中文版](https://github.com/Dairongpeng/algorithm-note)：[在线](https://dairongpeng.github.io/algorithm-note/)
 
 ## 机器学习
 
