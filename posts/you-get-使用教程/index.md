@@ -31,6 +31,10 @@ you-get -x/--http-proxy <PROXY_IP:PORT> <URL>
 you-get --cookies/-c <cookies.txt/cookies.sqlite> <URL>
 ```
 
+### 3.1 cookie 获取
+
+Chrome 扩展程序：[Get cookies.txt](https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid)
+
 ## 四、支持网站
 
 - [YouTube](https://www.youtube.com/)
