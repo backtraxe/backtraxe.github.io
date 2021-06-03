@@ -5,39 +5,34 @@ You-Get 是一个轻量级命令行工具，可以方便的从一些网站上下
 
 <!--more-->
 
-## 安装
+## 一、介绍
 
-`pip install you-get`
+- [官网](https://you-get.org/)
+- [Github](https://github.com/soimort/you-get)
 
-## 教程
+## 二、安装
 
-### 查看所有可选质量与格式
+`pip install --upgrade you-get`
 
-命令：`you-get -i/--info [URL]`
+## 三、使用
 
-示例：`you-get -i https://www.bilibili.com/video/BV1es41197aW`
+```bash
+# 查看所有可选质量与格式
+you-get -i/--info <URL>
 
-### 自定义下载文件路径和名称
+# 自定义下载文件路径和名称
+you-get -o/--output-dir <PATH> <URL>
+you-get -O/--output-filename <FILENAME> <URL>
 
-命令：
+# 代理
+you-get -x/--http-proxy <PROXY_IP:PORT> <URL>
 
-- `you-get -o/--output-dir [PATH] [URL]`
-- `you-get -O/--output-filename [FILENAME] [URL]`
+# cookies
+you-get --cookies/-c <cookies.txt/cookies.sqlite> <URL>
+```
 
-示例：`you-get -o "钢笔换本子" -O "钢笔换本子" https://www.bilibili.com/video/BV1es41197aW`
+## 四、支持网站
 
-### 设置代理
-
-命令：`you-get -x/--http-proxy [PROXY_IP:PORT] [URL]`
-
-示例：`you-get -x 127.0.0.1:10809 https://www.youtube.com/watch?v=mixodgV2ERg`
-
-### 导入 cookies
-
-命令：`you-get --cookies/-c [cookies.txt/cookies.sqlite] [URL]`
-
-示例：
-
-## 支持网站
-
+- [YouTube](https://www.youtube.com/)
+- [bilibili](https://www.bilibili.com/)
 
