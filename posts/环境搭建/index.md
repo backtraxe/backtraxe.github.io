@@ -43,11 +43,15 @@
 
 ### C++
 
-1. 编译器（二选一）
-    - 安装 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/)
-    - 安装 [MinGW-w64](http://mingw-w64.org/doku.php/download)，[SourceForge](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/)
+1. 编译器
+    - Windows（二选一）
+        - 安装 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/)
+        - 安装 [MinGW-w64](http://mingw-w64.org/doku.php/download)，[SourceForge](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/)
+    - Linux: `sudo apt install gcc g++ gdb build-essential`
 2. VS Code
-    - ms-cpp-tools
+    - 安装 [ms-cpp-tools]()
+
+3.解决头文件找不到，修改`c_cpp_properties.json`。
 
 ```bash
 # Linux

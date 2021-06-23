@@ -90,8 +90,9 @@ wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.c
 [下载](https://github.com/Qv2ray/Qv2ray/releases)
 
 内核：
-- [v2ray](https://github.com/v2ray/v2ray-core/releases)
+- [v2ray](https://github.com/v2fly/v2ray-core/releases)
 - [xray](https://github.com/XTLS/Xray-core/releases)
+- [trojan-go](https://github.com/p4gefau1t/trojan-go/releases)
 
 插件：
 - [Trojan](https://github.com/Qv2ray/QvPlugin-Trojan/releases)
@@ -125,6 +126,8 @@ wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.c
 <img src="/科学上网/Qv2ray-09.png" />
 
 `QvTrojanGoPlugin.v1.0.1.Windows-x64.dll`、`QvTrojanPlugin.v2.0.0.Windows-x64.dll`
+
+
 
 ### 安卓
 
