@@ -85,6 +85,47 @@ wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.c
 
 [下载](https://github.com/Fndroid/clash_for_windows_pkg/releases)
 
+#### Qv2ray
+
+[下载](https://github.com/Qv2ray/Qv2ray/releases)
+
+内核：
+- [v2ray](https://github.com/v2ray/v2ray-core/releases)
+- [xray](https://github.com/XTLS/Xray-core/releases)
+
+插件：
+- [Trojan](https://github.com/Qv2ray/QvPlugin-Trojan/releases)
+- [Trojan-Go](https://github.com/Qv2ray/QvPlugin-Trojan-Go/releases)
+
+支持协议：
+- Vmess (V2ray)
+- Vless (Xray)
+- SS (Shadowsocks)
+- SSR (ShadowsocksR)
+- Trojan
+- Trojan-Go
+- NaiveProxy
+
+<img src="/科学上网/Qv2ray-01.png" />
+
+<img src="/科学上网/Qv2ray-02.png" />
+
+<img src="/科学上网/Qv2ray-03.png" />
+
+<img src="/科学上网/Qv2ray-04.png" />
+
+<img src="/科学上网/Qv2ray-05.png" />
+
+<img src="/科学上网/Qv2ray-06.png" />
+
+<img src="/科学上网/Qv2ray-07.png" />
+
+<img src="/科学上网/Qv2ray-08.png" />
+
+<img src="/科学上网/Qv2ray-09.png" />
+
+`QvTrojanGoPlugin.v1.0.1.Windows-x64.dll`、`QvTrojanPlugin.v2.0.0.Windows-x64.dll`
+
 ### 安卓
 
 #### V2rayNG
