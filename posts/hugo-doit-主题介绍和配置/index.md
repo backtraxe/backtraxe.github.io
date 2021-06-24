@@ -1,7 +1,7 @@
-# LoveIt 主题介绍和配置
+# Hugo DoIt 主题介绍和配置
 
 
-探索 Hugo - LoveIt 主题的全部内容和背后的核心概念。
+探索 Hugo - DoIt 主题的全部内容和背后的核心概念。
 
 <!--more-->
 
@@ -21,10 +21,10 @@ hasCJKLanguage = true
 title = "我的全新 Hugo 网站"
 
 # 更改使用 Hugo 构建网站时使用的默认主题
-theme = "LoveIt"
+theme = "DoIt"
 
 [params]
-  # LoveIt 主题版本
+  # DoIt 主题版本
   version = "0.2.X"
 
 [menu]
@@ -856,5 +856,4 @@ seo:                                # 和 params.page.seo 部分相同
 ```
 
 ## 8.内容摘要
-
 

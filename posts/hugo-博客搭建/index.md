@@ -1,11 +1,11 @@
 # Hugo 博客搭建
 
 
-Windows 10 下用 Hugo 的 LoveIt 主题搭建一个博客，并使用 Github Action 自动发布到 Github Pages。
+Windows 10 下用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动发布到 Github Pages。
 
 <!--more-->
 
-## 一、安装
+## 1.安装
 
 1. [Github](https://github.com/gohugoio/hugo/releases/latest) 下载`hugo_extended_0.XX.X_Windows-64bit.zip`，解压并添加到系统环境变量，在命令行输入`hugo version`，若出现如下内容即为配置成功。
 
