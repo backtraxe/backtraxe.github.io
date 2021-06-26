@@ -58,6 +58,61 @@
 gcc -v -E -x c++ -
 ```
 
+#### c_cpp_properties.json
+
+**Windows 10 + Visual Studio 2019**
+
+```json
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30037/include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30037/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}
+```
+
+**Windows 10 + Mingw-w64**
+
+```json
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Portable/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/**",
+                "C:/Portable/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/Portable/mingw64/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
+```
+
 [参考](https://code.visualstudio.com/docs/cpp/config-msvc)
 
 **关闭 Windows Defender “首次看到时阻止”：**

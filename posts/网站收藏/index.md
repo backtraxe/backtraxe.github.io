@@ -1,48 +1,59 @@
-# 网站收藏[置顶]
+# 网站收藏↑
 
 
 <!--more-->
 
 ## 在线工具
 
-- [小米风格Logo生成器](https://mi-logo.lvwzhen.com)
-- [Overleaf](https://cn.overleaf.com)：在线LaTeX编辑器
-- [KaTeX](https://katex.org/docs/supported.html)
-- [Linux 命令搜索引擎](https://wangchujiang.com/linux-command/hot.html)
-- [Ubuntu Pastebin](https://paste.ubuntu.com)
-- [OnlineGDB](https://www.onlinegdb.com)：C, C++, Python, Java, PHP, Ruby, Perl, C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-- [C++ shell](http://cpp.sh)：在线C++编译器
-- [regex101](https://regex101.com)：正则表达式
-- [Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
-- [iLoveIMG](https://www.iloveimg.com/zh-cn)：压缩；调整大小；裁剪；格式转换；添加水印；HTML转图片
-- PDF
-    - [easy PDF](https://easypdf.com/cn)：格式转换、合并/拆分PDF、PDF压缩
-    - [PDF24 Tools](https://tools.pdf24.org/zh/)：格式转换、合并/拆分PDF、PDF压缩、PDF编辑、PDF加/解密、HTML转PDF、OCR、水印
-    - [iLovePDF](https://www.ilovepdf.com/zh-cn)：格式转换、合并/拆分PDF、PDF压缩、PDF编辑、PDF加/解密、HTML转PDF、修复PDF、水印
+{{< admonition tip "在线PDF工具" >}}
+- [easy PDF](https://easypdf.com/cn)
+- [PDF24 Tools](https://tools.pdf24.org/zh/)
+- [iLovePDF](https://www.ilovepdf.com/zh-cn)
+{{< /admonition >}}
 
-| 网站                                         | 功能                                                  |
-|--------------------------------------------|-----------------------------------------------------|
-| [easy PDF](https://easypdf.com/cn)         | 格式转换、合并/拆分PDF、PDF压缩                                 |
-| [PDF24 Tools](https://tools.pdf24.org/zh/) | 格式转换、合并/拆分PDF、PDF压缩、PDF编辑、PDF加/解密、HTML转PDF、OCR、水印   |
-| [iLovePDF](https://www.ilovepdf.com/zh-cn) | 格式转换、合并/拆分PDF、PDF压缩、PDF编辑、PDF加/解密、HTML转PDF、修复PDF、水印 |
+{{< admonition tip "在线图片处理" >}}
+- [iLoveIMG](https://www.iloveimg.com/zh-cn)
+- [小米风格Logo生成器](https://mi-logo.lvwzhen.com)
+{{< /admonition >}}
+
+{{< admonition tip "编程" >}}
+- [W3school](https://www.w3school.com.cn/)
+- [Overleaf](https://cn.overleaf.com/)
+- [KaTeX - Supported Functions](https://katex.org/docs/supported.html)
+- [Linux 命令列表](https://wangchujiang.com/linux-command/hot.html)
+- [Ubuntu Pastebin](https://paste.ubuntu.com/)
+- [OnlineGDB](https://www.onlinegdb.com/)
+- [C++ shell](http://cpp.sh/)
+- [regex101](https://regex101.com/)
+- [Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
+{{< /admonition >}}
 
 ## 在线观看
 
-| 网站 | 支持类型 |
-|---|---|
-| [低端影视](https://ddrk.me) | 电影、剧集、动漫 |
-| [奈菲影视](https://www.nfmovies.com) | 电影、剧集、动漫 |
-| [看片狂人](https://www.kpkuang.com) | 电影、剧集、动漫 |
-| [NO视频](https://www.novipnoad.com) | 电影、剧集、动漫 |
-| [AGE动漫](https://www.agefans.net) | 动漫 |
-| [ZzzFun](http://www.zzzfun.com) | 动漫 |
-| [樱花动漫](http://www.yhdm.so) | 动漫 |
-| [漫岛动漫](https://www.mandao.tv) | 动漫 |
-| [EDD动漫](http://www.edddh.com) | 动漫 |
-| [漫画DB](https://www.manhuadb.com) | 漫画 |
-| [动漫之家](https://www.dmzj.com) | 漫画 |
-| [CCTV-5 直播](https://tv.cctv.com/live/cctv5/?spm=C28340.PVHhfLOBmR4I.ExidtyEJcS5K.16) | 体育 |
-| [JRKAN直播](http://jrkan.com) | 体育 |
+{{< admonition tip "影视" >}}
+- [低端影视](https://ddrk.me/)
+- [奈菲影视](https://www.nfmovies.com/)
+- [看片狂人](https://www.kpkuang.com/)
+- [NO视频](https://www.novipnoad.com/)
+{{< /admonition >}}
+
+{{< admonition tip "体育" >}}
+- [CCTV-5 直播](https://tv.cctv.com/live/cctv5/)
+- [JRKAN直播](http://jrskan.com/)
+{{< /admonition >}}
+
+{{< admonition tip "动漫" >}}
+- [AGE动漫](https://www.agefans.net)
+- [ZzzFun](http://www.zzzfun.com)
+- [樱花动漫](http://www.yhdm.so)
+- [漫岛动漫](https://www.mandao.tv)
+- [EDD动漫](http://www.edddh.com)
+{{< /admonition >}}
+
+{{< admonition tip "漫画" >}}
+- [漫画DB](https://www.manhuadb.com/)
+- [动漫之家](https://www.dmzj.com/)
+{{< /admonition >}}
 
 ## 资源下载
 
@@ -62,23 +73,76 @@
 | [爱恋动漫BT下载](http://www.kisssub.org) | 电影、剧集、动漫 | |
 | [90分钟足球网](http://90oo.com) | 足球比赛、天下足球 | 百度网盘 |
 | [知轩藏书](http://www.zxcs.me) | 网络小说 | HTTP下载 |
-| [优品PPT](https://www.ypppt.com) | PPT模板 | HTTP下载 |
-| [PPT超级市场](https://ppt.sotary.com) | PPT模板 | HTTP下载 |
-| [第1PPT](http://www.1ppt.com) | PPT模板 | HTTP下载 |
 | [wallhaven](https://wallhaven.cc) | 壁纸 | HTTP下载 |
 | [Iconfont](https://www.iconfont.cn) | 图标、插画 | HTTP下载 |
-| [StickPNG](https://www.stickpng.com) | 图标、透明图片 | HTTP下载 |
 
+{{< admonition tip "图片" >}}
 - [Dribbble](https://dribbble.com)
 - [Pinterest](https://www.pinterest.com)
 - [Freepik](https://www.freepik.com)
 - [Unsplash](https://unsplash.com)
 - [DeviantArt](https://www.deviantart.com)
 - [Behance](https://www.behance.net)
+- [极简壁纸1](https://bz.zzzmh.cn/index)
+- [极简壁纸2](http://www.jijianzy.com/bz/)
+{{< /admonition >}}
+
+{{< admonition tip "Office" >}}
+- [Word联盟](http://www.wordlm.com/)
+- [优品PPT](https://www.ypppt.com)
+- [PPT超级市场](https://ppt.sotary.com)
+- [第1PPT](http://www.1ppt.com)
+- [PPT演示设计网址导航](https://www.aboutppt.com/)
+{{< /admonition >}}
+
+{{< admonition tip "图标" >}}
+- [Worldvectorlogo](https://worldvectorlogo.com/)
+- [Iconduck](https://iconduck.com/)
+- [StickPNG](https://www.stickpng.com/)
+{{< /admonition >}}
+
+{{< admonition tip "插图" >}}
+- [Storyset](https://storyset.com/)
+- [StickPNG](https://www.stickpng.com/)
+{{< /admonition >}}
+
+{{< admonition tip "摄影" >}}
+- [天空之城](https://www.skypixel.com/)
+{{< /admonition >}}
+
+- [MSDN,我告诉你](https://msdn.itellyou.cn/)
+- []()
 
 ## 游戏
 
 - [Liquipedia](https://liquipedia.net)
 - [Don't Starve 中文维基](https://dontstarve.fandom.com/zh/wiki/Don%27t_Starve_%E4%B8%AD%E6%96%87%E7%B6%AD%E5%9F%BA)
 - [DST-MOD Wikri](https://wiki.flapi.cn/doku.php)
+- [叽哩叽哩游戏网ACG（G站）](https://www.jiligamefun.com/) #GFW
+
+## 软件
+
+- [吾爱破解](https://www.52pojie.cn/)
+- [异星软件空间](https://www.yxssp.com/)
+- [易酷软件](https://www.yikurj.com/)
+- [果核剥壳](https://www.ghpym.com/)
+- [Easy To Direct Download Pc Software](https://up4pc.com/)
+- [Crack Softwares](https://multisoftwares.com/)
+- [下载免费Wondows个人电脑游戏及软件](https://zh.downloadastro.com/)
+- [捷径库](https://jiejingku.net/)
+- [反斗软件](http://www.apprcn.com/)
+- [Mergeek - 发现好产品](https://mergeek.com/)
+- [Appwall Today - iOS 每日限免](https://appwall.today/)
+- [Awesome Windows](https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md)
+
+## 导航
+
+- [不死鸟 - 分享为王](https://iao.su/)
+- [福利吧](https://fuliba2021.net/)
+- [缙哥哥博客 - 福利分享](https://www.dujin.org/)
+- [好棒的羊毛站](https://wohaobang.cn/)
+
+## 推荐
+
+- [The best Programming books](https://www.best-books.dev/)
 
