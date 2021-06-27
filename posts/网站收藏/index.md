@@ -13,7 +13,18 @@
 
 {{< admonition tip "在线图片处理" >}}
 - [iLoveIMG](https://www.iloveimg.com/zh-cn)
+- [IMG365](http://www.img365.cn/)
+- [无需上传的图片格式转换器](https://renzhezhilu.gitee.io/webp2jpg-online/)
+- [AI人工智能图片放大](https://bigjpg.com/)
+- [图像压缩](https://zh.recompressor.com/)
+- [快速AI自动抠图](https://www.remove.bg/zh)
+- [在线图片去底](https://www.aigei.com/bgremover)
+- [在线GIF制作和编辑](https://ezgif.com/)
+- [EasyScreenOCR](https://online.easyscreenocr.com/ZH)
+- [ONLINE OCR](https://www.onlineocr.net/zh_hans/)
 - [小米风格Logo生成器](https://mi-logo.lvwzhen.com)
+- [favicon图标制作工具](https://geticon.cn/)
+- [favicon图标生成器](https://realfavicongenerator.net/)
 {{< /admonition >}}
 
 {{< admonition tip "编程" >}}
@@ -37,11 +48,6 @@
 - [NO视频](https://www.novipnoad.com/)
 {{< /admonition >}}
 
-{{< admonition tip "体育" >}}
-- [CCTV-5 直播](https://tv.cctv.com/live/cctv5/)
-- [JRKAN直播](http://jrskan.com/)
-{{< /admonition >}}
-
 {{< admonition tip "动漫" >}}
 - [AGE动漫](https://www.agefans.net)
 - [ZzzFun](http://www.zzzfun.com)
@@ -55,26 +61,49 @@
 - [动漫之家](https://www.dmzj.com/)
 {{< /admonition >}}
 
+{{< admonition tip "体育" >}}
+- [CCTV-5体育频道高清直播](https://tv.cctv.com/live/cctv5/)
+- [直播6](https://www.zb06.com/)
+- [比赛直播](http://match.gy940830.com/index.html?fr=elq&t=1577761328034)
+- [JRKAN直播](http://jrskan.com/)
+- [55直播](http://www.55zb.net/)
+- [直播吧](http://www.zhiboba.tv/)
+- [64体育](http://64tiyu.com/)
+- [七星直播](http://www.7xlive.la/)
+- [足球巴巴](http://www.nba01.cc/)
+- [极速体育](http://www.jisutiyu.com/)
+- [147体育](http://147tiyu.com/)
+- [310看球网](http://310kanqiu.net/)
+- [jrs直播](http://www.jrszb.com/)
+- [低调看吧](http://didiaokanba.com/)
+- [来球网](http://www.nowqiu.com/)
+{{< /admonition >}}
+
 ## 资源下载
+
+{{< admonition tip "影视" >}}
+- [高清MP4粉](https://www.mp4fan.org/)
+- [片源网](http://pianyuan.org)
+- [BT天堂](https://www.bt-tt.com)
+- [SubDH](https://subdh.com)
+- [FIX字幕侠](http://www.zimuxia.cn)
+- [牛牛美剧](http://www.nnmeiju.com)
+- [音范丝](https://www.yinfans.me)
+{{< /admonition >}}
+
+{{< admonition tip "字幕" >}}
+- [SubHD](https://subhd.tv)
+- [字幕库](http://zimuku.org)
+- [A4k字幕网](https://www.a4k.net)
+{{< /admonition >}}
 
 | 网站 | 支持类型 | 下载方式 |
 |---|---|---|
-| [片源网](http://pianyuan.org) | 电影、剧集 | 磁力下载 |
-| [音范丝](https://www.yinfans.me) | 电影 | 磁力下载 |
-| [牛牛美剧](http://www.nnmeiju.com) | 美剧、英剧 | 磁力下载 |
-| [BT天堂](https://www.bt-tt.com) | 电影、剧集、动漫、综艺、纪录片 | 磁力下载 |
-| [FIX字幕侠](http://www.zimuxia.cn) | 电影、剧集 | 磁力下载、百度网盘 |
-| [SubDH](https://subdh.com) | 电影、剧集 | 磁力下载 |
-| [SubHD](https://subhd.tv) | 字幕 | HTTP下载 |
-| [字幕库](http://zimuku.org) | 字幕 | HTTP下载 |
-| [A4k字幕网](https://www.a4k.net) | 字幕 | HTTP下载 |
 | [肥羊-Raws 11周年Peach](https://fy-raws.org/resource_lists/) | 动漫 | 磁力下载 |
 | [漫猫动漫BT下载](http://www.comicat.org) | 电影、剧集、动漫 | |
 | [爱恋动漫BT下载](http://www.kisssub.org) | 电影、剧集、动漫 | |
 | [90分钟足球网](http://90oo.com) | 足球比赛、天下足球 | 百度网盘 |
 | [知轩藏书](http://www.zxcs.me) | 网络小说 | HTTP下载 |
-| [wallhaven](https://wallhaven.cc) | 壁纸 | HTTP下载 |
-| [Iconfont](https://www.iconfont.cn) | 图标、插画 | HTTP下载 |
 
 {{< admonition tip "图片" >}}
 - [Dribbble](https://dribbble.com)
@@ -85,6 +114,8 @@
 - [Behance](https://www.behance.net)
 - [极简壁纸1](https://bz.zzzmh.cn/index)
 - [极简壁纸2](http://www.jijianzy.com/bz/)
+- [Wallpaper Abyss](https://wall.alphacoders.com/)
+- [wallhaven](https://wallhaven.cc/)
 {{< /admonition >}}
 
 {{< admonition tip "Office" >}}
@@ -99,11 +130,13 @@
 - [Worldvectorlogo](https://worldvectorlogo.com/)
 - [Iconduck](https://iconduck.com/)
 - [StickPNG](https://www.stickpng.com/)
+- [Iconfont](https://www.iconfont.cn)
 {{< /admonition >}}
 
-{{< admonition tip "插图" >}}
+{{< admonition tip "插画" >}}
 - [Storyset](https://storyset.com/)
 - [StickPNG](https://www.stickpng.com/)
+- [Iconfont](https://www.iconfont.cn)
 {{< /admonition >}}
 
 {{< admonition tip "摄影" >}}
@@ -111,12 +144,12 @@
 {{< /admonition >}}
 
 - [MSDN,我告诉你](https://msdn.itellyou.cn/)
-- []()
+- [不移之火资源网](https://www.byzhihuo.com/)
+- [小爱同学音色网](http://ai.aahhy.com/)
 
 ## 游戏
 
-- [Liquipedia](https://liquipedia.net)
-- [Don't Starve 中文维基](https://dontstarve.fandom.com/zh/wiki/Don%27t_Starve_%E4%B8%AD%E6%96%87%E7%B6%AD%E5%9F%BA)
+- [Liquipedia](https://liquipedia.net/)
 - [DST-MOD Wikri](https://wiki.flapi.cn/doku.php)
 - [叽哩叽哩游戏网ACG（G站）](https://www.jiligamefun.com/) #GFW
 
@@ -135,12 +168,19 @@
 - [Appwall Today - iOS 每日限免](https://appwall.today/)
 - [Awesome Windows](https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md)
 
+{{< admonition tip "必备" >}}
+- [ShareX](https://getsharex.com/)
+{{< /admonition >}}
+
 ## 导航
 
 - [不死鸟 - 分享为王](https://iao.su/)
 - [福利吧](https://fuliba2021.net/)
 - [缙哥哥博客 - 福利分享](https://www.dujin.org/)
 - [好棒的羊毛站](https://wohaobang.cn/)
+- [创造狮导航](http://www.chuangzaoshi.com/)
+- [A+医学百科](http://www.a-hospital.com/)
+- [wikiHow - 万事指南](https://zh.wikihow.com/)
 
 ## 推荐
 
