@@ -39,6 +39,22 @@
 - [Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
 {{< /admonition >}}
 
+{{< admonition tip "天梯图" >}}
+- [桌面CPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/cpu/index.html)
+- [桌面GPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/gpu/index.html)
+- [笔记本CPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/cpum/index.html)
+- [笔记本GPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/gpum/index.html)
+- [手机CPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/01/index.html)
+- [手机影像DxO综合榜](https://rank.kkj.cn/dxo3.shtml)
+{{< /admonition >}}
+
+- [Steam历史价格查询](https://steamdb.info/)
+- [全球Apple产品比价](https://themacindex.com/)
+- [极简简历模板PoleBrief](https://www.polebrief.com/index)
+- [萝卜工坊 - 模拟手写字体](http://www.beautifulcarrot.com/)
+- [ProcessOn - 在线思维导图、流程图](https://processon.com/)
+- []()
+
 ## 在线观看
 
 {{< admonition tip "影视" >}}
@@ -99,11 +115,29 @@
 
 | 网站 | 支持类型 | 下载方式 |
 |---|---|---|
-| [肥羊-Raws 11周年Peach](https://fy-raws.org/resource_lists/) | 动漫 | 磁力下载 |
-| [漫猫动漫BT下载](http://www.comicat.org) | 电影、剧集、动漫 | |
-| [爱恋动漫BT下载](http://www.kisssub.org) | 电影、剧集、动漫 | |
 | [90分钟足球网](http://90oo.com) | 足球比赛、天下足球 | 百度网盘 |
 | [知轩藏书](http://www.zxcs.me) | 网络小说 | HTTP下载 |
+
+{{< admonition tip "动漫" >}}
+- [动漫领域](https://dmly.me/)
+- [肥羊-Raws 11周年Peach](https://fy-raws.org/resource_lists/)
+- [不移之火资源网](https://www.byzhihuo.com/)
+- [漫猫动漫BT下载](http://www.comicat.org)
+- [爱恋动漫BT下载](http://www.kisssub.org)
+{{< /admonition >}}
+
+{{< admonition tip "磁力" >}}
+- [磁力爬](https://www.cilipa.com/) `GFW`
+- [八爪鱼磁搜](https://磁搜.com/)
+{{< /admonition >}}
+
+{{< admonition tip "Office" >}}
+- [Word联盟](http://www.wordlm.com/)
+- [优品PPT](https://www.ypppt.com)
+- [PPT超级市场](https://ppt.sotary.com)
+- [第1PPT](http://www.1ppt.com)
+- [PPT演示设计网址导航](https://www.aboutppt.com/)
+{{< /admonition >}}
 
 {{< admonition tip "图片" >}}
 - [Dribbble](https://dribbble.com)
@@ -116,14 +150,6 @@
 - [极简壁纸2](http://www.jijianzy.com/bz/)
 - [Wallpaper Abyss](https://wall.alphacoders.com/)
 - [wallhaven](https://wallhaven.cc/)
-{{< /admonition >}}
-
-{{< admonition tip "Office" >}}
-- [Word联盟](http://www.wordlm.com/)
-- [优品PPT](https://www.ypppt.com)
-- [PPT超级市场](https://ppt.sotary.com)
-- [第1PPT](http://www.1ppt.com)
-- [PPT演示设计网址导航](https://www.aboutppt.com/)
 {{< /admonition >}}
 
 {{< admonition tip "图标" >}}
@@ -143,8 +169,6 @@
 - [天空之城](https://www.skypixel.com/)
 {{< /admonition >}}
 
-- [MSDN,我告诉你](https://msdn.itellyou.cn/)
-- [不移之火资源网](https://www.byzhihuo.com/)
 - [小爱同学音色网](http://ai.aahhy.com/)
 
 ## 游戏
@@ -155,6 +179,7 @@
 
 ## 软件
 
+- [MSDN,我告诉你](https://msdn.itellyou.cn/)
 - [吾爱破解](https://www.52pojie.cn/)
 - [异星软件空间](https://www.yxssp.com/)
 - [易酷软件](https://www.yikurj.com/)
@@ -185,4 +210,5 @@
 ## 推荐
 
 - [The best Programming books](https://www.best-books.dev/)
+- [历史剧网](http://www.lishiju.net/)
 

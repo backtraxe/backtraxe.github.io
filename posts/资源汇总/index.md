@@ -26,10 +26,16 @@
 ## 机器学习
 
 - [AI算法工程师手册](http://www.huaxiaozhuan.com/)
+- [Kaggle](https://www.kaggle.com/)
+- [Dataquest](https://www.dataquest.io/)
 
 英文
 
 - [Deep Learning](https://www.deeplearningbook.org/)
+
+### 源码
+
+- []()
 
 
 ## 论文
