@@ -113,10 +113,8 @@
 - [A4k字幕网](https://www.a4k.net)
 {{< /admonition >}}
 
-| 网站 | 支持类型 | 下载方式 |
-|---|---|---|
-| [90分钟足球网](http://90oo.com) | 足球比赛、天下足球 | 百度网盘 |
-| [知轩藏书](http://www.zxcs.me) | 网络小说 | HTTP下载 |
+- [90分钟足球网](http://90oo.com)
+- [知轩藏书](http://www.zxcs.me)
 
 {{< admonition tip "动漫" >}}
 - [动漫领域](https://dmly.me/)
@@ -129,6 +127,9 @@
 {{< admonition tip "磁力" >}}
 - [磁力爬](https://www.cilipa.com/) `GFW`
 - [八爪鱼磁搜](https://磁搜.com/)
+- [搜番](https://sofan.icu/)
+- [吃力网](https://cursor.vip/vip)
+- [电影淘淘](https://www.dianyingtaotao.com/)
 {{< /admonition >}}
 
 {{< admonition tip "Office" >}}
@@ -171,11 +172,11 @@
 
 - [小爱同学音色网](http://ai.aahhy.com/)
 
-## 游戏
-
+{{< admonition tip "游戏" >}}
 - [Liquipedia](https://liquipedia.net/)
 - [DST-MOD Wikri](https://wiki.flapi.cn/doku.php)
 - [叽哩叽哩游戏网ACG（G站）](https://www.jiligamefun.com/) #GFW
+{{< /admonition >}}
 
 ## 软件
 

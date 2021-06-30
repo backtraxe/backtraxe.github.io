@@ -145,3 +145,11 @@ wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.c
 
 [下载](https://github.com/Kr328/ClashForAndroid/releases)
 
+#### AnXray
+
+[下载](https://github.com/XTLS/AnXray/releases)
+
+#### SagerNet
+
+[下载](https://github.com/SagerNet/SagerNet/releases)
+
