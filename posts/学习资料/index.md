@@ -1,4 +1,4 @@
-# 资源汇总[置顶]
+# 学习资料🔝
 
 
 汇集网上的各种学习资料。
@@ -7,45 +7,26 @@
 
 ## 面试
 
-中文
-
 - [CS-Notes](https://github.com/CyC2018/CS-Notes)：[在线](http://www.cyc2018.xyz/)
-
-英文
-
 - [Coding Interview University](https://github.com/jwasham/coding-interview-university)：[中文](https://github.com/jwasham/coding-interview-university/blob/main/translations/README-cn.md)
 
 ## 算法
-
-中文
 
 - [labuladong 的算法小抄](https://github.com/labuladong/fucking-algorithm)：在线阅读：[GitHub Pages](https://labuladong.github.io/algo)，[Gitbook](https://labuladong.gitbook.io/algo)，[Gitee Pages](https://labuladong.gitee.io/algo)
 - [算法珠玑](https://github.com/soulmachine/algorithm-essentials)：[在线](https://algorithm-essentials.soulmachine.me/)
 - [《algorithm-note》中文版](https://github.com/Dairongpeng/algorithm-note)：[在线](https://dairongpeng.github.io/algorithm-note/)
 
-## 机器学习
-
-- [AI算法工程师手册](http://www.huaxiaozhuan.com/)
+{{< admonition tip "社区" >}}
 - [Kaggle](https://www.kaggle.com/)
 - [Dataquest](https://www.dataquest.io/)
+{{< /admonition >}}
 
-英文
-
-- [Deep Learning](https://www.deeplearningbook.org/)
-
-### 源码
-
-- []()
-
-
-## 论文
-
+{{< admonition tip "论文" >}}
 - [Deep learning: Technical introduction](https://arxiv.org/abs/1709.01412)：深度学习综述
 - [What Do We Understand About Convolutional Networks?](https://arxiv.org/abs/1803.08834)：CNN 综述
 - [Bringing Old Photos Back to Life](https://arxiv.org/abs/2004.09484)：修复旧照片
-- []()
+{{< /admonition >}}
 
-## Github
 
 - [深度学习论文翻译](https://github.com/SnailTyan/deep-learning-papers-translation)
 - [深度学习入门教程, 优秀文章](https://github.com/Mikoto10032/DeepLearning)
@@ -57,14 +38,44 @@
 - [《动手学深度学习》李沐](https://github.com/d2l-ai/d2l-zh)：[在线](http://zh.d2l.ai/)
 - [《神经网络与深度学习》 邱锡鹏](https://github.com/nndl/nndl.github.io)：[在线](https://nndl.github.io/)
 - [Deep Learning with PaddlePaddle](https://github.com/PaddlePaddle/book)：[在线](https://www.paddlepaddle.org.cn/documentation/docs/zh/develop/guides/index_cn.html)
-- []()
+- [](https://github.com/ffffffff0x/Digital-Privacy)
+- [](https://github.com/0voice/campus_recruitmen_questions)
+- [](https://github.com/jstrieb/systems-programming-cheat-sheet)
+- [](https://github.com/bradtraversy/50projects50days)
+- [](https://github.com/SmartKeyerror/Psyduck)
+- [](https://github.com/)
 
-## 课程
+{{< admonition tip "开源书籍" >}}
+- 简单粗暴 TensorFlow 2：[Github](https://github.com/snowkylin/tensorflow-handbook)、[在线](https://tf.wiki/) 20210617
+- [Deep Learning](https://www.deeplearningbook.org/)
+{{< /admonition >}}
 
+{{< admonition tip "公开课" >}}
 - [机器学习 - 吴恩达 | Coursera](https://www.coursera.org/learn/machine-learning)
+{{< /admonition >}}
 
-## 其他
-
+{{< admonition tip "博客" >}}
 - [『A Course in Machine Learning』by Hal Daumé III](http://ciml.info/)
-- []()
+- [AI算法工程师手册](http://www.huaxiaozhuan.com/)
+{{< /admonition >}}
+
+- [WordTEX](https://www.andrew.cmu.edu/user/twildenh/wordtex/)
+
+{{< admonition tip "网络安全" >}}
+- [](https://academy.hackaflag.com.br)
+- [](https://tryhackme.com)
+- [](https://attackdefense.com)
+- [](https://alf.nu/alert1)
+- [](https://ctf.komodosec.com)
+- [](https://cmdchallenge.com)
+- [](https://exploit.education)
+- [](https://capturetheflag.withgoogle.com)
+- [](https://www.hackthebox.eu)
+- [](https://www.hackthis.co.uk)
+- [](https://www.hacksplaining.com/exercises)
+- [](https://ctf.hacker101.com)
+- [](https://capturetheflag.com.br)
+- [](https://www.hacking-lab.com/index.html)
+- [](https://hstrike.com)
+{{< /admonition >}}
 

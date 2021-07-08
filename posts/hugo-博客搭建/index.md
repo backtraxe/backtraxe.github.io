@@ -1,36 +1,29 @@
 # Hugo 博客搭建
 
 
-Windows 10 下用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动发布到 Github Pages。
+本文介绍了如何使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。
 
 <!--more-->
 
-## 1.安装
+## 1 安装
 
-1. [Github](https://github.com/gohugoio/hugo/releases/latest) 下载`hugo_extended_0.XX.X_Windows-64bit.zip`，解压并添加到系统环境变量，在命令行输入`hugo version`，若出现如下内容即为配置成功。
+1. 到 [Github](https://github.com/gohugoio/hugo/releases/latest) 下载`hugo_extended_0.XX.X_Windows-64bit.zip`，解压并将`hugo.exe`所在目录添加到系统环境变量。
+2. 到 [Git 官网](https://git-scm.com/downloads) 下载安装 Git。
 
-```bash
-hugo v0.81.0-59D15C97+extended windows/amd64 BuildDate=2021-02-19T17:07:12Z VendorInfo=gohugoio
-```
-
-2. [Git 官网](https://git-scm.com/downloads/win)下载安装。
-
-## 二、创建网站
+## 2 创建网站
 
 ```bash
-hugo new site quickstart
-cd quickstart
+hugo new site MyBlog
+cd MyBlog
 git init
-git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+git submodule add https://github.com/HEIGE-PCloud/DoIt.git themes/DoIt
 ```
 
-## 三、添加内容
+可在 [Hugo Themes](https://themes.gohugo.io/) 找到更多主题。
 
-```bash
-hugo new posts/My-First-Blog.md
-```
+## 3 添加内容
 
-打开刚创建的文件，显示如下：
+输入`hugo new posts/My-First-Blog.md`，然后打开刚创建的`My-First-Blog.md`，显示如下：
 
 ```markdown
 ---
@@ -42,72 +35,47 @@ draft: true
 
 > 所有页面均作为草稿创建。文章完成后，如果想要渲染这些页面，请修改为`draft: false`。
 
-### 3.1 文章中添加图片
+### 3.1 在文章中添加图片
 
-Hugo 的配置文件和文章中引用图片都是以`static`文件夹作为根目录的。也就是说文章中插入`/xxx/yyy.jpg`，实际图片位置是`/static/xxx/yyy.jpg`。
+Hugo 的配置文件和文章中引用图片都是以`static`文件夹作为根目录的。
 
-## 四、本地部署
+也就是说文章中插入`/xxx/yyy.jpg`，实际图片存放位置为`/static/xxx/yyy.jpg`。
 
-以**渲染草稿**的形式本地部署，命令行在网站根目录下输入（若不想显示草稿内容，去掉`-D`）：
-
-```bash
-hugo server -D
-```
-
-输出如下内容：
+## 4 本地部署
 
 ```bash
-Start building sites …
-WARN 2021/02/04 16:18:50
-
-Current environment is "development". The "comment system", "CDN" and "fingerprint" will be disabled.
-当前运行环境是 "development". "评论系统", "CDN" 和 "fingerprint" 不会启用.
-
-
-                   | ZH-CN
--------------------+--------
-  Pages            |    11
-  Paginator pages  |     0
-  Non-page files   |     0
-  Static files     |    83
-  Processed images |     0
-  Aliases          |     2
-  Sitemaps         |     1
-  Cleaned          |     0
-
-Built in 160 ms
-Watching for changes in C:\Users\backs\Downloads\docs\quickstart\{archetypes,content,data,layouts,static,themes}
-Watching for config changes in C:\Users\backs\Downloads\docs\quickstart\config.toml
-Environment: "development"
-Serving pages from memory
-Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
+hugo server/serve
+hugo server -D  # 渲染草稿，即也渲染 draft: true 的内容
 ```
 
-浏览器打开 <http://localhost:1313/> 即可看到部署在本地的网站。
+浏览器打开 [localhost:1313](http://localhost:1313/) 即可看到部署在本地的网站。
 
-> 网站部署后，当配置或文件内容发生更改时，页面会自动刷新。
+> 网站部署后，当配置文件或博客内容发生更改时，页面会自动刷新，不用重新部署。
 
-## 五、主题自定义
+## 5 主题自定义
 
-### 简单配置
+主题配置文件为`MyBlog`根目录下的`config.toml`文件。
 
-编辑`quickstart`根目录下的`config.toml`文件，内容如下：
+### 5.1 简单配置
 
 ```toml
 # 域名
-baseURL = "https://backsided.github.io"
+baseURL = "https://backtraxe.github.io/"
+
 # 默认语言 [en, zh-cn, ...]
 defaultContentLanguage = "zh-cn"
-# 语言
+
+# 语言 [zh-CN, en-us, ...]
 languageCode = "zh-CN"
+
 # 是否包括中日韩文字
 hasCJKLanguage = true
+
 # 标题
-title = "Backsided's World"
+title = "traXe"
+
 # 主题
-theme = "LoveIt"
+theme = "DoIt"
 
 [params]
   # 主题版本
@@ -841,28 +809,28 @@ theme = "LoveIt"
   taxonomyTerm = ["HTML"]
 ```
 
-## 六、发布
+## 6 发布
 
-### 静态页面发布
+### 6.1 静态页面发布
+
+输入`hugo`，渲染后的静态页面在 `./public` 文件夹中，可将该文件夹中的内容发布。
+
+可用`-d/--destination`或在`config.toml`中修改`publishdir`来指定输出地址。
+
+### 6.2 Github Pages 发布
+
+在 Github 新建两个仓库：`<USERNAME>.github.io.data` 存放内容，`<USERNAME>.github.io` 部署页面。
+
+其中，`<USERNAME>.github.io.data`可以设为私人仓库。
 
 ```bash
-hugo
-```
-
-渲染后的静态页面在 `public` 文件夹中，可将该文件夹中的内容发布。
-
-### Github Pages 发布
-
-在 Github 新建两个仓库，`<USERNAME>.github.io.sources` 存放内容，`<USERNAME>.github.io` 部署页面。其中，存放内容的仓库可以设为私人，也可随意命名。
-
-```bash
-git remote add origin https://github.com/backsided/backsided.github.io.data.git
+git remote add origin https://github.com/backtraxe/backtraxe.github.io.data.git
 git add --all
 git commit -m "init blog"
 git push --set-upstream origin master -f
 ```
 
-进入 Github 仓库，点击`Actions`->`New workflow`->`set up a workflow yourself`。
+进入 Github 仓库，点击`Actions`->`New workflow`->`set up a workflow yourself`，写入如下内容。
 
 ```yml
 name: Hugo Deploy  # 名称随意修改
@@ -898,7 +866,11 @@ jobs:
           publish_dir: ./public  # 指定要发布的目录
 ```
 
-## 全局详细配置
+### 6.3 环境迁移
+
+`git clone --recursive https://github.com/backtraxe/backtraxe.github.io.data.git`
+
+## 7 全局详细配置
 
 ```toml
 # 域名
@@ -1012,14 +984,13 @@ title = ""
 
 参考：[Configure Hugo](https://gohugo.io/getting-started/configuration/)
 
-## 参考
+## 8 参考
 
-1. [Quick Start - Hugo](https://gohugo.io/getting-started/quick-start/)
+1. [Quick Start | Hugo](https://gohugo.io/getting-started/quick-start/)
+1. [GitHub Pages 文档 - GitHub Docs](https://docs.github.com/cn/pages)
 1. [Host on GitHub - Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
-1. [Hugo Themes - Hugo](https://themes.gohugo.io/)
-1. [LoveIt Theme | Hugo - Github](https://github.com/dillonzq/LoveIt/)
 1. [主题文档 - 基本概念 - LoveIt](https://hugoloveit.com/zh-cn/theme-documentation-basics/)
-1. [How to Create Your First Hugo Blog: a Practical Guide - freeCodeCamp](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)
+1. [How to Create Your First Hugo Blog: a Practical Guide](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)
 1. [创建 GitHub Pages 站点 - Github](https://docs.github.com/cn/github/working-with-github-pages/creating-a-github-pages-site/)
 1. [使用Hugo和GitHub搭建博客 - Félix | Medium](https://zhangfelix.medium.com/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-cbd1d57fcfbf)
 

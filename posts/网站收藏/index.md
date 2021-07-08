@@ -1,4 +1,4 @@
-# 网站收藏↑
+# 网站收藏🔝
 
 
 <!--more-->
@@ -53,7 +53,7 @@
 - [极简简历模板PoleBrief](https://www.polebrief.com/index)
 - [萝卜工坊 - 模拟手写字体](http://www.beautifulcarrot.com/)
 - [ProcessOn - 在线思维导图、流程图](https://processon.com/)
-- []()
+- [英文字体转换](https://beizhedenglong.github.io/weird-fonts/)
 
 ## 在线观看
 
