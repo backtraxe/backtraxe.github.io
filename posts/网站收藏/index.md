@@ -177,7 +177,7 @@
 {{< admonition tip "游戏" >}}
 - [Liquipedia](https://liquipedia.net/)
 - [DST-MOD Wikri](https://wiki.flapi.cn/doku.php)
-- [叽哩叽哩游戏网ACG（G站）](https://www.jiligamefun.com/) #GFW
+- [叽哩叽哩游戏网ACG（G站）](https://www.jiligamefun.com/)
 {{< /admonition >}}
 
 ## 软件
