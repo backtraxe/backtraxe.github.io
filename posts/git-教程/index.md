@@ -36,7 +36,7 @@ git clone https://github.com/USERNAME/REPONAME.git
 git remote add origin https://github.com/USERNAME/REPONAME.git
 
 # 将已提交的版本推送到远端仓库，方便其他设备同步
-git push origin BRANCHNAME
+git push origin <BRANCH_NAME>
 
 # 取回远端仓库版本，对本地仓库进行更新
 git pull
@@ -46,19 +46,19 @@ git pull
 
 ```bash
 # 创建一个分支
-git branch BRANCHNAME
+git branch <BRANCH_NAME>
 
 # 切换分支
-git checkout BRANCHNAME
+git checkout <BRANCH_NAME>
 
 # 创建一个分支，并切换过去
-git checkout -b BRANCHNAME
+git checkout -b <BRANCH_NAME>
 
 # 合并分支
-git merge BRANCHNAME
+git merge <BRANCH_NAME>
 
 # 删除分支
-git branch -d BRANCHNAME
+git branch -d <BRANCH_NAME>
 ```
 
 ### 子模块
