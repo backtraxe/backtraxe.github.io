@@ -1,14 +1,128 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge"><title>Git 教程 - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="Git 教程"><meta property="og:description" content="Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。"><meta property="og:type" content="article"><meta property="og:url" content="https://backtraxe.github.io/posts/git-%E6%95%99%E7%A8%8B/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-03-10T12:56:46+08:00"><meta property="article:modified_time" content="2021-07-16T23:56:40+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Git 教程"><meta name=twitter:description content="Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。"><meta name=application-name content="traXe"><meta name=apple-mobile-web-app-title content="traXe"><meta name=theme-color content="#ffffff"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/git-%E6%95%99%E7%A8%8B/><link rel=prev href=https://backtraxe.github.io/posts/%E9%A5%A5%E8%8D%92%E6%95%99%E7%A8%8B/><link rel=next href=https://backtraxe.github.io/posts/git-tutorials/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Git 教程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/git-%E6%95%99%E7%A8%8B\/"},"genre":"posts","wordcount":879,"url":"https:\/\/backtraxe.github.io\/posts\/git-%E6%95%99%E7%A8%8B\/","datePublished":"2021-03-10T12:56:46+08:00","dateModified":"2021-07-16T23:56:40+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let themeColorMeta=getMeta('theme-color');document.body.getAttribute('theme')!='light'&&(themeColorMeta.content='#000000')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=traXe>traXe</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
-</span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=traXe>traXe</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><script>document.body.setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git 教程</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="author fas fa-user-circle fa-fw"></i>Backtraxe</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-10>2021-03-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 879 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#git-命令>Git 命令</a><ul><li><a href=#本地仓库>本地仓库</a></li><li><a href=#远端仓库>远端仓库</a></li><li><a href=#分支>分支</a></li><li><a href=#子模块>子模块</a></li><li><a href=#替换本地改动>替换本地改动</a></li><li><a href=#本地创建仓库并上传至-github>本地创建仓库并上传至 GitHub</a></li></ul></li><li><a href=#配置-git>配置 Git</a></li><li><a href=#qa>Q&A</a><ul><li><a href=#无法连接服务器报错443>无法连接服务器，报错443</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><div class=content id=content><p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p><h2 id=git-命令>Git 命令</h2><h3 id=本地仓库>本地仓库</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title class=pjax-title>Git 教程 - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="Git 教程">
+<meta property="og:description" content="Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://backtraxe.github.io/posts/git-%E6%95%99%E7%A8%8B/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-03-10T12:56:46+08:00">
+<meta property="article:modified_time" content="2021-07-16T23:56:40+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Git 教程">
+<meta name=twitter:description content="Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。">
+<meta name=application-name content="traXe">
+<meta name=apple-mobile-web-app-title content="traXe">
+<meta name=theme-color content="#ffffff"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/git-%E6%95%99%E7%A8%8B/><link rel=prev href=https://backtraxe.github.io/posts/%E9%A5%A5%E8%8D%92%E6%95%99%E7%A8%8B/><link rel=next href=https://backtraxe.github.io/posts/git-tutorials/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
+<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Git 教程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/git-%E6%95%99%E7%A8%8B\/"},"genre":"posts","wordcount":879,"url":"https:\/\/backtraxe.github.io\/posts\/git-%E6%95%99%E7%A8%8B\/","datePublished":"2021-03-10T12:56:46+08:00","dateModified":"2021-07-16T23:56:40+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let themeColorMeta=getMeta('theme-color');document.body.getAttribute('theme')!='light'&&(themeColorMeta.content='#000000')</script>
+<div id=back-to-top></div>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=traXe>traXe</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=traXe>traXe</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git 教程</h1><div class=post-meta>
+<div class=post-meta-line>
+<span class=post-author><a href=/ title=Author rel=" author" class=author><i class="author fas fa-user-circle fa-fw"></i>Backtraxe</a>
+</span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-10>2021-03-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 879 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#git-命令>Git 命令</a>
+<ul>
+<li><a href=#本地仓库>本地仓库</a></li>
+<li><a href=#远端仓库>远端仓库</a></li>
+<li><a href=#分支>分支</a></li>
+<li><a href=#子模块>子模块</a></li>
+<li><a href=#替换本地改动>替换本地改动</a></li>
+<li><a href=#本地创建仓库并上传至-github>本地创建仓库并上传至 GitHub</a></li>
+</ul>
+</li>
+<li><a href=#配置-git>配置 Git</a></li>
+<li><a href=#qa>Q&A</a>
+<ul>
+<li><a href=#无法连接服务器报错443>无法连接服务器，报错443</a></li>
+</ul>
+</li>
+<li><a href=#参考>参考</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<h2 id=git-命令>Git 命令</h2>
+<h3 id=本地仓库>本地仓库</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -22,7 +136,9 @@
 </span><span class=lnt>12
 </span><span class=lnt>13
 </span><span class=lnt>14
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 初始化</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 初始化</span>
 git init
 
 <span class=c1># 查看文件改动</span>
@@ -36,7 +152,12 @@ git commit -m <span class=s2>&#34;descriptions&#34;</span>
 
 <span class=c1># 所有被修改或者已删除的文件提交（不包括新建文件）</span>
 git commit -a -m <span class=s2>&#34;descriptions&#34;</span>
-</code></pre></td></tr></table></div></div><h3 id=远端仓库>远端仓库</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=远端仓库>远端仓库</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -47,7 +168,9 @@ git commit -a -m <span class=s2>&#34;descriptions&#34;</span>
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 克隆仓库</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 克隆仓库</span>
 git clone https://github.com/USERNAME/REPONAME.git
 
 <span class=c1># 为本地仓库添加远端 GitHub 仓库</span>
@@ -58,7 +181,12 @@ git push origin &lt;BRANCH_NAME&gt;
 
 <span class=c1># 取回远端仓库版本，对本地仓库进行更新</span>
 git pull
-</code></pre></td></tr></table></div></div><h3 id=分支>分支</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=分支>分支</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -72,7 +200,9 @@ git pull
 </span><span class=lnt>12
 </span><span class=lnt>13
 </span><span class=lnt>14
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 创建一个分支</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 创建一个分支</span>
 git branch &lt;BRANCH_NAME&gt;
 
 <span class=c1># 切换分支</span>
@@ -86,7 +216,12 @@ git merge &lt;BRANCH_NAME&gt;
 
 <span class=c1># 删除分支</span>
 git branch -d &lt;BRANCH_NAME&gt;
-</code></pre></td></tr></table></div></div><h3 id=子模块>子模块</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=子模块>子模块</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -100,7 +235,9 @@ git branch -d &lt;BRANCH_NAME&gt;
 </span><span class=lnt>12
 </span><span class=lnt>13
 </span><span class=lnt>14
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 将一个 Git 仓库添加为当前仓库的子模块</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 将一个 Git 仓库添加为当前仓库的子模块</span>
 git submodule add https://github.com/USERNAME/REPONAME.git
 
 <span class=c1># git clone 含有子模块的项目</span>
@@ -114,42 +251,152 @@ git submodule update --init
 git clone --recurse-submodules https://github.com/USERNAME/REPONAME.git
 <span class=c1># 或者</span>
 git clone --recursive https://github.com/USERNAME/REPONAME.git
-</code></pre></td></tr></table></div></div><h3 id=替换本地改动>替换本地改动</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=替换本地改动>替换本地改动</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 丢弃当前文件修改内容</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 丢弃当前文件修改内容</span>
 git checkout -- FILENAME
 
 <span class=c1># 丢弃本地仓库的所有改动与提交版本</span>
 git fetch origin
 git reset --hard origin/master
-</code></pre></td></tr></table></div></div><h3 id=本地创建仓库并上传至-github>本地创建仓库并上传至 GitHub</h3><ol><li><a href=#%e9%85%8d%e7%bd%ae-git rel>配置 Git</a>。</li><li>git bash 输入如下指令：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=本地创建仓库并上传至-github>本地创建仓库并上传至 GitHub</h3>
+<ol>
+<li><a href=#%e9%85%8d%e7%bd%ae-git rel>配置 Git</a>。</li>
+<li>git bash 输入如下指令：</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git init
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git init
 git add --all  <span class=c1># git add .</span>
 git commit -m <span class=s2>&#34;descriptions&#34;</span>
 git remote add origin https://github.com/USERNAME/REPONAME.git
 git push -u origin master
-</code></pre></td></tr></table></div></div><h2 id=配置-git>配置 Git</h2><ol><li>将<code>your_email@youremail.com</code>改为你的 Github 账号的邮箱，然后一路回车。</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>ssh-keygen -t rsa -C <span class=s2>&#34;your_email@youremail.com&#34;</span>
-</code></pre></td></tr></table></div></div><ol start=2><li>成功的话会在<code>${USERNAME}/</code>下生成<code>.ssh</code>文件夹，进入该文件夹，打开<code>id_rsa.pub</code>文件，复制里面的内容。</li><li>回到 Github 网页，登录，点击右上角头像，选择<code>Settings</code>-><code>SSH and GPG keys</code>-><code>New SSH key</code>，<code>Title</code>随便填，<code>Key</code>粘贴你刚复制的内容，然后点击<code>Add SSH key</code>。</li><li>测试，git bash 输入如下指令：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>ssh -T git@github.com
-</code></pre></td></tr></table></div></div><ol start=5><li>配置用户名和邮箱：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=配置-git>配置 Git</h2>
+<ol>
+<li>将<code>your_email@youremail.com</code>改为你的 Github 账号的邮箱，然后一路回车。</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh-keygen -t rsa -C <span class=s2>&#34;your_email@youremail.com&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=2>
+<li>成功的话会在<code>${USERNAME}/</code>下生成<code>.ssh</code>文件夹，进入该文件夹，打开<code>id_rsa.pub</code>文件，复制里面的内容。</li>
+<li>回到 Github 网页，登录，点击右上角头像，选择<code>Settings</code>-><code>SSH and GPG keys</code>-><code>New SSH key</code>，<code>Title</code>随便填，<code>Key</code>粘贴你刚复制的内容，然后点击<code>Add SSH key</code>。</li>
+<li>测试，git bash 输入如下指令：</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh -T git@github.com
+</code></pre></td></tr></table>
+</div>
+</div><ol start=5>
+<li>配置用户名和邮箱：</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git config --global user.name <span class=s2>&#34;USERNAME&#34;</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git config --global user.name <span class=s2>&#34;USERNAME&#34;</span>
 git config --global user.email <span class=s2>&#34;username@email.com&#34;</span>
-</code></pre></td></tr></table></div></div><h2 id=qa>Q&A</h2><h3 id=无法连接服务器报错443>无法连接服务器，报错443</h3><p>问题：</p><p>git clone 或 git push 等操作时无法连接至服务器，报错内容如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
-</code></pre></td></tr></table></div></div><p>答案：</p><ol><li>该问题由开启代理软件导致。</li><li>到<code>设置</code>-><code>网络和Internet</code>-><code>代理</code>中查看<code>地址</code>和<code>端口</code>。</li><li>git bash 中输入如下命令（<code>IP_ADDRESS</code>和<code>PORT</code>改为刚才查看的<code>地址</code>和<code>端口</code>）：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=qa>Q&A</h2>
+<h3 id=无法连接服务器报错443>无法连接服务器，报错443</h3>
+<p>问题：</p>
+<p>git clone 或 git push 等操作时无法连接至服务器，报错内容如下：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+</code></pre></td></tr></table>
+</div>
+</div><p>答案：</p>
+<ol>
+<li>该问题由开启代理软件导致。</li>
+<li>到<code>设置</code>-><code>网络和Internet</code>-><code>代理</code>中查看<code>地址</code>和<code>端口</code>。</li>
+<li>git bash 中输入如下命令（<code>IP_ADDRESS</code>和<code>PORT</code>改为刚才查看的<code>地址</code>和<code>端口</code>）：</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git config --global http.proxy IP_ADDRESS:PORT
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git config --global http.proxy IP_ADDRESS:PORT
 <span class=c1># git config --global http.proxy 127.0.0.1:10809</span>
-</code></pre></td></tr></table></div></div><h2 id=参考>参考</h2><ol><li><a href=https://training.github.com/ target=_blank rel="noopener noreffer">Git Cheat Sheets</a></li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-07-16</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=# onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/%E9%A5%A5%E8%8D%92%E6%95%99%E7%A8%8B/ class=prev rel=prev title=饥荒教程><i class="fas fa-angle-left fa-fw"></i>饥荒教程</a>
-<a href=/posts/git-tutorials/ class=next rel=next title="Git Tutorials">Git Tutorials<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Backtraxe</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:25},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=参考>参考</h2>
+<ol>
+<li><a href=https://training.github.com/ target=_blank rel="noopener noreffer">Git Cheat Sheets</a></li>
+</ol></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2021-07-16</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags></section>
+<section>
+<span><a href=# onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/posts/%E9%A5%A5%E8%8D%92%E6%95%99%E7%A8%8B/ class=prev rel=prev title=饥荒教程><i class="fas fa-angle-left fa-fw"></i>饥荒教程</a>
+<a href=/posts/git-tutorials/ class=next rel=next title="Git Tutorials">Git Tutorials<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Backtraxe</a></span></div>
+</div></footer></div>
+<div id=fixed-buttons><a href=#back-to-top id=back-to-top class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><div class=assets><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script></div>
+<div class=pjax-assets><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:25},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css></div>
+</body>
+</html>

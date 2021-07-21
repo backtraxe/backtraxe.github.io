@@ -1,20 +1,204 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge"><title>环境搭建 - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="环境搭建"><meta property="og:description" content="常用软件或程序语言环境搭建。"><meta property="og:type" content="article"><meta property="og:url" content="https://backtraxe.github.io/posts/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-03-15T21:42:07+08:00"><meta property="article:modified_time" content="2021-06-25T21:42:07+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="环境搭建"><meta name=twitter:description content="常用软件或程序语言环境搭建。"><meta name=application-name content="traXe"><meta name=apple-mobile-web-app-title content="traXe"><meta name=theme-color content="#ffffff"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/><link rel=prev href=https://backtraxe.github.io/posts/git-tutorials/><link rel=next href=https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-0115-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"环境搭建","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA\/"},"genre":"posts","wordcount":1620,"url":"https:\/\/backtraxe.github.io\/posts\/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA\/","datePublished":"2021-03-15T21:42:07+08:00","dateModified":"2021-06-25T21:42:07+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let themeColorMeta=getMeta('theme-color');document.body.getAttribute('theme')!='light'&&(themeColorMeta.content='#000000')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=traXe>traXe</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
-</span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=traXe>traXe</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><script>document.body.setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">环境搭建</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="author fas fa-user-circle fa-fw"></i>Backtraxe</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-15>2021-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1620 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#windows-添加环境变量>Windows 添加环境变量</a><ul><li><a href=#窗口化操作>窗口化操作</a></li><li><a href=#误删系统环境变量的补救措施>误删系统环境变量的补救措施</a></li></ul></li><li><a href=#vs-code>VS Code</a><ul><li><a href=#c>C++</a><ul><li><a href=#c_cpp_propertiesjson>c_cpp_properties.json</a></li></ul></li></ul></li><li><a href=#python>Python</a><ul><li><a href=#pip-设置代理>pip 设置代理</a></li><li><a href=#anaconda>Anaconda</a></li></ul></li><li><a href=#pytorch>PyTorch</a></li><li><a href=#tensorflow>TensorFlow</a><ul><li><a href=#qa>Q&A</a></li></ul></li><li><a href=#cuda--cudnn>CUDA & cuDNN</a></li><li><a href=#ffmpeg>FFmpeg</a></li></ul></nav></div></div><div class=content id=content><p>常用软件或程序语言环境搭建。</p><h2 id=windows-添加环境变量>Windows 添加环境变量</h2><h3 id=窗口化操作>窗口化操作</h3><ol><li>打开<code>我的电脑</code>，右键点击左侧的<code>此电脑</code>，点击<code>属性</code>。</li></ol><img src=/Windows添加环境变量/Windows添加环境变量01.png alt=Windows添加环境变量01><ol start=2><li>点击最下方的<code>高级系统设置</code>，然后点击<code>环境变量</code>。</li></ol><img src=/Windows添加环境变量/Windows添加环境变量02.png alt=Windows添加环境变量02><ol start=3><li>修改系统变量：下方选择需要修改的变量，点击<code>编辑</code>，然后<code>新建</code>或者<code>编辑</code>变量。</li></ol><img src=/Windows添加环境变量/Windows添加环境变量03.png alt=Windows添加环境变量03>
-<img src=/Windows添加环境变量/Windows添加环境变量04.png alt=Windows添加环境变量04><ol start=4><li>新建系统变量：直接点击<code>新建</code>，输入<code>变量名</code>和<code>变量值</code>，然后<code>确定</code>。</li></ol><img src=/Windows添加环境变量/Windows添加环境变量05.png alt=Windows添加环境变量05>
-<img src=/Windows添加环境变量/Windows添加环境变量06.png alt=Windows添加环境变量06><h3 id=误删系统环境变量的补救措施>误删系统环境变量的补救措施</h3><ol><li><p><strong>若未关闭当前CMD</strong>。输入<code>echo %PATH%</code>会显示原来的 PATH 值。</p></li><li><p><strong>若已关闭当前CMD</strong>。每个正在运行的 Windows 程序都会有自己已加载的 PATH，可以使用<a href=https://docs.microsoft.com/zh-cn/sysinternals/downloads/process-explorer target=_blank rel="noopener noreffer">Process Explorer</a>来查看当前正在运行的程序的环境变量。例如：如果你之前打开了 Chrome，且一直未关闭，按<code>Ctrl+O</code>打开<code>C:\Windows\System32\cmd.exe</code>，然后输入<code>echo %PATH%</code>会显示原来的 PATH 值。恢复之后删除<code>C:\Program Files\Google\Chrome\Application</code>和用户变量中的PATH值即可。</p></li><li><p><strong>若已重启电脑</strong>。手动恢复 PATH 到默认值<code>%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0</code>，其他值已丢失。</p></li></ol><p>参考：<a href=https://qastack.cn/superuser/523688/deleted-path-environment-variable-how-to-restore target=_blank rel="noopener noreffer">如何恢复我删除的Path环境变量？</a></p><h2 id=vs-code>VS Code</h2><h3 id=c>C++</h3><ol><li>编译器<ul><li>Windows（二选一）<ul><li>安装 <a href=https://visualstudio.microsoft.com/zh-hans/ target=_blank rel="noopener noreffer">Visual Studio</a></li><li>安装 <a href=http://mingw-w64.org/doku.php/download target=_blank rel="noopener noreffer">MinGW-w64</a>，<a href=https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/ target=_blank rel="noopener noreffer">SourceForge</a></li></ul></li><li>Linux: <code>sudo apt install gcc g++ gdb build-essential</code></li></ul></li><li>VS Code<ul><li>安装 <a href rel>ms-cpp-tools</a></li></ul></li></ol><p>3.解决头文件找不到，修改<code>c_cpp_properties.json</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title class=pjax-title>环境搭建 - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="环境搭建">
+<meta property="og:description" content="常用软件或程序语言环境搭建。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://backtraxe.github.io/posts/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-03-15T21:42:07+08:00">
+<meta property="article:modified_time" content="2021-06-25T21:42:07+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="环境搭建">
+<meta name=twitter:description content="常用软件或程序语言环境搭建。">
+<meta name=application-name content="traXe">
+<meta name=apple-mobile-web-app-title content="traXe">
+<meta name=theme-color content="#ffffff"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/><link rel=prev href=https://backtraxe.github.io/posts/git-tutorials/><link rel=next href=https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-0115-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
+<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"环境搭建","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA\/"},"genre":"posts","wordcount":1620,"url":"https:\/\/backtraxe.github.io\/posts\/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA\/","datePublished":"2021-03-15T21:42:07+08:00","dateModified":"2021-06-25T21:42:07+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let themeColorMeta=getMeta('theme-color');document.body.getAttribute('theme')!='light'&&(themeColorMeta.content='#000000')</script>
+<div id=back-to-top></div>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=traXe>traXe</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=traXe>traXe</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">环境搭建</h1><div class=post-meta>
+<div class=post-meta-line>
+<span class=post-author><a href=/ title=Author rel=" author" class=author><i class="author fas fa-user-circle fa-fw"></i>Backtraxe</a>
+</span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-15>2021-03-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1620 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#windows-添加环境变量>Windows 添加环境变量</a>
+<ul>
+<li><a href=#窗口化操作>窗口化操作</a></li>
+<li><a href=#误删系统环境变量的补救措施>误删系统环境变量的补救措施</a></li>
+</ul>
+</li>
+<li><a href=#vs-code>VS Code</a>
+<ul>
+<li><a href=#c>C++</a>
+<ul>
+<li><a href=#c_cpp_propertiesjson>c_cpp_properties.json</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#python>Python</a>
+<ul>
+<li><a href=#pip-设置代理>pip 设置代理</a></li>
+<li><a href=#anaconda>Anaconda</a></li>
+</ul>
+</li>
+<li><a href=#pytorch>PyTorch</a></li>
+<li><a href=#tensorflow>TensorFlow</a>
+<ul>
+<li><a href=#qa>Q&A</a></li>
+</ul>
+</li>
+<li><a href=#cuda--cudnn>CUDA & cuDNN</a></li>
+<li><a href=#ffmpeg>FFmpeg</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><p>常用软件或程序语言环境搭建。</p>
+<h2 id=windows-添加环境变量>Windows 添加环境变量</h2>
+<h3 id=窗口化操作>窗口化操作</h3>
+<ol>
+<li>打开<code>我的电脑</code>，右键点击左侧的<code>此电脑</code>，点击<code>属性</code>。</li>
+</ol>
+<img src=/Windows添加环境变量/Windows添加环境变量01.png alt=Windows添加环境变量01>
+<ol start=2>
+<li>点击最下方的<code>高级系统设置</code>，然后点击<code>环境变量</code>。</li>
+</ol>
+<img src=/Windows添加环境变量/Windows添加环境变量02.png alt=Windows添加环境变量02>
+<ol start=3>
+<li>修改系统变量：下方选择需要修改的变量，点击<code>编辑</code>，然后<code>新建</code>或者<code>编辑</code>变量。</li>
+</ol>
+<img src=/Windows添加环境变量/Windows添加环境变量03.png alt=Windows添加环境变量03>
+<img src=/Windows添加环境变量/Windows添加环境变量04.png alt=Windows添加环境变量04>
+<ol start=4>
+<li>新建系统变量：直接点击<code>新建</code>，输入<code>变量名</code>和<code>变量值</code>，然后<code>确定</code>。</li>
+</ol>
+<img src=/Windows添加环境变量/Windows添加环境变量05.png alt=Windows添加环境变量05>
+<img src=/Windows添加环境变量/Windows添加环境变量06.png alt=Windows添加环境变量06>
+<h3 id=误删系统环境变量的补救措施>误删系统环境变量的补救措施</h3>
+<ol>
+<li>
+<p><strong>若未关闭当前CMD</strong>。输入<code>echo %PATH%</code>会显示原来的 PATH 值。</p>
+</li>
+<li>
+<p><strong>若已关闭当前CMD</strong>。每个正在运行的 Windows 程序都会有自己已加载的 PATH，可以使用<a href=https://docs.microsoft.com/zh-cn/sysinternals/downloads/process-explorer target=_blank rel="noopener noreffer">Process Explorer</a>来查看当前正在运行的程序的环境变量。例如：如果你之前打开了 Chrome，且一直未关闭，按<code>Ctrl+O</code>打开<code>C:\Windows\System32\cmd.exe</code>，然后输入<code>echo %PATH%</code>会显示原来的 PATH 值。恢复之后删除<code>C:\Program Files\Google\Chrome\Application</code>和用户变量中的PATH值即可。</p>
+</li>
+<li>
+<p><strong>若已重启电脑</strong>。手动恢复 PATH 到默认值<code>%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0</code>，其他值已丢失。</p>
+</li>
+</ol>
+<p>参考：<a href=https://qastack.cn/superuser/523688/deleted-path-environment-variable-how-to-restore target=_blank rel="noopener noreffer">如何恢复我删除的Path环境变量？</a></p>
+<h2 id=vs-code>VS Code</h2>
+<h3 id=c>C++</h3>
+<ol>
+<li>编译器
+<ul>
+<li>Windows（二选一）
+<ul>
+<li>安装 <a href=https://visualstudio.microsoft.com/zh-hans/ target=_blank rel="noopener noreffer">Visual Studio</a></li>
+<li>安装 <a href=http://mingw-w64.org/doku.php/download target=_blank rel="noopener noreffer">MinGW-w64</a>，<a href=https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/ target=_blank rel="noopener noreffer">SourceForge</a></li>
+</ul>
+</li>
+<li>Linux: <code>sudo apt install gcc g++ gdb build-essential</code></li>
+</ul>
+</li>
+<li>VS Code
+<ul>
+<li>安装 <a href rel>ms-cpp-tools</a></li>
+</ul>
+</li>
+</ol>
+<p>3.解决头文件找不到，修改<code>c_cpp_properties.json</code>。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Linux</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># Linux</span>
 gcc -v -E -x c++ -
-</code></pre></td></tr></table></div></div><h4 id=c_cpp_propertiesjson>c_cpp_properties.json</h4><p><strong>Windows 10 + Visual Studio 2019</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=c_cpp_propertiesjson>c_cpp_properties.json</h4>
+<p><strong>Windows 10 + Visual Studio 2019</strong></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -35,7 +219,9 @@ gcc -v -E -x c++ -
 </span><span class=lnt>19
 </span><span class=lnt>20
 </span><span class=lnt>21
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span>
     <span class=nt>&#34;configurations&#34;</span><span class=p>:</span> <span class=p>[</span>
         <span class=p>{</span>
             <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Win32&#34;</span><span class=p>,</span>
@@ -56,7 +242,12 @@ gcc -v -E -x c++ -
     <span class=p>],</span>
     <span class=nt>&#34;version&#34;</span><span class=p>:</span> <span class=mi>4</span>
 <span class=p>}</span>
-</code></pre></td></tr></table></div></div><p><strong>Windows 10 + Mingw-w64</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Windows 10 + Mingw-w64</strong></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -78,7 +269,9 @@ gcc -v -E -x c++ -
 </span><span class=lnt>20
 </span><span class=lnt>21
 </span><span class=lnt>22
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span>
     <span class=nt>&#34;configurations&#34;</span><span class=p>:</span> <span class=p>[</span>
         <span class=p>{</span>
             <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Win32&#34;</span><span class=p>,</span>
@@ -100,11 +293,41 @@ gcc -v -E -x c++ -
     <span class=p>],</span>
     <span class=nt>&#34;version&#34;</span><span class=p>:</span> <span class=mi>4</span>
 <span class=p>}</span>
-</code></pre></td></tr></table></div></div><p><a href=https://code.visualstudio.com/docs/cpp/config-msvc target=_blank rel="noopener noreffer">参考</a></p><p><strong>关闭 Windows Defender “首次看到时阻止”：</strong></p><p>问题描述：</p><p>编译运行程序的时候总是弹出一个 Microsoft Defender 防病毒程序窗口，提示“需要扫描当前程序”。</p><p>解决方法：</p><ol><li>按<code>Win+R</code>，输入<code>gpedit.msc</code>，打开本地组策略编辑器。</li><li>左侧选择<code>计算机配置</code>-><code>管理模板</code>-><code>Windows 组件</code>-<code>Microsoft Defender 防病毒</code>-><code>MAPS</code>。</li><li>右侧双击<code>配置“首次看到时阻止”功能</code>，选择<code>已禁用</code>，然后点击<code>确定</code>，保存退出。</li></ol><h2 id=python>Python</h2><ol><li><a href=https://www.python.org/downloads/ target=_blank rel="noopener noreffer">Python 官网</a>，建议安装<code>3.8</code>版本。</li><li><a href=https://www.anaconda.com/products/individual#Downloads target=_blank rel="noopener noreffer">Anaconda 官网</a>。</li></ol><h3 id=pip-设置代理>pip 设置代理</h3><ul><li>Windows：<code>%APPDATA%\pip\pip.ini</code></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p><a href=https://code.visualstudio.com/docs/cpp/config-msvc target=_blank rel="noopener noreffer">参考</a></p>
+<p><strong>关闭 Windows Defender “首次看到时阻止”：</strong></p>
+<p>问题描述：</p>
+<p>编译运行程序的时候总是弹出一个 Microsoft Defender 防病毒程序窗口，提示“需要扫描当前程序”。</p>
+<p>解决方法：</p>
+<ol>
+<li>按<code>Win+R</code>，输入<code>gpedit.msc</code>，打开本地组策略编辑器。</li>
+<li>左侧选择<code>计算机配置</code>-><code>管理模板</code>-><code>Windows 组件</code>-<code>Microsoft Defender 防病毒</code>-><code>MAPS</code>。</li>
+<li>右侧双击<code>配置“首次看到时阻止”功能</code>，选择<code>已禁用</code>，然后点击<code>确定</code>，保存退出。</li>
+</ol>
+<h2 id=python>Python</h2>
+<ol>
+<li><a href=https://www.python.org/downloads/ target=_blank rel="noopener noreffer">Python 官网</a>，建议安装<code>3.8</code>版本。</li>
+<li><a href=https://www.anaconda.com/products/individual#Downloads target=_blank rel="noopener noreffer">Anaconda 官网</a>。</li>
+</ol>
+<h3 id=pip-设置代理>pip 设置代理</h3>
+<ul>
+<li>Windows：<code>%APPDATA%\pip\pip.ini</code></li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-ini data-lang=ini><span class=k>[global]</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-ini data-lang=ini><span class=k>[global]</span>
 <span class=na>proxy</span> <span class=o>=</span> <span class=s>http://user:password@proxy_name:port</span>
-</code></pre></td></tr></table></div></div><h3 id=anaconda>Anaconda</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=anaconda>Anaconda</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -127,7 +350,9 @@ gcc -v -E -x c++ -
 </span><span class=lnt>21
 </span><span class=lnt>22
 </span><span class=lnt>23
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 更新</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># 更新</span>
 conda update
 
 <span class=c1># 创建环境</span>
@@ -150,46 +375,163 @@ conda env list
 <span class=c1># 设置 proxy_server</span>
 conda config --set proxy_servers.http http://127.0.0.1:10809
 conda config --set proxy_servers.https http://127.0.0.1:10809
-</code></pre></td></tr></table></div></div><h2 id=pytorch>PyTorch</h2><p><a href=https://pytorch.org/get-started/locally/ target=_blank rel="noopener noreffer">PyTorch 官网</a></p><p><strong>CPU：</strong></p><p>Anaconda:</p><p><code>conda install pytorch torchvision torchaudio cpuonly -c pytorch</code></p><p>Pip:</p><p><code>pip install torch==1.8.1+cpu torchvision==0.9.1+cpu torchaudio===0.8.1 -f https://download.pytorch.org/whl/torch_stable.html</code></p><p><strong>GPU (CUDA 11.0)：</strong></p><p>Anaconda:</p><p><code>conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch</code></p><p>Pip:</p><p><code>pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</code></p><p>检查是否安装成功：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=pytorch>PyTorch</h2>
+<p><a href=https://pytorch.org/get-started/locally/ target=_blank rel="noopener noreffer">PyTorch 官网</a></p>
+<p><strong>CPU：</strong></p>
+<p>Anaconda:</p>
+<p><code>conda install pytorch torchvision torchaudio cpuonly -c pytorch</code></p>
+<p>Pip:</p>
+<p><code>pip install torch==1.8.1+cpu torchvision==0.9.1+cpu torchaudio===0.8.1 -f https://download.pytorch.org/whl/torch_stable.html</code></p>
+<p><strong>GPU (CUDA 11.0)：</strong></p>
+<p>Anaconda:</p>
+<p><code>conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch</code></p>
+<p>Pip:</p>
+<p><code>pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html</code></p>
+<p>检查是否安装成功：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>torch</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>torch</span>
 <span class=c1># 检查 pytorch 是否安装成功</span>
 <span class=nb>print</span><span class=p>(</span><span class=n>torch</span><span class=o>.</span><span class=n>__version__</span><span class=p>)</span>
 <span class=c1># 检查 CUDA 是否可用</span>
 <span class=nb>print</span><span class=p>(</span><span class=n>torch</span><span class=o>.</span><span class=n>cuda</span><span class=o>.</span><span class=n>is_available</span><span class=p>())</span>
-</code></pre></td></tr></table></div></div><h2 id=tensorflow>TensorFlow</h2><p><a href=https://tensorflow.google.cn/install target=_blank rel="noopener noreffer">TensorFlow 官网</a></p><p>Pip:</p><p>CPU and GPU: <code>pip install tensorflow</code></p><p>Wheel:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=tensorflow>TensorFlow</h2>
+<p><a href=https://tensorflow.google.cn/install target=_blank rel="noopener noreffer">TensorFlow 官网</a></p>
+<p>Pip:</p>
+<p>CPU and GPU: <code>pip install tensorflow</code></p>
+<p>Wheel:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow_cpu-2.4.0-cp38-cp38-win_amd64.whl</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow_cpu-2.4.0-cp38-cp38-win_amd64.whl</span>
 pip install tensorflow_cpu-2.4.1-cp38-cp38-win_amd64.whl  <span class=c1># CPU</span>
 <span class=c1># https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-2.4.0-cp38-cp38-win_amd64.whl</span>
 pip install tensorflow_gpu-2.4.0-cp38-cp38-win_amd64.whl  <span class=c1># GPU</span>
-</code></pre></td></tr></table></div></div><p>检查是否安装成功：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p>检查是否安装成功：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>tensorflow</span> <span class=k>as</span> <span class=nn>tf</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>tensorflow</span> <span class=k>as</span> <span class=nn>tf</span>
 <span class=c1># 检查 tensorflow 是否安装成功</span>
 <span class=nb>print</span><span class=p>(</span><span class=n>tf</span><span class=o>.</span><span class=n>__version__</span><span class=p>)</span>
 <span class=c1># 检查 CUDA 是否可用</span>
 <span class=c1># 输出最后一行显示 [PhysicalDevice(name=&#39;/physical_device:GPU:0&#39;, device_type=&#39;GPU&#39;)]</span>
 <span class=nb>print</span><span class=p>(</span><span class=n>tf</span><span class=o>.</span><span class=n>config</span><span class=o>.</span><span class=n>experimental</span><span class=o>.</span><span class=n>list_physical_devices</span><span class=p>(</span><span class=s1>&#39;GPU&#39;</span><span class=p>))</span>
-</code></pre></td></tr></table></div></div><h3 id=qa>Q&A</h3><p><strong>问题描述：</strong></p><p>安装 CUDA 11.1 + cuDNN 8.1，tensorflow 2.4.1 检查 GPU 时报错：</p><p><code>Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found</code></p><p><strong>解决方案：</strong></p><p>卸载重新安装 CUDA 11.0 + cuDNN 8.0，参考 <a href=https://www.tensorflow.org/install/source_windows#gpu target=_blank rel="noopener noreffer">Windows 经过测试的构建配置</a>。</p><h2 id=cuda--cudnn>CUDA & cuDNN</h2><blockquote><ul><li>CUDA 和 cuDNN 版本：<a href=https://www.tensorflow.org/install/source_windows#gpu target=_blank rel="noopener noreffer">Windows 经过测试的构建配置</a></li><li>以笔记本 RTX2060 显卡为例</li></ul></blockquote><ol><li><a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target=_blank rel="noopener noreffer">NVIDIA 驱动程序下载</a>，选择对应版本，下载安装。</li></ol><img src=/NVIDIA驱动程序下载.png alt="NVIDIA 驱动程序下载"><ol start=2><li><a href=https://developer.nvidia.com/cuda-toolkit-archive target=_blank rel="noopener noreffer">CUDA 工具包下载</a>，下载对应版本安装。</li></ol><img src=/CUDA工具包下载.png alt="CUDA 工具包下载"><p>在<code>CMD</code>输入<code>nvcc -V</code>，出现如下输出表示安装成功。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=qa>Q&A</h3>
+<p><strong>问题描述：</strong></p>
+<p>安装 CUDA 11.1 + cuDNN 8.1，tensorflow 2.4.1 检查 GPU 时报错：</p>
+<p><code>Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found</code></p>
+<p><strong>解决方案：</strong></p>
+<p>卸载重新安装 CUDA 11.0 + cuDNN 8.0，参考 <a href=https://www.tensorflow.org/install/source_windows#gpu target=_blank rel="noopener noreffer">Windows 经过测试的构建配置</a>。</p>
+<h2 id=cuda--cudnn>CUDA & cuDNN</h2>
+<blockquote>
+<ul>
+<li>CUDA 和 cuDNN 版本：<a href=https://www.tensorflow.org/install/source_windows#gpu target=_blank rel="noopener noreffer">Windows 经过测试的构建配置</a></li>
+<li>以笔记本 RTX2060 显卡为例</li>
+</ul>
+</blockquote>
+<ol>
+<li><a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target=_blank rel="noopener noreffer">NVIDIA 驱动程序下载</a>，选择对应版本，下载安装。</li>
+</ol>
+<img src=/NVIDIA驱动程序下载.png alt="NVIDIA 驱动程序下载">
+<ol start=2>
+<li><a href=https://developer.nvidia.com/cuda-toolkit-archive target=_blank rel="noopener noreffer">CUDA 工具包下载</a>，下载对应版本安装。</li>
+</ol>
+<img src=/CUDA工具包下载.png alt="CUDA 工具包下载">
+<p>在<code>CMD</code>输入<code>nvcc -V</code>，出现如下输出表示安装成功。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>nvcc: NVIDIA <span class=o>(</span>R<span class=o>)</span> Cuda compiler driver
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>nvcc: NVIDIA <span class=o>(</span>R<span class=o>)</span> Cuda compiler driver
 Copyright <span class=o>(</span>c<span class=o>)</span> 2005-2020 NVIDIA Corporation
 Built on Tue_Sep_15_19:12:04_Pacific_Daylight_Time_2020
 Cuda compilation tools, release 11.1, V11.1.74
 Build cuda_11.1.relgpu_drvr455TC455_06.29069683_0
-</code></pre></td></tr></table></div></div><ol start=3><li><a href=https://developer.nvidia.com/rdp/cudnn-download target=_blank rel="noopener noreffer">cuDNN 下载</a>，需要登陆账号，登陆后下载对应版本，解压将<code>bin</code>、<code>include</code>和<code>lib</code>三个文件夹的内容复制到 CUDA 安装目录下。</li></ol><h2 id=ffmpeg>FFmpeg</h2><ol><li>进入<a href=https://ffmpeg.org/download.html target=_blank rel="noopener noreffer">官网</a>，点击<code>Windows builds from gyan.dev</code>。</li></ol><img src=/ffmpeg下载/ffmpeg下载1.png alt=ffmpeg下载1><ol start=2><li>点击下图链接下载，然后解压，并把<code>bin</code>目录添加环境变量。</li></ol><img src=/ffmpeg下载/ffmpeg下载2.png alt=ffmpeg下载2><ol start=3><li>重新打开 CMD，输入<code>ffmpeg -version</code>验证安装。</li></ol><img src=/ffmpeg下载/ffmpeg下载3.png alt=ffmpeg下载3></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-06-25</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=# onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/git-tutorials/ class=prev rel=prev title="Git Tutorials"><i class="fas fa-angle-left fa-fw"></i>Git Tutorials</a>
-<a href=/posts/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-0115-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/ class=next rel=next title="力扣每日一题 0115 不同的子序列">力扣每日一题 0115 不同的子序列<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Backtraxe</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:25},comment:{},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=3>
+<li><a href=https://developer.nvidia.com/rdp/cudnn-download target=_blank rel="noopener noreffer">cuDNN 下载</a>，需要登陆账号，登陆后下载对应版本，解压将<code>bin</code>、<code>include</code>和<code>lib</code>三个文件夹的内容复制到 CUDA 安装目录下。</li>
+</ol>
+<h2 id=ffmpeg>FFmpeg</h2>
+<ol>
+<li>进入<a href=https://ffmpeg.org/download.html target=_blank rel="noopener noreffer">官网</a>，点击<code>Windows builds from gyan.dev</code>。</li>
+</ol>
+<img src=/ffmpeg下载/ffmpeg下载1.png alt=ffmpeg下载1>
+<ol start=2>
+<li>点击下图链接下载，然后解压，并把<code>bin</code>目录添加环境变量。</li>
+</ol>
+<img src=/ffmpeg下载/ffmpeg下载2.png alt=ffmpeg下载2>
+<ol start=3>
+<li>重新打开 CMD，输入<code>ffmpeg -version</code>验证安装。</li>
+</ol>
+<img src=/ffmpeg下载/ffmpeg下载3.png alt=ffmpeg下载3></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2021-06-25</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags></section>
+<section>
+<span><a href=# onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/posts/git-tutorials/ class=prev rel=prev title="Git Tutorials"><i class="fas fa-angle-left fa-fw"></i>Git Tutorials</a>
+<a href=/posts/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-0115-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/ class=next rel=next title="力扣每日一题 0115 不同的子序列">力扣每日一题 0115 不同的子序列<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Backtraxe</a></span></div>
+</div></footer></div>
+<div id=fixed-buttons><a href=#back-to-top id=back-to-top class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><div class=assets><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script></div>
+<div class=pjax-assets><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:25},comment:{},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script></div>
+</body>
+</html>

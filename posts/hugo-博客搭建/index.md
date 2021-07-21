@@ -830,7 +830,9 @@ git commit -m "init blog"
 git push --set-upstream origin master -f
 ```
 
-进入 Github 仓库，点击`Actions`->`New workflow`->`set up a workflow yourself`，写入如下内容。
+创建一个 [Personal access token](https://github.com/settings/tokens)，命名随意，勾选`repo`。
+
+进入`<USERNAME>.github.io.data`仓库，点击`Settings`->`Secrets`，填入刚才的`token`；点击`Actions`->`New workflow`->`set up a workflow yourself`，写入如下内容。
 
 ```yml
 name: Hugo Deploy  # 名称随意修改
@@ -987,10 +989,10 @@ title = ""
 ## 8 参考
 
 1. [Quick Start | Hugo](https://gohugo.io/getting-started/quick-start/)
-1. [GitHub Pages 文档 - GitHub Docs](https://docs.github.com/cn/pages)
-1. [Host on GitHub - Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
-1. [主题文档 - 基本概念 - LoveIt](https://hugoloveit.com/zh-cn/theme-documentation-basics/)
-1. [How to Create Your First Hugo Blog: a Practical Guide](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)
-1. [创建 GitHub Pages 站点 - Github](https://docs.github.com/cn/github/working-with-github-pages/creating-a-github-pages-site/)
-1. [使用Hugo和GitHub搭建博客 - Félix | Medium](https://zhangfelix.medium.com/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-cbd1d57fcfbf)
+2. [GitHub Pages 文档 - GitHub Docs](https://docs.github.com/cn/pages)
+3. [Host on GitHub - Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+4. [主题文档 - 基本概念 - LoveIt](https://hugoloveit.com/zh-cn/theme-documentation-basics/)
+5. [How to Create Your First Hugo Blog: a Practical Guide](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)
+6. [创建 GitHub Pages 站点 - Github](https://docs.github.com/cn/github/working-with-github-pages/creating-a-github-pages-site/)
+7. [使用Hugo和GitHub搭建博客 - Félix | Medium](https://zhangfelix.medium.com/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-cbd1d57fcfbf)
 

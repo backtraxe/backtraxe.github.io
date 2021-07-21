@@ -33,7 +33,9 @@
 {{< admonition tip "论文" >}}
 - [Papers With Code](https://paperswithcode.com/)
 - [CVF Open Access](https://openaccess.thecvf.com/menu)
-- []()
+- [Best Paper Awards in CS](https://jeffhuang.com/best_paper_awards/)
+- [SCI-Hub论文下载可用网址链接](https://tool.yovisun.com/scihub/)
+- [企鹅论文 一键下载](https://doi.qqsci.com/)
 - [Deep learning: Technical introduction](https://arxiv.org/abs/1709.01412)：深度学习综述
 - [What Do We Understand About Convolutional Networks?](https://arxiv.org/abs/1803.08834)：CNN 综述
 - [Bringing Old Photos Back to Life](https://arxiv.org/abs/2004.09484)：修复旧照片
@@ -62,7 +64,9 @@
 - [20天吃掉那只Pytorch](https://github.com/lyhue1991/eat_pytorch_in_20_days) `20210704`
 - [深度学习500问](https://github.com/scutan90/DeepLearning-500-questions) `20210317`
 - [nlp-tutorial](https://github.com/graykode/nlp-tutorial) `20210502`
+- [Machine Learning for Beginners - A Curriculum](https://github.com/microsoft/ML-For-Beginners) `20210721`
 - [《Deep Learning》](https://www.deeplearningbook.org/)
+- [《The Elements of Statistical Learning》中文版](https://esl.hohoweiya.xyz/)
 - [《Interpretable machine learning》](https://github.com/christophM/interpretable-ml-book) | [在线](https://christophm.github.io/interpretable-ml-book/) `20210713`
 - [《动手学深度学习》李沐](https://github.com/d2l-ai/d2l-zh) | [在线](http://zh.d2l.ai/) `20210717`
 - [《神经网络与深度学习》邱锡鹏](https://github.com/nndl/nndl.github.io) | [在线](https://nndl.github.io/) `20210518`
@@ -94,7 +98,6 @@
 
 {{< admonition tip "项目" >}}
 - [HelloGitHub](https://hellogithub.com/)
-- []()
 {{< /admonition >}}
 
 {{< admonition tip "pandas" >}}

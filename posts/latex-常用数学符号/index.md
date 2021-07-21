@@ -140,7 +140,7 @@ LaTeX 常用数学符号、公式。
 
 $$
 \begin{align}
-x&=t & x&=\cos t & x&=t \notag \\
+x&=t & x&=\cos t & x&=t \notag
 y&=2t & y&=\sin(t+1) & y&=\sin t
 \end{align}
 $$

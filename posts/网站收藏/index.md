@@ -132,6 +132,9 @@
 - [搜番](https://sofan.icu/)
 - [吃力网](https://cursor.vip/vip)
 - [电影淘淘](https://www.dianyingtaotao.com/)
+- [Torrent Kitty - 免费种子转磁力网站](https://cn.torrentkitty.tv/)
+- [云盘狗](http://yunpangou.com/)
+- [搜盘么](https://www.sopanme.com/)
 {{< /admonition >}}
 
 {{< admonition tip "Office" >}}
@@ -198,6 +201,14 @@
 
 {{< admonition tip "必备" >}}
 - [ShareX](https://getsharex.com/)
+- [Snipaste](https://zh.snipaste.com/)
+- [Clover](http://cn.ejie.me/)
+- [uTools](https://u.tools/)
+- [Bandizip](https://www.bandisoft.com/bandizip/)
+- [天若OCR](https://ocr.tianruo.net/)
+- [Everything](https://www.voidtools.com/zh-cn/)
+- [RubberTranslator](https://github.com/RubberTranslator/RubberTranslator)
+- [CopyTranslator](https://github.com/CopyTranslator/CopyTranslator)
 {{< /admonition >}}
 
 ## 导航

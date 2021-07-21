@@ -1,4 +1,4 @@
-# 论文研读 An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling
+# An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling
 
 
 description

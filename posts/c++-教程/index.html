@@ -1,14 +1,118 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge"><title>C++ 教程 - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="C++ 教程"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://backtraxe.github.io/posts/c++-%E6%95%99%E7%A8%8B/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-02-19T15:07:44+08:00"><meta property="article:modified_time" content="2021-02-19T15:07:44+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="C++ 教程"><meta name=twitter:description content><meta name=application-name content="traXe"><meta name=apple-mobile-web-app-title content="traXe"><meta name=theme-color content="#ffffff"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/c++-%E6%95%99%E7%A8%8B/><link rel=prev href=https://backtraxe.github.io/posts/freecodecamp-2018/><link rel=next href=https://backtraxe.github.io/posts/windows-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++ 教程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/c\u002b\u002b-%E6%95%99%E7%A8%8B\/"},"genre":"posts","wordcount":1086,"url":"https:\/\/backtraxe.github.io\/posts\/c\u002b\u002b-%E6%95%99%E7%A8%8B\/","datePublished":"2021-02-19T15:07:44+08:00","dateModified":"2021-02-19T15:07:44+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let themeColorMeta=getMeta('theme-color');document.body.getAttribute('theme')!='light'&&(themeColorMeta.content='#000000')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=traXe>traXe</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
-</span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=traXe>traXe</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><script>document.body.setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">C++ 教程</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="author fas fa-user-circle fa-fw"></i>Backtraxe</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-02-19>2021-02-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1086 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#a>A</a></li><li><a href=#b>B</a></li></ul></nav></div></div><div class=content id=content><h2 id=a>A</h2><p><strong>常量指针：</strong></p><p>常量指针本质上是个指针，只不过这个指针指向的对象是常量。</p><p>特点：</p><ul><li>const 的位置在指针声明运算符 * 的左侧。只要 const 位于 * 的左侧，无论它在类型名的左边或右边，都表示指向常量的指针。</li><li>（可以这样理解，* 左侧表示指针指向的对象，该对象为常量，那么该指针为常量指针。）</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title class=pjax-title>C++ 教程 - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="C++ 教程">
+<meta property="og:description" content>
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://backtraxe.github.io/posts/c++-%E6%95%99%E7%A8%8B/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-02-19T15:07:44+08:00">
+<meta property="article:modified_time" content="2021-02-19T15:07:44+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="C++ 教程">
+<meta name=twitter:description content>
+<meta name=application-name content="traXe">
+<meta name=apple-mobile-web-app-title content="traXe">
+<meta name=theme-color content="#ffffff"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/c++-%E6%95%99%E7%A8%8B/><link rel=prev href=https://backtraxe.github.io/posts/freecodecamp-2018/><link rel=next href=https://backtraxe.github.io/posts/windows-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
+<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++ 教程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/c\u002b\u002b-%E6%95%99%E7%A8%8B\/"},"genre":"posts","wordcount":1086,"url":"https:\/\/backtraxe.github.io\/posts\/c\u002b\u002b-%E6%95%99%E7%A8%8B\/","datePublished":"2021-02-19T15:07:44+08:00","dateModified":"2021-02-19T15:07:44+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let themeColorMeta=getMeta('theme-color');document.body.getAttribute('theme')!='light'&&(themeColorMeta.content='#000000')</script>
+<div id=back-to-top></div>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=traXe>traXe</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=traXe>traXe</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">C++ 教程</h1><div class=post-meta>
+<div class=post-meta-line>
+<span class=post-author><a href=/ title=Author rel=" author" class=author><i class="author fas fa-user-circle fa-fw"></i>Backtraxe</a>
+</span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-02-19>2021-02-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1086 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#a>A</a></li>
+<li><a href=#b>B</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=a>A</h2>
+<p><strong>常量指针：</strong></p>
+<p>常量指针本质上是个指针，只不过这个指针指向的对象是常量。</p>
+<p>特点：</p>
+<ul>
+<li>const 的位置在指针声明运算符 * 的左侧。只要 const 位于 * 的左侧，无论它在类型名的左边或右边，都表示指向常量的指针。</li>
+<li>（可以这样理解，* 左侧表示指针指向的对象，该对象为常量，那么该指针为常量指针。）</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -16,7 +120,9 @@
 </span><span class=lnt>6
 </span><span class=lnt>7
 </span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=k>const</span> <span class=kt>int</span> <span class=o>*</span> <span class=n>p1</span><span class=p>;</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>const</span> <span class=kt>int</span> <span class=o>*</span> <span class=n>p1</span><span class=p>;</span>
 <span class=kt>int</span> <span class=k>const</span> <span class=o>*</span> <span class=n>p2</span><span class=p>;</span>
 
 <span class=k>const</span> <span class=kt>int</span> <span class=n>c_var</span> <span class=o>=</span> <span class=mi>8</span><span class=p>;</span>
@@ -24,21 +130,46 @@
 <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>p3</span> <span class=o>=</span> <span class=o>&amp;</span><span class=n>c_var</span><span class=p>;</span>
 <span class=o>*</span><span class=n>p3</span> <span class=o>=</span> <span class=mi>6</span><span class=p>;</span>       <span class=c1>// error C3892: “p3”: 不能给常量赋值
 </span><span class=c1></span><span class=n>p3</span> <span class=o>=</span> <span class=o>&amp;</span><span class=n>var</span><span class=p>;</span>  <span class=c1>// 可以赋值
-</span></code></pre></td></tr></table></div></div><blockquote><p>指针指向的对象不能通过这个指针来修改，也就是说常量指针可以被赋值为变量的地址，之所以叫做常量指针，是限制了通过这个指针修改变量的值。
-虽然常量指针指向的对象不能变化，可是因为常量指针本身是一个变量，因此，可以被重新赋值。</p></blockquote><p><strong>指针常量：</strong></p><p>指针常量的本质上是个常量，只不过这个常量的值是一个指针。</p><p>特点：</p><ul><li>const 位于指针声明操作符右侧，表明该对象本身是一个常量，* 左侧表示该指针指向的类型，即以 * 为分界线，其左侧表示指针指向的类型，右侧表示指针本身的性质。</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>指针指向的对象不能通过这个指针来修改，也就是说常量指针可以被赋值为变量的地址，之所以叫做常量指针，是限制了通过这个指针修改变量的值。
+虽然常量指针指向的对象不能变化，可是因为常量指针本身是一个变量，因此，可以被重新赋值。</p>
+</blockquote>
+<p><strong>指针常量：</strong></p>
+<p>指针常量的本质上是个常量，只不过这个常量的值是一个指针。</p>
+<p>特点：</p>
+<ul>
+<li>const 位于指针声明操作符右侧，表明该对象本身是一个常量，* 左侧表示该指针指向的类型，即以 * 为分界线，其左侧表示指针指向的类型，右侧表示指针本身的性质。</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=k>const</span> <span class=kt>int</span> <span class=n>c_var</span> <span class=o>=</span> <span class=mi>8</span><span class=p>;</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>const</span> <span class=kt>int</span> <span class=n>c_var</span> <span class=o>=</span> <span class=mi>8</span><span class=p>;</span>
 <span class=kt>int</span> <span class=n>var</span> <span class=o>=</span> <span class=mi>6</span><span class=p>;</span>
 <span class=kt>int</span> <span class=o>*</span> <span class=k>const</span> <span class=n>c_p1</span> <span class=o>=</span> <span class=o>&amp;</span><span class=n>c_var</span><span class=p>;</span>  <span class=c1>// error C2440: “初始化”: 无法从“const int *”转换为“int *”
 </span><span class=c1></span><span class=kt>int</span> <span class=o>*</span> <span class=k>const</span> <span class=n>c_p2</span> <span class=o>=</span> <span class=o>&amp;</span><span class=n>var</span><span class=p>;</span>
 <span class=n>c_p1</span> <span class=o>=</span> <span class=o>&amp;</span><span class=n>var</span><span class=p>;</span>  <span class=c1>// error C3892: “c_p1”: 不能给常量赋值
 </span><span class=c1></span><span class=o>*</span><span class=n>c_p2</span> <span class=o>=</span> <span class=mi>6</span><span class=p>;</span>
-</code></pre></td></tr></table></div></div><blockquote><p>指针常量的值是指针，这个值因为是常量，所以指针本身不能改变。
-指针的内容可以改变。</p></blockquote><h2 id=b>B</h2><p>重载：</p><p>是指同一可访问区内被声明几个具有不同参数列（参数的类型、个数、顺序）的同名函数，根据参数列表确定调用哪个函数，重载不关心函数返回类型。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>指针常量的值是指针，这个值因为是常量，所以指针本身不能改变。
+指针的内容可以改变。</p>
+</blockquote>
+<h2 id=b>B</h2>
+<p>重载：</p>
+<p>是指同一可访问区内被声明几个具有不同参数列（参数的类型、个数、顺序）的同名函数，根据参数列表确定调用哪个函数，重载不关心函数返回类型。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -46,7 +177,9 @@
 </span><span class=lnt>6
 </span><span class=lnt>7
 </span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>A</span> <span class=p>{</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>A</span> <span class=p>{</span>
 <span class=k>public</span><span class=o>:</span>
     <span class=kt>void</span> <span class=n>fun</span><span class=p>(</span><span class=kt>int</span> <span class=n>tmp</span><span class=p>);</span>
     <span class=kt>void</span> <span class=nf>fun</span><span class=p>(</span><span class=kt>float</span> <span class=n>tmp</span><span class=p>);</span>            <span class=c1>// 重载 参数类型不同（相对于上一个函数）
@@ -54,7 +187,13 @@
 </span><span class=c1></span>    <span class=kt>void</span> <span class=nf>fun</span><span class=p>(</span><span class=kt>float</span> <span class=n>tmp</span><span class=p>,</span> <span class=kt>int</span> <span class=n>tmp1</span><span class=p>);</span>  <span class=c1>// 重载 参数顺序不同（相对于上一个函数）
 </span><span class=c1></span>    <span class=kt>int</span> <span class=nf>fun</span><span class=p>(</span><span class=kt>int</span> <span class=n>tmp</span><span class=p>);</span>               <span class=c1>// error C2556: “int A::fun(int)”: 重载函数与“void A::fun(int)”只是在返回类型上不同
 </span><span class=c1></span><span class=p>};</span>
-</code></pre></td></tr></table></div></div><p>隐藏：</p><p>是指派生类的函数屏蔽了与其同名的基类函数，主要只要同名函数，不管参数列表是否相同，基类函数都会被隐藏。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><p>隐藏：</p>
+<p>是指派生类的函数屏蔽了与其同名的基类函数，主要只要同名函数，不管参数列表是否相同，基类函数都会被隐藏。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -70,7 +209,9 @@
 </span><span class=lnt>14
 </span><span class=lnt>15
 </span><span class=lnt>16
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Base</span> <span class=p>{</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Base</span> <span class=p>{</span>
 <span class=k>public</span><span class=o>:</span>
     <span class=kt>void</span> <span class=n>fun</span><span class=p>(</span><span class=kt>int</span> <span class=n>tmp</span><span class=p>,</span> <span class=kt>float</span> <span class=n>tmp1</span><span class=p>)</span> <span class=p>{</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Base::fun(int tmp, float tmp1)&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=p>}</span>
 <span class=p>};</span>
@@ -86,7 +227,13 @@
 </span><span class=c1></span>    <span class=n>ex</span><span class=p>.</span><span class=n>fun</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mf>0.01</span><span class=p>);</span> <span class=c1>// error C2660: “Derive::fun”: 函数不接受 2 个参数
 </span><span class=c1></span>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 <span class=p>}</span>
-</code></pre></td></tr></table></div></div><p>重写(覆盖)：</p><p>是指派生类中存在重新定义的函数。函数名、参数列表、返回值类型都必须同基类中被重写的函数一致，只有函数体不同。派生类调用时会调用派生类的重写函数，不会调用被重写函数。重写的基类中被重写的函数必须有<code>virtual</code>修饰。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><p>重写(覆盖)：</p>
+<p>是指派生类中存在重新定义的函数。函数名、参数列表、返回值类型都必须同基类中被重写的函数一致，只有函数体不同。派生类调用时会调用派生类的重写函数，不会调用被重写函数。重写的基类中被重写的函数必须有<code>virtual</code>修饰。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -101,7 +248,9 @@
 </span><span class=lnt>13
 </span><span class=lnt>14
 </span><span class=lnt>15
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Base</span> <span class=p>{</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=k>class</span> <span class=nc>Base</span> <span class=p>{</span>
 <span class=k>public</span><span class=o>:</span>
     <span class=k>virtual</span> <span class=kt>void</span> <span class=n>fun</span><span class=p>(</span><span class=kt>int</span> <span class=n>tmp</span><span class=p>)</span> <span class=p>{</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Base::fun(int tmp)&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=p>}</span>
 <span class=p>};</span>
@@ -116,6 +265,43 @@
     <span class=n>p</span><span class=o>-&gt;</span><span class=n>fun</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span>  <span class=c1>// Derive::fun(int)
 </span><span class=c1></span>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 <span class=p>}</span>
-</code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-02-19</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=# onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/freecodecamp-2018/ class=prev rel=prev title="FreeCodeCamp 2018"><i class="fas fa-angle-left fa-fw"></i>FreeCodeCamp 2018</a>
-<a href=/posts/windows-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/ class=next rel=next title="Windows 包管理工具">Windows 包管理工具<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Backtraxe</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:25},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2021-02-19</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags></section>
+<section>
+<span><a href=# onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/posts/freecodecamp-2018/ class=prev rel=prev title="FreeCodeCamp 2018"><i class="fas fa-angle-left fa-fw"></i>FreeCodeCamp 2018</a>
+<a href=/posts/windows-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/ class=next rel=next title="Windows 包管理工具">Windows 包管理工具<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Backtraxe</a></span></div>
+</div></footer></div>
+<div id=fixed-buttons><a href=#back-to-top id=back-to-top class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><div class=assets><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script></div>
+<div class=pjax-assets><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:25},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css></div>
+</body>
+</html>
