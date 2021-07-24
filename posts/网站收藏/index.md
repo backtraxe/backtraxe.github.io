@@ -1,6 +1,8 @@
 # 网站收藏🔝
 
 
+工具、娱乐、资源、软件……
+
 <!--more-->
 
 ## 在线工具
@@ -25,6 +27,10 @@
 - [小米风格Logo生成器](https://mi-logo.lvwzhen.com)
 - [favicon图标制作工具](https://geticon.cn/)
 - [favicon图标生成器](https://realfavicongenerator.net/)
+{{< /admonition >}}
+
+{{< admonition tip "在线音频/视频处理" >}}
+- [网易见外工作台](https://jianwai.youdao.com/)
 {{< /admonition >}}
 
 {{< admonition tip "编程" >}}
@@ -162,26 +168,31 @@
 - [Worldvectorlogo](https://worldvectorlogo.com/)
 - [Iconduck](https://iconduck.com/)
 - [StickPNG](https://www.stickpng.com/)
-- [Iconfont](https://www.iconfont.cn)
+- [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)
+- [设计之家](https://www.sj33.cn/)
 {{< /admonition >}}
 
 {{< admonition tip "插画" >}}
 - [Storyset](https://storyset.com/)
 - [StickPNG](https://www.stickpng.com/)
-- [Iconfont](https://www.iconfont.cn)
+- [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn)
+{{< /admonition >}}
+
+{{< admonition tip "设计" >}}
+- [Figma](https://www.figma.com/)
 {{< /admonition >}}
 
 {{< admonition tip "摄影" >}}
 - [天空之城](https://www.skypixel.com/)
 {{< /admonition >}}
 
-- [小爱同学音色网](http://ai.aahhy.com/)
-
 {{< admonition tip "游戏" >}}
 - [Liquipedia](https://liquipedia.net/)
 - [DST-MOD Wikri](https://wiki.flapi.cn/doku.php)
 - [叽哩叽哩游戏网ACG（G站）](https://www.jiligamefun.com/)
 {{< /admonition >}}
+
+- [小爱同学音色网](http://ai.aahhy.com/)
 
 ## 软件
 
