@@ -107,12 +107,14 @@
 
 {{< admonition tip "影视" >}}
 - [高清MP4粉](https://www.mp4fan.org/)
-- [片源网](http://pianyuan.org)
-- [BT天堂](https://www.bt-tt.com)
-- [SubDH](https://subdh.com)
-- [FIX字幕侠](http://www.zimuxia.cn)
-- [牛牛美剧](http://www.nnmeiju.com)
-- [音范丝](https://www.yinfans.me)
+- [片源网](http://pianyuan.org/)
+- [BT天堂](https://www.bt-tt.com/)
+- [SubDH](https://subdh.com/)
+- [FIX字幕侠](https://www.zimuxia.cn/)
+- [牛牛美剧](http://www.nnmeiju.com/)
+- [音范丝](https://www.yinfans.net/)
+- [Nyaa](https://nyaa.si/)
+- [RARBG](https://rarbg.to/)
 {{< /admonition >}}
 
 {{< admonition tip "字幕" >}}

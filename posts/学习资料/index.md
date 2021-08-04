@@ -105,3 +105,7 @@
 - [User Guide — pandas](https://pandas.pydata.org/docs/user_guide/index.html)
 {{< /admonition >}}
 
+{{< admonition tip "Java" >}}
+- [How2J 的 Java教程](https://how2j.cn/)
+{{< /admonition >}}
+
