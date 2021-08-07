@@ -85,6 +85,41 @@ a ^ 0  # 00 00 00 11 : 3
 
 ```
 
+## string
+
+```python
+pluto_mass = 1.303 * 10**22
+earth_mass = 5.9722 * 10**24
+population = 52910390
+# {:.2}  2位有效数字
+# {:.3%} 3位有效数字，百分数形式表示
+# {:,}   数字每隔3位用逗号隔开
+"{} weighs about {:.2} kilograms ({:.3%} of Earth's mass). It is home to {:,} Plutonians.".format(
+    planet, pluto_mass, pluto_mass / earth_mass, population
+)
+# Pluto weighs about 1.3e+22 kilograms (0.218% of Earth's mass). It is home to 52,910,390 Plutonians.
+```
+
+```python
+# 根据位置使用变量
+s = """Pluto's a {0}.
+No, it's a {1}.
+{0}!
+{1}!""".format('planet', 'dwarf planet')
+# Pluto's a planet.
+# No, it's a dwarf planet.
+# planet!
+# dwarf planet!
+```
+
+```python
+'123'.isdigit() # True
+```
+
+**参考：**
+
+1. [PyFormat](https://pyformat.info/)
+
 ## dict
 
 ```python
@@ -104,7 +139,6 @@ ord(c)                    # 返回字符对应的 ASCII 数值，或者 Unicode 
 chr(i)                    # 返回整数（0～255，10进制或16进制）对应的 ASCII 字符。
 bin(i)                    # 返回一个整数（int 或 long int）的二进制表示，str 类型。
 complex(real=0, image=0)  # 复数
-
 ```
 
 ### staticmethod
