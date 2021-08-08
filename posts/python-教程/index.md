@@ -85,6 +85,23 @@ a ^ 0  # 00 00 00 11 : 3
 
 ```
 
+## list
+
+```python
+a = [1]
+a.append(2)  # [1, 2]
+a.pop()      # 2
+a.index(1)   # 0 找不到报错
+```
+
+## complex number
+
+```python
+c = 12 + 3j
+print(c.real)  # 12.0
+print(c.imag)  # 3.0
+```
+
 ## string
 
 ```python
@@ -138,7 +155,14 @@ input(words)              # 打印 words，读取用户输入，返回 str 类�
 ord(c)                    # 返回字符对应的 ASCII 数值，或者 Unicode 数值
 chr(i)                    # 返回整数（0～255，10进制或16进制）对应的 ASCII 字符。
 bin(i)                    # 返回一个整数（int 或 long int）的二进制表示，str 类型。
+any()                     # 是否存在大于0
+all()                     # 是否全大于0
 complex(real=0, image=0)  # 复数
+```
+
+```python
+7.bit_length()           # 3
+0.25.as_integer_ratio()  # (1, 4)
 ```
 
 ### staticmethod
