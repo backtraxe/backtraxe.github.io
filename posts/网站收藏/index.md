@@ -239,3 +239,9 @@
 - [The best Programming books](https://www.best-books.dev/)
 - [历史剧网](http://www.lishiju.net/)
 
+{{< admonition tip "油猴插件" >}}
+- [Greasy Fork](https://greasyfork.org/zh-CN)
+- [雷利子](https://greasyfork.org/zh-CN/scripts/424022-%E9%9B%B7%E5%88%A9%E5%AD%90)
+- [秒传链接提取](https://greasyfork.org/zh-CN/scripts/424574-%E7%A7%92%E4%BC%A0%E9%93%BE%E6%8E%A5%E6%8F%90%E5%8F%96)
+{{< /admonition >}}
+
