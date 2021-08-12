@@ -109,3 +109,12 @@
 - [How2J 的 Java教程](https://how2j.cn/)
 {{< /admonition >}}
 
+{{< admonition tip "环境搭建" >}}
+- [Arch Linux 安装使用教程](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/)
+{{< /admonition >}}
+
+{{< admonition tip "Linux" >}}
+- [Linux命令行与Shell脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)
+- [Linux 网络编程与加密](https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/)
+{{< /admonition >}}
+

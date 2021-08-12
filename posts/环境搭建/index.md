@@ -171,7 +171,7 @@ conda config --set proxy_servers.https http://127.0.0.1:10809
 
 ## PyTorch
 
-[PyTorch 官网](https://pytorch.org/get-started/locally/)
+[PyTorch 官网](https://pytorch.org/)
 
 **CPU：**
 
@@ -205,7 +205,7 @@ print(torch.cuda.is_available())
 
 ## TensorFlow
 
-[TensorFlow 官网](https://tensorflow.google.cn/install)
+[TensorFlow 官网](https://www.tensorflow.org/)
 
 Pip:
 

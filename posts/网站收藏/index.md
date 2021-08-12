@@ -27,6 +27,7 @@
 - [小米风格Logo生成器](https://mi-logo.lvwzhen.com)
 - [favicon图标制作工具](https://geticon.cn/)
 - [favicon图标生成器](https://realfavicongenerator.net/)
+- [Figen - Post Cover & Background Generator Tool](https://figen.cc/)
 {{< /admonition >}}
 
 {{< admonition tip "在线音频/视频处理" >}}
