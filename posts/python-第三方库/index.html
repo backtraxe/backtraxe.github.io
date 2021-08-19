@@ -3,22 +3,22 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
-<title class=pjax-title>An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling">
-<meta property="og:description" content="description">
+<title class=pjax-title>Python 第三方库 - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="Python 第三方库">
+<meta property="og:description" content>
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://backtraxe.github.io/posts/an-empirical-evaluation-of-generic-convolutional-and-recurrent-networks-for-sequence-modeling/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-04-19T22:50:18+08:00">
-<meta property="article:modified_time" content="2021-08-19T13:02:29+08:00">
+<meta property="og:url" content="https://backtraxe.github.io/posts/python-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-08-15T17:08:51+08:00">
+<meta property="article:modified_time" content="2021-08-15T17:08:51+08:00">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling">
-<meta name=twitter:description content="description">
+<meta name=twitter:title content="Python 第三方库">
+<meta name=twitter:description content>
 <meta name=application-name content="traXe">
 <meta name=apple-mobile-web-app-title content="traXe">
 <meta name=theme-color content="#ffffff"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/an-empirical-evaluation-of-generic-convolutional-and-recurrent-networks-for-sequence-modeling/><link rel=prev href=https://backtraxe.github.io/posts/youtube-dl-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/><link rel=next href=https://backtraxe.github.io/posts/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/python-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/><link rel=prev href=https://backtraxe.github.io/posts/pandas-%E6%95%99%E7%A8%8B/><link rel=next href=https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
 <noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
-<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/an-empirical-evaluation-of-generic-convolutional-and-recurrent-networks-for-sequence-modeling\/"},"genre":"posts","wordcount":64,"url":"https:\/\/backtraxe.github.io\/posts\/an-empirical-evaluation-of-generic-convolutional-and-recurrent-networks-for-sequence-modeling\/","datePublished":"2021-04-19T22:50:18+08:00","dateModified":"2021-08-19T13:02:29+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Python 第三方库","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/python-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93\/"},"genre":"posts","wordcount":104,"url":"https:\/\/backtraxe.github.io\/posts\/python-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93\/","datePublished":"2021-08-15T17:08:51+08:00","dateModified":"2021-08-15T17:08:51+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let themeColorMeta=getMeta('theme-color');document.body.getAttribute('theme')!='light'&&(themeColorMeta.content='#000000')</script>
 <div id=back-to-top></div>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
@@ -84,11 +84,11 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling</h1><div class=post-meta>
+</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Python 第三方库</h1><div class=post-meta>
 <div class=post-meta-line>
 <span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=" author" class=author>Backtraxe</a>
 </span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-19>2021-04-19</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-08-19>2021-08-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 64 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-08-15>2021-08-15</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-08-15>2021-08-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 104 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -97,47 +97,49 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#参考>参考</a></li>
+<li><a href=#tensorflowhttpswwwtensorfloworg><a href=https://www.tensorflow.org/>TensorFlow</a></a></li>
+<li><a href=#pytorchhttpspytorchorg><a href=https://pytorch.org/>Pytorch</a></a></li>
+<li><a href=#paddlepaddlehttpswwwpaddlepaddleorgcn><a href=https://www.paddlepaddle.org.cn/>PaddlePaddle</a></a></li>
+<li><a href=#dartshttpsgithubcomunit8codarts><a href=https://github.com/unit8co/darts>Darts</a></a></li>
+<li><a href=#optunahttpsoptunaorg><a href=https://optuna.org/>Optuna</a></a></li>
+<li><a href=#pycarethttpspycaretorg><a href=https://pycaret.org/>PyCaret</a></a></li>
+<li><a href=#scikit-learnhttpsscikit-learnorg><a href=https://scikit-learn.org/>scikit-learn</a></a></li>
+<li><a href=#auto-sklearnhttpsgithubcomautomlauto-sklearn><a href=https://github.com/automl/auto-sklearn>auto-sklearn</a></a></li>
+<li><a href=#jaxhttpsgithubcomgooglejax><a href=https://github.com/google/jax>JAX</a></a></li>
+<li><a href=#numpyhttpsnumpyorg><a href=https://numpy.org/>NumPy</a></a></li>
+<li><a href=#pandashttpspandaspydataorg><a href=https://pandas.pydata.org/>pandas</a></a></li>
+<li><a href=#matplotlibhttpsmatplotliborg><a href=https://matplotlib.org/>Matplotlib</a></a></li>
+<li><a href=#seabornhttpsseabornpydataorg><a href=https://seaborn.pydata.org/>seaborn</a></a></li>
+<li><a href=#prophethttpsfacebookgithubioprophet><a href=https://facebook.github.io/prophet/>Prophet</a></a></li>
+<li><a href=#xgboosthttpsgithubcomdmlcxgboost><a href=https://github.com/dmlc/xgboost>XGBoost</a></a></li>
+<li><a href=#lightgbmhttpsgithubcommicrosoftlightgbm><a href=https://github.com/microsoft/LightGBM>LightGBM</a></a></li>
+<li><a href=#catboosthttpsgithubcomcatboostcatboost><a href=https://github.com/catboost/catboost>CatBoost</a></a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><p>description</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:left>标题</th>
-<th style=text-align:left>An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:left>作者</td>
-<td style=text-align:left>Shaojie Bai, J. Zico Kolter, Vladlen Koltun</td>
-</tr>
-<tr>
-<td style=text-align:left>日期</td>
-<td style=text-align:left>2018.03</td>
-</tr>
-<tr>
-<td style=text-align:left>引用</td>
-<td style=text-align:left>1180</td>
-</tr>
-<tr>
-<td style=text-align:left>地址</td>
-<td style=text-align:left><a href=https://arxiv.org/pdf/1803.01271.pdf target=_blank rel="noopener noreffer">https://arxiv.org/pdf/1803.01271.pdf</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id=参考>参考</h2>
-<ol>
-<li><a href=https://github.com/locuslab/TCN target=_blank rel="noopener noreffer">Sequence Modeling Benchmarks and Temporal Convolutional Networks (TCN) - Github</a></li>
-<li><a href=https://github.com/philipperemy/keras-tcn target=_blank rel="noopener noreffer">Keras TCN</a></li>
-<li><a href=https://medium.com/unit8-machine-learning-publication/temporal-convolutional-networks-and-forecasting-5ce1b6e97ce4 target=_blank rel="noopener noreffer">Temporal Convolutional Networks and Forecasting - Medium</a></li>
-<li><a href=https://zhuanlan.zhihu.com/p/51246745 target=_blank rel="noopener noreffer">TCN 时间卷积网络 - 知乎</a></li>
-</ol></div><div class=post-footer id=post-footer>
+</div><div class=content id=content><h2 id=tensorflowhttpswwwtensorfloworg><a href=https://www.tensorflow.org/ target=_blank rel="noopener noreffer">TensorFlow</a></h2>
+<p>TensorFlow 是一个端到端平台，无论您是专家还是初学者，它都可以让您轻松地构建和部署机器学习模型。</p>
+<h2 id=pytorchhttpspytorchorg><a href=https://pytorch.org/ target=_blank rel="noopener noreffer">Pytorch</a></h2>
+<p>一个开源机器学习框架，加速了从研究原型到生产部署的过程。</p>
+<h2 id=paddlepaddlehttpswwwpaddlepaddleorgcn><a href=https://www.paddlepaddle.org.cn/ target=_blank rel="noopener noreffer">PaddlePaddle</a></h2>
+<p>源于产业实践的开源深度学习平台。</p>
+<h2 id=dartshttpsgithubcomunit8codarts><a href=https://github.com/unit8co/darts target=_blank rel="noopener noreffer">Darts</a></h2>
+<h2 id=optunahttpsoptunaorg><a href=https://optuna.org/ target=_blank rel="noopener noreffer">Optuna</a></h2>
+<h2 id=pycarethttpspycaretorg><a href=https://pycaret.org/ target=_blank rel="noopener noreffer">PyCaret</a></h2>
+<h2 id=scikit-learnhttpsscikit-learnorg><a href=https://scikit-learn.org/ target=_blank rel="noopener noreffer">scikit-learn</a></h2>
+<h2 id=auto-sklearnhttpsgithubcomautomlauto-sklearn><a href=https://github.com/automl/auto-sklearn target=_blank rel="noopener noreffer">auto-sklearn</a></h2>
+<h2 id=jaxhttpsgithubcomgooglejax><a href=https://github.com/google/jax target=_blank rel="noopener noreffer">JAX</a></h2>
+<h2 id=numpyhttpsnumpyorg><a href=https://numpy.org/ target=_blank rel="noopener noreffer">NumPy</a></h2>
+<h2 id=pandashttpspandaspydataorg><a href=https://pandas.pydata.org/ target=_blank rel="noopener noreffer">pandas</a></h2>
+<h2 id=matplotlibhttpsmatplotliborg><a href=https://matplotlib.org/ target=_blank rel="noopener noreffer">Matplotlib</a></h2>
+<h2 id=seabornhttpsseabornpydataorg><a href=https://seaborn.pydata.org/ target=_blank rel="noopener noreffer">seaborn</a></h2>
+<h2 id=prophethttpsfacebookgithubioprophet><a href=https://facebook.github.io/prophet/ target=_blank rel="noopener noreffer">Prophet</a></h2>
+<h2 id=xgboosthttpsgithubcomdmlcxgboost><a href=https://github.com/dmlc/xgboost target=_blank rel="noopener noreffer">XGBoost</a></h2>
+<h2 id=lightgbmhttpsgithubcommicrosoftlightgbm><a href=https://github.com/microsoft/LightGBM target=_blank rel="noopener noreffer">LightGBM</a></h2>
+<h2 id=catboosthttpsgithubcomcatboostcatboost><a href=https://github.com/catboost/catboost target=_blank rel="noopener noreffer">CatBoost</a></h2></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2021-08-19</span>
+<span>更新于 2021-08-15</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -154,8 +156,8 @@
 <span><a href=# onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/posts/youtube-dl-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/ class=prev rel=prev title="youtube-dl 使用教程"><i class="fas fa-angle-left fa-fw"></i>youtube-dl 使用教程</a>
-<a href=/posts/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/ class=next rel=next title=常用软件>常用软件<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/posts/pandas-%E6%95%99%E7%A8%8B/ class=prev rel=prev title="Pandas 教程"><i class="fas fa-angle-left fa-fw"></i>Pandas 教程</a>
+<a href=/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/ class=next rel=next title=学习资料🔝>学习资料🔝<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
 </main><footer class=footer>
