@@ -148,21 +148,21 @@ proxy = http://user:password@proxy_name:port
 conda update
 
 # 创建环境
-conda create -n ENVNAME python=3.X -y
+conda create -n <ENVNAME> python=3.X -y
+conda create --name <ENVNAME> python=3.X -y
 
 # 启用环境
-conda activate ENVNAME
+conda activate <ENVNAME>
 
 # 退出环境
 conda deactivate
 
 # 删除环境
-conda remove -n ENVNAME --all -y
+conda remove -n <ENVNAME> --all -y
 
 # 查看环境列表
-conda info -e
-# 或者
 conda env list
+conda info -e
 
 # 设置 proxy_server
 conda config --set proxy_servers.http http://127.0.0.1:10809
