@@ -168,7 +168,7 @@
 {{< /admonition >}}
 
 {{< admonition tip "图标" >}}
-- [Worldvectorlogo](https://worldvectorlogo.com/)
+- [Worldvectorlogo](https://worldvectorlogo.com/zh)
 - [Iconduck](https://iconduck.com/)
 - [StickPNG](https://www.stickpng.com/)
 - [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)
