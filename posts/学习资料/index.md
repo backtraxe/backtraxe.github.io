@@ -79,21 +79,18 @@
 - [WordTEX](https://www.andrew.cmu.edu/user/twildenh/wordtex/)
 
 {{< admonition tip "网络安全" >}}
-- [](https://academy.hackaflag.com.br)
-- [](https://tryhackme.com)
-- [](https://attackdefense.com)
-- [](https://alf.nu/alert1)
-- [](https://ctf.komodosec.com)
-- [](https://cmdchallenge.com)
-- [](https://exploit.education)
-- [](https://capturetheflag.withgoogle.com)
-- [](https://www.hackthebox.eu)
-- [](https://www.hackthis.co.uk)
-- [](https://www.hacksplaining.com/exercises)
-- [](https://ctf.hacker101.com)
-- [](https://capturetheflag.com.br)
-- [](https://www.hacking-lab.com/index.html)
-- [](https://hstrike.com)
+- CTF竞赛权威指南(Pwn篇) | [GitHub](https://github.com/firmianay/CTF-All-In-One) | [GitBook](https://firmianay.gitbook.io/ctf-all-in-one/)
+- [TryHackMe](https://tryhackme.com/)
+- [Attack-Defense Online Lab](https://attackdefense.com/)
+- [XSS 挑战](https://alf.nu/alert1)
+- [CTF - Application Security Challenge](https://ctf.komodosec.com/)
+- [Command Challenge](https://cmdchallenge.com/)
+- [Exploit Education](https://exploit.education/)
+- [Google CTF](https://capturetheflag.withgoogle.com/)
+- [Hack The Box](https://www.hackthebox.eu/)
+- [Defend the Web](https://defendtheweb.net/)
+- [Hacksplaining](https://www.hacksplaining.com/lessons)
+- [Hacker101 CTF](https://ctf.hacker101.com/)
 {{< /admonition >}}
 
 {{< admonition tip "项目" >}}
@@ -110,6 +107,7 @@
 {{< /admonition >}}
 
 {{< admonition tip "环境搭建" >}}
+- [环境搭建](../../posts/环境搭建/)
 - [Arch Linux 安装使用教程](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/)
 {{< /admonition >}}
 
