@@ -58,9 +58,9 @@
 - [](https://github.com/)
 
 {{< admonition tip "教程" >}}
-- [简单粗暴 TensorFlow 2](https://github.com/snowkylin/tensorflow-handbook) | [在线](https://tf.wiki/zh_hans/) `20210715`
-- [30天吃掉那只TensorFlow2](https://github.com/lyhue1991/eat_tensorflow2_in_30_days) `20210527`
-- [TensorFlow 2.0 Tutorials](https://github.com/dragen1860/TensorFlow-2.x-Tutorials) `20200923`
+- [《简明的 TensorFlow 2》](https://github.com/snowkylin/tensorflow-handbook) | [在线](https://tf.wiki/) `📅2021/07/15` `🌟3484`
+- [30天吃掉那只TensorFlow2](https://github.com/lyhue1991/eat_tensorflow2_in_30_days) ｜ [GitBook](https://lyhue1991.github.io/eat_tensorflow2_in_30_days/) `📅2021/05/27` `🌟8855`
+- [TensorFlow 2.0 Tutorials](https://github.com/dragen1860/TensorFlow-2.x-Tutorials) `📅2020/09/23` `🌟5993`
 - [20天吃掉那只Pytorch](https://github.com/lyhue1991/eat_pytorch_in_20_days) `20210704`
 - [深度学习500问](https://github.com/scutan90/DeepLearning-500-questions) `20210317`
 - [nlp-tutorial](https://github.com/graykode/nlp-tutorial) `20210502`
@@ -79,7 +79,7 @@
 - [WordTEX](https://www.andrew.cmu.edu/user/twildenh/wordtex/)
 
 {{< admonition tip "网络安全" >}}
-- CTF竞赛权威指南(Pwn篇) | [GitHub](https://github.com/firmianay/CTF-All-In-One) | [GitBook](https://firmianay.gitbook.io/ctf-all-in-one/)
+- [《CTF竞赛权威指南》](https://github.com/firmianay/CTF-All-In-One) | [GitBook](https://firmianay.gitbook.io/ctf-all-in-one/)
 - [TryHackMe](https://tryhackme.com/)
 - [Attack-Defense Online Lab](https://attackdefense.com/)
 - [XSS 挑战](https://alf.nu/alert1)
