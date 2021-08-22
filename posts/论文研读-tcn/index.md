@@ -1,16 +1,14 @@
-# An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling
+# 论文研读 TCN
 
-
-description
 
 <!--more-->
 
 |标题|An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling|
 |:----|:----|
 |作者|Shaojie Bai, J. Zico Kolter, Vladlen Koltun|
-|日期|2018.03|
-|引用|1180|
-|地址|https://arxiv.org/pdf/1803.01271.pdf|
+|日期|2018/03|
+|引用|1419|
+|地址|https://arxiv.org/abs/1803.01271|
 
 ## 参考
 
