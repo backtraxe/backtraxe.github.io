@@ -1,4 +1,4 @@
-# 力扣每日一题 0074 搜索二维矩阵
+# 力扣 0074 搜索二维矩阵
 
 
 [题目链接](https://leetcode-cn.com/problems/search-a-2d-matrix/)

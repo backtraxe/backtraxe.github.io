@@ -1,4 +1,4 @@
-# 力扣每日一题 1486 数组异或操作
+# 力扣 1486 数组异或操作
 
 
 [题目链接](https://leetcode-cn.com/problems/xor-operation-in-an-array/)
