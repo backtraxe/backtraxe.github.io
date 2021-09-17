@@ -246,3 +246,7 @@
 - [秒传链接提取](https://greasyfork.org/zh-CN/scripts/424574-%E7%A7%92%E4%BC%A0%E9%93%BE%E6%8E%A5%E6%8F%90%E5%8F%96)
 {{< /admonition >}}
 
+{{< admonition tip "数学" >}}
+- [Mathway | 微积分问题解答者](https://www.mathway.com/zh/Calculus)
+{{< /admonition >}}
+

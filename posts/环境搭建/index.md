@@ -1,7 +1,7 @@
 # 环境搭建
 
 
-常用软件或程序语言环境搭建。
+常用软件或编程语言环境搭建及个性化配置。
 
 <!--more-->
 
@@ -41,27 +41,23 @@
 
 ## VS Code
 
-### C++
+[Visual Studio Code 官网](https://code.visualstudio.com/)
 
-1. 编译器
+### 1. C++
+
+1. 安装编译器
     - Windows（二选一）
         - 安装 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/)
-        - 安装 [MinGW-w64](http://mingw-w64.org/doku.php/download)，[SourceForge](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/)
+        - 安装 [MinGW-w64](https://www.mingw-w64.org/downloads/)，推荐从 [SourceForge](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/) 下载安装。
     - Linux: `sudo apt install gcc g++ gdb build-essential`
-2. VS Code
-    - 安装 [ms-cpp-tools]()
+    - Mac OS: `xcode-select --install`
+2. 安装 VS Code C/C++ 扩展`ms-vscode.cpptools`。
+3. asd
+4. 解决头文件找不到
+    - 修改`c_cpp_properties.json`
+    - Linux：`gcc -v -E -x c++ -`
 
-3.解决头文件找不到，修改`c_cpp_properties.json`。
-
-```bash
-# Linux
-gcc -v -E -x c++ -
-```
-
-#### c_cpp_properties.json
-
-**Windows 10 + Visual Studio 2019**
-
+{{< admonition quote "Windows 10 + Visual Studio 2019" false >}}
 ```json
 {
     "configurations": [
@@ -85,9 +81,9 @@ gcc -v -E -x c++ -
     "version": 4
 }
 ```
+{{< /admonition >}}
 
-**Windows 10 + Mingw-w64**
-
+{{< admonition quote "Windows 10 + Mingw-w64" false >}}
 ```json
 {
     "configurations": [
@@ -112,6 +108,12 @@ gcc -v -E -x c++ -
     "version": 4
 }
 ```
+{{< /admonition >}}
+
+5. 打开设置。
+    - `C_Cpp: Clang_format_fallback Style`设为`{BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4}`
+    - `C_Cpp › Default: Cpp Standard`设为``
+    - `C_Cpp › Default: C Standard`设为``
 
 [参考](https://code.visualstudio.com/docs/cpp/config-msvc)
 
@@ -129,8 +131,11 @@ gcc -v -E -x c++ -
 
 ## Python
 
-1. [Python 官网](https://www.python.org/downloads/)，建议安装`3.8`版本。
-1. [Anaconda 官网](https://www.anaconda.com/products/individual#Downloads)。
+> 建议安装`3.8`版本
+
+1. [Python 官网](https://www.python.org/downloads/)
+1. [Miniconda 官网](https://docs.conda.io/en/latest/miniconda.html)
+1. [Anaconda 官网](https://www.anaconda.com/products/individual#Downloads)
 
 ### pip 设置代理
 
@@ -141,33 +146,17 @@ gcc -v -E -x c++ -
 proxy = http://user:password@proxy_name:port
 ```
 
-### Anaconda
+### Conda 常用命令
 
-```bash
-# 更新
-conda update
+更新：`conda update`
 
-# 创建环境
-conda create -n <ENVNAME> python=3.X -y
-conda create --name <ENVNAME> python=3.X -y
+查看环境：`conda env list`或`conda info -e`
 
-# 启用环境
-conda activate <ENVNAME>
+创建环境：`conda create -n <ENVNAME> python=3.X -y`
 
-# 退出环境
-conda deactivate
+删除环境：`conda remove -n <ENVNAME> --all -y`
 
-# 删除环境
-conda remove -n <ENVNAME> --all -y
-
-# 查看环境列表
-conda env list
-conda info -e
-
-# 设置 proxy_server
-conda config --set proxy_servers.http http://127.0.0.1:10809
-conda config --set proxy_servers.https http://127.0.0.1:10809
-```
+设置代理：`conda config --set proxy_servers.http http://127.0.0.1:10809`
 
 ## PyTorch
 

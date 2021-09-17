@@ -366,6 +366,9 @@ m.clear();
 for (auto it = m.begin();  it != m.end();  it++) { it->first; it->second; }
 for (auto it = m.rbegin(); it != m.rend(); it++) { it->first; it->second; }
 for (auto &p : m) { p.first; p.second; }
+for (auto &[k, v] : m) { k; v; }
+for (auto &[_, v] : m) { k; v; }
+for (auto &[k, _] : m) { k; v; }
 ```
 
 #### 6.5 其他操作
@@ -671,6 +674,26 @@ get<int>(t4);     // 1
 get<string>(t4);  // one
 
 make_tuple(2, string("two"));
+
+```
+
+## `<numeric>`
+
+该头文件包括了一组对数组进行某些操作的算法。
+
+### `accumulate`
+
+- `T accumulate(InputIterator first, InputIterator last, T init)`：默认求和
+- `T accumulate(InputIterator first, InputIterator last, T init,                  BinaryOperation binary_op)`：自定义函数
+
+```cpp
+int res = 0;
+int arr[3] = {1, 2, 3};
+vector<int> vec(arr, arr + 3);
+accumulate(arr, arr + 3, res);                // 求和，6
+accumulate(vec.begin(), vec.end(), res);      // 求和，6
+accumulate(arr, arr + 3, res, minus<int>());  // 累减，-6
+accumulate(arr, arr + 3, res, [z](int x, int y) { return x + 2 * y; });
 
 ```
 

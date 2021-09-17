@@ -1,1 +1,22 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>资源 - 分类 - traXe</title><link>https://backtraxe.github.io/categories/%E8%B5%84%E6%BA%90/</link><description>资源 - 分类 - traXe</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor><webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Mon, 19 Apr 2021 23:22:56 +0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/%E8%B5%84%E6%BA%90/" rel="self" type="application/rss+xml"/><item><title>网站收藏🔝</title><link>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</link><pubDate>Mon, 19 Apr 2021 23:22:56 +0800</pubDate><author><name>Backtraxe</name></author><guid>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</guid><description>&lt;p>工具、娱乐、资源、软件……&lt;/p></description></item><item><title>学习资料🔝</title><link>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link><pubDate>Wed, 14 Apr 2021 13:00:10 +0800</pubDate><author><name>Backtraxe</name></author><guid>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid><description>&lt;p>汇集网上的各种学习资料。&lt;/p></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>资源 - 分类 - traXe</title>
+        <link>https://backtraxe.github.io/categories/%E8%B5%84%E6%BA%90/</link>
+        <description>资源 - 分类 - traXe</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/%E8%B5%84%E6%BA%90/" rel="self" type="application/rss+xml" /><item>
+    <title>网站收藏🔝</title>
+    <link>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</link>
+    <pubDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</guid>
+    <description><![CDATA[<p>工具、娱乐、资源、软件……</p>]]></description>
+</item><item>
+    <title>学习资料🔝</title>
+    <link>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link>
+    <pubDate>Wed, 14 Apr 2021 13:00:10 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid>
+    <description><![CDATA[<p>汇集网上的各种学习资料。</p>]]></description>
+</item></channel>
+</rss>

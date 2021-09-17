@@ -1,192 +1,221 @@
-<!doctype html><html lang=zh-cn>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
 <head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<title class=pjax-title>Markdown 基本语法 - traXe</title><meta name=Description content="这是Backtraxe的博客"><meta property="og:title" content="Markdown 基本语法">
-<meta property="og:description" content="Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例。">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://backtraxe.github.io/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-02-04T19:39:00+08:00">
-<meta property="article:modified_time" content="2021-03-28T19:39:00+08:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Markdown 基本语法">
-<meta name=twitter:description content="Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例。">
-<meta name=application-name content="traXe">
-<meta name=apple-mobile-web-app-title content="traXe">
-<meta name=theme-color content="#ffffff"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://backtraxe.github.io/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/><link rel=next href=https://backtraxe.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/fontawesome-free/all.min.css>
-<noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload="this.onload=null,this.rel='stylesheet'" href=/lib/animate/animate.min.css>
-<noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Markdown 基本语法","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95\/"},"genre":"posts","keywords":"Markdown","wordcount":777,"url":"https:\/\/backtraxe.github.io\/posts\/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95\/","datePublished":"2021-02-04T19:39:00+08:00","dateModified":"2021-03-28T19:39:00+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(a){document.body.setAttribute('theme',a)}function saveTheme(a){window.localStorage&&localStorage.setItem('theme',a)}function getMeta(b){const a=document.getElementsByTagName('meta');for(let c=0;c<a.length;c++)if(a[c].getAttribute('name')===b)return a[c];return''}if(window.localStorage&&localStorage.getItem('theme')){let a=localStorage.getItem('theme');a==='light'||a==='dark'||a==='black'?setTheme(a):window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light')}else''==='light'||''==='dark'||''==='black'?(setTheme(''),saveTheme('')):(saveTheme('auto'),window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?setTheme('dark'):setTheme('light'));let themeColorMeta=getMeta('theme-color');document.body.getAttribute('theme')!='light'&&(themeColorMeta.content='#000000')</script>
-<div id=back-to-top></div>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=traXe>traXe</a>
-</div>
-<div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/> 文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
-<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-desktop title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-</a></div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title=traXe>traXe</a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
-<a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-mobile title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=# onclick=return!1 class="search-button search-clear" id=search-clear-mobile title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div>
-<a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>
-取消
-</a>
-</div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-</a></div>
-</div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Markdown 基本语法 - traXe</title><meta name="Description" content="这是Backtraxe的博客"><meta property="og:title" content="Markdown 基本语法" />
+<meta property="og:description" content="Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://backtraxe.github.io/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-04T19:39:00+08:00" />
+<meta property="article:modified_time" content="2021-03-28T19:39:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Markdown 基本语法"/>
+<meta name="twitter:description" content="Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例。"/>
+<meta name="application-name" content="traXe">
+<meta name="apple-mobile-web-app-title" content="traXe">
+
+<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" /><link rel="next" href="https://backtraxe.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Markdown 基本语法",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/backtraxe.github.io\/posts\/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95\/"
+        },"genre": "posts","keywords": "Markdown","wordcount":  777 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95\/","datePublished": "2021-02-04T19:39:00+08:00","dateModified": "2021-03-28T19:39:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Backtraxe"},"author": {
+                "@type": "Person",
+                "name": "Backtraxe"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let themeColorMeta = getMeta('theme-color');
+        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="traXe">traXe</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="traXe">traXe</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
 </header>
 <div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
+    <div id="search-dropdown-desktop"></div>
 </div>
 <div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
+    <div id="search-dropdown-mobile"></div>
 </div>
-<main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>目录</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Markdown 基本语法</h1><div class=post-meta>
-<div class=post-meta-line>
-<span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=/ title=Author rel=" author" class=author>Backtraxe</a>
-</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/markdown/><i class="far fa-folder fa-fw"></i>Markdown</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-02-04>2021-02-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2021-03-28>2021-03-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 777 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#一标题>一、标题</a></li>
-<li><a href=#二强调>二、强调</a></li>
-<li><a href=#三引用>三、引用</a></li>
-<li><a href=#四分割线>四、分割线</a></li>
-<li><a href=#五图片>五、图片</a></li>
-<li><a href=#六超链接>六、超链接</a></li>
-<li><a href=#七列表>七、列表</a>
-<ul>
-<li><a href=#无序列表>无序列表</a></li>
-<li><a href=#有序列表>有序列表</a></li>
-<li><a href=#列表嵌套>列表嵌套</a></li>
-</ul>
-</li>
-<li><a href=#八表格>八、表格</a></li>
-<li><a href=#九代码>九、代码</a>
-<ul>
-<li><a href=#单行代码>单行代码</a></li>
-<li><a href=#多行代码>多行代码</a></li>
-</ul>
-</li>
-<li><a href=#十流程图>十、流程图</a></li>
-<li><a href=#十一latex公式>十一、LaTeX公式</a>
-<ul>
-<li><a href=#行内公式>行内公式</a></li>
-<li><a href=#多行公式>多行公式</a></li>
-</ul>
-</li>
-</ul>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Markdown 基本语法</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">Backtraxe</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/markdown/"><i class="far fa-folder fa-fw"></i>Markdown</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-04">2021-02-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-03-28">2021-03-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 777 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一标题">一、标题</a></li>
+    <li><a href="#二强调">二、强调</a></li>
+    <li><a href="#三引用">三、引用</a></li>
+    <li><a href="#四分割线">四、分割线</a></li>
+    <li><a href="#五图片">五、图片</a></li>
+    <li><a href="#六超链接">六、超链接</a></li>
+    <li><a href="#七列表">七、列表</a>
+      <ul>
+        <li><a href="#无序列表">无序列表</a></li>
+        <li><a href="#有序列表">有序列表</a></li>
+        <li><a href="#列表嵌套">列表嵌套</a></li>
+      </ul>
+    </li>
+    <li><a href="#八表格">八、表格</a></li>
+    <li><a href="#九代码">九、代码</a>
+      <ul>
+        <li><a href="#单行代码">单行代码</a></li>
+        <li><a href="#多行代码">多行代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#十流程图">十、流程图</a></li>
+    <li><a href="#十一latex公式">十一、LaTeX公式</a>
+      <ul>
+        <li><a href="#行内公式">行内公式</a></li>
+        <li><a href="#多行公式">多行公式</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav></div>
-</div><div class=content id=content><p>Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例。</p>
+            </div><div class="content" id="content"><p>Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例。</p>
 <div class="details admonition note open">
-<div class="details-summary admonition-title">
-<i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>这篇文章借鉴了一篇很棒的<a href="http://learn.getgrav.org/content/markdown" target="_blank" rel="noopener noreffer">来自 Grav 的文章</a>.</p>
+<p>如果你想了解 <strong>Loveit</strong> 主题的扩展 Markdown 语法, 请阅读<a href="../theme-documentation-content#extended-markdown-syntax" rel="">扩展 Markdown 语法页面</a>.</p>
 </div>
-<div class=details-content>
-<div class=admonition-content><p>这篇文章借鉴了一篇很棒的<a href=http://learn.getgrav.org/content/markdown target=_blank rel="noopener noreffer">来自 Grav 的文章</a>.</p>
-<p>如果你想了解 <strong>Loveit</strong> 主题的扩展 Markdown 语法, 请阅读<a href=../theme-documentation-content#extended-markdown-syntax rel>扩展 Markdown 语法页面</a>.</p>
-</div>
-</div>
-</div>
-<h2 id=一标题>一、标题</h2>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
+        </div>
+    </div>
+<h2 id="一标题">一、标题</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=gh># 一级标题 h1
-</span><span class=gh></span><span class=gu>## 二级标题 h2
-</span><span class=gu>### 三级标题 h3
-</span><span class=gu>#### 四级标题 h4
-</span><span class=gu>##### 五级标题 h5
-</span><span class=gu>###### 六级标题 h6
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gh"># 一级标题 h1
+</span><span class="gh"></span><span class="gu">## 二级标题 h2
+</span><span class="gu">### 三级标题 h3
+</span><span class="gu">#### 四级标题 h4
+</span><span class="gu">##### 五级标题 h5
+</span><span class="gu">###### 六级标题 h6
 </span></code></pre></td></tr></table>
 </div>
-</div><h2 id=二强调>二、强调</h2>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
+</div><h2 id="二强调">二、强调</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>**加粗**
-<span class=ge>*斜体*</span>
-<span class=gd>~~删除线~~</span>
-<span class=ge>**</span>*斜体加粗***
-<span class=gd>~~**删除线加粗**~~</span>
-<span class=gd>~~*斜体删除线*~~</span>
-<span class=gd>~~***斜体删除线加粗***~~</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">**加粗**
+<span class="ge">*斜体*</span>
+<span class="gd">~~删除线~~</span>
+<span class="ge">**</span>*斜体加粗***
+<span class="gd">~~**删除线加粗**~~</span>
+<span class="gd">~~*斜体删除线*~~</span>
+<span class="gd">~~***斜体删除线加粗***~~</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>加粗</strong>、<em>斜体</em>、<del>删除线</del>、<em><strong>斜体加粗</strong></em>、<del><strong>删除线加粗</strong></del>、<del><em>斜体删除线</em></del>、<del><em><strong>斜体删除线加粗</strong></em></del></p>
-<h2 id=三引用>三、引用</h2>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
+<h2 id="三引用">三、引用</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=k>&gt; </span><span class=ge>引用
-</span><span class=ge></span>&gt;&gt; 嵌套引用
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">&gt; </span><span class="ge">引用
+</span><span class="ge"></span>&gt;&gt; 嵌套引用
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
@@ -195,49 +224,55 @@
 <p>嵌套引用</p>
 </blockquote>
 </blockquote>
-<h2 id=四分割线>四、分割线</h2>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
+<h2 id="四分割线">四、分割线</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>---
-<span class=ge>**</span>*
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">---
+<span class="ge">**</span>*
 </code></pre></td></tr></table>
 </div>
 </div><hr>
 <hr>
-<h2 id=五图片>五、图片</h2>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
+<h2 id="五图片">五、图片</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>![<span class=nt>Backsided&#39;s World</span>](<span class=na>https://backtraxe.github.io/apple-touch-icon.png &#34;Backtraxe&#39;s World&#34;</span>)
-<span class=p>&lt;</span><span class=nt>img</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://backtraxe.github.io/apple-touch-icon.png&#34;</span> <span class=na>alt</span><span class=o>=</span><span class=s>&#34;Backtraxe&#39;s World&#34;</span> <span class=na>width</span><span class=o>=</span><span class=s>&#34;30%&#34;</span> <span class=na>height</span><span class=o>=</span><span class=s>&#34;30%&#34;</span><span class=p>&gt;</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">![<span class="nt">Backsided&#39;s World</span>](<span class="na">https://backtraxe.github.io/apple-touch-icon.png &#34;Backtraxe&#39;s World&#34;</span>)
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://backtraxe.github.io/apple-touch-icon.png&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Backtraxe&#39;s World&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;30%&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;30%&#34;</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><figure><a class=lightgallery href=https://backtraxe.github.io/apple-touch-icon.png title="Backsided&amp;rsquo;s World" data-thumbnail=https://backtraxe.github.io/apple-touch-icon.png data-sub-html="<h2>Backtraxe's World</h2><p>Backsided&amp;rsquo;s World</p>">
-<img class=lazyload data-src=https://backtraxe.github.io/apple-touch-icon.png data-srcset="https://backtraxe.github.io/apple-touch-icon.png, https://backtraxe.github.io/apple-touch-icon.png 1.5x, https://backtraxe.github.io/apple-touch-icon.png 2x" data-sizes=auto alt=https://backtraxe.github.io/apple-touch-icon.png>
-</a><figcaption class=image-caption>Backtraxe's World</figcaption>
-</figure></p>
-<img src=https://backtraxe.github.io/apple-touch-icon.png alt="Backtraxe's World" width=30% height=30%>
-<h2 id=六超链接>六、超链接</h2>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
+</div><p><figure><a class="lightgallery" href="https://backtraxe.github.io/apple-touch-icon.png" title="Backsided&amp;rsquo;s World" data-thumbnail="https://backtraxe.github.io/apple-touch-icon.png" data-sub-html="<h2>Backtraxe&#39;s World</h2><p>Backsided&amp;rsquo;s World</p>">
+        <img
+            class="lazyload"
+            data-src="https://backtraxe.github.io/apple-touch-icon.png"
+            data-srcset="https://backtraxe.github.io/apple-touch-icon.png, https://backtraxe.github.io/apple-touch-icon.png 1.5x, https://backtraxe.github.io/apple-touch-icon.png 2x"
+            data-sizes="auto"
+            alt="https://backtraxe.github.io/apple-touch-icon.png"
+        />
+    </a><figcaption class="image-caption">Backtraxe's World</figcaption>
+    </figure></p>
+<img src="https://backtraxe.github.io/apple-touch-icon.png" alt="Backtraxe's World" width="30%" height="30%">
+<h2 id="六超链接">六、超链接</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>[<span class=nt>Backsided&#39;s World</span>](<span class=na>https://backtraxe.github.io/</span>)
-<span class=p>&lt;</span><span class=nt>https:</span><span class=err>//</span><span class=na>backtraxe</span><span class=err>.</span><span class=na>github</span><span class=err>.</span><span class=na>io</span><span class=p>/&gt;</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">[<span class="nt">Backsided&#39;s World</span>](<span class="na">https://backtraxe.github.io/</span>)
+<span class="p">&lt;</span><span class="nt">https:</span><span class="err">//</span><span class="na">backtraxe</span><span class="err">.</span><span class="na">github</span><span class="err">.</span><span class="na">io</span><span class="p">/&gt;</span>
 这个链接用 1 作为网址变量 [Google][1]
 这个链接用 runoob 作为网址变量 [Runoob][runoob]
 然后在文档的结尾为变量赋值（网址）
@@ -245,25 +280,25 @@
 [runoob]: http://www.runoob.com/
 </code></pre></td></tr></table>
 </div>
-</div><p><a href=https://backtraxe.github.io/ target=_blank rel="noopener noreffer">Backsided&rsquo;s World</a></p>
-<p><a href=https://backtraxe.github.io/ target=_blank rel="noopener noreffer">https://backtraxe.github.io/</a></p>
-<p>这个链接用 1 作为网址变量 <a href=https://backtraxe.github.io/ target=_blank rel="noopener noreffer">traXe</a></p>
-<p>这个链接用 runoob 作为网址变量 <a href=https://backtraxe.github.io/ target=_blank rel="noopener noreffer">traXe</a></p>
+</div><p><a href="https://backtraxe.github.io/" target="_blank" rel="noopener noreffer">Backsided&rsquo;s World</a></p>
+<p><a href="https://backtraxe.github.io/" target="_blank" rel="noopener noreffer">https://backtraxe.github.io/</a></p>
+<p>这个链接用 1 作为网址变量 <a href="https://backtraxe.github.io/" target="_blank" rel="noopener noreffer">traXe</a></p>
+<p>这个链接用 runoob 作为网址变量 <a href="https://backtraxe.github.io/" target="_blank" rel="noopener noreffer">traXe</a></p>
 <p>然后在文档的结尾为变量赋值（网址）</p>
-<h2 id=七列表>七、列表</h2>
-<h3 id=无序列表>无序列表</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
+<h2 id="七列表">七、列表</h2>
+<h3 id="无序列表">无序列表</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=k>-</span> 北京
-<span class=k>-</span> 上海
-<span class=k>-</span> 广州
-<span class=k>-</span> 深圳
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">-</span> 北京
+<span class="k">-</span> 上海
+<span class="k">-</span> 广州
+<span class="k">-</span> 深圳
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -272,29 +307,29 @@
 <li>广州</li>
 <li>深圳</li>
 </ul>
-<h3 id=有序列表>有序列表</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
+<h3 id="有序列表">有序列表</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=k>1.</span> 北京
-<span class=k>1.</span> 上海
-<span class=k>1.</span> 广州
-<span class=k>1.</span> 深圳
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">1.</span> 北京
+<span class="k">1.</span> 上海
+<span class="k">1.</span> 广州
+<span class="k">1.</span> 深圳
 或者
-<span class=k>1.</span> 北京
-<span class=k>2.</span> 上海
-<span class=k>3.</span> 广州
-<span class=k>4.</span> 深圳
+<span class="k">1.</span> 北京
+<span class="k">2.</span> 上海
+<span class="k">3.</span> 广州
+<span class="k">4.</span> 深圳
 </code></pre></td></tr></table>
 </div>
 </div><ol>
@@ -303,21 +338,21 @@
 <li>广州</li>
 <li>深圳</li>
 </ol>
-<h3 id=列表嵌套>列表嵌套</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
+<h3 id="列表嵌套">列表嵌套</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=k>-</span> 北京
-<span class=k>-</span> 上海
-<span class=k>-</span> 广东
-  <span class=k>1.</span> 广州
-  <span class=k>2.</span> 深圳
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">-</span> 北京
+<span class="k">-</span> 上海
+<span class="k">-</span> 广东
+  <span class="k">1.</span> 广州
+  <span class="k">2.</span> 深圳
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -330,17 +365,17 @@
 </ol>
 </li>
 </ul>
-<h2 id=八表格>八、表格</h2>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
+<h2 id="八表格">八、表格</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>姓名|分数|排名
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">姓名|分数|排名
 --|:--:|--:
 张三|100|1
 李四|85|2
@@ -351,25 +386,25 @@
 <thead>
 <tr>
 <th>姓名</th>
-<th style=text-align:center>分数</th>
-<th style=text-align:right>排名</th>
+<th style="text-align:center">分数</th>
+<th style="text-align:right">排名</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>张三</td>
-<td style=text-align:center>100</td>
-<td style=text-align:right>1</td>
+<td style="text-align:center">100</td>
+<td style="text-align:right">1</td>
 </tr>
 <tr>
 <td>李四</td>
-<td style=text-align:center>85</td>
-<td style=text-align:right>2</td>
+<td style="text-align:center">85</td>
+<td style="text-align:right">2</td>
 </tr>
 <tr>
 <td>王五</td>
-<td style=text-align:center>60</td>
-<td style=text-align:right>3</td>
+<td style="text-align:center">60</td>
+<td style="text-align:right">3</td>
 </tr>
 </tbody>
 </table>
@@ -380,69 +415,69 @@
 <li><code>--:</code> : 右对齐</li>
 </ul>
 </blockquote>
-<h2 id=九代码>九、代码</h2>
-<h3 id=单行代码>单行代码</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<h2 id="九代码">九、代码</h2>
+<h3 id="单行代码">单行代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=sb>`print(&#34;Hello World!&#34;)`</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="sb">`print(&#34;Hello World!&#34;)`</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><code>print("Hello World!")</code></p>
-<h3 id=多行代码>多行代码</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
+</div><p><code>print(&quot;Hello World!&quot;)</code></p>
+<h3 id="多行代码">多行代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>\```cpp
-<span class=gh>#include&lt;iostream&gt;
-</span><span class=gh></span>int main() {
-    std::cout <span class=err>&lt;&lt;</span> &#34;Hello World!&#34; <span class=err>&lt;</span><span class=p>&lt;</span> <span class=nt>std::endl</span><span class=err>;</span>
-    <span class=na>return</span> <span class=na>0</span><span class=err>;</span>
-<span class=err>}</span>
-\`<span class=err>``</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">\```cpp
+<span class="gh">#include&lt;iostream&gt;
+</span><span class="gh"></span>int main() {
+    std::cout <span class="err">&lt;&lt;</span> &#34;Hello World!&#34; <span class="err">&lt;</span><span class="p">&lt;</span> <span class="nt">std::endl</span><span class="err">;</span>
+    <span class="na">return</span> <span class="na">0</span><span class="err">;</span>
+<span class="err">}</span>
+\`<span class="err">``</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=cp>#include</span><span class=cpf>&lt;iostream&gt;</span><span class=cp>
-</span><span class=cp></span><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-    <span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Hello World!&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
-    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
-<span class=p>}</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=十流程图>十、流程图</h2>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
+</div><h2 id="十流程图">十、流程图</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>\```flow
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">\```flow
 st=&gt;start: 开始
 op=&gt;operation: My Operation
 cond=&gt;condition: Yes or No?
@@ -453,18 +488,18 @@ cond(no)-&gt;op
 \```
 </code></pre></td></tr></table>
 </div>
-</div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>st=&gt;start: 开始
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">st=&gt;start: 开始
 op=&gt;operation: My Operation
 cond=&gt;condition: Yes or No?
 e=&gt;end
@@ -473,64 +508,69 @@ cond(yes)-&gt;e
 cond(no)-&gt;op
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=十一latex公式>十一、LaTeX公式</h2>
-<h3 id=行内公式>行内公式</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</div><h2 id="十一latex公式">十一、LaTeX公式</h2>
+<h3 id="行内公式">行内公式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>$ E=mc^2 $
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">$ E=mc^2 $
 </code></pre></td></tr></table>
 </div>
 </div><p>$ E=mc^2 $</p>
-<h3 id=多行公式>多行公式</h3>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
+<h3 id="多行公式">多行公式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>$$ \sum_{i=1}^n a_i=0 $$
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">$$ \sum_{i=1}^n a_i=0 $$
 $$ f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
 </code></pre></td></tr></table>
 </div>
 </div><p>$$ \sum_{i=1}^n a_i=0 $$</p>
-<p>$$ f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$</p></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>更新于 2021-03-28</span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
-<div class=post-info-md></div>
-<div class=post-info-share>
-<span></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/markdown/>Markdown</a></section>
-<section>
-<span><a href=# onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
-</section>
-</div>
-<div class=post-nav>
-<a href=/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/ class=next rel=next title="Hugo 博客搭建">Hugo 博客搭建<i class="fas fa-angle-right fa-fw"></i></a></div>
+<p>$$ f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-03-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/markdown/">Markdown</a></section>
+        <section>
+            <span><a href="#" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="next" rel="next" title="Hugo 博客搭建">Hugo 博客搭建<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Backtraxe</a></span></div>
-</div></footer></div>
-<div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部>
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论>
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><div class=assets><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.js></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js></script></div>
-<div class=pjax-assets><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:25},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"lunr"}}</script><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":25},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></div>
 </body>
+
 </html>

@@ -9,8 +9,6 @@
 
 ### 一键安装
 
-
-
 ### 手动安装
 
 1. 访问 [APKMirror](https://www.apkmirror.com/)。

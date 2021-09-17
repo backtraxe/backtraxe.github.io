@@ -116,3 +116,70 @@
 - [Linux 网络编程与加密](https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/)
 {{< /admonition >}}
 
+{{< admonition tip "数据库" >}}
+- [SQLBolt](https://sqlbolt.com/): interactive lessons and exercises
+{{< /admonition >}}
+
+{{< admonition tip "Github" >}}
+- [MockingBird](https://github.com/babysor/MockingBird): AI拟声，5秒内克隆您的声音并生成任意语音内容
+- [concurrent](https://github.com/RedSpider1/concurrent): 深入浅出Java多线程，[在线阅读](http://concurrent.redspider.group/RedSpider.html)
+- [Learn-Algorithms](https://github.com/nonstriater/Learn-Algorithms): 算法学习笔记
+- [algorithm-note](https://github.com/Dairongpeng/algorithm-note): 数据结构与算法的讲解及代码实现，[在线阅读](https://dairongpeng.github.io/algorithm-note/)
+- [matplotlib/cheatsheets](https://github.com/matplotlib/cheatsheets): Official Matplotlib cheat sheets
+- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [Introduction-to-Golang](https://github.com/0voice/Introduction-to-Golang): golang资料
+- [LaTeX-OCR](https://github.com/lukas-blecher/LaTeX-OCR): pix2tex, Using a ViT to convert images of equations into LaTeX code
+- [Bifrost](https://datasets.bifrost.ai/): Search for visual datasets by task, application, class, label or format
+- [深入理解 TypeScript](https://github.com/jkchao/typescript-book-chinese): [TypeScript Deep Dive](https://github.com/basarat/typescript-book/)的中文翻译版，[在线阅读](https://jkchao.github.io/typescript-book-chinese/)
+- [Manim Community](https://www.manim.community/): Python library for creating mathematical animations
+- [deepcourse](https://github.com/arthurdouillard/deepcourse): Deep Learning for Computer Vision, [Read Online](https://arthurdouillard.com/deepcourse/)
+- [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course): Google's fast-paced, practical introduction to machine learning
+- [SG-NLP](https://sgnlp.aisingapore.net/): SG-NLP is an initiative by AI Singapore's NLP Hub
+- [A Vim Guide For Experts](https://thevaluable.dev/vim-expert/)
+- [PearOCR](https://pearocr.com/)
+- [不懂动态规划？21道 LeetCode题目带你学会动态规划！](https://juejin.cn/post/7000909761336049671)
+- [五万字《十大排序算法》动图讲解](https://blog.csdn.net/WhereIsHeroFrom/article/details/119976287)
+- [Diffgram](https://github.com/diffgram/diffgram): Training data platform for machine learning delivered as a single application
+- [Forecasting: Principles and Practice (3rd ed)](https://otexts.com/fpp3/)
+- [Greykite](https://github.com/linkedin/greykite): A flexible, intuitive and fast forecasting library
+- [flow-forecast](https://github.com/AIStream-Peelout/flow-forecast): Deep learning PyTorch library for time series forecasting, classification, and anomaly detection
+- [Start Machine Learning in 2021](https://github.com/louisfb01/start-machine-learning): A complete guide to start and improve in machine learning (ML), artificial intelligence (AI) in 2021
+- [Best Resources to Learn Natural Language Processing in 2021](https://www.kdnuggets.com/2021/09/best-resources-learn-natural-language-processing-2021.html)
+- [Codeimg.io](https://codeimg.io/): Convert code to image
+- [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript): Clean Code concepts adapted for JavaScript
+- [Macast](https://github.com/xfangfang/Macast): A menu bar application using mpv as DLNA Media Renderer. You can push videos, pictures or musics from your mobile phone to your computer
+- [Real-time-stock-market-prediction](https://github.com/victor369basu/Real-time-stock-market-prediction): Server architecture for Real-time Stock-market prediction with ML
+- [Open Video Downloader (youtube-dl-gui)](https://github.com/jely2002/youtube-dl-gui): A cross-platform GUI for youtube-dl made in Electron and node.js
+- [free-project-course](https://github.com/resumejob/free-project-course): 整理和搜集网络免费的项目实战课程
+- [design-patterns-for-humans-cn](https://github.com/guanguans/design-patterns-for-humans-cn): [Design patterns for humans](https://github.com/kamranahmedse/design-patterns-for-humans)中文版
+- [Algorithms by Jeff Erickson](https://github.com/jeffgerickson/algorithms)
+- [Competitive-Programming-Resources](https://github.com/kunal-kushwaha/Competitive-Programming-Resources)
+- [Algorithm Guide](https://github.com/Xunzhuo/Algorithm-Guide): 程序员必知必会的算法和数据结构
+- [PythonAiRoad](https://github.com/lyhue1991/PythonAiRoad): X分钟学会XX
+- [Cheatsheet for regex syntaxes](https://github.com/remram44/regex-cheatsheet): [Read Online](https://remram44.github.io/regex-cheatsheet/regex.html)
+- [Awesome Scriptable](https://github.com/dersvenhesse/awesome-scriptable): A curated list of awesome Scriptable scripts and widgets
+- [THU-Beamer-Theme](https://github.com/tuna/THU-Beamer-Theme): A LaTeX beamer theme template for Tsinghua students, [Read Online](https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb)
+- [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/home/)
+- [Versus](https://versus.com/cn): 万物皆可对比
+- [Appscope](https://appsco.pe/): Progressive Web Apps Examples
+- [英语语法网](http://www.yygrammar.com/)
+- [中国人民大学英语口语能力标准](http://sope.ruc.edu.cn/displaynews.php?id=927)
+- [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html): 位运算奇淫巧计
+- [Pl@ntNet](https://identify.plantnet.org/zh): 植物图像识别
+- [卖萌屋学术站](https://arxiv.xixiaoyao.cn/): 每日学术论文
+- [Table Convert Online](https://tableconvert.com/):table to markdown, csv, json, latex table, excel, sql, xml
+- [Learn LaTeX](https://www.learnlatex.org/en/)
+- [C Programming Course](https://usemynotes.com/c-programming/)
+- [算法珠玑](https://github.com/soulmachine/algorithm-essentials): [Read Online](https://algorithm-essentials.soulmachine.me/data-structures/)
+- [GitHub News](https://www.gitlogs.com/): Discover the Top Trending Repos
+- [Academia](https://www.phrasebank.manchester.ac.uk/): How to write academic essay
+- [图吧工具箱](http://www.tbtool.cn/)
+- [WallpaperHub](https://wallpaperhub.app/)
+- [柯帕斯英语网](https://www.cpsenglish.com/)
+- [大耳朵英语](http://www.bigear.cn/)
+- [UP-6 英语学习导航](https://www.up-6.com/)
+- [MangaPanda](https://mangapanda.onl/): Read manga online for free in English
+- [YouZack](https://www.youzack.com/): 英语听力精听、背单词
+- []()
+{{< /admonition >}}
+
