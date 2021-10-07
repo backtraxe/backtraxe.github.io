@@ -18,9 +18,9 @@
 <meta name="application-name" content="traXe">
 <meta name="apple-mobile-web-app-title" content="traXe">
 
-<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" /><link rel="prev" href="https://backtraxe.github.io/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" /><link rel="prev" href="https://backtraxe.github.io/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://backtraxe.github.io/posts/%E7%BF%BB%E8%AF%91%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E8%A1%A8/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -46,8 +46,8 @@
         function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
         function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
         if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let themeColorMeta = getMeta('theme-color');
-        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
     </script>
     <div id="back-to-top"></div>
     <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
@@ -204,7 +204,7 @@ $$</p>
     </div>
 
     <div class="post-nav"><a href="/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="UML 类图教程"><i class="fas fa-angle-left fa-fw"></i>UML 类图教程</a>
-            <a href="/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="next" rel="next" title="学习资料🔝">学习资料🔝<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/posts/%E7%BF%BB%E8%AF%91%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="next" rel="next" title="翻译专业术语表">翻译专业术语表<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
         </main><footer class="footer">

@@ -5,17 +5,17 @@
 
 <!--more-->
 
-{{< admonition tip "面试" >}}
+## 面试
 - [CS-Notes](https://github.com/CyC2018/CS-Notes)：[在线](http://www.cyc2018.xyz/)
 - [Coding Interview University](https://github.com/jwasham/coding-interview-university)：[中文](https://github.com/jwasham/coding-interview-university/blob/main/translations/README-cn.md)
-{{< /admonition >}}
 
-{{< admonition tip "算法" >}}
+## 算法
 - [The Algorithms](https://the-algorithms.com/)
 - [labuladong 的算法小抄](https://github.com/labuladong/fucking-algorithm)：在线阅读：[GitHub Pages](https://labuladong.github.io/algo)，[Gitbook](https://labuladong.gitbook.io/algo)，[Gitee Pages](https://labuladong.gitee.io/algo)
 - [算法珠玑](https://github.com/soulmachine/algorithm-essentials)：[在线](https://algorithm-essentials.soulmachine.me/)
 - [《algorithm-note》中文版](https://github.com/Dairongpeng/algorithm-note)：[在线](https://dairongpeng.github.io/algorithm-note/)
-{{< /admonition >}}
+- [LeetCode 101](https://github.com/changgyhub/leetcode_101): 一个面向有C++编程基础，但缺乏刷题经验的读者的教科书和工具书（不适合编程小白喔）。
+
 
 {{< admonition tip "社区" >}}
 - [阿里云天池](https://tianchi.aliyun.com/)
@@ -143,7 +143,7 @@
 - [Forecasting: Principles and Practice (3rd ed)](https://otexts.com/fpp3/)
 - [Greykite](https://github.com/linkedin/greykite): A flexible, intuitive and fast forecasting library
 - [flow-forecast](https://github.com/AIStream-Peelout/flow-forecast): Deep learning PyTorch library for time series forecasting, classification, and anomaly detection
-- [Start Machine Learning in 2021](https://github.com/louisfb01/start-machine-learning): A complete guide to start and improve in machine learning (ML), artificial intelligence (AI) in 2021
+- [Start Machine Learning in 2021](https://github.com/louisfb01/start-machine-learning): A complete guide to start and improve in machine learning (ML), artificial intelligence (AI) in 2021 without ANY background in the field and stay up-to-date with the latest news and state-of-the-art techniques!
 - [Best Resources to Learn Natural Language Processing in 2021](https://www.kdnuggets.com/2021/09/best-resources-learn-natural-language-processing-2021.html)
 - [Codeimg.io](https://codeimg.io/): Convert code to image
 - [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript): Clean Code concepts adapted for JavaScript
@@ -180,6 +180,56 @@
 - [UP-6 英语学习导航](https://www.up-6.com/)
 - [MangaPanda](https://mangapanda.onl/): Read manga online for free in English
 - [YouZack](https://www.youzack.com/): 英语听力精听、背单词
-- []()
+- [Python-Mini-Projects](https://github.com/Python-World/python-mini-projects): A collection of simple python mini projects to enhance your Python skills.
+- [使用 Rust 迈出第一步](https://docs.microsoft.com/zh-cn/learn/paths/rust-first-steps/): 打下使用 Rust 构建快速、高效的程序所需的知识基础。
+- [scrcpy](https://github.com/Genymobile/scrcpy): This application provides display and control of Android devices connected on USB.
+- [LeetCode 101](https://github.com/changgyhub/leetcode_101): 一个面向有C++编程基础，但缺乏刷题经验的读者的教科书和工具书（不适合编程小白喔）。
+- [PyTorch 中文手册](https://github.com/zergtant/pytorch-handbook): 这是一本开源的书籍，目标是帮助那些希望和使用PyTorch进行深度学习开发和研究的朋友快速入门。
+- [【关于 NLP】 那些你不知道的事](https://github.com/km1994/nlp_paper_study): 研读顶会论文，复现论文相关代码
+- [Practical Go Lessons](https://www.practical-go-lessons.com/)
 {{< /admonition >}}
+
+{{< admonition tip "操作系统" >}}
+- [逸仙OS简明教程](https://github.com/YatSenOS/YatSenOS-Tutorial-Volume-1)
+{{< /admonition >}}
+
+## 资源
+
+- [Google’s Tech Dev Guide](https://techdevguide.withgoogle.com/): grow your technical skills, supplement your coursework, and prepare for interviews.
+- [awesome-cs-books](https://github.com/imarvinle/awesome-cs-books): 经典编程书籍大全，涵盖：计算机系统与网络、系统架构、算法与数据结构、前端开发、后端开发、移动开发、数据库、测试、项目与团队、程序员职业修炼、求职面试等
+
+## 前端
+
+- [带你入门前端工程](https://github.com/woai3c/introduction-to-front-end-engineering): [国内访问（Gitee）](https://woai3c.gitee.io/introduction-to-front-end-engineering)，[国外访问（Github）](https://woai3c.github.io/introduction-to-front-end-engineering/)
+- [图解 React 源码系列](https://github.com/7kms/react-illustration-series): 图解 React 源码，用大量配图的方式，致力于将 React 原理表述清楚。
+
+## 工具
+- [Darling](https://github.com/darlinghq/darling): Darling is a runtime environment for macOS applications.
+- [scrcpy](https://github.com/Genymobile/scrcpy): 显示和控制您的 Android 设备。
+- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract): Tesseract 开源 OCR 引擎。
+- [PDF.js](https://github.com/mozilla/pdf.js): 使用 HTML5 构建的 PDF 查看器。
+
+## 机器学习
+
+- [Start Machine Learning in 2021](https://github.com/louisfb01/start-machine-learning): 2021 年开始和改进机器学习 (ML)、人工智能 (AI) 的完整指南，无需任何该领域的背景，并随时了解最新消息和最先进技术！
+
+## Python
+
+- [Python-Mini-Projects](https://github.com/Python-World/python-mini-projects): 一系列简单的 Python 迷你项目，可提高您的 Python 技能。
+
+## 其他
+
+- [Docker Getting Started Tutorial](https://github.com/docker/getting-started): Docker入门。
+- [Take your first steps with Rust](https://docs.microsoft.com/en-us/learn/paths/rust-first-steps/): 奠定在 Rust 中构建快速有效程序所需的知识基础。
+
+## 深度学习
+
+### Pytorch
+
+- [pytorch handbook](https://github.com/zergtant/pytorch-handbook): 帮助那些希望和使用PyTorch进行深度学习开发和研究的朋友快速入门。
+
+### NLP
+
+- [【关于 NLP】那些你不知道的事](https://github.com/km1994/nlp_paper_study)
+- [【关于 NLP】百问百答](https://github.com/km1994/NLP-Interview-Notes)
 

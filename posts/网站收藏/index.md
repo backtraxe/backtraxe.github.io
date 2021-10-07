@@ -7,10 +7,9 @@
 
 ## 在线工具
 
-{{< admonition tip "在线PDF工具" >}}
-- [easy PDF](https://easypdf.com/cn)
-- [PDF24 Tools](https://tools.pdf24.org/zh/)
-- [iLovePDF](https://www.ilovepdf.com/zh-cn)
+{{< admonition tip "Office & PDF 工具" >}}
+- [easy PDF](https://easypdf.com/cn)：Office转PDF；PDF转Office；PDF转图片；PDF拆分、合并、压缩
+- [PDF24 Tools](https://tools.pdf24.org/zh/)：PDF拆分、合并、压缩、编辑、加密、解密、页面编辑、转换
 {{< /admonition >}}
 
 {{< admonition tip "在线图片处理" >}}

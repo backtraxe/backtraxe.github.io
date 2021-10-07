@@ -28,10 +28,25 @@
 
 {{< /admonition >}}
 
-## [Chrome 网上应用店（需要科学上网）](https://chrome.google.com/webstore/category/extensions?hl=zh-CN)
+## Chrome 网上应用店（需要科学上网）
 
 1. [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=zh-CN)：广告过滤
-1. [沙拉查词-聚合词典划词翻译](https://chrome.google.com/webstore/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D-%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/cdonnmffkdaoajfknoeeecmchibpmkmg?hl=zh-CN)
+
+### 沙拉查词
+
+- [官网](https://saladict.crimx.com/)
+- [Github](https://github.com/crimx/ext-saladict)
+- [Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D-%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/cdonnmffkdaoajfknoeeecmchibpmkmg/reviews?hl=zh-CN)
+- [Edge 外接程序](https://microsoftedge.microsoft.com/addons/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/idghocbbahafpfhjnfhpbfbmpegphmmp)
+- [Firefox 扩展](https://addons.mozilla.org/zh-CN/firefox/addon/ext-saladict/)
+
+#### Mac: 沙拉查词 + Alfred
+
+1. [沙拉查词 + Alfred，打造最佳文献翻译体验！ - 知乎](https://zhuanlan.zhihu.com/p/113809716)
+1. [浏览器外划词 | Saladict 沙拉查词](https://saladict.crimx.com/native.html)
+
+### test
+
 1. [Imagus](https://chrome.google.com/webstore/detail/imagus/immpkjjlgappgfkkfieppnmlhakdmaab?hl=zh-CN)：鼠标悬停在图片上自动放大图片
 1. [Chrono下载管理器](https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn?hl=zh-CN)：可嗅探网页资源
 1. [Free Download Manager](https://chrome.google.com/webstore/detail/free-download-manager/ahmpjcflkgiildlgicmcieglgoilbfdp?hl=zh-CN)：配合 FDM 使用

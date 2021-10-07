@@ -18,9 +18,9 @@
 <meta name="application-name" content="traXe">
 <meta name="apple-mobile-web-app-title" content="traXe">
 
-<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" /><link rel="prev" href="https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" /><link rel="next" href="https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" /><link rel="prev" href="https://backtraxe.github.io/posts/%E7%BF%BB%E8%AF%91%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E8%A1%A8/" /><link rel="next" href="https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99\/"
-        },"genre": "posts","keywords": "资源, 导航","wordcount":  1293 ,
+        },"genre": "posts","keywords": "资源, 导航","wordcount":  1966 ,
         "url": "https:\/\/backtraxe.github.io\/posts\/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99\/","datePublished": "2021-04-14T13:00:10+08:00","dateModified": "2021-08-21T13:00:10+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
@@ -46,8 +46,8 @@
         function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
         function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
         if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let themeColorMeta = getMeta('theme-color');
-        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
     </script>
     <div id="back-to-top"></div>
     <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
@@ -117,41 +117,45 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E8%B5%84%E6%BA%90/"><i class="far fa-folder fa-fw"></i>资源</a>&nbsp;<a href="/categories/%E5%AF%BC%E8%88%AA/"><i class="far fa-folder fa-fw"></i>导航</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-14">2021-04-14</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-08-21">2021-08-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1293 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-14">2021-04-14</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-08-21">2021-08-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1966 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#面试">面试</a></li>
+    <li><a href="#算法">算法</a></li>
+    <li><a href="#资源">资源</a></li>
+    <li><a href="#前端">前端</a></li>
+    <li><a href="#工具">工具</a></li>
+    <li><a href="#机器学习">机器学习</a></li>
+    <li><a href="#python">Python</a></li>
+    <li><a href="#其他">其他</a></li>
+    <li><a href="#深度学习">深度学习</a>
+      <ul>
+        <li><a href="#pytorch">Pytorch</a></li>
+        <li><a href="#nlp">NLP</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
             </div><div class="content" id="content"><p>汇集网上的各种学习资料。</p>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>面试<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
+<h2 id="面试">面试</h2>
+<ul>
 <li><a href="https://github.com/CyC2018/CS-Notes" target="_blank" rel="noopener noreffer">CS-Notes</a>：<a href="http://www.cyc2018.xyz/" target="_blank" rel="noopener noreffer">在线</a></li>
 <li><a href="https://github.com/jwasham/coding-interview-university" target="_blank" rel="noopener noreffer">Coding Interview University</a>：<a href="https://github.com/jwasham/coding-interview-university/blob/main/translations/README-cn.md" target="_blank" rel="noopener noreffer">中文</a></li>
 </ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>算法<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
+<h2 id="算法">算法</h2>
+<ul>
 <li><a href="https://the-algorithms.com/" target="_blank" rel="noopener noreffer">The Algorithms</a></li>
 <li><a href="https://github.com/labuladong/fucking-algorithm" target="_blank" rel="noopener noreffer">labuladong 的算法小抄</a>：在线阅读：<a href="https://labuladong.github.io/algo" target="_blank" rel="noopener noreffer">GitHub Pages</a>，<a href="https://labuladong.gitbook.io/algo" target="_blank" rel="noopener noreffer">Gitbook</a>，<a href="https://labuladong.gitee.io/algo" target="_blank" rel="noopener noreffer">Gitee Pages</a></li>
 <li><a href="https://github.com/soulmachine/algorithm-essentials" target="_blank" rel="noopener noreffer">算法珠玑</a>：<a href="https://algorithm-essentials.soulmachine.me/" target="_blank" rel="noopener noreffer">在线</a></li>
 <li><a href="https://github.com/Dairongpeng/algorithm-note" target="_blank" rel="noopener noreffer">《algorithm-note》中文版</a>：<a href="https://dairongpeng.github.io/algorithm-note/" target="_blank" rel="noopener noreffer">在线</a></li>
+<li><a href="https://github.com/changgyhub/leetcode_101" target="_blank" rel="noopener noreffer">LeetCode 101</a>: 一个面向有C++编程基础，但缺乏刷题经验的读者的教科书和工具书（不适合编程小白喔）。</li>
 </ul>
-</div>
-        </div>
-    </div>
 <div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw"></i>社区<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -369,7 +373,7 @@
 <li><a href="https://otexts.com/fpp3/" target="_blank" rel="noopener noreffer">Forecasting: Principles and Practice (3rd ed)</a></li>
 <li><a href="https://github.com/linkedin/greykite" target="_blank" rel="noopener noreffer">Greykite</a>: A flexible, intuitive and fast forecasting library</li>
 <li><a href="https://github.com/AIStream-Peelout/flow-forecast" target="_blank" rel="noopener noreffer">flow-forecast</a>: Deep learning PyTorch library for time series forecasting, classification, and anomaly detection</li>
-<li><a href="https://github.com/louisfb01/start-machine-learning" target="_blank" rel="noopener noreffer">Start Machine Learning in 2021</a>: A complete guide to start and improve in machine learning (ML), artificial intelligence (AI) in 2021</li>
+<li><a href="https://github.com/louisfb01/start-machine-learning" target="_blank" rel="noopener noreffer">Start Machine Learning in 2021</a>: A complete guide to start and improve in machine learning (ML), artificial intelligence (AI) in 2021 without ANY background in the field and stay up-to-date with the latest news and state-of-the-art techniques!</li>
 <li><a href="https://www.kdnuggets.com/2021/09/best-resources-learn-natural-language-processing-2021.html" target="_blank" rel="noopener noreffer">Best Resources to Learn Natural Language Processing in 2021</a></li>
 <li><a href="https://codeimg.io/" target="_blank" rel="noopener noreffer">Codeimg.io</a>: Convert code to image</li>
 <li><a href="https://github.com/ryanmcdermott/clean-code-javascript" target="_blank" rel="noopener noreffer">clean-code-javascript</a>: Clean Code concepts adapted for JavaScript</li>
@@ -406,11 +410,68 @@
 <li><a href="https://www.up-6.com/" target="_blank" rel="noopener noreffer">UP-6 英语学习导航</a></li>
 <li><a href="https://mangapanda.onl/" target="_blank" rel="noopener noreffer">MangaPanda</a>: Read manga online for free in English</li>
 <li><a href="https://www.youzack.com/" target="_blank" rel="noopener noreffer">YouZack</a>: 英语听力精听、背单词</li>
-<li><a href="" rel=""></a></li>
+<li><a href="https://github.com/Python-World/python-mini-projects" target="_blank" rel="noopener noreffer">Python-Mini-Projects</a>: A collection of simple python mini projects to enhance your Python skills.</li>
+<li><a href="https://docs.microsoft.com/zh-cn/learn/paths/rust-first-steps/" target="_blank" rel="noopener noreffer">使用 Rust 迈出第一步</a>: 打下使用 Rust 构建快速、高效的程序所需的知识基础。</li>
+<li><a href="https://github.com/Genymobile/scrcpy" target="_blank" rel="noopener noreffer">scrcpy</a>: This application provides display and control of Android devices connected on USB.</li>
+<li><a href="https://github.com/changgyhub/leetcode_101" target="_blank" rel="noopener noreffer">LeetCode 101</a>: 一个面向有C++编程基础，但缺乏刷题经验的读者的教科书和工具书（不适合编程小白喔）。</li>
+<li><a href="https://github.com/zergtant/pytorch-handbook" target="_blank" rel="noopener noreffer">PyTorch 中文手册</a>: 这是一本开源的书籍，目标是帮助那些希望和使用PyTorch进行深度学习开发和研究的朋友快速入门。</li>
+<li><a href="https://github.com/km1994/nlp_paper_study" target="_blank" rel="noopener noreffer">【关于 NLP】 那些你不知道的事</a>: 研读顶会论文，复现论文相关代码</li>
+<li><a href="https://www.practical-go-lessons.com/" target="_blank" rel="noopener noreffer">Practical Go Lessons</a></li>
 </ul>
 </div>
         </div>
-    </div></div><div class="post-footer" id="post-footer">
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>操作系统<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://github.com/YatSenOS/YatSenOS-Tutorial-Volume-1" target="_blank" rel="noopener noreffer">逸仙OS简明教程</a></li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="资源">资源</h2>
+<ul>
+<li><a href="https://techdevguide.withgoogle.com/" target="_blank" rel="noopener noreffer">Google’s Tech Dev Guide</a>: grow your technical skills, supplement your coursework, and prepare for interviews.</li>
+<li><a href="https://github.com/imarvinle/awesome-cs-books" target="_blank" rel="noopener noreffer">awesome-cs-books</a>: 经典编程书籍大全，涵盖：计算机系统与网络、系统架构、算法与数据结构、前端开发、后端开发、移动开发、数据库、测试、项目与团队、程序员职业修炼、求职面试等</li>
+</ul>
+<h2 id="前端">前端</h2>
+<ul>
+<li><a href="https://github.com/woai3c/introduction-to-front-end-engineering" target="_blank" rel="noopener noreffer">带你入门前端工程</a>: <a href="https://woai3c.gitee.io/introduction-to-front-end-engineering" target="_blank" rel="noopener noreffer">国内访问（Gitee）</a>，<a href="https://woai3c.github.io/introduction-to-front-end-engineering/" target="_blank" rel="noopener noreffer">国外访问（Github）</a></li>
+<li><a href="https://github.com/7kms/react-illustration-series" target="_blank" rel="noopener noreffer">图解 React 源码系列</a>: 图解 React 源码，用大量配图的方式，致力于将 React 原理表述清楚。</li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li><a href="https://github.com/darlinghq/darling" target="_blank" rel="noopener noreffer">Darling</a>: Darling is a runtime environment for macOS applications.</li>
+<li><a href="https://github.com/Genymobile/scrcpy" target="_blank" rel="noopener noreffer">scrcpy</a>: 显示和控制您的 Android 设备。</li>
+<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="noopener noreffer">Tesseract OCR</a>: Tesseract 开源 OCR 引擎。</li>
+<li><a href="https://github.com/mozilla/pdf.js" target="_blank" rel="noopener noreffer">PDF.js</a>: 使用 HTML5 构建的 PDF 查看器。</li>
+</ul>
+<h2 id="机器学习">机器学习</h2>
+<ul>
+<li><a href="https://github.com/louisfb01/start-machine-learning" target="_blank" rel="noopener noreffer">Start Machine Learning in 2021</a>: 2021 年开始和改进机器学习 (ML)、人工智能 (AI) 的完整指南，无需任何该领域的背景，并随时了解最新消息和最先进技术！</li>
+</ul>
+<h2 id="python">Python</h2>
+<ul>
+<li><a href="https://github.com/Python-World/python-mini-projects" target="_blank" rel="noopener noreffer">Python-Mini-Projects</a>: 一系列简单的 Python 迷你项目，可提高您的 Python 技能。</li>
+</ul>
+<h2 id="其他">其他</h2>
+<ul>
+<li><a href="https://github.com/docker/getting-started" target="_blank" rel="noopener noreffer">Docker Getting Started Tutorial</a>: Docker入门。</li>
+<li><a href="https://docs.microsoft.com/en-us/learn/paths/rust-first-steps/" target="_blank" rel="noopener noreffer">Take your first steps with Rust</a>: 奠定在 Rust 中构建快速有效程序所需的知识基础。</li>
+</ul>
+<h2 id="深度学习">深度学习</h2>
+<h3 id="pytorch">Pytorch</h3>
+<ul>
+<li><a href="https://github.com/zergtant/pytorch-handbook" target="_blank" rel="noopener noreffer">pytorch handbook</a>: 帮助那些希望和使用PyTorch进行深度学习开发和研究的朋友快速入门。</li>
+</ul>
+<h3 id="nlp">NLP</h3>
+<ul>
+<li><a href="https://github.com/km1994/nlp_paper_study" target="_blank" rel="noopener noreffer">【关于 NLP】那些你不知道的事</a></li>
+<li><a href="https://github.com/km1994/NLP-Interview-Notes" target="_blank" rel="noopener noreffer">【关于 NLP】百问百答</a></li>
+</ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -433,7 +494,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" class="prev" rel="prev" title="评价指标"><i class="fas fa-angle-left fa-fw"></i>评价指标</a>
+    <div class="post-nav"><a href="/posts/%E7%BF%BB%E8%AF%91%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="prev" rel="prev" title="翻译专业术语表"><i class="fas fa-angle-left fa-fw"></i>翻译专业术语表</a>
             <a href="/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/" class="next" rel="next" title="网站收藏🔝">网站收藏🔝<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>

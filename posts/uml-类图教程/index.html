@@ -18,9 +18,9 @@
 <meta name="application-name" content="traXe">
 <meta name="apple-mobile-web-app-title" content="traXe">
 
-<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/" /><link rel="next" href="https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://backtraxe.github.io/posts/java-collections-framework-%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -46,8 +46,8 @@
         function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
         function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
         if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let themeColorMeta = getMeta('theme-color');
-        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
     </script>
     <div id="back-to-top"></div>
     <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
@@ -223,7 +223,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/%E5%8A%9B%E6%89%A3-1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/" class="prev" rel="prev" title="力扣 1486 数组异或操作"><i class="fas fa-angle-left fa-fw"></i>力扣 1486 数组异或操作</a>
+    <div class="post-nav"><a href="/posts/java-collections-framework-%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="Java Collections Framework 教程"><i class="fas fa-angle-left fa-fw"></i>Java Collections Framework 教程</a>
             <a href="/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" class="next" rel="next" title="评价指标">评价指标<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
