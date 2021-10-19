@@ -3,17 +3,50 @@
 
 <!--more-->
 
-{{< admonition tip "Windows" >}}
-- [AnyDesk](https://anydesk.com/zhs)：远程桌面软件。
+## 跨平台
+
+1. [Typora](https://typora.io/)：简洁美观的 Markdown 编辑器。 `免费`
+1. [Visual Studio Code](https://github.com/microsoft/vscode)：代码编辑器。 `开源` `免费`
+1. [JetBrains Toolbox App](https://www.jetbrains.com/toolbox-app/)：JetBrains IDE 管理器。 `学生免费`
+1. [PDF Reader Pro](https://www.pdfreaderpro.com/)：阅读、编辑、注释、转换和签署 PDF 的最佳 PDF 软件。 `付费`
+
+## macOS
+
+1. [Homebrew](https://github.com/Homebrew/brew)：适用于 macOS（或 Linux）缺失的软件包的管理器。 `开源` `免费`
+    - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+1. [Hex Fiend](https://github.com/HexFiend/HexFiend)：适用于 macOS 的快速且智能的开源十六进制编辑器。 `开源` `免费`
+    - `brew install --cask hex-fiend`
+1. [Mounty for NTFS](https://mounty.app/)：在 macOS 下以读写模式重新挂载写保护的 NTFS 卷的小工具。 `免费`
+    - `brew install --cask mounty`
+1. [Android File Transfer](https://www.android.com/filetransfer/)：在 Mac 计算机和 Android 设备之间浏览和传输文件。 `免费`
+    - `brew install --cask android-file-transfer`
+1. [IINA](https://github.com/iina/iina)：适用于 macOS 的现代媒体播放器。 `开源` `免费`
+    - `brew install --cask iina`
+1. [OpenInTerminal-Lite](https://github.com/Ji4n1ng/OpenInTerminal)：适用于 macOS 的 Finder 工具栏应用程序，用于在终端、iTerm、Hyper 或 Alacritty 中打开当前目录。 `开源` `免费`
+    - `brew install --cask openinterminal-lite`
+    - `brew install --cask openineditor-lite`
+1. [MacZip](https://ezip.awehunt.com/)：专为 macOS 而设计的压缩软件. `免费`
+    - `brew install --cask maczip`
+1. [CheatSheet](https://www.mediaatelier.com/CheatSheet/)：适用于 macOS 的列出当前应用程序所有快捷键的工具。 `免费`
+    - `brew install --cask cheatsheet`
+1. [腾讯柠檬清理](https://lemon.qq.com/)：适用于 macOS 的磁盘清理工具。 `免费`
+1. [QSpace](https://qspace.awehunt.com/zh-cn/index.html)：一款简洁高效的多视图文件管理器。 `付费`
+1. [Alfred](https://www.alfredapp.com/)：通过自定义操作控制你的 Mac 电脑，提高工作效率。 `付费`
+1. [Downie](https://software.charliemonroe.net/downie/)：适用于 macOS 的视频下载工具。 `付费`
+1. [Dash](https://kapeli.com/dash)：API 文档浏览器和代码片段管理器。 `付费`
+
+### macOS 破解软件下载
+
+1. [MacWk](https://macwk.com/)
+
+## Windows
+
 - [Bandizip](https://www.bandisoft.com/bandizip/)：压缩文件管理工具。
 - [Everything](https://www.voidtools.com/zh-cn/)：基于名称快速定位文件和文件夹。
 - [Potplayer](https://potplayer.daum.net/?lang=zh_CN)：多媒体播放器。
 - [Revo Uninstaller](https://www.revouninstaller.com/revo-uninstaller-free-download/)：软件卸载和清除管理器。
 - [MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)：远程连接管理器。
-- [Visual Studio Code](https://code.visualstudio.com/)：代码编辑器。
-- [JetBrains Toolbox](https://www.jetbrains.com/zh-cn/lp/toolbox/)：JetBrains IDE 管理器。
 - [Visual Studio](https://visualstudio.microsoft.com/zh-hans/vs/)：C++、C# 开发IDE。
-{{< /admonition >}}
 
 {{< admonition tip "Microsoft Store">}}
 - [Windows Terminal](https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701#activetab=pivot:overviewtab)
@@ -24,15 +57,13 @@
 - [TranslucentTB](https://www.microsoft.com/zh-cn/p/translucenttb/9pf4kz2vn4w9?activetab=pivot:overviewtab)
 {{< /admonition >}}
 
-{{< admonition tip "Mac">}}
+## 浏览器插件
 
-{{< /admonition >}}
-
-## Chrome 网上应用店（需要科学上网）
+### Chrome 网上应用店（需要科学上网）
 
 1. [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=zh-CN)：广告过滤
 
-### 沙拉查词
+#### 沙拉查词
 
 - [官网](https://saladict.crimx.com/)
 - [Github](https://github.com/crimx/ext-saladict)
@@ -45,7 +76,7 @@
 1. [沙拉查词 + Alfred，打造最佳文献翻译体验！ - 知乎](https://zhuanlan.zhihu.com/p/113809716)
 1. [浏览器外划词 | Saladict 沙拉查词](https://saladict.crimx.com/native.html)
 
-### test
+#### test
 
 1. [Imagus](https://chrome.google.com/webstore/detail/imagus/immpkjjlgappgfkkfieppnmlhakdmaab?hl=zh-CN)：鼠标悬停在图片上自动放大图片
 1. [Chrono下载管理器](https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn?hl=zh-CN)：可嗅探网页资源
@@ -55,7 +86,7 @@
 1. [Augmented Steam](https://chrome.google.com/webstore/detail/augmented-steam/dnhpnfgdlenaccegplpojghhmaamnnfp?hl=zh-CN)：查看 Steam 各区价格及史低价格
 1. [TabFloater: Picture-in-Picture for any tab!](https://chrome.google.com/webstore/detail/tabfloater-picture-in-pic/iojgbjjdoanmhcmmihbapiejfbbadhjd?hl=zh-CN)：让标签页变为“画中画”模式
 
-## [Edge 外接程序 BETA](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home?hl=zh-CN)
+### [Edge 外接程序 BETA](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home?hl=zh-CN)
 
 1. [uBlock Origin](https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak?hl=zh-CN)
 1. [沙拉查词-聚合词典划词翻译](https://microsoftedge.microsoft.com/addons/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/idghocbbahafpfhjnfhpbfbmpegphmmp?hl=zh-CN)
