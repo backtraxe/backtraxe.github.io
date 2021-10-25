@@ -4,7 +4,7 @@
         <link>https://backtraxe.github.io/posts/</link>
         <description>所有文章 | traXe</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sun, 24 Oct 2021 10:20:53 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Mon, 25 Oct 2021 22:27:20 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>网站收藏🔝</title>
     <link>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</link>
     <pubDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</pubDate><author>
@@ -18,6 +18,20 @@
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid>
     <description><![CDATA[<p>汇集网上的各种学习资料。</p>]]></description>
+</item><item>
+    <title>力扣 0229 求众数II</title>
+    <link>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0229-%E6%B1%82%E4%BC%97%E6%95%B0ii/</link>
+    <pubDate>Mon, 25 Oct 2021 22:27:20 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0229-%E6%B1%82%E4%BC%97%E6%95%B0ii/</guid>
+    <description><![CDATA[<p><a href="https://leetcode-cn.com/problems/majority-element-ii/" target="_blank" rel="noopener noreffer">题目链接</a></p>]]></description>
+</item><item>
+    <title>力扣 0240 搜索二维矩阵II</title>
+    <link>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0240-%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5ii/</link>
+    <pubDate>Mon, 25 Oct 2021 22:08:03 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0240-%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5ii/</guid>
+    <description><![CDATA[<p><a href="https://leetcode-cn.com/problems/search-a-2d-matrix-ii/" target="_blank" rel="noopener noreffer">题目链接</a></p>]]></description>
 </item><item>
     <title>内网穿透教程</title>
     <link>https://backtraxe.github.io/posts/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%95%99%E7%A8%8B/</link>
@@ -60,19 +74,5 @@
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/java-collections-framework-%E6%95%99%E7%A8%8B/</guid>
     <description><![CDATA[<p>Collection 是用于表示和操作集合的统一体系结构。</p>]]></description>
-</item><item>
-    <title>阿里云盘</title>
-    <link>https://backtraxe.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/</link>
-    <pubDate>Wed, 21 Jul 2021 20:33:26 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/</guid>
-    <description><![CDATA[<p>阿里云盘相关小技巧。</p>]]></description>
-</item><item>
-    <title>力扣 1486 数组异或操作</title>
-    <link>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/</link>
-    <pubDate>Fri, 07 May 2021 22:43:17 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/</guid>
-    <description><![CDATA[<p><a href="https://leetcode-cn.com/problems/xor-operation-in-an-array/" target="_blank" rel="noopener noreffer">题目链接</a></p>]]></description>
 </item></channel>
 </rss>
