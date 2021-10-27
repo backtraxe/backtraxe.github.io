@@ -5,34 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">阿里云盘 - traXe</title><meta name="Description" content="这是Backtraxe的博客"><meta property="og:title" content="阿里云盘" />
-<meta property="og:description" content="阿里云盘相关小技巧。" />
+    <title class="pjax-title">Pandas 教程 - traXe</title><meta name="Description" content="这是Backtraxe的博客"><meta property="og:title" content="Pandas 教程" />
+<meta property="og:description" content="Pandas 是一个优秀的数据处理库。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://backtraxe.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-21T20:33:26+08:00" />
-<meta property="article:modified_time" content="2021-10-18T20:33:26+08:00" />
+<meta property="og:url" content="https://backtraxe.github.io/posts/pandas-%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-09T16:59:28+08:00" />
+<meta property="article:modified_time" content="2021-10-27T16:59:28+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="阿里云盘"/>
-<meta name="twitter:description" content="阿里云盘相关小技巧。"/>
+<meta name="twitter:title" content="Pandas 教程"/>
+<meta name="twitter:description" content="Pandas 是一个优秀的数据处理库。"/>
 <meta name="application-name" content="traXe">
 <meta name="apple-mobile-web-app-title" content="traXe">
 
 <meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/" /><link rel="prev" href="https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/" /><link rel="next" href="https://backtraxe.github.io/posts/pandas-%E6%95%99%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://backtraxe.github.io/posts/pandas-%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://backtraxe.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/" /><link rel="next" href="https://backtraxe.github.io/posts/java-collections-framework-%E6%95%99%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "阿里云盘",
+        "headline": "Pandas 教程",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/backtraxe.github.io\/posts\/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98\/"
-        },"genre": "posts","wordcount":  358 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98\/","datePublished": "2021-07-21T20:33:26+08:00","dateModified": "2021-10-18T20:33:26+08:00","publisher": {
+            "@id": "https:\/\/backtraxe.github.io\/posts\/pandas-%E6%95%99%E7%A8%8B\/"
+        },"genre": "posts","wordcount":  91 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/pandas-%E6%95%99%E7%A8%8B\/","datePublished": "2021-08-09T16:59:28+08:00","dateModified": "2021-10-27T16:59:28+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -113,11 +113,11 @@
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
         <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">阿里云盘</h1><div class="post-meta">
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Pandas 教程</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-21">2021-07-21</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-10-18">2021-10-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 358 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-09">2021-08-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-10-27">2021-10-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 91 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -126,100 +126,97 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1阿里云盘转存115资源">1）阿里云盘转存115资源</a>
+    <li><a href="#数据结构">数据结构</a>
       <ul>
-        <li><a href="#参考">参考</a></li>
+        <li><a href="#dataframe">DataFrame</a></li>
+        <li><a href="#series">Series</a></li>
+        <li><a href="#读取数据">读取数据</a></li>
       </ul>
     </li>
-    <li><a href="#2绕过阿里云分享限制">2）绕过阿里云分享限制</a>
-      <ul>
-        <li><a href="#参考-1">参考</a></li>
-      </ul>
-    </li>
+    <li><a href="#处理缺失数据">处理缺失数据</a></li>
+    <li><a href="#参考">参考</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>阿里云盘相关小技巧。</p>
-<h2 id="1阿里云盘转存115资源">1）阿里云盘转存115资源</h2>
+            </div><div class="content" id="content"><p>Pandas 是一个优秀的数据处理库。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="数据结构">数据结构</h2>
+<h3 id="dataframe">DataFrame</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&#34;c1&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span>
+                   <span class="s2">&#34;c2&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
+                   <span class="s2">&#34;c3&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">33</span><span class="p">]},</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;r1&#34;</span><span class="p">,</span> <span class="s2">&#34;r2&#34;</span><span class="p">,</span> <span class="s2">&#34;r3&#34;</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">]],</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r1&#39;</span><span class="p">,</span> <span class="s1">&#39;r2&#39;</span><span class="p">,</span> <span class="s1">&#39;r3&#39;</span><span class="p">],</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">,</span> <span class="s1">&#39;c3&#39;</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="series">Series</h3>
+<h3 id="读取数据">读取数据</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="处理缺失数据">处理缺失数据</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="参考">参考</h2>
 <ol>
-<li>下载 Chrome 或 Edge 或 Firefox 浏览器，并安装 Tampermonkey 插件。</li>
-<li>安装<a href="https://bbs.tampermonkey.net.cn/thread-427-1-1.html" target="_blank" rel="noopener noreffer">脚本</a>。</li>
-<li>打开<a href="https://www.aliyundrive.com/drive" target="_blank" rel="noopener noreffer">阿里云盘网页版</a>。</li>
-<li>点击右上角<code>多文件提取</code>，导入 sha1 链接文件。</li>
-</ol>
-<h3 id="参考">参考</h3>
-<ul>
-<li><a href="https://saylinrick.icu/index.php/2021/04/12/%e9%98%bf%e9%87%8c%e4%ba%91%e5%88%86%e4%ba%ab/" target="_blank" rel="noopener noreffer">如何使用第三方脚本实现阿里云盘分享文件 - 太空堡垒麦克罗斯</a></li>
-</ul>
-<h2 id="2绕过阿里云分享限制">2）绕过阿里云分享限制</h2>
-<p>目前阿里云盘只能分享 txt、mp4、jpg 等特定类型的文件, 而不能分享 zip、rar、7z 等压缩文件。</p>
-<ol>
-<li>下载十六进制编辑器，修改前四个数值就可以改变文件种类。
-<ul>
-<li>macOS：<code>brew install hex-fiend</code></li>
-</ul>
-</li>
-<li>示例：将<code>zip</code>文件伪装成<code>png</code>文件。
-<ol>
-<li>打开文件，将前四个数值改为<code>89504E47</code>。</li>
-<li>修改文件后缀为<code>png</code>。</li>
-<li>上传阿里云盘，此时可以分享。</li>
-<li>下载文件后打开，将前四个数值改回<code>504B0304</code>。</li>
-<li>文件后缀改回<code>zip</code>，然后解压。</li>
-</ol>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">文件类型</th>
-<th style="text-align:center">前四个值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>png</code></td>
-<td style="text-align:center"><code>89504E47</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>jpg/jpeg</code></td>
-<td style="text-align:center"><code>FFD8FFE0</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>gif</code></td>
-<td style="text-align:center"><code>47494638</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>webp</code></td>
-<td style="text-align:center"><code>52494646</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>svg</code></td>
-<td style="text-align:center"><code>3C737667</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>mp4</code></td>
-<td style="text-align:center"><code>00000020</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>zip</code></td>
-<td style="text-align:center"><code>504B0304</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>7z</code></td>
-<td style="text-align:center"><code>377ABCAF</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="参考-1">参考</h3>
-<ul>
-<li><a href="https://www.bilibili.com/read/cv12436193" target="_blank" rel="noopener noreffer">如何绕过阿里云盘文件分享种类限制 - 哔哩哔哩</a></li>
-</ul></div>
+<li><a href="https://pandas.pydata.org/docs/user_guide/index.html" target="_blank" rel="noopener noreffer">User Guide — pandas documentation</a></li>
+</ol></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-10-18</span>
+                <span>更新于 2021-10-27</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -238,8 +235,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/%E5%8A%9B%E6%89%A3-1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/" class="prev" rel="prev" title="力扣 1486 数组异或操作"><i class="fas fa-angle-left fa-fw"></i>力扣 1486 数组异或操作</a>
-            <a href="/posts/pandas-%E6%95%99%E7%A8%8B/" class="next" rel="next" title="Pandas 教程">Pandas 教程<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/posts/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/" class="prev" rel="prev" title="阿里云盘"><i class="fas fa-angle-left fa-fw"></i>阿里云盘</a>
+            <a href="/posts/java-collections-framework-%E6%95%99%E7%A8%8B/" class="next" rel="next" title="Java Collections Framework 教程">Java Collections Framework 教程<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
         </main><footer class="footer">
