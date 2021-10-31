@@ -371,4 +371,43 @@ cout << number;  // 3
 
 Using Range based for loop
 
+## C++ 实用技巧
+
+### STL 常用库
+
+```cpp
+/*** 函数 ***/
+#include<algorithm>
+#include<functional> // hash
+#include<climits>    // 常量
+#include<cmath>
+#include<cstdio>
+#include<cstdlib>    // random
+#include<ctime>
+#include<iostream>
+#include<sstream>
+#include<iomanip>    // 右对齐 std::right 设置宽度 std::setw(width)
+/*** 数据结构 ***/
+#include<deque>
+#include<list>
+#include<queue>      // 包括 priority_queue
+#include<stack>
+#include<string>
+#include<vector>
+```
+
+### I/O
+
+```cpp
+#include<iostream> // cin cout
+#include<cstdio>   // scanf printf
+// cin does not concern with ’\n’ at end of each line
+// however scanf or getline does concern with ’\n’ at end of each line
+// ’\n’ will be ignored when you use cin to read char.
+
+// 读取数值数据后在读取字符串
+cin >> n;
+getline(cin, str) // wasted getline
+getline(cin, str) // real input string
+```
 
