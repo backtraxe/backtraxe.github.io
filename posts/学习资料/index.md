@@ -57,7 +57,8 @@
     - [Learn Go with tests](https://studygolang.gitbook.io/learn-go-with-tests)
 - [Tutorial: Get started with Go](https://golang.org/doc/tutorial/getting-started)：Go 官方教程。
 - [Practical Go Lessons](https://www.practical-go-lessons.com/)
-- [Introduction-to-Golang](https://github.com/0voice/Introduction-to-Golang): golang 资料
+- [Introduction-to-Golang](https://github.com/0voice/Introduction-to-Golang)：最全空降 golang 资料补给包（满血战斗），包含文章，书籍，作者论文，理论分析，开源框架，云原生，大佬视频，大厂实战分享 ppt。
+- [《Go入门指南》](https://github.com/unknwon/the-way-to-go_ZH_CN)
 
 ### Java
 
@@ -125,6 +126,14 @@
 
 ### 教程
 
+{{< admonition tip "书籍" false >}}
+- [《利用 Python 进行数据分析（第2版）》](https://github.com/iamseancheney/python_for_data_analysis_2nd_chinese_version)
+    - [GitBook](https://seancheney.gitbook.io/python-for-data-analysis-2nd)
+    - [《Python for Data Analysis》代码](https://github.com/wesm/pydata-book)
+- [《Pandas Cookbook》](https://www.jianshu.com/p/5809f6cf78ca)
+    - [《Pandas Cookbook》代码](https://github.com/PacktPublishing/Pandas-Cookbook)
+{{< /admonition >}}
+
 {{< admonition tip "教程" false >}}
 - [《简明的 TensorFlow 2》](https://github.com/snowkylin/tensorflow-handbook) | [在线](https://tf.wiki/) `📅2021/07/15` `🌟3484`
 - [30天吃掉那只TensorFlow2](https://github.com/lyhue1991/eat_tensorflow2_in_30_days) ｜ [GitBook](https://lyhue1991.github.io/eat_tensorflow2_in_30_days/) `📅2021/05/27` `🌟8855`
@@ -181,6 +190,12 @@
 - [Dataquest](https://www.dataquest.io/)
 - [AI研习社](https://www.yanxishe.com/)
 - [AMiner](https://www.aminer.cn/)
+{{< /admonition >}}
+
+## 速查表
+
+{{< admonition tip "速查表" false >}}
+- [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
 {{< /admonition >}}
 
 ## 算法面试
