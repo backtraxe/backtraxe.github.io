@@ -179,7 +179,7 @@
 
 ### 论文
 
-- [Papers With Code](https://paperswithcode.com/)
+- [Papers With Code](https://paperswithcode.com/): The latest in Machine Learning.
 - [CVF Open Access](https://openaccess.thecvf.com/menu)
 - [Best Paper Awards in CS](https://jeffhuang.com/best_paper_awards/)
 - [卖萌屋学术站](https://arxiv.xixiaoyao.cn/): 每日学术论文。
