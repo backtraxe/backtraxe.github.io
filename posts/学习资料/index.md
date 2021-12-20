@@ -24,6 +24,7 @@
 {{< admonition tip "Linux" false >}}
 - [Linux命令行与Shell脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)
 - [Linux 网络编程与加密](https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/)
+- [explainshell.com](https://explainshell.com/)
 {{< /admonition >}}
 
 ### 数据库
