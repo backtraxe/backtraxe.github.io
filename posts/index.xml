@@ -4,7 +4,7 @@
         <link>https://backtraxe.github.io/posts/</link>
         <description>所有文章 | traXe</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Mon, 25 Oct 2021 22:27:20 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 22 Dec 2021 17:01:12 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>网站收藏🔝</title>
     <link>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</link>
     <pubDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</pubDate><author>
@@ -18,6 +18,20 @@
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid>
     <description><![CDATA[<p>汇集网上的各种学习资料。</p>]]></description>
+</item><item>
+    <title>Numpy 教程</title>
+    <link>https://backtraxe.github.io/posts/numpy-%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Wed, 22 Dec 2021 17:01:12 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/numpy-%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>网址导航</title>
+    <link>https://backtraxe.github.io/posts/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/</link>
+    <pubDate>Mon, 20 Dec 2021 15:29:37 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/</guid>
+    <description><![CDATA[]]></description>
 </item><item>
     <title>力扣 0229 求众数II</title>
     <link>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0229-%E6%B1%82%E4%BC%97%E6%95%B0ii/</link>
@@ -60,19 +74,5 @@
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
     <description><![CDATA[<p>根据模型预测值和真实值的区别来评价模型。</p>]]></description>
-</item><item>
-    <title>UML 类图教程</title>
-    <link>https://backtraxe.github.io/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/</link>
-    <pubDate>Sun, 22 Aug 2021 15:40:26 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[<p>类图是 UML 中面向对象系统建模中最常用和最重要的图，是定义其它图的基础。类图主要是用来显示系统中的类、接口以及它们之间的静态结构和关系的一种静态模型。</p>]]></description>
-</item><item>
-    <title>Java Collections Framework 教程</title>
-    <link>https://backtraxe.github.io/posts/java-collections-framework-%E6%95%99%E7%A8%8B/</link>
-    <pubDate>Fri, 20 Aug 2021 11:09:30 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/java-collections-framework-%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[<p>Collection 是用于表示和操作集合的统一体系结构。</p>]]></description>
 </item></channel>
 </rss>
