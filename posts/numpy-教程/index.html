@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/numpy-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","wordcount":  188 ,
+        },"genre": "posts","wordcount":  855 ,
         "url": "https:\/\/backtraxe.github.io\/posts\/numpy-%E6%95%99%E7%A8%8B\/","datePublished": "2021-12-22T17:01:12+08:00","dateModified": "2021-12-22T17:01:12+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
@@ -117,8 +117,8 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-22">2021-12-22</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-12-22">2021-12-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 188 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-22">2021-12-22</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-12-22">2021-12-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 855 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -126,104 +126,64 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#一维数组">一维数组</a></li>
-    <li><a href="#多维数组">多维数组</a></li>
+    <li><a href="#随机种子">随机种子</a></li>
+    <li><a href="#创建数组">创建数组</a>
+      <ul>
+        <li><a href="#指定值填充">指定值填充</a></li>
+        <li><a href="#范围内填充">范围内填充</a></li>
+        <li><a href="#随机值填充">随机值填充</a></li>
+      </ul>
+    </li>
+    <li><a href="#数组操作">数组操作</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p><code>import numpy as np</code></p>
-<h2 id="一维数组">一维数组</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>                   <span class="c1"># array([1, 2, 3])</span>
-
-<span class="c1"># numpy.arange([start, ]stop, [step, ]dtype=None, *, like=None)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>                     <span class="c1"># array([0, 1, 2])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>            <span class="c1"># array([0, 1, 2])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># array([0, 1, 2])</span>
-
-<span class="c1"># numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># array([ 0.,  5., 10.])</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="多维数组">多维数组</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 全 0 数组</span>
-<span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="c1"># array([[0., 0., 0.],</span>
-<span class="c1">#        [0., 0., 0.]])</span>
-
-<span class="c1"># 全 1 数组</span>
-<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="c1"># array([[1., 1., 1.],</span>
-<span class="c1">#        [1., 1., 1.]])</span>
-
-<span class="c1"># 指定值填充</span>
-<span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-<span class="c1"># array([[2, 2, 2],</span>
-<span class="c1">#        [2, 2, 2]])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="c1"># array([[1, 2, 3],</span>
-<span class="c1">#        [1, 2, 3]])</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 单位矩阵</span>
-<span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="c1"># array([[1., 0.],</span>
-<span class="c1">#        [0., 1.]])</span>
-
-<span class="c1"># 伪单位矩阵</span>
-<span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># array([[0., 1., 0.],</span>
-<span class="c1">#        [0., 0., 1.],</span>
-<span class="c1">#        [0., 0., 0.]])</span>
-</code></pre></td></tr></table>
-</div>
-</div></div>
+<h2 id="随机种子">随机种子</h2>
+<ul>
+<li><a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.seed.html" target="_blank" rel="noopener noreffer"><code>np.random.seed(self, seed=None)</code></a>：固定随机数的输出结果。</li>
+</ul>
+<h2 id="创建数组">创建数组</h2>
+<h3 id="指定值填充">指定值填充</h3>
+<ul>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.empty.html" target="_blank" rel="noopener noreffer"><code>np.empty(shape, dtype=float, order='C', *, like=None)</code></a>：返回给定形状和类型的新数组，而无需初始化条目。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.empty_like.html" target="_blank" rel="noopener noreffer"><code>np.empty_like(prototype, dtype=None, order='K', subok=True, shape=None)</code></a>：返回形状和类型与给定数组相同的新数组。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.eye.html" target="_blank" rel="noopener noreffer"><code>np.eye(N, M=None, k=0, dtype=&lt;class 'float'&gt;, order='C', *, like=None)</code></a>：返回单位矩阵。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.identity.html" target="_blank" rel="noopener noreffer"><code>np.identity(n, dtype=None, *, like=None)</code></a>：返回单位矩阵。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.ones.html" target="_blank" rel="noopener noreffer"><code>np.ones(shape, dtype=None, order='C', *, like=None)</code></a>：返回给定形状和类型的新数组，并用<code>1</code>填充。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.ones_like.html" target="_blank" rel="noopener noreffer"><code>np.ones_like(a, dtype=None, order='K', subok=True, shape=None)</code></a>：返回形状与类型与给定数组相同的数组，并用<code>1</code>填充。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.zeros.html" target="_blank" rel="noopener noreffer"><code>np.zeros(shape, dtype=float, order='C', *, like=None)</code></a>：返回给定形状和类型的新数组，并用<code>0</code>填充。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.zeros_like.html" target="_blank" rel="noopener noreffer"><code>np.zeros_like(a, dtype=None, order='K', subok=True, shape=None)</code></a>：返回形状与类型与给定数组相同的数组，并用<code>0</code>填充。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.full.html" target="_blank" rel="noopener noreffer"><code>np.full(shape, fill_value, dtype=None, order='C', *, like=None)</code></a>：返回给定形状和类型的新数组，并用<code>fill_value</code>填充。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.full_like.html" target="_blank" rel="noopener noreffer"><code>np.full_like(a, fill_value, dtype=None, order='K', subok=True, shape=None)</code></a>：返回形状与类型与给定数组相同的数组，并用<code>fill_value</code>填充。</li>
+</ul>
+<h3 id="范围内填充">范围内填充</h3>
+<ul>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.arange.html" target="_blank" rel="noopener noreffer"><code>np.arange([start, ]stop, [step, ]dtype=None, *, like=None)</code></a>：返回给定间隔内的均匀间隔的值。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.linspace.html" target="_blank" rel="noopener noreffer"><code>np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)</code></a>：返回指定间隔内的等间隔数字。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.logspace.html" target="_blank" rel="noopener noreffer"><code>np.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None, axis=0)</code></a>：返回数以对数刻度均匀分布。</li>
+</ul>
+<h3 id="随机值填充">随机值填充</h3>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.RandomState.rand.html" target="_blank" rel="noopener noreffer"><code>np.random.rand(d0, d1, ..., dn)</code></a>：返回服从<code>[0,1)</code>均匀分布的指定形状的浮点数数组。</li>
+<li><a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.uniform.html" target="_blank" rel="noopener noreffer"><code>np.random.uniform(low=0.0, high=1.0, size=None)</code></a>：返回服从<code>[low,high)</code>均匀分布的指定形状的浮点数数组。</li>
+<li><a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.RandomState.randint.html" target="_blank" rel="noopener noreffer"><code>np.random.randint(low, high=None, size=None, dtype=int)</code></a>：返回服从<code>[low,high)</code>均匀分布的指定形状的整数数组。</li>
+<li><a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.RandomState.randn.html" target="_blank" rel="noopener noreffer"><code>np.random.randn(d0, d1, ..., dn)</code></a>：返回服从<code>N(0,1)</code>标准正态分布的指定形状的浮点数数组。</li>
+<li><a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.normal.html" target="_blank" rel="noopener noreffer"><code>np.random.normal(loc=0.0, scale=1.0, size=None)</code></a>：返回服从<code>N(loc,scale)</code>正态分布的指定形状的浮点数数组。</li>
+<li><a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.choice.html" target="_blank" rel="noopener noreffer"><code>np.random.choice(a, size=None, replace=True, p=None)</code></a>：从数组中随机有放回采样若干次。</li>
+<li><a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.permutation.html" target="_blank" rel="noopener noreffer"><code>np.random.permutation(x)</code></a>：返回随机排列。</li>
+</ul>
+<h2 id="数组操作">数组操作</h2>
+<ul>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.T.html" target="_blank" rel="noopener noreffer"><code>ndarray.T</code></a>：返回转置。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.transpose.html" target="_blank" rel="noopener noreffer"><code>np.transpose(a, axes=None)</code></a>：返回转置。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.c_.html" target="_blank" rel="noopener noreffer"><code>np.c_[tup]</code></a>：列合并。</li>
+<li><a href="https://numpy.org/devdocs/reference/generated/numpy.column_stack.html" target="_blank" rel="noopener noreffer"><code>np.column_stack(tup)</code></a>：列合并。</li>
+<li><a href="" rel="">``</a>：行合并。</li>
+<li><a href="" rel="">``</a>：行合并。</li>
+<li><a href="" rel="">``</a>：</li>
+<li><a href="" rel="">``</a>：</li>
+<li><a href="" rel="">``</a>：</li>
+</ul></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
