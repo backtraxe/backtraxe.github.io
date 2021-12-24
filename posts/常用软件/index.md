@@ -5,8 +5,8 @@
 
 ## 跨平台
 
-1. [Typora](https://typora.io/)：简洁美观的 Markdown 编辑器。 `免费`
-1. [Visual Studio Code](https://github.com/microsoft/vscode)：代码编辑器。 `开源` `免费`
+1. [Mark Text](https://github.com/marktext/marktext)：简洁美观的 Markdown 编辑器。`开源` `免费`
+1. [Visual Studio Code](https://github.com/microsoft/vscode)：代码编辑器。`开源` `免费`
 1. [JetBrains Toolbox App](https://www.jetbrains.com/toolbox-app/)：JetBrains IDE 管理器。 `学生免费`
 1. [PDF Reader Pro](https://www.pdfreaderpro.com/)：阅读、编辑、注释、转换和签署 PDF 的最佳 PDF 软件。 `付费`
 
