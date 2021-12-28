@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/java-collections-framework-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Java","wordcount":  2099 ,
+        },"genre": "posts","keywords": "Java","wordcount":  2132 ,
         "url": "https:\/\/backtraxe.github.io\/posts\/java-collections-framework-%E6%95%99%E7%A8%8B\/","datePublished": "2021-08-20T11:09:30+08:00","dateModified": "2021-09-23T11:09:30+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
@@ -110,55 +110,15 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-            <div class="container"><div class="toc" id="toc-auto">
-        <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java Collections Framework 教程</h1><div class="post-meta">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java Collections Framework 教程</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-20">2021-08-20</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-23">2021-09-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2099 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-20">2021-08-20</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-23">2021-09-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2132 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#1简介">1.简介</a></li>
-    <li><a href="#2collection">2.Collection</a>
-      <ul>
-        <li><a href="#21-方法">2.1 方法</a></li>
-        <li><a href="#22-遍历">2.2 遍历</a></li>
-      </ul>
-    </li>
-    <li><a href="#3set">3.Set</a>
-      <ul>
-        <li><a href="#31-特性">3.1 特性</a></li>
-        <li><a href="#32-实现">3.2 实现</a></li>
-      </ul>
-    </li>
-    <li><a href="#4list">4.List</a>
-      <ul>
-        <li><a href="#41-特性">4.1 特性</a></li>
-        <li><a href="#42-实现">4.2 实现</a></li>
-        <li><a href="#43-方法">4.3 方法</a></li>
-        <li><a href="#44-遍历">4.4 遍历</a></li>
-      </ul>
-    </li>
-    <li><a href="#5queue">5.Queue</a></li>
-    <li><a href="#6deque">6.Deque</a></li>
-    <li><a href="#7map">7.Map</a></li>
-    <li><a href="#8sortedset">8.SortedSet</a></li>
-    <li><a href="#9sortedmap">9.SortedMap</a></li>
-    <li><a href="#10代码片段">10.代码片段</a></li>
-    <li><a href="#11聚合操作">11.聚合操作</a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><p>Collection 是用于表示和操作集合的统一体系结构。</p>
-<h2 id="1简介">1.简介</h2>
-<p>所有 Collection 都包含以下内容：</p>
+        </div><div class="content" id="content"><p>Collection 是用于表示和操作集合的统一体系结构。</p>
+<h2 id="1简介" class="headerLink">
+    <a href="#1%e7%ae%80%e4%bb%8b" class="header-mark"></a>1.简介</h2><p>所有 Collection 都包含以下内容：</p>
 <ul>
 <li><strong>接口（Interfaces）</strong>：这些是表示集合的抽象数据类型。接口允许集合独立于其表示的细节进行操作。在面向对象语言中，接口通常形成一个层次结构。</li>
 <li><strong>实现（Implementations）</strong>：这些是集合接口的具体实现。本质上，它们是可重用的数据结构。</li>
@@ -176,9 +136,9 @@
 <li><strong>SortedSet</strong>：有序集合；默认升序；元素唯一。</li>
 <li><strong>SortedMap</strong>：有序键值对；默认升序；键唯一；一一映射。</li>
 </ul>
-<h2 id="2collection">2.Collection</h2>
-<h3 id="21-方法">2.1 方法</h3>
-<ul>
+<h2 id="2collection" class="headerLink">
+    <a href="#2collection" class="header-mark"></a>2.Collection</h2><h3 id="21-方法" class="headerLink">
+    <a href="#21-%e6%96%b9%e6%b3%95" class="header-mark"></a>2.1 方法</h3><ul>
 <li><code>int size()</code>：返回容器大小</li>
 <li><code>boolean isEmpty()</code>：容器是否为空</li>
 <li><code>boolean contains(Object element)</code>：是否包含指定元素</li>
@@ -194,8 +154,8 @@
 <li><code>&lt;T&gt; T[] toArray(T[] a)</code>：容器转数组</li>
 <li>``</li>
 </ul>
-<h3 id="22-遍历">2.2 遍历</h3>
-<p><strong>（1）聚合操作（Stream + Lambda）</strong>：只能访问，不能修改。</p>
+<h3 id="22-遍历" class="headerLink">
+    <a href="#22-%e9%81%8d%e5%8e%86" class="header-mark"></a>2.2 遍历</h3><p><strong>（1）聚合操作（Stream + Lambda）</strong>：只能访问，不能修改。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -287,32 +247,32 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="3set">3.Set</h2>
-<h3 id="31-特性">3.1 特性</h3>
-<ul>
+</div><h2 id="3set" class="headerLink">
+    <a href="#3set" class="header-mark"></a>3.Set</h2><h3 id="31-特性" class="headerLink">
+    <a href="#31-%e7%89%b9%e6%80%a7" class="header-mark"></a>3.1 特性</h3><ul>
 <li>继承 <code>Collection</code>，可使用其所有方法</li>
 <li>元素唯一</li>
 </ul>
-<h3 id="32-实现">3.2 实现</h3>
-<ul>
+<h3 id="32-实现" class="headerLink">
+    <a href="#32-%e5%ae%9e%e7%8e%b0" class="header-mark"></a>3.2 实现</h3><ul>
 <li><code>HashSet</code>：哈希表实现；性能最佳；元素无序</li>
 <li><code>TreeSet</code>：红黑树实现；性能最差；元素有序（默认升序）</li>
 <li><code>LinkedHashSet</code>：哈希表+链表实现；性能第二；元素按添加顺序排序</li>
 </ul>
-<h2 id="4list">4.List</h2>
-<h3 id="41-特性">4.1 特性</h3>
-<ul>
+<h2 id="4list" class="headerLink">
+    <a href="#4list" class="header-mark"></a>4.List</h2><h3 id="41-特性" class="headerLink">
+    <a href="#41-%e7%89%b9%e6%80%a7" class="header-mark"></a>4.1 特性</h3><ul>
 <li>继承 <code>Collection</code>，可使用其所有方法</li>
 <li>元素有序（添加顺序）</li>
 <li>按索引访问</li>
 </ul>
-<h3 id="42-实现">4.2 实现</h3>
-<ul>
+<h3 id="42-实现" class="headerLink">
+    <a href="#42-%e5%ae%9e%e7%8e%b0" class="header-mark"></a>4.2 实现</h3><ul>
 <li><code>ArrayList</code>：数组实现</li>
 <li><code>LinkedList</code>：链表实现；插入删除效率高</li>
 </ul>
-<h3 id="43-方法">4.3 方法</h3>
-<ul>
+<h3 id="43-方法" class="headerLink">
+    <a href="#43-%e6%96%b9%e6%b3%95" class="header-mark"></a>4.3 方法</h3><ul>
 <li><code>E get(int index)</code>：返回指定索引的元素</li>
 <li><code>E set(int index, E element)</code>：修改指定索引的元素，返回原来的元素</li>
 <li><code>boolean add(E element)</code>：添加到尾部</li>
@@ -326,8 +286,8 @@
 <li><code>ListIterator&lt;E&gt; listIterator()</code>：返回列表迭代器，可双向迭代</li>
 <li><code>ListIterator&lt;E&gt; listIterator(int index)</code>：返回指定索引的列表迭代器，可双向迭代</li>
 </ul>
-<h3 id="44-遍历">4.4 遍历</h3>
-<p><strong>ListIterator</strong>：可修改，双向迭代。</p>
+<h3 id="44-遍历" class="headerLink">
+    <a href="#44-%e9%81%8d%e5%8e%86" class="header-mark"></a>4.4 遍历</h3><p><strong>ListIterator</strong>：可修改，双向迭代。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -395,13 +355,13 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="5queue">5.Queue</h2>
-<h2 id="6deque">6.Deque</h2>
-<h2 id="7map">7.Map</h2>
-<h2 id="8sortedset">8.SortedSet</h2>
-<h2 id="9sortedmap">9.SortedMap</h2>
-<h2 id="10代码片段">10.代码片段</h2>
-<div class="highlight"><div class="chroma">
+</div><h2 id="5queue" class="headerLink">
+    <a href="#5queue" class="header-mark"></a>5.Queue</h2><h2 id="6deque" class="headerLink">
+    <a href="#6deque" class="header-mark"></a>6.Deque</h2><h2 id="7map" class="headerLink">
+    <a href="#7map" class="header-mark"></a>7.Map</h2><h2 id="8sortedset" class="headerLink">
+    <a href="#8sortedset" class="header-mark"></a>8.SortedSet</h2><h2 id="9sortedmap" class="headerLink">
+    <a href="#9sortedmap" class="header-mark"></a>9.SortedMap</h2><h2 id="10代码片段" class="headerLink">
+    <a href="#10%e4%bb%a3%e7%a0%81%e7%89%87%e6%ae%b5" class="header-mark"></a>10.代码片段</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -545,8 +505,8 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="11聚合操作">11.聚合操作</h2>
-<p>参考：</p>
+</div><h2 id="11聚合操作" class="headerLink">
+    <a href="#11%e8%81%9a%e5%90%88%e6%93%8d%e4%bd%9c" class="header-mark"></a>11.聚合操作</h2><p>参考：</p>
 <ol>
 <li><a href="https://docs.oracle.com/javase/tutorial/collections/streams/index.html" target="_blank" rel="noopener noreffer">Aggregate Operations - Java Tutorials</a></li>
 </ol></div>
@@ -582,6 +542,9 @@
         <div class="footer-container"><div class="footer-line">
                     由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">

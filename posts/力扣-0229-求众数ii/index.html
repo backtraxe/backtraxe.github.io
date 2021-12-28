@@ -110,43 +110,23 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-            <div class="container"><div class="toc" id="toc-auto">
-        <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">力扣 0229 求众数II</h1><div class="post-meta">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">力扣 0229 求众数II</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E5%8A%9B%E6%89%A3/"><i class="far fa-folder fa-fw"></i>力扣</a>&nbsp;<a href="/categories/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E6%B3%95/"><i class="far fa-folder fa-fw"></i>摩尔投票法</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-25">2021-10-25</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-10-25">2021-10-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 684 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#摩尔投票法">摩尔投票法</a>
-      <ul>
-        <li><a href="#背景">背景</a></li>
-        <li><a href="#步骤">步骤</a></li>
-        <li><a href="#代码">代码</a></li>
-        <li><a href="#复杂度分析">复杂度分析</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><p><a href="https://leetcode-cn.com/problems/majority-element-ii/" target="_blank" rel="noopener noreffer">题目链接</a></p>
-<h2 id="摩尔投票法">摩尔投票法</h2>
-<h3 id="背景">背景</h3>
-<p>摩尔投票法的核心思想为对拼消耗。首先我们考虑最基本的摩尔投票问题，比如找出一组数字序列中出现次数大于总数 $\frac{1}{2}$ 的数字（并且假设这个数字一定存在）。我们可以直接利用反证法证明这样的数字只可能有一个。摩尔投票算法的核心思想是基于这个事实：</p>
+        </div><div class="content" id="content"><p><a href="https://leetcode-cn.com/problems/majority-element-ii/" target="_blank" rel="noopener noreffer">题目链接</a></p>
+<h2 id="摩尔投票法" class="headerLink">
+    <a href="#%e6%91%a9%e5%b0%94%e6%8a%95%e7%a5%a8%e6%b3%95" class="header-mark"></a>摩尔投票法</h2><h3 id="背景" class="headerLink">
+    <a href="#%e8%83%8c%e6%99%af" class="header-mark"></a>背景</h3><p>摩尔投票法的核心思想为对拼消耗。首先我们考虑最基本的摩尔投票问题，比如找出一组数字序列中出现次数大于总数 $\frac{1}{2}$ 的数字（并且假设这个数字一定存在）。我们可以直接利用反证法证明这样的数字只可能有一个。摩尔投票算法的核心思想是基于这个事实：</p>
 <ul>
 <li>每次从序列里选择两个不相同的数字删除掉（或称为「抵消」），最后剩下一个数字或几个相同的数字，就是出现次数大于总数一半的那个元素。假设我们当前数组中存在次数大于总数一半的元素为 x，数组的总长度为 n，则我们可以把数组分为两部分，一部分为相同的 k 个元素 x，另一部分为 $\frac{n - k}{2}$ 对个不同的元素配对，此时我们假设还存在另外一个次数大于总数一半的元素 y，则此时 y 应该满足 y $\gt \frac{n}{2}$，但是按照我们之前的推理 y 应当满足 y $\le \frac{n - k}{2}$，二者自相矛盾。</li>
 <li>论文地址：<a href="https://www.cs.ou.edu/~rlpage/dmtools/mjrty.pdf" target="_blank" rel="noopener noreffer">MJRTYA Fast Majority Vote Algorithm</a></li>
 </ul>
-<h3 id="步骤">步骤</h3>
-<h3 id="代码">代码</h3>
-<div class="highlight"><div class="chroma">
+<h3 id="步骤" class="headerLink">
+    <a href="#%e6%ad%a5%e9%aa%a4" class="header-mark"></a>步骤</h3><h3 id="代码" class="headerLink">
+    <a href="#%e4%bb%a3%e7%a0%81" class="header-mark"></a>代码</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -228,8 +208,8 @@
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="复杂度分析">复杂度分析</h3>
-<ul>
+</div><h3 id="复杂度分析" class="headerLink">
+    <a href="#%e5%a4%8d%e6%9d%82%e5%ba%a6%e5%88%86%e6%9e%90" class="header-mark"></a>复杂度分析</h3><ul>
 <li>时间复杂度：$O(n)$</li>
 <li>空间复杂度：$O(1)$</li>
 </ul></div>
@@ -265,6 +245,9 @@
         <div class="footer-container"><div class="footer-line">
                     由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
