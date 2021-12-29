@@ -44,9 +44,9 @@
 
 - [`ndarray.T`](https://numpy.org/devdocs/reference/generated/numpy.ndarray.T.html)：返回转置。
 - [`np.transpose(a, axes=None)`](https://numpy.org/devdocs/reference/generated/numpy.transpose.html)：返回转置。
-- [`np.c_[tup]`](https://numpy.org/devdocs/reference/generated/numpy.c_.html)：列合并。
-- [`np.column_stack(tup)`](https://numpy.org/devdocs/reference/generated/numpy.column_stack.html)：列合并。
-- [``]()：行合并。
+- [`np.c_[tup]`](https://numpy.org/devdocs/reference/generated/numpy.c_.html)：左右合并。
+- [`np.column_stack(tup)`](https://numpy.org/devdocs/reference/generated/numpy.column_stack.html)：左右合并。
+- [`np.r_[tup]`]()：行合并。
 - [``]()：行合并。
 - [``]()：
 - [``]()：
