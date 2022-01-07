@@ -1,6 +1,6 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>traXe</title>
+        <title></title>
         <link>https://backtraxe.github.io/</link>
         <description>这是Backtraxe的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>

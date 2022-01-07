@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>位运算 - 分类 - traXe</title>
+        <title>位运算 - 分类 - </title>
         <link>https://backtraxe.github.io/categories/%E4%BD%8D%E8%BF%90%E7%AE%97/</link>
-        <description>位运算 - 分类 - traXe</description>
+        <description>位运算 - 分类 - </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Fri, 07 May 2021 22:43:17 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="self" type="application/rss+xml" /><item>
     <title>力扣 1486 数组异或操作</title>

@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hugo - 标签 - traXe</title>
+        <title>Hugo - 标签 - </title>
         <link>https://backtraxe.github.io/tags/hugo/</link>
-        <description>Hugo - 标签 - traXe</description>
+        <description>Hugo - 标签 - </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Mon, 12 Apr 2021 20:46:06 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/hugo/" rel="self" type="application/rss+xml" /><item>
     <title>Hugo DoIt 主题介绍和配置</title>

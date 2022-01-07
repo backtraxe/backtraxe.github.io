@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>LaTeX - 分类 - traXe</title>
+        <title>LaTeX - 分类 - </title>
         <link>https://backtraxe.github.io/categories/latex/</link>
-        <description>LaTeX - 分类 - traXe</description>
+        <description>LaTeX - 分类 - </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Thu, 11 Feb 2021 16:42:08 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/latex/" rel="self" type="application/rss+xml" /><item>
     <title>LaTeX 常用数学符号</title>

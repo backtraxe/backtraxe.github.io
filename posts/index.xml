@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>所有文章 - traXe</title>
+        <title>所有文章 - </title>
         <link>https://backtraxe.github.io/posts/</link>
-        <description>所有文章 | traXe</description>
+        <description>所有文章 | </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 22 Dec 2021 17:01:12 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>网站收藏🔝</title>

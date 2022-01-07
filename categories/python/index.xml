@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Python - 分类 - traXe</title>
+        <title>Python - 分类 - </title>
         <link>https://backtraxe.github.io/categories/python/</link>
-        <description>Python - 分类 - traXe</description>
+        <description>Python - 分类 - </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sun, 15 Aug 2021 17:08:51 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
     <title>Python 第三方库</title>

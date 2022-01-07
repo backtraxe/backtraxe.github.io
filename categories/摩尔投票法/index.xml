@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>摩尔投票法 - 分类 - traXe</title>
+        <title>摩尔投票法 - 分类 - </title>
         <link>https://backtraxe.github.io/categories/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E6%B3%95/</link>
-        <description>摩尔投票法 - 分类 - traXe</description>
+        <description>摩尔投票法 - 分类 - </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Mon, 25 Oct 2021 22:27:20 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
     <title>力扣 0229 求众数II</title>

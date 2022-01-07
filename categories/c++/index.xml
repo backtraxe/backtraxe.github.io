@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>C&#43;&#43; - 分类 - traXe</title>
+        <title>C&#43;&#43; - 分类 - </title>
         <link>https://backtraxe.github.io/categories/c&#43;&#43;/</link>
-        <description>C&#43;&#43; - 分类 - traXe</description>
+        <description>C&#43;&#43; - 分类 - </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sat, 06 Feb 2021 22:06:43 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/c&#43;&#43;/" rel="self" type="application/rss+xml" /><item>
     <title>C&#43;&#43; STL 教程</title>
