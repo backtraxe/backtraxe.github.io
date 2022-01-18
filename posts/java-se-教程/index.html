@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Java SE 教程 - </title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="Java SE 教程" />
+<meta property="og:description" content="Java 是全球使用最广泛的编程语言。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://backtraxe.github.io/posts/java-se-%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-07T21:41:06+08:00" />
+<meta property="article:modified_time" content="2022-01-18T22:00:08+08:00" /><meta property="og:site_name" content="traXe" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java SE 教程"/>
+<meta name="twitter:description" content="Java 是全球使用最广泛的编程语言。"/>
+<meta name="application-name" content="traXe">
+<meta name="apple-mobile-web-app-title" content="traXe">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://backtraxe.github.io/posts/java-se-%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://backtraxe.github.io/posts/python-%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://backtraxe.github.io/posts/%E8%B0%B7%E6%AD%8C%E4%B8%89%E4%BB%B6%E5%A5%97%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java SE 教程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/"
+        },"genre": "posts","keywords": "Java, 教程","wordcount":  3811 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-01-18T22:00:08+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Backtraxe"},"author": {
+                "@type": "Person",
+                "name": "Backtraxe"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">traXe</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/backtraxe" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" title="Select Language" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/java-se-%E6%95%99%E7%A8%8B/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">traXe</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/backtraxe" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="#" onclick="return false;" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" title="Select Language" onchange="location = this.value;"><option value="/posts/java-se-%E6%95%99%E7%A8%8B/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#0-名词解释">0 名词解释</a></li>
+    <li><a href="#1-准备">1 准备</a>
+      <ul>
+        <li><a href="#11-jdk-下载">1.1 JDK 下载</a></li>
+        <li><a href="#12-环境变量配置">1.2 环境变量配置</a></li>
+        <li><a href="#13-ide-download">1.3 IDE Download</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-基础语法">2 基础语法</a>
+      <ul>
+        <li><a href="#21-注释">2.1 注释</a></li>
+        <li><a href="#22-常量">2.2 常量</a></li>
+        <li><a href="#23-数据类型">2.3 数据类型</a></li>
+        <li><a href="#24-变量定义和使用">2.4 变量定义和使用</a></li>
+        <li><a href="#25-读取输入">2.5 读取输入</a></li>
+        <li><a href="#26-标识符定义">2.6 标识符定义</a></li>
+      </ul>
+    </li>
+    <li><a href="#垃圾回收">垃圾回收</a></li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java SE 教程</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a>&nbsp;<a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>教程</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-18">2022-01-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3811 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#0-名词解释">0 名词解释</a></li>
+    <li><a href="#1-准备">1 准备</a>
+      <ul>
+        <li><a href="#11-jdk-下载">1.1 JDK 下载</a></li>
+        <li><a href="#12-环境变量配置">1.2 环境变量配置</a></li>
+        <li><a href="#13-ide-download">1.3 IDE Download</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-基础语法">2 基础语法</a>
+      <ul>
+        <li><a href="#21-注释">2.1 注释</a></li>
+        <li><a href="#22-常量">2.2 常量</a></li>
+        <li><a href="#23-数据类型">2.3 数据类型</a></li>
+        <li><a href="#24-变量定义和使用">2.4 变量定义和使用</a></li>
+        <li><a href="#25-读取输入">2.5 读取输入</a></li>
+        <li><a href="#26-标识符定义">2.6 标识符定义</a></li>
+      </ul>
+    </li>
+    <li><a href="#垃圾回收">垃圾回收</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Java 是全球使用最广泛的编程语言。</p>
+<h2 id="0-名词解释" class="headerLink">
+    <a href="#0-%e5%90%8d%e8%af%8d%e8%a7%a3%e9%87%8a" class="header-mark"></a>0 名词解释</h2><ul>
+<li>JVM：Java Virtual Machine，Java 虚拟机。</li>
+<li>JRE：Java Runtime Environment，Java 运行环境，包含 JVM 和 Java 核心类库。</li>
+<li>JDK：Java Development Kit，Java 开发工具包，包含 JRE，编译工具和运行工具。</li>
+</ul>
+<h2 id="1-准备" class="headerLink">
+    <a href="#1-%e5%87%86%e5%a4%87" class="header-mark"></a>1 准备</h2><h3 id="11-jdk-下载" class="headerLink">
+    <a href="#11-jdk-%e4%b8%8b%e8%bd%bd" class="header-mark"></a>1.1 JDK 下载</h3><ul>
+<li><a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank" rel="noopener noreffer">Oracle JDK</a></li>
+<li><a href="https://jdk.java.net/" target="_blank" rel="noopener noreffer">Oracle OpenJDK</a></li>
+</ul>
+<blockquote>
+<ul>
+<li>Windows 可通过 Chocolatey 安装。</li>
+<li>MacOS 可通过 Homebrew 安装。</li>
+</ul>
+</blockquote>
+<h3 id="12-环境变量配置" class="headerLink">
+    <a href="#12-%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e9%85%8d%e7%bd%ae" class="header-mark"></a>1.2 环境变量配置</h3><p>Windows：</p>
+<ol>
+<li><code>设置</code>→<code>系统</code>→<code>关于</code>→<code>高级系统设置</code>→<code>环境变量</code>。</li>
+<li>在下方的<code>系统变量</code>中找到<code>Path</code>，点击<code>编辑</code>。</li>
+<li>点击<code>新建</code>，将JDK的路径下的bin目录粘贴进去。（示例：<code>C:\Users\backs\Downloads\jdk-11.0.10\bin\</code>）</li>
+<li>连续点击<code>确定</code>，保存退出。</li>
+<li>打开cmd，输入<code>java -version</code>，若有如下所示输出即为配置成功。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">java version &#34;11.0.10&#34; 2021-01-19 LTS
+Java(TM) SE Runtime Environment 18.9 (build 11.0.10+8-LTS-162)
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.10+8-LTS-162, mixed mode)
+</code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>在任意位置创建 <code>test.java</code>，写入以下内容。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">test</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello World!&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>在<strong>该文件夹</strong>下打开命令行，输入以下内容，输出应该为 <code>Hello World!</code>。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">javac test.java
+java <span class="nb">test</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="13-ide-download" class="headerLink">
+    <a href="#13-ide-download" class="header-mark"></a>1.3 IDE Download</h3><ul>
+<li><a href="https://www.jetbrains.com/idea/download/" target="_blank" rel="noopener noreffer">IntelliJ IDEA</a>: 最好用，<code>Community</code>版免费，<code>Ultimate</code>版收费，学生可白嫖，推荐。</li>
+<li><a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener noreffer">Eclipse</a>: 开源，免费。</li>
+</ul>
+<h2 id="2-基础语法" class="headerLink">
+    <a href="#2-%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95" class="header-mark"></a>2 基础语法</h2><h3 id="21-注释" class="headerLink">
+    <a href="#21-%e6%b3%a8%e9%87%8a" class="header-mark"></a>2.1 注释</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 单行注释
+</span><span class="c1"></span>
+<span class="cm">/*
+</span><span class="cm">多行注释
+</span><span class="cm">*/</span>
+
+<span class="cm">/**
+</span><span class="cm">文档注释
+</span><span class="cm">*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22-常量" class="headerLink">
+    <a href="#22-%e5%b8%b8%e9%87%8f" class="header-mark"></a>2.2 常量</h3><ul>
+<li>字符串常量：<code>&quot;helloworld&quot;</code>，<code>&quot;程序员&quot;</code></li>
+<li>整数常量：<code>12</code>，<code>-3</code></li>
+<li>浮点数常量：<code>1.2</code>，<code>-3.4</code></li>
+<li>字符常量：<code>'a'</code>，<code>'\n'</code>，<code>'我'</code></li>
+<li>布尔常量：<code>true</code>，<code>false</code></li>
+<li>空常量：<code>null</code></li>
+</ul>
+<h3 id="23-数据类型" class="headerLink">
+    <a href="#23-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b" class="header-mark"></a>2.3 数据类型</h3><table>
+  <tr>
+    <th>数据类型</th>
+    <th>关键字</th>
+    <th>内存占用（字节）</th>
+    <th>取值范围</th>
+  </tr>
+  <tr align="center">
+    <td rowspan=4>整数</td>
+    <td><code>byte</code></td>
+    <td>1</td>
+    <td>-128~127</td>
+  </tr>
+  <tr align="center">
+    <td><code>short</code></td>
+    <td>2</td>
+    <td>-32,768~32,767</td>
+  </tr>
+  <tr align="center">
+    <td><code>int</code></td>
+    <td>4</td>
+    <td>-2,147,483,648~2,147,483,647</td>
+  </tr>
+  <tr align="center">
+    <td><code>long</code></td>
+    <td>8</td>
+    <td>$$-2^{63} \sim 2^{63} - 1$$</td>
+  </tr>
+  <tr align="center">
+    <td rowspan=2>浮点数</td>
+    <td><code>float</code></td>
+    <td>4</td>
+    <td>小数点后6位</td>
+  </tr>
+  <tr align="center">
+    <td><code>double</code></td>
+    <td>8</td>
+    <td>小数点后15位</td>
+  </tr>
+  <tr align="center">
+    <td>字符</td>
+    <td><code>char</code></td>
+    <td>2</td>
+    <td>0~65,535</td>
+  </tr>
+  <tr align="center">
+    <td>布尔</td>
+    <td><code>boolean</code></td>
+    <td>1</td>
+    <td><code>true</code>,<code>false</code></td>
+  </tr>
+</table>
+<div class="mermaid" id="id-1"></div>
+<h3 id="24-变量定义和使用" class="headerLink">
+    <a href="#24-%e5%8f%98%e9%87%8f%e5%ae%9a%e4%b9%89%e5%92%8c%e4%bd%bf%e7%94%a8" class="header-mark"></a>2.4 变量定义和使用</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">float</span> <span class="n">a</span> <span class="o">=</span> <span class="n">3</span><span class="o">.</span><span class="na">14F</span><span class="o">;</span>
+<span class="c1">// float b = 3.14f;
+</span><span class="c1"></span><span class="kt">long</span> <span class="n">c</span> <span class="o">=</span> <span class="n">100L</span><span class="o">;</span>
+<span class="c1">// long d = 100l;
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="25-读取输入" class="headerLink">
+    <a href="#25-%e8%af%bb%e5%8f%96%e8%be%93%e5%85%a5" class="header-mark"></a>2.5 读取输入</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="26-标识符定义" class="headerLink">
+    <a href="#26-%e6%a0%87%e8%af%86%e7%ac%a6%e5%ae%9a%e4%b9%89" class="header-mark"></a>2.6 标识符定义</h3><p>必须：</p>
+<ul>
+<li>由数字、字母、下划线、美元符号组成</li>
+<li>不能以数字开头</li>
+<li>不能是关键字</li>
+<li>区分大小写</li>
+</ul>
+<p>建议：</p>
+<ul>
+<li>小驼峰命名法：<code>backTraxe</code>，常用于定义<strong>方法</strong>、<strong>变量</strong>。</li>
+<li>大驼峰命名法：<code>BackTraxe</code>，常用于定义<strong>类</strong>。</li>
+</ul>
+<h2 id="垃圾回收" class="headerLink">
+    <a href="#%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6" class="header-mark"></a>垃圾回收</h2><p>垃圾回收，顾名思义就是释放垃圾占用的空间，从而提升程序性能，防止内存泄露。当一个对象不再被需要时，该对象就需要被回收并释放空间。</p>
+<p>Java 内存运行时数据区域包括程序计数器、虚拟机栈、本地方法栈、堆等区域。其中，程序计数器、虚拟机栈和本地方法栈都是线程私有的，当线程结束时，这些区域的生命周期也结束了，因此不需要过多考虑回收的问题。而堆是虚拟机管理的内存中最大的一块，堆中的内存的分配和回收是动态的，垃圾回收主要关注的是堆空间。</p>
+<p><strong>调用垃圾回收器的方法</strong></p>
+<p>调用垃圾回收器的方法是<code>gc</code>，该方法在<code>System</code>类和<code>Runtime</code>类中都存在。在<code>Runtime</code>类中，方法<code>gc</code>是实例方法，方法<code>System.gc</code>是调用该方法的一种传统而便捷的方法。在<code>System</code>类中，方法<code>gc</code>是静态方法，该方法会调用<code>Runtime</code>类中的<code>gc</code>方法。其实，<code>java.lang.System.gc</code>等价于<code>java.lang.Runtime.getRuntime.gc</code>的简写，都是调用垃圾回收器。方法<code>gc</code>的作用是提示<code>Java</code>虚拟机进行垃圾回收，该方法由系统自动调用，不需要人为调用。该方法被调用之后，由<code>Java</code>虚拟机决定是立即回收还是延迟回收。</p>
+<p><strong>finalize 方法</strong></p>
+<p>与垃圾回收有关的另一个方法是<code>finalize</code>方法。该方法在<code>Object</code>类中被定义，在释放对象占用的内存之前会调用该方法。该方法的默认实现不做任何事，如果必要，子类应该重写该方法，一般建议在该方法中释放对象持有的资源。</p>
+<p><strong>判断对象是否可回收</strong></p>
+<p>垃圾回收器在对堆进行回收之前，首先需要确定哪些对象是可回收的。常用的算法有两种，引用计数算法和根搜索算法。</p>
+<p><strong>1.引用计数算法</strong></p>
+<p>引用计数算法给每个对象添加引用计数器，用于记录对象被引用的计数，引用计数为 0 的对象即为可回收的对象。</p>
+<p>虽然引用计数算法的实现简单，判定效率也很高，但是引用计数算法无法解决对象之间循环引用的情况。如果多个对象之间存在循环引用，则这些对象的引用计数永远不为 0，无法被回收。因此 Java 语言没有使用引用计数算法。</p>
+<p><strong>2.根搜索算法</strong></p>
+<p>主流的商用程序语言都是使用根搜索算法判断对象是否可回收。根搜索算法的思路是，从若干被称为 GC Roots 的对象开始进行搜索，不能到达的对象即为可回收的对象。</p>
+<p>在 Java 中，GC Roots 一般包含下面几种对象：</p>
+<ul>
+<li>虚拟机栈中引用的对象</li>
+<li>本地方法栈中的本地方法引用的对象</li>
+<li>方法区中的类静态属性引用的对象</li>
+<li>方法区中的常量引用的对象</li>
+</ul>
+<p><strong>3.引用的分类</strong></p>
+<p>引用计数算法和根搜索算法都需要通过判断引用的方式判断对象是否可回收。</p>
+<p>在 JDK 1.2 之后，Java 将引用分成四种，按照引用强度从高到低的顺序依次是：</p>
+<ol>
+<li><strong>强引用</strong>：在程序代码中普遍存在的引用。垃圾回收器永远不会回收被强引用关联的对象。</li>
+<li><strong>软引用</strong>：还有用但并非必需的对象。只有在系统将要发生内存溢出异常时，被软引用关联的对象才会被回收。在 JDK 1.2 之后，提供了<code>SoftReference</code>类实现软引用。</li>
+<li><strong>弱引用</strong>：非必需的对象，其强度低于软引用。被弱引用关联的对象只能存活到下一次垃圾回收发生之前，当垃圾回收器工作时，被弱引用关联的对象一定会被回收。在 JDK 1.2 之后，提供了<code>WeakReference</code>类实现弱引用。</li>
+<li><strong>虚引用</strong>：最弱的引用关系。一个对象是否有虚引用的存在，完全不会对其生存时间构成影响，也无法通过虚引用取得一个对象实例。为一个对象设置虚引用关联的唯一目的就是能在这个对象被回收时收到一个系统通知。在 JDK 1.2 之后，提供了<code>PhantomReference</code>类实现虚引用。</li>
+</ol>
+<p><strong>垃圾回收算法</strong></p>
+<p><strong>1.标记—清除算法</strong></p>
+<p>标记—清除算法是最基础的垃圾回收算法，后续的垃圾收集算法都是基于标记—清除算法进行改进而得到的。标记—清除算法分为“标记”和“清除”两个阶段，首先标记出所有需要回收的对象，在标记完成后统一回收所有被标记的对象。</p>
+<p>标记—清除算法有两个主要缺点。一是效率问题，标记和清除的效率都不高，二是空间问题，标记清除之后会产生大量不连续的内存碎片，导致程序在之后的运行过程中无法为较大对象找到足够的连续内存。</p>
+<p><strong>2.复制算法</strong></p>
+<p>复制算法的将可用内存分成大小相等的两块，每次只使用其中的一块，当用完一块内存时，将还存活着的对象复制到另外一块内存，然后把已使用过的内存空间一次清理掉。</p>
+<p>复制算法解决了效率问题。由于每次都是对整个半区进行内存回收，因此在内存分配时不需要考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可。复制算法的优点是实现简单，运行高效，缺点是将内存缩小为了原来的一半，以及在对象存活率较高时复制操作的次数较多，导致效率降低。</p>
+<p><strong>3.标记—整理算法</strong></p>
+<p>标记—整理算法是根据老年代的特点提出的。标记过程与标记—清除算法一样，但后续步骤不是直接回收被标记的对象，而是让所有存活的对象都向一端移动，然后清除边界以外的内存。</p>
+<p><strong>4.分代收集算法</strong></p>
+<p>分代收集算法根据对象的存活周期不同将内存划分为多个区域，对每个区域选用不同的垃圾回收算法。</p>
+<p>一般把 Java 堆分为新生代和老年代。在新生代中，大多数对象的生命周期都很短，因此选用复制算法。在老年代中，对象存活率高，因此选用标记—清除算法或标记—整理算法。</p>
+<p><strong>分配内存与回收策略</strong></p>
+<p>Java 堆可以分成新生代和老年代，新生代又可以细分成<code>Eden</code>区、<code>From Survivor</code>区、<code>To Survivor</code>区等。对于不同的对象，有相应的内存分配规则。</p>
+<p><strong>1.Minor GC 和 Full GC</strong></p>
+<p><code>Minor GC</code>指发生在新生代的垃圾回收操作。因为大多数对象的生命周期都很短，因此<code>Minor GC</code>会频繁执行，一般回收速度也比较快。</p>
+<p><code>Full GC</code>也称<code>Major GC</code>，指发生在老年代的垃圾回收操作。出现了<code>Full GC</code>，经常会伴随至少依次的<code>Minor GC</code>。老年代对象的存活时间长，因此<code>Full GC</code>很少执行，而且执行速度会比<code>Minor GC</code>慢很多。</p>
+<p><strong>2.对象优先在 Eden 区分配</strong></p>
+<p>大多数情况下，对象在新生代<code>Eden</code>区分配，当<code>Eden</code>区空间不够时，发起<code>Minor GC</code>。</p>
+<p><strong>3.大对象直接进入老年代</strong></p>
+<p>大对象是指需要连续内存空间的对象，最典型的大对象是那种很长的字符串以及数组。大对象对于虚拟机的内存分配而言是坏消息，经常出现大对象会导致内存还有不少空间时就提前触发垃圾回收以获取足够的连续空间分配给大对象。</p>
+<p>将大对象直接在老年代中分配的目的是避免在<code>Eden</code>区和<code>Survivor</code>区之间出现大量内存复制。</p>
+<p><strong>4.长期存活的对象进入老年代</strong></p>
+<p>虚拟机采用分代收集的思想管理内存，因此需要识别每个对象应该放在新生代还是老年代。虚拟机给每个对象定义了年龄计数器，对象在<code>Eden</code>区出生之后，如果经过第一次<code>Minor GC</code>之后仍然存活，将进入<code>Survivor</code>区，同时对象年龄变为 1，对象在<code>Survivor</code>区每经过一次<code>Minor GC</code>且存活，年龄就增加 1，增加到一定阈值时则进入老年代（阈值默认为 15）。</p>
+<p><strong>5.动态对象年龄判定</strong></p>
+<p>为了能更好地适应不同程序的内存状况，虚拟机并不总是要求对象的年龄必须达到阈值才能进入老年代。如果在<code>Survivor</code>区中相同年龄的所有对象的空间总和大于<code>Survivor</code>区空间的一半，则年龄大于或等于该年龄的对象直接进入老年代。</p>
+<p><strong>6.空间分配担保</strong></p>
+<p>在发生<code>Minor GC</code>之前，虚拟机会先检查老年代最大可用的连续空间是否大于新生代所有对象的空间总和，如果这个条件成立，那么<code>Minor GC</code>可以确保是安全的。</p>
+<p>只要老年代的连续空间大于新生代对象总大小或者历次晋升的平均大小，就会进行<code>Minor GC</code>，否则将进行<code>Full GC</code>。</p></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-01-18</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/%E6%95%99%E7%A8%8B/">教程</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/python-%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="Python 教程"><i class="fas fa-angle-left fa-fw"></i>Python 教程</a>
+            <a href="/posts/%E8%B0%B7%E6%AD%8C%E4%B8%89%E4%BB%B6%E5%A5%97%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="next" rel="next" title="谷歌三件套安装教程">谷歌三件套安装教程<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"data":{"id-1":"graph TB;\n    A[数据类型] --\u003e B(基本数据类型)\n    A --\u003e C(引用数据类型)\n    B --\u003e D(数值型)\n    B --\u003e E(非数值型)\n    C --\u003e F(类)\n    C --\u003e G(接口)\n    C --\u003e H(数组)\n    D --\u003e I(整数)\n    D --\u003e J(浮点数)\n    D --\u003e K(字符)\n    E --\u003e L(布尔)"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"mermaid":true,"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js" defer></script><script type="text/javascript" src="/js/mermaid.min.js" defer></script><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"></div>
+</body>
+
+</html>
