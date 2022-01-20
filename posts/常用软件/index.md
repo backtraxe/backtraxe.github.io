@@ -1,6 +1,8 @@
 # 常用软件
 
 
+适用于各种平台的一些好用软件。
+
 <!--more-->
 
 ## 跨平台
@@ -34,6 +36,7 @@
 1. [Alfred](https://www.alfredapp.com/)：通过自定义操作控制你的 Mac 电脑，提高工作效率。 `付费`
 1. [Downie](https://software.charliemonroe.net/downie/)：适用于 macOS 的视频下载工具。 `付费`
 1. [Dash](https://kapeli.com/dash)：API 文档浏览器和代码片段管理器。 `付费`
+1. [shottr](https://shottr.cc/)：截图、滚动截图、抠图、测距、OCR、取色。 `免费`
 
 ### macOS 破解软件下载
 

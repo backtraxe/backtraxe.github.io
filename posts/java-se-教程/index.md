@@ -57,6 +57,23 @@ java test
 ### 1.3 IDE Download
 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/download/): 最好用，`Community`版免费，`Ultimate`版收费，学生可白嫖，推荐。
+
+```text
+psvm
+sout
+alt + 1            开/关左侧目录结构
+alt + 4            开/关底部控制台
+ctrl + alt + L     格式化代码
+ctrl + /           单行注释
+ctrl + shift + /   多行注释
+shift + alt + ↑    上移
+shift + alt + ↓    下移
+ctrl + x           剪切当前行
+ctrl + d           下方复制当前行
+shift + enter      下方新建空行
+ctrl + alt + enter 上方新建空行
+```
+
 - [Eclipse](https://www.eclipse.org/downloads/): 开源，免费。
 
 ## 2 基础语法
@@ -140,7 +157,7 @@ java test
 </table>
 
 {{< mermaid >}}graph TB;
-    A[数据类型] --> B(基本数据类型)
+    A(数据类型) --> B(基本数据类型)
     A --> C(引用数据类型)
     B --> D(数值型)
     B --> E(非数值型)
@@ -184,6 +201,216 @@ int a = sc.nextInt();
 
 - 小驼峰命名法：`backTraxe`，常用于定义**方法**、**变量**。
 - 大驼峰命名法：`BackTraxe`，常用于定义**类**。
+
+### 2.7 类型转换
+
+1. 隐式转换
+
+{{< mermaid >}}graph LR;
+    A(byte) --> B(short)
+    B --> D(int)
+    C(char) --> D
+    D --> E(long)
+    E --> F(float)
+    F --> G(double)
+{{< /mermaid >}}
+
+- 占用空间小的数据类型会先转换为占用空间大的数据类型，然后进行运算。
+- `byte`、`short`和`char`三种数据类型在运算时会转换为`int`，然后进行运算。
+
+```java
+byte a = 1, b = 2;
+// 错误
+byte c = a + b;
+// 正确
+int d = a + b;
+```
+
+2. 显式（强制）转换
+
+- 有可能产生精度损失。
+
+```java
+byte a = 1, b = 2;
+byte e = (byte) (a + b);
+```
+
+### 2.8 运算符
+
+1. **单目算术运算符**：自增`++`、自减`--`
+
+只能作用于变量。
+
+```java
+int a = 1;
+int b = a++; // a = 2, b = 1
+int c = ++a; // a = 3, c = 3
+int d = a--; // a = 2, d = 3
+int e = --a; // a = 1, e = 1
+```
+
+2. **双目算术运算符**：加`+`、减`-`、乘`*`、除`/`、取余`%`
+
+- 加`+`：出现字符串则为连接运算符，否则为算术运算。从左到右执行。
+
+```java
+System.out.println(1 + 2);              // 3
+System.out.println(2 + 1);              // 3
+System.out.println(1 + 'a');            // 98
+System.out.println('a' + 2);            // 99
+System.out.println(1 + "abc");          // 1abc
+System.out.println("abc" + 2);          // abc2
+System.out.println(true + "abc");       // trueabc
+System.out.println("abc" + true);       // abctrue
+System.out.println("abc" + 1 + 2);      // abc12
+System.out.println(1 + 2 + "abc");      // 3abc
+System.out.println(1 + "" + 2 + "abc"); // 12abc
+```
+
+- 除`/`：整数除整数得整数。
+
+```java
+System.out.println(10 / 3);   // 3
+System.out.println(10 / 3.0); // 3.3333333333333335
+System.out.println(10.0 / 3); // 3.3333333333333335
+```
+
+3. **赋值运算符**：赋值`=`、加后赋值`+=`、减后赋值`-=`、乘后赋值`*=`、除后赋值`/=`、取余后赋值`%=`
+
+`a 操作符= b`等价于`a = (a的类型) (a 操作符 (b))`，隐含了强制类型转换，从右往左运算。
+
+```java
+int a = 10;
+a /= 2 + 3;  // 2 等价于 a = a / (2 + 3)
+
+short b = 1;
+b = b + 1;   // 报错
+b += 1;      // 2 等价于 b = (short) (b + 1)
+```
+
+4. **比较运算符**：相等`==`、不等`!=`、大于`>`、大于等于`>=`、小于`<`、小于等于`<=`
+
+5. **逻辑运算符**：与`&,&&`、或`|,||`、非`!`、异或`^`
+
+```java
+int a = 1, b = 1;
+
+// 非短路与 &，每个条件都进行判断
+a > 2 & b++ > 0;   // false, a = 1, b = 2
+// 短路与 &&，当某个条件为 false 时，后面不再进行判断
+a > 2 && b++ > 0;  // false, a = 1, b = 1
+
+// 非短路或 |，每个条件都进行判断
+a > 0 | b++ > 0;   // true, a = 1, b = 2
+// 短路或 ||，当某个条件为 true 时，后面不再进行判断
+a > 0 || b++ > 0;  // true, a = 1, b = 1
+```
+
+6. **三目运算符**：`a ? b : c`
+
+```java
+// 等价于
+if (a) {
+    b;
+} else {
+    c;
+}
+```
+
+### 2.9 分支语句
+
+```java
+if (A) {
+    B;
+}
+
+if (A) {
+    B;
+} else {
+    C;
+}
+
+if (A) {
+    B;
+} else if (C) {
+    D;
+} else {
+    E;
+}
+```
+
+```java
+// case 表达式不能重复，且不能为变量。
+String rank = "First";
+switch (rank) {
+    case "First":
+        System.out.println("第一");
+        break;
+    case "Second":
+    case "Third":
+        System.out.println("前三");
+        break;
+    default:
+        System.out.println("再接再厉");
+        break;
+}
+```
+
+### 2.10 循环语句
+
+```java
+for (初始化语句; 继续循环条件判断语句; 每轮循环后执行语句) {
+    循环体;
+}
+```
+
+```java
+while (继续循环条件判断语句) {
+    循环体;
+}
+```
+
+```java
+// 至少执行一次
+do {
+    循环体;
+} while (继续循环条件判断语句);
+```
+
+**跳转控制语句**
+
+- `continue`：中断本次循环，直接开始下一次循环。
+- `break`：退出循环。
+
+### 2.11 格式化输出
+
+```java
+System.out.print();
+System.out.printf();
+System.out.println();
+```
+
+### 2.12 随机数生成
+
+```java
+import java.util.Random;
+
+Random r = new Random();
+int a = r.nextInt(10); // [0, 10)
+```
+
+### 2.13 数组
+
+```java
+// 动态初始化。不指定元素，指定长度。默认初始化为 0
+int[] arr1 = new int[3];
+// 静态初始化。指定元素，不指定长度。
+int[] arr2 = new int[]{1, 2, 3};
+int[] arr3 = {1, 2, 3};
+
+// 长度
+arr1.length;
+```
 
 ## 垃圾回收
 

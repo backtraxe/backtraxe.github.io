@@ -4,7 +4,7 @@
     ><url>
             <loc>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</loc><lastmod>2021-08-21T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</loc><lastmod>2021-11-01T13:00:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://backtraxe.github.io/</loc><lastmod>2022-01-18T22:00:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://backtraxe.github.io/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://backtraxe.github.io/en/"
@@ -14,9 +14,9 @@
                     href="https://backtraxe.github.io/"
                     /></url><url>
             <loc>https://backtraxe.github.io/posts/numpy-%E6%95%99%E7%A8%8B/</loc><lastmod>2021-12-22T17:01:12&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://backtraxe.github.io/posts/</loc><lastmod>2022-01-18T22:00:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://backtraxe.github.io/posts/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://backtraxe.github.io/posts/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/</loc><lastmod>2021-12-20T15:29:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://backtraxe.github.io/categories/</loc><lastmod>2022-01-18T22:00:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://backtraxe.github.io/categories/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://backtraxe.github.io/en/categories/"
@@ -25,7 +25,7 @@
                     hreflang="zh-cn"
                     href="https://backtraxe.github.io/categories/"
                     /></url><url>
-            <loc>https://backtraxe.github.io/tags/</loc><lastmod>2022-01-18T22:00:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://backtraxe.github.io/tags/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://backtraxe.github.io/en/tags/"
@@ -58,7 +58,9 @@
             <loc>https://backtraxe.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/</loc><lastmod>2021-08-23T21:42:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/categories/%E4%BD%8D%E8%BF%90%E7%AE%97/</loc><lastmod>2021-08-23T21:42:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C/</loc><lastmod>2021-05-07T22:43:17&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://backtraxe.github.io/posts/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc><lastmod>2021-09-22T12:07:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://backtraxe.github.io/posts/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://backtraxe.github.io/tags/%E8%BD%AF%E4%BB%B6/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://backtraxe.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://backtraxe.github.io/tags/%E5%AF%BC%E8%88%AA/</loc><lastmod>2021-11-01T13:00:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/categories/%E5%AF%BC%E8%88%AA/</loc><lastmod>2021-11-01T13:00:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/tags/%E8%B5%84%E6%BA%90/</loc><lastmod>2021-11-01T13:00:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
