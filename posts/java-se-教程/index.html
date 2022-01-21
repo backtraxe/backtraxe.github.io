@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Java, 教程","wordcount":  5192 ,
+        },"genre": "posts","keywords": "Java, 教程","wordcount":  6429 ,
         "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-01-18T22:00:08+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
@@ -141,6 +141,26 @@
         <li><a href="#211-格式化输出">2.11 格式化输出</a></li>
         <li><a href="#212-随机数生成">2.12 随机数生成</a></li>
         <li><a href="#213-数组">2.13 数组</a></li>
+        <li><a href="#214-方法">2.14 方法</a></li>
+        <li><a href="#215-进制">2.15 进制</a></li>
+        <li><a href="#216-字符串">2.16 字符串</a>
+          <ul>
+            <li><a href="#2161-字符串构造">2.16.1 字符串构造</a></li>
+            <li><a href="#2162-字符串常量池">2.16.2 字符串常量池</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-面向对象编程">3 面向对象编程</a>
+      <ul>
+        <li><a href="#31-类">3.1 类</a>
+          <ul>
+            <li><a href="#311-构造方法">3.1.1 构造方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#32-封装">3.2 封装</a></li>
+        <li><a href="#33-继承">3.3 继承</a></li>
+        <li><a href="#34-多态">3.4 多态</a></li>
       </ul>
     </li>
     <li><a href="#垃圾回收">垃圾回收</a></li>
@@ -150,8 +170,8 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a>&nbsp;<a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-18">2022-01-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5192 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-18">2022-01-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6429 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -182,6 +202,26 @@
         <li><a href="#211-格式化输出">2.11 格式化输出</a></li>
         <li><a href="#212-随机数生成">2.12 随机数生成</a></li>
         <li><a href="#213-数组">2.13 数组</a></li>
+        <li><a href="#214-方法">2.14 方法</a></li>
+        <li><a href="#215-进制">2.15 进制</a></li>
+        <li><a href="#216-字符串">2.16 字符串</a>
+          <ul>
+            <li><a href="#2161-字符串构造">2.16.1 字符串构造</a></li>
+            <li><a href="#2162-字符串常量池">2.16.2 字符串常量池</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-面向对象编程">3 面向对象编程</a>
+      <ul>
+        <li><a href="#31-类">3.1 类</a>
+          <ul>
+            <li><a href="#311-构造方法">3.1.1 构造方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#32-封装">3.2 封装</a></li>
+        <li><a href="#33-继承">3.3 继承</a></li>
+        <li><a href="#34-多态">3.4 多态</a></li>
       </ul>
     </li>
     <li><a href="#垃圾回收">垃圾回收</a></li>
@@ -278,6 +318,7 @@ java <span class="nb">test</span>
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">psvm
@@ -293,6 +334,7 @@ ctrl + x           剪切当前行
 ctrl + d           下方复制当前行
 shift + enter      下方新建空行
 ctrl + alt + enter 上方新建空行
+ctrl + alt + v     自动定义变量来接收当前值
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -409,13 +451,17 @@ ctrl + alt + enter 上方新建空行
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
 <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
-</code></pre></td></tr></table>
+<span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span> <span class="c1">// 遇到换行结束，接收换行符，并丢弃。
+</span><span class="c1"></span><span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>     <span class="c1">// 遇到空格或换行结束，不接收。
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="26-标识符定义" class="headerLink">
     <a href="#26-%e6%a0%87%e8%af%86%e7%ac%a6%e5%ae%9a%e4%b9%89" class="header-mark"></a>2.6 标识符定义</h3><p>必须：</p>
@@ -564,12 +610,32 @@ ctrl + alt + enter 上方新建空行
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
-<li>
-<p><strong>比较运算符</strong>：相等<code>==</code>、不等<code>!=</code>、大于<code>&gt;</code>、大于等于<code>&gt;=</code>、小于<code>&lt;</code>、小于等于<code>&lt;=</code></p>
-</li>
-<li>
-<p><strong>逻辑运算符</strong>：与<code>&amp;,&amp;&amp;</code>、或<code>|,||</code>、非<code>!</code>、异或<code>^</code></p>
-</li>
+<li><strong>比较运算符</strong>：相等<code>==</code>、不等<code>!=</code>、大于<code>&gt;</code>、大于等于<code>&gt;=</code>、小于<code>&lt;</code>、小于等于<code>&lt;=</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 基本数据类型比较值
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">1</span><span class="o">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">);</span>        <span class="c1">// true
+</span><span class="c1">// 引用数据类型比较地址
+</span><span class="c1"></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&#34;abc&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="k">new</span> <span class="kt">char</span><span class="o">[]{</span><span class="sc">&#39;a&#39;</span><span class="o">,</span> <span class="sc">&#39;b&#39;</span><span class="o">,</span> <span class="sc">&#39;c&#39;</span><span class="o">});</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span><span class="o">);</span>      <span class="c1">// false
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">s2</span><span class="o">));</span> <span class="c1">// true
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li><strong>逻辑运算符</strong>：与<code>&amp;,&amp;&amp;</code>、或<code>|,||</code>、非<code>!</code>、异或<code>^</code></li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -600,6 +666,21 @@ ctrl + alt + enter 上方新建空行
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="6">
+<li><strong>位运算符</strong>：与<code>&amp;</code>、或<code>|</code>、非<code>~</code>、异或<code>^</code>、左移<code>&lt;&lt;</code>、右移<code>&gt;&gt;</code>、无符号右移<code>&gt;&gt;&gt;</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">a</span> <span class="o">^</span> <span class="n">a</span>  <span class="o">==</span> <span class="n">0</span>
+<span class="n">a</span> <span class="o">^</span> <span class="n">0</span>  <span class="o">==</span> <span class="n">a</span>
+<span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">1</span> <span class="o">==</span> <span class="n">a</span> <span class="o">*</span> <span class="n">2</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="7">
 <li><strong>三目运算符</strong>：<code>a ? b : c</code></li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -770,6 +851,97 @@ ctrl + alt + enter 上方新建空行
 </div><h3 id="213-数组" class="headerLink">
     <a href="#213-%e6%95%b0%e7%bb%84" class="header-mark"></a>2.13 数组</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 动态初始化。不指定元素，指定长度。默认初始化为 0
+</span><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">3</span><span class="o">];</span>
+<span class="kt">int</span><span class="o">[][]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">3</span><span class="o">];</span>
+<span class="c1">// 静态初始化。指定元素，不指定长度。
+</span><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr3</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">};</span>
+<span class="kt">int</span><span class="o">[][]</span> <span class="n">arr4</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[][]{{</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">},</span> <span class="o">{</span><span class="n">3</span><span class="o">,</span> <span class="n">4</span><span class="o">}};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr5</span> <span class="o">=</span> <span class="o">{</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">};</span>
+<span class="kt">int</span><span class="o">[][]</span> <span class="n">arr6</span> <span class="o">=</span> <span class="o">{{</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">},</span> <span class="o">{</span><span class="n">3</span><span class="o">,</span> <span class="n">4</span><span class="o">}};</span>
+
+<span class="c1">// 长度
+</span><span class="c1"></span><span class="n">arr1</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>    <span class="c1">// 3
+</span><span class="c1"></span><span class="n">arr2</span><span class="o">[</span><span class="n">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="c1">// 3
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="214-方法" class="headerLink">
+    <a href="#214-%e6%96%b9%e6%b3%95" class="header-mark"></a>2.14 方法</h3><ul>
+<li>方法不能嵌套定义</li>
+<li>方法重载（overload）：方法名相同，参数数量或者类型不同。<strong>与返回值类型无关</strong>。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 返回匿名数组
+</span><span class="c1"></span><span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="215-进制" class="headerLink">
+    <a href="#215-%e8%bf%9b%e5%88%b6" class="header-mark"></a>2.15 进制</h3><ul>
+<li>二进制：以<code>0b, 0B</code>开头</li>
+<li>八进制：以<code>0</code>开头</li>
+<li>十六进制：以<code>0x, 0X</code>开头</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">10</span><span class="o">);</span>   <span class="c1">// 10
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">0b10</span><span class="o">);</span> <span class="c1">// 2
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">010</span><span class="o">);</span>  <span class="c1">// 8
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">0x10</span><span class="o">);</span> <span class="c1">// 16
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 10 进制转 x 进制
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">ten2x</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">StringBuilder</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">0</span> <span class="o">!=</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">str</span><span class="o">.</span><span class="na">append</span><span class="o">((</span><span class="kt">char</span><span class="o">)</span> <span class="o">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">x</span> <span class="o">+</span> <span class="sc">&#39;0&#39;</span><span class="o">));</span>
+        <span class="n">num</span> <span class="o">/=</span> <span class="n">x</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">str</span><span class="o">.</span><span class="na">reverse</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">str</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
@@ -780,17 +952,184 @@ ctrl + alt + enter 上方新建空行
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 动态初始化。不指定元素，指定长度。默认初始化为 0
-</span><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">3</span><span class="o">];</span>
-<span class="c1">// 静态初始化。指定元素，不指定长度。
-</span><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">};</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">arr3</span> <span class="o">=</span> <span class="o">{</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">};</span>
-
-<span class="c1">// 长度
-</span><span class="c1"></span><span class="n">arr1</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// x 进制转 10 进制
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">x2ten</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="垃圾回收" class="headerLink">
+</div><h3 id="216-字符串" class="headerLink">
+    <a href="#216-%e5%ad%97%e7%ac%a6%e4%b8%b2" class="header-mark"></a>2.16 字符串</h3><p><strong>不可修改</strong>，当字符串拼接时，系统自动转为<code>StringBuilder</code>进行拼接，然后转为字符串。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&#34;abc&#34;</span><span class="o">;</span>
+<span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>  <span class="c1">// 3
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2161-字符串构造" class="headerLink">
+    <a href="#2161-%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%9e%84%e9%80%a0" class="header-mark"></a>2.16.1 字符串构造</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&#34;abc&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="k">new</span> <span class="kt">char</span><span class="o">[]{</span><span class="sc">&#39;a&#39;</span><span class="o">,</span> <span class="sc">&#39;b&#39;</span><span class="o">,</span> <span class="sc">&#39;c&#39;</span><span class="o">});</span>
+<span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2162-字符串常量池" class="headerLink">
+    <a href="#2162-%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b8%b8%e9%87%8f%e6%b1%a0" class="header-mark"></a>2.16.2 字符串常量池</h4><p>当使用双引号创建字符串对象的时候，系统会在常量池中检查是否已存在该字符串，若不存在，则创建。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&#34;abc&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#34;abc&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">d</span> <span class="o">=</span> <span class="s">&#34;ab&#34;</span> <span class="o">+</span> <span class="s">&#34;c&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">e</span> <span class="o">=</span> <span class="s">&#34;a&#34;</span> <span class="o">+</span> <span class="s">&#34;b&#34;</span> <span class="o">+</span> <span class="s">&#34;c&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&#34;ab&#34;</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34;c&#34;</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">);</span> <span class="c1">// false 两个对象
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span><span class="o">);</span> <span class="c1">// true  常量池
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">d</span><span class="o">);</span> <span class="c1">// true  编译期间的常量优化机制
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">e</span><span class="o">);</span> <span class="c1">// true  编译期间的常量优化机制
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">f</span><span class="o">);</span> <span class="c1">// false 两个对象
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">f</span><span class="o">);</span> <span class="c1">// false 两个对象
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-面向对象编程" class="headerLink">
+    <a href="#3-%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%bc%96%e7%a8%8b" class="header-mark"></a>3 面向对象编程</h2><p>面向对象编程（Object Oriented Programming，OOP），是一种程序设计思想，把类作为程序的基本单元，一个类包含了变量和方法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="kd">static</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="n">3</span><span class="o">.</span><span class="na">14159</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">radius</span><span class="o">;</span>
+    <span class="n">Circle</span><span class="o">(</span><span class="kt">double</span> <span class="n">radius</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kt">double</span> <span class="nf">getPerimeter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">radius</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kt">double</span> <span class="nf">getArea</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Circle</span> <span class="n">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;半径为：&#34;</span> <span class="o">+</span> <span class="n">circle</span><span class="o">.</span><span class="na">radius</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;周长为：&#34;</span> <span class="o">+</span> <span class="n">circle</span><span class="o">.</span><span class="na">getPerimeter</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;面积为：&#34;</span> <span class="o">+</span> <span class="n">circle</span><span class="o">.</span><span class="na">getArea</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="31-类" class="headerLink">
+    <a href="#31-%e7%b1%bb" class="header-mark"></a>3.1 类</h3><h4 id="311-构造方法" class="headerLink">
+    <a href="#311-%e6%9e%84%e9%80%a0%e6%96%b9%e6%b3%95" class="header-mark"></a>3.1.1 构造方法</h4><ol>
+<li>名称与类名相同。</li>
+<li>无返回值。</li>
+<li>实现类时自动调用。</li>
+<li>若无自定义构造方法，则系统提供空构造方法。</li>
+<li>若自定义构造方法，则系统不再提供。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 系统默认提供的构造函数
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="32-封装" class="headerLink">
+    <a href="#32-%e5%b0%81%e8%a3%85" class="header-mark"></a>3.2 封装</h3><p>隐藏实现细节，仅对外暴露公共的访问方式。可以提高代码的安全性和复用性。</p>
+<p>针对<code>private</code>修饰的成员变量，如果需要被其他类使用，需要提供<code>getXxx()</code>和<code>setXxx()</code>方法。Idea 可自动生成。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span> <span class="c1">// 类外无法访问
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Student</span> <span class="n">stu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span><span class="o">();</span>
+        <span class="n">stu</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;张三&#34;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">stu</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="33-继承" class="headerLink">
+    <a href="#33-%e7%bb%a7%e6%89%bf" class="header-mark"></a>3.3 继承</h3><h3 id="34-多态" class="headerLink">
+    <a href="#34-%e5%a4%9a%e6%80%81" class="header-mark"></a>3.4 多态</h3><h2 id="垃圾回收" class="headerLink">
     <a href="#%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6" class="header-mark"></a>垃圾回收</h2><p>垃圾回收，顾名思义就是释放垃圾占用的空间，从而提升程序性能，防止内存泄露。当一个对象不再被需要时，该对象就需要被回收并释放空间。</p>
 <p>Java 内存运行时数据区域包括程序计数器、虚拟机栈、本地方法栈、堆等区域。其中，程序计数器、虚拟机栈和本地方法栈都是线程私有的，当线程结束时，这些区域的生命周期也结束了，因此不需要过多考虑回收的问题。而堆是虚拟机管理的内存中最大的一块，堆中的内存的分配和回收是动态的，垃圾回收主要关注的是堆空间。</p>
 <p><strong>调用垃圾回收器的方法</strong></p>

@@ -72,6 +72,7 @@ ctrl + x           剪切当前行
 ctrl + d           下方复制当前行
 shift + enter      下方新建空行
 ctrl + alt + enter 上方新建空行
+ctrl + alt + v     自动定义变量来接收当前值
 ```
 
 - [Eclipse](https://www.eclipse.org/downloads/): 开源，免费。
@@ -186,6 +187,8 @@ import java.util.Scanner;
 
 Scanner sc = new Scanner(System.in);
 int a = sc.nextInt();
+String s1 = sc.nextLine(); // 遇到换行结束，接收换行符，并丢弃。
+String s2 = sc.next();     // 遇到空格或换行结束，不接收。
 ```
 
 ### 2.6 标识符定义
@@ -290,6 +293,17 @@ b += 1;      // 2 等价于 b = (short) (b + 1)
 
 4. **比较运算符**：相等`==`、不等`!=`、大于`>`、大于等于`>=`、小于`<`、小于等于`<=`
 
+```java
+// 基本数据类型比较值
+int a = 1, b = 1;
+System.out.println(a == b);        // true
+// 引用数据类型比较地址
+String s1 = "abc";
+String s2 = new String(new char[]{'a', 'b', 'c'});
+System.out.println(s1 == s2);      // false
+System.out.println(s1.equals(s2)); // true
+```
+
 5. **逻辑运算符**：与`&,&&`、或`|,||`、非`!`、异或`^`
 
 ```java
@@ -306,7 +320,15 @@ a > 0 | b++ > 0;   // true, a = 1, b = 2
 a > 0 || b++ > 0;  // true, a = 1, b = 1
 ```
 
-6. **三目运算符**：`a ? b : c`
+6. **位运算符**：与`&`、或`|`、非`~`、异或`^`、左移`<<`、右移`>>`、无符号右移`>>>`
+
+```java
+a ^ a  == 0
+a ^ 0  == a
+a << 1 == a * 2
+```
+
+7. **三目运算符**：`a ? b : c`
 
 ```java
 // 等价于
@@ -404,13 +426,171 @@ int a = r.nextInt(10); // [0, 10)
 ```java
 // 动态初始化。不指定元素，指定长度。默认初始化为 0
 int[] arr1 = new int[3];
+int[][] arr2 = new int[2][3];
 // 静态初始化。指定元素，不指定长度。
-int[] arr2 = new int[]{1, 2, 3};
-int[] arr3 = {1, 2, 3};
+int[] arr3 = new int[]{1, 2, 3};
+int[][] arr4 = new int[][]{{1, 2}, {3, 4}};
+int[] arr5 = {1, 2, 3};
+int[][] arr6 = {{1, 2}, {3, 4}};
 
 // 长度
-arr1.length;
+arr1.length;    // 3
+arr2[0].length; // 3
 ```
+
+### 2.14 方法
+
+- 方法不能嵌套定义
+- 方法重载（overload）：方法名相同，参数数量或者类型不同。**与返回值类型无关**。
+
+```java
+// 返回匿名数组
+return new int[]{1, 2};
+```
+
+### 2.15 进制
+
+- 二进制：以`0b, 0B`开头
+- 八进制：以`0`开头
+- 十六进制：以`0x, 0X`开头
+
+```java
+System.out.println(10);   // 10
+System.out.println(0b10); // 2
+System.out.println(010);  // 8
+System.out.println(0x10); // 16
+```
+
+```java
+// 10 进制转 x 进制
+public static String ten2x(int num, int x) {
+    StringBuilder str = new StringBuilder();
+    while (0 != num) {
+        str.append((char) (num % x + '0'));
+        num /= x;
+    }
+    str.reverse();
+    return str.toString();
+}
+```
+
+```java
+// x 进制转 10 进制
+public static int x2ten(String str, int x) {
+    int res = 0;
+    for (int i = 0; i < str.length(); i++) {
+        res = res * x + str.charAt(i) - '0';
+    }
+    return res;
+}
+```
+
+### 2.16 字符串
+
+**不可修改**，当字符串拼接时，系统自动转为`StringBuilder`进行拼接，然后转为字符串。
+
+```java
+String s = "abc";
+s.length();  // 3
+```
+
+#### 2.16.1 字符串构造
+
+```java
+String s1 = "abc";
+String s2 = new String(new char[]{'a', 'b', 'c'});
+String s3 = new String("abc");
+```
+
+#### 2.16.2 字符串常量池
+
+当使用双引号创建字符串对象的时候，系统会在常量池中检查是否已存在该字符串，若不存在，则创建。
+
+```java
+String a = "abc";
+String b = new String("abc");
+String c = "abc";
+String d = "ab" + "c";
+String e = "a" + "b" + "c";
+String f = new String("ab") + "c";
+System.out.println(a == b); // false 两个对象
+System.out.println(a == c); // true  常量池
+System.out.println(a == d); // true  编译期间的常量优化机制
+System.out.println(a == e); // true  编译期间的常量优化机制
+System.out.println(a == f); // false 两个对象
+System.out.println(b == f); // false 两个对象
+```
+
+## 3 面向对象编程
+
+面向对象编程（Object Oriented Programming，OOP），是一种程序设计思想，把类作为程序的基本单元，一个类包含了变量和方法。
+
+```java
+public class Circle {
+    final static double PI = 3.14159;
+    double radius;
+    Circle(double radius) {
+        this.radius = radius;
+    }
+    double getPerimeter() {
+        return 2 * PI * radius;
+    }
+    double getArea() {
+        return PI * radius * radius;
+    }
+    public static void main(String[] args) {
+        Circle circle = new Circle(2);
+        System.out.println("半径为：" + circle.radius);
+        System.out.println("周长为：" + circle.getPerimeter());
+        System.out.println("面积为：" + circle.getArea());
+    }
+}
+```
+
+### 3.1 类
+
+#### 3.1.1 构造方法
+
+1. 名称与类名相同。
+2. 无返回值。
+3. 实现类时自动调用。
+4. 若无自定义构造方法，则系统提供空构造方法。
+5. 若自定义构造方法，则系统不再提供。
+
+```java
+public class Circle {
+    public Circle() {
+        // 系统默认提供的构造函数
+    }
+}
+```
+
+### 3.2 封装
+
+隐藏实现细节，仅对外暴露公共的访问方式。可以提高代码的安全性和复用性。
+
+针对`private`修饰的成员变量，如果需要被其他类使用，需要提供`getXxx()`和`setXxx()`方法。Idea 可自动生成。
+
+```java
+public class Student {
+    private String name; // 类外无法访问
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public static void main(String[] args) {
+        Student stu = new Student();
+        stu.setName("张三");
+        System.out.println(stu.getName());
+    }
+}
+```
+
+### 3.3 继承
+
+### 3.4 多态
 
 ## 垃圾回收
 
