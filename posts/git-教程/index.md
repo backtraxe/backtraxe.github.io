@@ -1,29 +1,42 @@
 # Git 教程
 
 
-Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。
+Git 是一个开源的分布式版本控制系统。
 
 <!--more-->
 
-## Git 命令
+## Git 基本工作流程
+
+### 本地仓库
+
+- 本地历史仓库（Repository）：存放不同版本的代码
+- 暂存区（Index）：代码提交前的临时存储区
+- 工作目录（Working Tree）：修改代码的区域
+
+## Git 常用命令
 
 ### 本地仓库
 
 ```bash
-# 初始化
+# 初始化，创建 git 仓库
 git init
-
-# 查看文件改动
-git diff FILENAME
-
-# 添加需要 commit 的文件
-git add FILENAME
-
-# 提交一个版本，附带描述信息
+# 添加文件到暂存区
+git add <FILENAME>
+# 将暂存区文件提交到本地历史仓库
 git commit -m "descriptions"
-
-# 所有被修改或者已删除的文件提交（不包括新建文件）
+# 将所有修改或删除的文件提交到本地历史仓库（不包括新建文件）
 git commit -a -m "descriptions"
+```
+
+```bash
+# 查看 git 状态
+git status
+# 查看日志
+git log
+# 查看简短日志
+git reflog
+# 查看文件改动记录
+git diff <file>
 ```
 
 ### 远端仓库
@@ -40,25 +53,6 @@ git push origin <BRANCH_NAME>
 
 # 取回远端仓库版本，对本地仓库进行更新
 git pull
-```
-
-### 分支
-
-```bash
-# 创建一个分支
-git branch <BRANCH_NAME>
-
-# 切换分支
-git checkout <BRANCH_NAME>
-
-# 创建一个分支，并切换过去
-git checkout -b <BRANCH_NAME>
-
-# 合并分支
-git merge <BRANCH_NAME>
-
-# 删除分支
-git branch -d <BRANCH_NAME>
 ```
 
 ### 子模块
@@ -102,6 +96,32 @@ git add --all  # git add .
 git commit -m "descriptions"
 git remote add origin https://github.com/USERNAME/REPONAME.git
 git push -u origin master
+```
+
+## Git 版本切换
+
+```bash
+git reset --hard <commit>
+```
+
+## Git 分支管理
+
+- 切换：将`HEAD`指向别的分支。
+- 合并：将`main`指向该分支，然后将`HEAD`指向`main`分支。
+
+```bash
+# 查看所有分支
+git branch
+# 创建新分支
+git branch <branch-name>
+# 删除指定分支
+git branch -d <branch-name>
+# 切换到其他分支
+git checkout <branch>
+# 创建新分支，并立即切换过去
+git checkout -b <branch>
+# 合并到指定分支
+git merge <branch-name>
 ```
 
 ## 配置 Git

@@ -59,8 +59,10 @@ java test
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/download/): 最好用，`Community`版免费，`Ultimate`版收费，学生可白嫖，推荐。
 
 ```text
-psvm
-sout
+psvm               public static void main(String[] args) {}
+sout               System.out.println();
+arr.fori           for (int i = 0; i < arr.length; i++) {}
+arr.forr           for (int i = arr.length - 1; i >= 0; i--) {}
 alt + 1            开/关左侧目录结构
 alt + 4            开/关底部控制台
 ctrl + alt + L     格式化代码
@@ -73,6 +75,7 @@ ctrl + d           下方复制当前行
 shift + enter      下方新建空行
 ctrl + alt + enter 上方新建空行
 ctrl + alt + v     自动定义变量来接收当前值
+ctrl + alt + m     将选中代码生成独立方法
 ```
 
 - [Eclipse](https://www.eclipse.org/downloads/): 开源，免费。
@@ -404,6 +407,19 @@ do {
 - `continue`：中断本次循环，直接开始下一次循环。
 - `break`：退出循环。
 
+```java
+// 中断多重循环
+outer:
+for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+        if (i == 5 && j == 7) {
+            System.out.println(i + "\n" + j);
+            break outer;
+        }
+    }
+}
+```
+
 ### 2.11 格式化输出
 
 ```java
@@ -502,9 +518,96 @@ String s2 = new String(new char[]{'a', 'b', 'c'});
 String s3 = new String("abc");
 ```
 
-#### 2.16.2 字符串常量池
+#### 2.16.2 字符串比较
 
-当使用双引号创建字符串对象的时候，系统会在常量池中检查是否已存在该字符串，若不存在，则创建。
+```java
+String s1 = "abc";
+String s2 = new String("abc");
+String s3 = "Abc";
+// 比较地址
+System.out.println(s1 == s2);                // false
+// 比较值
+System.out.println(s1.equals(s2));           // true
+// 不区分大小写
+System.out.println(s1.equalsIgnoreCase(s3)); // true
+```
+
+#### 2.16.3 字符串遍历
+
+```java
+String s = "abc";
+// 1
+for (int i = 0; i < s.length(); i++) {
+    s.charAt(i);
+}
+// 2
+char[] chars = s.toCharArray();
+for (int i = 0; i < chars.length; i++) {
+    chars[i];
+}
+```
+
+#### 2.16.4 子串
+
+- `String substring(int beginIndex)`
+- `String substring(int beginIndex, int endIndex)`: [beginIndex, endIndex)
+- `Char[] subSequence(int beginIndex, int endIndex)`: [beginIndex, endIndex)
+
+```java
+String s = "abcde";
+s.substring(1);    // bcde
+s.substring(2, 4); // cd
+```
+
+#### 2.16.5 其他操作
+
+格式化
+
+- `static String format(String format)`
+- `String strip()`
+- `String stripLeading()`
+- `String stripTrailing()`
+- `String toUpperCase()`
+- `String toLowerCase()`
+
+查找
+
+- `boolean startsWith(String prefix)`
+- `boolean endsWith(String suffix)`
+- `boolean matches(String regex)`
+- `int indexOf(int ch)`
+- `int indexOf(int ch, int fromIndex)`
+- `int indexOf(String str)`
+- `int indexOf(String str, int fromIndex)`
+- `int lastIndexOf(int ch)`
+- `int lastIndexOf(int ch, int fromIndex)`
+- `int lastIndexOf(String str)`
+- `int lastIndexOf(String str, int fromIndex)`
+
+替换
+
+- `String replace(char oldChar, char newChar)`
+- `String replace(CharSequence target, CharSequence replacement)`
+- `String replaceAll(String regex, String replacement)`
+- `String replaceFirst(String regex, String replacement)`
+
+拆分/合并
+
+- `String[] split(String regex)`
+- `static String join(CharSequence delimiter, CharSequence... elements)`
+- `static String join(CharSequence delimiter, Iterable<? extends CharSequence> elements)`
+
+```java
+String s = "Java-is-cool";
+s.split("-");                                    // {"Java", "is", "cool"}
+String.join("-", "Java", "is", "cool");          // Java-is-cool
+String.join("-", List.of("Java", "is", "cool")); // Java-is-cool
+```
+
+#### 2.16.6 字符串常量池
+
+- 当使用双引号创建字符串对象的时候，系统会在常量池中检查是否已存在该字符串，若不存在，则创建，若存在，则直接使用。
+- 当系统发现字符串拼接时，会自动创建`StringBuilder`对象完成字符串拼接，然后转为`String`。
 
 ```java
 String a = "abc";
@@ -519,6 +622,60 @@ System.out.println(a == d); // true  编译期间的常量优化机制
 System.out.println(a == e); // true  编译期间的常量优化机制
 System.out.println(a == f); // false 两个对象
 System.out.println(b == f); // false 两个对象
+```
+
+### 2.17 可变字符串
+
+#### 2.17.1 StringBuilder
+
+插入
+
+- `StringBuilder append(X x)`
+- `StringBuilder insert(int offset, X x)`
+
+修改
+
+- `void	setCharAt(int index, char ch)`
+- `StringBuilder replace(int start, int end, String str)`
+- `StringBuilder delete(int start, int end)`
+- `StringBuilder deleteCharAt(int index)`
+- `StringBuilder reverse()`
+
+索引查找
+
+- `char	charAt(int index)`
+
+值查找
+
+- `int indexOf(String str)`
+- `int indexOf(String str, int fromIndex)`
+- `int lastIndexOf(String str)`
+- `int lastIndexOf(String str, int fromIndex)`
+
+比较
+
+- `int compareTo(StringBuilder another)`
+
+子串
+
+- `CharSequence	subSequence(int start, int end)`
+- `String substring(int start)`
+- `String substring(int start, int end)`
+
+转换
+
+- `StringBuilder(String str)`
+- `String toString()`
+
+### 2.18 复杂度分析
+
+程序耗时
+
+```java
+long start = System.currentTimeMillis();
+// 执行代码
+long end = System.currentTimeMillis();
+System.out.println(end - start);
 ```
 
 ## 3 面向对象编程
@@ -591,6 +748,79 @@ public class Student {
 ### 3.3 继承
 
 ### 3.4 多态
+
+## 4 集合
+
+可变容量的容器。
+
+### 4.1 ArrayList
+
+- 可变数组。
+- **不能使用基本数据类型**。
+- 打印则直接遍历打印数组值，而不是打印地址。
+
+构造函数
+
+- `ArrayList()`
+- `ArrayList(int initialCapacity)`
+- `ArrayList(Collection<? extends E> c)`
+
+```java
+// 不指定类型，可添加任意类型
+ArrayList l1 = new ArrayList();
+// 指定类型
+ArrayList<Integer> l2 = new ArrayList<>();
+```
+
+增
+
+- `void	add(int index, E element)`
+- `boolean add(E e)`
+- `boolean addAll(int index, Collection<? extends E> c)`
+- `boolean addAll(Collection<? extends E> c)`
+
+删
+
+- `E remove(int index)`
+- `boolean remove(Object o)`：删除第一个出现的
+- `boolean removeAll(Collection<?> c)`
+- `void	clear()`
+
+```java
+for (int i = 0; i < list.size(); i++) {
+    if (list.get(i) == target) {
+        list.remove(i);
+        i--; // 集合删除元素后，后面元素整体前移一位。
+    }
+}
+```
+
+改
+
+- `E set(int index, E element)`
+
+查
+
+- `E get(int index)`
+- `boolean contains(Object o)`
+
+大小
+
+- `int size()`
+- `boolean isEmpty()`
+
+#### 4.1.1 遍历
+
+```java
+// IDEA 快捷键：list.fori
+for (int i = 0; i < list.size(); i++) {
+    list.get(i);
+}
+// IDEA 快捷键：list.forr
+for (int i = list.size() - 1; i >= 0; i--) {
+    list.get(i);
+}
+```
 
 ## 垃圾回收
 
