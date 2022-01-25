@@ -5,28 +5,21 @@ Git 是一个开源的分布式版本控制系统。
 
 <!--more-->
 
-## Git 基本工作流程
+## 1 Git 基本工作流程
 
-### 本地仓库
+### 1.1 本地仓库
 
-- 本地历史仓库（Repository）：存放不同版本的代码
-- 暂存区（Index）：代码提交前的临时存储区
-- 工作目录（Working Tree）：修改代码的区域
+- 本地历史仓库（Repository）：存放不同版本的代码。
+- 暂存区（Index）：代码提交前的临时存储区。
+- 工作目录（Working Tree）：修改代码的区域。
 
-## Git 常用命令
+### 1.2 远程仓库
 
-### 本地仓库
+- 克隆（Clone）：将远程仓库中的内容复制到本地仓库。
+- 推送（Push）：将本地仓库中的内容推送到远程仓库。
+- 拉取（Pull）：更新远程仓库中的改动到本地仓库。
 
-```bash
-# 初始化，创建 git 仓库
-git init
-# 添加文件到暂存区
-git add <FILENAME>
-# 将暂存区文件提交到本地历史仓库
-git commit -m "descriptions"
-# 将所有修改或删除的文件提交到本地历史仓库（不包括新建文件）
-git commit -a -m "descriptions"
-```
+## 2 Git 常用命令
 
 ```bash
 # 查看 git 状态
@@ -35,24 +28,75 @@ git status
 git log
 # 查看简短日志
 git reflog
-# 查看文件改动记录
-git diff <file>
 ```
 
-### 远端仓库
+### 2.1 本地仓库
+
+```bash
+# 初始化，创建 git 仓库
+git init
+# 添加文件到暂存区
+git add <file>
+# 将暂存区文件提交到本地历史仓库
+git commit -m <message>
+# 将所有修改或删除的文件提交到本地历史仓库（不包括新建文件）
+git commit -a -m <message>
+```
+
+### 2.2 版本切换
+
+```bash
+# git reset --hard a3a9cf1
+git reset --hard <commit>
+```
+
+### 2.3 分支管理
+
+- 切换：将`HEAD`指向别的分支。
+- 合并：将`main`指向该分支，然后将`HEAD`指向`main`分支。
+
+```bash
+# 查看所有分支
+git branch
+# 创建新分支
+git branch <branch-name>
+# 删除指定分支
+git branch -d <branch-name>
+# 切换到其他分支
+git checkout <branch>
+# 创建新分支，并立即切换过去
+git checkout -b <branch>
+# 将指定分支合并到当前分支
+git merge <branch-name>
+```
+
+### 2.4 远程仓库
+
+在 [Github](https://github.com/)、[Gitlab](https://about.gitlab.com/) 或 [Gitee](https://gitee.com/) 上创建远程仓库。
+
+#### 2.4.1 SSH 配置
+
+```bash
+
+```
+
+#### 2.4.2 先创建本地仓库
 
 ```bash
 # 克隆仓库
-git clone https://github.com/USERNAME/REPONAME.git
-
+git clone <repo>
 # 为本地仓库添加远端 GitHub 仓库
-git remote add origin https://github.com/USERNAME/REPONAME.git
-
+git remote add origin <repo>
 # 将已提交的版本推送到远端仓库，方便其他设备同步
-git push origin <BRANCH_NAME>
-
+git push origin <branch>
 # 取回远端仓库版本，对本地仓库进行更新
 git pull
+```
+
+#### 2.4.3 先创建远程仓库
+
+```bash
+
 ```
 
 ### 子模块
@@ -98,33 +142,7 @@ git remote add origin https://github.com/USERNAME/REPONAME.git
 git push -u origin master
 ```
 
-## Git 版本切换
-
-```bash
-git reset --hard <commit>
-```
-
-## Git 分支管理
-
-- 切换：将`HEAD`指向别的分支。
-- 合并：将`main`指向该分支，然后将`HEAD`指向`main`分支。
-
-```bash
-# 查看所有分支
-git branch
-# 创建新分支
-git branch <branch-name>
-# 删除指定分支
-git branch -d <branch-name>
-# 切换到其他分支
-git checkout <branch>
-# 创建新分支，并立即切换过去
-git checkout -b <branch>
-# 合并到指定分支
-git merge <branch-name>
-```
-
-## 配置 Git
+## Git 配置
 
 1. 将`your_email@youremail.com`改为你的 Github 账号的邮箱，然后一路回车。
 
@@ -146,6 +164,8 @@ ssh -T git@github.com
 git config --global user.name "USERNAME"
 git config --global user.email "username@email.com"
 ```
+
+### .gitignore
 
 ## Q&A
 

@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/git-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Git, 教程","wordcount":  1068 ,
+        },"genre": "posts","keywords": "Git, 教程","wordcount":  1211 ,
         "url": "https:\/\/backtraxe.github.io\/posts\/git-%E6%95%99%E7%A8%8B\/","datePublished": "2021-03-10T12:56:46+08:00","dateModified": "2022-01-24T23:56:40+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
@@ -118,23 +118,34 @@
         <h2 class="toc-title">目录</h2>
         <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
-    <li><a href="#git-基本工作流程">Git 基本工作流程</a>
+    <li><a href="#1-git-基本工作流程">1 Git 基本工作流程</a>
       <ul>
-        <li><a href="#本地仓库">本地仓库</a></li>
+        <li><a href="#11-本地仓库">1.1 本地仓库</a></li>
+        <li><a href="#12-远程仓库">1.2 远程仓库</a></li>
       </ul>
     </li>
-    <li><a href="#git-常用命令">Git 常用命令</a>
+    <li><a href="#2-git-常用命令">2 Git 常用命令</a>
       <ul>
-        <li><a href="#本地仓库-1">本地仓库</a></li>
-        <li><a href="#远端仓库">远端仓库</a></li>
+        <li><a href="#21-本地仓库">2.1 本地仓库</a></li>
+        <li><a href="#22-版本切换">2.2 版本切换</a></li>
+        <li><a href="#23-分支管理">2.3 分支管理</a></li>
+        <li><a href="#24-远程仓库">2.4 远程仓库</a>
+          <ul>
+            <li><a href="#241-ssh-配置">2.4.1 SSH 配置</a></li>
+            <li><a href="#242-先创建本地仓库">2.4.2 先创建本地仓库</a></li>
+            <li><a href="#243-先创建远程仓库">2.4.3 先创建远程仓库</a></li>
+          </ul>
+        </li>
         <li><a href="#子模块">子模块</a></li>
         <li><a href="#替换本地改动">替换本地改动</a></li>
         <li><a href="#本地创建仓库并上传至-github">本地创建仓库并上传至 GitHub</a></li>
       </ul>
     </li>
-    <li><a href="#git-版本切换">Git 版本切换</a></li>
-    <li><a href="#git-分支管理">Git 分支管理</a></li>
-    <li><a href="#配置-git">配置 Git</a></li>
+    <li><a href="#git-配置">Git 配置</a>
+      <ul>
+        <li><a href="#gitignore">.gitignore</a></li>
+      </ul>
+    </li>
     <li><a href="#qa">Q&amp;A</a>
       <ul>
         <li><a href="#无法连接服务器报错443">无法连接服务器，报错443</a></li>
@@ -147,7 +158,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/git/"><i class="far fa-folder fa-fw"></i>Git</a>&nbsp;<a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-10">2021-03-10</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-24">2022-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1068 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-10">2021-03-10</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-24">2022-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1211 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -156,23 +167,34 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#git-基本工作流程">Git 基本工作流程</a>
+    <li><a href="#1-git-基本工作流程">1 Git 基本工作流程</a>
       <ul>
-        <li><a href="#本地仓库">本地仓库</a></li>
+        <li><a href="#11-本地仓库">1.1 本地仓库</a></li>
+        <li><a href="#12-远程仓库">1.2 远程仓库</a></li>
       </ul>
     </li>
-    <li><a href="#git-常用命令">Git 常用命令</a>
+    <li><a href="#2-git-常用命令">2 Git 常用命令</a>
       <ul>
-        <li><a href="#本地仓库-1">本地仓库</a></li>
-        <li><a href="#远端仓库">远端仓库</a></li>
+        <li><a href="#21-本地仓库">2.1 本地仓库</a></li>
+        <li><a href="#22-版本切换">2.2 版本切换</a></li>
+        <li><a href="#23-分支管理">2.3 分支管理</a></li>
+        <li><a href="#24-远程仓库">2.4 远程仓库</a>
+          <ul>
+            <li><a href="#241-ssh-配置">2.4.1 SSH 配置</a></li>
+            <li><a href="#242-先创建本地仓库">2.4.2 先创建本地仓库</a></li>
+            <li><a href="#243-先创建远程仓库">2.4.3 先创建远程仓库</a></li>
+          </ul>
+        </li>
         <li><a href="#子模块">子模块</a></li>
         <li><a href="#替换本地改动">替换本地改动</a></li>
         <li><a href="#本地创建仓库并上传至-github">本地创建仓库并上传至 GitHub</a></li>
       </ul>
     </li>
-    <li><a href="#git-版本切换">Git 版本切换</a></li>
-    <li><a href="#git-分支管理">Git 分支管理</a></li>
-    <li><a href="#配置-git">配置 Git</a></li>
+    <li><a href="#git-配置">Git 配置</a>
+      <ul>
+        <li><a href="#gitignore">.gitignore</a></li>
+      </ul>
+    </li>
     <li><a href="#qa">Q&amp;A</a>
       <ul>
         <li><a href="#无法连接服务器报错443">无法连接服务器，报错443</a></li>
@@ -182,16 +204,40 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Git 是一个开源的分布式版本控制系统。</p>
-<h2 id="git-基本工作流程" class="headerLink">
-    <a href="#git-%e5%9f%ba%e6%9c%ac%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" class="header-mark"></a>Git 基本工作流程</h2><h3 id="本地仓库" class="headerLink">
-    <a href="#%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93" class="header-mark"></a>本地仓库</h3><ul>
-<li>本地历史仓库（Repository）：存放不同版本的代码</li>
-<li>暂存区（Index）：代码提交前的临时存储区</li>
-<li>工作目录（Working Tree）：修改代码的区域</li>
+<h2 id="1-git-基本工作流程" class="headerLink">
+    <a href="#1-git-%e5%9f%ba%e6%9c%ac%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" class="header-mark"></a>1 Git 基本工作流程</h2><h3 id="11-本地仓库" class="headerLink">
+    <a href="#11-%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93" class="header-mark"></a>1.1 本地仓库</h3><ul>
+<li>本地历史仓库（Repository）：存放不同版本的代码。</li>
+<li>暂存区（Index）：代码提交前的临时存储区。</li>
+<li>工作目录（Working Tree）：修改代码的区域。</li>
 </ul>
-<h2 id="git-常用命令" class="headerLink">
-    <a href="#git-%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" class="header-mark"></a>Git 常用命令</h2><h3 id="本地仓库-1" class="headerLink">
-    <a href="#%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93-1" class="header-mark"></a>本地仓库</h3><div class="highlight"><div class="chroma">
+<h3 id="12-远程仓库" class="headerLink">
+    <a href="#12-%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93" class="header-mark"></a>1.2 远程仓库</h3><ul>
+<li>克隆（Clone）：将远程仓库中的内容复制到本地仓库。</li>
+<li>推送（Push）：将本地仓库中的内容推送到远程仓库。</li>
+<li>拉取（Pull）：更新远程仓库中的改动到本地仓库。</li>
+</ul>
+<h2 id="2-git-常用命令" class="headerLink">
+    <a href="#2-git-%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" class="header-mark"></a>2 Git 常用命令</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看 git 状态</span>
+git status
+<span class="c1"># 查看日志</span>
+git log
+<span class="c1"># 查看简短日志</span>
+git reflog
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="21-本地仓库" class="headerLink">
+    <a href="#21-%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93" class="header-mark"></a>2.1 本地仓库</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -206,37 +252,30 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 初始化，创建 git 仓库</span>
 git init
 <span class="c1"># 添加文件到暂存区</span>
-git add &lt;FILENAME&gt;
+git add &lt;file&gt;
 <span class="c1"># 将暂存区文件提交到本地历史仓库</span>
-git commit -m <span class="s2">&#34;descriptions&#34;</span>
+git commit -m &lt;message&gt;
 <span class="c1"># 将所有修改或删除的文件提交到本地历史仓库（不包括新建文件）</span>
-git commit -a -m <span class="s2">&#34;descriptions&#34;</span>
+git commit -a -m &lt;message&gt;
 </code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><h3 id="22-版本切换" class="headerLink">
+    <a href="#22-%e7%89%88%e6%9c%ac%e5%88%87%e6%8d%a2" class="header-mark"></a>2.2 版本切换</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看 git 状态</span>
-git status
-<span class="c1"># 查看日志</span>
-git log
-<span class="c1"># 查看简短日志</span>
-git reflog
-<span class="c1"># 查看文件改动记录</span>
-git diff &lt;file&gt;
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># git reset --hard a3a9cf1</span>
+git reset --hard &lt;commit&gt;
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="远端仓库" class="headerLink">
-    <a href="#%e8%bf%9c%e7%ab%af%e4%bb%93%e5%ba%93" class="header-mark"></a>远端仓库</h3><div class="highlight"><div class="chroma">
+</div><h3 id="23-分支管理" class="headerLink">
+    <a href="#23-%e5%88%86%e6%94%af%e7%ae%a1%e7%90%86" class="header-mark"></a>2.3 分支管理</h3><ul>
+<li>切换：将<code>HEAD</code>指向别的分支。</li>
+<li>合并：将<code>main</code>指向该分支，然后将<code>HEAD</code>指向<code>main</code>分支。</li>
+</ul>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -249,19 +288,64 @@ git diff &lt;file&gt;
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看所有分支</span>
+git branch
+<span class="c1"># 创建新分支</span>
+git branch &lt;branch-name&gt;
+<span class="c1"># 删除指定分支</span>
+git branch -d &lt;branch-name&gt;
+<span class="c1"># 切换到其他分支</span>
+git checkout &lt;branch&gt;
+<span class="c1"># 创建新分支，并立即切换过去</span>
+git checkout -b &lt;branch&gt;
+<span class="c1"># 将指定分支合并到当前分支</span>
+git merge &lt;branch-name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="24-远程仓库" class="headerLink">
+    <a href="#24-%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93" class="header-mark"></a>2.4 远程仓库</h3><p>在 <a href="https://github.com/" target="_blank" rel="noopener noreffer">Github</a>、<a href="https://about.gitlab.com/" target="_blank" rel="noopener noreffer">Gitlab</a> 或 <a href="https://gitee.com/" target="_blank" rel="noopener noreffer">Gitee</a> 上创建远程仓库。</p>
+<h4 id="241-ssh-配置" class="headerLink">
+    <a href="#241-ssh-%e9%85%8d%e7%bd%ae" class="header-mark"></a>2.4.1 SSH 配置</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="242-先创建本地仓库" class="headerLink">
+    <a href="#242-%e5%85%88%e5%88%9b%e5%bb%ba%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93" class="header-mark"></a>2.4.2 先创建本地仓库</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 克隆仓库</span>
-git clone https://github.com/USERNAME/REPONAME.git
-
+git clone &lt;repo&gt;
 <span class="c1"># 为本地仓库添加远端 GitHub 仓库</span>
-git remote add origin https://github.com/USERNAME/REPONAME.git
-
+git remote add origin &lt;repo&gt;
 <span class="c1"># 将已提交的版本推送到远端仓库，方便其他设备同步</span>
-git push origin &lt;BRANCH_NAME&gt;
-
+git push origin &lt;branch&gt;
 <span class="c1"># 取回远端仓库版本，对本地仓库进行更新</span>
 git pull
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="243-先创建远程仓库" class="headerLink">
+    <a href="#243-%e5%85%88%e5%88%9b%e5%bb%ba%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93" class="header-mark"></a>2.4.3 先创建远程仓库</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="子模块" class="headerLink">
@@ -339,52 +423,8 @@ git remote add origin https://github.com/USERNAME/REPONAME.git
 git push -u origin master
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="git-版本切换" class="headerLink">
-    <a href="#git-%e7%89%88%e6%9c%ac%e5%88%87%e6%8d%a2" class="header-mark"></a>Git 版本切换</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git reset --hard &lt;commit&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="git-分支管理" class="headerLink">
-    <a href="#git-%e5%88%86%e6%94%af%e7%ae%a1%e7%90%86" class="header-mark"></a>Git 分支管理</h2><ul>
-<li>切换：将<code>HEAD</code>指向别的分支。</li>
-<li>合并：将<code>main</code>指向该分支，然后将<code>HEAD</code>指向<code>main</code>分支。</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看所有分支</span>
-git branch
-<span class="c1"># 创建新分支</span>
-git branch &lt;branch-name&gt;
-<span class="c1"># 删除指定分支</span>
-git branch -d &lt;branch-name&gt;
-<span class="c1"># 切换到其他分支</span>
-git checkout &lt;branch&gt;
-<span class="c1"># 创建新分支，并立即切换过去</span>
-git checkout -b &lt;branch&gt;
-<span class="c1"># 合并到指定分支</span>
-git merge &lt;branch-name&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="配置-git" class="headerLink">
-    <a href="#%e9%85%8d%e7%bd%ae-git" class="header-mark"></a>配置 Git</h2><ol>
+</div><h2 id="git-配置" class="headerLink">
+    <a href="#git-%e9%85%8d%e7%bd%ae" class="header-mark"></a>Git 配置</h2><ol>
 <li>将<code>your_email@youremail.com</code>改为你的 Github 账号的邮箱，然后一路回车。</li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -421,7 +461,8 @@ git merge &lt;branch-name&gt;
 git config --global user.email <span class="s2">&#34;username@email.com&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="qa" class="headerLink">
+</div><h3 id="gitignore" class="headerLink">
+    <a href="#gitignore" class="header-mark"></a>.gitignore</h3><h2 id="qa" class="headerLink">
     <a href="#qa" class="header-mark"></a>Q&amp;A</h2><h3 id="无法连接服务器报错443" class="headerLink">
     <a href="#%e6%97%a0%e6%b3%95%e8%bf%9e%e6%8e%a5%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%8a%a5%e9%94%99443" class="header-mark"></a>无法连接服务器，报错443</h3><p>问题：</p>
 <p>git clone 或 git push 等操作时无法连接至服务器，报错内容如下：</p>
