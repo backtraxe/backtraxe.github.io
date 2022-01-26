@@ -72,15 +72,40 @@ git merge <branch-name>
 
 ### 2.4 远程仓库
 
-在 [Github](https://github.com/)、[Gitlab](https://about.gitlab.com/) 或 [Gitee](https://gitee.com/) 上创建远程仓库。
+#### 2.4.1 远程仓库创建
 
-#### 2.4.1 SSH 配置
+1. [Github](https://github.com/)
+2. [Gitlab](https://about.gitlab.com/)
+3. [Gitee](https://gitee.com/)
+
+#### 2.4.2 SSH 配置
+
+1. 配置用户名和邮箱，然后生成密钥（公钥和私钥）。
 
 ```bash
-
+# 配置用户名和邮箱
+git config --global user.name "backtraxe"
+git config --global user.email "backtraxe@gmail.com"
+# 生成密钥
+ssh-keygen -t rsa -C "backtraxe@gmail.com"
 ```
 
-#### 2.4.2 先创建本地仓库
+2. 进入**用户目录**下的`.ssh`文件夹，复制`id_rsa.pub`文件中的内容。
+
+3. 回到 Github 网页，登录，点击右上角头像，选择`Settings`->`SSH and GPG keys`->`New SSH key`，`Title`随便填，`Key`粘贴你刚复制的内容，然后点击`Add SSH key`。
+
+4. 输入如下指令测试是否配置成功。
+
+```bash
+# Github
+ssh -T git@github.com
+# Gitlab
+ssh -T git@gitlab.com
+# Gitee
+ssh -T git@gitee.com
+```
+
+5.
 
 ```bash
 # 克隆仓库
@@ -91,12 +116,6 @@ git remote add origin <repo>
 git push origin <branch>
 # 取回远端仓库版本，对本地仓库进行更新
 git pull
-```
-
-#### 2.4.3 先创建远程仓库
-
-```bash
-
 ```
 
 ### 子模块
@@ -140,29 +159,6 @@ git add --all  # git add .
 git commit -m "descriptions"
 git remote add origin https://github.com/USERNAME/REPONAME.git
 git push -u origin master
-```
-
-## Git 配置
-
-1. 将`your_email@youremail.com`改为你的 Github 账号的邮箱，然后一路回车。
-
-```bash
-ssh-keygen -t rsa -C "your_email@youremail.com"
-```
-
-2. 成功的话会在`${USERNAME}/`下生成`.ssh`文件夹，进入该文件夹，打开`id_rsa.pub`文件，复制里面的内容。
-3. 回到 Github 网页，登录，点击右上角头像，选择`Settings`->`SSH and GPG keys`->`New SSH key`，`Title`随便填，`Key`粘贴你刚复制的内容，然后点击`Add SSH key`。
-4. 测试，git bash 输入如下指令：
-
-```bash
-ssh -T git@github.com
-```
-
-5. 配置用户名和邮箱：
-
-```bash
-git config --global user.name "USERNAME"
-git config --global user.email "username@email.com"
 ```
 
 ### .gitignore
