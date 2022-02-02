@@ -74,9 +74,9 @@ git merge <branch-name>
 
 #### 2.4.1 远程仓库创建
 
-1. [Github](https://github.com/)
-2. [Gitlab](https://about.gitlab.com/)
-3. [Gitee](https://gitee.com/)
+1. [Github](https://github.com/)：全球最大。
+2. [Gitlab](https://about.gitlab.com/)：国外网站。
+3. [Gitee](https://gitee.com/)：国内最大。
 
 #### 2.4.2 SSH 配置
 
@@ -90,9 +90,12 @@ git config --global user.email "backtraxe@gmail.com"
 ssh-keygen -t rsa -C "backtraxe@gmail.com"
 ```
 
-2. 进入**用户目录**下的`.ssh`文件夹，复制`id_rsa.pub`文件中的内容。
+2. 进入`$HOME/.ssh`文件夹，复制公钥`id_rsa.pub`文件中的内容。
 
-3. 回到 Github 网页，登录，点击右上角头像，选择`Settings`->`SSH and GPG keys`->`New SSH key`，`Title`随便填，`Key`粘贴你刚复制的内容，然后点击`Add SSH key`。
+3. 回到网页进行配置，点击右上角头像。
+
+    - **Github**：`Settings`->`SSH and GPG keys`->`New SSH key`。`Title`随便填，`Key`粘贴公钥内容。
+    - **Gitee**：`设置`->`SSH公钥`。`标题`随便填，`公钥`粘贴公钥内容。
 
 4. 输入如下指令测试是否配置成功。
 
@@ -105,20 +108,56 @@ ssh -T git@gitlab.com
 ssh -T git@gitee.com
 ```
 
-5.
+#### 2.4.3 本地仓库同步到远程仓库
+
+1. 添加或修改文件。
+2. 添加到暂存区。
+3. 提交到本地仓库。
+4. 推送到远程仓库。
 
 ```bash
-# 克隆仓库
-git clone <repo>
-# 为本地仓库添加远端 GitHub 仓库
-git remote add origin <repo>
-# 将已提交的版本推送到远端仓库，方便其他设备同步
-git push origin <branch>
-# 取回远端仓库版本，对本地仓库进行更新
-git pull
+# 添加远程仓库，起一个别名
+# git remote add origin https://github.com/backtraxe/backtraxe.github.io.git
+git remote add <name> <url>
+
+# 推送到远程仓库，更新远程仓库
+# git push -u origin master
+git push -u <repository> <refspec>
 ```
 
-### 子模块
+#### 2.4.4 远程仓库同步到本地仓库
+
+```bash
+# 克隆远程仓库
+# git clone https://github.com/backtraxe/backtraxe.github.io.git
+git clone <repo>
+
+# 拉取远端仓库，更新本地仓库
+# git pull origin master
+git pull <repository> <refspec>
+```
+
+### 2.5 代码冲突
+
+同一文件存在多个新版本，如下所示。需要先拉取远程仓库，手动修改冲突文件后，再次推送即可。
+
+```text
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/backtraxe/repo_for_test.git'
+```
+
+#### 2.5.1 替换本地改动
+
+```bash
+# 丢弃当前文件修改内容
+git checkout -- <file>
+
+# 丢弃本地仓库的所有改动与提交版本
+git fetch origin
+git reset --hard origin/master
+```
+
+### 2.6 子模块
 
 ```bash
 # 将一个 Git 仓库添加为当前仓库的子模块
@@ -137,53 +176,29 @@ git clone --recurse-submodules https://github.com/USERNAME/REPONAME.git
 git clone --recursive https://github.com/USERNAME/REPONAME.git
 ```
 
-### 替换本地改动
+### 2.7 .gitignore
 
-```bash
-# 丢弃当前文件修改内容
-git checkout -- FILENAME
-
-# 丢弃本地仓库的所有改动与提交版本
-git fetch origin
-git reset --hard origin/master
-```
-
-### 本地创建仓库并上传至 GitHub
-
-1. [配置 Git](#配置-git)。
-2. git bash 输入如下指令：
-
-```bash
-git init
-git add --all  # git add .
-git commit -m "descriptions"
-git remote add origin https://github.com/USERNAME/REPONAME.git
-git push -u origin master
-```
-
-### .gitignore
+工作目录中需要 git 忽略的文件目录。
 
 ## Q&A
 
-### 无法连接服务器，报错443
+### 1. 无法连接服务器，报错443
 
-问题：
+问：
 
-git clone 或 git push 等操作时无法连接至服务器，报错内容如下：
+`git clone`或`git push`等操作时无法连接至服务器，报错内容如下：
 
-```bash
+```text
 SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
 ```
 
-答案：
+答：
 
-1. 该问题由开启代理软件导致。
-2. 到`设置`->`网络和Internet`->`代理`中查看`地址`和`端口`。
-3. git bash 中输入如下命令（`IP_ADDRESS`和`PORT`改为刚才查看的`地址`和`端口`）：
+该问题由开启代理软件导致。`设置`->`网络和Internet`->`代理`，查看`地址`和`端口`，通过如下命令进行配置。
 
 ```bash
-git config --global http.proxy IP_ADDRESS:PORT
 # git config --global http.proxy 127.0.0.1:10809
+git config --global http.proxy IP_ADDRESS:PORT
 ```
 
 ## 参考

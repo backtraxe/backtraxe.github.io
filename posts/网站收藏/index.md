@@ -5,54 +5,55 @@
 
 <!--more-->
 
-## 在线工具
+## 1 在线工具
 
-{{< admonition tip "Office & PDF 工具" >}}
-- [easy PDF](https://easypdf.com/cn)：Office转PDF；PDF转Office；PDF转图片；PDF拆分、合并、压缩
-- [PDF24 Tools](https://tools.pdf24.org/zh/)：PDF拆分、合并、压缩、编辑、加密、解密、页面编辑、转换
-{{< /admonition >}}
+### 1.1 PDF
 
-{{< admonition tip "在线图片处理" >}}
+- [easy PDF](https://easypdf.com/cn)
+- [PDF24 Tools](https://tools.pdf24.org/zh/)
+
+### 1.2 图片
+
 - [iLoveIMG](https://www.iloveimg.com/zh-cn)
-- [IMG365](http://www.img365.cn/)
-- [无需上传的图片格式转换器](https://renzhezhilu.gitee.io/webp2jpg-online/)
-- [AI人工智能图片放大](https://bigjpg.com/)
-- [图像压缩](https://zh.recompressor.com/)
-- [快速AI自动抠图](https://www.remove.bg/zh)
-- [在线图片去底](https://www.aigei.com/bgremover)
+- [多功能图片转换器无需上传文件](https://renzhezhilu.gitee.io/webp2jpg-online/)
+- [AI人工智能图片放大](https://bigjpg.com/)：免费版3000x3000px, 5M; 付费版50M。
+- [最优图像优化](https://zh.recompressor.com/)
+- [在线图片去底工具](https://www.aigei.com/bgremover)
 - [在线GIF制作和编辑](https://ezgif.com/)
+
+#### 1.2.1 OCR
+
 - [EasyScreenOCR](https://online.easyscreenocr.com/ZH)
 - [ONLINE OCR](https://www.onlineocr.net/zh_hans/)
+
+#### 1.2.2 图标制作
+
 - [小米风格Logo生成器](https://mi-logo.lvwzhen.com)
 - [favicon图标制作工具](https://geticon.cn/)
 - [favicon图标生成器](https://realfavicongenerator.net/)
-- [Figen - Post Cover & Background Generator Tool](https://figen.cc/)
-{{< /admonition >}}
 
-{{< admonition tip "在线音频/视频处理" >}}
+#### 1.2.3 背景生成
+
+- [Figen](https://figen.cc/)
+
+### 1.3 视频&音频
+
 - [网易见外工作台](https://jianwai.youdao.com/)
-{{< /admonition >}}
 
-{{< admonition tip "编程" >}}
-- [W3school](https://www.w3school.com.cn/)
-- [Overleaf](https://cn.overleaf.com/)
+### 1.4 速查表
+
+- [W3Schools](https://www.w3schools.com/)
 - [KaTeX - Supported Functions](https://katex.org/docs/supported.html)
 - [Linux 命令列表](https://wangchujiang.com/linux-command/hot.html)
-- [Ubuntu Pastebin](https://paste.ubuntu.com/)
-- [OnlineGDB](https://www.onlinegdb.com/)
-- [C++ shell](http://cpp.sh/)
-- [regex101](https://regex101.com/)
-- [Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
-{{< /admonition >}}
 
-{{< admonition tip "天梯图" >}}
+### 1.5 天梯图
+
 - [桌面CPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/cpu/index.html)
 - [桌面GPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/gpu/index.html)
 - [笔记本CPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/cpum/index.html)
-- [笔记本GPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/gpum/index.html)
-- [手机CPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/01/index.html)
 - [手机影像DxO综合榜](https://rank.kkj.cn/dxo3.shtml)
-{{< /admonition >}}
+
+### 1.6 其他工具
 
 - [Steam历史价格查询](https://steamdb.info/)
 - [全球Apple产品比价](https://themacindex.com/)
@@ -60,52 +61,49 @@
 - [萝卜工坊 - 模拟手写字体](http://www.beautifulcarrot.com/)
 - [ProcessOn - 在线思维导图、流程图](https://processon.com/)
 - [英文字体转换](https://beizhedenglong.github.io/weird-fonts/)
+- [Overleaf](https://cn.overleaf.com/)
+- [Ubuntu Pastebin](https://paste.ubuntu.com/)
+- [OnlineGDB](https://www.onlinegdb.com/)
+- [C++ shell](http://cpp.sh/)
+- [Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
+- [regex101](https://regex101.com/)
 
-## 在线观看
+## 2 在线观看
 
-{{< admonition tip "影视" >}}
+### 2.1 影视
+
 - [低端影视](https://ddrk.me/)
 - [奈菲影视](https://www.nfmovies.com/)
 - [看片狂人](https://www.kpkuang.com/)
 - [NO视频](https://www.novipnoad.com/)
-{{< /admonition >}}
 
-{{< admonition tip "动漫" >}}
-- [AGE动漫](https://www.agefans.net)
-- [ZzzFun](http://www.zzzfun.com)
-- [樱花动漫](http://www.yhdm.so)
-- [漫岛动漫](https://www.mandao.tv)
-- [EDD动漫](http://www.edddh.com)
-{{< /admonition >}}
+### 2.2 动漫
 
-{{< admonition tip "漫画" >}}
+- [AGE动漫](http://www.age.tv/)
+- [樱花动漫](https://www.yhdmp.cc/)
+- [ZzzFun动漫视频网](http://www.zzzfun.com/)
+- [漫岛动漫](https://www.mandao.tv/)
+- [EDD动漫](https://www.edddm.com/)
+
+### 2.3 漫画
+
 - [漫画DB](https://www.manhuadb.com/)
 - [动漫之家](https://www.dmzj.com/)
-{{< /admonition >}}
 
-{{< admonition tip "体育" >}}
+### 2.4 体育直播
+
 - [CCTV-5体育频道高清直播](https://tv.cctv.com/live/cctv5/)
-- [直播6](https://www.zb06.com/)
+- [JRKAN直播](http://www.jrskan.com/)
 - [比赛直播](http://match.gy940830.com/index.html?fr=elq&t=1577761328034)
-- [JRKAN直播](http://jrskan.com/)
-- [55直播](http://www.55zb.net/)
 - [直播吧](http://www.zhiboba.tv/)
-- [64体育](http://64tiyu.com/)
-- [七星直播](http://www.7xlive.la/)
 - [足球巴巴](http://www.nba01.cc/)
-- [极速体育](http://www.jisutiyu.com/)
-- [147体育](http://147tiyu.com/)
-- [310看球网](http://310kanqiu.net/)
-- [jrs直播](http://www.jrszb.com/)
-- [低调看吧](http://didiaokanba.com/)
+- [极速体育](https://www.jisusports.pro/)
 - [来球网](http://www.nowqiu.com/)
-{{< /admonition >}}
 
-- [纪录片天地](http://www.jlpcn.net/)
+## 3 资源下载
 
-## 资源下载
+### 3.1 影视
 
-{{< admonition tip "影视" >}}
 - [高清MP4粉](https://www.mp4fan.org/)
 - [片源网](http://pianyuan.org/)
 - [BT天堂](https://www.bt-tt.com/)
@@ -115,24 +113,26 @@
 - [音范丝](https://www.yinfans.net/)
 - [Nyaa](https://nyaa.si/)
 - [RARBG](https://rarbg.to/)
-{{< /admonition >}}
+- [纪录片天地](http://www.jlpcn.net/)
 
-{{< admonition tip "字幕" >}}
+### 3.2 字幕
+
 - [SubHD](https://subhd.tv)
 - [字幕库](http://zimuku.org)
 - [A4k字幕网](https://www.a4k.net)
-{{< /admonition >}}
 
-- [90分钟足球网](http://90oo.com)
-- [知轩藏书](http://www.zxcs.me)
+### 3.3 动漫
 
-{{< admonition tip "动漫" >}}
 - [动漫领域](https://dmly.me/)
 - [肥羊-Raws 11周年Peach](https://fy-raws.org/resource_lists/)
 - [不移之火资源网](https://www.byzhihuo.com/)
 - [漫猫动漫BT下载](http://www.comicat.org)
 - [爱恋动漫BT下载](http://www.kisssub.org)
-{{< /admonition >}}
+
+
+- [90分钟足球网](http://90oo.com)
+- [知轩藏书](http://www.zxcs.me)
+
 
 {{< admonition tip "磁力" >}}
 - [磁力爬](https://www.cilipa.com/) `GFW`

@@ -678,31 +678,70 @@ long end = System.currentTimeMillis();
 System.out.println(end - start);
 ```
 
+### 2.19 static
+
+静态修饰符，可修饰变量和方法。
+
+    - 静态变量
+        1. 被所有实例化的对象共享。
+        2. 随类的加载而加载。
+        3. 不需要创建对象即可调用（使用类名）。
+    - 静态方法
+        1. 只能访问静态变量或静态方法。
+        2. 不能使用this。
+        3. 不需要创建对象即可调用（使用类名）。
+
+```java
+public class Student {
+    public static int age = 18;
+    public static int getAge() {
+        return age;
+    }
+}
+Student.age;      // 18
+Student.getAge(); // 18
+Student stu1 = new Student();
+stu1.age;         // 18
+stu1.age = 20;
+Student stu2 = new Student();
+stu2.age;         // 20
+Student.age;      // 20
+```
+
 ## 3 面向对象编程
 
 面向对象编程（Object Oriented Programming，OOP），是一种程序设计思想，把类作为程序的基本单元，一个类包含了变量和方法。
 
+可以提高代码的**维护性、可读性、复用性**。
+
+### 3.1 为什么要面向对象
+
+#### 3.1.1 分类思想
+
+例如：学生信息管理系统。
+
+- Student类：标准学生类，封装学生信息（学号、姓名、性别、年级等）。
+- StudentDao类：DAO，Data Access Object，访问存储数据的数组或集合。
+- StudentService类：业务逻辑处理。例如添加学生、查询学生。
+- StudentController类：用户交互相关。例如处理用户输入、给予用户反馈信息。
+
+#### 3.1.2 分包思想
+
+- 本质文件夹。
+- 多级包使用`.`分割，一般用逆序网址（去掉www），如 io.github.backtraxe。
+- 全小写字母。
+- 必须在文件开头（注释不算）。
+- 不同包下类的访问：1.先导包。2.包名+类名（重名类使用）。
+
 ```java
-public class Circle {
-    final static double PI = 3.14159;
-    double radius;
-    Circle(double radius) {
-        this.radius = radius;
-    }
-    double getPerimeter() {
-        return 2 * PI * radius;
-    }
-    double getArea() {
-        return PI * radius * radius;
-    }
-    public static void main(String[] args) {
-        Circle circle = new Circle(2);
-        System.out.println("半径为：" + circle.radius);
-        System.out.println("周长为：" + circle.getPerimeter());
-        System.out.println("面积为：" + circle.getArea());
-    }
-}
+package io.github.backtraxe;
+// 1. 导包
+import io.github.backsided.Student;
+// 2. 包名+类名
+io.github.backsided.Student stu = new io.github.backsided.Student();
 ```
+
+### 怎样面向对象
 
 ### 3.1 类
 
