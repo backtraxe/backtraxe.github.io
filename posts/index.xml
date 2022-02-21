@@ -5,6 +5,13 @@
         <description>所有文章 | </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 22 Dec 2021 17:01:12 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>数据结构与算法</title>
+    <link>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+    <pubDate>Tue, 09 Feb 2021 22:06:43 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</guid>
+    <description><![CDATA[<p>数据结构，是抽象的表示数据的方式；算法，则是计算的一系列有效、通用的步骤。算法与数据结构是程序设计中相辅相成的两个方面，是计算机学科的重要基石。</p>]]></description>
+</item><item>
     <title>网站收藏🔝</title>
     <link>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</link>
     <pubDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</pubDate><author>
