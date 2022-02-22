@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-09T22:06:43+08:00" />
-<meta property="article:modified_time" content="2022-02-21T22:06:43+08:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-02-22T16:06:43+08:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="数据结构与算法"/>
@@ -31,8 +31,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/"
-        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  4492 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/","datePublished": "2021-02-09T22:06:43+08:00","dateModified": "2022-02-21T22:06:43+08:00","publisher": {
+        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  5921 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/","datePublished": "2021-02-09T22:06:43+08:00","dateModified": "2022-02-22T16:06:43+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -129,6 +129,16 @@
         <li><a href="#总结">总结</a></li>
       </ul>
     </li>
+    <li><a href="#链表">链表</a>
+      <ul>
+        <li><a href="#返回链表的倒数第-k-个节点">返回链表的倒数第 k 个节点</a></li>
+        <li><a href="#删除链表的倒数第-n-个结点">删除链表的倒数第 N 个结点</a></li>
+        <li><a href="#单链表的中点">单链表的中点</a></li>
+        <li><a href="#判断链表是否包含环">判断链表是否包含环</a></li>
+        <li><a href="#如果链表中含有环如何计算这个环的起点">如果链表中含有环，如何计算这个环的起点？</a></li>
+        <li><a href="#两个链表是否相交">两个链表是否相交</a></li>
+      </ul>
+    </li>
     <li><a href="#树">树</a></li>
     <li><a href="#二叉树">二叉树</a>
       <ul>
@@ -162,6 +172,7 @@
       <ul>
         <li><a href="#dfs">DFS</a></li>
         <li><a href="#bfs">BFS</a></li>
+        <li><a href="#flood-fill">Flood Fill</a></li>
       </ul>
     </li>
   </ul>
@@ -170,8 +181,8 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><i class="far fa-folder fa-fw"></i>数据结构</a>&nbsp;<a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw"></i>算法</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-02-21">2022-02-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4492 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-02-22">2022-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5921 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -190,6 +201,16 @@
         <li><a href="#总结">总结</a></li>
       </ul>
     </li>
+    <li><a href="#链表">链表</a>
+      <ul>
+        <li><a href="#返回链表的倒数第-k-个节点">返回链表的倒数第 k 个节点</a></li>
+        <li><a href="#删除链表的倒数第-n-个结点">删除链表的倒数第 N 个结点</a></li>
+        <li><a href="#单链表的中点">单链表的中点</a></li>
+        <li><a href="#判断链表是否包含环">判断链表是否包含环</a></li>
+        <li><a href="#如果链表中含有环如何计算这个环的起点">如果链表中含有环，如何计算这个环的起点？</a></li>
+        <li><a href="#两个链表是否相交">两个链表是否相交</a></li>
+      </ul>
+    </li>
     <li><a href="#树">树</a></li>
     <li><a href="#二叉树">二叉树</a>
       <ul>
@@ -223,6 +244,7 @@
       <ul>
         <li><a href="#dfs">DFS</a></li>
         <li><a href="#bfs">BFS</a></li>
+        <li><a href="#flood-fill">Flood Fill</a></li>
       </ul>
     </li>
   </ul>
@@ -582,6 +604,319 @@
 <ol>
 <li><a href="https://leetcode-cn.com/problems/sort-an-array/solution/dang-wo-tan-pai-xu-shi-wo-zai-tan-xie-shi-yao-by-s/" target="_blank" rel="noopener noreffer">当我谈排序时，我在谈些什么🤔</a></li>
 </ol>
+<h2 id="链表" class="headerLink">
+    <a href="#%e9%93%be%e8%a1%a8" class="header-mark"></a>链表</h2><p><strong>trick:</strong></p>
+<ul>
+<li>双指针（快慢指针）</li>
+<li>虚拟头结点</li>
+</ul>
+<h3 id="返回链表的倒数第-k-个节点" class="headerLink">
+    <a href="#%e8%bf%94%e5%9b%9e%e9%93%be%e8%a1%a8%e7%9a%84%e5%80%92%e6%95%b0%e7%ac%ac-k-%e4%b8%aa%e8%8a%82%e7%82%b9" class="header-mark"></a>返回链表的倒数第 k 个节点</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="n">ListNode</span> <span class="nf">findFromEnd1</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// 要求 1 &lt;= k &lt;= n
+</span><span class="c1"></span>    <span class="n">ListNode</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">head</span><span class="o">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="c1">// p1 先走 k 步
+</span><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="o">&amp;&amp;</span> <span class="n">p1</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">// 然后 p1 和 p2 同步走，走到头
+</span><span class="c1"></span>    <span class="c1">// 即 p2 走了 n - k 步，也就是倒数第 k 个
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">p1</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">p2</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 不适用于多测试用例，因为 count 是静态的
+</span><span class="c1">// 或者每次调用前将 count 归零
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">count</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">ListNode</span> <span class="nf">findFromEnd2</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// 要求 1 &lt;= k &lt;= n
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">ListNode</span> <span class="n">node</span> <span class="o">=</span> <span class="n">findFromEnd2</span><span class="o">(</span><span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">,</span> <span class="n">k</span><span class="o">);</span>
+    <span class="c1">// 从尾部向前计数
+</span><span class="c1"></span>    <span class="n">count</span><span class="o">++;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">count</span> <span class="o">==</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">node</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="删除链表的倒数第-n-个结点" class="headerLink">
+    <a href="#%e5%88%a0%e9%99%a4%e9%93%be%e8%a1%a8%e7%9a%84%e5%80%92%e6%95%b0%e7%ac%ac-n-%e4%b8%aa%e7%bb%93%e7%82%b9" class="header-mark"></a>删除链表的倒数第 N 个结点</h3><h3 id="单链表的中点" class="headerLink">
+    <a href="#%e5%8d%95%e9%93%be%e8%a1%a8%e7%9a%84%e4%b8%ad%e7%82%b9" class="header-mark"></a>单链表的中点</h3><p>快慢指针</p>
+<h3 id="判断链表是否包含环" class="headerLink">
+    <a href="#%e5%88%a4%e6%96%ad%e9%93%be%e8%a1%a8%e6%98%af%e5%90%a6%e5%8c%85%e5%90%ab%e7%8e%af" class="header-mark"></a>判断链表是否包含环</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">hasCycle</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// 快慢指针初始化指向 head
+</span><span class="c1"></span>    <span class="n">ListNode</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="o">,</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="c1">// 快指针走到末尾时停止
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 慢指针走一步，快指针走两步
+</span><span class="c1"></span>        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="c1">// 快慢指针相遇，说明含有环
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">// 不包含环
+</span><span class="c1"></span>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="如果链表中含有环如何计算这个环的起点" class="headerLink">
+    <a href="#%e5%a6%82%e6%9e%9c%e9%93%be%e8%a1%a8%e4%b8%ad%e5%90%ab%e6%9c%89%e7%8e%af%e5%a6%82%e4%bd%95%e8%ae%a1%e7%ae%97%e8%bf%99%e4%b8%aa%e7%8e%af%e7%9a%84%e8%b5%b7%e7%82%b9" class="header-mark"></a>如果链表中含有环，如何计算这个环的起点？</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">ListNode</span> <span class="nf">detectCycle</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">ListNode</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="o">,</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">fast</span> <span class="o">==</span> <span class="n">slow</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">fast</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 无环
+</span><span class="c1"></span>        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="cm">/*
+</span><span class="cm">       相遇时，slow 走了 k 步，fast 走了 2k 步
+</span><span class="cm">       则 k 为环的长度，设相遇点距环起点距离为 m
+</span><span class="cm">       则表头到环起点距离为 k - m，相遇点向前走到环起点距离为 k - m
+</span><span class="cm">       则将 slow 放到表头，然后 slow 和 fast 同步走
+</span><span class="cm">       相遇即为环起点
+</span><span class="cm">    */</span>
+    <span class="c1">// 重新指向头结点
+</span><span class="c1"></span>    <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="c1">// 快慢指针同步前进，相交点就是环起点
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">slow</span> <span class="o">!=</span> <span class="n">fast</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">slow</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="两个链表是否相交" class="headerLink">
+    <a href="#%e4%b8%a4%e4%b8%aa%e9%93%be%e8%a1%a8%e6%98%af%e5%90%a6%e7%9b%b8%e4%ba%a4" class="header-mark"></a>两个链表是否相交</h3><ol>
+<li>让 p1 遍历完链表 A 之后开始遍历链表 B，让 p2 遍历完链表 B 之后开始遍历链表 A，这样相当于「逻辑上」两条链表接在了一起。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">ListNode</span> <span class="nf">getIntersectionNode</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">headA</span><span class="o">,</span> <span class="n">ListNode</span> <span class="n">headB</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// p1 指向 A 链表头结点，p2 指向 B 链表头结点
+</span><span class="c1"></span>    <span class="n">ListNode</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">headA</span><span class="o">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">headB</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">p1</span> <span class="o">!=</span> <span class="n">p2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// p1 走一步，如果走到 A 链表末尾，转到 B 链表
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">p1</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">p1</span> <span class="o">=</span> <span class="n">headB</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">// p2 走一步，如果走到 B 链表末尾，转到 A 链表
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">p2</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">p2</span> <span class="o">=</span> <span class="n">headA</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">p1</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>
+<p>如果把两条链表首尾相连，那么「寻找两条链表的交点」的问题转换成了前面讲的「寻找环起点」的问题。</p>
+</li>
+<li>
+<p>预先计算两条链表的长度。</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">getIntersectionNode</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">headA</span><span class="o">,</span> <span class="n">ListNode</span> <span class="n">headB</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">lenA</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">lenB</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+    <span class="c1">// 计算两条链表的长度
+</span><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="n">ListNode</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">headA</span><span class="o">;</span> <span class="n">p1</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="na">next</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">lenA</span><span class="o">++;</span>
+    <span class="o">}</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">ListNode</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">headB</span><span class="o">;</span> <span class="n">p2</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span><span class="o">.</span><span class="na">next</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">lenB</span><span class="o">++;</span>
+    <span class="o">}</span>
+    <span class="c1">// 让 p1 和 p2 到达尾部的距离相同
+</span><span class="c1"></span>    <span class="n">ListNode</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">headA</span><span class="o">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">headB</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">lenA</span> <span class="o">&gt;</span> <span class="n">lenB</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">lenA</span> <span class="o">-</span> <span class="n">lenB</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">lenB</span> <span class="o">-</span> <span class="n">lenA</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">// 看两个指针是否会相同，p1 == p2 时有两种情况：
+</span><span class="c1"></span>    <span class="c1">// 1、要么是两条链表不相交，他俩同时走到尾部空指针
+</span><span class="c1"></span>    <span class="c1">// 2、要么是两条链表相交，他俩走到两条链表的相交点
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">p1</span> <span class="o">!=</span> <span class="n">p2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">p1</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>哈希表存储结点。</li>
+</ol>
 <h2 id="树" class="headerLink">
     <a href="#%e6%a0%91" class="header-mark"></a>树</h2><ul>
 <li>一棵 n 个节点的树，有 n-1 条边。</li>
@@ -603,6 +938,26 @@
     <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="n">treeNode</span><span class="o">*&gt;</span> <span class="n">child</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">TreeNode</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">TreeNode</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">val</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">TreeNode</span><span class="o">[]</span> <span class="n">children</span><span class="o">;</span>
+    <span class="n">TreeNode</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">val</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="二叉树" class="headerLink">
@@ -1017,7 +1372,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">开始节点</span> <span class="n">s</span><span class="err">，</span><span class="n">结束节点</span> <span class="n">e</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">开始节点</span> <span class="n">s</span><span class="p">):</span>
     <span class="n">q</span> <span class="o">=</span> <span class="n">队列</span>
     <span class="n">vis</span> <span class="o">=</span> <span class="n">集合</span><span class="o">/</span><span class="n">哈希表</span><span class="o">/</span><span class="n">布尔数组</span>
     <span class="n">将s添加到q中</span>
@@ -1025,7 +1380,7 @@
     <span class="n">步数</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span><span class="p">(</span><span class="n">q非空</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">q的每一个节点</span><span class="err">，</span><span class="n">记为h</span> <span class="c1"># 每次清空队列</span>
-            <span class="k">if</span> <span class="n">h</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">满足结束条件</span><span class="p">:</span>
                 <span class="k">return</span>
             <span class="k">for</span> <span class="n">h的每个相邻节点x</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">x未在vis中</span><span class="o">/</span><span class="n">x未访问</span><span class="p">:</span>
@@ -1034,13 +1389,80 @@
         <span class="n">步数</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 双向BFS</span>
+<span class="k">def</span> <span class="nf">BiBFS</span><span class="p">(</span><span class="n">开始节点</span> <span class="n">s</span><span class="err">，</span><span class="n">结束节点</span> <span class="n">e</span><span class="p">):</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">从s开始的搜索集合</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">从e开始的搜索集合</span>
+    <span class="n">vis</span> <span class="o">=</span> <span class="n">集合</span><span class="o">/</span><span class="n">哈希表</span><span class="o">/</span><span class="n">布尔数组</span>
+    <span class="n">将s添加到s1中</span>
+    <span class="n">将s添加到vis中</span><span class="o">/</span><span class="n">标记s为已访问</span>
+    <span class="n">将e添加到s2中</span>
+    <span class="n">将e添加到vis中</span><span class="o">/</span><span class="n">标记e为已访问</span>
+    <span class="n">步数</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">s1非空</span> <span class="ow">and</span> <span class="n">s2非空</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">s1中元素比s2多</span><span class="p">:</span>
+            <span class="c1"># 交换s1和s2</span>
+            <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s1</span>
+        <span class="n">s3</span> <span class="o">=</span> <span class="n">过渡集合</span>
+        <span class="k">for</span> <span class="n">s1的每一个节点</span><span class="err">，</span><span class="n">记为h</span> <span class="c1"># 每次清空队列</span>
+            <span class="k">if</span> <span class="n">h在s2中存在</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="k">for</span> <span class="n">h的每个相邻节点x</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">x未在vis中</span><span class="o">/</span><span class="n">x未访问</span><span class="p">:</span>
+                    <span class="n">将x添加到s3中</span>
+                    <span class="n">将x添加到vis中</span><span class="o">/</span><span class="n">标记x为已访问</span>
+        <span class="c1"># 交换q1和q2（一边一轮）</span>
+        <span class="n">s1</span> <span class="o">=</span> <span class="n">s2</span>
+        <span class="n">s2</span> <span class="o">=</span> <span class="n">s3</span>
+        <span class="n">步数</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="flood-fill" class="headerLink">
+    <a href="#flood-fill" class="header-mark"></a>Flood Fill</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">
+</code></pre></td></tr></table>
+</div>
 </div></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-02-21</span>
+                <span>更新于 2022-02-22</span>
             </div>
             <div class="post-info-license"></div>
         </div>
