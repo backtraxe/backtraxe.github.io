@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/python-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Python, 教程","wordcount":  3172 ,
+        },"genre": "posts","keywords": "Python, 教程","wordcount":  3194 ,
         "url": "https:\/\/backtraxe.github.io\/posts\/python-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-06T22:37:10+08:00","dateModified": "2021-08-08T22:37:10+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
@@ -164,7 +164,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a>&nbsp;<a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-06">2021-02-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-08-08">2021-08-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3172 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-06">2021-02-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-08-08">2021-08-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3194 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -248,32 +248,30 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
-</span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 位运算</span>
-<span class="c1"># 按位与 &amp;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 00 00 00 11</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 00 00 01 01</span>
-<span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span>  <span class="c1"># 00 00 00 01 : 1</span>
-<span class="c1"># 按位或 |</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 00 00 00 11</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 00 00 01 01</span>
-<span class="n">a</span> <span class="o">|</span> <span class="n">b</span>  <span class="c1"># 00 00 01 11 : 7</span>
-<span class="c1"># 按位取反 ~</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 00 00 00 11</span>
-<span class="o">~</span><span class="n">a</span>     <span class="c1"># 11 11 11 00</span>
-<span class="c1"># 按位异或 ^ （相同为0，不同为1）</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 00 00 00 11</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 00 00 01 01</span>
-<span class="n">a</span> <span class="o">^</span> <span class="n">b</span>  <span class="c1"># 00 00 01 10 : 6</span>
-<span class="c1"># 任何值与自身异或为0</span>
-<span class="n">a</span> <span class="o">^</span> <span class="n">a</span>  <span class="c1"># 00 00 00 00 : 0</span>
-<span class="c1"># 任何值与0异或不变</span>
-<span class="n">a</span> <span class="o">^</span> <span class="mi">0</span>  <span class="c1"># 00 00 00 11 : 3</span>
-<span class="c1"># 按位左移 &lt;&lt;</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 位运算</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 按位与 &amp;</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 00 00 00 11</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 00 00 01 01</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span>  <span class="c1"># 00 00 00 01 : 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 按位或 |</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 00 00 00 11</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 00 00 01 01</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">|</span> <span class="n">b</span>  <span class="c1"># 00 00 01 11 : 7</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 按位取反 ~</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 00 00 00 11</span>
+</span></span><span class="line"><span class="cl"><span class="o">~</span><span class="n">a</span>     <span class="c1"># 11 11 11 00</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 按位异或 ^ （相同为0，不同为1）</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 00 00 00 11</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 00 00 01 01</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">^</span> <span class="n">b</span>  <span class="c1"># 00 00 01 10 : 6</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 任何值与自身异或为0</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">^</span> <span class="n">a</span>  <span class="c1"># 00 00 00 00 : 0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 任何值与0异或不变</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">^</span> <span class="mi">0</span>  <span class="c1"># 00 00 00 11 : 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 按位左移 &lt;&lt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -291,19 +289,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 三元运算符</span>
-<span class="n">smaller</span> <span class="o">=</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="k">else</span> <span class="n">y</span>
-
-<span class="c1"># 其他运算符</span>
-<span class="s1">&#39;A&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
-<span class="s1">&#39;D&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
-<span class="s2">&#34;hello&#34;</span> <span class="ow">is</span> <span class="s2">&#34;hello&#34;</span>
-<span class="s2">&#34;Hello&#34;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s2">&#34;hello&#34;</span>
-<span class="c1"># is 对比的是两个变量的内存地址</span>
-<span class="c1"># == 对比的是两个变量的值</span>
-<span class="c1"># 地址不可变的类型（str 等），那么 is 和 == 完全等价</span>
-<span class="c1"># 地址可变的类型（list，dict，tuple 等），两者不等价</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 三元运算符</span>
+</span></span><span class="line"><span class="cl"><span class="n">smaller</span> <span class="o">=</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="k">else</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 其他运算符</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;A&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;D&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;hello&#34;</span> <span class="ow">is</span> <span class="s2">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;Hello&#34;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s2">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># is 对比的是两个变量的内存地址</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># == 对比的是两个变量的值</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 地址不可变的类型（str 等），那么 is 和 == 完全等价</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 地址可变的类型（list，dict，tuple 等），两者不等价</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="异常处理" class="headerLink">
     <a href="#%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86" class="header-mark"></a>异常处理</h2><div class="highlight"><div class="chroma">
@@ -320,17 +318,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 异常处理</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;除数不能为0&#39;</span><span class="p">)</span>
-
-<span class="c1"># 指定精度</span>
-<span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
-<span class="n">decimal</span><span class="o">.</span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 0.3333</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 异常处理</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;除数不能为0&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定精度</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+</span></span><span class="line"><span class="cl"><span class="n">decimal</span><span class="o">.</span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 0.3333</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="内置函数" class="headerLink">
     <a href="#%e5%86%85%e7%bd%ae%e5%87%bd%e6%95%b0" class="header-mark"></a>内置函数</h2><div class="highlight"><div class="chroma">
@@ -341,11 +339,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 获取类型信息</span>
-<span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-<span class="c1"># type() 不会认为子类是一种父类类型，不考虑继承关系</span>
-<span class="c1"># isinstance() 会认为子类是一种父类类型，考虑继承关系</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 获取类型信息</span>
+</span></span><span class="line"><span class="cl"><span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># type() 不会认为子类是一种父类类型，不考虑继承关系</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># isinstance() 会认为子类是一种父类类型，考虑继承关系</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -355,11 +353,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 类型转换</span>
-<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;520&#39;</span><span class="p">)</span>       <span class="c1"># 520</span>
-<span class="nb">float</span><span class="p">(</span><span class="s1">&#39;520.52&#39;</span><span class="p">)</span>  <span class="c1"># 520.52</span>
-<span class="nb">str</span><span class="p">(</span><span class="mi">520</span><span class="p">)</span>         <span class="c1"># &#39;520&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 类型转换</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;520&#39;</span><span class="p">)</span>       <span class="c1"># 520</span>
+</span></span><span class="line"><span class="cl"><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;520.52&#39;</span><span class="p">)</span>  <span class="c1"># 520.52</span>
+</span></span><span class="line"><span class="cl"><span class="nb">str</span><span class="p">(</span><span class="mi">520</span><span class="p">)</span>         <span class="c1"># &#39;520&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -371,13 +369,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print</span>
-<span class="c1"># print(*objects, sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)</span>
-<span class="c1"># sep   分隔符</span>
-<span class="c1"># end   结束符</span>
-<span class="c1"># file  输出的文件</span>
-<span class="c1"># flush 立即输出，不作缓存</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># print</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(*objects, sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sep   分隔符</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># end   结束符</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># file  输出的文件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># flush 立即输出，不作缓存</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -392,16 +390,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                    <span class="c1"># 返回绝对值。若参数为复数，则返回复数的模。</span>
-<span class="nb">divmod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>              <span class="c1"># 返回 tuple(a // b, a % b)</span>
-<span class="nb">input</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>              <span class="c1"># 打印 words，读取用户输入，返回 str 类型</span>
-<span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>                    <span class="c1"># 返回字符对应的 ASCII 数值，或者 Unicode 数值</span>
-<span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>                    <span class="c1"># 返回整数（0～255，10进制或16进制）对应的 ASCII 字符。</span>
-<span class="nb">bin</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>                    <span class="c1"># 返回一个整数（int 或 long int）的二进制表示，str 类型。</span>
-<span class="nb">any</span><span class="p">()</span>                     <span class="c1"># 是否存在大于0</span>
-<span class="nb">all</span><span class="p">()</span>                     <span class="c1"># 是否全大于0</span>
-<span class="nb">complex</span><span class="p">(</span><span class="n">real</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 复数</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                    <span class="c1"># 返回绝对值。若参数为复数，则返回复数的模。</span>
+</span></span><span class="line"><span class="cl"><span class="nb">divmod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>              <span class="c1"># 返回 tuple(a // b, a % b)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">input</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>              <span class="c1"># 打印 words，读取用户输入，返回 str 类型</span>
+</span></span><span class="line"><span class="cl"><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>                    <span class="c1"># 返回字符对应的 ASCII 数值，或者 Unicode 数值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>                    <span class="c1"># 返回整数（0～255，10进制或16进制）对应的 ASCII 字符。</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bin</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>                    <span class="c1"># 返回一个整数（int 或 long int）的二进制表示，str 类型。</span>
+</span></span><span class="line"><span class="cl"><span class="nb">any</span><span class="p">()</span>                     <span class="c1"># 是否存在大于0</span>
+</span></span><span class="line"><span class="cl"><span class="nb">all</span><span class="p">()</span>                     <span class="c1"># 是否全大于0</span>
+</span></span><span class="line"><span class="cl"><span class="nb">complex</span><span class="p">(</span><span class="n">real</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 复数</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -409,9 +407,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="mf">7.</span><span class="n">bit_length</span><span class="p">()</span>           <span class="c1"># 3</span>
-<span class="mf">0.25</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span>  <span class="c1"># (1, 4)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mf">7.</span><span class="n">bit_length</span><span class="p">()</span>           <span class="c1"># 3</span>
+</span></span><span class="line"><span class="cl"><span class="mf">0.25</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span>  <span class="c1"># (1, 4)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="数据结构" class="headerLink">
     <a href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" class="header-mark"></a>数据结构</h2><h3 id="列表" class="headerLink">
@@ -423,11 +421,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># [1, 2]</span>
-<span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>      <span class="c1"># 2</span>
-<span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># 0 找不到报错</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># [1, 2]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>      <span class="c1"># 2</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># 0 找不到报错</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="复数" class="headerLink">
     <a href="#%e5%a4%8d%e6%95%b0" class="header-mark"></a>复数</h3><div class="highlight"><div class="chroma">
@@ -437,10 +435,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">c</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>  <span class="c1"># 12.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>  <span class="c1"># 3.0</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>  <span class="c1"># 12.0</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>  <span class="c1"># 3.0</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="字符串" class="headerLink">
     <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2" class="header-mark"></a>字符串</h3><div class="highlight"><div class="chroma">
@@ -457,17 +455,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">pluto_mass</span> <span class="o">=</span> <span class="mf">1.303</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">22</span>
-<span class="n">earth_mass</span> <span class="o">=</span> <span class="mf">5.9722</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">24</span>
-<span class="n">population</span> <span class="o">=</span> <span class="mi">52910390</span>
-<span class="c1"># {:.2}  2位有效数字</span>
-<span class="c1"># {:.3%} 3位有效数字，百分数形式表示</span>
-<span class="c1"># {:,}   数字每隔3位用逗号隔开</span>
-<span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> weighs about </span><span class="si">{:.2}</span><span class="s2"> kilograms (</span><span class="si">{:.3%}</span><span class="s2"> of Earth&#39;s mass). It is home to </span><span class="si">{:,}</span><span class="s2"> Plutonians.&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-    <span class="n">planet</span><span class="p">,</span> <span class="n">pluto_mass</span><span class="p">,</span> <span class="n">pluto_mass</span> <span class="o">/</span> <span class="n">earth_mass</span><span class="p">,</span> <span class="n">population</span>
-<span class="p">)</span>
-<span class="c1"># Pluto weighs about 1.3e+22 kilograms (0.218% of Earth&#39;s mass). It is home to 52,910,390 Plutonians.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pluto_mass</span> <span class="o">=</span> <span class="mf">1.303</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">22</span>
+</span></span><span class="line"><span class="cl"><span class="n">earth_mass</span> <span class="o">=</span> <span class="mf">5.9722</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">24</span>
+</span></span><span class="line"><span class="cl"><span class="n">population</span> <span class="o">=</span> <span class="mi">52910390</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># {:.2}  2位有效数字</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># {:.3%} 3位有效数字，百分数形式表示</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># {:,}   数字每隔3位用逗号隔开</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> weighs about </span><span class="si">{:.2}</span><span class="s2"> kilograms (</span><span class="si">{:.3%}</span><span class="s2"> of Earth&#39;s mass). It is home to </span><span class="si">{:,}</span><span class="s2"> Plutonians.&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">planet</span><span class="p">,</span> <span class="n">pluto_mass</span><span class="p">,</span> <span class="n">pluto_mass</span> <span class="o">/</span> <span class="n">earth_mass</span><span class="p">,</span> <span class="n">population</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Pluto weighs about 1.3e+22 kilograms (0.218% of Earth&#39;s mass). It is home to 52,910,390 Plutonians.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -482,24 +480,24 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 根据位置使用变量</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;Pluto&#39;s a </span><span class="si">{0}</span><span class="s2">.
-</span><span class="s2">No, it&#39;s a </span><span class="si">{1}</span><span class="s2">.
-</span><span class="s2"></span><span class="si">{0}</span><span class="s2">!
-</span><span class="s2"></span><span class="si">{1}</span><span class="s2">!&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;planet&#39;</span><span class="p">,</span> <span class="s1">&#39;dwarf planet&#39;</span><span class="p">)</span>
-<span class="c1"># Pluto&#39;s a planet.</span>
-<span class="c1"># No, it&#39;s a dwarf planet.</span>
-<span class="c1"># planet!</span>
-<span class="c1"># dwarf planet!</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 根据位置使用变量</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;Pluto&#39;s a </span><span class="si">{0}</span><span class="s2">.
+</span></span></span><span class="line"><span class="cl"><span class="s2">No, it&#39;s a </span><span class="si">{1}</span><span class="s2">.
+</span></span></span><span class="line"><span class="cl"><span class="s2"></span><span class="si">{0}</span><span class="s2">!
+</span></span></span><span class="line"><span class="cl"><span class="s2"></span><span class="si">{1}</span><span class="s2">!&#34;&#34;&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;planet&#39;</span><span class="p">,</span> <span class="s1">&#39;dwarf planet&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Pluto&#39;s a planet.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># No, it&#39;s a dwarf planet.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># planet!</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dwarf planet!</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;123&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="c1"># True</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;123&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="c1"># True</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>参考：</strong></p>
 <ol>
@@ -514,11 +512,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">dict</span><span class="p">()</span>                                 <span class="c1"># {}</span>
-<span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>                    <span class="c1"># {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
-<span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>  <span class="c1"># {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
-<span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>   <span class="c1"># {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">dict</span><span class="p">()</span>                                 <span class="c1"># {}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>                    <span class="c1"># {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>  <span class="c1"># {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>   <span class="c1"># {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="staticmethod" class="headerLink">
     <a href="#staticmethod" class="header-mark"></a>staticmethod</h3><p>声明静态方法，即可以不实例化类而直接调用该方法。类中类也可以。</p>
@@ -530,11 +528,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
-        <span class="o">...</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@staticmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="enumerate" class="headerLink">
     <a href="#enumerate" class="header-mark"></a>enumerate</h3><p>将一个可遍历的数据对象（如列表、元组或字符串）组合为一个索引序列，同时列出数据和下标，一般用在 for 循环中。</p>
@@ -547,11 +545,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>       <span class="c1"># [(0, 1), (1, 2), (2, 3)]</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>       <span class="c1"># [(0, 1), (1, 2), (2, 3)]</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span>           <span class="c1"># [(0, &#39;a&#39;), (1, &#39;b&#39;), (2, &#39;c&#39;)]</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># [(1, &#39;a&#39;), (2, &#39;b&#39;), (3, &#39;c&#39;)]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>       <span class="c1"># [(0, 1), (1, 2), (2, 3)]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>       <span class="c1"># [(0, 1), (1, 2), (2, 3)]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span>           <span class="c1"># [(0, &#39;a&#39;), (1, &#39;b&#39;), (2, &#39;c&#39;)]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># [(1, &#39;a&#39;), (2, &#39;b&#39;), (3, &#39;c&#39;)]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="int" class="headerLink">
     <a href="#int" class="header-mark"></a>int</h3><ul>
@@ -569,24 +567,22 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">int</span><span class="p">()</span>           <span class="c1"># 0</span>
-<span class="nb">int</span><span class="p">(</span><span class="mf">3.9</span><span class="p">)</span>        <span class="c1"># 3</span>
-<span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mf">3.9</span><span class="p">)</span>       <span class="c1"># -3</span>
-<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1"># 2</span>
-<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0xA&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>  <span class="c1"># 10</span>
-<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;aB&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>   <span class="c1"># 171</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">int</span><span class="p">()</span>           <span class="c1"># 0</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="mf">3.9</span><span class="p">)</span>        <span class="c1"># 3</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mf">3.9</span><span class="p">)</span>       <span class="c1"># -3</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1"># 2</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0xA&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>  <span class="c1"># 10</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;aB&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>   <span class="c1"># 171</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="常用内置库" class="headerLink">
     <a href="#%e5%b8%b8%e7%94%a8%e5%86%85%e7%bd%ae%e5%ba%93" class="header-mark"></a>常用内置库</h2><h3 id="random" class="headerLink">
     <a href="#random" class="header-mark"></a>random</h3><p><code>random</code>库</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre tabindex="0" class="chroma"><code></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"></code></pre></td></tr></table>
 </div>
 </div><h3 id="os" class="headerLink">
     <a href="#os" class="header-mark"></a>os</h3><p><code>os</code>模块常用来用来处理文件和目录。</p>
@@ -611,24 +607,24 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1"># 切换目录，相当于 cd</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>          <span class="c1"># 改变文件权限，相当于 chmod</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>                   <span class="c1"># 返回当前目录绝对路径，相当于 pwd</span>
-<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>              <span class="c1"># 返回文件夹下所有文件或文件夹的名字的列表，相当于 ls</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">flags</span><span class="p">[,</span> <span class="n">mode</span><span class="p">])</span>  <span class="c1"># 打开文件，并且设置打开选项</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">[,</span> <span class="n">mode</span><span class="p">])</span>        <span class="c1"># 以权限 mode (int) 创建一个名或路径为 path 的空文件夹，默认 mode 是 0777 (八进制)</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>               <span class="c1"># 删除文件，不能删除文件夹</span>
-<span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1"># 删除空文件夹</span>
-<span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>           <span class="c1"># 递归删除空文件夹</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>           <span class="c1"># 重命名，原名 src ，改后 dst</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1"># 切换目录，相当于 cd</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>          <span class="c1"># 改变文件权限，相当于 chmod</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>                   <span class="c1"># 返回当前目录绝对路径，相当于 pwd</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>              <span class="c1"># 返回文件夹下所有文件或文件夹的名字的列表，相当于 ls</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">flags</span><span class="p">[,</span> <span class="n">mode</span><span class="p">])</span>  <span class="c1"># 打开文件，并且设置打开选项</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">[,</span> <span class="n">mode</span><span class="p">])</span>        <span class="c1"># 以权限 mode (int) 创建一个名或路径为 path 的空文件夹，默认 mode 是 0777 (八进制)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>               <span class="c1"># 删除文件，不能删除文件夹</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1"># 删除空文件夹</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>           <span class="c1"># 递归删除空文件夹</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>           <span class="c1"># 重命名，原名 src ，改后 dst</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="ospath" class="headerLink">
     <a href="#ospath" class="header-mark"></a>os.path</h4><p><code>os.path</code>模块主要用于获取文件的属性。</p>
@@ -656,27 +652,27 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                 <span class="c1"># 判断路径是否存在</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                  <span class="c1"># 判断路径是否为目录</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1"># 返回绝对路径</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1"># 返回文件路径</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>               <span class="c1"># 返回文件名</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">commonprefix</span><span class="p">(</span><span class="n">pathList</span><span class="p">)</span>       <span class="c1"># 返回多个路径的公共最长路径</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path1</span><span class="p">[,</span> <span class="n">path2</span><span class="p">[,</span> <span class="o">...</span><span class="p">]])</span>  <span class="c1"># 路径合并</span>
-
-<span class="c1"># 返回上一级路径</span>
-<span class="c1"># &#39;A/B&#39; -&gt; &#39;A&#39;</span>
-<span class="c1"># &#39;A&#39; -&gt; &#39;&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="c1"># 路径分割，返回 tuple(dirname, basename)</span>
-<span class="c1"># &#39;A/B/C&#39; -&gt; (&#39;A/B&#39;, &#39;C&#39;)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="c1"># 路径分割，返回 tuple(pathname, extension)</span>
-<span class="c1"># &#39;A/B/C.exe&#39; -&gt; (&#39;A/B/C&#39;, &#39;.exe&#39;)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                 <span class="c1"># 判断路径是否存在</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                  <span class="c1"># 判断路径是否为目录</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1"># 返回绝对路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1"># 返回文件路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>               <span class="c1"># 返回文件名</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">commonprefix</span><span class="p">(</span><span class="n">pathList</span><span class="p">)</span>       <span class="c1"># 返回多个路径的公共最长路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path1</span><span class="p">[,</span> <span class="n">path2</span><span class="p">[,</span> <span class="o">...</span><span class="p">]])</span>  <span class="c1"># 路径合并</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 返回上一级路径</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#39;A/B&#39; -&gt; &#39;A&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#39;A&#39; -&gt; &#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 路径分割，返回 tuple(dirname, basename)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#39;A/B/C&#39; -&gt; (&#39;A/B&#39;, &#39;C&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 路径分割，返回 tuple(pathname, extension)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#39;A/B/C.exe&#39; -&gt; (&#39;A/B/C&#39;, &#39;.exe&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="文件操作" class="headerLink">
     <a href="#%e6%96%87%e4%bb%b6%e6%93%8d%e4%bd%9c" class="header-mark"></a>文件操作</h3><div class="highlight"><div class="chroma">
@@ -684,8 +680,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">open</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">open</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="技巧" class="headerLink">
     <a href="#%e6%8a%80%e5%b7%a7" class="header-mark"></a>技巧</h2><h3 id="数字编号前置-0" class="headerLink">
@@ -701,15 +697,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">s1</span> <span class="o">=</span> <span class="s2">&#34;12&#34;</span>
-<span class="n">s1</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># &#34;0012&#34;</span>
-
-<span class="n">s2</span> <span class="o">=</span> <span class="s2">&#34;-12&#34;</span>
-<span class="n">s2</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># &#34;-0012&#34;</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="s1">&#39;</span><span class="si">%04d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span>   <span class="c1"># &#34;0012&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s1</span> <span class="o">=</span> <span class="s2">&#34;12&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># &#34;0012&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">s2</span> <span class="o">=</span> <span class="s2">&#34;-12&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s2</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># &#34;-0012&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;</span><span class="si">%04d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span>   <span class="c1"># &#34;0012&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="列表推导式" class="headerLink">
     <a href="#%e5%88%97%e8%a1%a8%e6%8e%a8%e5%af%bc%e5%bc%8f" class="header-mark"></a>列表推导式</h3><div class="highlight"><div class="chroma">
@@ -719,10 +715,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>                     <span class="c1"># [0, 2, 4]</span>
-<span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="s1">&#39;ab&#39;</span><span class="p">]</span>  <span class="c1"># [&#39;0a&#39;, &#39;0b&#39;, &#39;1a&#39;, &#39;1b&#39;]</span>
-<span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>     <span class="c1"># [0, 2, 2, 6]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>                     <span class="c1"># [0, 2, 4]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="s1">&#39;ab&#39;</span><span class="p">]</span>  <span class="c1"># [&#39;0a&#39;, &#39;0b&#39;, &#39;1a&#39;, &#39;1b&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>     <span class="c1"># [0, 2, 2, 6]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="匿名函数--map" class="headerLink">
     <a href="#%e5%8c%bf%e5%90%8d%e5%87%bd%e6%95%b0--map" class="header-mark"></a>匿名函数 + map</h3><div class="highlight"><div class="chroma">
@@ -731,9 +727,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>                 <span class="c1"># [0, 2, 4]</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="s1">&#39;abc&#39;</span><span class="p">))</span>  <span class="c1"># [&#39;0a&#39;, &#39;1b&#39;, &#39;2c&#39;]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>                 <span class="c1"># [0, 2, 4]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="s1">&#39;abc&#39;</span><span class="p">))</span>  <span class="c1"># [&#39;0a&#39;, &#39;1b&#39;, &#39;2c&#39;]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="zip" class="headerLink">
     <a href="#zip" class="header-mark"></a>zip</h3><div class="highlight"><div class="chroma">
@@ -747,14 +743,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">))</span>  <span class="c1"># [(&#39;0&#39;, &#39;a&#39;), (&#39;1&#39;, &#39;b&#39;)]</span>
-<span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">))</span>  <span class="c1"># {&#39;0&#39;: &#39;a&#39;, &#39;1&#39;: &#39;b&#39;}</span>
-
-<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;ab&#39;</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="c1"># a x</span>
-<span class="c1"># b y</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">))</span>  <span class="c1"># [(&#39;0&#39;, &#39;a&#39;), (&#39;1&#39;, &#39;b&#39;)]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">))</span>  <span class="c1"># {&#39;0&#39;: &#39;a&#39;, &#39;1&#39;: &#39;b&#39;}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;ab&#39;</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># a x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># b y</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="enumerate-1" class="headerLink">
     <a href="#enumerate-1" class="header-mark"></a>enumerate</h3><div class="highlight"><div class="chroma">
@@ -767,13 +763,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;ab&#39;</span><span class="p">))</span>  <span class="c1"># [(0, &#39;a&#39;), (1, &#39;b&#39;)]</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;ab&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="c1"># 0 a</span>
-<span class="c1"># 1 b</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;ab&#39;</span><span class="p">))</span>  <span class="c1"># [(0, &#39;a&#39;), (1, &#39;b&#39;)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;ab&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 0 a</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1 b</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="qa" class="headerLink">
     <a href="#qa" class="header-mark"></a>Q&amp;A</h2><h3 id="unicodedecodeerror" class="headerLink">
@@ -795,11 +791,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">foo_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">design</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span>
-        <span class="n">emphasis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span>
-    <span class="n">color</span> <span class="o">==</span> <span class="s1">&#39;red&#39;</span> <span class="ow">and</span> <span class="n">emphasis</span> <span class="o">==</span> <span class="s1">&#39;strong&#39;</span><span class="p">):</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">foo_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">design</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emphasis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">==</span> <span class="s1">&#39;red&#39;</span> <span class="ow">and</span> <span class="n">emphasis</span> <span class="o">==</span> <span class="s1">&#39;strong&#39;</span><span class="p">):</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>文本字符串在一行放不下，可以使用括号来实现隐式行连接。</li>
@@ -810,9 +806,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;This will build a very long long &#39;</span>
-     <span class="s1">&#39;long long long long long long string&#39;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;This will build a very long long &#39;</span>
+</span></span><span class="line"><span class="cl">     <span class="s1">&#39;long long long long long long string&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>除非是用于实现行连接，否则不要在返回语句或条件语句中使用括号。</li>
@@ -844,29 +840,29 @@
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Aligned with opening delimiter</span>
-<span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span>
-                         <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
-
-<span class="c1"># Aligned with opening delimiter in a dictionary</span>
-<span class="n">foo</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">long_dictionary_key</span><span class="p">:</span> <span class="n">value1</span> <span class="o">+</span>
-                         <span class="n">value2</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-
-<span class="c1"># 4-space hanging indent; nothing on first line</span>
-<span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span>
-    <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span>
-    <span class="n">var_four</span><span class="p">)</span>
-
-<span class="c1"># 4-space hanging indent in a dictionary</span>
-<span class="n">foo</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">long_dictionary_key</span><span class="p">:</span>
-        <span class="n">long_dictionary_value</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Aligned with opening delimiter</span>
+</span></span><span class="line"><span class="cl"><span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                         <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Aligned with opening delimiter in a dictionary</span>
+</span></span><span class="line"><span class="cl"><span class="n">foo</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">long_dictionary_key</span><span class="p">:</span> <span class="n">value1</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                         <span class="n">value2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4-space hanging indent; nothing on first line</span>
+</span></span><span class="line"><span class="cl"><span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var_four</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4-space hanging indent in a dictionary</span>
+</span></span><span class="line"><span class="cl"><span class="n">foo</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">long_dictionary_key</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">long_dictionary_value</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>顶级定义之间空两行（全局类、全局函数、全局变量），方法定义之间空一行（类内函数之间、类与第一个函数之间）。</li>
@@ -875,7 +871,7 @@
 <li>参数列表、索引或切片的左括号前不加空格。</li>
 <li>二元操作符两边都加上一个空格。</li>
 <li>&lsquo;=&lsquo;用于指示参数值或默认值时，不在其两侧使用空格。</li>
-<li>不要用空格来垂直对齐多行间的标记。（如&rsquo;#'、'='、':&lsquo;等）</li>
+<li>不要用空格来垂直对齐多行间的标记。（如&rsquo;#&rsquo;、&rsquo;=&rsquo;、&rsquo;:&lsquo;等）</li>
 <li>类注释和函数注释规范</li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -928,53 +924,53 @@
 </span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">SampleClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="s2">&#34;&#34;&#34;Summary of class here.
-</span><span class="s2">
-</span><span class="s2">    Longer class information....
-</span><span class="s2">    Longer class information....
-</span><span class="s2">
-</span><span class="s2">    Attributes:
-</span><span class="s2">        likes_spam: A boolean indicating if we like SPAM or not.
-</span><span class="s2">        eggs: An integer count of the eggs we have laid.
-</span><span class="s2">    &#34;&#34;&#34;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">likes_spam</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="s2">&#34;&#34;&#34;Inits SampleClass with blah.&#34;&#34;&#34;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">likes_spam</span> <span class="o">=</span> <span class="n">likes_spam</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">eggs</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">def</span> <span class="nf">fetch_bigtable_rows</span><span class="p">(</span><span class="n">big_table</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">other_silly_variable</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="s2">&#34;&#34;&#34;Fetches rows from a Bigtable.
-</span><span class="s2">
-</span><span class="s2">        Retrieves rows pertaining to the given keys from the Table instance
-</span><span class="s2">        represented by big_table.  Silly things may happen if
-</span><span class="s2">        other_silly_variable is not None.
-</span><span class="s2">
-</span><span class="s2">        Args:
-</span><span class="s2">            big_table: An open Bigtable Table instance.
-</span><span class="s2">            keys: A sequence of strings representing the key of each table row
-</span><span class="s2">                to fetch.
-</span><span class="s2">            other_silly_variable: Another optional variable, that has a much
-</span><span class="s2">                longer name than the other args, and which does nothing.
-</span><span class="s2">
-</span><span class="s2">        Returns:
-</span><span class="s2">            A dict mapping keys to the corresponding table row data
-</span><span class="s2">            fetched. Each row is represented as a tuple of strings. For
-</span><span class="s2">            example:
-</span><span class="s2">
-</span><span class="s2">            {&#39;Serak&#39;: (&#39;Rigel VII&#39;, &#39;Preparer&#39;),
-</span><span class="s2">            &#39;Zim&#39;: (&#39;Irk&#39;, &#39;Invader&#39;),
-</span><span class="s2">            &#39;Lrrr&#39;: (&#39;Omicron Persei 8&#39;, &#39;Emperor&#39;)}
-</span><span class="s2">
-</span><span class="s2">            If a key from the keys argument is missing from the dictionary,
-</span><span class="s2">            then that row was not found in the table.
-</span><span class="s2">
-</span><span class="s2">        Raises:
-</span><span class="s2">            IOError: An error occurred accessing the bigtable.Table object.
-</span><span class="s2">        &#34;&#34;&#34;</span>
-        <span class="k">pass</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SampleClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Summary of class here.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Longer class information....
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Longer class information....
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Attributes:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        likes_spam: A boolean indicating if we like SPAM or not.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        eggs: An integer count of the eggs we have laid.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">likes_spam</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Inits SampleClass with blah.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">likes_spam</span> <span class="o">=</span> <span class="n">likes_spam</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">eggs</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">fetch_bigtable_rows</span><span class="p">(</span><span class="n">big_table</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">other_silly_variable</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Fetches rows from a Bigtable.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Retrieves rows pertaining to the given keys from the Table instance
+</span></span></span><span class="line"><span class="cl"><span class="s2">        represented by big_table.  Silly things may happen if
+</span></span></span><span class="line"><span class="cl"><span class="s2">        other_silly_variable is not None.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">            big_table: An open Bigtable Table instance.
+</span></span></span><span class="line"><span class="cl"><span class="s2">            keys: A sequence of strings representing the key of each table row
+</span></span></span><span class="line"><span class="cl"><span class="s2">                to fetch.
+</span></span></span><span class="line"><span class="cl"><span class="s2">            other_silly_variable: Another optional variable, that has a much
+</span></span></span><span class="line"><span class="cl"><span class="s2">                longer name than the other args, and which does nothing.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">            A dict mapping keys to the corresponding table row data
+</span></span></span><span class="line"><span class="cl"><span class="s2">            fetched. Each row is represented as a tuple of strings. For
+</span></span></span><span class="line"><span class="cl"><span class="s2">            example:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">            {&#39;Serak&#39;: (&#39;Rigel VII&#39;, &#39;Preparer&#39;),
+</span></span></span><span class="line"><span class="cl"><span class="s2">            &#39;Zim&#39;: (&#39;Irk&#39;, &#39;Invader&#39;),
+</span></span></span><span class="line"><span class="cl"><span class="s2">            &#39;Lrrr&#39;: (&#39;Omicron Persei 8&#39;, &#39;Emperor&#39;)}
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">            If a key from the keys argument is missing from the dictionary,
+</span></span></span><span class="line"><span class="cl"><span class="s2">            then that row was not found in the table.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Raises:
+</span></span></span><span class="line"><span class="cl"><span class="s2">            IOError: An error occurred accessing the bigtable.Table object.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>行注释应距离代码2个空格。</li>
@@ -986,9 +982,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># TODO(kl@gmail.com): Use a &#34;*&#34; here for string repetition.</span>
-<span class="c1"># TODO(Zeke) Change this to use relations.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># TODO(kl@gmail.com): Use a &#34;*&#34; here for string repetition.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TODO(Zeke) Change this to use relations.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>如果一个类不继承其它类，就显式继承 object。</li>
@@ -1003,15 +999,15 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># not %</span>
-<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">!&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">imperative</span><span class="p">,</span> <span class="n">expletive</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">imperative</span><span class="p">,</span> <span class="n">expletive</span><span class="p">)</span>  <span class="c1"># not +</span>
-<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;name: </span><span class="si">%s</span><span class="s1">; score: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># not +</span>
-<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;name: </span><span class="si">{}</span><span class="s1">; score: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># not +</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># not %</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">!&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">imperative</span><span class="p">,</span> <span class="n">expletive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">imperative</span><span class="p">,</span> <span class="n">expletive</span><span class="p">)</span>  <span class="c1"># not +</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;name: </span><span class="si">%s</span><span class="s1">; score: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># not +</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;name: </span><span class="si">{}</span><span class="s1">; score: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># not +</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>避免在循环中用+和+=操作符来累加字符串。可以将每个子串加入列表，然后在循环结束后用 &lsquo;'.join() 连接列表。</li>
+<li>避免在循环中用+和+=操作符来累加字符串。可以将每个子串加入列表，然后在循环结束后用 &lsquo;&rsquo;.join() 连接列表。</li>
 <li>在文件和 sockets 结束时，显式的关闭它。</li>
 <li>推荐使用 with 打开文件。</li>
 </ul>
@@ -1022,10 +1018,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;hello.txt&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hello_file</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">hello_file</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="n">line</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;hello.txt&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hello_file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">hello_file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span> <span class="n">line</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>不支持使用 with 语句的类似文件的对象，使用 contextlib.closing()。</li>
@@ -1039,12 +1035,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">contextlib</span>
-
-<span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">closing</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&#34;http://www.python.org/&#34;</span><span class="p">))</span> <span class="k">as</span> <span class="n">front_page</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">front_page</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="n">line</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">contextlib</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">closing</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&#34;http://www.python.org/&#34;</span><span class="p">))</span> <span class="k">as</span> <span class="n">front_page</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">front_page</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span> <span class="n">line</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>每个导入应该独占一行。</li>
@@ -1070,12 +1066,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>参考：</strong></p>
 <ul>
@@ -1111,7 +1107,7 @@
 </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
             <div class="footer-line"></div>
             <div class="footer-line">
@@ -1123,7 +1119,7 @@
         </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
             <i class="fas fa-comment fa-fw"></i>
         </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 
 <div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script></div>
 </body>

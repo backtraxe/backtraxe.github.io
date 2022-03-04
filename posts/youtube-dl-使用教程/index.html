@@ -173,15 +173,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 列出帮助菜单</span>
-youtube-dl -h/--help
-
-<span class="c1"># 查看版本</span>
-youtube-dl --version
-
-<span class="c1"># 升级</span>
-youtube-dl -U/--update
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 列出帮助菜单</span>
+</span></span><span class="line"><span class="cl">youtube-dl -h/--help
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看版本</span>
+</span></span><span class="line"><span class="cl">youtube-dl --version
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 升级</span>
+</span></span><span class="line"><span class="cl">youtube-dl -U/--update
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="三使用" class="headerLink">
     <a href="#%e4%b8%89%e4%bd%bf%e7%94%a8" class="header-mark"></a>三、使用</h2><div class="highlight"><div class="chroma">
@@ -217,36 +217,36 @@ youtube-dl -U/--update
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 列出所有清晰度和格式</span>
-youtube-dl -F/--list-formats &lt;URL&gt;
-
-<span class="c1"># 下载对应格式或清晰度</span>
-youtube-dl -f/--format &lt;FORMAT&gt; &lt;URL&gt;
-
-<span class="c1"># 下载后视频和音频合并</span>
-youtube-dl -f XXX+YYY &lt;URL&gt;
-
-<span class="c1"># 下载最佳质量</span>
-youtube-dl -f bestvideo+bestaudio &lt;URL&gt;
-
-<span class="c1"># 列出所有字幕</span>
-youtube-dl --list-subs &lt;URL&gt;
-
-<span class="c1"># 下载英文（en）字幕，格式为 srt</span>
-youtube-dl --sub-lang en --write-auto-sub --sub-format srt --skip-download &lt;URL&gt;
-
-<span class="c1"># 代理</span>
-youtube-dl --proxy &lt;URL&gt;
-
-<span class="c1"># cookies</span>
-youtube-dl --cookies &lt;FILE&gt;
-
-<span class="c1"># 登录</span>
-youtube-dl -u/--username &lt;USERNAME&gt;
-youtube-dl -p/--password &lt;PASSWORD&gt;
-youtube-dl -2/--twofactor &lt;TWOFACTOR&gt;
-youtube-dl --video-password &lt;PASSWORD&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 列出所有清晰度和格式</span>
+</span></span><span class="line"><span class="cl">youtube-dl -F/--list-formats &lt;URL&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载对应格式或清晰度</span>
+</span></span><span class="line"><span class="cl">youtube-dl -f/--format &lt;FORMAT&gt; &lt;URL&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载后视频和音频合并</span>
+</span></span><span class="line"><span class="cl">youtube-dl -f XXX+YYY &lt;URL&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载最佳质量</span>
+</span></span><span class="line"><span class="cl">youtube-dl -f bestvideo+bestaudio &lt;URL&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出所有字幕</span>
+</span></span><span class="line"><span class="cl">youtube-dl --list-subs &lt;URL&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载英文（en）字幕，格式为 srt</span>
+</span></span><span class="line"><span class="cl">youtube-dl --sub-lang en --write-auto-sub --sub-format srt --skip-download &lt;URL&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 代理</span>
+</span></span><span class="line"><span class="cl">youtube-dl --proxy &lt;URL&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># cookies</span>
+</span></span><span class="line"><span class="cl">youtube-dl --cookies &lt;FILE&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 登录</span>
+</span></span><span class="line"><span class="cl">youtube-dl -u/--username &lt;USERNAME&gt;
+</span></span><span class="line"><span class="cl">youtube-dl -p/--password &lt;PASSWORD&gt;
+</span></span><span class="line"><span class="cl">youtube-dl -2/--twofactor &lt;TWOFACTOR&gt;
+</span></span><span class="line"><span class="cl">youtube-dl --video-password &lt;PASSWORD&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div>
 
@@ -279,7 +279,7 @@ youtube-dl --video-password &lt;PASSWORD&gt;
 </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
             <div class="footer-line"></div>
             <div class="footer-line">
@@ -291,7 +291,7 @@ youtube-dl --video-password &lt;PASSWORD&gt;
         </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
             <i class="fas fa-comment fa-fw"></i>
         </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 
 <div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script></div>
 </body>

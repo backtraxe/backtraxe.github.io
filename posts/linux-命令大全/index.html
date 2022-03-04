@@ -209,18 +209,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 指定目录，默认当前目录</span>
-ls &lt;path&gt;
-
-<span class="c1"># 列出详细信息</span>
-<span class="c1"># 权限、用户、用户组、大小、修改时间、名称</span>
-ls -l
-<span class="c1"># 文件大小显示更直观</span>
-ls -lh
-
-<span class="c1"># 列出所有文件（包括隐藏）</span>
-ls -a
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 指定目录，默认当前目录</span>
+</span></span><span class="line"><span class="cl">ls &lt;path&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出详细信息</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 权限、用户、用户组、大小、修改时间、名称</span>
+</span></span><span class="line"><span class="cl">ls -l
+</span></span><span class="line"><span class="cl"><span class="c1"># 文件大小显示更直观</span>
+</span></span><span class="line"><span class="cl">ls -lh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出所有文件（包括隐藏）</span>
+</span></span><span class="line"><span class="cl">ls -a
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="排序" class="headerLink">
     <a href="#%e6%8e%92%e5%ba%8f" class="header-mark"></a>排序</h3><div class="highlight"><div class="chroma">
@@ -235,15 +235,15 @@ ls -a
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 按修改时间从近到远排序</span>
-ls -t
-
-<span class="c1"># 按文件大小从大到小排序</span>
-ls -S
-
-<span class="c1"># 逆序排序</span>
-ls -r
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 按修改时间从近到远排序</span>
+</span></span><span class="line"><span class="cl">ls -t
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 按文件大小从大到小排序</span>
+</span></span><span class="line"><span class="cl">ls -S
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 逆序排序</span>
+</span></span><span class="line"><span class="cl">ls -r
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="打印方式" class="headerLink">
     <a href="#%e6%89%93%e5%8d%b0%e6%96%b9%e5%bc%8f" class="header-mark"></a>打印方式</h3><div class="highlight"><div class="chroma">
@@ -254,11 +254,11 @@ ls -r
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 纵向显示（一行一个）</span>
-ls -1
-<span class="c1"># 横向显示（逗号分隔）</span>
-ls -m
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 纵向显示（一行一个）</span>
+</span></span><span class="line"><span class="cl">ls -1
+</span></span><span class="line"><span class="cl"><span class="c1"># 横向显示（逗号分隔）</span>
+</span></span><span class="line"><span class="cl">ls -m
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="文件权限" class="headerLink">
     <a href="#%e6%96%87%e4%bb%b6%e6%9d%83%e9%99%90" class="header-mark"></a>文件权限</h3><p><code>drwxrwxrwx</code></p>
@@ -291,11 +291,11 @@ ls -m
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 单个文件</span>
-scp &lt;file&gt; &lt;user&gt;@&lt;ip&gt;:&lt;path&gt; -P &lt;ssh_port&gt;
-<span class="c1"># 目录</span>
-scp -r &lt;folder&gt; &lt;user&gt;@&lt;ip&gt;:&lt;path&gt; -P &lt;ssh_port&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 单个文件</span>
+</span></span><span class="line"><span class="cl">scp &lt;file&gt; &lt;user&gt;@&lt;ip&gt;:&lt;path&gt; -P &lt;ssh_port&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 目录</span>
+</span></span><span class="line"><span class="cl">scp -r &lt;folder&gt; &lt;user&gt;@&lt;ip&gt;:&lt;path&gt; -P &lt;ssh_port&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="远程主机的文件下载到本地主机" class="headerLink">
     <a href="#%e8%bf%9c%e7%a8%8b%e4%b8%bb%e6%9c%ba%e7%9a%84%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e5%88%b0%e6%9c%ac%e5%9c%b0%e4%b8%bb%e6%9c%ba" class="header-mark"></a>远程主机的文件下载到本地主机</h3><div class="highlight"><div class="chroma">
@@ -306,11 +306,11 @@ scp -r &lt;folder&gt; &lt;user&gt;@&lt;ip&gt;:&lt;path&gt; -P &lt;ssh_port&gt;
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 单个文件</span>
-scp &lt;user&gt;@&lt;ip&gt;:&lt;file&gt; &lt;path&gt; -P &lt;ssh_port&gt;
-<span class="c1"># 目录</span>
-scp -r &lt;user&gt;@&lt;ip&gt;:&lt;folder&gt; &lt;path&gt; -P &lt;ssh_port&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 单个文件</span>
+</span></span><span class="line"><span class="cl">scp &lt;user&gt;@&lt;ip&gt;:&lt;file&gt; &lt;path&gt; -P &lt;ssh_port&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 目录</span>
+</span></span><span class="line"><span class="cl">scp -r &lt;user&gt;@&lt;ip&gt;:&lt;folder&gt; &lt;path&gt; -P &lt;ssh_port&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="ssh" class="headerLink">
     <a href="#ssh" class="header-mark"></a>ssh</h2><p>远程登录。</p>
@@ -322,11 +322,11 @@ scp -r &lt;user&gt;@&lt;ip&gt;:&lt;folder&gt; &lt;path&gt; -P &lt;ssh_port&gt;
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 默认端口 22</span>
-ssh &lt;user&gt;@&lt;ip&gt;
-<span class="c1"># 指定端口</span>
-ssh &lt;user&gt;@&lt;ip&gt; -p &lt;port&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 默认端口 22</span>
+</span></span><span class="line"><span class="cl">ssh &lt;user&gt;@&lt;ip&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定端口</span>
+</span></span><span class="line"><span class="cl">ssh &lt;user&gt;@&lt;ip&gt; -p &lt;port&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="ssh-免密登录" class="headerLink">
     <a href="#ssh-%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" class="header-mark"></a>ssh 免密登录</h3><div class="highlight"><div class="chroma">
@@ -340,14 +340,14 @@ ssh &lt;user&gt;@&lt;ip&gt; -p &lt;port&gt;
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 为当前用户生成 ssh 公钥 + 私钥。</span>
-<span class="c1"># 默认保存在 $home/.ssh/ 文件夹中。</span>
-<span class="c1"># id_rsa 是私钥，id_rsa.pub 是公钥。</span>
-ssh-keygen
-<span class="c1"># 将当前用户的公钥复制到服务器的 ~/.ssh/authorized_keys 文件</span>
-ssh-copy-id &lt;user&gt;@&lt;ip&gt;:&lt;port&gt;
-<span class="c1"># 或者手动将公钥添加到服务器的 ~/.ssh/authorized_keys 文件</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 为当前用户生成 ssh 公钥 + 私钥。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 默认保存在 $home/.ssh/ 文件夹中。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># id_rsa 是私钥，id_rsa.pub 是公钥。</span>
+</span></span><span class="line"><span class="cl">ssh-keygen
+</span></span><span class="line"><span class="cl"><span class="c1"># 将当前用户的公钥复制到服务器的 ~/.ssh/authorized_keys 文件</span>
+</span></span><span class="line"><span class="cl">ssh-copy-id &lt;user&gt;@&lt;ip&gt;:&lt;port&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者手动将公钥添加到服务器的 ~/.ssh/authorized_keys 文件</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div>
 
@@ -380,7 +380,7 @@ ssh-copy-id &lt;user&gt;@&lt;ip&gt;:&lt;port&gt;
 </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
             <div class="footer-line"></div>
             <div class="footer-line">
@@ -392,7 +392,7 @@ ssh-copy-id &lt;user&gt;@&lt;ip&gt;:&lt;port&gt;
         </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
             <i class="fas fa-comment fa-fw"></i>
         </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 
 <div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script></div>
 </body>

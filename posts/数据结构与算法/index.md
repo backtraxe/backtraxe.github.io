@@ -254,12 +254,79 @@ void quickSort(vector<int> arr, int low, int high) {
 
 1. [当我谈排序时，我在谈些什么🤔](https://leetcode-cn.com/problems/sort-an-array/solution/dang-wo-tan-pai-xu-shi-wo-zai-tan-xie-shi-yao-by-s/)
 
+## 栈
+
+### 单调栈
+
+#### 返回第一个更大元素
+
+```cpp
+vector<int> nextGreaterElement(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> ans(n);
+    stack<int> st;
+    for (int i = n - 1; i >= 0; i--) {
+        while (!st.empty() && st.top() <= nums[i]) {
+            // 栈顶元素比当前元素小，弹出
+            st.pop();
+        }
+        // 栈顶元素即为下一个更大元素
+        ans[i] = st.empty() ? -1 : st.top();
+        // 当前元素入栈
+        st.push(nums[i]);
+    }
+    return ans;
+}
+```
+
+```java
+int[] nextGreaterElement(int[] nums) {
+    int n = nums.length;
+    int[] ans = new int[n];
+    Deque<Integer> stack = new LinkedList<>();
+    for (int i = n - 1; i >= 0; i--) {
+        while (!stack.isEmpty() && stack.peek() <= nums[i]) {
+            stack.pop();
+        }
+        ans[i] = stack.isEmpty() ? -1 : stack.peek();
+        stack.push(nums[i]);
+    }
+    return ans;
+}
+```
+
+#### 循环数组
+
+```java
+int[] nextGreaterElement(int[] nums) {
+    int n = nums.length;
+    int[] ans = new int[n];
+    Stack<Integer> st = new Stack<>();
+    for (int i = 2 * n - 1; i >= 0; i--) {
+        while (!st.isEmpty() && st.peek() <= nums[i % n]) {
+            st.pop();
+        }
+        ans[i % n] = st.isEmpty() ? -1 : st.peek();
+        st.push(nums[i % n]);
+    }
+    return ans;
+}
+```
+
 ## 链表
 
 **trick:**
 
 - 双指针（快慢指针）
 - 虚拟头结点
+
+### 21. 合并两个有序链表
+
+双指针
+
+### 23. 合并K个升序链表
+
+优先队列
 
 ### 返回链表的倒数第 k 个节点
 
@@ -303,11 +370,12 @@ public static ListNode findFromEnd2(ListNode head, int k) {
 
 ### 删除链表的倒数第 N 个结点
 
-
+1. 添加虚表头结点。
+2. 返回链表的倒数第 k+1 个节点，删除后继结点。
 
 ### 单链表的中点
 
-快慢指针
+快慢指针，慢走一步，快走两步。
 
 ### 判断链表是否包含环
 
@@ -427,6 +495,63 @@ public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 ```
 
 4. 哈希表存储结点。
+
+### 递归反转整个链表
+
+```java
+ListNode reverse(ListNode head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+    // 返回从 head.next 开始的链表的逆序的头结点
+    // newHead 即为原链表尾结点
+    ListNode newHead = reverse(head.next);
+    // head.next 原来是待逆序链表的头结点
+    // 逆序后变为尾结点
+    // 将 head 作为新的尾结点，实现逆序
+    head.next.next = head;
+    head.next = null;
+    // 返回逆序后链表的头结点
+    return newHead;
+}
+```
+
+### 递归反转链表前 N 个节点
+
+```java
+// 后继结点
+ListNode successor = null;
+
+ListNode reverseN(ListNode head, int n) {
+    if (n == 1) {
+        successor = head.next;
+        return head;
+    }
+    ListNode newHead = reverseN(head.next, n - 1);
+    head.next.next = head;
+    // 将尾结点连接到后继结点上
+    head.next = successor;
+    return newHead;
+}
+```
+
+### 递归反转链表第 M 个节点到第 N 个节点
+
+```java
+ListNode reverseBetween(ListNode head, int m, int n) {
+    if (m == 1) {
+        return reverseN(head, n);
+    }
+    head.next = reverseBetween(head.next, m - 1, n - 1);
+    return head;
+}
+```
+
+### 25. K 个一组翻转链表
+
+```java
+
+```
 
 ## 树
 
@@ -780,7 +905,262 @@ def BiBFS(开始节点 s，结束节点 e):
 
 ### Flood Fill
 
-```java
+#### 岛屿数量
 
+```java
+int[] dx = {0, 1, 0, -1};
+int[] dy = {1, 0, -1, 0};
+int m, n;
+
+public int numIslands(char[][] grid) {
+    m = grid.length;
+    n = grid[0].length;
+    boolean[][] visited = new boolean[m][n];
+    int res = 0;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (grid[i][j] == '1' && !visited[i][j]) {
+                res++;
+                dfs(grid, i, j, visited);
+            }
+        }
+    }
+    return res;
+}
+
+void dfs(char[][] grid, int x, int y, boolean[][] visited) {
+    if (x < 0 || x >= m || y < 0 || y >= n || visited[x][y] || grid[x][y] == '0') {
+        return;
+    }
+    visited[x][y] = true;
+    for (int i = 0; i < 4; i++) {
+        int nextX = x + dx[i];
+        int nextY = y + dy[i];
+        dfs(grid, nextX, nextY, visited);
+    }
+}
+```
+
+#### 封闭岛屿的数量
+
+将靠边的岛屿变为水，剩下的就是「封闭岛屿」。
+
+```java
+void dfs(int[][] grid, int x, int y) {
+    if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] == 0) {
+        return;
+    }
+    grid[x][y] = 0; // 淹没
+    for (int i = 0; i < 4; i++) {
+        int nextX = x + dx[i];
+        int nextY = y + dy[i];
+        dfs(grid, nextX, nextY);
+    }
+}
+```
+
+#### 1020. 飞地的数量
+
+先把靠边的陆地淹掉，然后去数剩下的陆地数量。
+
+#### 695. 岛屿的最大面积
+
+淹没岛屿的同时，记录这个岛屿的面积。
+
+#### 1905. 统计子岛屿
+
+岛屿 B 中存在一片陆地，在岛屿 A 的对应位置是海水，那么岛屿 B 就不是岛屿 A 的子岛。
+
+#### 694. 不同岛屿的数量
+
+对于形状相同的岛屿，如果从同一起点出发，dfs 函数遍历的顺序肯定是一样的。
+
+分别用 1, 2, 3, 4 代表上下左右，用 -1, -2, -3, -4 代表上下左右的撤销。
+
+把二维矩阵中的「岛屿」进行转化，变成比如字符串这样的类型，然后利用 HashSet 这样的数据结构去重，最终得到不同的岛屿的个数。
+
+## 并查集 Union Find
+
+## 二分查找
+
+### 闭区间的二分查找
+
+```java
+int binarySearch(int[] nums, int target) {
+    // [left, right]
+    int left = 0;
+    int right = nums.length - 1;
+
+    while(left <= right) {
+        // 防止整数溢出
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            // 右侧
+            left = mid + 1;
+        } else {
+            // 左侧
+            right = mid - 1;
+        }
+    }
+    return -1;
+}
+```
+
+### 左闭右开区间的二分查找
+
+```java
+int binarySearch(int[] nums, int target) {
+    // [left, right)
+    int left = 0;
+    int right = nums.length;
+
+    while(left < right) {
+        // 防止整数溢出
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            // 右侧
+            left = mid + 1;
+        } else {
+            // 左侧
+            right = mid;
+        }
+    }
+    return -1;
+}
+```
+
+### 左侧边界的二分查找 lower_bound
+
+```java
+// 左侧边界
+// 寻找第一个大于等于 target 的元素位置
+int binarySearch(int[] nums, int target) {
+    // [left, right)
+    int left = 0;
+    int right = nums.length;
+
+    while(left < right) {
+        // 防止整数溢出
+        int mid = left + (right - left) / 2;
+        if (nums[mid] >= target) {
+            // 左侧、中间
+            right = mid;
+        } else {
+            // 右侧
+            left = mid + 1;
+        }
+    }
+    return left;
+    // left 范围为 [0, nums.length]
+    // 当 left == nums.length 
+    // 或者 nums[left] != target
+    // 说明 nums 中无 target
+}
+```
+
+### 右侧边界的二分查找 upper_bound
+
+```java
+// 右侧边界
+// 寻找第一个大于 target 的元素位置
+int binarySearch(int[] nums, int target) {
+    // [left, right)
+    int left = 0;
+    int right = nums.length;
+
+    while(left < right) {
+        // 防止整数溢出
+        int mid = left + (right - left) / 2;
+        if (nums[mid] > target) {
+            // 左侧
+            right = mid;
+        } else {
+            // 中间、右侧
+            left = mid + 1;
+        }
+    }
+    return left;
+    // left 范围为 [0, nums.length]
+    // 当 left == 0 
+    // 或者 nums[left - 1] != target
+    // 说明 nums 中无 target
+}
+```
+
+## 滑动窗口
+
+```python
+demand = {}
+window = {}
+# 更新 demand
+
+left = 0
+right = 0
+# 滑动窗口 [left, right)
+while right < s.size():
+    # 增大窗口
+    窗口添加右结点
+    right += 1
+    ...
+    
+    while 满足条件:
+        # 缩小窗口
+        窗口删除左结点
+        left += 1
+        ...
+}
+```
+
+```cpp
+string minWindow(string s, string t) {
+    unordered_map<char, int> demand, window;
+    for (char c : t) {
+        demand[c]++;
+    }
+
+    int left = 0;
+    int right = 0;
+
+    // 符合条件的字符种类
+    int valid = 0;
+
+    // 记录最小覆盖子串的起始索引及长度
+    int start = 0;
+    int len = INT_MAX;
+
+    while (right < s.size()) {
+        char c = s[right];
+        right++;
+        // 进行窗口内数据的一系列更新
+        if (demand.count(c)) {
+            window[c]++;
+            if (window[c] == demand[c])
+                valid++;
+        }
+
+        // 判断左侧窗口是否要收缩
+        while (valid == demand.size()) {
+            // 在这里更新最小覆盖子串
+            if (right - left < len) {
+                start = left;
+                len = right - left;
+            }
+            char d = s[left];
+            left++;
+            // 进行窗口内数据的一系列更新
+            if (demand.count(d)) {
+                if (window[d] == demand[d])
+                    valid--;
+                window[d]--;
+            }                    
+        }
+    }
+    // 返回最小覆盖子串
+    return len == INT_MAX ? "" : s.substr(start, len);
+}
 ```
 

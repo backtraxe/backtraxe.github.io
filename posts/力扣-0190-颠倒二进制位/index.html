@@ -193,18 +193,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">uint32_t</span> <span class="n">reverseBits</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">uint32_t</span> <span class="n">rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">rev</span> <span class="o">|=</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">31</span> <span class="o">-</span> <span class="n">i</span><span class="p">);</span>
-            <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">rev</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">uint32_t</span> <span class="n">reverseBits</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">uint32_t</span> <span class="n">rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">rev</span> <span class="o">|=</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">31</span> <span class="o">-</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">rev</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -220,17 +220,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">reverseBits</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">rev</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">32</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">!=</span> <span class="n">0</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">rev</span> <span class="o">|=</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">1</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="o">(</span><span class="n">31</span> <span class="o">-</span> <span class="n">i</span><span class="o">);</span>
-            <span class="n">n</span> <span class="o">&gt;&gt;&gt;=</span> <span class="n">1</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">rev</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">reverseBits</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">rev</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">32</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">!=</span> <span class="n">0</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">rev</span> <span class="o">|=</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">1</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="o">(</span><span class="n">31</span> <span class="o">-</span> <span class="n">i</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">n</span> <span class="o">&gt;&gt;&gt;=</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">rev</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -244,15 +244,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">uint32_t</span> <span class="nf">reverseBits</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">uint32_t</span> <span class="n">rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">rev</span> <span class="o">|=</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">31</span> <span class="o">-</span> <span class="n">i</span><span class="p">);</span>
-        <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">rev</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">uint32_t</span> <span class="nf">reverseBits</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">uint32_t</span> <span class="n">rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rev</span> <span class="o">|=</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">31</span> <span class="o">-</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">rev</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -266,15 +266,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">reverseBits</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">32</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">rev</span> <span class="o">|=</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">31</span> <span class="o">-</span> <span class="nx">i</span><span class="p">);</span>
-        <span class="nx">n</span> <span class="o">&gt;&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">rev</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">reverseBits</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">rev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">32</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">rev</span> <span class="o">|=</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">31</span> <span class="o">-</span> <span class="nx">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">n</span> <span class="o">&gt;&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">rev</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -287,14 +287,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">reverseBits</span><span class="p">(</span><span class="nx">n</span> <span class="kt">uint32</span><span class="p">)</span> <span class="p">(</span><span class="nx">rev</span> <span class="kt">uint32</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">32</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span> <span class="p">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-        <span class="nx">rev</span> <span class="o">|=</span> <span class="nx">n</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">31</span> <span class="o">-</span> <span class="nx">i</span><span class="p">)</span>
-        <span class="nx">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
-    <span class="p">}</span>
-    <span class="k">return</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">reverseBits</span><span class="p">(</span><span class="nx">n</span> <span class="kt">uint32</span><span class="p">)</span> <span class="p">(</span><span class="nx">rev</span> <span class="kt">uint32</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">32</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span> <span class="p">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">rev</span> <span class="o">|=</span> <span class="nx">n</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">31</span> <span class="o">-</span> <span class="nx">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="复杂度" class="headerLink">
     <a href="#%e5%a4%8d%e6%9d%82%e5%ba%a6" class="header-mark"></a>复杂度</h3><ul>
@@ -331,23 +331,23 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">private</span><span class="o">:</span>
-    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M1</span> <span class="o">=</span> <span class="mh">0x55555555</span><span class="p">;</span> <span class="c1">// 01010101010101010101010101010101
-</span><span class="c1"></span>    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M2</span> <span class="o">=</span> <span class="mh">0x33333333</span><span class="p">;</span> <span class="c1">// 00110011001100110011001100110011
-</span><span class="c1"></span>    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M4</span> <span class="o">=</span> <span class="mh">0x0f0f0f0f</span><span class="p">;</span> <span class="c1">// 00001111000011110000111100001111
-</span><span class="c1"></span>    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M8</span> <span class="o">=</span> <span class="mh">0x00ff00ff</span><span class="p">;</span> <span class="c1">// 00000000111111110000000011111111
-</span><span class="c1"></span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">uint32_t</span> <span class="n">reverseBits</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="n">M1</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="n">M2</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="n">M4</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">&amp;</span> <span class="n">M8</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M1</span> <span class="o">=</span> <span class="mh">0x55555555</span><span class="p">;</span> <span class="c1">// 01010101010101010101010101010101
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M2</span> <span class="o">=</span> <span class="mh">0x33333333</span><span class="p">;</span> <span class="c1">// 00110011001100110011001100110011
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M4</span> <span class="o">=</span> <span class="mh">0x0f0f0f0f</span><span class="p">;</span> <span class="c1">// 00001111000011110000111100001111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M8</span> <span class="o">=</span> <span class="mh">0x00ff00ff</span><span class="p">;</span> <span class="c1">// 00000000111111110000000011111111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">uint32_t</span> <span class="n">reverseBits</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="n">M1</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="n">M2</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="n">M4</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">&amp;</span> <span class="n">M8</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -367,21 +367,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">M1</span> <span class="o">=</span> <span class="n">0x55555555</span><span class="o">;</span> <span class="c1">// 01010101010101010101010101010101
-</span><span class="c1"></span>    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">M2</span> <span class="o">=</span> <span class="n">0x33333333</span><span class="o">;</span> <span class="c1">// 00110011001100110011001100110011
-</span><span class="c1"></span>    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">M4</span> <span class="o">=</span> <span class="n">0x0f0f0f0f</span><span class="o">;</span> <span class="c1">// 00001111000011110000111100001111
-</span><span class="c1"></span>    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">M8</span> <span class="o">=</span> <span class="n">0x00ff00ff</span><span class="o">;</span> <span class="c1">// 00000000111111110000000011111111
-</span><span class="c1"></span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">reverseBits</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">1</span> <span class="o">&amp;</span> <span class="n">M1</span> <span class="o">|</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M1</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="n">1</span><span class="o">;</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">2</span> <span class="o">&amp;</span> <span class="n">M2</span> <span class="o">|</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M2</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="n">2</span><span class="o">;</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">4</span> <span class="o">&amp;</span> <span class="n">M4</span> <span class="o">|</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M4</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="n">4</span><span class="o">;</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">8</span> <span class="o">&amp;</span> <span class="n">M8</span> <span class="o">|</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M8</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="n">8</span><span class="o">;</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">16</span> <span class="o">|</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">16</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">M1</span> <span class="o">=</span> <span class="n">0x55555555</span><span class="o">;</span> <span class="c1">// 01010101010101010101010101010101
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">M2</span> <span class="o">=</span> <span class="n">0x33333333</span><span class="o">;</span> <span class="c1">// 00110011001100110011001100110011
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">M4</span> <span class="o">=</span> <span class="n">0x0f0f0f0f</span><span class="o">;</span> <span class="c1">// 00001111000011110000111100001111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">M8</span> <span class="o">=</span> <span class="n">0x00ff00ff</span><span class="o">;</span> <span class="c1">// 00000000111111110000000011111111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">reverseBits</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">1</span> <span class="o">&amp;</span> <span class="n">M1</span> <span class="o">|</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M1</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">2</span> <span class="o">&amp;</span> <span class="n">M2</span> <span class="o">|</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M2</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="n">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">4</span> <span class="o">&amp;</span> <span class="n">M4</span> <span class="o">|</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M4</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="n">4</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">8</span> <span class="o">&amp;</span> <span class="n">M8</span> <span class="o">|</span> <span class="o">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M8</span><span class="o">)</span> <span class="o">&lt;&lt;</span> <span class="n">8</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">16</span> <span class="o">|</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">16</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -399,19 +399,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M1</span> <span class="o">=</span> <span class="mh">0x55555555</span><span class="p">;</span>  <span class="c1">// 01010101010101010101010101010101
-</span><span class="c1"></span><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M2</span> <span class="o">=</span> <span class="mh">0x33333333</span><span class="p">;</span>  <span class="c1">// 00110011001100110011001100110011
-</span><span class="c1"></span><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M4</span> <span class="o">=</span> <span class="mh">0x0f0f0f0f</span><span class="p">;</span>  <span class="c1">// 00001111000011110000111100001111
-</span><span class="c1"></span><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M8</span> <span class="o">=</span> <span class="mh">0x00ff00ff</span><span class="p">;</span>  <span class="c1">// 00000000111111110000000011111111
-</span><span class="c1"></span>
-<span class="kt">uint32_t</span> <span class="nf">reverseBits</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="n">M1</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="n">M2</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="n">M4</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">&amp;</span> <span class="n">M8</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M1</span> <span class="o">=</span> <span class="mh">0x55555555</span><span class="p">;</span>  <span class="c1">// 01010101010101010101010101010101
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M2</span> <span class="o">=</span> <span class="mh">0x33333333</span><span class="p">;</span>  <span class="c1">// 00110011001100110011001100110011
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M4</span> <span class="o">=</span> <span class="mh">0x0f0f0f0f</span><span class="p">;</span>  <span class="c1">// 00001111000011110000111100001111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">M8</span> <span class="o">=</span> <span class="mh">0x00ff00ff</span><span class="p">;</span>  <span class="c1">// 00000000111111110000000011111111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">uint32_t</span> <span class="nf">reverseBits</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="n">M1</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="n">M2</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="n">M4</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">&amp;</span> <span class="n">M8</span> <span class="o">|</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="n">M8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -429,19 +429,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">reverseBits</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">M1</span> <span class="o">=</span> <span class="mh">0x55555555</span><span class="p">;</span> <span class="c1">// 01010101010101010101010101010101
-</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">M2</span> <span class="o">=</span> <span class="mh">0x33333333</span><span class="p">;</span> <span class="c1">// 00110011001100110011001100110011
-</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">M4</span> <span class="o">=</span> <span class="mh">0x0f0f0f0f</span><span class="p">;</span> <span class="c1">// 00001111000011110000111100001111
-</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">M8</span> <span class="o">=</span> <span class="mh">0x00ff00ff</span><span class="p">;</span> <span class="c1">// 00000000111111110000000011111111
-</span><span class="c1"></span>
-    <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="nx">M1</span> <span class="o">|</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="nx">M1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="nx">M2</span> <span class="o">|</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="nx">M2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="nx">M4</span> <span class="o">|</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="nx">M4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
-    <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">8</span> <span class="o">&amp;</span> <span class="nx">M8</span> <span class="o">|</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="nx">M8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="nx">n</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">reverseBits</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">M1</span> <span class="o">=</span> <span class="mh">0x55555555</span><span class="p">;</span> <span class="c1">// 01010101010101010101010101010101
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">M2</span> <span class="o">=</span> <span class="mh">0x33333333</span><span class="p">;</span> <span class="c1">// 00110011001100110011001100110011
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">M4</span> <span class="o">=</span> <span class="mh">0x0f0f0f0f</span><span class="p">;</span> <span class="c1">// 00001111000011110000111100001111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">const</span> <span class="nx">M8</span> <span class="o">=</span> <span class="mh">0x00ff00ff</span><span class="p">;</span> <span class="c1">// 00000000111111110000000011111111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="nx">M1</span> <span class="o">|</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="nx">M1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="nx">M2</span> <span class="o">|</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="nx">M2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="nx">M4</span> <span class="o">|</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="nx">M4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">8</span> <span class="o">&amp;</span> <span class="nx">M8</span> <span class="o">|</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="nx">M8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="nx">n</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -461,21 +461,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="p">(</span>
-    <span class="nx">m1</span> <span class="p">=</span> <span class="mh">0x55555555</span> <span class="c1">// 01010101010101010101010101010101
-</span><span class="c1"></span>    <span class="nx">m2</span> <span class="p">=</span> <span class="mh">0x33333333</span> <span class="c1">// 00110011001100110011001100110011
-</span><span class="c1"></span>    <span class="nx">m4</span> <span class="p">=</span> <span class="mh">0x0f0f0f0f</span> <span class="c1">// 00001111000011110000111100001111
-</span><span class="c1"></span>    <span class="nx">m8</span> <span class="p">=</span> <span class="mh">0x00ff00ff</span> <span class="c1">// 00000000111111110000000011111111
-</span><span class="c1"></span><span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">reverseBits</span><span class="p">(</span><span class="nx">n</span> <span class="kt">uint32</span><span class="p">)</span> <span class="kt">uint32</span> <span class="p">{</span>
-    <span class="nx">n</span> <span class="p">=</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="o">&amp;</span><span class="nx">m1</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&amp;</span><span class="nx">m1</span><span class="o">&lt;&lt;</span><span class="mi">1</span>
-    <span class="nx">n</span> <span class="p">=</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">2</span><span class="o">&amp;</span><span class="nx">m2</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&amp;</span><span class="nx">m2</span><span class="o">&lt;&lt;</span><span class="mi">2</span>
-    <span class="nx">n</span> <span class="p">=</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">4</span><span class="o">&amp;</span><span class="nx">m4</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&amp;</span><span class="nx">m4</span><span class="o">&lt;&lt;</span><span class="mi">4</span>
-    <span class="nx">n</span> <span class="p">=</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">8</span><span class="o">&amp;</span><span class="nx">m8</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&amp;</span><span class="nx">m8</span><span class="o">&lt;&lt;</span><span class="mi">8</span>
-    <span class="k">return</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">16</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&lt;&lt;</span><span class="mi">16</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">m1</span> <span class="p">=</span> <span class="mh">0x55555555</span> <span class="c1">// 01010101010101010101010101010101
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">m2</span> <span class="p">=</span> <span class="mh">0x33333333</span> <span class="c1">// 00110011001100110011001100110011
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">m4</span> <span class="p">=</span> <span class="mh">0x0f0f0f0f</span> <span class="c1">// 00001111000011110000111100001111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">m8</span> <span class="p">=</span> <span class="mh">0x00ff00ff</span> <span class="c1">// 00000000111111110000000011111111
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">reverseBits</span><span class="p">(</span><span class="nx">n</span> <span class="kt">uint32</span><span class="p">)</span> <span class="kt">uint32</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">n</span> <span class="p">=</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="o">&amp;</span><span class="nx">m1</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&amp;</span><span class="nx">m1</span><span class="o">&lt;&lt;</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">n</span> <span class="p">=</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">2</span><span class="o">&amp;</span><span class="nx">m2</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&amp;</span><span class="nx">m2</span><span class="o">&lt;&lt;</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">n</span> <span class="p">=</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">4</span><span class="o">&amp;</span><span class="nx">m4</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&amp;</span><span class="nx">m4</span><span class="o">&lt;&lt;</span><span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">n</span> <span class="p">=</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">8</span><span class="o">&amp;</span><span class="nx">m8</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&amp;</span><span class="nx">m8</span><span class="o">&lt;&lt;</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">n</span><span class="o">&gt;&gt;</span><span class="mi">16</span> <span class="p">|</span> <span class="nx">n</span><span class="o">&lt;&lt;</span><span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="复杂度-1" class="headerLink">
     <a href="#%e5%a4%8d%e6%9d%82%e5%ba%a6-1" class="header-mark"></a>复杂度</h3><ul>
@@ -512,7 +512,7 @@
 </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
             <div class="footer-line"></div>
             <div class="footer-line">
@@ -524,7 +524,7 @@
         </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
             <i class="fas fa-comment fa-fw"></i>
         </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 
 <div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
         <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>

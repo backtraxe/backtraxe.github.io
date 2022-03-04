@@ -219,48 +219,48 @@
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 包
-</span><span class="c1"></span><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="c1">// 导包
-</span><span class="c1"></span><span class="kn">import</span> <span class="p">(</span>
-   <span class="s">&#34;fmt&#34;</span>
-<span class="p">)</span>
-
-<span class="c1">// 常量
-</span><span class="c1"></span><span class="kd">const</span> <span class="nx">c</span> <span class="p">=</span> <span class="s">&#34;C&#34;</span>
-
-<span class="c1">// 变量
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">v</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">5</span>
-
-<span class="c1">// 自定义类型
-</span><span class="c1"></span><span class="kd">type</span> <span class="nx">T</span> <span class="kd">struct</span> <span class="p">{</span>
-
-<span class="p">}</span>
-
-<span class="c1">// init() 函数，最先执行
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
-
-<span class="p">}</span>
-
-<span class="c1">// main() 函数，其次执行
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-   <span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span>
-   <span class="nf">Func1</span><span class="p">()</span>
-   <span class="c1">// ...
-</span><span class="c1"></span>   <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// 自定义可导出（公开）函数
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">Func1</span><span class="p">()</span> <span class="p">{</span>
-   <span class="c1">//...
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="c1">// 自定义不可导出（私有）函数
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">func2</span><span class="p">()</span> <span class="p">{</span>
-
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 包
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 导包
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 常量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">const</span> <span class="nx">c</span> <span class="p">=</span> <span class="s">&#34;C&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">v</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 自定义类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">T</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// init() 函数，最先执行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// main() 函数，其次执行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">Func1</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 自定义可导出（公开）函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Func1</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 自定义不可导出（私有）函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">func2</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="规范" class="headerLink">
     <a href="#%e8%a7%84%e8%8c%83" class="header-mark"></a>规范</h2><ul>
@@ -278,11 +278,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 单行注释
-</span><span class="c1"></span><span class="cm">/*
-</span><span class="cm">多行注释
-</span><span class="cm">*/</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 单行注释
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">多行注释
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>可通过<code>godoc</code>来导出注释，显示文档说明。</li>
@@ -306,12 +306,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
-    <span class="nx">fm</span> <span class="s">&#34;fmt&#34;</span>      <span class="c1">// 别名
-</span><span class="c1"></span>   <span class="s">&#34;os&#34;</span>
-   <span class="s">&#34;./local_pkg&#34;</span> <span class="c1">// 本地包
-</span><span class="c1"></span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fm</span> <span class="s">&#34;fmt&#34;</span>      <span class="c1">// 别名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="s">&#34;os&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;./local_pkg&#34;</span> <span class="c1">// 本地包
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>规范：</p>
 <ul>
@@ -328,13 +328,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">funcName</span><span class="p">(</span><span class="nx">p1</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">p2</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">add</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">sub</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">p1</span> <span class="o">+</span> <span class="nx">p2</span><span class="p">,</span> <span class="nx">p1</span> <span class="o">-</span> <span class="nx">p2</span>
-<span class="p">}</span>
-
-<span class="c1">// 函数很短，也可以放在同一行
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">Sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">funcName</span><span class="p">(</span><span class="nx">p1</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">p2</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">add</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">sub</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">p1</span> <span class="o">+</span> <span class="nx">p2</span><span class="p">,</span> <span class="nx">p1</span> <span class="o">-</span> <span class="nx">p2</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 函数很短，也可以放在同一行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>规范：</p>
 <p><code>main()</code>函数：</p>
@@ -371,12 +371,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="p">(</span>
-    <span class="nx">IZ</span> <span class="kt">int</span>
-    <span class="nx">FZ</span> <span class="kt">float64</span>
-    <span class="nx">STR</span> <span class="kt">string</span>
-<span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">IZ</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">FZ</span> <span class="kt">float64</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">STR</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="常量" class="headerLink">
     <a href="#%e5%b8%b8%e9%87%8f" class="header-mark"></a>常量</h4><div class="highlight"><div class="chroma">
@@ -390,14 +390,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="nx">Pi</span> <span class="kt">float</span> <span class="p">=</span> <span class="mf">3.14159265358979323846</span>
-
-<span class="kd">const</span> <span class="p">(</span>
-	<span class="nx">Unknown</span> <span class="p">=</span> <span class="mi">0</span>
-	<span class="nx">Female</span> <span class="p">=</span> <span class="mi">1</span>
-	<span class="nx">Male</span> <span class="p">=</span> <span class="mi">2</span>
-<span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">Pi</span> <span class="kt">float</span> <span class="p">=</span> <span class="mf">3.14159265358979323846</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Unknown</span> <span class="p">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Female</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Male</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>类型包括：<code>bool</code>、<code>int</code>、<code>float</code>、<code>complex</code>、<code>string</code></li>
@@ -416,15 +416,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 赋值一个常量时，之后没赋值的常量都会应用上一行的赋值表达式
-</span><span class="c1"></span><span class="kd">const</span> <span class="p">(</span>
-	<span class="nx">a</span> <span class="p">=</span> <span class="kc">iota</span>  <span class="c1">// a = 0
-</span><span class="c1"></span>	<span class="nx">b</span>         <span class="c1">// b = 1
-</span><span class="c1"></span>	<span class="nx">c</span>         <span class="c1">// c = 2
-</span><span class="c1"></span>	<span class="nx">d</span> <span class="p">=</span> <span class="mi">5</span>     <span class="c1">// d = 5   
-</span><span class="c1"></span>	<span class="nx">e</span>         <span class="c1">// e = 5
-</span><span class="c1"></span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 赋值一个常量时，之后没赋值的常量都会应用上一行的赋值表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">a</span> <span class="p">=</span> <span class="kc">iota</span>  <span class="c1">// a = 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">b</span>         <span class="c1">// b = 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">c</span>         <span class="c1">// c = 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">d</span> <span class="p">=</span> <span class="mi">5</span>     <span class="c1">// d = 5   
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">e</span>         <span class="c1">// e = 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -435,12 +435,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="p">(</span>
-	<span class="nx">Open</span> <span class="p">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="kc">iota</span>  <span class="c1">// 0001
-</span><span class="c1"></span>	<span class="nx">Close</span>             <span class="c1">// 0010
-</span><span class="c1"></span>	<span class="nx">Pending</span>           <span class="c1">// 0100
-</span><span class="c1"></span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Open</span> <span class="p">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="kc">iota</span>  <span class="c1">// 0001
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Close</span>             <span class="c1">// 0010
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Pending</span>           <span class="c1">// 0100
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>每遇到一次<code>const</code>关键字，<code>iota</code>就重置为<code>0</code></li>
@@ -456,13 +456,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-<span class="kd">var</span> <span class="p">(</span>
-    <span class="nx">c</span> <span class="kt">int</span>
-    <span class="nx">d</span> <span class="kt">bool</span>
-    <span class="nx">e</span> <span class="kt">string</span>
-<span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">c</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">d</span> <span class="kt">bool</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">e</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>变量声明后，自动赋零值
@@ -502,7 +502,7 @@
 </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
             <div class="footer-line"></div>
             <div class="footer-line">
@@ -514,7 +514,7 @@
         </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
             <i class="fas fa-comment fa-fw"></i>
         </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 
 <div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script></div>
 </body>

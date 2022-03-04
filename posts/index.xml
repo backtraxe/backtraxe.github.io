@@ -12,6 +12,13 @@
     </author><guid>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</guid>
     <description><![CDATA[<p>数据结构，是抽象的表示数据的方式；算法，则是计算的一系列有效、通用的步骤。算法与数据结构是程序设计中相辅相成的两个方面，是计算机学科的重要基石。</p>]]></description>
 </item><item>
+    <title>Java Collections Framework 教程</title>
+    <link>https://backtraxe.github.io/posts/java-collections-framework-%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Fri, 20 Aug 2021 11:09:30 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/java-collections-framework-%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[<p>Collection 是用于表示和操作集合的统一体系结构。</p>]]></description>
+</item><item>
     <title>网站收藏🔝</title>
     <link>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</link>
     <pubDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</pubDate><author>
@@ -25,19 +32,5 @@
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/java-se-%E6%95%99%E7%A8%8B/</guid>
     <description><![CDATA[<p>Java 是全球使用最广泛的编程语言。</p>]]></description>
-</item><item>
-    <title>PowerShell 教程</title>
-    <link>https://backtraxe.github.io/posts/powershell-%E6%95%99%E7%A8%8B/</link>
-    <pubDate>Thu, 04 Feb 2021 22:00:28 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/powershell-%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[<p>PowerShell 是一种跨平台的任务自动化解决方案，由命令行 shell、脚本语言和配置管理框架组成。</p>]]></description>
-</item><item>
-    <title>Git 教程</title>
-    <link>https://backtraxe.github.io/posts/git-%E6%95%99%E7%A8%8B/</link>
-    <pubDate>Wed, 10 Mar 2021 12:56:46 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/git-%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[<p>Git 是一个开源的分布式版本控制系统。</p>]]></description>
 </item></channel>
 </rss>

@@ -228,13 +228,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看 git 状态</span>
-git status
-<span class="c1"># 查看日志</span>
-git log
-<span class="c1"># 查看简短日志</span>
-git reflog
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看 git 状态</span>
+</span></span><span class="line"><span class="cl">git status
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看日志</span>
+</span></span><span class="line"><span class="cl">git log
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看简短日志</span>
+</span></span><span class="line"><span class="cl">git reflog
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="21-本地仓库" class="headerLink">
     <a href="#21-%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93" class="header-mark"></a>2.1 本地仓库</h3><div class="highlight"><div class="chroma">
@@ -249,15 +249,15 @@ git reflog
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 初始化，创建 git 仓库</span>
-git init
-<span class="c1"># 添加文件到暂存区</span>
-git add &lt;file&gt;
-<span class="c1"># 将暂存区文件提交到本地历史仓库</span>
-git commit -m &lt;message&gt;
-<span class="c1"># 将所有修改或删除的文件提交到本地历史仓库（不包括新建文件）</span>
-git commit -a -m &lt;message&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 初始化，创建 git 仓库</span>
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加文件到暂存区</span>
+</span></span><span class="line"><span class="cl">git add &lt;file&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 将暂存区文件提交到本地历史仓库</span>
+</span></span><span class="line"><span class="cl">git commit -m &lt;message&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 将所有修改或删除的文件提交到本地历史仓库（不包括新建文件）</span>
+</span></span><span class="line"><span class="cl">git commit -a -m &lt;message&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="22-版本切换" class="headerLink">
     <a href="#22-%e7%89%88%e6%9c%ac%e5%88%87%e6%8d%a2" class="header-mark"></a>2.2 版本切换</h3><div class="highlight"><div class="chroma">
@@ -266,9 +266,9 @@ git commit -a -m &lt;message&gt;
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># git reset --hard a3a9cf1</span>
-git reset --hard &lt;commit&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># git reset --hard a3a9cf1</span>
+</span></span><span class="line"><span class="cl">git reset --hard &lt;commit&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="23-分支管理" class="headerLink">
     <a href="#23-%e5%88%86%e6%94%af%e7%ae%a1%e7%90%86" class="header-mark"></a>2.3 分支管理</h3><ul>
@@ -291,19 +291,19 @@ git reset --hard &lt;commit&gt;
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看所有分支</span>
-git branch
-<span class="c1"># 创建新分支</span>
-git branch &lt;branch-name&gt;
-<span class="c1"># 删除指定分支</span>
-git branch -d &lt;branch-name&gt;
-<span class="c1"># 切换到其他分支</span>
-git checkout &lt;branch&gt;
-<span class="c1"># 创建新分支，并立即切换过去</span>
-git checkout -b &lt;branch&gt;
-<span class="c1"># 将指定分支合并到当前分支</span>
-git merge &lt;branch-name&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看所有分支</span>
+</span></span><span class="line"><span class="cl">git branch
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建新分支</span>
+</span></span><span class="line"><span class="cl">git branch &lt;branch-name&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除指定分支</span>
+</span></span><span class="line"><span class="cl">git branch -d &lt;branch-name&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换到其他分支</span>
+</span></span><span class="line"><span class="cl">git checkout &lt;branch&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建新分支，并立即切换过去</span>
+</span></span><span class="line"><span class="cl">git checkout -b &lt;branch&gt;
+</span></span><span class="line"><span class="cl"><span class="c1"># 将指定分支合并到当前分支</span>
+</span></span><span class="line"><span class="cl">git merge &lt;branch-name&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="24-远程仓库" class="headerLink">
     <a href="#24-%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93" class="header-mark"></a>2.4 远程仓库</h3><h4 id="241-远程仓库创建" class="headerLink">
@@ -325,12 +325,12 @@ git merge &lt;branch-name&gt;
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 配置用户名和邮箱</span>
-git config --global user.name <span class="s2">&#34;backtraxe&#34;</span>
-git config --global user.email <span class="s2">&#34;backtraxe@gmail.com&#34;</span>
-<span class="c1"># 生成密钥</span>
-ssh-keygen -t rsa -C <span class="s2">&#34;backtraxe@gmail.com&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 配置用户名和邮箱</span>
+</span></span><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;backtraxe&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;backtraxe@gmail.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成密钥</span>
+</span></span><span class="line"><span class="cl">ssh-keygen -t rsa -C <span class="s2">&#34;backtraxe@gmail.com&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>
@@ -357,13 +357,13 @@ ssh-keygen -t rsa -C <span class="s2">&#34;backtraxe@gmail.com&#34;</span>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Github</span>
-ssh -T git@github.com
-<span class="c1"># Gitlab</span>
-ssh -T git@gitlab.com
-<span class="c1"># Gitee</span>
-ssh -T git@gitee.com
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Github</span>
+</span></span><span class="line"><span class="cl">ssh -T git@github.com
+</span></span><span class="line"><span class="cl"><span class="c1"># Gitlab</span>
+</span></span><span class="line"><span class="cl">ssh -T git@gitlab.com
+</span></span><span class="line"><span class="cl"><span class="c1"># Gitee</span>
+</span></span><span class="line"><span class="cl">ssh -T git@gitee.com
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="243-本地仓库同步到远程仓库" class="headerLink">
     <a href="#243-%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93%e5%90%8c%e6%ad%a5%e5%88%b0%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93" class="header-mark"></a>2.4.3 本地仓库同步到远程仓库</h4><ol>
@@ -383,14 +383,14 @@ ssh -T git@gitee.com
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 添加远程仓库，起一个别名</span>
-<span class="c1"># git remote add origin https://github.com/backtraxe/backtraxe.github.io.git</span>
-git remote add &lt;name&gt; &lt;url&gt;
-
-<span class="c1"># 推送到远程仓库，更新远程仓库</span>
-<span class="c1"># git push -u origin master</span>
-git push -u &lt;repository&gt; &lt;refspec&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 添加远程仓库，起一个别名</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># git remote add origin https://github.com/backtraxe/backtraxe.github.io.git</span>
+</span></span><span class="line"><span class="cl">git remote add &lt;name&gt; &lt;url&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送到远程仓库，更新远程仓库</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># git push -u origin master</span>
+</span></span><span class="line"><span class="cl">git push -u &lt;repository&gt; &lt;refspec&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="244-远程仓库同步到本地仓库" class="headerLink">
     <a href="#244-%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93%e5%90%8c%e6%ad%a5%e5%88%b0%e6%9c%ac%e5%9c%b0%e4%bb%93%e5%ba%93" class="header-mark"></a>2.4.4 远程仓库同步到本地仓库</h4><div class="highlight"><div class="chroma">
@@ -404,14 +404,14 @@ git push -u &lt;repository&gt; &lt;refspec&gt;
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 克隆远程仓库</span>
-<span class="c1"># git clone https://github.com/backtraxe/backtraxe.github.io.git</span>
-git clone &lt;repo&gt;
-
-<span class="c1"># 拉取远端仓库，更新本地仓库</span>
-<span class="c1"># git pull origin master</span>
-git pull &lt;repository&gt; &lt;refspec&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 克隆远程仓库</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># git clone https://github.com/backtraxe/backtraxe.github.io.git</span>
+</span></span><span class="line"><span class="cl">git clone &lt;repo&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 拉取远端仓库，更新本地仓库</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># git pull origin master</span>
+</span></span><span class="line"><span class="cl">git pull &lt;repository&gt; &lt;refspec&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="25-代码冲突" class="headerLink">
     <a href="#25-%e4%bb%a3%e7%a0%81%e5%86%b2%e7%aa%81" class="header-mark"></a>2.5 代码冲突</h3><p>同一文件存在多个新版本，如下所示。需要先拉取远程仓库，手动修改冲突文件后，再次推送即可。</p>
@@ -421,9 +421,9 @@ git pull &lt;repository&gt; &lt;refspec&gt;
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"> ! [rejected]        master -&gt; master (fetch first)
-error: failed to push some refs to &#39;https://github.com/backtraxe/repo_for_test.git&#39;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl"> ! [rejected]        master -&gt; master (fetch first)
+</span></span><span class="line"><span class="cl">error: failed to push some refs to &#39;https://github.com/backtraxe/repo_for_test.git&#39;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="251-替换本地改动" class="headerLink">
     <a href="#251-%e6%9b%bf%e6%8d%a2%e6%9c%ac%e5%9c%b0%e6%94%b9%e5%8a%a8" class="header-mark"></a>2.5.1 替换本地改动</h4><div class="highlight"><div class="chroma">
@@ -436,13 +436,13 @@ error: failed to push some refs to &#39;https://github.com/backtraxe/repo_for_te
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 丢弃当前文件修改内容</span>
-git checkout -- &lt;file&gt;
-
-<span class="c1"># 丢弃本地仓库的所有改动与提交版本</span>
-git fetch origin
-git reset --hard origin/master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 丢弃当前文件修改内容</span>
+</span></span><span class="line"><span class="cl">git checkout -- &lt;file&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 丢弃本地仓库的所有改动与提交版本</span>
+</span></span><span class="line"><span class="cl">git fetch origin
+</span></span><span class="line"><span class="cl">git reset --hard origin/master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="26-子模块" class="headerLink">
     <a href="#26-%e5%ad%90%e6%a8%a1%e5%9d%97" class="header-mark"></a>2.6 子模块</h3><div class="highlight"><div class="chroma">
@@ -463,21 +463,21 @@ git reset --hard origin/master
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 将一个 Git 仓库添加为当前仓库的子模块</span>
-git submodule add https://github.com/USERNAME/REPONAME.git
-
-<span class="c1"># git clone 含有子模块的项目</span>
-<span class="c1"># 1.项目已经克隆到了本地</span>
-git submodule init
-git sunmodule update
-<span class="c1"># 或者</span>
-git submodule update --init
-
-<span class="c1"># 2.项目还未克隆到本地</span>
-git clone --recurse-submodules https://github.com/USERNAME/REPONAME.git
-<span class="c1"># 或者</span>
-git clone --recursive https://github.com/USERNAME/REPONAME.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 将一个 Git 仓库添加为当前仓库的子模块</span>
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/USERNAME/REPONAME.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># git clone 含有子模块的项目</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1.项目已经克隆到了本地</span>
+</span></span><span class="line"><span class="cl">git submodule init
+</span></span><span class="line"><span class="cl">git sunmodule update
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者</span>
+</span></span><span class="line"><span class="cl">git submodule update --init
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.项目还未克隆到本地</span>
+</span></span><span class="line"><span class="cl">git clone --recurse-submodules https://github.com/USERNAME/REPONAME.git
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者</span>
+</span></span><span class="line"><span class="cl">git clone --recursive https://github.com/USERNAME/REPONAME.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="27-gitignore" class="headerLink">
     <a href="#27-gitignore" class="header-mark"></a>2.7 .gitignore</h3><p>工作目录中需要 git 忽略的文件目录。</p>
@@ -490,8 +490,8 @@ git clone --recursive https://github.com/USERNAME/REPONAME.git
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>答：</p>
 <p>该问题由开启代理软件导致。<code>设置</code>-&gt;<code>网络和Internet</code>-&gt;<code>代理</code>，查看<code>地址</code>和<code>端口</code>，通过如下命令进行配置。</p>
@@ -501,9 +501,9 @@ git clone --recursive https://github.com/USERNAME/REPONAME.git
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># git config --global http.proxy 127.0.0.1:10809</span>
-git config --global http.proxy IP_ADDRESS:PORT
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># git config --global http.proxy 127.0.0.1:10809</span>
+</span></span><span class="line"><span class="cl">git config --global http.proxy IP_ADDRESS:PORT
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="参考" class="headerLink">
     <a href="#%e5%8f%82%e8%80%83" class="header-mark"></a>参考</h2><ol>
@@ -539,7 +539,7 @@ git config --global http.proxy IP_ADDRESS:PORT
 </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
             <div class="footer-line"></div>
             <div class="footer-line">
@@ -551,7 +551,7 @@ git config --global http.proxy IP_ADDRESS:PORT
         </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
             <i class="fas fa-comment fa-fw"></i>
         </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 
 <div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script></div>
 </body>

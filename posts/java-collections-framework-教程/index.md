@@ -121,16 +121,43 @@ for (int i = 0; i < myColl.size(); i++) {
 
 ## 4.List
 
-### 4.1 特性
+### ArrayList
 
-- 继承 `Collection`，可使用其所有方法
-- 元素有序（添加顺序）
-- 按索引访问
+```java
+import java.util.ArrayList;
+import java.util.List;
+```
 
-### 4.2 实现
+```java
+// 定义
+List<Integer> list = new ArrayList<>(); // 数组实现
+// 遍历1
+for (int i = 0; i < list.size(); i++) {
+    int x = list.get(i);
+}
+// 遍历2
+import java.util.Iterator;
+for (Iterator<Integer> it = list.iterator(); it.hasNext();) {
+    int x = it.next();
+}
+// 遍历3
+for (int x : list) {
+    //
+}
+```
 
-- `ArrayList`：数组实现
-- `LinkedList`：链表实现；插入删除效率高
+### LinkedList
+
+```java
+import java.util.LinkedList;
+import java.util.List;
+```
+
+```java
+// 定义
+List<Integer> b = new LinkedList<>(); // 链表实现
+List<Integer> c = List.of(1, 2, 3);
+```
 
 ### 4.3 方法
 
@@ -188,15 +215,297 @@ for (ListIterator<E> it = myList.listIterator(myList.size()); it.hasPrevious();)
 }
 ```
 
-## 5.Queue
+### List 和数组转换
+
+#### List 转数组
+
+```java
+List<Integer> list = List.of(1, 2, 3);
+// 方法1
+Integer[] array1 = list.toArray(new Integer[0]);
+// 方法2
+Integer[] array2 = list.toArray(Integer[]::new);
+// 不能转为 int[]
+```
+
+#### 数组转 List
+
+```java
+// int[] 不能转换
+Integer[] array = { 1, 2, 3 };
+List<Integer> list = List.of(array);
+// 转换后的 list 只读，不能增删或修改
+```
+
+## Queue
+
+```java
+// 定义
+Queue<Integer> queue = new LinkedList<>();
+// 向队尾添加元素
+queue.offer(1);
+// 删除队首元素并返回
+int first1 = queue.poll();
+// 取队首元素
+int first2 = queue.peek();
+```
+
+### Deque
+
+```java
+// 定义
+Deque<Integer> deque = new LinkedList<>();
+// 队尾添加
+deque.offerLast(1);
+// 队首添加
+deque.offerFirst(1);
+// 队尾删除并返回
+int last1 = deque.pollLast();
+// 队首删除并返回
+int first1 = deque.pollFirst();
+// 取队尾元素
+int last2 = deque.peekLast();
+// 取队首元素
+int first2 = deque.peekFirst();
+```
+
+### PriorityQueue
+
+优先队列，使用堆实现。
+
+#### 基本用法
+
+```java
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+// 默认最小堆，元素值小的优先
+Queue<Integer> q = new PriorityQueue<>();
+// 自定义最大堆，元素值大的优先
+Queue<Integer> q1 = new PriorityQueue<>(new Comparator<Integer>() {
+    public int compare(Integer a, Integer b) {
+        return b - a;
+        // 或者
+        // return b.compareTo(a);
+    }
+});
+// 添加
+q.offer(1);
+// 遍历
+while (!q.isEmpty()) {
+    int x = q.peek();
+    q.poll();
+}
+// 清空
+q.clear();
+```
+
+#### 自定义类
+
+```java
+// 自定义类
+class Stu {
+    String name;
+    int score;
+}
+```
+
+##### 模板
+
+```java
+import java.util.Comparable;
+
+class A implements Comparable<A> {
+    @override
+    public int compareTo(A a) {
+        // ...
+    }
+}
+```
+
+```java
+import java.util.Comparator;
+
+class A implements Comparator<A> {
+    @override
+    public int compare(A a, A b) {
+        // ...
+    }
+}
+```
+
+##### 具体实现
+
+```java
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+```
+
+**方法1**
+
+```java
+// 定义1
+Queue<Stu> q1 = new PriorityQueue<>(new StuComp<Stu>());
+// 显式定义排序类
+class StuComp implements Comparator<Stu> {
+    public int compare(Stu s1, Stu s2) {
+        if (s1.score != s2.score) {
+            // 成绩高的优先
+            return s2.score - s1.score;
+        } else {
+            // 再按名字字母排序
+            return s1.name.compareTo(s2.name);
+        }
+    }
+}
+```
+
+**方法2**
+
+```java
+// 定义2: 匿名类隐式定义排序类
+Queue<Stu> q1 = new PriorityQueue<>(new Comparator<Stu>() {
+    public int compare(Stu s1, Stu s2) {
+        if (s1.score != s2.score) {
+            // 成绩高的优先
+            return s2.score - s1.score;
+        } else {
+            // 再按名字字母排序
+            return s1.name.compareTo(s2.name);
+        }
+    }
+});
+```
+
+**方法3**
+
+```java
+// 定义3: 修改类定义
+class Stu implements Comparator<Stu> {
+    String name;
+    int score;
+
+    public int compare(Stu s1, Stu s2) {
+        if (s1.score != s2.score) {
+            // 成绩高的优先
+            return s2.score - s1.score;
+        } else {
+            // 再按名字字母排序
+            return s1.name.compareTo(s2.name);
+        }
+    }
+}
+```
 
 ## 6.Deque
 
-## 7.Map
+## Map
+
+### HashMap
+
+- 无序键值对，键不重复。
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+```
+
+```java
+// 定义
+Map<String, Integer> map = new HashMap<>();
+// 添加
+map.put("Alice", 80);
+// 查询值
+int score = map.get("Alice");
+// 查询键
+boolean isExist = map.containsKey("Bob");
+// 遍历1
+for (String key : map.keySet()) {
+    int value = map.get(key);
+}
+// 遍历2
+for (Map.Entry<String, Integer> ent : map.entrySet()) {
+    String key = ent.getKey();
+    int value = ent.getValue();
+}
+```
+
+### TreeMap
+
+- 有序键值对，键不重复。
+- 放入的 Key 必须实现`Comparable`接口。
+
+```java
+import java.util.Map;
+import java.util.TreeMap;
+```
+
+```java
+// 类实现接口
+class Stu implements Comparable<Stu> {
+    String name;
+    int score;
+
+    public int compareTo(Stu s) {
+        if (score != s.score) {
+            return s.score - score;
+        } else {
+            return name.compareTo(s.name);
+        }
+    }
+}
+// 类未实现接口，手动实现
+Map<Stu, Integer> map = new TreeMap<>(new Comparator<Stu>() {
+    public int compare(Stu a, Stu b) {
+        if (a.score != b.score) {
+            return b.score - a.score;
+        } else {
+            return a.name.compareTo(b.name);
+        }
+    }
+});
+```
 
 ## 8.SortedSet
 
-## 9.SortedMap
+## Collections
+
+```java
+import java.util.Collections;
+```
+
+```java
+// 创建空集合
+// 返回的集合是不可变集合，无法向其中添加或删除元素。
+List<String> list1 = Collections.emptyList();
+List<String> list2 = List.of();
+Map<String, Integer> map1 = Collections.emptyMap();
+Map<String, Integer> map2 = Map.of();
+Set<String> set1 = Collections.emptySet();
+Set<String> set2 = Set.of();
+```
+
+```java
+// 创建单元素集合
+// 返回的集合是不可变集合，无法向其中添加或删除元素。
+List<String> list1 = Collections.singletonList("one");
+List<String> list2 = List.of("one");
+Map<String, Integer> map1 = Collections.singletonMap("one", 1);
+Map<String, Integer> map2 = Map.of("one", 1);
+Set<String> set1 = Collections.singleton("one");
+Set<String> set2 = Set.of("one");
+```
+
+```java
+// 排序
+// 必须传入可变 List
+Collections.sort(list);
+
+// 洗牌
+// 必须传入可变 List
+Collections.shuffle(list);
+```
 
 ## 10.代码片段
 
@@ -273,6 +582,39 @@ public static void shuffle(List<E> list, Random rnd) {
 ```
 
 ## 11.聚合操作
+
+## 重写 equals 方法
+
+- 对引用类型用`Objects.equals()`比较（避免判断`null`），对基本类型直接用`==`比较。
+
+```java
+import java.util.Objects;
+
+public boolean equals(Object o) {
+    if (o instanceof E) {
+        E e = (E) o;
+        // 
+    }
+    return false;
+}
+```
+
+## ## 重写 hashCode 方法
+
+- 如果两个对象不相等，则两个对象的`hashCode()`尽量不要相等。
+
+```java
+import java.util.Objects;
+
+class Stu {
+    String name;
+    int score, age;
+
+    public int hashCode() {
+        return Objects.hash(name, score, age);
+    }
+}
+```
 
 参考：
 
