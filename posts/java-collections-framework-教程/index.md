@@ -416,10 +416,28 @@ import java.util.Map;
 Map<String, Integer> map = new HashMap<>();
 // 添加
 map.put("Alice", 80);
+// 存在返回原值，否则添加该元素，返回 null
+map.putIfAbsent();
+map.putAll(otherMap);
+map.put(key, map.getOrDefault(key, 0) + 1); // map[key]++
 // 查询值
-int score = map.get("Alice");
+map.get("Alice"); // 80
+// 存在返回原值，否则返回指定值，但不添加元素
+map.getOrDefault("Bob", 0);
+// 存在返回原值，否则添加该元素，并返回新值
+map.computerIfAbsent("Alice", key -> 90); // 80
+map.computerIfAbsent("Bob", key -> 90);   // 90
 // 查询键
-boolean isExist = map.containsKey("Bob");
+map.containsKey("Bob");                   // true
+// 删除
+map.remove("Bob");
+// 清空
+map.clear();
+// 是否为空
+map.isEmpty();
+// 大小
+map.size();
+
 // 遍历1
 for (String key : map.keySet()) {
     int value = map.get(key);
@@ -428,6 +446,10 @@ for (String key : map.keySet()) {
 for (Map.Entry<String, Integer> ent : map.entrySet()) {
     String key = ent.getKey();
     int value = ent.getValue();
+}
+// 只遍历 value
+for (int value : map.values()) {
+
 }
 ```
 
@@ -581,6 +603,13 @@ public static void shuffle(List<E> list, Random rnd) {
 }
 ```
 
+### char[] 转 Character[]
+
+```java
+char[] charArray = { 'a', 'b', 'c' };
+Character[] charObjectArray = ArrayUtils.toObject(charArray);
+```
+
 ## 11.聚合操作
 
 ## 重写 equals 方法
@@ -599,7 +628,7 @@ public boolean equals(Object o) {
 }
 ```
 
-## ## 重写 hashCode 方法
+## 重写 hashCode 方法
 
 - 如果两个对象不相等，则两个对象的`hashCode()`尽量不要相等。
 
@@ -620,3 +649,101 @@ class Stu {
 
 1. [Aggregate Operations - Java Tutorials](https://docs.oracle.com/javase/tutorial/collections/streams/index.html)
 
+## Streams
+
+Java 8 中引入。
+
+```java
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+```
+
+```java
+// 获取流方法1
+int[] array = { 1, 2, 3 };
+Stream<Integer> s1 = Stream.of(array);
+// 获取流方法2
+List<Integer> list = List.of(1, 2, 3);
+Stream<Integer> s2 = list.stream();
+// 获取流方法3
+Stream<Integer> s3 = Stream.of(1, 2, 3);
+```
+
+```java
+// forEach 终端操作
+List<Integer> list = List.of(1, 2, 3);
+list.stream().forEach(e -> System.out.println(e));
+list.stream().forEach(System.out::println);
+// map 中间操作
+List<String> list = list.stream().map(e -> e.toString()).collect(Collectors.toList());
+// collect 终端操作
+List<Integer> list = Stream.of(1, 2, 3).collect(Collectors.toList());
+String str = list.stream().map(e -> e.toString()).collect(Collectors.joining(", "));
+Set<Integer> set = list.stream().collect(Collectors.toSet());
+// filter 中间操作
+List<Integer> list = Stream.of(1, 2, 3).filter(e -> e < 2).collect(Collectors.toList());
+// findFirst
+Integer x = Stream.of(1, 2, 3).filter(e -> e % 2 == 1).findFirst().orElse(null);
+// toArray
+Integer[] array = list.stream().toArray(Integer[]::new);
+// flatMap 中间操作
+List<List<String>> namesNested = Arrays.asList(
+        Arrays.asList("Jeff", "Bezos"),
+        Arrays.asList("Bill", "Gates"),
+        Arrays.asList("Mark", "Zuckerberg"));
+List<String> namesFlatStream = namesNested.stream()
+        .flatMap(Collection::stream)
+        .collect(Collectors.toList());
+// count 终端操作
+long a = list.stream().count();
+// 
+Stream<Integer> infiniteStream = Stream.iterate(2, i -> i * 2);
+List<Integer> collect = infiniteStream
+    .skip(3)  // 跳过前 3 个元素
+    .limit(5) // 长度为 5
+    .collect(Collectors.toList());
+// sorted
+list.stream().sorted((a, b) -> b - a);
+// min max
+Integer x = list.stream().min((a, b) -> a - b).orElse(null);
+Integer x = list.stream().max((a, b) -> a - b).orElse(null);
+// distinct
+List<Integer> newList = list.stream().distinct().collect(Collectors.toList());
+// allMatch anyMatch noneMatch
+boolean allEven = list.stream().allMatch(i -> i % 2 == 0);
+boolean oneEven = list.stream().anyMatch(i -> i % 2 == 0);
+boolean noneMultipleOfThree = list.stream().noneMatch(i -> i % 3 == 0);
+```
+
+```java
+// IntStream
+list.stream().mapToInt(e -> e + 1);
+IntStream.of(1, 2, 3);
+// range
+IntStream.range(1, 4);
+// sum
+int sum = list.stream().mapToInt(e -> e).sum();
+// averge
+double avg = list.stream().mapToInt(e -> e).average().orElse(0);
+// reduce
+int sum = list.stream().mapToInt(e -> e).reduce(0, Integer::sum);
+int product = list.stream().mapToInt(e -> e).reduce(1, (a, b) -> a * b);
+```
+
+```java
+DoubleSummaryStatistics stats = list.stream().mapToDouble(e -> (double) e).summaryStatistics();
+DoubleSummaryStatistics stats = list.stream().collect(Collectors.summarizingDouble(e -> (double) e));
+stats.getCount();
+stats.getSum();
+stats.getAverage();
+stats.getMin();
+stats.getMax();
+```
+
+```java
+Map<Boolean, List<Integer>> isEven = list.stream().collect(Collectors.partitioningBy(i -> i % 2 == 0));
+```
+
+```java
+Stream.generate(Math::random).limit(5).forEach(System.out::println);
+```
