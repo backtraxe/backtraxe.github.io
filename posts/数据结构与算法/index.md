@@ -1,8 +1,6 @@
 # 数据结构与算法
 
 
-数据结构，是抽象的表示数据的方式；算法，则是计算的一系列有效、通用的步骤。算法与数据结构是程序设计中相辅相成的两个方面，是计算机学科的重要基石。
-
 <!--more-->
 
 ## 1.基础
@@ -313,7 +311,22 @@ int[] nextGreaterElement(int[] nums) {
 }
 ```
 
+## 数组
+
+```java
+
+```
+
 ## 链表
+
+```java
+class ListNode {
+    int val;
+    ListNode next;
+    // 双向链表
+    ListNode prev;
+}
+```
 
 **trick:**
 
@@ -736,7 +749,7 @@ def backtrack(当前路径, 可选择列表):
     if 可选择列表为空:
         结果集合添加当前路径
         return
-    
+
     for 当前选择 in 可选择列表:
         当前路径添加当前选择
         可选择列表删除当前选择
@@ -1056,7 +1069,7 @@ int binarySearch(int[] nums, int target) {
     }
     return left;
     // left 范围为 [0, nums.length]
-    // 当 left == nums.length 
+    // 当 left == nums.length
     // 或者 nums[left] != target
     // 说明 nums 中无 target
 }
@@ -1085,7 +1098,7 @@ int binarySearch(int[] nums, int target) {
     }
     return left;
     // left 范围为 [0, nums.length]
-    // 当 left == 0 
+    // 当 left == 0
     // 或者 nums[left - 1] != target
     // 说明 nums 中无 target
 }
@@ -1106,7 +1119,7 @@ while right < s.size():
     窗口添加右结点
     right += 1
     ...
-    
+
     while 满足条件:
         # 缩小窗口
         窗口删除左结点
@@ -1156,7 +1169,7 @@ string minWindow(string s, string t) {
                 if (window[d] == demand[d])
                     valid--;
                 window[d]--;
-            }                    
+            }
         }
     }
     // 返回最小覆盖子串

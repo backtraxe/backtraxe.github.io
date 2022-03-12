@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <title class="pjax-title">数据结构与算法 - </title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="数据结构与算法" />
-<meta property="og:description" content="数据结构，是抽象的表示数据的方式；算法，则是计算的一系列有效、通用的步骤。算法与数据结构是程序设计中相辅相成的两个方面，是计算机学科的重要基石。" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-09T22:06:43+08:00" />
-<meta property="article:modified_time" content="2022-03-02T16:06:43+08:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-03-13T16:06:43+08:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="数据结构与算法"/>
-<meta name="twitter:description" content="数据结构，是抽象的表示数据的方式；算法，则是计算的一系列有效、通用的步骤。算法与数据结构是程序设计中相辅相成的两个方面，是计算机学科的重要基石。"/>
+<meta name="twitter:description" content=""/>
 <meta name="application-name" content="traXe">
 <meta name="apple-mobile-web-app-title" content="traXe">
 
@@ -31,8 +31,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/"
-        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  7861 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/","datePublished": "2021-02-09T22:06:43+08:00","dateModified": "2022-03-02T16:06:43+08:00","publisher": {
+        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  7807 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/","datePublished": "2021-02-09T22:06:43+08:00","dateModified": "2022-03-13T16:06:43+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -139,6 +139,7 @@
         </li>
       </ul>
     </li>
+    <li><a href="#数组">数组</a></li>
     <li><a href="#链表">链表</a>
       <ul>
         <li><a href="#21-合并两个有序链表">21. 合并两个有序链表</a></li>
@@ -216,7 +217,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><i class="far fa-folder fa-fw"></i>数据结构</a>&nbsp;<a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw"></i>算法</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-03-02">2022-03-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7861 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-03-13">2022-03-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7807 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 16 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -246,6 +247,7 @@
         </li>
       </ul>
     </li>
+    <li><a href="#数组">数组</a></li>
     <li><a href="#链表">链表</a>
       <ul>
         <li><a href="#21-合并两个有序链表">21. 合并两个有序链表</a></li>
@@ -319,8 +321,7 @@
     <li><a href="#滑动窗口">滑动窗口</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>数据结构，是抽象的表示数据的方式；算法，则是计算的一系列有效、通用的步骤。算法与数据结构是程序设计中相辅相成的两个方面，是计算机学科的重要基石。</p>
-<h2 id="1基础" class="headerLink">
+            </div><div class="content" id="content"><h2 id="1基础" class="headerLink">
     <a href="#1%e5%9f%ba%e7%a1%80" class="header-mark"></a>1.基础</h2><p><strong>存储结构：</strong></p>
 <ul>
 <li><strong>数组</strong>：由于是紧凑连续存储，可以随机访问，通过索引快速找到对应元素，而且相对节约存储空间。但正因为连续存储，内存空间必须一次性分配够，所以说数组如果要扩容，需要重新分配一块更大的空间，再把数据全部复制过去，时间复杂度 O(N)；而且你如果想在数组中间进行插入和删除，每次必须搬移后面的所有数据以保持连续，时间复杂度 O(N)。</li>
@@ -780,8 +781,33 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="数组" class="headerLink">
+    <a href="#%e6%95%b0%e7%bb%84" class="header-mark"></a>数组</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"></code></pre></td></tr></table>
+</div>
 </div><h2 id="链表" class="headerLink">
-    <a href="#%e9%93%be%e8%a1%a8" class="header-mark"></a>链表</h2><p><strong>trick:</strong></p>
+    <a href="#%e9%93%be%e8%a1%a8" class="header-mark"></a>链表</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">ListNode</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">val</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ListNode</span> <span class="n">next</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 双向链表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ListNode</span> <span class="n">prev</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>trick:</strong></p>
 <ul>
 <li>双指针（快慢指针）</li>
 <li>虚拟头结点</li>
@@ -1508,7 +1534,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">可选择列表为空</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">结果集合添加当前路径</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">当前选择</span> <span class="ow">in</span> <span class="n">可选择列表</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">当前路径添加当前选择</span>
 </span></span><span class="line"><span class="cl">        <span class="n">可选择列表删除当前选择</span>
@@ -1980,7 +2006,7 @@
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">left</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// left 范围为 [0, nums.length]
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 当 left == nums.length 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 当 left == nums.length
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 或者 nums[left] != target
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 说明 nums 中无 target
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
@@ -2035,7 +2061,7 @@
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">left</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// left 范围为 [0, nums.length]
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 当 left == 0 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 当 left == 0
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 或者 nums[left - 1] != target
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 说明 nums 中无 target
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
@@ -2077,7 +2103,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">窗口添加右结点</span>
 </span></span><span class="line"><span class="cl">    <span class="n">right</span> <span class="o">+=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">满足条件</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="c1"># 缩小窗口</span>
 </span></span><span class="line"><span class="cl">        <span class="n">窗口删除左结点</span>
@@ -2176,7 +2202,7 @@
 </span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">window</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">==</span> <span class="n">demand</span><span class="p">[</span><span class="n">d</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">valid</span><span class="o">--</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="n">window</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>                    
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 返回最小覆盖子串
@@ -2190,7 +2216,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-03-02</span>
+                <span>更新于 2022-03-13</span>
             </div>
             <div class="post-info-license"></div>
         </div>
