@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</loc><lastmod>2021-11-01T13:00:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/</loc><lastmod>2022-03-02T16:06:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
                         rel="alternate"
@@ -61,10 +61,10 @@
             <loc>https://backtraxe.github.io/posts/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/tags/%E8%BD%AF%E4%BB%B6/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc><lastmod>2022-01-19T15:11:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://backtraxe.github.io/tags/%E5%AF%BC%E8%88%AA/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://backtraxe.github.io/categories/%E5%AF%BC%E8%88%AA/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://backtraxe.github.io/tags/%E8%B5%84%E6%BA%90/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://backtraxe.github.io/categories/%E8%B5%84%E6%BA%90/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://backtraxe.github.io/tags/%E5%AF%BC%E8%88%AA/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://backtraxe.github.io/categories/%E5%AF%BC%E8%88%AA/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://backtraxe.github.io/tags/%E8%B5%84%E6%BA%90/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://backtraxe.github.io/categories/%E8%B5%84%E6%BA%90/</loc><lastmod>2022-02-02T23:22:56&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/posts/youtube-dl-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</loc><lastmod>2021-06-03T13:10:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/tags/hugo/</loc><lastmod>2021-07-21T20:46:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://backtraxe.github.io/categories/hugo/</loc><lastmod>2021-07-21T20:46:06&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
