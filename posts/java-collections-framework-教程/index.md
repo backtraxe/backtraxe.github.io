@@ -1,37 +1,7 @@
 # Java Collections Framework 教程
 
 
-Collection 是用于表示和操作集合的统一体系结构。
-
 <!--more-->
-
-## 1.简介
-
-所有 Collection 都包含以下内容：
-
-- **接口（Interfaces）**：这些是表示集合的抽象数据类型。接口允许集合独立于其表示的细节进行操作。在面向对象语言中，接口通常形成一个层次结构。
-- **实现（Implementations）**：这些是集合接口的具体实现。本质上，它们是可重用的数据结构。
-- **算法（Algorithms）**：这些方法对实现集合接口的对象执行有用的计算，如搜索和排序。这些算法被认为是多态的：也就是说，相同的方法可以用于相应集合接口的许多不同实现。本质上，算法是可重用的功能。
-
-{{< mermaid >}}classDiagram
-    Collection <|-- Set
-    Collection <|-- List
-    Collection <|-- Queue
-    Collection <|-- Deque
-    Set <|-- SortedSet
-    Map <|-- SortedMap
-{{< /mermaid >}}
-
-上图描述了核心 Collection 接口：
-
-- **Collection**：父类，提供统一接口。
-- **Set**：集合；元素无序；元素唯一。
-- **List**：数组；元素有序；索引访问。
-- **Queue**：队列；FIFO（除了优先级队列）。
-- **Deque**：双向队列。
-- **Map**：键值对；键无序；键唯一；一一映射。
-- **SortedSet**：有序集合；默认升序；元素唯一。
-- **SortedMap**：有序键值对；默认升序；键唯一；一一映射。
 
 ## 2.Collection
 
@@ -106,20 +76,7 @@ for (int i = 0; i < myColl.size(); i++) {
 }
 ```
 
-## 3.Set
-
-### 3.1 特性
-
-- 继承 `Collection`，可使用其所有方法
-- 元素唯一
-
-### 3.2 实现
-
-- `HashSet`：哈希表实现；性能最佳；元素无序
-- `TreeSet`：红黑树实现；性能最差；元素有序（默认升序）
-- `LinkedHashSet`：哈希表+链表实现；性能第二；元素按添加顺序排序
-
-## 4.List
+## List
 
 ### ArrayList
 
@@ -143,6 +100,45 @@ for (Iterator<Integer> it = list.iterator(); it.hasNext();) {
 // 遍历3
 for (int x : list) {
     //
+}
+```
+
+#### 初始化
+
+```java
+// 初始化1
+List<Integer> list1 = new ArrayList<>();
+list1.add(1);
+// 初始化2，推荐
+List<Integer> list2 = new ArrayList<>() {{
+    add(1);
+}};
+// 初始化3，不能修改
+List<Integer> list3 = Arrays.asList(1, 2, 3);
+// 初始化4，不能修改
+List<Integer> list4 = List.of(1, 2, 3);
+// 初始化5，推荐
+List<Integer> list5 = Stream.of(1, 2, 3).collect(Collectors.toList());
+// 初始化6，推荐
+List<Integer> list6 = new ArrayList<>(List.of(1, 2, 3));
+```
+
+#### 去重
+
+```java
+List<Integer> list1 = new ArrayList<>(List.of(1, 2, 2, 3, 2));
+// 去重1
+LinkedHashSet<Integer> deDuplicator = new LinkedHashSet<>(list1);
+List<Integer> list2 = new ArrayList<>(deDuplicator);
+// 去重2
+List<Integer> list3 = list1.stream().distinct().collect(Collectors.toList());
+// 去重3
+List<Integer> list4 = new ArrayList<>();
+HashSet<Integer> hashset = new HashSet<>();
+for (int x : list1) {
+    if (hashset.add(x)) {
+        list4.add(x);
+    }
 }
 ```
 
@@ -235,6 +231,12 @@ Integer[] array2 = list.toArray(Integer[]::new);
 Integer[] array = { 1, 2, 3 };
 List<Integer> list = List.of(array);
 // 转换后的 list 只读，不能增删或修改
+```
+
+### 排序
+
+```java
+
 ```
 
 ## Queue
@@ -398,9 +400,138 @@ class Stu implements Comparator<Stu> {
 }
 ```
 
-## 6.Deque
+## Set
+
+### HashSet
+
+- 元素唯一，不可重复
+- 元素乱序
+- 数组+哈希函数实现，性能最优
+
+```java
+import java.util.HashSet;
+
+HashSet<Integer> set = new HashSet<>();
+set.add(1);
+set.contains(1);
+set.remove(1);
+set.clear();
+set.size();
+set.isEmpty();
+```
+
+### TreeSet
+
+- 元素唯一，不可重复
+- 元素有序（默认升序）
+- 红黑树实现，性能最差
+
+```java
+import java.util.TreeSet;
+
+TreeSet<Integer> set = new TreeSet<>();
+TreeSet<Integer> set2 = new TreeSet<>();
+set2.addAll(Set.of(1, 3, 5));
+```
+
+#### 增
+
+```java
+set.add(1);       // [1]
+set.addAll(set2); // [1, 3, 5]
+```
+
+#### 查
+
+```java
+set.contains(1);             // true
+set.first();                 // 1
+set.last();                  // 5
+```
+
+```java
+// 第一个大于等于指定值的元素，不存在返回 null
+Integer a1 = set.ceiling(0);  // 1
+Integer a2 = set.ceiling(1);  // 1
+Integer a3 = set.ceiling(4);  // 5
+Integer a4 = set.ceiling(7);  // null
+// 第一个大于指定值的元素，不存在返回 null
+Integer a5 = set.higher(0);  // 1
+Integer a6 = set.higher(1);  // 3
+Integer a7 = set.higher(4);  // 5
+Integer a8 = set.higher(7);  // null
+```
+
+```java
+// 第一个小于等于指定值的元素，不存在返回 null
+Integer a9 = set.floor(0);    // null
+Integer a10 = set.floor(1);   // 1
+Integer a11 = set.floor(4);   // 3
+Integer a12 = set.floor(7);   // 5
+// 第一个小于指定值的元素，不存在返回 null
+Integer a13 = set.lower(0);   // null
+Integer a14 = set.lower(1);   // null
+Integer a15 = set.lower(4);   // 3
+Integer a16 = set.lower(7);   // 5
+```
+
+#### 删
+
+```java
+set.pollFirst(); // 1
+set.pollLast();  // 5
+set.remove(3);   // true
+set.remove(4);   // false
+set.clear();
+```
+
+```java
+set.size();
+set.isEmpty();
+```
+
+#### 子集
+
+```java
+TreeSet<Integer> set = new TreeSet<>();
+set.addAll(Set.of(1, 2, 3));                       // [1, 2, 3]
+// 范围子集
+Set<Integer> set1 = set.subSet(1, 2);              // [1]
+Set<Integer> set2 = set.subSet(1, false, 2, true); // [2]
+// 首部子集
+Set<Integer> set3 = set.tailSet(2);                // [1]
+Set<Integer> set4 = set.tailSet(2, true);          // [1, 2]
+// 尾部子集
+Set<Integer> set3 = set.tailSet(2);                // [2, 3]
+Set<Integer> set4 = set.tailSet(2, false);         // [3]
+// 逆序
+Set<Integer> set7 = set.descendingSet();           // [3, 2, 1]
+```
+
+#### 遍历
+
+```java
+// foreach
+for (int x : set) {
+    //
+}
+// foreach 逆序
+for (int x : set.descendingSet()) {
+    //
+}
+// iterator
+for (Iterator<Integer> it = set.iterator(); it.hasNext();) {
+    it.next();
+}
+// iterator 逆序
+for (Iterator<Integer> it = set.descendingIterator(); it.hasNext();) {
+    it.next();
+}
+```
 
 ## Map
+
+<img src="/Java-Collections-Framework-教程/Map家族.svg" alt="Map家族">
 
 ### HashMap
 
@@ -414,30 +545,57 @@ import java.util.Map;
 ```java
 // 定义
 Map<String, Integer> map = new HashMap<>();
-// 添加
+Map<String, Integer> otherMap = new HashMap<>();
+```
+
+#### 增/改
+
+```java
+// 添加元素，始终覆盖原值
 map.put("Alice", 80);
 // 存在返回原值，否则添加该元素，返回 null
-map.putIfAbsent();
+map.putIfAbsent("Alice", 60); // 80
+// 添加所有元素，始终覆盖原值
 map.putAll(otherMap);
-map.put(key, map.getOrDefault(key, 0) + 1); // map[key]++
-// 查询值
-map.get("Alice"); // 80
-// 存在返回原值，否则返回指定值，但不添加元素
+// 自增 map[key]++
+map.put("Alice", map.getOrDefault("Alice", 0) + 1); // 81
+```
+
+#### 查
+
+```java
+// 根据键查询值，不存在返回 null
+map.get("Alice"); // 81
+// 存在返回原值，否则返回指定值
 map.getOrDefault("Bob", 0);
 // 存在返回原值，否则添加该元素，并返回新值
-map.computerIfAbsent("Alice", key -> 90); // 80
-map.computerIfAbsent("Bob", key -> 90);   // 90
+map.computeIfAbsent("Alice", key -> 90); // 81
+map.computeIfAbsent("Bob", key -> 90);   // 90
+// 修改已存在的值，并返回新值
+map.computeIfPresent("Alice", (key, value) -> value + 10); // 91
 // 查询键
-map.containsKey("Bob");                   // true
+map.containsKey("Bob"); // true
+```
+
+#### 删
+
+```java
 // 删除
-map.remove("Bob");
+map.remove("Alice");
 // 清空
 map.clear();
+```
+
+```java
 // 是否为空
 map.isEmpty();
 // 大小
 map.size();
+```
 
+#### 遍历
+
+```java
 // 遍历1
 for (String key : map.keySet()) {
     int value = map.get(key);
@@ -449,7 +607,6 @@ for (Map.Entry<String, Integer> ent : map.entrySet()) {
 }
 // 只遍历 value
 for (int value : map.values()) {
-
 }
 ```
 
@@ -463,13 +620,16 @@ import java.util.Map;
 import java.util.TreeMap;
 ```
 
+#### 类实现 Comparable 接口
+
 ```java
-// 类实现接口
 class Stu implements Comparable<Stu> {
     String name;
     int score;
 
+    @Override
     public int compareTo(Stu s) {
+        // x.compareTo(y) < 0 等价于 x < y
         if (score != s.score) {
             return s.score - score;
         } else {
@@ -477,9 +637,35 @@ class Stu implements Comparable<Stu> {
         }
     }
 }
-// 类未实现接口，手动实现
-Map<Stu, Integer> map = new TreeMap<>(new Comparator<Stu>() {
+
+Map<Stu, Integer> map = new TreeMap<>();
+```
+
+#### 自定义 Comparator 比较器
+
+```java
+import java.util.Comparator;
+
+class Stu {
+    String name;
+    int score;
+
+    String getName() {
+        return name;
+    }
+
+    int getScore() {
+        return score;
+    }
+}
+```
+
+```java
+// 实现1 匿名类
+Map<Stu, Integer> map1 = new TreeMap<>(new Comparator<Stu>() {
+    @Override
     public int compare(Stu a, Stu b) {
+        // compare(x, y) < 0 等价于 x < y
         if (a.score != b.score) {
             return b.score - a.score;
         } else {
@@ -489,7 +675,132 @@ Map<Stu, Integer> map = new TreeMap<>(new Comparator<Stu>() {
 });
 ```
 
-## 8.SortedSet
+```java
+// 实现2 lambda 表达式
+Comparator<Stu> cmp = (Stu a, Stu b) -> a.score != b.score ? b.score - a.score : a.name.compareTo(b.name);
+Map<Stu, Integer> map2 = new TreeMap<>(cmp);
+```
+
+```java
+// 实现3 lambda 表达式
+Map<Stu, Integer> map3 = new TreeMap<>((Stu a, Stu b) -> a.score != b.score ? b.score - a.score : a.name.compareTo(b.name));
+```
+
+```java
+// 实现4 Comparator 类方法
+Map<Stu, Integer> map4 = new TreeMap<>(Comparator.comparing(Stu::getScore).reversed().thenComparing(Stu::getName));
+```
+
+## Arrays
+
+```java
+import java.util.Arrays;
+```
+
+### 二分查找
+
+查找指定值，返回下标，若未找到则返回应该插入的下标的相反数减一。需要**数组升序且元素无重复**。
+
+- `static <T> int binarySearch(T[] a, T key)`
+- `static <T> int binarySearch(T[] a, int fromIndex, int toIndex, T key)`
+- `static <T> int binarySearch​(T[] a, T key, Comparator<? super T> c)`
+- `static <T> int binarySearch​(T[] a, int fromIndex, int toIndex, T key, Comparator<? super T> c)`
+
+```java
+int[] arr = {1, 3, 5};
+Arrays.binarySearch(arr, -1); // -1
+Arrays.binarySearch(arr, 0);  // -1
+Arrays.binarySearch(arr, 1);  // 0
+Arrays.binarySearch(arr, 2);  // -2
+Arrays.binarySearch(arr, -4); // -1
+Arrays.binarySearch(arr, 8);  // -4
+```
+
+### 比较
+
+a 小于 b 返回 -1，等于返回 0，大于返回 1。
+
+- `static <T> int compare(T[] a, T[] b)`
+- `static <T> int compare​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex)`
+- `static <T> int compare​(T[] a, T[] b, Comparator<? super T> cmp)`
+- `static <T> int compare​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex, Comparator<? super T> cmp)`
+
+相等 true，不相等 false。
+
+- `static <T> boolean equals​(T[] a, T[] b)`
+- `static <T> boolean equals​(T[] a, T[] b, Comparator<? super T> cmp)`
+- `static <T> boolean equals​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex)`
+- `static <T> boolean equals​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex, Comparator<? super T> cmp)`
+
+比较多维数组
+
+- `static boolean deepEquals​(Object[] a1, Object[] a2)`
+
+```java
+int[][] a = { { 1, 2 }, { 3, 4 } };
+int[][] b = { { 1, 2 }, { 3, 4 } };
+System.out.println(a == b);                  // false
+System.out.println(a.equals(b));             // false
+System.out.println(Arrays.deepEquals(a, b)); // true
+```
+
+返回第一个不相等的下标，若全相等，返回 -1。
+
+- `static <T> int mismatch​(T[] a, T[] b)`
+- `static <T> int mismatch​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex)`
+- `static <T> int mismatch​(T[] a, T[] b, Comparator<? super T> cmp)`
+- `static <T> int mismatch​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex, Comparator<? super T> cmp)`
+
+### 复制
+
+新数组长度小于原数组则截断，大于则多余元素为 null/0。
+
+- `static <T> T[] copyOf​(T[] original, int newLength)`
+- `static <T,​U> T[] copyOf​(U[] original, int newLength, Class<? extends T[]> newType)`
+- `static <T> T[] copyOfRange​(T[] original, int from, int to)`
+- `static <T,​U> T[] copyOfRange​(U[] original, int from, int to, Class<? extends T[]> newType)`
+
+### 赋值
+
+- `static <T> void fill(T[] a, T val)`
+- `static <T> void fill(T[] a, int fromIndex, int toIndex, T val)`
+
+### 前缀操作
+
+- `static <T> void parallelPrefix​(T[] array, BinaryOperator<T> op)`
+- `static <T> void parallelPrefix​(T[] array, int fromIndex, int toIndex, BinaryOperator<T> op)`
+
+```java
+int[] a = { 1, 2, 3 };
+// 前缀和
+Arrays.parallelPrefix(a, (x, y) -> x + y); // [1, 3, 6]
+```
+
+### 排序
+
+- `static <T> void sort​(T[] a)`
+- `static <T> void sort​(T[] a, Comparator<? super T> c)`
+- `static <T> void sort​(T[] a, int fromIndex, int toIndex)`
+- `static <T> void sort​(T[] a, int fromIndex, int toIndex, Comparator<? super T> c)`
+
+### 流
+
+- `static <T> Stream<T> stream​(T[] array)`
+- `static <T> Stream<T> stream​(T[] array, int startInclusive, int endExclusive)`
+
+### 转为字符串
+
+- `static <T> String toString(T[] a)`
+- `static String deepToString​(Object[] a)`：可用于打印多维数组。
+
+```java
+int[][] a = { { 1, 2 }, { 3, 4 } };
+int[][] b = { { 1, 2 }, { 3, 4 } };
+System.out.println(a);                       // [[I@36aa7bc2
+System.out.println(Arrays.toString(a));      // [[I@76ccd017, [I@182decdb]
+System.out.println(Arrays.toString(a[0]));   // [1, 2]
+System.out.println(Arrays.deepToString(a));  // [[1, 2], [3, 4]]
+```
 
 ## Collections
 

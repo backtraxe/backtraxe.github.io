@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <title class="pjax-title">Java Collections Framework 教程 - </title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="Java Collections Framework 教程" />
-<meta property="og:description" content="Collection 是用于表示和操作集合的统一体系结构。" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/java-collections-framework-%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-20T11:09:30+08:00" />
-<meta property="article:modified_time" content="2022-03-02T11:09:30+08:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-03-14T11:09:30+08:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java Collections Framework 教程"/>
-<meta name="twitter:description" content="Collection 是用于表示和操作集合的统一体系结构。"/>
+<meta name="twitter:description" content=""/>
 <meta name="application-name" content="traXe">
 <meta name="apple-mobile-web-app-title" content="traXe">
 
@@ -31,8 +31,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/java-collections-framework-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Java","wordcount":  3947 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/java-collections-framework-%E6%95%99%E7%A8%8B\/","datePublished": "2021-08-20T11:09:30+08:00","dateModified": "2022-03-02T11:09:30+08:00","publisher": {
+        },"genre": "posts","keywords": "Java","wordcount":  5330 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/java-collections-framework-%E6%95%99%E7%A8%8B\/","datePublished": "2021-08-20T11:09:30+08:00","dateModified": "2022-03-14T11:09:30+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -118,22 +118,20 @@
         <h2 class="toc-title">目录</h2>
         <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1简介">1.简介</a></li>
     <li><a href="#2collection">2.Collection</a>
       <ul>
         <li><a href="#21-方法">2.1 方法</a></li>
         <li><a href="#22-遍历">2.2 遍历</a></li>
       </ul>
     </li>
-    <li><a href="#3set">3.Set</a>
+    <li><a href="#list">List</a>
       <ul>
-        <li><a href="#31-特性">3.1 特性</a></li>
-        <li><a href="#32-实现">3.2 实现</a></li>
-      </ul>
-    </li>
-    <li><a href="#4list">4.List</a>
-      <ul>
-        <li><a href="#arraylist">ArrayList</a></li>
+        <li><a href="#arraylist">ArrayList</a>
+          <ul>
+            <li><a href="#初始化">初始化</a></li>
+            <li><a href="#去重">去重</a></li>
+          </ul>
+        </li>
         <li><a href="#linkedlist">LinkedList</a></li>
         <li><a href="#43-方法">4.3 方法</a></li>
         <li><a href="#44-遍历">4.4 遍历</a></li>
@@ -143,6 +141,7 @@
             <li><a href="#数组转-list">数组转 List</a></li>
           </ul>
         </li>
+        <li><a href="#排序">排序</a></li>
       </ul>
     </li>
     <li><a href="#queue">Queue</a>
@@ -161,14 +160,50 @@
         </li>
       </ul>
     </li>
-    <li><a href="#6deque">6.Deque</a></li>
-    <li><a href="#map">Map</a>
+    <li><a href="#set">Set</a>
       <ul>
-        <li><a href="#hashmap">HashMap</a></li>
-        <li><a href="#treemap">TreeMap</a></li>
+        <li><a href="#hashset">HashSet</a></li>
+        <li><a href="#treeset">TreeSet</a>
+          <ul>
+            <li><a href="#增">增</a></li>
+            <li><a href="#查">查</a></li>
+            <li><a href="#删">删</a></li>
+            <li><a href="#子集">子集</a></li>
+            <li><a href="#遍历">遍历</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#8sortedset">8.SortedSet</a></li>
+    <li><a href="#map">Map</a>
+      <ul>
+        <li><a href="#hashmap">HashMap</a>
+          <ul>
+            <li><a href="#增改">增/改</a></li>
+            <li><a href="#查-1">查</a></li>
+            <li><a href="#删-1">删</a></li>
+            <li><a href="#遍历-1">遍历</a></li>
+          </ul>
+        </li>
+        <li><a href="#treemap">TreeMap</a>
+          <ul>
+            <li><a href="#类实现-comparable-接口">类实现 Comparable 接口</a></li>
+            <li><a href="#自定义-comparator-比较器">自定义 Comparator 比较器</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#arrays">Arrays</a>
+      <ul>
+        <li><a href="#二分查找">二分查找</a></li>
+        <li><a href="#比较">比较</a></li>
+        <li><a href="#复制">复制</a></li>
+        <li><a href="#赋值">赋值</a></li>
+        <li><a href="#前缀操作">前缀操作</a></li>
+        <li><a href="#排序-1">排序</a></li>
+        <li><a href="#流">流</a></li>
+        <li><a href="#转为字符串">转为字符串</a></li>
+      </ul>
+    </li>
     <li><a href="#collections">Collections</a></li>
     <li><a href="#10代码片段">10.代码片段</a>
       <ul>
@@ -185,8 +220,8 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-20">2021-08-20</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-03-02">2022-03-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3947 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-20">2021-08-20</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-03-14">2022-03-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5330 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -194,22 +229,20 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1简介">1.简介</a></li>
     <li><a href="#2collection">2.Collection</a>
       <ul>
         <li><a href="#21-方法">2.1 方法</a></li>
         <li><a href="#22-遍历">2.2 遍历</a></li>
       </ul>
     </li>
-    <li><a href="#3set">3.Set</a>
+    <li><a href="#list">List</a>
       <ul>
-        <li><a href="#31-特性">3.1 特性</a></li>
-        <li><a href="#32-实现">3.2 实现</a></li>
-      </ul>
-    </li>
-    <li><a href="#4list">4.List</a>
-      <ul>
-        <li><a href="#arraylist">ArrayList</a></li>
+        <li><a href="#arraylist">ArrayList</a>
+          <ul>
+            <li><a href="#初始化">初始化</a></li>
+            <li><a href="#去重">去重</a></li>
+          </ul>
+        </li>
         <li><a href="#linkedlist">LinkedList</a></li>
         <li><a href="#43-方法">4.3 方法</a></li>
         <li><a href="#44-遍历">4.4 遍历</a></li>
@@ -219,6 +252,7 @@
             <li><a href="#数组转-list">数组转 List</a></li>
           </ul>
         </li>
+        <li><a href="#排序">排序</a></li>
       </ul>
     </li>
     <li><a href="#queue">Queue</a>
@@ -237,14 +271,50 @@
         </li>
       </ul>
     </li>
-    <li><a href="#6deque">6.Deque</a></li>
-    <li><a href="#map">Map</a>
+    <li><a href="#set">Set</a>
       <ul>
-        <li><a href="#hashmap">HashMap</a></li>
-        <li><a href="#treemap">TreeMap</a></li>
+        <li><a href="#hashset">HashSet</a></li>
+        <li><a href="#treeset">TreeSet</a>
+          <ul>
+            <li><a href="#增">增</a></li>
+            <li><a href="#查">查</a></li>
+            <li><a href="#删">删</a></li>
+            <li><a href="#子集">子集</a></li>
+            <li><a href="#遍历">遍历</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#8sortedset">8.SortedSet</a></li>
+    <li><a href="#map">Map</a>
+      <ul>
+        <li><a href="#hashmap">HashMap</a>
+          <ul>
+            <li><a href="#增改">增/改</a></li>
+            <li><a href="#查-1">查</a></li>
+            <li><a href="#删-1">删</a></li>
+            <li><a href="#遍历-1">遍历</a></li>
+          </ul>
+        </li>
+        <li><a href="#treemap">TreeMap</a>
+          <ul>
+            <li><a href="#类实现-comparable-接口">类实现 Comparable 接口</a></li>
+            <li><a href="#自定义-comparator-比较器">自定义 Comparator 比较器</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#arrays">Arrays</a>
+      <ul>
+        <li><a href="#二分查找">二分查找</a></li>
+        <li><a href="#比较">比较</a></li>
+        <li><a href="#复制">复制</a></li>
+        <li><a href="#赋值">赋值</a></li>
+        <li><a href="#前缀操作">前缀操作</a></li>
+        <li><a href="#排序-1">排序</a></li>
+        <li><a href="#流">流</a></li>
+        <li><a href="#转为字符串">转为字符串</a></li>
+      </ul>
+    </li>
     <li><a href="#collections">Collections</a></li>
     <li><a href="#10代码片段">10.代码片段</a>
       <ul>
@@ -257,27 +327,7 @@
     <li><a href="#streams">Streams</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>Collection 是用于表示和操作集合的统一体系结构。</p>
-<h2 id="1简介" class="headerLink">
-    <a href="#1%e7%ae%80%e4%bb%8b" class="header-mark"></a>1.简介</h2><p>所有 Collection 都包含以下内容：</p>
-<ul>
-<li><strong>接口（Interfaces）</strong>：这些是表示集合的抽象数据类型。接口允许集合独立于其表示的细节进行操作。在面向对象语言中，接口通常形成一个层次结构。</li>
-<li><strong>实现（Implementations）</strong>：这些是集合接口的具体实现。本质上，它们是可重用的数据结构。</li>
-<li><strong>算法（Algorithms）</strong>：这些方法对实现集合接口的对象执行有用的计算，如搜索和排序。这些算法被认为是多态的：也就是说，相同的方法可以用于相应集合接口的许多不同实现。本质上，算法是可重用的功能。</li>
-</ul>
-<div class="mermaid" id="id-1"></div>
-<p>上图描述了核心 Collection 接口：</p>
-<ul>
-<li><strong>Collection</strong>：父类，提供统一接口。</li>
-<li><strong>Set</strong>：集合；元素无序；元素唯一。</li>
-<li><strong>List</strong>：数组；元素有序；索引访问。</li>
-<li><strong>Queue</strong>：队列；FIFO（除了优先级队列）。</li>
-<li><strong>Deque</strong>：双向队列。</li>
-<li><strong>Map</strong>：键值对；键无序；键唯一；一一映射。</li>
-<li><strong>SortedSet</strong>：有序集合；默认升序；元素唯一。</li>
-<li><strong>SortedMap</strong>：有序键值对；默认升序；键唯一；一一映射。</li>
-</ul>
-<h2 id="2collection" class="headerLink">
+            </div><div class="content" id="content"><h2 id="2collection" class="headerLink">
     <a href="#2collection" class="header-mark"></a>2.Collection</h2><h3 id="21-方法" class="headerLink">
     <a href="#21-%e6%96%b9%e6%b3%95" class="header-mark"></a>2.1 方法</h3><ul>
 <li><code>int size()</code>：返回容器大小</li>
@@ -388,20 +438,8 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="3set" class="headerLink">
-    <a href="#3set" class="header-mark"></a>3.Set</h2><h3 id="31-特性" class="headerLink">
-    <a href="#31-%e7%89%b9%e6%80%a7" class="header-mark"></a>3.1 特性</h3><ul>
-<li>继承 <code>Collection</code>，可使用其所有方法</li>
-<li>元素唯一</li>
-</ul>
-<h3 id="32-实现" class="headerLink">
-    <a href="#32-%e5%ae%9e%e7%8e%b0" class="header-mark"></a>3.2 实现</h3><ul>
-<li><code>HashSet</code>：哈希表实现；性能最佳；元素无序</li>
-<li><code>TreeSet</code>：红黑树实现；性能最差；元素有序（默认升序）</li>
-<li><code>LinkedHashSet</code>：哈希表+链表实现；性能第二；元素按添加顺序排序</li>
-</ul>
-<h2 id="4list" class="headerLink">
-    <a href="#4list" class="header-mark"></a>4.List</h2><h3 id="arraylist" class="headerLink">
+</div><h2 id="list" class="headerLink">
+    <a href="#list" class="header-mark"></a>List</h2><h3 id="arraylist" class="headerLink">
     <a href="#arraylist" class="header-mark"></a>ArrayList</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -446,6 +484,78 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">//
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="初始化" class="headerLink">
+    <a href="#%e5%88%9d%e5%a7%8b%e5%8c%96" class="header-mark"></a>初始化</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 初始化1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">list1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 初始化2，推荐
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;()</span> <span class="o">{{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">add</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 初始化3，不能修改
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list3</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 初始化4，不能修改
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list4</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 初始化5，推荐
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list5</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 初始化6，推荐
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list6</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">));</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="去重" class="headerLink">
+    <a href="#%e5%8e%bb%e9%87%8d" class="header-mark"></a>去重</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">2</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 去重1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">LinkedHashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">deDuplicator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashSet</span><span class="o">&lt;&gt;(</span><span class="n">list1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;(</span><span class="n">deDuplicator</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 去重2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list3</span> <span class="o">=</span> <span class="n">list1</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">distinct</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 去重3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hashset</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">:</span> <span class="n">list1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">hashset</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">list4</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="linkedlist" class="headerLink">
@@ -589,6 +699,13 @@
 </span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 转换后的 list 只读，不能增删或修改
 </span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="排序" class="headerLink">
+    <a href="#%e6%8e%92%e5%ba%8f" class="header-mark"></a>排序</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"></code></pre></td></tr></table>
 </div>
 </div><h2 id="queue" class="headerLink">
     <a href="#queue" class="header-mark"></a>Queue</h2><div class="highlight"><div class="chroma">
@@ -879,23 +996,197 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="6deque" class="headerLink">
-    <a href="#6deque" class="header-mark"></a>6.Deque</h2><h2 id="map" class="headerLink">
-    <a href="#map" class="header-mark"></a>Map</h2><h3 id="hashmap" class="headerLink">
-    <a href="#hashmap" class="header-mark"></a>HashMap</h3><ul>
-<li>无序键值对，键不重复。</li>
+</div><h2 id="set" class="headerLink">
+    <a href="#set" class="header-mark"></a>Set</h2><h3 id="hashset" class="headerLink">
+    <a href="#hashset" class="header-mark"></a>HashSet</h3><ul>
+<li>元素唯一，不可重复</li>
+<li>元素乱序</li>
+<li>数组+哈希函数实现，性能最优</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="treeset" class="headerLink">
+    <a href="#treeset" class="header-mark"></a>TreeSet</h3><ul>
+<li>元素唯一，不可重复</li>
+<li>元素有序（默认升序）</li>
+<li>红黑树实现，性能最差</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.TreeSet</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">set2</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">Set</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">5</span><span class="o">));</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="增" class="headerLink">
+    <a href="#%e5%a2%9e" class="header-mark"></a>增</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>       <span class="c1">// [1]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">set</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">set2</span><span class="o">);</span> <span class="c1">// [1, 3, 5]
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查" class="headerLink">
+    <a href="#%e6%9f%a5" class="header-mark"></a>查</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>             <span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">set</span><span class="o">.</span><span class="na">first</span><span class="o">();</span>                 <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">set</span><span class="o">.</span><span class="na">last</span><span class="o">();</span>                  <span class="c1">// 5
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 第一个大于等于指定值的元素，不存在返回 null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">ceiling</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>  <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">ceiling</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>  <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a3</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">ceiling</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>  <span class="c1">// 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a4</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">ceiling</span><span class="o">(</span><span class="n">7</span><span class="o">);</span>  <span class="c1">// null
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 第一个大于指定值的元素，不存在返回 null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a5</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">higher</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>  <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a6</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">higher</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>  <span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a7</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">higher</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>  <span class="c1">// 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a8</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">higher</span><span class="o">(</span><span class="n">7</span><span class="o">);</span>  <span class="c1">// null
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 第一个小于等于指定值的元素，不存在返回 null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a9</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>    <span class="c1">// null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a10</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>   <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a11</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>   <span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a12</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">7</span><span class="o">);</span>   <span class="c1">// 5
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 第一个小于指定值的元素，不存在返回 null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a13</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">lower</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>   <span class="c1">// null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a14</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">lower</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>   <span class="c1">// null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a15</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">lower</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>   <span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span> <span class="n">a16</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">lower</span><span class="o">(</span><span class="n">7</span><span class="o">);</span>   <span class="c1">// 5
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="删" class="headerLink">
+    <a href="#%e5%88%a0" class="header-mark"></a>删</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">pollFirst</span><span class="o">();</span> <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">set</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>  <span class="c1">// 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">set</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>   <span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">set</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">4</span><span class="o">);</span>   <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">set</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="子集" class="headerLink">
+    <a href="#%e5%ad%90%e9%9b%86" class="header-mark"></a>子集</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeSet</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">set</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">Set</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">));</span>                       <span class="c1">// [1, 2, 3]
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 范围子集
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set1</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">subSet</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">);</span>              <span class="c1">// [1]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set2</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">subSet</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span> <span class="c1">// [2]
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 首部子集
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set3</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">tailSet</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>                <span class="c1">// [1]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set4</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">tailSet</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>          <span class="c1">// [1, 2]
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 尾部子集
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set3</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">tailSet</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>                <span class="c1">// [2, 3]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set4</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">tailSet</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>         <span class="c1">// [3]
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 逆序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set7</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">descendingSet</span><span class="o">();</span>           <span class="c1">// [3, 2, 1]
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="遍历" class="headerLink">
+    <a href="#%e9%81%8d%e5%8e%86" class="header-mark"></a>遍历</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -913,58 +1204,153 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// foreach
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">:</span> <span class="n">set</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// foreach 逆序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">:</span> <span class="n">set</span><span class="o">.</span><span class="na">descendingSet</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// iterator
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span> <span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// iterator 逆序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">descendingIterator</span><span class="o">();</span> <span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="map" class="headerLink">
+    <a href="#map" class="header-mark"></a>Map</h2><img src="/Java-Collections-Framework-教程/Map家族.svg" alt="Map家族">
+<h3 id="hashmap" class="headerLink">
+    <a href="#hashmap" class="header-mark"></a>HashMap</h3><ul>
+<li>无序键值对，键不重复。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 定义
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 添加
+</span></span><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">otherMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="增改" class="headerLink">
+    <a href="#%e5%a2%9e%e6%94%b9" class="header-mark"></a>增/改</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 添加元素，始终覆盖原值
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="n">80</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 存在返回原值，否则添加该元素，返回 null
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">putIfAbsent</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">map</span><span class="o">.</span><span class="na">putAll</span><span class="o">(</span><span class="n">otherMap</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">map</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span> <span class="c1">// map[key]++
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 查询值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">);</span> <span class="c1">// 80
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 存在返回原值，否则返回指定值，但不添加元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">putIfAbsent</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="n">60</span><span class="o">);</span> <span class="c1">// 80
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 添加所有元素，始终覆盖原值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">putAll</span><span class="o">(</span><span class="n">otherMap</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 自增 map[key]++
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="n">map</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span> <span class="c1">// 81
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="查-1" class="headerLink">
+    <a href="#%e6%9f%a5-1" class="header-mark"></a>查</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 根据键查询值，不存在返回 null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">);</span> <span class="c1">// 81
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 存在返回原值，否则返回指定值
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="s">&#34;Bob&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 存在返回原值，否则添加该元素，并返回新值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">computerIfAbsent</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="n">90</span><span class="o">);</span> <span class="c1">// 80
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">computerIfAbsent</span><span class="o">(</span><span class="s">&#34;Bob&#34;</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="n">90</span><span class="o">);</span>   <span class="c1">// 90
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="n">90</span><span class="o">);</span> <span class="c1">// 81
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">computeIfAbsent</span><span class="o">(</span><span class="s">&#34;Bob&#34;</span><span class="o">,</span> <span class="n">key</span> <span class="o">-&gt;</span> <span class="n">90</span><span class="o">);</span>   <span class="c1">// 90
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 修改已存在的值，并返回新值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">computeIfPresent</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">value</span> <span class="o">+</span> <span class="n">10</span><span class="o">);</span> <span class="c1">// 91
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 查询键
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s">&#34;Bob&#34;</span><span class="o">);</span>                   <span class="c1">// true
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 删除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="s">&#34;Bob&#34;</span><span class="o">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s">&#34;Bob&#34;</span><span class="o">);</span> <span class="c1">// true
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="删-1" class="headerLink">
+    <a href="#%e5%88%a0-1" class="header-mark"></a>删</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 删除
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 清空
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 是否为空
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 是否为空
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 大小
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">map</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 遍历1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="遍历-1" class="headerLink">
+    <a href="#%e9%81%8d%e5%8e%86-1" class="header-mark"></a>遍历</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 遍历1
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">key</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
@@ -975,7 +1361,6 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 只遍历 value
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">value</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">values</span><span class="o">())</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -994,7 +1379,8 @@
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.TreeMap</span><span class="o">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><h4 id="类实现-comparable-接口" class="headerLink">
+    <a href="#%e7%b1%bb%e5%ae%9e%e7%8e%b0-comparable-%e6%8e%a5%e5%8f%a3" class="header-mark"></a>类实现 Comparable 接口</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1012,32 +1398,83 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 类实现接口
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">Stu</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">&gt;</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Stu</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">&gt;</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">score</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">Stu</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">score</span> <span class="o">!=</span> <span class="n">s</span><span class="o">.</span><span class="na">score</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// x.compareTo(y) &lt; 0 等价于 x &lt; y
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">score</span> <span class="o">!=</span> <span class="n">s</span><span class="o">.</span><span class="na">score</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">score</span> <span class="o">-</span> <span class="n">score</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        <span class="o">}</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 类未实现接口，手动实现
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="自定义-comparator-比较器" class="headerLink">
+    <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89-comparator-%e6%af%94%e8%be%83%e5%99%a8" class="header-mark"></a>自定义 Comparator 比较器</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Comparator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Stu</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">score</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">getScore</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">score</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 实现1 匿名类
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Stu</span> <span class="n">a</span><span class="o">,</span> <span class="n">Stu</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">score</span> <span class="o">!=</span> <span class="n">b</span><span class="o">.</span><span class="na">score</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// compare(x, y) &lt; 0 等价于 x &lt; y
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">score</span> <span class="o">!=</span> <span class="n">b</span><span class="o">.</span><span class="na">score</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">b</span><span class="o">.</span><span class="na">score</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="na">score</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
@@ -1046,8 +1483,183 @@
 </span></span><span class="line"><span class="cl"><span class="o">});</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="8sortedset" class="headerLink">
-    <a href="#8sortedset" class="header-mark"></a>8.SortedSet</h2><h2 id="collections" class="headerLink">
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 实现2 lambda 表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">&gt;</span> <span class="n">cmp</span> <span class="o">=</span> <span class="o">(</span><span class="n">Stu</span> <span class="n">a</span><span class="o">,</span> <span class="n">Stu</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">.</span><span class="na">score</span> <span class="o">!=</span> <span class="n">b</span><span class="o">.</span><span class="na">score</span> <span class="o">?</span> <span class="n">b</span><span class="o">.</span><span class="na">score</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="na">score</span> <span class="o">:</span> <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;(</span><span class="n">cmp</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 实现3 lambda 表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;((</span><span class="n">Stu</span> <span class="n">a</span><span class="o">,</span> <span class="n">Stu</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">.</span><span class="na">score</span> <span class="o">!=</span> <span class="n">b</span><span class="o">.</span><span class="na">score</span> <span class="o">?</span> <span class="n">b</span><span class="o">.</span><span class="na">score</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="na">score</span> <span class="o">:</span> <span class="n">a</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">name</span><span class="o">));</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 实现4 Comparator 类方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Stu</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;&gt;(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">Stu</span><span class="o">::</span><span class="n">getScore</span><span class="o">).</span><span class="na">reversed</span><span class="o">().</span><span class="na">thenComparing</span><span class="o">(</span><span class="n">Stu</span><span class="o">::</span><span class="n">getName</span><span class="o">));</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="arrays" class="headerLink">
+    <a href="#arrays" class="header-mark"></a>Arrays</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="二分查找" class="headerLink">
+    <a href="#%e4%ba%8c%e5%88%86%e6%9f%a5%e6%89%be" class="header-mark"></a>二分查找</h3><p>查找指定值，返回下标，若未找到则返回应该插入的下标的相反数减一。需要<strong>数组升序且元素无重复</strong>。</p>
+<ul>
+<li><code>static &lt;T&gt; int binarySearch(T[] a, T key)</code></li>
+<li><code>static &lt;T&gt; int binarySearch(T[] a, int fromIndex, int toIndex, T key)</code></li>
+<li><code>static &lt;T&gt; int binarySearch​(T[] a, T key, Comparator&lt;? super T&gt; c)</code></li>
+<li><code>static &lt;T&gt; int binarySearch​(T[] a, int fromIndex, int toIndex, T key, Comparator&lt;? super T&gt; c)</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="o">{</span><span class="n">1</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">5</span><span class="o">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">Arrays</span><span class="o">.</span><span class="na">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="o">-</span><span class="n">1</span><span class="o">);</span> <span class="c1">// -1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Arrays</span><span class="o">.</span><span class="na">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>  <span class="c1">// -1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Arrays</span><span class="o">.</span><span class="na">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>  <span class="c1">// 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Arrays</span><span class="o">.</span><span class="na">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">2</span><span class="o">);</span>  <span class="c1">// -2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Arrays</span><span class="o">.</span><span class="na">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="o">-</span><span class="n">4</span><span class="o">);</span> <span class="c1">// -1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Arrays</span><span class="o">.</span><span class="na">binarySearch</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">8</span><span class="o">);</span>  <span class="c1">// -4
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="比较" class="headerLink">
+    <a href="#%e6%af%94%e8%be%83" class="header-mark"></a>比较</h3><p>a 小于 b 返回 -1，等于返回 0，大于返回 1。</p>
+<ul>
+<li><code>static &lt;T&gt; int compare(T[] a, T[] b)</code></li>
+<li><code>static &lt;T&gt; int compare​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex)</code></li>
+<li><code>static &lt;T&gt; int compare​(T[] a, T[] b, Comparator&lt;? super T&gt; cmp)</code></li>
+<li><code>static &lt;T&gt; int compare​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex, Comparator&lt;? super T&gt; cmp)</code></li>
+</ul>
+<p>相等 true，不相等 false。</p>
+<ul>
+<li><code>static &lt;T&gt; boolean equals​(T[] a, T[] b)</code></li>
+<li><code>static &lt;T&gt; boolean equals​(T[] a, T[] b, Comparator&lt;? super T&gt; cmp)</code></li>
+<li><code>static &lt;T&gt; boolean equals​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex)</code></li>
+<li><code>static &lt;T&gt; boolean equals​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex, Comparator&lt;? super T&gt; cmp)</code></li>
+</ul>
+<p>比较多维数组</p>
+<ul>
+<li><code>static boolean deepEquals​(Object[] a1, Object[] a2)</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[][]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{</span> <span class="o">{</span> <span class="n">1</span><span class="o">,</span> <span class="n">2</span> <span class="o">},</span> <span class="o">{</span> <span class="n">3</span><span class="o">,</span> <span class="n">4</span> <span class="o">}</span> <span class="o">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[][]</span> <span class="n">b</span> <span class="o">=</span> <span class="o">{</span> <span class="o">{</span> <span class="n">1</span><span class="o">,</span> <span class="n">2</span> <span class="o">},</span> <span class="o">{</span> <span class="n">3</span><span class="o">,</span> <span class="n">4</span> <span class="o">}</span> <span class="o">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">);</span>                  <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">b</span><span class="o">));</span>             <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">deepEquals</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">));</span> <span class="c1">// true
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>返回第一个不相等的下标，若全相等，返回 -1。</p>
+<ul>
+<li><code>static &lt;T&gt; int mismatch​(T[] a, T[] b)</code></li>
+<li><code>static &lt;T&gt; int mismatch​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex)</code></li>
+<li><code>static &lt;T&gt; int mismatch​(T[] a, T[] b, Comparator&lt;? super T&gt; cmp)</code></li>
+<li><code>static &lt;T&gt; int mismatch​(T[] a, int aFromIndex, int aToIndex, T[] b, int bFromIndex, int bToIndex, Comparator&lt;? super T&gt; cmp)</code></li>
+</ul>
+<h3 id="复制" class="headerLink">
+    <a href="#%e5%a4%8d%e5%88%b6" class="header-mark"></a>复制</h3><p>新数组长度小于原数组则截断，大于则多余元素为 null/0。</p>
+<ul>
+<li><code>static &lt;T&gt; T[] copyOf​(T[] original, int newLength)</code></li>
+<li><code>static &lt;T,​U&gt; T[] copyOf​(U[] original, int newLength, Class&lt;? extends T[]&gt; newType)</code></li>
+<li><code>static &lt;T&gt; T[] copyOfRange​(T[] original, int from, int to)</code></li>
+<li><code>static &lt;T,​U&gt; T[] copyOfRange​(U[] original, int from, int to, Class&lt;? extends T[]&gt; newType)</code></li>
+</ul>
+<h3 id="赋值" class="headerLink">
+    <a href="#%e8%b5%8b%e5%80%bc" class="header-mark"></a>赋值</h3><ul>
+<li><code>static &lt;T&gt; void fill(T[] a, T val)</code></li>
+<li><code>static &lt;T&gt; void fill(T[] a, int fromIndex, int toIndex, T val)</code></li>
+</ul>
+<h3 id="前缀操作" class="headerLink">
+    <a href="#%e5%89%8d%e7%bc%80%e6%93%8d%e4%bd%9c" class="header-mark"></a>前缀操作</h3><ul>
+<li><code>static &lt;T&gt; void parallelPrefix​(T[] array, BinaryOperator&lt;T&gt; op)</code></li>
+<li><code>static &lt;T&gt; void parallelPrefix​(T[] array, int fromIndex, int toIndex, BinaryOperator&lt;T&gt; op)</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{</span> <span class="n">1</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span> <span class="o">};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 前缀和
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Arrays</span><span class="o">.</span><span class="na">parallelPrefix</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span> <span class="c1">// [1, 3, 6]
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="排序-1" class="headerLink">
+    <a href="#%e6%8e%92%e5%ba%8f-1" class="header-mark"></a>排序</h3><ul>
+<li><code>static &lt;T&gt; void sort​(T[] a)</code></li>
+<li><code>static &lt;T&gt; void sort​(T[] a, Comparator&lt;? super T&gt; c)</code></li>
+<li><code>static &lt;T&gt; void sort​(T[] a, int fromIndex, int toIndex)</code></li>
+<li><code>static &lt;T&gt; void sort​(T[] a, int fromIndex, int toIndex, Comparator&lt;? super T&gt; c)</code></li>
+</ul>
+<h3 id="流" class="headerLink">
+    <a href="#%e6%b5%81" class="header-mark"></a>流</h3><ul>
+<li><code>static &lt;T&gt; Stream&lt;T&gt; stream​(T[] array)</code></li>
+<li><code>static &lt;T&gt; Stream&lt;T&gt; stream​(T[] array, int startInclusive, int endExclusive)</code></li>
+</ul>
+<h3 id="转为字符串" class="headerLink">
+    <a href="#%e8%bd%ac%e4%b8%ba%e5%ad%97%e7%ac%a6%e4%b8%b2" class="header-mark"></a>转为字符串</h3><ul>
+<li><code>static &lt;T&gt; String toString(T[] a)</code></li>
+<li><code>static String deepToString​(Object[] a)</code>：可用于打印多维数组。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[][]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{</span> <span class="o">{</span> <span class="n">1</span><span class="o">,</span> <span class="n">2</span> <span class="o">},</span> <span class="o">{</span> <span class="n">3</span><span class="o">,</span> <span class="n">4</span> <span class="o">}</span> <span class="o">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[][]</span> <span class="n">b</span> <span class="o">=</span> <span class="o">{</span> <span class="o">{</span> <span class="n">1</span><span class="o">,</span> <span class="n">2</span> <span class="o">},</span> <span class="o">{</span> <span class="n">3</span><span class="o">,</span> <span class="n">4</span> <span class="o">}</span> <span class="o">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>                       <span class="c1">// [[I@36aa7bc2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">a</span><span class="o">));</span>      <span class="c1">// [[I@76ccd017, [I@182decdb]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">0</span><span class="o">]));</span>   <span class="c1">// [1, 2]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">deepToString</span><span class="o">(</span><span class="n">a</span><span class="o">));</span>  <span class="c1">// [[1, 2], [3, 4]]
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="collections" class="headerLink">
     <a href="#collections" class="header-mark"></a>Collections</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1537,7 +2149,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-03-02</span>
+                <span>更新于 2022-03-14</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -1576,8 +2188,8 @@
         </a>
     </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 
-<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"data":{"id-1":"classDiagram\n    Collection \u003c|-- Set\n    Collection \u003c|-- List\n    Collection \u003c|-- Queue\n    Collection \u003c|-- Deque\n    Set \u003c|-- SortedSet\n    Map \u003c|-- SortedMap"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"mermaid":true,"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js" defer></script><script type="text/javascript" src="/js/mermaid.min.js" defer></script><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
-        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"></div>
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
 </body>
 
 </html>

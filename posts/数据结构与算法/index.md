@@ -861,13 +861,117 @@ def fib(n):
 
 ## 图论
 
-### DFS
+### 定义
 
-```python
-
+```java
+// 结点
+class Vertex {
+    int id;
+    List<Vertex> neighbors;
+}
+// 邻接表 无边权
+List<Integer>[] graph;
+// 邻接表 有边权
+List<int[]>[] graph;
+// 邻接矩阵
+int[][] mat;
 ```
 
-### BFS
+- 邻接表
+    - 优点：占用的空间少
+    - 缺点：无法快速判断两个节点是否相邻
+    - 适用于稀疏图
+- 邻接矩阵
+    - 优点：占用的空间多
+    - 缺点：可以快速判断两个节点是否相邻
+    - 适用于稠密图
+
+```java
+int[] indegree;  // 入度
+int[] outdegree; // 出度
+```
+
+### 遍历
+
+#### DFS
+
+```java
+boolean[] vis;
+Deque<Integer> trace;                            // 记录当前路径
+boolean[] onPath;                                // 判断某顶点是否在当前路径上
+List<List<Integer>> traces = new LinkedList<>(); // 记录所有路径
+
+// 邻接表
+void dfs(List<Integer>[] graph, int begin, int end) {
+    if (vis[begin]) {
+        return;
+    }
+    // 访问当前顶点
+    vis[begin] = true;
+    onPath[begin] = true;
+    trace.offerLast(begin);
+    // 到达终点
+    if (begin == end) {
+        // 防止已添加路径被修改
+        traces.add(new LinkedList<Integer>(trace));
+        // 回溯
+        vis[begin] = false;
+        onPath[begin] = false;
+        trace.pollLast();
+        return;
+    }
+    // 下个顶点
+    for (int next : graph[begin]) {
+        if (!vis[next]) {
+            dfs(graph, next, end);
+        }
+    }
+    // 回溯
+    vis[begin] = false;
+    onPath[begin] = false;
+    trace.pollLast();
+}
+```
+
+```java
+boolean[] vis;
+Deque<Integer> trace;                            // 记录当前路径
+boolean[] onPath;                                // 判断某顶点是否在当前路径上
+List<List<Integer>> traces = new LinkedList<>(); // 记录所有路径
+
+// 邻接矩阵
+void dfs(int[][] graph, int begin) {
+    if (vis[begin]) {
+        return;
+    }
+    // 访问当前顶点
+    vis[begin] = true;
+    onPath[begin] = true;
+    trace.offerLast(begin);
+    // 到达终点
+    if (begin == end) {
+        // 防止已添加路径被修改
+        traces.add(new LinkedList<Integer>(trace));
+        // 回溯
+        vis[begin] = false;
+        onPath[begin] = false;
+        trace.pollLast();
+        return;
+    }
+    // 下个顶点
+    for (int next = 0; next < graph.length; next++) {
+        if (!vis[next] && graph[begin][next] != 0) {
+            dfs(graph, next);
+        }
+    }
+    // 回溯
+    vis[begin] = false;
+    onPath[begin] = false;
+    trace.pollLast();
+}
+```
+
+#### BFS
 
 ```python
 def BFS(开始节点 s):

@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/"
-        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  7807 ,
+        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  8287 ,
         "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/","datePublished": "2021-02-09T22:06:43+08:00","dateModified": "2022-03-13T16:06:43+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
@@ -187,8 +187,13 @@
     <li><a href="#动态规划">动态规划</a></li>
     <li><a href="#图论">图论</a>
       <ul>
-        <li><a href="#dfs">DFS</a></li>
-        <li><a href="#bfs">BFS</a></li>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#遍历-1">遍历</a>
+          <ul>
+            <li><a href="#dfs">DFS</a></li>
+            <li><a href="#bfs">BFS</a></li>
+          </ul>
+        </li>
         <li><a href="#flood-fill">Flood Fill</a>
           <ul>
             <li><a href="#岛屿数量">岛屿数量</a></li>
@@ -217,8 +222,8 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><i class="far fa-folder fa-fw"></i>数据结构</a>&nbsp;<a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw"></i>算法</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-03-13">2022-03-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7807 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 16 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-03-13">2022-03-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 8287 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 17 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -295,8 +300,13 @@
     <li><a href="#动态规划">动态规划</a></li>
     <li><a href="#图论">图论</a>
       <ul>
-        <li><a href="#dfs">DFS</a></li>
-        <li><a href="#bfs">BFS</a></li>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#遍历-1">遍历</a>
+          <ul>
+            <li><a href="#dfs">DFS</a></li>
+            <li><a href="#bfs">BFS</a></li>
+          </ul>
+        </li>
         <li><a href="#flood-fill">Flood Fill</a>
           <ul>
             <li><a href="#岛屿数量">岛屿数量</a></li>
@@ -1649,15 +1659,217 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="图论" class="headerLink">
-    <a href="#%e5%9b%be%e8%ae%ba" class="header-mark"></a>图论</h2><h3 id="dfs" class="headerLink">
-    <a href="#dfs" class="header-mark"></a>DFS</h3><div class="highlight"><div class="chroma">
+    <a href="#%e5%9b%be%e8%ae%ba" class="header-mark"></a>图论</h2><h3 id="定义" class="headerLink">
+    <a href="#%e5%ae%9a%e4%b9%89" class="header-mark"></a>定义</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 结点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">Vertex</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">neighbors</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 邻接表 无边权
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">graph</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 邻接表 有边权
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;[]</span> <span class="n">graph</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 邻接矩阵
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">mat</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="bfs" class="headerLink">
-    <a href="#bfs" class="header-mark"></a>BFS</h3><div class="highlight"><div class="chroma">
+</div><ul>
+<li>邻接表
+<ul>
+<li>优点：占用的空间少</li>
+<li>缺点：无法快速判断两个节点是否相邻</li>
+<li>适用于稀疏图</li>
+</ul>
+</li>
+<li>邻接矩阵
+<ul>
+<li>优点：占用的空间多</li>
+<li>缺点：可以快速判断两个节点是否相邻</li>
+<li>适用于稠密图</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span> <span class="n">indegree</span><span class="o">;</span>  <span class="c1">// 入度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">outdegree</span><span class="o">;</span> <span class="c1">// 出度
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="遍历-1" class="headerLink">
+    <a href="#%e9%81%8d%e5%8e%86-1" class="header-mark"></a>遍历</h3><h4 id="dfs" class="headerLink">
+    <a href="#dfs" class="header-mark"></a>DFS</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">boolean</span><span class="o">[]</span> <span class="n">vis</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Deque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">trace</span><span class="o">;</span>                            <span class="c1">// 记录当前路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">onPath</span><span class="o">;</span>                                <span class="c1">// 判断某顶点是否在当前路径上
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">traces</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span> <span class="c1">// 记录所有路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 邻接表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">int</span> <span class="n">begin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 访问当前顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trace</span><span class="o">.</span><span class="na">offerLast</span><span class="o">(</span><span class="n">begin</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 到达终点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">begin</span> <span class="o">==</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 防止已添加路径被修改
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">traces</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;(</span><span class="n">trace</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">trace</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 下个顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">next</span> <span class="o">:</span> <span class="n">graph</span><span class="o">[</span><span class="n">begin</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(!</span><span class="n">vis</span><span class="o">[</span><span class="n">next</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dfs</span><span class="o">(</span><span class="n">graph</span><span class="o">,</span> <span class="n">next</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trace</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">boolean</span><span class="o">[]</span> <span class="n">vis</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Deque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">trace</span><span class="o">;</span>                            <span class="c1">// 记录当前路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">onPath</span><span class="o">;</span>                                <span class="c1">// 判断某顶点是否在当前路径上
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">traces</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span> <span class="c1">// 记录所有路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 邻接矩阵
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">int</span> <span class="n">begin</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 访问当前顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trace</span><span class="o">.</span><span class="na">offerLast</span><span class="o">(</span><span class="n">begin</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 到达终点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">begin</span> <span class="o">==</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 防止已添加路径被修改
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">traces</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;(</span><span class="n">trace</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">trace</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 下个顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">next</span> <span class="o">&lt;</span> <span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">next</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(!</span><span class="n">vis</span><span class="o">[</span><span class="n">next</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">graph</span><span class="o">[</span><span class="n">begin</span><span class="o">][</span><span class="n">next</span><span class="o">]</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dfs</span><span class="o">(</span><span class="n">graph</span><span class="o">,</span> <span class="n">next</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trace</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="bfs" class="headerLink">
+    <a href="#bfs" class="header-mark"></a>BFS</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
