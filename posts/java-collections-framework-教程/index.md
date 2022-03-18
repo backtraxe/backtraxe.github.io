@@ -281,25 +281,18 @@ int first2 = deque.peekFirst();
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
+
 // 默认最小堆，元素值小的优先
 Queue<Integer> q = new PriorityQueue<>();
 // 自定义最大堆，元素值大的优先
-Queue<Integer> q1 = new PriorityQueue<>(new Comparator<Integer>() {
-    public int compare(Integer a, Integer b) {
-        return b - a;
-        // 或者
-        // return b.compareTo(a);
-    }
-});
-// 添加
+Queue<Integer> q1 = new PriorityQueue<>((a, b) -> b - a);
 q.offer(1);
-// 遍历
+int top = q.peek();
 while (!q.isEmpty()) {
-    int x = q.peek();
-    q.poll();
+    int x = q.poll();
 }
-// 清空
 q.clear();
+q.size();
 ```
 
 #### 自定义类
@@ -315,10 +308,8 @@ class Stu {
 ##### 模板
 
 ```java
-import java.util.Comparable;
-
 class A implements Comparable<A> {
-    @override
+    @Override
     public int compareTo(A a) {
         // ...
     }
@@ -329,7 +320,7 @@ class A implements Comparable<A> {
 import java.util.Comparator;
 
 class A implements Comparator<A> {
-    @override
+    @Override
     public int compare(A a, A b) {
         // ...
     }
@@ -351,6 +342,7 @@ import java.util.Queue;
 Queue<Stu> q1 = new PriorityQueue<>(new StuComp<Stu>());
 // 显式定义排序类
 class StuComp implements Comparator<Stu> {
+    @Override
     public int compare(Stu s1, Stu s2) {
         if (s1.score != s2.score) {
             // 成绩高的优先
@@ -368,6 +360,7 @@ class StuComp implements Comparator<Stu> {
 ```java
 // 定义2: 匿名类隐式定义排序类
 Queue<Stu> q1 = new PriorityQueue<>(new Comparator<Stu>() {
+    @Override
     public int compare(Stu s1, Stu s2) {
         if (s1.score != s2.score) {
             // 成绩高的优先
@@ -388,6 +381,7 @@ class Stu implements Comparator<Stu> {
     String name;
     int score;
 
+    @Override
     public int compare(Stu s1, Stu s2) {
         if (s1.score != s2.score) {
             // 成绩高的优先
