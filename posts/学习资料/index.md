@@ -1,11 +1,11 @@
 # 学习资料🔝
 
 
-汇集网上的各种学习资料。
+真·学习资源。
 
 <!--more-->
 
-## 编程基础
+## 1.编程基础
 
 {{< admonition tip "环境搭建" false >}}
 - [环境搭建](../../posts/环境搭建/)
@@ -14,7 +14,7 @@
 
 - [Psyduck](https://github.com/SmartKeyerror/Psyduck)：XMind 记录 CS 基础问题。
 
-### 操作系统
+### 1.1 操作系统
 
 {{< admonition tip "操作系统" false >}}
 - [逸仙OS简明教程](https://github.com/YatSenOS/YatSenOS-Tutorial-Volume-1)
@@ -27,15 +27,19 @@
 - [explainshell.com](https://explainshell.com/)
 {{< /admonition >}}
 
-### 数据库
+### 1.2 数据库
 
 {{< admonition tip "数据库" false >}}
 - [SQLBolt](https://sqlbolt.com/): interactive lessons and exercises
 {{< /admonition >}}
 
-### 云原生
+### 1.3 云
 
 - [Docker Getting Started Tutorial](https://github.com/docker/getting-started): Docker入门。
+
+### 1.4 正则表达式
+
+- [Regex-vis](https://regex-vis.com/)：正则表达式可视化。
 
 ## 编程语言
 
@@ -48,7 +52,8 @@
 
 ### C++
 
-- [cplusplus.com](https://cplusplus.com/)：C++ 资源网。
+- [cplusplus.com](https://cplusplus.com/)
+- [C++那些事](https://github.com/Light-City/CPlusPlusThings)：这是一个适合初学者从入门到进阶的仓库，解决了面试者与学习者想要深入 C++及如何入坑 C++的问题。除此之外，本仓库拓展了更加深入的源码分析，多线程并发等的知识，是一个比较全面的 C++ 学习从入门到进阶提升的仓库。
 
 ### Go
 
