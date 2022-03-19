@@ -1,42 +1,39 @@
 # 科学上网教程
 
 
-Google, Youtube, Facebook, Twitter, Instagram, Reddit, ...
+外面的世界。
 
 <!--more-->
 
-## 准备工作
+## 1.准备工作
 
 - VPS：推荐`CN2 GIA`线路，其次`CN2`
-  - [Bandwagon](https://bandwagonhost.com)
-  - [Vultr](https://www.vultr.com)
-  - [DigitalOcean](https://www.digitalocean.com)
-  - [UUUVPS](https://uuuvps.com)
+  - [BandwagonHost](https://bandwagonhost.com/), [备用](https://bwh88.net/)
+  - [Vultr](https://www.vultr.com/)
+  - [DigitalOcean](https://www.digitalocean.com/)
+  - [三优云](https://uuuvps.com/)
 - 域名
-  - 免费：[Freenom](https://www.freenom.com)
-  - 购买：[NameSilo](https://www.namesilo.com), [GoDaddy](https://www.godaddy.com)
-- DNS & CDN：[Cloudflare](https://www.cloudflare.com)
+  - 免费：[Freenom](https://www.freenom.com/)
+  - 付费：[NameSilo](https://www.namesilo.com/), [GoDaddy](https://www.godaddy.com/)
+- DNS & CDN：
+  - [Cloudflare](https://www.cloudflare.com/)
 
-### Freenom 免费域名申请
+## 2.服务端
 
-### 域名托管到 Cloudflare
-
-## 脚本
-
-### v2ray-agent
+### 2.1 v2ray-agent
 
 [Github](https://github.com/mack-a/v2ray-agent)
 
-支持：
+支持协议：
 
 1. VLESS + TCP + TLS
-1. VLESS + TCP + XTLS
+1. VLESS + TCP + xtls-rprx-direct【推荐】
 1. VLESS + gRPC + TLS
 1. VLESS + WS + TLS
-1. VMess + TCP + TLS
+1. Trojan + TCP + TLS【推荐】
+1. Trojan + TCP + xtls-rprx-direct【推荐】
+1. Trojan + gRPC + TLS
 1. VMess + WS + TLS
-1. Trojan
-1. Trojan-Go + WS
 
 安装：
 
@@ -46,14 +43,14 @@ wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-
 
 查看配置：`vasma`
 
-### Xray_onekey
+### 2.2 Xray_onekey
 
 [Github](https://github.com/wulabing/Xray_onekey)
 
-支持：
+支持协议：
 
-- VLESS + TCP + XTLS/TLS
-- VLESS + TCP + XTLS/TLS 及 VLESS + WS + TLS 回落并存模式
+1. VLESS + TCP + XTLS/TLS
+1. VLESS + TCP + XTLS/TLS 及 VLESS + WS + TLS 回落并存模式
 
 安装：
 
@@ -63,13 +60,35 @@ wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.c
 
 查看配置：同安装
 
-## 客户端
+### 2.3 x-ui
 
-### Windows
+[Github](https://github.com/vaxilu/x-ui)
 
-#### v2rayN
+支持协议：
 
-[下载](https://github.com/2dust/v2rayN/releases)
+1. vmess
+1. vless
+1. trojan
+1. shadowsocks
+1. dokodemo-door
+1. socks
+1. http
+
+安装：
+
+```bash
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+```
+
+查看配置：`x-ui`
+
+## 3.客户端
+
+### 3.1 Windows
+
+#### 3.1.1 v2rayN
+
+[Github](https://github.com/2dust/v2rayN)
 
 <img src="/科学上网/科学上网01.png" />
 
@@ -81,7 +100,7 @@ wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.c
 
 <img src="/科学上网/科学上网05.png" />
 
-#### Clash for Windows
+#### 3.1.2 Clash for Windows
 
 [下载](https://github.com/Fndroid/clash_for_windows_pkg/releases)
 
