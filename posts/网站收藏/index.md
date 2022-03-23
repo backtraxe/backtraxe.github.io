@@ -172,6 +172,7 @@
 - [StickPNG](https://www.stickpng.com/)
 - [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)
 - [设计之家](https://www.sj33.cn/)
+- [notion icons.v5](https://notionv5.vyshnav.xyz/)
 {{< /admonition >}}
 
 {{< admonition tip "插画" >}}
