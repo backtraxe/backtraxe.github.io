@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/"
-        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  8287 ,
+        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  8290 ,
         "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/","datePublished": "2021-02-09T22:06:43+08:00","dateModified": "2022-03-13T16:06:43+08:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
@@ -42,7 +42,7 @@
     </script></head>
 
 <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
-        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
         function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
         function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
         if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
@@ -222,7 +222,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><i class="far fa-folder fa-fw"></i>数据结构</a>&nbsp;<a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw"></i>算法</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-03-13">2022-03-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 8287 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-03-13">2022-03-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 8290 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 17 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -1673,6 +1673,8 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 结点
@@ -1681,11 +1683,13 @@
 </span></span><span class="line"><span class="cl">    <span class="n">List</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">neighbors</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 邻接表 无边权
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">graph</span><span class="o">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">adjList1</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 邻接表 有边权
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;[]</span> <span class="n">graph</span><span class="o">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;[]</span> <span class="n">adjList2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 邻接表，查询效率更高
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">adjSet</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 邻接矩阵
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">mat</span><span class="o">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">adjMat</span><span class="o">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -1704,17 +1708,7 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span> <span class="n">indegree</span><span class="o">;</span>  <span class="c1">// 入度
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">outdegree</span><span class="o">;</span> <span class="c1">// 出度
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="遍历-1" class="headerLink">
+<h3 id="遍历-1" class="headerLink">
     <a href="#%e9%81%8d%e5%8e%86-1" class="header-mark"></a>遍历</h3><h4 id="dfs" class="headerLink">
     <a href="#dfs" class="header-mark"></a>DFS</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2453,7 +2447,7 @@
 </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.95.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
             <div class="footer-line"></div>
             <div class="footer-line">

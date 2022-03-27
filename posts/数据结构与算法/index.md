@@ -870,11 +870,13 @@ class Vertex {
     List<Vertex> neighbors;
 }
 // 邻接表 无边权
-List<Integer>[] graph;
+List<Integer>[] adjList1;
 // 邻接表 有边权
-List<int[]>[] graph;
+List<int[]>[] adjList2;
+// 邻接表，查询效率更高
+TreeSet<Integer>[] adjSet;
 // 邻接矩阵
-int[][] mat;
+int[][] adjMat;
 ```
 
 - 邻接表
@@ -885,11 +887,6 @@ int[][] mat;
     - 优点：占用的空间多
     - 缺点：可以快速判断两个节点是否相邻
     - 适用于稠密图
-
-```java
-int[] indegree;  // 入度
-int[] outdegree; // 出度
-```
 
 ### 遍历
 
