@@ -1136,10 +1136,13 @@ int[] getNext(String pattern) {
     }
 }
 
-int search(String str, String pattern) {
-    int[] next = getNext(pattern);
+int kmpSearch(String str, String pattern) {
     int n = str.length();
     int m = pattern.length();
+    if (n == 0 || m == 0) {
+        return -1;
+    }
+    int[] next = getNext(pattern);
     int i = 0;
     while (i + m <= n) {
         int j = 0;
@@ -1168,12 +1171,48 @@ Boyer-Moore 算法。
 
 #### 原理
 
-
+1. 坏字符
+1. 好后缀
 
 #### 代码
 
 ```java
+int bmSearch(String str, String pattern) {
+    int n = str.length();
+    int m = pattern.length();
+    if (n == 0 || m == 0) {
+        return -1;
+    }
 
+    HashMap<Character, Integer> locate = new HashMap<>();
+    for (int i = 0; i < m; i++) {
+        locate.put(pattern.charAt(i), i);
+    }
+
+    int[] next = new int[m];
+    for (int i = 0; i < m; i++) {
+        int j = 0;
+        while (i + j + 1 < m && pattern.charAt(j) == pattern.charAt(i + j + 1)) {
+            j++;
+        }
+        next[i] = j;
+    }
+
+    int i = m - 1;
+    while (i < n) {
+        int j = m - 1;
+        while (j >= 0) {
+            if (str.charAt(i + j - m + 1) != pattern.charAt(j)) {
+
+            }
+            j--;
+        }
+        if (j == -1) {
+            return i - m + 1;
+        }
+    }
+    return -1;
+}
 ```
 
 #### 参考
