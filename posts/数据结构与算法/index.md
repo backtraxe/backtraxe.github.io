@@ -1093,6 +1093,93 @@ void dfs(int[][] grid, int x, int y) {
 
 把二维矩阵中的「岛屿」进行转化，变成比如字符串这样的类型，然后利用 HashSet 这样的数据结构去重，最终得到不同的岛屿的个数。
 
+## 字符串匹配
+
+### 1 KMP 算法
+
+Knuth-Morris-Pratt 算法。
+
+#### 原理
+
+主串长度为`n`，匹配串长度为`m`。
+
+KMP 算法首先算出一个`next`数组，匹配串每轮匹配在`j`位置失配时，匹配串向右滑动的距离为`j - next[j]`。
+
+- `next[0] = -1`
+- `j > 0`时`next[j]`为匹配串中区间`[0, j - 1]`的严格前缀子串和严格后缀子串中最长公共子串的长度。
+
+设匹配串为`abcdabd`。
+
+| `j` | 子串 | 严格前缀子串 | 严格后缀子串 | 最长公共子串 | `next[j]` |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 |  |  |  |  | -1 |
+| 1 | `a` |  |  |  | 0 |
+| 2 | `ab` | `a` | `b` |  | 0 |
+| 3 | `abc` | `a`、`ab` | `bc`、`c` |  | 0 |
+| 4 | `abcd` | `a` 、 `ab`、`abc` | `bcd`、`cd` 、 `d` |  | 0 |
+| 5 | `abcda` | `a` 、 `ab` 、 `abc`、`abcd` | `bcda`、`cda` 、 `da` 、 `a` | `a` | 1 |
+| 6 | `abcdab` | `a` 、 `ab` 、 `abc` 、 `abcd`、`abcda` | `bcdab`、`cdab`、`dab`、`ab`、`b` | `ab` | 2 |
+
+#### 代码
+
+```java
+int[] getNext(String pattern) {
+    int m = pattern.length();
+    int[] next = new int[m];
+    next[0] = -1;
+    // next[1] = 0;
+    for (int i = 2; i < m; i++) {
+        // 如果 新字符 加上 上个索引的最长公共子串 能形成 新的最长公共子串，则更新 next
+        if (pattern.charAt(next[i - 1]) == pattern.charAt(i - 1)) {
+            next[i] += next[i - 1] + 1;
+        }
+    }
+}
+
+int search(String str, String pattern) {
+    int[] next = getNext(pattern);
+    int n = str.length();
+    int m = pattern.length();
+    int i = 0;
+    while (i + m <= n) {
+        int j = 0;
+        while (j < m) {
+            if (str.charAt(i + j) != pattern.charAt(j)) {
+                i += j - next[j];
+                break;
+            }
+            j++;
+        }
+        if (j == m) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+#### 参考
+
+1. [字符串匹配的KMP算法 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
+
+### 2 BM 算法
+
+Boyer-Moore 算法。
+
+#### 原理
+
+
+
+#### 代码
+
+```java
+
+```
+
+#### 参考
+
+1. [字符串匹配的Boyer-Moore算法 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html)
+
 ## 并查集 Union Find
 
 ## 二分查找
