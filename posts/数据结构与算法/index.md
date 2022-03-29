@@ -1365,33 +1365,21 @@ $$hash2=((hash1-text[a] \times k^{b-a} \mod q) \times k + text[b + 1] \times k^{
 int rkSearch(char[] text, char[] pattern) {
     int n = text.length;
     int m = pattern.length;
-    final int MOD = (int) 1e7 + 7;
-    final int K = 31; // 根据 text[i] 的取值范围修改
+    final int MOD = (int) 1e7 + 7; // 取余
+    final int K = 31; // 任意数字即可，一般为质数
     final int POWER = (int) Math.pow(K, m - 1) % MOD;
     int pHash = 0;
     int tHash = 0;
-    for (int i = m - 1; i >= 0; i--) {
-        pHash = (pHash * K + (pattern[i] - 'a')) % MOD;
-        tHash = (tHash * K + (text[i] - 'a')) % MOD;
+    for (int i = 0; i < m; i++) {
+        pHash = (pHash * K + pattern[i]) % MOD;
+        tHash = (tHash * K + text[i]) % MOD;
     }
-    if (pHash == tHash) {
-        boolean equal = true;
-        for (int i = 0; i < m; i++) {
-            if (text[i] != pattern[i]) {
-                equal = false;
-                break;
-            }
-        }
-        if (equal) {
-            return 0;
-        }
-    }
-    for (int i = 1; i + m <= n; i++) {
-        tHash = ((tHash + MOD - (text[i - 1] - 'a') * POWER % MOD) * K + text[i + m - 1] - 'a') % MOD;
+    for (int i = 0; i + m <= n; i++) {
         if (pHash == tHash) {
             boolean equal = true;
-            for (int j = i; j < i + m; j++) {
-                if (text[j] != pattern[j]) {
+            // 二次判断，防止哈希冲突
+            for (int j = 0; j < m; j++) {
+                if (text[i + j] != pattern[j]) {
                     equal = false;
                     break;
                 }
@@ -1399,6 +1387,14 @@ int rkSearch(char[] text, char[] pattern) {
             if (equal) {
                 return i;
             }
+        }
+        if (i + m >= n) {
+            break;
+        }
+        // 滚动计算哈希
+        tHash = ((tHash - text[i] * POWER % MOD) * K + text[i + m]) % MOD;
+        if (tHash < 0) {
+            tHash += MOD;
         }
     }
     return -1;
@@ -1408,6 +1404,7 @@ int rkSearch(char[] text, char[] pattern) {
 #### 参考
 
 1. [字符串匹配算法-Rabin Karp算法 | coolcao的小站](https://coolcao.com/2020/08/20/rabin-karp/)
+1. [简单易懂的Rabin Karp算法详解！ - 实现 strStr() - 力扣（LeetCode）](https://leetcode-cn.com/problems/implement-strstr/solution/yi-dong-de-rabin-karpsuan-fa-hao-xiang-mei-ren-xie/)
 
 ## 并查集 Union Find
 
@@ -1523,74 +1520,48 @@ int binarySearch(int[] nums, int target) {
 
 ## 滑动窗口
 
-```python
-demand = {}
-window = {}
-# 更新 demand
+### 窗口大小可任意调整
 
-left = 0
-right = 0
-# 滑动窗口 [left, right)
-while right < s.size():
-    # 增大窗口
-    窗口添加右结点
-    right += 1
-    ...
-
-    while 满足条件:
-        # 缩小窗口
-        窗口删除左结点
-        left += 1
-        ...
+```java
+// 窗口大小可任意调整
+int left = 0;
+int right = 0;
+int ans = 0;
+// [left, right]
+while (right < n) {
+    // 增大窗口
+    // 右端点 right 操作
+    // 修改约束值
+    while (condition) { // 约束值满足调整窗口的条件
+        // 缩小窗口
+        // 左端点 left 操作
+        // 修改约束值
+        left++;
+    }
+    ans = Math.max(ans, right - left + 1);
+    right++;
 }
 ```
 
-```cpp
-string minWindow(string s, string t) {
-    unordered_map<char, int> demand, window;
-    for (char c : t) {
-        demand[c]++;
+### 窗口大小单调递增
+
+```java
+// 窗口大小单调递增
+int left = 0;
+int right = 0;
+// [left, right]
+while (right < n) {
+    // 增大窗口
+    // 右端点 right 操作
+    // 修改约束值
+    if (condition) { // 约束值满足调整窗口的条件
+        // 此时左端点移动最多使窗口大小不变
+        // 左端点 left 操作
+        // 修改约束值
+        left++;
     }
-
-    int left = 0;
-    int right = 0;
-
-    // 符合条件的字符种类
-    int valid = 0;
-
-    // 记录最小覆盖子串的起始索引及长度
-    int start = 0;
-    int len = INT_MAX;
-
-    while (right < s.size()) {
-        char c = s[right];
-        right++;
-        // 进行窗口内数据的一系列更新
-        if (demand.count(c)) {
-            window[c]++;
-            if (window[c] == demand[c])
-                valid++;
-        }
-
-        // 判断左侧窗口是否要收缩
-        while (valid == demand.size()) {
-            // 在这里更新最小覆盖子串
-            if (right - left < len) {
-                start = left;
-                len = right - left;
-            }
-            char d = s[left];
-            left++;
-            // 进行窗口内数据的一系列更新
-            if (demand.count(d)) {
-                if (window[d] == demand[d])
-                    valid--;
-                window[d]--;
-            }
-        }
-    }
-    // 返回最小覆盖子串
-    return len == INT_MAX ? "" : s.substr(start, len);
+    right++;
 }
+int ans = right - left;
 ```
 
