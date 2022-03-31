@@ -313,8 +313,42 @@ int[] nextGreaterElement(int[] nums) {
 
 ## 数组
 
-```java
+### 打印数组
 
+```java
+import java.utils.Arrays;
+int[] arr1;
+System.out.println(Arrays.toString());
+int[][] arr2;
+System.out.println(Arrays.deepToString());
+```
+
+### 转换
+
+```java
+// int[] 转 List<Integer>
+// 不可添加、删除、修改
+int[] arr;
+List<Integer> list = List.of(arr);
+```
+
+```java
+// int[] 转 Integer[]
+int[] arr;
+Integer[] arr2 = IntStream.of(arr).boxed()
+```
+
+```java
+// Integer[] 转 List<Integer>
+// 不可添加、删除、修改
+Integer[] arr;
+List<Integer> list = List.of(arr);
+```
+
+```java
+// List<Integer> 转 Integer[]
+List<Integer> list;
+int[] arr2 = list.stream().mapToInt().toArray(Integer::new);
 ```
 
 ## 链表
@@ -1168,6 +1202,7 @@ int kmpSearch(char[] text, char[] pattern) {
 
 1. [字符串匹配的KMP算法 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
 1. [如何更好地理解和掌握 KMP 算法? - 知乎](https://www.zhihu.com/question/21923021/answer/281346746)
+1. [字符串匹配算法详解 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1770486)
 
 ### 2 BM 算法
 
@@ -1281,6 +1316,7 @@ int bmSearch(String text, String pattern) {
 #### 参考
 
 1. [字符串匹配的Boyer-Moore算法 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html)
+1. [字符串匹配算法详解 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1770486)
 
 ### 3 Sunday 算法
 
