@@ -15,16 +15,41 @@
 ### 1.选择排序
 
 ```cpp
-void selectionSort(vector<int>& arr) {
-    for (int i = 0; i < arr.size(); i++) {
+void selectionSort(vector<int>& nums) {
+    int n = nums.size();
+    for (int i = 0; i < n; i++) {
         int minIdx = i;
-        for (int j = i + 1; j < arr.size(); j++) {
+        for (int j = i + 1; j < n; j++) {
             minIdx = (arr[j] < arr[minIdx]) ? j : minIdx;
         }
         int temp = arr[i];
         arr[i] = arr[minIdx];
         arr[minIdx] = temp;
     }
+}
+```
+
+```java
+void selectionSort(int[] nums) {
+    int len = nums.length;
+    // 循环不变量：[0, i) 有序，且该区间里所有元素就是最终排定的样子
+    for (int i = 0; i < len - 1; i++) {
+        // 选择区间 [i, len - 1] 里最小的元素的索引，交换到下标 i
+        int minIdx = i;
+        for (int j = i + 1; j < len; j++) {
+            if (nums[j] < nums[minIdx]) {
+                minIdx = j;
+            }
+        }
+        swap(nums, i, minIdx);
+    }
+    return nums;
+}
+
+void swap(int[] nums, int a, int b) {
+    int temp = nums[a];
+    nums[a] = nums[b];
+    nums[b] = temp;
 }
 ```
 
@@ -103,7 +128,10 @@ void merge() {
 
 ```cpp
 // 把数组分为两半，返回分割中点
-int partition(vector<int> arr, int low, int high) {
+int partition(vector<int> &arr, int low, int high) {
+    // [low, high]
+    int pivotId = low + rand() % (high - low + 1);
+    swap(arr[low], arr[pivotId]);
     int pivot = arr[low];
     while (low < right) {
         while (low < high && arr[high] > pivot) high--;
@@ -115,12 +143,16 @@ int partition(vector<int> arr, int low, int high) {
     return low;
 }
 
-void quickSort(vector<int> arr, int low, int high) {
+void quickSort(vector<int> &arr, int low, int high) {
     if (low >= high) return;
     int mid = partition(arr, low, high);
     quickSort(arr, low, mid - 1);
     quickSort(arr, mid + 1, high);
 }
+```
+
+```java
+
 ```
 
 ### 总结
@@ -251,6 +283,7 @@ void quickSort(vector<int> arr, int low, int high) {
 参考文章
 
 1. [当我谈排序时，我在谈些什么🤔](https://leetcode-cn.com/problems/sort-an-array/solution/dang-wo-tan-pai-xu-shi-wo-zai-tan-xie-shi-yao-by-s/)
+1. [复习基础排序算法（Java） - 排序数组 - 力扣（LeetCode）](https://leetcode-cn.com/problems/sort-an-array/solution/fu-xi-ji-chu-pai-xu-suan-fa-java-by-liweiwei1419/)
 
 ## 栈
 
