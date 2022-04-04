@@ -344,7 +344,7 @@ int[] nextGreaterElement(int[] nums) {
 }
 ```
 
-## 数组
+## 1.数组
 
 ### 打印数组
 
@@ -356,7 +356,7 @@ int[][] arr2;
 System.out.println(Arrays.deepToString());
 ```
 
-### 转换
+### 类型转换
 
 ```java
 // int[] 转 List<Integer>
@@ -384,7 +384,118 @@ List<Integer> list;
 int[] arr2 = list.stream().mapToInt().toArray(Integer::new);
 ```
 
-## 链表
+### 树状数组
+
+树状数组是一种可以动态维护序列**前缀和**的数据结构（下标从 1 开始），它的功能是：
+
+- 单点修改`add(index, val)`：把序列第`index`个元素增加`val`
+- 区间查询`preSum(index)`：查询前`index`个元素的前缀和
+
+#### 查询前缀和
+
+```java
+class TreeArray {
+    private int[] tree; // sum(nums[i])
+    private int n;
+
+    public TreeArray(int[] nums) {
+        n = nums.length + 1;
+        tree = new int[n];
+        for (int i = 0; i < n - 1; i++) {
+            add(i, nums[i]);
+        }
+    }
+
+    public void add(int index, int val) {
+        // 下标从 1 开始
+        index++;
+        // 单点修改，增加数组 index 元素的值
+        while (index < n) {
+            tree[index] += val;
+            // 更新父结点
+            index += lowBit(index);
+        }
+    }
+
+    public int preSum(int index) {
+        // 查询前缀和
+        int sum = 0;
+        while (index > 0) {
+            sum += tree[index];
+            // 查询子结点
+            index -= lowBit(index);
+        }
+        return sum;
+    }
+
+    private static int lowBit(int x) {
+        // 返回 x 二进制最低位 1 的值
+        // eg. 6(0b110) 返回 2(0b010)
+        return x & (-x);
+    }
+}
+```
+
+#### 复杂度分析
+
+- 时间复杂度：
+    - 构造函数：$O(n \log n)$
+    - `add`函数：$O(\log n)$
+    - `preSum`函数：$O(\log n)$
+- 空间复杂度：$O(n)$
+
+### 线断树
+
+线段树是常用的用来维护**区间信息**的数据结构。
+
+线段树可以在 $O(\log n)$ 的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。
+
+```java
+class SegmentTree {
+    private int[] tree;
+
+    public SegmentTree(int[] nums) {
+
+    }
+
+    void build(int[] nums, int left, int right, int root) {
+        // 对 [left, right] 区间建立线段树,当前根的编号为 root
+        if (left == right) {
+            // 叶结点
+            tree[root] = nums[left];
+            return;
+        }
+        // + 优先级高于 >>
+        int mid = left + ((right - left) >> 1);
+        build(nums, left, mid, root << 1);          // root * 2
+        // << 优先级高于 |
+        build(nums, mid + 1, right, root << 1 | 1); // root * 2 + 1
+        // 子树信息更新父结点信息
+        tree[root] = tree[root << 1] + tree[root << 1 | 1];
+    }
+
+    int rangeSum(int qLeft, int qRight, int left, int right, int root) {
+        // 查询区间和
+        if (qLeft <= left && right <= qRight) {
+            // 当前区间是查询区间的子区间
+            return tree[root];
+        }
+        int mid = left + ((right - left) >> 1);
+        int sum = 0;
+        if (qLeft <= mid) {
+            sum += rangeSum(qLeft, qRight, left, mid, root << 1);
+        }
+        if (mid + 1 <= qRight) {
+            sum += rangeSum(qLeft, qRight, mid + 1, right, root << 1 | 1);
+        }
+        return sum;
+    }
+
+    
+}
+```
+
+## 2.链表
 
 ```java
 class ListNode {
