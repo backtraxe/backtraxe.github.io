@@ -1,6 +1,8 @@
 # 数据结构与算法
 
 
+常用数据结构与算法，包含理论与代码（C++、Java）。
+
 <!--more-->
 
 ## 1.基础
@@ -285,6 +287,66 @@ void quickSort(vector<int> &arr, int low, int high) {
 1. [当我谈排序时，我在谈些什么🤔](https://leetcode-cn.com/problems/sort-an-array/solution/dang-wo-tan-pai-xu-shi-wo-zai-tan-xie-shi-yao-by-s/)
 1. [复习基础排序算法（Java） - 排序数组 - 力扣（LeetCode）](https://leetcode-cn.com/problems/sort-an-array/solution/fu-xi-ji-chu-pai-xu-suan-fa-java-by-liweiwei1419/)
 
+## 快速幂
+
+快速求`x`的`n`次幂。
+
+### 迭代
+
+```java
+double fastPow(double x, int n) {
+    if (x == 0) {
+        return 0;
+    }
+    // 防止 n = -214748328 时，-n 溢出
+    long nn = n;
+    double ans = 1;
+    if (nn < 0) {
+        // 处理 n < 0
+        x = 1 / x;
+        nn = -nn;
+    }
+    while (nn > 0) {
+        if ((nn & 1) == 1) {
+            ans *= x;
+        }
+        x *= x;
+        n >>= 1;
+    }
+    return ans;
+}
+```
+
+### 递归
+
+```java
+double fastPow(double x, int n) {
+    // 防止 n = -214748328 时，-n 溢出
+    long nn = n;
+    if (nn < 0) {
+        // 处理 n < 0
+        x = 1 / x;
+        nn = -nn;
+    }
+    return pow(x, nn);
+}
+
+private double pow(double x, long n) {
+    if (n == 0) {
+        return 1;
+    } else if (n == 1) {
+        return x;
+    } else {
+        double half = pow(x, n >> 1);
+        if ((n & 1) == 1) {
+            return half * half * x;
+        } else {
+            return half * half;
+        }
+    }
+}
+```
+
 ## 栈
 
 ### 单调栈
@@ -452,10 +514,19 @@ class TreeArray {
 
 ```java
 class SegmentTree {
-    private int[] tree;
+    private int[] tree; // 维护区间
+    private int[] lazy; // 惰性标记，维护修改值
 
     public SegmentTree(int[] nums) {
-
+        int n = nums.length;
+        // 线断树有 n 个叶结点，总结点个数设为 x
+        // 非叶结点都有 2 棵子树，则
+        // x - 1 = (x - n) * 2
+        // x = 2 * n - 1
+        // 根结点索引从 1 开始
+        tree = new int[n * 2];
+        lazy = new int[n * 2];
+        build(nums, 0, nums.length - 1, 1);
     }
 
     void build(int[] nums, int left, int right, int root) {
@@ -475,23 +546,55 @@ class SegmentTree {
     }
 
     int rangeSum(int qLeft, int qRight, int left, int right, int root) {
-        // 查询区间和
+        // 查询区间 [qLeft, qRight] 的元素总和
         if (qLeft <= left && right <= qRight) {
             // 当前区间是查询区间的子区间
             return tree[root];
         }
+        pushDown(left, right, root);
         int mid = left + ((right - left) >> 1);
         int sum = 0;
         if (qLeft <= mid) {
             sum += rangeSum(qLeft, qRight, left, mid, root << 1);
         }
-        if (mid + 1 <= qRight) {
+        if (mid < qRight) {
             sum += rangeSum(qLeft, qRight, mid + 1, right, root << 1 | 1);
         }
         return sum;
     }
 
-    
+    void update(int qLeft, int qRight, int val, int left, int right, int root) {
+        // 将区间 [qLeft, qRight] 内的元素加 val
+        if (qLeft <= left && right <= qRight) {
+            tree[root] += val * (right - left + 1);
+            // 不必此时修改到叶结点，将修改值记录到父结点的 lazy 标记
+            // 下次查询到需要修改的叶结点时再修改
+            lazy[root] += val;
+            return;
+        }
+        pushDown(left, right, root);
+        int mid = left + ((right - left) >> 1);
+        if (qLeft <= mid) {
+            update(qLeft, qRight, val, left, mid, root << 1);
+        }
+        if (mid < qRight) {
+            update(qLeft, qRight, val, mid + 1, right, root << 1 | 1);
+        }
+        tree[root] = tree[root << 1] + tree[root << 1 | 1];
+    }
+
+    private void pushDown(int left, int right, int root) {
+        // lazy 标记处理
+        int mid = left + ((right - left) >> 1);
+        if (lazy[root] > 0 && left < right) {
+            // 如果当前节点的 lazy 标记非空，则更新当前节点两个子节点的值和 lazy 标记
+            tree[root << 1] += lazy[root] * (mid - left + 1);
+            tree[root << 1 | 1] += lazy[root] * (right - mid);
+            lazy[root << 1] += lazy[root];
+            lazy[root << 1 | 1] += lazy[root];
+            lazy[root] = 0;
+        }
+    }
 }
 ```
 
