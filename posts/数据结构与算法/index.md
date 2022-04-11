@@ -1872,6 +1872,7 @@ List<List<Integer>> subsets(int[] nums) {
  * @param start 可选择元素范围[start, nums.length)
  */
 void dfs(int[] nums, int start) {
+    // 前序添加
     ans.add(new LinkedList<>(set));
     for (int i = start; i < nums.length; i++) {
         set.add(nums[index]);
@@ -1919,7 +1920,7 @@ void dfs(int n, int k, int start) {
 
 排列
 
-```java
+```java {hl_lines=[26]}
 List<List<Integer>> ans = new ArrayList<>();
 LinkedList<Integer> set = new LinkedList<>();
 boolean[] vis;
@@ -1944,6 +1945,7 @@ void dfs(int[] nums) {
         return;
     }
     for (int i = 0; i < n; i++) {
+        // 防止重复选
         if (!vis[i]) {
             vis[i] = true;
             set.add(nums[i]);
@@ -1987,6 +1989,7 @@ void dfs(int[] candidates, int target, int start, int sum) {
         return;
     }
     for (int i = start; i < candidates.length; i++) {
+        // 剪枝
         if (sum + candidates[i] <= target) {
             set.add(candidates[i]);
             // 可选范围不变
@@ -2069,7 +2072,7 @@ void dfs(int[] nums, int start) {
 
 组合
 
-```java
+```java {hl_lines=[29]}
 List<List<Integer>> ans = new ArrayList<>();
 LinkedList<Integer> set = new LinkedList<>();
 
@@ -2113,7 +2116,7 @@ void dfs(int[] candidates, int target, int start, int sum) {
 
 排列
 
-```java
+```java {hl_lines=[29]}
 List<List<Integer>> ans = new ArrayList<>();
 LinkedList<Integer> set = new LinkedList<>();
 boolean[] vis;

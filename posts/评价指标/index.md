@@ -60,7 +60,7 @@ $$
 **拟合优度/可决系数，$R^2$，R Squared**
 
 $$
-R^2(y,\hat{y})=1-\frac{\sum_{i=1}^n(y_i-\hat{y}_i)^2}{\sum_{i=1}^n(y_i-\bar{y})^2}
+R^2(y,\hat{y})=1-\frac{ \sum_{i=1}^n (y_i-\hat{y_i})^2 }{ \sum_{i=1}^n (y_i-\bar{y})^2 }
 $$
 
 ## 参考
