@@ -12,14 +12,14 @@
     <pubDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</guid>
-    <description><![CDATA[<p>工具、娱乐、资源、软件……</p>]]></description>
+    <description><![CDATA[]]></description>
 </item><item>
     <title>学习资料🔝</title>
     <link>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link>
     <pubDate>Wed, 14 Apr 2021 13:00:10 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid>
-    <description><![CDATA[<p>真·学习资源。</p>]]></description>
+    <description><![CDATA[]]></description>
 </item><item>
     <title>Java 多线程详解</title>
     <link>https://backtraxe.github.io/posts/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AF%A6%E8%A7%A3/</link>
@@ -28,25 +28,18 @@
     </author><guid>https://backtraxe.github.io/posts/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AF%A6%E8%A7%A3/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>JVM 详解</title>
-    <link>https://backtraxe.github.io/posts/jvm-%E8%AF%A6%E8%A7%A3/</link>
+    <title>Java 虚拟机详解</title>
+    <link>https://backtraxe.github.io/posts/java-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%A6%E8%A7%A3/</link>
     <pubDate>Tue, 19 Apr 2022 21:03:46 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/jvm-%E8%AF%A6%E8%A7%A3/</guid>
-    <description><![CDATA[JVM 主要组成部分JVM 包含两个子系统和两个组件： 两个子系统 Class loader（类装载）：根据给定的全限定类名（如：java.lang.Object]]></description>
+    </author><guid>https://backtraxe.github.io/posts/java-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%A6%E8%A7%A3/</guid>
+    <description><![CDATA[]]></description>
 </item><item>
     <title>Numpy 教程</title>
     <link>https://backtraxe.github.io/posts/numpy-%E6%95%99%E7%A8%8B/</link>
     <pubDate>Wed, 22 Dec 2021 17:01:12 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/numpy-%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>网址导航</title>
-    <link>https://backtraxe.github.io/posts/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/</link>
-    <pubDate>Mon, 20 Dec 2021 15:29:37 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>力扣 0229 求众数II</title>
@@ -75,6 +68,13 @@
     <pubDate>Mon, 11 Oct 2021 19:15:54 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/go-%E8%AF%AD%E8%A8%80%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>翻译专业术语表</title>
+    <link>https://backtraxe.github.io/posts/%E7%BF%BB%E8%AF%91%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E8%A1%A8/</link>
+    <pubDate>Wed, 22 Sep 2021 17:34:22 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E7%BF%BB%E8%AF%91%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E8%A1%A8/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

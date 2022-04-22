@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java 虚拟机 - 标签 - </title>
+        <link>https://backtraxe.github.io/tags/java-%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+        <description>Java 虚拟机 - 标签 - </description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Tue, 19 Apr 2022 21:03:46 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/java-%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="self" type="application/rss+xml" /><item>
+    <title>Java 虚拟机详解</title>
+    <link>https://backtraxe.github.io/posts/java-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%A6%E8%A7%A3/</link>
+    <pubDate>Tue, 19 Apr 2022 21:03:46 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/java-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%A6%E8%A7%A3/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

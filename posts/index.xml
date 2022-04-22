@@ -5,12 +5,47 @@
         <description>所有文章 | </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 20 Apr 2022 21:22:51 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>谷歌三件套安装教程</title>
+    <link>https://backtraxe.github.io/posts/%E8%B0%B7%E6%AD%8C%E4%B8%89%E4%BB%B6%E5%A5%97%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Mon, 08 Feb 2021 10:51:10 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E8%B0%B7%E6%AD%8C%E4%B8%89%E4%BB%B6%E5%A5%97%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[<p>谷歌三件套包括 Google Play 商店（Google Play Store）、Google Play 服务（Google Play Services）和Google 服务框架（Google Services Framework），只有正确安装了这三件套才能访问 Google Play 商店和使用需要 Google Play 服务的 APP。</p>]]></description>
+</item><item>
     <title>数据结构与算法</title>
     <link>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
     <pubDate>Tue, 09 Feb 2021 22:06:43 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</guid>
-    <description><![CDATA[<p>常用数据结构与算法，包含理论与代码（C++、Java）。</p>]]></description>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Java 虚拟机详解</title>
+    <link>https://backtraxe.github.io/posts/java-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%A6%E8%A7%A3/</link>
+    <pubDate>Tue, 19 Apr 2022 21:03:46 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/java-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AF%A6%E8%A7%A3/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Java 多线程详解</title>
+    <link>https://backtraxe.github.io/posts/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AF%A6%E8%A7%A3/</link>
+    <pubDate>Wed, 20 Apr 2022 21:22:51 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AF%A6%E8%A7%A3/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>学习资料🔝</title>
+    <link>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link>
+    <pubDate>Wed, 14 Apr 2021 13:00:10 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>网站收藏🔝</title>
+    <link>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</link>
+    <pubDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</guid>
+    <description><![CDATA[]]></description>
 </item><item>
     <title>评价指标</title>
     <link>https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
@@ -39,12 +74,5 @@
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%99%E7%A8%8B/</guid>
     <description><![CDATA[<p>用来描述字符串模式匹配规则的表达式。</p>]]></description>
-</item><item>
-    <title>网站收藏🔝</title>
-    <link>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</link>
-    <pubDate>Mon, 19 Apr 2021 23:22:56 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</guid>
-    <description><![CDATA[<p>工具、娱乐、资源、软件……</p>]]></description>
 </item></channel>
 </rss>

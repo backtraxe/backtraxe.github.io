@@ -202,4 +202,4 @@ private boolean addWorker(Runnable firstTask, boolean core) {
 
 在上层，Java 程序会将应用分解为多个任务，然后使用应用级的调度器（Executor）将这些任务映射成固定数量的线程；在底层，操作系统内核将这些线程映射到硬件处理器上。
 
-## 
+##

@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>软件 - 标签 - </title>
+        <link>https://backtraxe.github.io/tags/%E8%BD%AF%E4%BB%B6/</link>
+        <description>软件 - 标签 - </description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Tue, 27 Apr 2021 12:07:22 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/%E8%BD%AF%E4%BB%B6/" rel="self" type="application/rss+xml" /><item>
+    <title>常用软件</title>
+    <link>https://backtraxe.github.io/posts/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+    <pubDate>Tue, 27 Apr 2021 12:07:22 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+    <description><![CDATA[<p>适用于各种平台的一些好用软件。</p>]]></description>
+</item></channel>
+</rss>

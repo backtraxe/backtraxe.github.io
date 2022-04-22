@@ -58,4 +58,4 @@ Disallow: /
 User-agent: *
 Allow: *
 
-Sitemap: https://backtraxe.github.io/en/sitemap.xml
+Sitemap: https://backtraxe.github.io/sitemap.xml

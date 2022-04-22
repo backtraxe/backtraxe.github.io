@@ -1,252 +1,122 @@
 # 网站收藏🔝
 
 
-工具、娱乐、资源、软件……
-
 <!--more-->
 
-## 1 在线工具
+## 在线工具
 
-### 1.1 PDF
+- PDF：[`easy PDF`](https://easypdf.com/cn)、[`PDF24 Tools`](https://tools.pdf24.org/zh/)
 
-- [easy PDF](https://easypdf.com/cn)
-- [PDF24 Tools](https://tools.pdf24.org/zh/)
+- 图片：[`iLoveIMG`](https://www.iloveimg.com/zh-cn)、[`图片放大`](https://bigjpg.com/)、[`图像优化`](https://zh.recompressor.com/)、[`图片去底`](https://www.aigei.com/bgremover)、[`GIF制作和编辑`](https://ezgif.com/)、[`魔术橡皮擦`](https://jpgrm.com/)、[`老照片修复`](https://jpghd.com/)
 
-### 1.2 图片
+- 视频：[`视频放大`](https://bigmp4.com/)
 
-- [iLoveIMG](https://www.iloveimg.com/zh-cn)
-- [多功能图片转换器无需上传文件](https://renzhezhilu.gitee.io/webp2jpg-online/)
-- [AI人工智能图片放大](https://bigjpg.com/)：免费版3000x3000px, 5M; 付费版50M。
-- [最优图像优化](https://zh.recompressor.com/)
-- [在线图片去底工具](https://www.aigei.com/bgremover)
-- [在线GIF制作和编辑](https://ezgif.com/)
+- 音频：[`网易见外工作台`](https://jianwai.youdao.com/)
 
-#### 1.2.1 OCR
+- OCR：[`EasyScreenOCR`](https://online.easyscreenocr.com/ZH)、[`Online OCR`](https://www.onlineocr.net/zh_hans/)
 
-- [EasyScreenOCR](https://online.easyscreenocr.com/ZH)
-- [ONLINE OCR](https://www.onlineocr.net/zh_hans/)
+- 图标生成：[`小米风格Logo生成器`](https://mi-logo.lvwzhen.com)、[`图标制作大师`](https://geticon.cn/)、[`Favicon图标生成器`](https://realfavicongenerator.net/)
 
-#### 1.2.2 图标制作
+- 背景生成：[`Figen`](https://figen.cc/)
 
-- [小米风格Logo生成器](https://mi-logo.lvwzhen.com)
-- [favicon图标制作工具](https://geticon.cn/)
-- [favicon图标生成器](https://realfavicongenerator.net/)
+- 制作图表：[`ProcessOn`](https://processon.com/)
 
-#### 1.2.3 背景生成
+- 计算器：[`Mathway`](https://www.mathway.com/zh/BasicMath)
 
-- [Figen](https://figen.cc/)
+- Apple：[`比较全球Apple产品价格`](https://themacindex.com/)
 
-### 1.3 视频&音频
+- Steam：[`Steam数据库`](https://steamdb.info/)
 
-- [网易见外工作台](https://jianwai.youdao.com/)
+- 字体转换：[`萝卜工坊`](http://www.beautifulcarrot.com/)、[`Weird Fonts`](https://beizhedenglong.github.io/weird-fonts/)
 
-### 1.4 速查表
+- LaTeX：[`Overleaf`](https://cn.overleaf.com/)
 
-- [W3Schools](https://www.w3schools.com/)
-- [KaTeX - Supported Functions](https://katex.org/docs/supported.html)
-- [Linux 命令列表](https://wangchujiang.com/linux-command/hot.html)
+- 种子转磁力链接：[`Torrent Kitty`](https://cn.torrentkitty.tv/)
 
-### 1.5 天梯图
+- 磁力链接转种子：[`搜番`](https://sofan.pro/info/ee14f60549f81fc39f746d10ec68df392f223dfa.html)
 
-- [桌面CPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/cpu/index.html)
-- [桌面GPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/gpu/index.html)
-- [笔记本CPU性能天梯图](https://www.mydrivers.com/zhuanti/tianti/cpum/index.html)
-- [手机影像DxO综合榜](https://rank.kkj.cn/dxo3.shtml)
+## 在线娱乐
 
-### 1.6 其他工具
+- 影视：[`低端影视`](https://ddrk.me/)、[`奈菲影视`](https://www.nfmovies.com/)、[`看片狂人`](https://www.kpkuang.com/)、[`NO视频`](https://www.novipnoad.com/)
 
-- [Steam历史价格查询](https://steamdb.info/)
-- [全球Apple产品比价](https://themacindex.com/)
-- [极简简历模板PoleBrief](https://www.polebrief.com/index)
-- [萝卜工坊 - 模拟手写字体](http://www.beautifulcarrot.com/)
-- [ProcessOn - 在线思维导图、流程图](https://processon.com/)
-- [英文字体转换](https://beizhedenglong.github.io/weird-fonts/)
-- [Overleaf](https://cn.overleaf.com/)
-- [Ubuntu Pastebin](https://paste.ubuntu.com/)
-- [OnlineGDB](https://www.onlinegdb.com/)
-- [C++ shell](http://cpp.sh/)
-- [Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
-- [regex101](https://regex101.com/)
+- 动漫：[`AGE动漫`](http://www.age.tv/)、[`樱花动漫`](https://www.yhdmp.cc/)、[`ZzzFun动漫`](http://www.zzzfun.com/)、[`漫岛动漫`](https://www.mandao.tv/)、[`EDD动漫`](https://www.edddm.com/)
 
-## 2 在线观看
+- 漫画：[`漫画DB`](https://www.manhuadb.com/)、[`动漫之家`](https://www.dmzj.com/)
 
-### 2.1 影视
+- 体育：[`CCTV5`](https://tv.cctv.com/live/cctv5/)、[`JRKAN`](http://jrkankan.com/)
 
-- [低端影视](https://ddrk.me/)
-- [奈菲影视](https://www.nfmovies.com/)
-- [看片狂人](https://www.kpkuang.com/)
-- [NO视频](https://www.novipnoad.com/)
+## 程序开发
 
-### 2.2 动漫
+- 在线编译器：[`OnlineGDB`](https://www.onlinegdb.com/)、[`C++ shell`](http://cpp.sh/)
 
-- [AGE动漫](http://www.age.tv/)
-- [樱花动漫](https://www.yhdmp.cc/)
-- [ZzzFun动漫视频网](http://www.zzzfun.com/)
-- [漫岛动漫](https://www.mandao.tv/)
-- [EDD动漫](https://www.edddm.com/)
+- 可视化：[`Learn Git Branching`](https://learngitbranching.js.org/?locale=zh_CN)
 
-### 2.3 漫画
+- 正则表达式：[`regex101`](https://regex101.com/)
 
-- [漫画DB](https://www.manhuadb.com/)
-- [动漫之家](https://www.dmzj.com/)
+- 资源：[`吾爱破解`](https://www.52pojie.cn/)
 
-### 2.4 体育直播
+## 资源下载
 
-- [CCTV-5体育频道高清直播](https://tv.cctv.com/live/cctv5/)
-- [JRKAN直播](http://www.jrskan.com/)
-- [比赛直播](http://match.gy940830.com/index.html?fr=elq&t=1577761328034)
-- [直播吧](http://www.zhiboba.tv/)
-- [足球巴巴](http://www.nba01.cc/)
-- [极速体育](https://www.jisusports.pro/)
-- [来球网](http://www.nowqiu.com/)
+- 搜索：[`搜番`](https://sofan.icu/)、[`磁力爬（GFW）`](https://www.cilipa.com/)、[`八爪鱼`](https://磁搜.com/)
 
-## 3 资源下载
+- 影视：[`高清MP4`](https://www.mp4fan.org/)、[`片源网`](http://pianyuan.org/)、[`BT天堂`](https://www.bt-tt.com/)、[`WebHD`](https://webhd.cc/)、[`FIX字幕侠`](https://www.zimuxia.cn/)、[`牛牛美剧`](http://www.nnmeiju.com/)、[`音范丝`](https://www.yinfans.net/)、[`Nyaa`](https://nyaa.si/)、[`RARBG`](https://rarbg.to/)、[`纪录片天地`](http://www.jlpcn.net/)
 
-### 3.1 影视
+- 动漫：[`动漫领域`](https://dmly.me/)、[`肥羊-Raws`](https://fy-raws.org/resource_lists/)、[`动漫花园`](https://share.dmhy.org/)、[`萌番组`](https://bangumi.moe/)、[`不移之火`](https://www.byzhihuo.com/)、[`漫猫动漫BT下载`](http://www.comicat.org)、[`爱恋动漫BT下载`](http://www.kisssub.org)
 
-- [高清MP4粉](https://www.mp4fan.org/)
-- [片源网](http://pianyuan.org/)
-- [BT天堂](https://www.bt-tt.com/)
-- [SubDH](https://subdh.com/)
-- [FIX字幕侠](https://www.zimuxia.cn/)
-- [牛牛美剧](http://www.nnmeiju.com/)
-- [音范丝](https://www.yinfans.net/)
-- [Nyaa](https://nyaa.si/)
-- [RARBG](https://rarbg.to/)
-- [纪录片天地](http://www.jlpcn.net/)
+- trackers：[`ngosang/trackerslist`](https://github.com/ngosang/trackerslist)、[`ACGTracker`](http://acgtracker.com/)
 
-### 3.2 字幕
+- 字幕：[`SubHD`](https://subhd.tv/)、[`字幕库`](http://zimuku.org/)、[`A4k字幕网`](https://www.a4k.net/)
 
-- [SubHD](https://subhd.tv)
-- [字幕库](http://zimuku.org)
-- [A4k字幕网](https://www.a4k.net)
+- 体育：[`90分钟足球网`](http://90oo.com/)
 
-### 3.3 动漫
+- 小说：[`知轩藏书`](http://zxcs.me/)
 
-- [动漫领域](https://dmly.me/)
-- [肥羊-Raws 11周年Peach](https://fy-raws.org/resource_lists/)
-- [不移之火资源网](https://www.byzhihuo.com/)
-- [漫猫动漫BT下载](http://www.comicat.org)
-- [爱恋动漫BT下载](http://www.kisssub.org)
+- 游戏：[`叽哩叽哩`](https://www.jiligamefun.com/)
 
+- Office：[`Word联盟`](http://www.wordlm.com/)、[`优品PPT`](https://www.ypppt.com)、[`PPT超级市场`](https://ppt.sotary.com)、[`第1PPT`](http://www.1ppt.com)
 
-- [90分钟足球网](http://90oo.com)
-- [知轩藏书](http://www.zxcs.me)
+- 图片：[`Unsplash`](https://unsplash.com)、[`DeviantArt`](https://www.deviantart.com)、[`Pinterest`](https://www.pinterest.com)、[`天空之城`](https://www.skypixel.com/)
 
+- 壁纸：[`极简壁纸1`](https://bz.zzzmh.cn/index)、[`极简壁纸2`](http://www.jijianzy.com/bz/)、[`Wallpaper Abyss`](https://wall.alphacoders.com/)、[`wallhaven`](https://wallhaven.cc/)
 
-{{< admonition tip "磁力" >}}
-- [磁力爬](https://www.cilipa.com/) `GFW`
-- [八爪鱼磁搜](https://磁搜.com/)
-- [搜番](https://sofan.icu/)
-- [吃力网](https://cursor.vip/vip)
-- [电影淘淘](https://www.dianyingtaotao.com/)
-- [Torrent Kitty - 免费种子转磁力网站](https://cn.torrentkitty.tv/)
-- [云盘狗](http://yunpangou.com/)
-- [搜盘么](https://www.sopanme.com/)
+- 素材：[`Freepik`](https://www.freepik.com)、[`Storyset`](https://storyset.com/)、[`StickPNG`](https://www.stickpng.com/)
+
+- 图标：[`Worldvectorlogo`](https://worldvectorlogo.com/zh)、[`Iconduck`](https://iconduck.com/)、[`StickPNG`](https://www.stickpng.com/)、[`Iconfont`](https://www.iconfont.cn/)、[`设计之家`](https://www.sj33.cn/sc/)、[`Notion Icons 5.0`](https://notionv5.vyshnav.xyz/)
+
+## 导航资讯
+
+- 游戏：[`Liquipedia`](https://liquipedia.net/)、[`DST-MOD Wiki`](https://wiki.flapi.cn/doku.php)
+- 资源：[`不死鸟`](https://iao.su/)、[`好棒的羊毛站`](https://wohaobang.cn/)
+
+## 软件APP
+
+- 安卓：[`APKMirror`](https://www.apkmirror.com/)、[`APKCombo`](https://apkcombo.com/zh/)、[`果核剥壳`](https://www.ghpym.com/)、[`异星软件空间`](https://www.yxssp.com/)、[`易酷软件`](https://www.yikurj.com/)
+
+- Windows：[`果核剥壳`](https://www.ghpym.com/)、[`Downloadastro`](https://zh.downloadastro.com/)、[`Crack Softwares`](https://multisoftwares.com/)、[`Easy To Direct Download Pc Software`](https://up4pc.com/)
+
+- Mac：[`MacWk`](https://macwk.com/)、[`腾讯柠檬精选`](https://lemon.qq.com/lab/)
+
+- iOS：[`捷径库`](https://jiejingku.net/)
+
+- 每日限免：
+    - Windows：[`反斗限免`](http://free.apprcn.com/)
+    - Android：[`反斗限免`](http://free.apprcn.com/)
+    - iOS：[`Appwall Today`](https://appwall.today/)、[`Mergeek`](https://mergeek.com/free/apps)
+
+- 软件推荐：[`小众软件`](https://www.appinn.com/)、[`反斗软件`](http://www.apprcn.com/)、[`Awesome Windows`](https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md)
+
+{{< admonition tip "自用软件" false >}}
+- 安卓：[`MiXplorer Silver`](https://play.google.com/store/apps/details?id=com.mixplorer.silver)、[`1DM+`](https://play.google.com/store/apps/details?id=idm.internet.download.manager.plus)、[`FolderSync`](https://play.google.com/store/apps/details?id=dk.tacit.android.foldersync.lite)
+
+- iOS：
+
+- Windows：[`ShareX`](https://getsharex.com/)、[`Snipaste`](https://zh.snipaste.com/)、[`uTools`](https://u.tools/)、[`Bandizip`](https://www.bandisoft.com/bandizip/)、[`Everything`](https://www.voidtools.com/zh-cn/)、[`Honeycam`](https://www.bandisoft.com/honeycam/)
+
+- Mac：
+
+- Linux：
+
+- 浏览器扩展：[`沙拉查词`](https://chrome.google.com/webstore/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D-%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/cdonnmffkdaoajfknoeeecmchibpmkmg?hl=cn)、[`Chrono下载管理器`](https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn?hl=cn)、[`Tampermonkey`](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=cn)
+
+- 油猴插件：[`AC-baidu`](https://greasyfork.org/zh-CN/scripts/14178-ac-baidu-%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%98%E5%8C%96%E7%99%BE%E5%BA%A6%E6%90%9C%E7%8B%97%E8%B0%B7%E6%AD%8C%E5%BF%85%E5%BA%94%E6%90%9C%E7%B4%A2-favicon-%E5%8F%8C%E5%88%97)、[`秒传链接提取`](https://greasyfork.org/zh-CN/scripts/424574-%E7%A7%92%E4%BC%A0%E9%93%BE%E6%8E%A5%E6%8F%90%E5%8F%96)、[`网盘直链下载助手`](https://greasyfork.org/zh-CN/scripts/436446-%E7%BD%91%E7%9B%98%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B)
 {{< /admonition >}}
-
-{{< admonition tip "Office" >}}
-- [Word联盟](http://www.wordlm.com/)
-- [优品PPT](https://www.ypppt.com)
-- [PPT超级市场](https://ppt.sotary.com)
-- [第1PPT](http://www.1ppt.com)
-- [PPT演示设计网址导航](https://www.aboutppt.com/)
-{{< /admonition >}}
-
-{{< admonition tip "图片" >}}
-- [Dribbble](https://dribbble.com)
-- [Pinterest](https://www.pinterest.com)
-- [Freepik](https://www.freepik.com)
-- [Unsplash](https://unsplash.com)
-- [DeviantArt](https://www.deviantart.com)
-- [Behance](https://www.behance.net)
-- [极简壁纸1](https://bz.zzzmh.cn/index)
-- [极简壁纸2](http://www.jijianzy.com/bz/)
-- [Wallpaper Abyss](https://wall.alphacoders.com/)
-- [wallhaven](https://wallhaven.cc/)
-{{< /admonition >}}
-
-{{< admonition tip "图标" >}}
-- [Worldvectorlogo](https://worldvectorlogo.com/zh)
-- [Iconduck](https://iconduck.com/)
-- [StickPNG](https://www.stickpng.com/)
-- [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)
-- [设计之家](https://www.sj33.cn/)
-- [notion icons.v5](https://notionv5.vyshnav.xyz/)
-{{< /admonition >}}
-
-{{< admonition tip "插画" >}}
-- [Storyset](https://storyset.com/)
-- [StickPNG](https://www.stickpng.com/)
-- [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn)
-{{< /admonition >}}
-
-{{< admonition tip "设计" >}}
-- [Figma](https://www.figma.com/)
-{{< /admonition >}}
-
-{{< admonition tip "摄影" >}}
-- [天空之城](https://www.skypixel.com/)
-{{< /admonition >}}
-
-{{< admonition tip "游戏" >}}
-- [Liquipedia](https://liquipedia.net/)
-- [DST-MOD Wikri](https://wiki.flapi.cn/doku.php)
-- [叽哩叽哩游戏网ACG（G站）](https://www.jiligamefun.com/)
-{{< /admonition >}}
-
-- [小爱同学音色网](http://ai.aahhy.com/)
-
-## 软件
-
-- [MSDN,我告诉你](https://msdn.itellyou.cn/)
-- [吾爱破解](https://www.52pojie.cn/)
-- [异星软件空间](https://www.yxssp.com/)
-- [易酷软件](https://www.yikurj.com/)
-- [果核剥壳](https://www.ghpym.com/)
-- [Easy To Direct Download Pc Software](https://up4pc.com/)
-- [Crack Softwares](https://multisoftwares.com/)
-- [下载免费Wondows个人电脑游戏及软件](https://zh.downloadastro.com/)
-- [捷径库](https://jiejingku.net/)
-- [反斗软件](http://www.apprcn.com/)
-- [Mergeek - 发现好产品](https://mergeek.com/)
-- [Appwall Today - iOS 每日限免](https://appwall.today/)
-- [Awesome Windows](https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md)
-
-{{< admonition tip "必备" >}}
-- [ShareX](https://getsharex.com/)
-- [Snipaste](https://zh.snipaste.com/)
-- [Clover](http://cn.ejie.me/)
-- [uTools](https://u.tools/)
-- [Bandizip](https://www.bandisoft.com/bandizip/)
-- [天若OCR](https://ocr.tianruo.net/)
-- [Everything](https://www.voidtools.com/zh-cn/)
-- [RubberTranslator](https://github.com/RubberTranslator/RubberTranslator)
-- [CopyTranslator](https://github.com/CopyTranslator/CopyTranslator)
-{{< /admonition >}}
-
-## 导航
-
-- [不死鸟 - 分享为王](https://iao.su/)
-- [福利吧](https://fuliba2021.net/)
-- [缙哥哥博客 - 福利分享](https://www.dujin.org/)
-- [好棒的羊毛站](https://wohaobang.cn/)
-- [创造狮导航](http://www.chuangzaoshi.com/)
-- [A+医学百科](http://www.a-hospital.com/)
-- [wikiHow - 万事指南](https://zh.wikihow.com/)
-
-## 推荐
-
-- [The best Programming books](https://www.best-books.dev/)
-- [历史剧网](http://www.lishiju.net/)
-
-{{< admonition tip "油猴插件" >}}
-- [Greasy Fork](https://greasyfork.org/zh-CN)
-- [雷利子](https://greasyfork.org/zh-CN/scripts/424022-%E9%9B%B7%E5%88%A9%E5%AD%90)
-- [秒传链接提取](https://greasyfork.org/zh-CN/scripts/424574-%E7%A7%92%E4%BC%A0%E9%93%BE%E6%8E%A5%E6%8F%90%E5%8F%96)
-{{< /admonition >}}
-
-{{< admonition tip "数学" >}}
-- [Mathway | 微积分问题解答者](https://www.mathway.com/zh/Calculus)
-{{< /admonition >}}
-

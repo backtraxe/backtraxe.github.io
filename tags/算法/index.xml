@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>算法 - 标签 - </title>
+        <link>https://backtraxe.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+        <description>算法 - 标签 - </description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Tue, 30 Mar 2021 22:06:43 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/%E7%AE%97%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+    <title>算法模板库</title>
+    <link>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF%E5%BA%93/</link>
+    <pubDate>Tue, 30 Mar 2021 22:06:43 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF%E5%BA%93/</guid>
+    <description><![CDATA[<p>常用算法模板。</p>]]></description>
+</item><item>
+    <title>竞赛算法集合</title>
+    <link>https://backtraxe.github.io/posts/c&#43;&#43;-%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/</link>
+    <pubDate>Wed, 24 Feb 2021 11:18:50 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/c&#43;&#43;-%E7%AB%9E%E8%B5%9B%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/</guid>
+    <description><![CDATA[<p>竞赛算法集合。</p>]]></description>
+</item><item>
+    <title>数据结构与算法</title>
+    <link>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+    <pubDate>Tue, 09 Feb 2021 22:06:43 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>
