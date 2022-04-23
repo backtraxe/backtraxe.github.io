@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>SQL - 标签 - </title>
+        <link>https://backtraxe.github.io/tags/sql/</link>
+        <description>SQL - 标签 - </description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sat, 23 Apr 2022 20:56:02 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/sql/" rel="self" type="application/rss+xml" /><item>
+    <title>SQL 教程</title>
+    <link>https://backtraxe.github.io/posts/sql-%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Sat, 23 Apr 2022 20:56:02 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/sql-%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[<p>结构化查询语言（Structured Query Language，SQL），读作<code>S-Q-L</code>或者<code>sequel</code>，是用来与数据库通信的语言。</p>]]></description>
+</item></channel>
+</rss>

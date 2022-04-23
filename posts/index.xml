@@ -4,7 +4,7 @@
         <link>https://backtraxe.github.io/posts/</link>
         <description>所有文章 | </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 20 Apr 2022 21:22:51 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sat, 23 Apr 2022 20:56:02 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>谷歌三件套安装教程</title>
     <link>https://backtraxe.github.io/posts/%E8%B0%B7%E6%AD%8C%E4%B8%89%E4%BB%B6%E5%A5%97%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
     <pubDate>Mon, 08 Feb 2021 10:51:10 &#43;0800</pubDate><author>
@@ -32,6 +32,13 @@
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AF%A6%E8%A7%A3/</guid>
     <description><![CDATA[]]></description>
+</item><item>
+    <title>SQL 教程</title>
+    <link>https://backtraxe.github.io/posts/sql-%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Sat, 23 Apr 2022 20:56:02 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/sql-%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[<p>结构化查询语言（Structured Query Language，SQL），读作<code>S-Q-L</code>或者<code>sequel</code>，是用来与数据库通信的语言。</p>]]></description>
 </item><item>
     <title>学习资料🔝</title>
     <link>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link>
