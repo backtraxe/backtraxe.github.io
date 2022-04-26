@@ -3,6 +3,10 @@
 
 <!--more-->
 
+{{< admonition tip "Github 开源书籍" false >}}
+- [设计数据密集型应用 - 中文翻译](https://github.com/Vonng/ddia)
+{{< /admonition >}}
+
 ## 1.编程基础
 
 {{< admonition tip "环境搭建" false >}}

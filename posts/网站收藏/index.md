@@ -110,7 +110,7 @@
 
 - iOS：
 
-- Windows：[`ShareX`](https://getsharex.com/)、[`Snipaste`](https://zh.snipaste.com/)、[`uTools`](https://u.tools/)、[`Bandizip`](https://www.bandisoft.com/bandizip/)、[`Everything`](https://www.voidtools.com/zh-cn/)、[`Honeycam`](https://www.bandisoft.com/honeycam/)
+- Windows：[`ShareX`](https://getsharex.com/)、[`Snipaste`](https://zh.snipaste.com/)、[`uTools`](https://u.tools/)、[`Bandizip`](https://www.bandisoft.com/bandizip/)、[`Everything`](https://www.voidtools.com/zh-cn/)、[`Honeycam`](https://www.bandisoft.com/honeycam/)、[`PDFPatcher`](https://github.com/wmjordan/PDFPatcher)
 
 - Mac：
 
