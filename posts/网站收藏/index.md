@@ -17,7 +17,7 @@
 
 - 图标生成：[`小米风格Logo生成器`](https://mi-logo.lvwzhen.com)、[`图标制作大师`](https://geticon.cn/)、[`Favicon图标生成器`](https://realfavicongenerator.net/)
 
-- 背景生成：[`Figen`](https://figen.cc/)
+- 背景生成：[`Figen`](https://figen.cc/)、[`SVG generator`](https://fffuel.co/)
 
 - 制作图表：[`ProcessOn`](https://processon.com/)
 
@@ -41,17 +41,19 @@
 
 - 动漫：[`AGE动漫`](http://www.age.tv/)、[`樱花动漫`](https://www.yhdmp.cc/)、[`ZzzFun动漫`](http://www.zzzfun.com/)、[`漫岛动漫`](https://www.mandao.tv/)、[`EDD动漫`](https://www.edddm.com/)
 
-- 漫画：[`漫画DB`](https://www.manhuadb.com/)、[`动漫之家`](https://www.dmzj.com/)
+- 漫画：[`漫画DB`](https://www.manhuadb.com/)、[`动漫之家`](https://www.dmzj.com/)、[`包子漫画`](https://www.baozimh.com/)
+
+- 小说：[`天天看小说`](https://www.ttkan.co/)
 
 - 体育：[`CCTV5`](https://tv.cctv.com/live/cctv5/)、[`JRKAN`](http://jrkankan.com/)
 
 ## 程序开发
 
-- 在线编译器：[`OnlineGDB`](https://www.onlinegdb.com/)、[`C++ shell`](http://cpp.sh/)
+- 在线编译器：[`OnlineGDB`](https://www.onlinegdb.com/)、[`C++ shell`](http://cpp.sh/)、[`futurecoder`](https://github.com/alexmojaki/futurecoder)
 
 - 可视化：[`Learn Git Branching`](https://learngitbranching.js.org/?locale=zh_CN)
 
-- 正则表达式：[`regex101`](https://regex101.com/)
+- 正则表达式：[`regex101`](https://regex101.com/)、[`RegexLearn`](https://github.com/aykutkardas/regexlearn.com)
 
 - 资源：[`吾爱破解`](https://www.52pojie.cn/)
 
@@ -59,7 +61,7 @@
 
 - 搜索：[`搜番`](https://sofan.icu/)、[`磁力爬（GFW）`](https://www.cilipa.com/)、[`八爪鱼`](https://磁搜.com/)
 
-- 影视：[`高清MP4`](https://www.mp4fan.org/)、[`片源网`](http://pianyuan.org/)、[`BT天堂`](https://www.bt-tt.com/)、[`WebHD`](https://webhd.cc/)、[`FIX字幕侠`](https://www.zimuxia.cn/)、[`牛牛美剧`](http://www.nnmeiju.com/)、[`音范丝`](https://www.yinfans.net/)、[`Nyaa`](https://nyaa.si/)、[`RARBG`](https://rarbg.to/)、[`纪录片天地`](http://www.jlpcn.net/)
+- 影视：[`高清MP4`](https://www.mp4fan.org/)、[`片源网`](http://pianyuan.org/)、[`BT天堂`](https://www.bt-tt.com/)、[`WebHD`](https://webhd.cc/)、[`FIX字幕侠`](https://www.zimuxia.cn/)、[`牛牛美剧`](http://www.nnmeiju.com/)、[`音范丝`](https://www.yinfans.net/)、[`Nyaa`](https://nyaa.si/)、[`RARBG`](https://rarbg.to/)、[`纪录片天地`](http://www.jlpcn.net/)、[`BTNull`](https://www.btnull.org/)
 
 - 动漫：[`动漫领域`](https://dmly.me/)、[`肥羊-Raws`](https://fy-raws.org/resource_lists/)、[`动漫花园`](https://share.dmhy.org/)、[`萌番组`](https://bangumi.moe/)、[`不移之火`](https://www.byzhihuo.com/)、[`漫猫动漫BT下载`](http://www.comicat.org)、[`爱恋动漫BT下载`](http://www.kisssub.org)
 
@@ -83,6 +85,8 @@
 
 - 图标：[`Worldvectorlogo`](https://worldvectorlogo.com/zh)、[`Iconduck`](https://iconduck.com/)、[`StickPNG`](https://www.stickpng.com/)、[`Iconfont`](https://www.iconfont.cn/)、[`设计之家`](https://www.sj33.cn/sc/)、[`Notion Icons 5.0`](https://notionv5.vyshnav.xyz/)
 
+- 系统：[`Windows 11`](https://www.microsoft.com/zh-cn/software-download/windows11)
+
 ## 导航资讯
 
 - 游戏：[`Liquipedia`](https://liquipedia.net/)、[`DST-MOD Wiki`](https://wiki.flapi.cn/doku.php)
@@ -105,12 +109,12 @@
 
 - 软件推荐：[`小众软件`](https://www.appinn.com/)、[`反斗软件`](http://www.apprcn.com/)、[`Awesome Windows`](https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md)
 
-{{< admonition tip "自用软件" false >}}
-- 安卓：[`MiXplorer Silver`](https://play.google.com/store/apps/details?id=com.mixplorer.silver)、[`1DM+`](https://play.google.com/store/apps/details?id=idm.internet.download.manager.plus)、[`FolderSync`](https://play.google.com/store/apps/details?id=dk.tacit.android.foldersync.lite)
+{{< admonition tip "推荐软件" false >}}
+- 安卓：[`MiXplorer Silver`](https://play.google.com/store/apps/details?id=com.mixplorer.silver)、[`1DM+`](https://play.google.com/store/apps/details?id=idm.internet.download.manager.plus)、[`FolderSync`](https://play.google.com/store/apps/details?id=dk.tacit.android.foldersync.lite)、[`Tachiyomi`](https://github.com/tachiyomiorg/tachiyomi)、[`全是漫画`](https://github.com/hongchacha/cartoon)、[`阅读3.0`](https://github.com/gedoor/legado)
 
 - iOS：
 
-- Windows：[`ShareX`](https://getsharex.com/)、[`Snipaste`](https://zh.snipaste.com/)、[`uTools`](https://u.tools/)、[`Bandizip`](https://www.bandisoft.com/bandizip/)、[`Everything`](https://www.voidtools.com/zh-cn/)、[`Honeycam`](https://www.bandisoft.com/honeycam/)、[`PDFPatcher`](https://github.com/wmjordan/PDFPatcher)
+- Windows：[`ShareX`](https://getsharex.com/)、[`Snipaste`](https://zh.snipaste.com/)、[`uTools`](https://u.tools/)、[`Bandizip`](https://www.bandisoft.com/bandizip/)、[`Everything`](https://www.voidtools.com/zh-cn/)、[`Honeycam`](https://www.bandisoft.com/honeycam/)、[`PDFPatcher`](https://github.com/wmjordan/PDFPatcher)、[`Rufus`](https://github.com/pbatard/rufus)、[`Ventoy`](https://github.com/ventoy/Ventoy)、[`微PE工具箱`](https://www.wepe.com.cn/)、[`AS SSD Benchmark`](https://www.alex-is.de/PHP/fusion/downloads.php?cat_id=4&download_id=9)、[`GPU-Z`](https://www.techpowerup.com/gpuz/)、[`CPU-Z`](https://www.cpuid.com/softwares/cpu-z.html)、[`adb & fastboot`](https://developer.android.com/studio/releases/platform-tools)
 
 - Mac：
 

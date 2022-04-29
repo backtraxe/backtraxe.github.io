@@ -3,9 +3,10 @@
 
 <!--more-->
 
-{{< admonition tip "Github 开源书籍" false >}}
 - [设计数据密集型应用 - 中文翻译](https://github.com/Vonng/ddia)
-{{< /admonition >}}
+- [Awesome Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture)
+- [Awesome Algorithms](https://github.com/tayllan/awesome-algorithms)
+- [ReallyConfused](https://reallyconfused.co/)
 
 ## 1.编程基础
 
@@ -15,6 +16,8 @@
 {{< /admonition >}}
 
 - [Psyduck](https://github.com/SmartKeyerror/Psyduck)：XMind 记录 CS 基础问题。
+- [清华大学计算机系课程攻略](https://github.com/PKUanonym/REKCARC-TSC-UHT)
+- [浙江大学课程攻略共享计划](https://github.com/QSCTech/zju-icicles)
 
 ### 1.1 操作系统
 
@@ -56,6 +59,7 @@
 
 - [cplusplus.com](https://cplusplus.com/)
 - [C++那些事](https://github.com/Light-City/CPlusPlusThings)：这是一个适合初学者从入门到进阶的仓库，解决了面试者与学习者想要深入 C++及如何入坑 C++的问题。除此之外，本仓库拓展了更加深入的源码分析，多线程并发等的知识，是一个比较全面的 C++ 学习从入门到进阶提升的仓库。
+- [在拥挤和变化的世界中茁壮成长：C++ 2006–2020](https://github.com/Cpp-Club/Cxx_HOPL4_zh)
 
 ### Go
 
@@ -67,6 +71,8 @@
 - [Practical Go Lessons](https://www.practical-go-lessons.com/)
 - [Introduction-to-Golang](https://github.com/0voice/Introduction-to-Golang)：最全空降 golang 资料补给包（满血战斗），包含文章，书籍，作者论文，理论分析，开源框架，云原生，大佬视频，大厂实战分享 ppt。
 - [《Go入门指南》](https://github.com/unknwon/the-way-to-go_ZH_CN)
+- [Go 101](https://github.com/go101/go101)
+    - [Go语言101](https://github.com/golang101/golang101)
 
 ### Java
 
@@ -133,6 +139,9 @@
 {{< /admonition >}}
 
 ### 教程
+
+- [Modern Deep Learning Techniques Applied to Natural Language Processing](https://nlpoverview.com/)
+- [100 numpy exercises](https://github.com/rougier/numpy-100)
 
 {{< admonition tip "书籍" false >}}
 - [《利用 Python 进行数据分析（第2版）》](https://github.com/iamseancheney/python_for_data_analysis_2nd_chinese_version)
@@ -307,3 +316,6 @@
 - [scrcpy](https://github.com/Genymobile/scrcpy): This application provides display and control of Android devices connected on USB.
 {{< /admonition >}}
 
+## 论文
+
+- [Paper Style Guide](https://github.com/huggingface/paper-style-guide)
