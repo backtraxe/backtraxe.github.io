@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>设计模式 - 标签 - </title>
+        <link>https://backtraxe.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+        <description>设计模式 - 标签 - </description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sun, 22 Aug 2021 17:18:39 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>设计模式教程</title>
+    <link>https://backtraxe.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Sun, 22 Aug 2021 17:18:39 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[<p>设计模式（Design Pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。</p>]]></description>
+</item></channel>
+</rss>
