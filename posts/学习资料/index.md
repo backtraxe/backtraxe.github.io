@@ -8,6 +8,13 @@
 - [Awesome Algorithms](https://github.com/tayllan/awesome-algorithms)
 - [ReallyConfused](https://reallyconfused.co/)
 
+## 公开课
+
+- [清华大学计算机系课程攻略](https://github.com/PKUanonym/REKCARC-TSC-UHT)
+- [浙江大学课程攻略共享计划](https://github.com/QSCTech/zju-icicles)
+- [上海交通大学课程分享](https://github.com/kxxwz/SJTU-Courses)
+- [哈工大（深圳）计算机专业课程攻略](https://github.com/hewei2001/HITSZ-OpenCS)
+
 ## 1.编程基础
 
 {{< admonition tip "环境搭建" false >}}
@@ -16,8 +23,7 @@
 {{< /admonition >}}
 
 - [Psyduck](https://github.com/SmartKeyerror/Psyduck)：XMind 记录 CS 基础问题。
-- [清华大学计算机系课程攻略](https://github.com/PKUanonym/REKCARC-TSC-UHT)
-- [浙江大学课程攻略共享计划](https://github.com/QSCTech/zju-icicles)
+
 
 ### 1.1 操作系统
 
@@ -89,7 +95,8 @@
 
 ### Python
 
-- [Python-Mini-Projects](https://github.com/Python-World/python-mini-projects): 一系列简单的 Python 迷你项目，可提高您的 Python 技能。
+- [Python-Mini-Projects](https://github.com/Python-World/python-mini-projects): 一组简单的 Python 迷你项目来增强你的 Python 技能。
+- [《Python Cookbook in Chinese》 3rd Edition 翻译](https://github.com/yidao620c/python3-cookbook)
 
 ### Rust
 
@@ -124,6 +131,14 @@
 - [50 Projects in 50 Days - HTML/CSS and JavaScript](https://github.com/bradtraversy/50projects50days)
 
 ## 人工智能
+
+### 推荐系统
+
+- [工业界的推荐系统](https://github.com/wangshusen/RecommenderSystem)
+
+### 竞赛
+
+- [The Kaggle Book](https://github.com/PacktPublishing/The-Kaggle-Book)
 
 ### 博客
 
