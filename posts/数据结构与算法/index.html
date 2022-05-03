@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <title class="pjax-title">数据结构与算法 - </title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="数据结构与算法" />
-<meta property="og:description" content="算法&#43;数据结构=程序。" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-09T22:06:43+08:00" />
-<meta property="article:modified_time" content="2022-05-03T09:45:50+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-05-03T14:16:40+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="数据结构与算法"/>
-<meta name="twitter:description" content="算法&#43;数据结构=程序。"/>
+<meta name="twitter:description" content=""/>
 <meta name="application-name" content="traXe">
 <meta name="apple-mobile-web-app-title" content="traXe">
 
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/"
-        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  13801 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/","datePublished": "2021-02-09T22:06:43+08:00","dateModified": "2022-05-03T09:45:50+00:00","publisher": {
+        },"genre": "posts","keywords": "数据结构, 算法","wordcount":  14372 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95\/","datePublished": "2021-02-09T22:06:43+08:00","dateModified": "2022-05-03T14:16:40+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -187,6 +187,8 @@
     </li>
     <li><a href="#7二叉树">7.二叉树</a>
       <ul>
+        <li><a href="#基础">基础</a></li>
+        <li><a href="#定义-1">定义</a></li>
         <li><a href="#遍历">遍历</a>
           <ul>
             <li><a href="#前序遍历">前序遍历</a></li>
@@ -195,13 +197,19 @@
             <li><a href="#层序遍历">层序遍历</a></li>
           </ul>
         </li>
-        <li><a href="#常见问题">常见问题</a></li>
+        <li><a href="#二叉搜索树">二叉搜索树</a>
+          <ul>
+            <li><a href="#性质">性质</a></li>
+            <li><a href="#插入">插入</a></li>
+            <li><a href="#删除">删除</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#8树">8.树</a></li>
     <li><a href="#9图">9.图</a>
       <ul>
-        <li><a href="#定义-1">定义</a></li>
+        <li><a href="#定义-2">定义</a></li>
         <li><a href="#遍历-1">遍历</a>
           <ul>
             <li><a href="#dfs">DFS</a></li>
@@ -245,7 +253,7 @@
     <li><a href="#12索引">12.索引</a></li>
     <li><a href="#13高级数据结构">13.高级数据结构</a>
       <ul>
-        <li><a href="#并查集-union-find">并查集 Union Find</a></li>
+        <li><a href="#并查集union-find">并查集（Union Find）</a></li>
         <li><a href="#前缀树trie-树">前缀树（Trie 树）</a></li>
         <li><a href="#树状数组">树状数组</a>
           <ul>
@@ -253,7 +261,15 @@
             <li><a href="#复杂度分析">复杂度分析</a></li>
           </ul>
         </li>
-        <li><a href="#线断树">线断树</a></li>
+        <li><a href="#线段树">线段树</a></li>
+        <li><a href="#平衡二叉查找树avl树">平衡二叉查找树（AVL树）</a></li>
+        <li><a href="#红黑树">红黑树</a>
+          <ul>
+            <li><a href="#性质-1">性质</a></li>
+            <li><a href="#自平衡">自平衡</a></li>
+            <li><a href="#插入-1">插入</a></li>
+          </ul>
+        </li>
         <li><a href="#缓存数据结构">缓存数据结构</a>
           <ul>
             <li><a href="#lru-least-recently-used">LRU (Least Recently Used)</a></li>
@@ -320,8 +336,8 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-03">2022-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 13801 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 28 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-09">2021-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-03">2022-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 14372 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 29 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -394,6 +410,8 @@
     </li>
     <li><a href="#7二叉树">7.二叉树</a>
       <ul>
+        <li><a href="#基础">基础</a></li>
+        <li><a href="#定义-1">定义</a></li>
         <li><a href="#遍历">遍历</a>
           <ul>
             <li><a href="#前序遍历">前序遍历</a></li>
@@ -402,13 +420,19 @@
             <li><a href="#层序遍历">层序遍历</a></li>
           </ul>
         </li>
-        <li><a href="#常见问题">常见问题</a></li>
+        <li><a href="#二叉搜索树">二叉搜索树</a>
+          <ul>
+            <li><a href="#性质">性质</a></li>
+            <li><a href="#插入">插入</a></li>
+            <li><a href="#删除">删除</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#8树">8.树</a></li>
     <li><a href="#9图">9.图</a>
       <ul>
-        <li><a href="#定义-1">定义</a></li>
+        <li><a href="#定义-2">定义</a></li>
         <li><a href="#遍历-1">遍历</a>
           <ul>
             <li><a href="#dfs">DFS</a></li>
@@ -452,7 +476,7 @@
     <li><a href="#12索引">12.索引</a></li>
     <li><a href="#13高级数据结构">13.高级数据结构</a>
       <ul>
-        <li><a href="#并查集-union-find">并查集 Union Find</a></li>
+        <li><a href="#并查集union-find">并查集（Union Find）</a></li>
         <li><a href="#前缀树trie-树">前缀树（Trie 树）</a></li>
         <li><a href="#树状数组">树状数组</a>
           <ul>
@@ -460,7 +484,15 @@
             <li><a href="#复杂度分析">复杂度分析</a></li>
           </ul>
         </li>
-        <li><a href="#线断树">线断树</a></li>
+        <li><a href="#线段树">线段树</a></li>
+        <li><a href="#平衡二叉查找树avl树">平衡二叉查找树（AVL树）</a></li>
+        <li><a href="#红黑树">红黑树</a>
+          <ul>
+            <li><a href="#性质-1">性质</a></li>
+            <li><a href="#自平衡">自平衡</a></li>
+            <li><a href="#插入-1">插入</a></li>
+          </ul>
+        </li>
         <li><a href="#缓存数据结构">缓存数据结构</a>
           <ul>
             <li><a href="#lru-least-recently-used">LRU (Least Recently Used)</a></li>
@@ -523,8 +555,7 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>算法+数据结构=程序。</p>
-<h2 id="1基础" class="headerLink">
+            </div><div class="content" id="content"><h2 id="1基础" class="headerLink">
     <a href="#1%e5%9f%ba%e7%a1%80" class="header-mark"></a>1.基础</h2><h3 id="11-存储结构" class="headerLink">
     <a href="#11-%e5%ad%98%e5%82%a8%e7%bb%93%e6%9e%84" class="header-mark"></a>1.1 存储结构</h3><ul>
 <li><strong>数组</strong>：
@@ -537,10 +568,10 @@
 </li>
 <li><strong>链表</strong>：
 <ul>
-<li>数据物理上不连续存储，而是靠指针指向其他元素的位置</li>
+<li>数据不连续存储，而是靠指针指向其他元素的位置</li>
 <li>不支持随机访问，平均时间复杂度 $O(n)$</li>
 <li>无需扩容</li>
-<li>插入和删除时无需移位，时间复杂度 $O(1)$（已知前驱结点），$O(n)$（未知前驱结点）</li>
+<li>插入和删除时无需移位，时间复杂度 $O(1)$（前驱结点已知），$O(n)$（前驱结点未知）</li>
 <li>指针域会占用储存空间，降低空间利用率</li>
 </ul>
 </li>
@@ -1876,7 +1907,8 @@
 <li><a href="https://leetcode-cn.com/problems/implement-strstr/solution/yi-dong-de-rabin-karpsuan-fa-hao-xiang-mei-ren-xie/" target="_blank" rel="noopener noreffer">简单易懂的Rabin Karp算法详解！ - 实现 strStr() - 力扣（LeetCode）</a></li>
 </ol>
 <h2 id="7二叉树" class="headerLink">
-    <a href="#7%e4%ba%8c%e5%8f%89%e6%a0%91" class="header-mark"></a>7.二叉树</h2><p>满二叉树：一个高度为 d 的二叉树，有 $2^d-1$ 个节点。即除叶节点外，每个节点都有两个孩子，即节点的出度只为 0 或 2。</p>
+    <a href="#7%e4%ba%8c%e5%8f%89%e6%a0%91" class="header-mark"></a>7.二叉树</h2><h3 id="基础" class="headerLink">
+    <a href="#%e5%9f%ba%e7%a1%80" class="header-mark"></a>基础</h3><p>满二叉树：一个高度为 d 的二叉树，有 $2^d-1$ 个节点。即除叶节点外，每个节点都有两个孩子，即节点的出度只为 0 或 2。</p>
 <p>完全二叉树：只有最后一层可能未满，且节点严格从左往右排列。即出度为 1 的节点一定只有左孩子；若某节点出度小于 2，则其右边的节点出度为 0。</p>
 <blockquote>
 <ul>
@@ -1884,7 +1916,8 @@
 <li>高度为 $d$ 的二叉树最多有 $2^d-1$ 个节点。</li>
 </ul>
 </blockquote>
-<div class="highlight"><div class="chroma">
+<h3 id="定义-1" class="headerLink">
+    <a href="#%e5%ae%9a%e4%b9%89-1" class="header-mark"></a>定义</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -2114,8 +2147,150 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"></code></pre></td></tr></table>
 </div>
-</div><h3 id="常见问题" class="headerLink">
-    <a href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98" class="header-mark"></a>常见问题</h3><h2 id="8树" class="headerLink">
+</div><h3 id="二叉搜索树" class="headerLink">
+    <a href="#%e4%ba%8c%e5%8f%89%e6%90%9c%e7%b4%a2%e6%a0%91" class="header-mark"></a>二叉搜索树</h3><p>Binary Search Tree，BST</p>
+<h4 id="性质" class="headerLink">
+    <a href="#%e6%80%a7%e8%b4%a8" class="header-mark"></a>性质</h4><ul>
+<li>左子树结点均小于根结点，右子树结点均大于根结点</li>
+<li>左右子树均为二叉搜索树</li>
+<li>中序遍历结果为升序</li>
+</ul>
+<h4 id="插入" class="headerLink">
+    <a href="#%e6%8f%92%e5%85%a5" class="header-mark"></a>插入</h4><p>小左大右</p>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>递归<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">TreeNode</span> <span class="nf">insert</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">val</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">val</span> <span class="o">&gt;</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">root</span><span class="o">.</span><span class="na">left</span> <span class="o">=</span> <span class="n">insert</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">,</span> <span class="n">val</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">val</span> <span class="o">&lt;</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">root</span><span class="o">.</span><span class="na">right</span> <span class="o">=</span> <span class="n">insert</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">,</span> <span class="n">val</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 跳过相同值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="n">root</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>迭代<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">TreeNode</span> <span class="nf">insert</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">val</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TreeNode</span> <span class="n">p</span> <span class="o">=</span> <span class="n">root</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="o">(</span><span class="n">p</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">val</span> <span class="o">&gt;</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">left</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">p</span><span class="o">.</span><span class="na">left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">val</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">left</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">val</span> <span class="o">&lt;</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">right</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">p</span><span class="o">.</span><span class="na">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">val</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">right</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 跳过相同值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">root</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<h4 id="删除" class="headerLink">
+    <a href="#%e5%88%a0%e9%99%a4" class="header-mark"></a>删除</h4><ul>
+<li>若删除结点为叶结点，直接删除。</li>
+<li>若删除结点为非叶结点，将左子树最大结点或者右子树最小结点移至当前位置。</li>
+</ul>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>递归<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"></code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>迭代<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"></code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<h2 id="8树" class="headerLink">
     <a href="#8%e6%a0%91" class="header-mark"></a>8.树</h2><ul>
 <li>一棵 n 个节点的树，有 n-1 条边。</li>
 <li>一棵 n 个节点的树，有 n 棵子树。</li>
@@ -2159,8 +2334,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="9图" class="headerLink">
-    <a href="#9%e5%9b%be" class="header-mark"></a>9.图</h2><h3 id="定义-1" class="headerLink">
-    <a href="#%e5%ae%9a%e4%b9%89-1" class="header-mark"></a>定义</h3><div class="highlight"><div class="chroma">
+    <a href="#9%e5%9b%be" class="header-mark"></a>9.图</h2><h3 id="定义-2" class="headerLink">
+    <a href="#%e5%ae%9a%e4%b9%89-2" class="header-mark"></a>定义</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -3186,8 +3361,8 @@
 </div>
 </div><h2 id="12索引" class="headerLink">
     <a href="#12%e7%b4%a2%e5%bc%95" class="header-mark"></a>12.索引</h2><h2 id="13高级数据结构" class="headerLink">
-    <a href="#13%e9%ab%98%e7%ba%a7%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" class="header-mark"></a>13.高级数据结构</h2><h3 id="并查集-union-find" class="headerLink">
-    <a href="#%e5%b9%b6%e6%9f%a5%e9%9b%86-union-find" class="header-mark"></a>并查集 Union Find</h3><h3 id="前缀树trie-树" class="headerLink">
+    <a href="#13%e9%ab%98%e7%ba%a7%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" class="header-mark"></a>13.高级数据结构</h2><h3 id="并查集union-find" class="headerLink">
+    <a href="#%e5%b9%b6%e6%9f%a5%e9%9b%86union-find" class="header-mark"></a>并查集（Union Find）</h3><h3 id="前缀树trie-树" class="headerLink">
     <a href="#%e5%89%8d%e7%bc%80%e6%a0%91trie-%e6%a0%91" class="header-mark"></a>前缀树（Trie 树）</h3><h3 id="树状数组" class="headerLink">
     <a href="#%e6%a0%91%e7%8a%b6%e6%95%b0%e7%bb%84" class="header-mark"></a>树状数组</h3><p>树状数组是一种可以动态维护序列<strong>前缀和</strong>的数据结构（下标从 1 开始），它的功能是：</p>
 <ul>
@@ -3292,8 +3467,8 @@
 </li>
 <li>空间复杂度：$O(n)$</li>
 </ul>
-<h3 id="线断树" class="headerLink">
-    <a href="#%e7%ba%bf%e6%96%ad%e6%a0%91" class="header-mark"></a>线断树</h3><p>线段树是常用的用来维护<strong>区间信息</strong>的数据结构。</p>
+<h3 id="线段树" class="headerLink">
+    <a href="#%e7%ba%bf%e6%ae%b5%e6%a0%91" class="header-mark"></a>线段树</h3><p>线段树是常用的用来维护<strong>区间信息</strong>的数据结构。</p>
 <p>线段树可以在 $O(\log n)$ 的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3467,7 +3642,76 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="缓存数据结构" class="headerLink">
+</div><h3 id="平衡二叉查找树avl树" class="headerLink">
+    <a href="#%e5%b9%b3%e8%a1%a1%e4%ba%8c%e5%8f%89%e6%9f%a5%e6%89%be%e6%a0%91avl%e6%a0%91" class="header-mark"></a>平衡二叉查找树（AVL树）</h3><p>Balanced Binary Search Tree，BBST</p>
+<p>通过旋转来保持树的平衡。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">TreeNode</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">val</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TreeNode</span> <span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="红黑树" class="headerLink">
+    <a href="#%e7%ba%a2%e9%bb%91%e6%a0%91" class="header-mark"></a>红黑树</h3><p>Red Black Tree</p>
+<h4 id="性质-1" class="headerLink">
+    <a href="#%e6%80%a7%e8%b4%a8-1" class="header-mark"></a>性质</h4><ol>
+<li>每个结点可红可黑。</li>
+<li>根结点是黑色。</li>
+<li>叶结点（null）是黑色。</li>
+<li>红色结点的孩子是黑色。</li>
+<li>任意结点到叶结点的路径都包含相同数量的黑色结点。</li>
+</ol>
+<a class="lightgallery" href="/%e7%ba%a2%e9%bb%91%e6%a0%91/tree.svg" title="/红黑树/tree.svg" data-thumbnail="/红黑树/tree.svg">
+        <img
+            class="lazyload"
+            data-src="/%e7%ba%a2%e9%bb%91%e6%a0%91/tree.svg"
+            data-srcset="/%e7%ba%a2%e9%bb%91%e6%a0%91/tree.svg, /%e7%ba%a2%e9%bb%91%e6%a0%91/tree.svg 1.5x, /%e7%ba%a2%e9%bb%91%e6%a0%91/tree.svg 2x"
+            data-sizes="auto"
+            alt="/红黑树/tree.svg"width="100%">
+    </a>
+<ol start="6">
+<li>红黑树不是完美平衡二叉查找树，左右子树高度差可能大于1。</li>
+</ol>
+<h4 id="自平衡" class="headerLink">
+    <a href="#%e8%87%aa%e5%b9%b3%e8%a1%a1" class="header-mark"></a>自平衡</h4><ul>
+<li><strong>左旋</strong>：右孩子V变为当前结点P的父结点，当前结点P变为右孩子V的左孩子，右孩子V的左子树R变为当前结点的右子树。</li>
+</ul>
+<a class="lightgallery" href="/%e7%ba%a2%e9%bb%91%e6%a0%91/left_rotate.webp" title="/红黑树/left_rotate.webp" data-thumbnail="/红黑树/left_rotate.webp">
+        <img
+            class="lazyload"
+            data-src="/%e7%ba%a2%e9%bb%91%e6%a0%91/left_rotate.webp"
+            data-srcset="/%e7%ba%a2%e9%bb%91%e6%a0%91/left_rotate.webp, /%e7%ba%a2%e9%bb%91%e6%a0%91/left_rotate.webp 1.5x, /%e7%ba%a2%e9%bb%91%e6%a0%91/left_rotate.webp 2x"
+            data-sizes="auto"
+            alt="/红黑树/left_rotate.webp"width="100%">
+    </a>
+<ul>
+<li><strong>右旋</strong>：左孩子F变为当前结点P的父结点，当前结点P变为左孩子F的右孩子，左孩子F的右子树K变为当前结点的左子树。</li>
+</ul>
+<a class="lightgallery" href="/%e7%ba%a2%e9%bb%91%e6%a0%91/right_rotate.webp" title="/红黑树/right_rotate.webp" data-thumbnail="/红黑树/right_rotate.webp">
+        <img
+            class="lazyload"
+            data-src="/%e7%ba%a2%e9%bb%91%e6%a0%91/right_rotate.webp"
+            data-srcset="/%e7%ba%a2%e9%bb%91%e6%a0%91/right_rotate.webp, /%e7%ba%a2%e9%bb%91%e6%a0%91/right_rotate.webp 1.5x, /%e7%ba%a2%e9%bb%91%e6%a0%91/right_rotate.webp 2x"
+            data-sizes="auto"
+            alt="/红黑树/right_rotate.webp"width="100%">
+    </a>
+<ul>
+<li><strong>变色</strong>：结点黑红互转。</li>
+</ul>
+<h4 id="插入-1" class="headerLink">
+    <a href="#%e6%8f%92%e5%85%a5-1" class="header-mark"></a>插入</h4><ul>
+<li>空树：</li>
+<li></li>
+</ul>
+<h3 id="缓存数据结构" class="headerLink">
     <a href="#%e7%bc%93%e5%ad%98%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" class="header-mark"></a>缓存数据结构</h3><h4 id="lru-least-recently-used" class="headerLink">
     <a href="#lru-least-recently-used" class="header-mark"></a>LRU (Least Recently Used)</h4><p>最近最少使用算法。当容量满时，将最久没有使用过的缓存删除。</p>
 <div class="highlight"><div class="chroma">

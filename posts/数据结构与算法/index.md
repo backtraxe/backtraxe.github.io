@@ -1,8 +1,6 @@
 # 数据结构与算法
 
 
-算法+数据结构=程序。
-
 <!--more-->
 
 ## 1.基础
@@ -15,10 +13,10 @@
     - 数组满时需要扩容，重新分配一块更大的空间，再把数据全部复制过去，时间复杂度 $O(n)$
     - 在数组中间进行插入和删除时需要对后面的所有数据进行移位，平均时间复杂度 $O(n)$
 - **链表**：
-    - 数据物理上不连续存储，而是靠指针指向其他元素的位置
+    - 数据不连续存储，而是靠指针指向其他元素的位置
     - 不支持随机访问，平均时间复杂度 $O(n)$
     - 无需扩容
-    - 插入和删除时无需移位，时间复杂度 $O(1)$（已知前驱结点），$O(n)$（未知前驱结点）
+    - 插入和删除时无需移位，时间复杂度 $O(1)$（前驱结点已知），$O(n)$（前驱结点未知）
     - 指针域会占用储存空间，降低空间利用率
 
 ### 1.2 逻辑结构
@@ -714,12 +712,16 @@ int rkSearch(char[] text, char[] pattern) {
 
 ## 7.二叉树
 
+### 基础
+
 满二叉树：一个高度为 d 的二叉树，有 $2^d-1$ 个节点。即除叶节点外，每个节点都有两个孩子，即节点的出度只为 0 或 2。
 
 完全二叉树：只有最后一层可能未满，且节点严格从左往右排列。即出度为 1 的节点一定只有左孩子；若某节点出度小于 2，则其右边的节点出度为 0。
 
 > - 二叉树第 $i$ 层最多有 $2^{i-1}$ 个节点。
 > - 高度为 $d$ 的二叉树最多有 $2^d-1$ 个节点。
+
+### 定义
 
 ```python
 class TreeNode(object):
@@ -859,7 +861,82 @@ void postorder(TreeNode* root) {
 
 ```
 
-### 常见问题
+### 二叉搜索树
+
+Binary Search Tree，BST
+
+#### 性质
+
+- 左子树结点均小于根结点，右子树结点均大于根结点
+- 左右子树均为二叉搜索树
+- 中序遍历结果为升序
+
+#### 插入
+
+小左大右
+
+{{< admonition tip "递归" false >}}
+```java
+TreeNode insert(TreeNode root, int val) {
+    if (root == null) {
+        return new TreeNode(val);
+    } else if (root.val > val) {
+        root.left = insert(root.left, val);
+    } else if (root.val < val) {
+        root.right = insert(root.right, val);
+    }
+    // 跳过相同值
+    return root;
+}
+```
+{{< /admonition >}}
+
+{{< admonition tip "迭代" false >}}
+```java
+TreeNode insert(TreeNode root, int val) {
+    if (root == null) {
+        return new TreeNode(val);
+    }
+    TreeNode p = root;
+    while (p != null) {
+        if (p.val > val) {
+            if (p.left == null) {
+                p.left = new TreeNode(val);
+                break;
+            }
+            p = p.left;
+        } else if (p.val < val) {
+            if (p.right == null) {
+                p.right = new TreeNode(val);
+                break;
+            }
+            p = p.right;
+        } else {
+            // 跳过相同值
+            break;
+        }
+    }
+    return root;
+}
+```
+{{< /admonition >}}
+
+#### 删除
+
+- 若删除结点为叶结点，直接删除。
+- 若删除结点为非叶结点，将左子树最大结点或者右子树最小结点移至当前位置。 
+
+{{< admonition tip "递归" false >}}
+```java
+
+```
+{{< /admonition >}}
+
+{{< admonition tip "迭代" false >}}
+```java
+
+```
+{{< /admonition >}}
 
 ## 8.树
 
@@ -1511,7 +1588,7 @@ int binarySearch(int[] nums, int target) {
 
 ## 13.高级数据结构
 
-### 并查集 Union Find
+### 并查集（Union Find）
 
 ### 前缀树（Trie 树）
 
@@ -1575,7 +1652,7 @@ class TreeArray {
     - `preSum`函数：$O(\log n)$
 - 空间复杂度：$O(n)$
 
-### 线断树
+### 线段树
 
 线段树是常用的用来维护**区间信息**的数据结构。
 
@@ -1666,6 +1743,52 @@ class SegmentTree {
     }
 }
 ```
+
+### 平衡二叉查找树（AVL树）
+
+Balanced Binary Search Tree，BBST
+
+通过旋转来保持树的平衡。
+
+```java
+class TreeNode {
+    int val;
+    TreeNode left, right;
+}
+```
+
+### 红黑树
+
+Red Black Tree
+
+#### 性质
+
+1. 每个结点可红可黑。
+2. 根结点是黑色。
+3. 叶结点（null）是黑色。
+4. 红色结点的孩子是黑色。
+5. 任意结点到叶结点的路径都包含相同数量的黑色结点。
+
+{{< image src="/红黑树/tree.svg" width="100%" >}}
+
+6. 红黑树不是完美平衡二叉查找树，左右子树高度差可能大于1。
+
+#### 自平衡
+
+- **左旋**：右孩子V变为当前结点P的父结点，当前结点P变为右孩子V的左孩子，右孩子V的左子树R变为当前结点的右子树。
+
+{{< image src="/红黑树/left_rotate.webp" width="100%" >}}
+
+- **右旋**：左孩子F变为当前结点P的父结点，当前结点P变为左孩子F的右孩子，左孩子F的右子树K变为当前结点的左子树。
+
+{{< image src="/红黑树/right_rotate.webp" width="100%" >}}
+
+- **变色**：结点黑红互转。
+
+#### 插入
+
+- 空树：
+- 
 
 ### 缓存数据结构
 

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="200">
+<g id="polygon"></g>
+<g id="edge">
+    <path id="e3" class="ude" d="M242.80855905167897,70.02196394985819L152.19144094832103,99.97803605014181" stroke="#333" stroke-width="3"></path>
+    <path id="e1" class="ude" d="M484.2141854177514,27.609225550784885L273.7858145822485,62.39077444921512" stroke="#333" stroke-width="3"></path>
+    <path id="e4" class="ude" d="M273.19144094832103,70.02196394985819L363.80855905167897,99.97803605014181" stroke="#333" stroke-width="3"></path>
+    <path id="e7" class="ude" d="M392.34664671258685,113.82422923146237L426.15335328741315,136.17577076853763" stroke="#333" stroke-width="3"></path>
+    <path id="e5" class="ude" d="M726.808559051679,70.02196394985819L636.191440948321,99.97803605014181" stroke="#333" stroke-width="3"></path>
+    <path id="e2" class="ude" d="M515.7858145822486,27.609225550784885L726.2141854177514,62.39077444921512" stroke="#333" stroke-width="3"></path>
+    <path id="e8" class="ude" d="M849.6533532874132,113.82422923146237L815.8466467125868,136.17577076853763" stroke="#333" stroke-width="3"></path>
+    <path id="e6" class="ude" d="M757.191440948321,70.02196394985819L847.808559051679,99.97803605014181" stroke="#333" stroke-width="3"></path>
+    <path id="e9" class="ude" d="M876.3466467125868,113.82422923146237L910.1533532874132,136.17577076853763" stroke="#333" stroke-width="3"></path>
+</g>
+<g id="vertex">
+    <circle class="v3" cx="137" cy="105" x="121" y="89" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v3" cx="137" cy="105" x="122" y="90" fill="#000" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v1" cx="258" cy="65" x="242" y="49" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v1" cx="258" cy="65" x="243" y="50" fill="#f00" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v4" cx="379" cy="105" x="363" y="89" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v4" cx="379" cy="105" x="364" y="90" fill="#000" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v7" cx="439.5" cy="145" x="423.5" y="129" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v7" cx="439.5" cy="145" x="424.5" y="130" fill="#f00" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v0" cx="500" cy="25" x="484" y="9" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v0" cx="500" cy="25" x="485" y="10" fill="#000" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v5" cx="621" cy="105" x="605" y="89" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v5" cx="621" cy="105" x="606" y="90" fill="#000" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v2" cx="742" cy="65" x="726" y="49" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v2" cx="742" cy="65" x="727" y="50" fill="#f00" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v8" cx="802.5" cy="145" x="786.5" y="129" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v8" cx="802.5" cy="145" x="787.5" y="130" fill="#f00" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v6" cx="863" cy="105" x="847" y="89" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v6" cx="863" cy="105" x="848" y="90" fill="#000" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+    <circle class="v9" cx="923.5" cy="145" x="907.5" y="129" fill="#333" r="16" stroke="#333" stroke-width="2" height="32" width="32"></circle>
+    <circle class="v9" cx="923.5" cy="145" x="908.5" y="130" fill="#f00" r="14" width="30" height="30" stroke="#fff" stroke-width="0"></circle>
+</g>
+<g id="vertexText">
+    <text class="v3" x="137" y="110.33333333333333" fill="#fff" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">11</text>
+    <text class="v3" x="137" y="136.33333333333331" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v1" x="258" y="70.33333333333333" fill="#333" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">20</text>
+    <text class="v1" x="258" y="96.33333333333333" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v4" x="379" y="110.33333333333333" fill="#fff" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">29</text>
+    <text class="v4" x="379" y="136.33333333333331" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v7" x="439.5" y="150.33333333333334" fill="#333" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">32</text>
+    <text class="v7" x="439.5" y="176.33333333333334" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v0" x="500" y="30.333333333333332" fill="#fff" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">41</text>
+    <text class="v0" x="500" y="56.33333333333333" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v5" x="621" y="110.33333333333333" fill="#fff" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">50</text>
+    <text class="v5" x="621" y="136.33333333333331" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v2" x="742" y="70.33333333333333" fill="#333" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">65</text>
+    <text class="v2" x="742" y="96.33333333333333" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v8" x="802.5" y="150.33333333333334" fill="#333" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">72</text>
+    <text class="v8" x="802.5" y="176.33333333333334" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v6" x="863" y="110.33333333333333" fill="#fff" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">91</text>
+    <text class="v6" x="863" y="136.33333333333331" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+    <text class="v9" x="923.5" y="150.33333333333334" fill="#333" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">99</text>
+    <text class="v9" x="923.5" y="176.33333333333334" fill="red" font-family="'PT Sans', sans-serif" font-size="16" font-weight="bold" text-anchor="middle"></text>
+</g>
+<g id="edgeWeight">
+    <text id="ew3" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e3" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+    <text id="ew1" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e1" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+    <text id="ew4" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e4" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+    <text id="ew7" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e7" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+    <text id="ew5" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e5" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+    <text id="ew2" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e2" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+    <text id="ew8" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e8" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+    <text id="ew6" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e6" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+    <text id="ew9" fill="#333" font-family="'PT Sans', sans-serif" font-size="0" font-weight="bold" text-anchor="middle" text-decoration="underline">
+        <textPath href="#e9" startOffset="75%"><tspan dy="-5">1</tspan></textPath>
+    </text>
+</g>
+<g id="edgeWeightPath"></g>
+<g id="marker">
+    <marker id="arrow" viewBox="0 -5 10 10" refX="9" markerWidth="3" markerHeight="3" orient="auto">
+        <path d="M0,-5 L10,0 L0,5" fill="#333"></path>
+    </marker>
+    <marker id="backwardArrow" viewBox="-10 -5 10 10" refX="-9" markerWidth="3" markerHeight="3" orient="auto">
+        <path d="M0,-5 L-10,0 L0,5" fill="#333"></path>
+    </marker>
+</g>
+</svg>

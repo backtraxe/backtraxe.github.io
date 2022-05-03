@@ -1,8 +1,6 @@
 # LaTeX 常用数学符号
 
 
-LaTeX 常用数学符号、公式。
-
 <!--more-->
 
 标量 - 斜体小写 - $a$
@@ -29,6 +27,8 @@ LaTeX 常用数学符号、公式。
 |$\Phi$|`\Phi`|$\phi$|`\phi`|$\varphi$|`\varphi`|
 |$\Psi$|`\Psi`|$\psi$|`\psi`|
 |$\Omega$|`\Omega`|$\omega$|`\omega`|
+
+$$\mathcal{L}、\mathbf{L}、\mathbb{L}、\ell、\mathrm{L}、\mathsf{L}、\mathtt{L}、\mathit{L}、\mathfrak{L}、\mathscr{L}$$
 
 ## 特殊符号
 
