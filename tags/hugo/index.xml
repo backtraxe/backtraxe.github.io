@@ -10,13 +10,13 @@
     <pubDate>Mon, 12 Apr 2021 20:46:06 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/hugo-doit-%E4%B8%BB%E9%A2%98%E4%BB%8B%E7%BB%8D%E5%92%8C%E9%85%8D%E7%BD%AE/</guid>
-    <description><![CDATA[<p>探索 Hugo - DoIt 主题的全部内容和背后的核心概念。</p>]]></description>
+    <description><![CDATA[]]></description>
 </item><item>
     <title>Hugo 博客搭建</title>
     <link>https://backtraxe.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
     <pubDate>Thu, 04 Feb 2021 20:46:06 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
-    <description><![CDATA[<p>本文介绍了如何使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。</p>]]></description>
+    <description><![CDATA[<p>使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。</p>]]></description>
 </item></channel>
 </rss>

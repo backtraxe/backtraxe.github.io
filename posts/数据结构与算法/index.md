@@ -35,6 +35,11 @@
 
 复杂度一般去掉常数项，并将系数置为1，$O$ 表示上界。
 
+### 1.4 可视化
+
+- [数据结构和算法动态可视化](https://visualgo.net/zh)
+- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+
 ## 2.数组
 
 ```java
@@ -1789,6 +1794,8 @@ Red Black Tree
 
 - 空树：
 - 
+
+[30张图带你彻底理解红黑树](https://www.jianshu.com/p/e136ec79235c)
 
 ### 缓存数据结构
 

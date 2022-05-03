@@ -1,7 +1,7 @@
 # Hugo 博客搭建
 
 
-本文介绍了如何使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。
+使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。
 
 <!--more-->
 
@@ -40,6 +40,13 @@ draft: true
 Hugo 的配置文件和文章中引用图片都是以`static`文件夹作为根目录的。
 
 也就是说文章中插入`/xxx/yyy.jpg`，实际图片存放位置为`/static/xxx/yyy.jpg`。
+
+### 3.2 Shortcodes
+
+- 图片：`{{</* image src="" caption="" */>}}`
+- 横幅：`{{</* admonition tip "" false */>}} {{</* /admonition */>}}`
+- 公式：`{{</* math */>}}$ ${{</* /math */>}}`
+- [扩展 Shortcodes](https://hugodoit.pages.dev/zh-cn/theme-documentation-extended-shortcodes/)
 
 ## 4 本地部署
 

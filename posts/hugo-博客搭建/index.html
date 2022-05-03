@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <title class="pjax-title">Hugo 博客搭建 - </title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="Hugo 博客搭建" />
-<meta property="og:description" content="本文介绍了如何使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。" />
+<meta property="og:description" content="使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-04T20:46:06+08:00" />
-<meta property="article:modified_time" content="2021-07-21T20:46:06+08:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-05-03T14:44:22+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo 博客搭建"/>
-<meta name="twitter:description" content="本文介绍了如何使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。"/>
+<meta name="twitter:description" content="使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。"/>
 <meta name="application-name" content="traXe">
 <meta name="apple-mobile-web-app-title" content="traXe">
 
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA\/"
-        },"genre": "posts","keywords": "Hugo","wordcount":  5256 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA\/","datePublished": "2021-02-04T20:46:06+08:00","dateModified": "2021-07-21T20:46:06+08:00","publisher": {
+        },"genre": "posts","keywords": "Hugo","wordcount":  5298 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA\/","datePublished": "2021-02-04T20:46:06+08:00","dateModified": "2022-05-03T14:44:22+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -127,6 +127,7 @@
     <li><a href="#3-添加内容">3 添加内容</a>
       <ul>
         <li><a href="#31-在文章中添加图片">3.1 在文章中添加图片</a></li>
+        <li><a href="#32-shortcodes">3.2 Shortcodes</a></li>
       </ul>
     </li>
     <li><a href="#4-本地部署">4 本地部署</a></li>
@@ -189,8 +190,8 @@
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo 博客搭建</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>Hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-04">2021-02-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-07-21">2021-07-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5256 字&nbsp;
+                </span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-04">2021-02-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-03">2022-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5298 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -204,6 +205,7 @@
     <li><a href="#3-添加内容">3 添加内容</a>
       <ul>
         <li><a href="#31-在文章中添加图片">3.1 在文章中添加图片</a></li>
+        <li><a href="#32-shortcodes">3.2 Shortcodes</a></li>
       </ul>
     </li>
     <li><a href="#4-本地部署">4 本地部署</a></li>
@@ -263,15 +265,7 @@
     <li><a href="#8-参考">8 参考</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><div class="details admonition warning open">
-                <div class="details-summary admonition-title">
-                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-                </div>
-                <div class="details-content">
-                    <div class="admonition-content">
-                        本文最后更新于 <span class="timeago" datetime="2021-07-21T20:46:06" title="July 21, 2021">2021-07-21</span>，文中内容可能已过时。</div>
-                </div>
-            </div><p>本文介绍了如何使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。</p>
+            </div><div class="content" id="content"><p>使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。</p>
 <h2 id="1-安装" class="headerLink">
     <a href="#1-%e5%ae%89%e8%a3%85" class="header-mark"></a>1 安装</h2><ol>
 <li>到 <a href="https://github.com/gohugoio/hugo/releases/latest" target="_blank" rel="noopener noreffer">Github</a> 下载<code>hugo_extended_0.XX.X_Windows-64bit.zip</code>，解压并将<code>hugo.exe</code>所在目录添加到系统环境变量。</li>
@@ -317,6 +311,13 @@
 <h3 id="31-在文章中添加图片" class="headerLink">
     <a href="#31-%e5%9c%a8%e6%96%87%e7%ab%a0%e4%b8%ad%e6%b7%bb%e5%8a%a0%e5%9b%be%e7%89%87" class="header-mark"></a>3.1 在文章中添加图片</h3><p>Hugo 的配置文件和文章中引用图片都是以<code>static</code>文件夹作为根目录的。</p>
 <p>也就是说文章中插入<code>/xxx/yyy.jpg</code>，实际图片存放位置为<code>/static/xxx/yyy.jpg</code>。</p>
+<h3 id="32-shortcodes" class="headerLink">
+    <a href="#32-shortcodes" class="header-mark"></a>3.2 Shortcodes</h3><ul>
+<li>图片：<code>{{&lt; image src=&quot;&quot; caption=&quot;&quot; &gt;}}</code></li>
+<li>横幅：<code>{{&lt; admonition tip &quot;&quot; false &gt;}} {{&lt; /admonition &gt;}}</code></li>
+<li>公式：<code>{{&lt; math &gt;}}$ ${{&lt; /math &gt;}}</code></li>
+<li><a href="https://hugodoit.pages.dev/zh-cn/theme-documentation-extended-shortcodes/" target="_blank" rel="noopener noreffer">扩展 Shortcodes</a></li>
+</ul>
 <h2 id="4-本地部署" class="headerLink">
     <a href="#4-%e6%9c%ac%e5%9c%b0%e9%83%a8%e7%bd%b2" class="header-mark"></a>4 本地部署</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2065,7 +2066,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-07-21</span>
+                <span>更新于 2022-05-03</span>
             </div>
             <div class="post-info-license"></div>
         </div>

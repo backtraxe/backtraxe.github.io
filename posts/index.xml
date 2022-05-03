@@ -5,6 +5,13 @@
         <description>所有文章 | </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
             <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sat, 23 Apr 2022 20:56:02 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Hugo 博客搭建</title>
+    <link>https://backtraxe.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+    <pubDate>Thu, 04 Feb 2021 20:46:06 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+    <description><![CDATA[<p>使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。</p>]]></description>
+</item><item>
     <title>谷歌三件套安装教程</title>
     <link>https://backtraxe.github.io/posts/%E8%B0%B7%E6%AD%8C%E4%B8%89%E4%BB%B6%E5%A5%97%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
     <pubDate>Mon, 08 Feb 2021 10:51:10 &#43;0800</pubDate><author>
@@ -31,6 +38,13 @@
     <pubDate>Tue, 30 Mar 2021 00:31:24 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/java-%E9%9D%A2%E8%AF%95/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Hugo DoIt 主题介绍和配置</title>
+    <link>https://backtraxe.github.io/posts/hugo-doit-%E4%B8%BB%E9%A2%98%E4%BB%8B%E7%BB%8D%E5%92%8C%E9%85%8D%E7%BD%AE/</link>
+    <pubDate>Mon, 12 Apr 2021 20:46:06 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/hugo-doit-%E4%B8%BB%E9%A2%98%E4%BB%8B%E7%BB%8D%E5%92%8C%E9%85%8D%E7%BD%AE/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Java Collections Framework 教程</title>
