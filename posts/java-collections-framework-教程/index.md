@@ -3,6 +3,46 @@
 
 <!--more-->
 
+## 1.数组
+
+### 打印数组
+
+```java
+import java.utils.Arrays;
+int[] arr1;
+System.out.println(Arrays.toString());
+int[][] arr2;
+System.out.println(Arrays.deepToString());
+```
+
+### 类型转换
+
+```java
+// int[] 转 List<Integer>
+// 不可添加、删除、修改
+int[] arr;
+List<Integer> list = List.of(arr);
+```
+
+```java
+// int[] 转 Integer[]
+int[] arr;
+Integer[] arr2 = IntStream.of(arr).boxed()
+```
+
+```java
+// Integer[] 转 List<Integer>
+// 不可添加、删除、修改
+Integer[] arr;
+List<Integer> list = List.of(arr);
+```
+
+```java
+// List<Integer> 转 Integer[]
+List<Integer> list;
+int[] arr2 = list.stream().mapToInt().toArray(Integer::new);
+```
+
 ## 2.Collection
 
 ### 2.1 方法
