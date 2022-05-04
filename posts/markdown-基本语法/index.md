@@ -1,17 +1,9 @@
 # Markdown 基本语法
 
 
-Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上，被广泛使用。这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例。
-
 <!--more-->
 
-{{< admonition >}}
-这篇文章借鉴了一篇很棒的[来自 Grav 的文章](http://learn.getgrav.org/content/markdown).
-
-如果你想了解 **Loveit** 主题的扩展 Markdown 语法, 请阅读[扩展 Markdown 语法页面](../theme-documentation-content#extended-markdown-syntax).
-{{< /admonition >}}
-
-## 一、标题
+## 1.标题
 
 ```markdown
 # 一级标题 h1
@@ -22,10 +14,10 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 ###### 六级标题 h6
 ```
 
-## 二、强调
+## 2.强调
 
 ```markdown
-**加粗**
+**粗体**
 *斜体*
 ~~删除线~~
 ***斜体加粗***
@@ -34,9 +26,9 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 ~~***斜体删除线加粗***~~
 ```
 
-**加粗**、*斜体*、~~删除线~~、***斜体加粗***、~~**删除线加粗**~~、~~*斜体删除线*~~、~~***斜体删除线加粗***~~
+**粗体**、*斜体*、~~删除线~~、***斜体加粗***、~~**删除线加粗**~~、~~*斜体删除线*~~、~~***斜体删除线加粗***~~
 
-## 三、引用
+## 3.引用
 
 ```markdown
 > 引用
@@ -46,7 +38,7 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 > 引用
 >> 嵌套引用
 
-## 四、分割线
+## 4.分割线
 
 ```markdown
 ---
@@ -57,36 +49,43 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 
 ***
 
-## 五、图片
+## 5.图片
 
 ```markdown
-![Backsided's World](https://backtraxe.github.io/apple-touch-icon.png "Backtraxe's World")
-<img src="https://backtraxe.github.io/apple-touch-icon.png" alt="Backtraxe's World" width="30%" height="30%">
+![Backtraxe's Blog](https://backtraxe.github.io/apple-touch-icon.png "Backtraxe's Blog")
+
+<div style="text-align: center">
+  <img src="https://backtraxe.github.io/apple-touch-icon.png" alt="Backtraxe's Blog" width="10%" align="center">
+</div>
 ```
 
-![Backsided's World](https://backtraxe.github.io/apple-touch-icon.png "Backtraxe's World")
+![Backtraxe's Blog](https://backtraxe.github.io/apple-touch-icon.png "Backtraxe's Blog")
 
-<img src="https://backtraxe.github.io/apple-touch-icon.png" alt="Backtraxe's World" width="30%" height="30%">
+<div style="text-align: center">
+  <img src="https://backtraxe.github.io/apple-touch-icon.png" alt="Backtraxe's Blog" width="10%" align="center">
+</div>
 
-## 六、超链接
+## 6.超链接
 
 ```markdown
-[Backsided's World](https://backtraxe.github.io/)
+[Backtraxe's Blog](https://backtraxe.github.io/)
 <https://backtraxe.github.io/>
-这个链接用 1 作为网址变量 [Google][1]
-这个链接用 runoob 作为网址变量 [Runoob][runoob]
+
+这个链接用 1 作为网址变量 [traXe][1]
+这个链接用 traxe 作为网址变量 [traXe][traxe]
+
 然后在文档的结尾为变量赋值（网址）
-[1]: http://www.google.com/
-[runoob]: http://www.runoob.com/
+[1]: https://backtraxe.github.io/
+[traxe]: https://backtraxe.github.io/
 ```
 
-[Backsided's World](https://backtraxe.github.io/)
+[Backtraxe's Blog](https://backtraxe.github.io/)
 
 <https://backtraxe.github.io/>
 
 这个链接用 1 作为网址变量 [traXe][1]
 
-这个链接用 runoob 作为网址变量 [traXe][traxe]
+这个链接用 traxe 作为网址变量 [traXe][traxe]
 
 然后在文档的结尾为变量赋值（网址）
 
@@ -94,9 +93,9 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 
 [traxe]: https://backtraxe.github.io/
 
-## 七、列表
+## 7.列表
 
-### 无序列表
+### 7.1 无序列表
 
 ```markdown
 - 北京
@@ -110,7 +109,7 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 - 广州
 - 深圳
 
-### 有序列表
+### 7.2 有序列表
 
 ```markdown
 1. 北京
@@ -129,7 +128,7 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 1. 广州
 1. 深圳
 
-### 列表嵌套
+### 7.3 列表嵌套
 
 ```markdown
 - 北京
@@ -145,7 +144,9 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
   1. 广州
   2. 深圳
 
-## 八、表格
+## 8.表格
+
+### 8.1 markdown 风格
 
 ```markdown
 姓名|分数|排名
@@ -165,9 +166,61 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 > - `:--:` : 居中
 > - `--:` : 右对齐
 
-## 九、代码
+### 8.2 html 风格
 
-### 单行代码
+```html
+<table>
+  <th>
+    <td style="text-align: center"><b>姓名</b></td>
+    <td style="text-align: center"><b>分数</b></td>
+    <td style="text-align: center"><b>排名</b></td>
+  </th>
+  <tr>
+    <td>张三</td>
+    <td>100</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>李四</td>
+    <td>85</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>王五</td>
+    <td>60</td>
+    <td>3</td>
+  </tr>
+</table>
+```
+
+<table>
+  <tr>
+    <td style="text-align: center"><b>姓名</b></td>
+    <td style="text-align: center"><b>分数</b></td>
+    <td style="text-align: center"><b>排名</b></td>
+  </tr>
+  <tr>
+    <td>张三</td>
+    <td>100</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>李四</td>
+    <td>85</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>王五</td>
+    <td>60</td>
+    <td>3</td>
+  </tr>
+</table>
+
+[Tables Generator](https://tablesgenerator.com/)
+
+## 9.代码
+
+### 9.1 单行代码
 
 ```markdown
 `print("Hello World!")`
@@ -175,16 +228,16 @@ Markdown 是一种轻量级的「标记语言」，易读易写，简洁至上�
 
 `print("Hello World!")`
 
-### 多行代码
+### 9.2 多行代码
 
 ```markdown
-\```cpp
+```cpp
 #include<iostream>
 int main() {
     std::cout << "Hello World!" << std::endl;
     return 0;
 }
-\```
+``去掉`
 ```
 
 ```cpp
@@ -195,51 +248,37 @@ int main() {
 }
 ```
 
-## 十、流程图
+## 10.LaTeX公式
+
+### 10.1 行内公式
 
 ```markdown
-\```flow
-st=>start: 开始
-op=>operation: My Operation
-cond=>condition: Yes or No?
-e=>end
-st->op->cond
-cond(yes)->e
-cond(no)->op
-\```
+$E=mc^2$
 ```
 
-```flow
-st=>start: 开始
-op=>operation: My Operation
-cond=>condition: Yes or No?
-e=>end
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
+$E=mc^2$
 
-## 十一、LaTeX公式
-
-### 行内公式
+### 10.2 多行公式
 
 ```markdown
-$ E=mc^2 $
+$$\sum_{i=1}^n a_i=0$$
+
+$$
+\begin{align}
+x &= v_0\cos\theta t \\
+y &= v_0\sin\theta t - \frac{1}{2}gt^2
+\end{align}
+$$
 ```
 
-$ E=mc^2 $
+$$\sum_{i=1}^n a_i=0$$
 
-### 多行公式
-
-```markdown
-$$ \sum_{i=1}^n a_i=0 $$
-$$ f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
-```
-
-$$ \sum_{i=1}^n a_i=0 $$
-
-$$ f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
-
-
-
+{{< math >}}
+$$
+\begin{align}
+x &= v_0\cos\theta t \\
+y &= v_0\sin\theta t - \frac{1}{2}gt^2
+\end{align}
+$$
+{{< /math >}}
 
