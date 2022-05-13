@@ -85,6 +85,8 @@
 
 - 图标：[`Worldvectorlogo`](https://worldvectorlogo.com/zh)、[`Iconduck`](https://iconduck.com/)、[`StickPNG`](https://www.stickpng.com/)、[`Iconfont`](https://www.iconfont.cn/)、[`设计之家`](https://www.sj33.cn/sc/)、[`Notion Icons 5.0`](https://notionv5.vyshnav.xyz/)
 
+- 配色：[`Color Hunt`](https://colorhunt.co/)、[`Color Palettes`](https://colorpalettes.net/)、[`Hello Color`](https://jxnblk.github.io/hello-color/)、[`NIPPON COLORS`](https://nipponcolors.com/)、[`中国色`](http://zhongguose.com/)、[`Blend`](http://colinkeany.com/blend/)
+
 - 系统：[`Windows 11`](https://www.microsoft.com/zh-cn/software-download/windows11)
 
 ## 导航资讯
