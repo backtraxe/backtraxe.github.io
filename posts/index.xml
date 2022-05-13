@@ -4,7 +4,7 @@
         <link>https://backtraxe.github.io/posts/</link>
         <description>所有文章 | </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sat, 23 Apr 2022 20:56:02 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Fri, 13 May 2022 10:27:17 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Markdown 基本语法</title>
     <link>https://backtraxe.github.io/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
     <pubDate>Thu, 04 Feb 2021 19:39:00 &#43;0800</pubDate><author>
@@ -89,6 +89,13 @@
     </author><guid>https://backtraxe.github.io/posts/sql-%E6%95%99%E7%A8%8B/</guid>
     <description><![CDATA[<p>结构化查询语言（Structured Query Language，SQL），读作<code>S-Q-L</code>或者<code>sequel</code>，是用来与数据库通信的语言。</p>]]></description>
 </item><item>
+    <title>Matplotlib 教程</title>
+    <link>https://backtraxe.github.io/posts/matplotlib-%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Fri, 13 May 2022 10:27:17 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/matplotlib-%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>学习资料🔝</title>
     <link>https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</link>
     <pubDate>Wed, 14 Apr 2021 13:00:10 &#43;0800</pubDate><author>
@@ -102,12 +109,5 @@
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/</guid>
     <description><![CDATA[]]></description>
-</item><item>
-    <title>评价指标</title>
-    <link>https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
-    <pubDate>Wed, 01 Sep 2021 16:33:31 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
-    <description><![CDATA[<p>根据模型预测值和真实值的区别来评价模型。</p>]]></description>
 </item></channel>
 </rss>
