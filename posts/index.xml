@@ -4,7 +4,7 @@
         <link>https://backtraxe.github.io/posts/</link>
         <description>所有文章 | </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Fri, 13 May 2022 10:27:17 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Sat, 14 May 2022 11:19:20 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Markdown 基本语法</title>
     <link>https://backtraxe.github.io/posts/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
     <pubDate>Thu, 04 Feb 2021 19:39:00 &#43;0800</pubDate><author>
@@ -94,6 +94,13 @@
     <pubDate>Fri, 13 May 2022 10:27:17 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/matplotlib-%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>位运算技巧</title>
+    <link>https://backtraxe.github.io/posts/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/</link>
+    <pubDate>Sat, 14 May 2022 11:19:20 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>学习资料🔝</title>
