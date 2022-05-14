@@ -1,8 +1,6 @@
 # Linux 命令大全
 
 
-常用 Linux 命令。
-
 <!--more-->
 
 ## 快捷键
@@ -116,3 +114,28 @@ ssh-copy-id <user>@<ip>:<port>
 # 或者手动将公钥添加到服务器的 ~/.ssh/authorized_keys 文件
 ```
 
+## 常用
+
+- `whoami`
+
+- `man <command>`
+
+- `clear`
+    - `clear -x`
+    - `Ctrl + L`
+
+- `pwd`
+
+- `ls`
+    - `ls -l`
+    - `ls -a`
+    - `ls -al`
+
+- `cd`
+    - `cd ..`
+    - `cd ~`
+
+- `mkdir`
+    - `mkdir -p`
+
+- ``
