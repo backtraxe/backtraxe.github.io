@@ -109,7 +109,7 @@
     - Android：[`反斗限免`](http://free.apprcn.com/)
     - iOS：[`Appwall Today`](https://appwall.today/)、[`Mergeek`](https://mergeek.com/free/apps)
 
-- 软件推荐：[`小众软件`](https://www.appinn.com/)、[`反斗软件`](http://www.apprcn.com/)、[`Awesome Windows`](https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md)
+- 软件推荐：[`小众软件`](https://www.appinn.com/)、[`反斗软件`](http://www.apprcn.com/)、[`Awesome Windows`](https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md)、[`Best Windows Apps`](https://github.com/stackia/best-windows-apps)
 
 {{< admonition tip "推荐软件" false >}}
 - 安卓：[`MiXplorer Silver`](https://play.google.com/store/apps/details?id=com.mixplorer.silver)、[`1DM+`](https://play.google.com/store/apps/details?id=idm.internet.download.manager.plus)、[`FolderSync`](https://play.google.com/store/apps/details?id=dk.tacit.android.foldersync.lite)、[`Tachiyomi`](https://github.com/tachiyomiorg/tachiyomi)、[`全是漫画`](https://github.com/hongchacha/cartoon)、[`阅读3.0`](https://github.com/gedoor/legado)
@@ -126,3 +126,4 @@
 
 - 油猴插件：[`AC-baidu`](https://greasyfork.org/zh-CN/scripts/14178-ac-baidu-%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%98%E5%8C%96%E7%99%BE%E5%BA%A6%E6%90%9C%E7%8B%97%E8%B0%B7%E6%AD%8C%E5%BF%85%E5%BA%94%E6%90%9C%E7%B4%A2-favicon-%E5%8F%8C%E5%88%97)、[`秒传链接提取`](https://greasyfork.org/zh-CN/scripts/424574-%E7%A7%92%E4%BC%A0%E9%93%BE%E6%8E%A5%E6%8F%90%E5%8F%96)、[`网盘直链下载助手`](https://greasyfork.org/zh-CN/scripts/436446-%E7%BD%91%E7%9B%98%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B)
 {{< /admonition >}}
+
