@@ -7,13 +7,13 @@
 
 ```python
 plt.figure(
-    figsize=(10, 8), # 画布大小，（宽，高）。
-    dpi=None,
-    tight_layout=None,
+    figsize=(10, 8),   # 画布大小。（宽，高）
+    dpi=None,          # 分辨率。300、600
+    tight_layout=None, # 紧凑布局。True
 )
 ```
 
-- 网格
+## 网格
 
 ```python
 plt.grid(
@@ -21,6 +21,27 @@ plt.grid(
     which='major',
     axis='both'
 )
+
+
+```
+
+## 边框
+
+- 获取边框
+
+```python
+ax = plt.gca()
+ax.spines['top']
+ax.spines['right']
+ax.spines['bottom']
+ax.spines['left']
+```
+
+- 边框设置
+
+```python
+ax.set_facecolor('white')
+ax.spines['top'].set_color('white')
 ```
 
 ## 轴

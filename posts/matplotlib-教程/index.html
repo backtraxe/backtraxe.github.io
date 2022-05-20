@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/matplotlib-%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-13T10:27:17+08:00" />
-<meta property="article:modified_time" content="2022-05-17T15:40:30+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-05-20T14:02:51+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Matplotlib 教程"/>
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/matplotlib-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","wordcount":  395 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/matplotlib-%E6%95%99%E7%A8%8B\/","datePublished": "2022-05-13T10:27:17+08:00","dateModified": "2022-05-17T15:40:30+00:00","publisher": {
+        },"genre": "posts","keywords": "Python, Matplotlib","wordcount":  442 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/matplotlib-%E6%95%99%E7%A8%8B\/","datePublished": "2022-05-13T10:27:17+08:00","dateModified": "2022-05-20T14:02:51+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -123,6 +123,8 @@
         <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
     <li><a href="#画布">画布</a></li>
+    <li><a href="#网格">网格</a></li>
+    <li><a href="#边框">边框</a></li>
     <li><a href="#轴">轴</a></li>
     <li><a href="#其他">其他</a></li>
   </ul>
@@ -131,7 +133,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-13">2022-05-13</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-17">2022-05-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 395 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-13">2022-05-13</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-20">2022-05-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 442 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -141,6 +143,8 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#画布">画布</a></li>
+    <li><a href="#网格">网格</a></li>
+    <li><a href="#边框">边框</a></li>
     <li><a href="#轴">轴</a></li>
     <li><a href="#其他">其他</a></li>
   </ul>
@@ -156,16 +160,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="c1"># 画布大小，（宽，高）。</span>
-</span></span><span class="line"><span class="cl">    <span class="n">dpi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">tight_layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>   <span class="c1"># 画布大小。（宽，高）</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dpi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>          <span class="c1"># 分辨率。300、600</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tight_layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># 紧凑布局。True</span>
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>网格</li>
-</ul>
-<div class="highlight"><div class="chroma">
+</div><h2 id="网格" class="headerLink">
+    <a href="#%e7%bd%91%e6%a0%bc" class="header-mark"></a>网格</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -179,6 +181,39 @@
 </span></span><span class="line"><span class="cl">    <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="边框" class="headerLink">
+    <a href="#%e8%be%b9%e6%a1%86" class="header-mark"></a>边框</h2><ul>
+<li>获取边框</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>边框设置</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="轴" class="headerLink">
@@ -288,7 +323,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-05-17</span>
+                <span>更新于 2022-05-20</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -301,7 +336,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/matplotlib/">Matplotlib</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -313,7 +348,7 @@
 </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
             <div class="footer-line"></div>
             <div class="footer-line">
