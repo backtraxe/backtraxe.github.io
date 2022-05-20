@@ -49,7 +49,7 @@
 
 ## 程序开发
 
-- 在线编译器：[`OnlineGDB`](https://www.onlinegdb.com/)、[`C++ shell`](http://cpp.sh/)、[`futurecoder`](https://github.com/alexmojaki/futurecoder)
+- 在线编译器：[`OnlineGDB`](https://www.onlinegdb.com/)、[`C++ shell`](http://cpp.sh/)、[`futurecoder`](https://github.com/alexmojaki/futurecoder)、[`KalkiCode`](https://kalkicode.com/online-code)
 
 - 可视化：[`Learn Git Branching`](https://learngitbranching.js.org/?locale=zh_CN)
 
@@ -77,7 +77,7 @@
 
 - Office：[`Word联盟`](http://www.wordlm.com/)、[`优品PPT`](https://www.ypppt.com)、[`PPT超级市场`](https://ppt.sotary.com)、[`第1PPT`](http://www.1ppt.com)
 
-- 图片：[`Unsplash`](https://unsplash.com)、[`DeviantArt`](https://www.deviantart.com)、[`Pinterest`](https://www.pinterest.com)、[`天空之城`](https://www.skypixel.com/)
+- 图片：[`Unsplash`](https://unsplash.com)、[`DeviantArt`](https://www.deviantart.com)、[`Pinterest`](https://www.pinterest.com)、[`天空之城`](https://www.skypixel.com/)、[`NegativeSpace`](https://negativespace.co/)、[`Free Stock Images`](https://www.freestockimages.ru/)
 
 - 壁纸：[`极简壁纸1`](https://bz.zzzmh.cn/index)、[`极简壁纸2`](http://www.jijianzy.com/bz/)、[`Wallpaper Abyss`](https://wall.alphacoders.com/)、[`wallhaven`](https://wallhaven.cc/)
 

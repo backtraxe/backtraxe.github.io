@@ -3,10 +3,15 @@
 
 <!--more-->
 
+{{< admonition tip "未分类" false >}}
 - [设计数据密集型应用 - 中文翻译](https://github.com/Vonng/ddia)
 - [Awesome Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture)
 - [Awesome Algorithms](https://github.com/tayllan/awesome-algorithms)
 - [ReallyConfused](https://reallyconfused.co/)
+- [Awesome Roadmaps](https://github.com/liuchong/awesome-roadmaps)
+- [PptxGenJS](https://github.com/gitbrent/PptxGenJS): Create JavaScript PowerPoint Presentations
+- [程序员应该访问的最佳网站中文版](https://github.com/tuteng/Best-websites-a-programmer-should-visit-zh)
+{{< /admonition >}}
 
 ## 公开课
 
@@ -14,6 +19,7 @@
 - [浙江大学课程攻略共享计划](https://github.com/QSCTech/zju-icicles)
 - [上海交通大学课程分享](https://github.com/kxxwz/SJTU-Courses)
 - [哈工大（深圳）计算机专业课程攻略](https://github.com/hewei2001/HITSZ-OpenCS)
+- [CS自学指南](https://github.com/pkuflyingpig/cs-self-learning/)
 
 ## 1.编程基础
 
@@ -24,24 +30,19 @@
 
 - [Psyduck](https://github.com/SmartKeyerror/Psyduck)：XMind 记录 CS 基础问题。
 
-
 ### 1.1 操作系统
 
 {{< admonition tip "操作系统" false >}}
 - [逸仙OS简明教程](https://github.com/YatSenOS/YatSenOS-Tutorial-Volume-1)
 - [Systems Programming Cheat Sheet](https://github.com/jstrieb/systems-programming-cheat-sheet)
-{{< /admonition >}}
-
-{{< admonition tip "Linux" false >}}
-- [Linux命令行与Shell脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)
-- [Linux 网络编程与加密](https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/)
-- [explainshell.com](https://explainshell.com/)
+- [从零开始制作一个操作系统](https://github.com/yanull/os-guide-cn)
 {{< /admonition >}}
 
 ### 1.2 数据库
 
 {{< admonition tip "数据库" false >}}
 - [SQLBolt](https://sqlbolt.com/): interactive lessons and exercises
+- [设计数据密集型应用](https://markrepo.github.io/database/2022/01/13/DDIA/)
 {{< /admonition >}}
 
 ### 1.3 云
@@ -51,6 +52,19 @@
 ### 1.4 正则表达式
 
 - [Regex-vis](https://regex-vis.com/)：正则表达式可视化。
+- [Regular Expression Tester and Visualizer](https://devtoolcafe.com/tools/regex)
+
+### 1.5 Linux
+
+- [Linux命令行与Shell脚本教程](https://github.com/ArchLinuxStudio/ShellTutorial)
+- [Linux网络编程与加密](https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/)
+- [explainshell.com](https://explainshell.com/)
+- [Linux常用命令行小技巧](https://qianngchn.github.io/wiki/7.html)
+- [LinuxGuide](https://github.com/ZJDoc/LinuxGuide)
+
+### 1.6 计算机网络
+
+- [计算机网络知识点全面总结](https://blog.csdn.net/Royalic/article/details/119985591)
 
 ## 编程语言
 
@@ -78,16 +92,19 @@
 - [Introduction-to-Golang](https://github.com/0voice/Introduction-to-Golang)：最全空降 golang 资料补给包（满血战斗），包含文章，书籍，作者论文，理论分析，开源框架，云原生，大佬视频，大厂实战分享 ppt。
 - [《Go入门指南》](https://github.com/unknwon/the-way-to-go_ZH_CN)
 - [Go 101](https://github.com/go101/go101)
-    - [Go语言101](https://github.com/golang101/golang101)
+- [Go语言101](https://github.com/golang101/golang101)
+- [Go语言精进之路](https://github.com/golang-minibear2333/golang)
 
 ### Java
 
 - [Java SE Documentation](https://docs.oracle.com/en/java/javase/)：Java SE 文档。
-    - [JDK 11 API](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
-    - [JDK 8 API](https://docs.oracle.com/javase/8/docs/api/index.html)
+- [JDK 11 API](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
+- [JDK 8 API](https://docs.oracle.com/javase/8/docs/api/index.html)
 - [How2J 的 Java教程](https://how2j.cn/)
-- [concurrent](https://github.com/RedSpider1/concurrent): 深入浅出Java多线程。
-    - [在线阅读](http://concurrent.redspider.group/RedSpider.html)
+- [深入浅出Java多线程](https://github.com/RedSpider1/concurrent)
+- [toBeBetterJavaer](https://github.com/itwanger/toBeBetterJavaer)
+- [JavaGuide](https://github.com/Snailclimb/JavaGuide)
+- [guide-rpc-framework](https://github.com/Snailclimb/guide-rpc-framework)
 
 ### Javascript
 
@@ -97,6 +114,7 @@
 
 - [Python-Mini-Projects](https://github.com/Python-World/python-mini-projects): 一组简单的 Python 迷你项目来增强你的 Python 技能。
 - [《Python Cookbook in Chinese》 3rd Edition 翻译](https://github.com/yidao620c/python3-cookbook)
+- [爬取你要的数据：爬虫技术](https://book.crifan.org/books/crawl_your_data_spider_technology/website/)
 
 ### Rust
 
@@ -247,6 +265,7 @@
 
 - [design-patterns-for-humans-cn](https://github.com/guanguans/design-patterns-for-humans-cn):
     - [Design patterns for humans](https://github.com/kamranahmedse/design-patterns-for-humans)中文版
+- [《设计模式：可复用面向对象软件的基础》学习笔记](https://github.com/Jueee/design-patterns)
 
 ### 算法
 
@@ -257,8 +276,6 @@
     - [Gitee Pages](https://labuladong.gitee.io/algo)
 - [算法珠玑](https://github.com/soulmachine/algorithm-essentials)：
     - [在线](https://algorithm-essentials.soulmachine.me/)
-- [《algorithm-note》中文版](https://github.com/Dairongpeng/algorithm-note)：
-    - [在线](https://dairongpeng.github.io/algorithm-note/)
 - [LeetCode 101](https://github.com/changgyhub/leetcode_101): 一个面向有C++编程基础，但缺乏刷题经验的读者的教科书和工具书（不适合编程小白喔）。
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/home/)
 - [Algorithms by Jeff Erickson](https://github.com/jeffgerickson/algorithms)
@@ -269,6 +286,10 @@
 - [Learn-Algorithms](https://github.com/nonstriater/Learn-Algorithms): 算法学习笔记
 - [algorithm-note](https://github.com/Dairongpeng/algorithm-note): 数据结构与算法的讲解及代码实现，[在线阅读](https://dairongpeng.github.io/algorithm-note/)
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [C++算法编程指南](https://majorli.github.io/algo_guide/index.html)
+- [Best Resources to Learn Data Structures and Algorithms](https://www.mltut.com/best-resources-to-learn-data-structures-and-algorithms/)
+- [DSA-Bootcamp-Java](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java)
+- [《algorithm-note》中文版](https://github.com/Dairongpeng/algorithm-note)
 
 ## 网络安全
 
