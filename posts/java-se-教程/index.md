@@ -743,6 +743,12 @@ io.github.backsided.Student stu = new io.github.backsided.Student();
 
 ### 3.1 类
 
+执行顺序：
+
+1. 静态代码块
+2. 构造代码块
+3. 构造方法
+
 #### 3.1.1 构造方法
 
 1. 名称与类名相同。
@@ -755,6 +761,26 @@ io.github.backsided.Student stu = new io.github.backsided.Student();
 public class Circle {
     public Circle() {
         // 系统默认提供的构造函数
+    }
+}
+```
+
+#### 3.1.2 构造代码块
+
+```java
+public class Circle {
+    {
+        // 每次创建对象时在构造方法之前执行。
+    }
+}
+```
+
+#### 3.1.3 静态代码块
+
+```java
+public class Circle {
+    static {
+        // 类加载时执行一次。
     }
 }
 ```
@@ -785,6 +811,29 @@ public class Student {
 ### 3.3 继承
 
 ### 3.4 多态
+
+- 子类继承父类，或者子类实现接口。
+- 子类进行方法重写。
+- 父类引用指向子类对象，调用父类中定义的方法，子类完成动作。
+
+
+### 3.5 接口
+
+- 无构造方法。
+- 所有变量都是常量`public static final`。
+- 所有方法都是抽象方法`public abstract`(JDK 7)。
+    - `public default`方法，可以有方法体（JDK 8）。若子类实现的多个接口存在相同的`default`方法，则子类必须重写该方法。
+    - `public static`方法，可以有方法体（JDK 8）。该方法只能通过接口名调用，不能通过子类调用。
+    - `private`方法，可以有方法体（JDK 9）。仅允许接口内使用。
+- 子类`implements`接口，实现接口中所有抽象方法。
+- 子类可实现多接口。
+
+```java
+public interface Shape {
+    double area();
+    double perimeter();
+}
+```
 
 ## 4 集合
 
@@ -859,9 +908,32 @@ for (int i = list.size() - 1; i >= 0; i--) {
 }
 ```
 
+## 字符串
+
+- String 转 byte 数组
+
+```java
+// 使用平台的默认字符集
+byte[] getBytes()
+// 指定字符集。UTF-8（中文3字节）、GBK（中文2字节）等
+byte[] getBytes​(String charsetName)
+byte[] getBytes​(Charset charset)
+```
+
+- byte 数组转 String
+
+```java
+String​(byte[] bytes)
+String​(byte[] bytes, String charsetName)
+String​(byte[] bytes, Charset charset)
+String​(byte[] bytes, int offset, int length)
+String​(byte[] bytes, int offset, int length, String charsetName)
+String​(byte[] bytes, int offset, int length, Charset charset)
+```
+
 ## 文件
 
-- 构造方法：
+### 构造方法
 
 ```java
 File​(File parent, String child)
@@ -869,7 +941,7 @@ File​(String pathname)
 File​(String parent, String child)
 ```
 
-- 路径判断
+### 判断路径
 
 ```java
 // 是否目录
@@ -882,7 +954,7 @@ boolean exists()
 boolean isAbsolute()
 ```
 
-- 获取路径
+### 获取路径
 
 ```java
 // 文件名加后缀
@@ -895,9 +967,12 @@ new File("folder/demo").getParent(); // folder
 String getPath()
 // 绝对路径
 String getAbsolutePath()
+// 获取路径下所有路径（包括隐藏）
+String[] list()    // 只返回文件名
+File[] listFiles() // 文件名加路径（非绝对路径）
 ```
 
-- 创建
+### 创建文件或文件夹
 
 ```java
 // 创建单个文件
@@ -908,11 +983,406 @@ boolean mkdir()
 boolean mkdirs()
 ```
 
-- 删除
+### 删除文件或文件夹
 
 ```java
 // 删除空目录或文件
 boolean delete()
 ```
 
+## I/O
+
+### 分类
+
+**流向**
+
+- 输入流
+- 输出流
+
+**类型**
+
+- 字节流：所有文件。
+- 字符流：文本文件。
+
+### 文件字节流
+
+#### FileInputStream​
+
+- 构造方法
+
+```java
+FileInputStream​(String name) throws FileNotFoundException
+FileInputStream​(File file) throws FileNotFoundException
+```
+
+- 读
+
+```java
+int read() throws IOException // 读1个字节
+int read​(byte[] b) throws IOException
+int read​(byte[] b, int off, int len) throws IOException
+// 读取整个文件
+while ((b = fis.read()) != -1) {
+    read();
+}
+
+long skip​(long n) throws IOException
+```
+
+- 关闭
+
+```java
+void close() throws IOException
+```
+
+#### FileOutputStream​
+
+- 构造方法
+
+```java
+FileOutputStream​(String name) throws FileNotFoundException
+FileOutputStream​(String name, boolean append) throws FileNotFoundException
+FileOutputStream​(File file) throws FileNotFoundException
+FileOutputStream​(File file, boolean append) throws FileNotFoundException
+```
+
+- 写
+
+```java
+void write​(int b) throws IOException // 写入对应字符
+void write​(byte[] b) throws IOException
+void write​(byte[] b, int off, int len) throws IOException
+// 写入换行
+fos.write("\r\n".getBytes()); // windows
+```
+
+- 关闭
+
+```java
+void close() throws IOException
+```
+
+#### 实战
+
+- 文件复制
+
+```java
+try (FileInputStream fis = new FileInputStream("input");
+     FileOutputStream fos = new FileOutputStream("output");) {
+    byte[] buffer = new byte[1024];
+    int len;
+    while ((len = fis.read(buffer)) != -1) {
+        fos.write(buffer, 0, len);
+    }
+}
+```
+
+### 缓冲字节流
+
+#### BufferedInputStream
+
+- 构造方法
+
+```java
+// DEFAULT_BUFFER_SIZE = 8192
+BufferedInputStream​(InputStream in)
+BufferedInputStream​(InputStream in, int size)
+```
+
+- 读
+
+```java
+int read() throws IOException // 读1个字节
+int read​(byte[] b) throws IOException
+int read​(byte[] b, int off, int len) throws IOException
+// 读取整个文件
+while ((b = fis.read()) != -1) {
+    read();
+}
+
+void reset() throws IOException
+long skip​(long n) throws IOException
+```
+
+- 关闭
+
+```java
+void close() throws IOException
+```
+
+#### BufferedOutputStream
+
+- 构造方法
+
+```java
+// DEFAULT_BUFFER_SIZE = 8192
+BufferedOutputStream(OutputStream out)
+BufferedOutputStream(OutputStream out, int size)
+```
+
+- 写
+
+```java
+void write​(int b) throws IOException // 写入对应字符
+void write​(byte[] b) throws IOException
+void write​(byte[] b, int off, int len) throws IOException
+// 写入换行
+fos.write("\r\n".getBytes()); // windows
+
+void flush() throws IOException
+```
+
+- 关闭
+
+```java
+void close() throws IOException
+```
+
+### 对象操作流
+
+#### ObjectInputStream
+
+```java
+ObjectInputStream​(InputStream in)
+Object readObject()
+```
+
+#### ObjectOutputStream
+
+- 需要对象实现`java.io.Serializable`接口
+- `private static final long serialVersionUID = 1L;`
+
+```java
+ObjectOutputStream​(OutputStream out)
+void writeObject​(Object obj)
+```
+
+### 字符流
+
+#### Reader
+
+```java
+int	read()
+int	read​(char[] cbuf)
+int read​(char[] cbuf, int off, int len)
+int	read​(CharBuffer target)
+
+void mark​(int readAheadLimit)
+boolean markSupported()
+
+long transferTo​(Writer out)
+
+long skip​(long n)
+void reset()
+
+void close()
+```
+
+#### Writer
+
+```java
+Writer append​(char c)
+Writer append​(CharSequence csq)
+Writer append​(CharSequence csq, int start, int end)
+
+void write​(int c)
+void write​(char[] cbuf)
+void write​(char[] cbuf, int off, int len)
+void write​(String str)
+void write​(String str, int off, int len)
+
+void flush()
+
+void close()
+```
+
+### 文件字符流
+
+#### FileReader
+
+- 构造方法
+
+```java
+FileReader​(String fileName)
+FileReader​(String fileName, Charset charset)
+FileReader​(File file)
+FileReader​(File file, Charset charset)
+```
+
+#### FileWriter
+
+- 构造方法
+
+```java
+FileWriter​(String fileName)
+FileWriter​(String fileName, boolean append)
+FileWriter​(String fileName, Charset charset)
+FileWriter​(String fileName, Charset charset, boolean append)
+FileWriter​(File file)
+FileWriter​(File file, boolean append)
+FileWriter​(File file, Charset charset)
+FileWriter​(File file, Charset charset, boolean append)
+```
+
+### 缓冲字符流
+
+#### BufferedReader
+
+```java
+BufferedReader​(Reader in)
+BufferedReader​(Reader in, int sz)
+
+int read()
+int read​(char[] cbuf, int off, int len)
+String readLine()
+
+Stream<String> lines()
+
+void reset()
+long skip​(long n)
+
+void close()
+```
+
+#### BufferedWriter
+
+```java
+BufferedWriter​(Writer out)
+BufferedWriter​(Writer out, int sz)
+
+void write​(int c)
+void write​(char[] cbuf)
+void write​(char[] cbuf, int off, int len)
+void write​(String s)
+void write​(String s, int off, int len)
+void newLine()
+
+void flush()
+
+void close()
+```
+
+#### 实战
+
+- 文件复制
+
+```java
+try (BufferedReader br = new BufferedReader(new FileReader("input"));
+     BufferedWriter bw = new BufferedWriter(new FileWriter("output"));) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        bw.write(line);
+    }
+}
+```
+
+### 转换流
+
+#### InputStreamReader
+
+字节流 -> 字符流
+
+```java
+InputStreamReader​(InputStream in)
+InputStreamReader​(InputStream in, String charsetName)
+InputStreamReader​(InputStream in, Charset cs)
+InputStreamReader​(InputStream in, CharsetDecoder dec)
+
+String	getEncoding()
+int	read()
+int	read​(char[] cbuf, int offset, int length)
+```
+
+#### OutputStreamWriter
+
+字符流 -> 字节流
+
+```java
+OutputStreamWriter​(OutputStream out)
+OutputStreamWriter​(OutputStream out, String charsetName)
+OutputStreamWriter​(OutputStream out, Charset cs)
+OutputStreamWriter​(OutputStream out, CharsetEncoder enc)
+
+String getEncoding()
+
+void write​(int c)
+void write​(char[] cbuf)
+void write​(char[] cbuf, int off, int len)
+void write​(String str)
+void write​(String str, int off, int len)
+
+void flush()
+void close()
+```
+
+## Properties
+
+`key`和`value`都是`String`的`Hashtable`
+
+- 构造方法
+
+```java
+Properties()
+Properties​(int initialCapacity)
+Properties​(Properties defaults)
+```
+
+- 添加/修改
+
+```java
+Object setProperty​(String key, String value)
+Object put(String key, String value)
+```
+
+- 删除
+
+```java
+V remove(Object key)
+```
+
+- 查询
+
+```java
+Set<String>	stringPropertyNames()
+Set<Object> keySet()
+
+Set<Map.Entry<Object, Object>> entrySet()
+
+boolean containsKey(Object key)
+
+String getProperty​(String key)
+String getProperty​(String key, String defaultValue)
+
+Object get(Object key)
+Object getOrDefault(Object key, Object defaultValue)
+```
+
+- 序列化
+
+```java
+void load​(InputStream inStream)
+void load​(Reader reader)
+void loadFromXML​(InputStream in)
+
+void store​(OutputStream out, String comments)
+void store​(Writer writer, String comments)
+void storeToXML​(OutputStream os, String comment)
+void storeToXML​(OutputStream os, String comment, String encoding)
+void storeToXML​(OutputStream os, String comment, Charset charset)
+```
+
+```properties
+# properties
+key1=value1
+key2=value2
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="key1">value1</entry>
+    <entry key="key2">value2</entry>
+</properties>
+```
 

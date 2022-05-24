@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/java-se-%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-07T21:41:06+08:00" />
-<meta property="article:modified_time" content="2022-05-23T03:36:04+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-05-24T03:30:06+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java SE 教程"/>
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Java, 教程","wordcount":  4855 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-05-23T03:36:04+00:00","publisher": {
+        },"genre": "posts","keywords": "Java, 教程","wordcount":  8148 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-05-24T03:30:06+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -178,11 +178,14 @@
         <li><a href="#31-类">3.1 类</a>
           <ul>
             <li><a href="#311-构造方法">3.1.1 构造方法</a></li>
+            <li><a href="#312-构造代码块">3.1.2 构造代码块</a></li>
+            <li><a href="#313-静态代码块">3.1.3 静态代码块</a></li>
           </ul>
         </li>
         <li><a href="#32-封装">3.2 封装</a></li>
         <li><a href="#33-继承">3.3 继承</a></li>
         <li><a href="#34-多态">3.4 多态</a></li>
+        <li><a href="#35-接口">3.5 接口</a></li>
       </ul>
     </li>
     <li><a href="#4-集合">4 集合</a>
@@ -194,15 +197,74 @@
         </li>
       </ul>
     </li>
-    <li><a href="#文件">文件</a></li>
+    <li><a href="#字符串">字符串</a></li>
+    <li><a href="#文件">文件</a>
+      <ul>
+        <li><a href="#构造方法">构造方法</a></li>
+        <li><a href="#判断路径">判断路径</a></li>
+        <li><a href="#获取路径">获取路径</a></li>
+        <li><a href="#创建文件或文件夹">创建文件或文件夹</a></li>
+        <li><a href="#删除文件或文件夹">删除文件或文件夹</a></li>
+      </ul>
+    </li>
+    <li><a href="#io">I/O</a>
+      <ul>
+        <li><a href="#分类">分类</a></li>
+        <li><a href="#文件字节流">文件字节流</a>
+          <ul>
+            <li><a href="#fileinputstream">FileInputStream​</a></li>
+            <li><a href="#fileoutputstream">FileOutputStream​</a></li>
+            <li><a href="#实战">实战</a></li>
+          </ul>
+        </li>
+        <li><a href="#缓冲字节流">缓冲字节流</a>
+          <ul>
+            <li><a href="#bufferedinputstream">BufferedInputStream</a></li>
+            <li><a href="#bufferedoutputstream">BufferedOutputStream</a></li>
+          </ul>
+        </li>
+        <li><a href="#对象操作流">对象操作流</a>
+          <ul>
+            <li><a href="#objectinputstream">ObjectInputStream</a></li>
+            <li><a href="#objectoutputstream">ObjectOutputStream</a></li>
+          </ul>
+        </li>
+        <li><a href="#字符流">字符流</a>
+          <ul>
+            <li><a href="#reader">Reader</a></li>
+            <li><a href="#writer">Writer</a></li>
+          </ul>
+        </li>
+        <li><a href="#文件字符流">文件字符流</a>
+          <ul>
+            <li><a href="#filereader">FileReader</a></li>
+            <li><a href="#filewriter">FileWriter</a></li>
+          </ul>
+        </li>
+        <li><a href="#缓冲字符流">缓冲字符流</a>
+          <ul>
+            <li><a href="#bufferedreader">BufferedReader</a></li>
+            <li><a href="#bufferedwriter">BufferedWriter</a></li>
+            <li><a href="#实战-1">实战</a></li>
+          </ul>
+        </li>
+        <li><a href="#转换流">转换流</a>
+          <ul>
+            <li><a href="#inputstreamreader">InputStreamReader</a></li>
+            <li><a href="#outputstreamwriter">OutputStreamWriter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a></li>
   </ul>
 </nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java SE 教程</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-23">2022-05-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4855 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-24">2022-05-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 8148 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 17 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -266,11 +328,14 @@
         <li><a href="#31-类">3.1 类</a>
           <ul>
             <li><a href="#311-构造方法">3.1.1 构造方法</a></li>
+            <li><a href="#312-构造代码块">3.1.2 构造代码块</a></li>
+            <li><a href="#313-静态代码块">3.1.3 静态代码块</a></li>
           </ul>
         </li>
         <li><a href="#32-封装">3.2 封装</a></li>
         <li><a href="#33-继承">3.3 继承</a></li>
         <li><a href="#34-多态">3.4 多态</a></li>
+        <li><a href="#35-接口">3.5 接口</a></li>
       </ul>
     </li>
     <li><a href="#4-集合">4 集合</a>
@@ -282,7 +347,66 @@
         </li>
       </ul>
     </li>
-    <li><a href="#文件">文件</a></li>
+    <li><a href="#字符串">字符串</a></li>
+    <li><a href="#文件">文件</a>
+      <ul>
+        <li><a href="#构造方法">构造方法</a></li>
+        <li><a href="#判断路径">判断路径</a></li>
+        <li><a href="#获取路径">获取路径</a></li>
+        <li><a href="#创建文件或文件夹">创建文件或文件夹</a></li>
+        <li><a href="#删除文件或文件夹">删除文件或文件夹</a></li>
+      </ul>
+    </li>
+    <li><a href="#io">I/O</a>
+      <ul>
+        <li><a href="#分类">分类</a></li>
+        <li><a href="#文件字节流">文件字节流</a>
+          <ul>
+            <li><a href="#fileinputstream">FileInputStream​</a></li>
+            <li><a href="#fileoutputstream">FileOutputStream​</a></li>
+            <li><a href="#实战">实战</a></li>
+          </ul>
+        </li>
+        <li><a href="#缓冲字节流">缓冲字节流</a>
+          <ul>
+            <li><a href="#bufferedinputstream">BufferedInputStream</a></li>
+            <li><a href="#bufferedoutputstream">BufferedOutputStream</a></li>
+          </ul>
+        </li>
+        <li><a href="#对象操作流">对象操作流</a>
+          <ul>
+            <li><a href="#objectinputstream">ObjectInputStream</a></li>
+            <li><a href="#objectoutputstream">ObjectOutputStream</a></li>
+          </ul>
+        </li>
+        <li><a href="#字符流">字符流</a>
+          <ul>
+            <li><a href="#reader">Reader</a></li>
+            <li><a href="#writer">Writer</a></li>
+          </ul>
+        </li>
+        <li><a href="#文件字符流">文件字符流</a>
+          <ul>
+            <li><a href="#filereader">FileReader</a></li>
+            <li><a href="#filewriter">FileWriter</a></li>
+          </ul>
+        </li>
+        <li><a href="#缓冲字符流">缓冲字符流</a>
+          <ul>
+            <li><a href="#bufferedreader">BufferedReader</a></li>
+            <li><a href="#bufferedwriter">BufferedWriter</a></li>
+            <li><a href="#实战-1">实战</a></li>
+          </ul>
+        </li>
+        <li><a href="#转换流">转换流</a>
+          <ul>
+            <li><a href="#inputstreamreader">InputStreamReader</a></li>
+            <li><a href="#outputstreamwriter">OutputStreamWriter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="0-名词解释" class="headerLink">
@@ -1372,7 +1496,13 @@
 </div>
 </div><h3 id="怎样面向对象" class="headerLink">
     <a href="#%e6%80%8e%e6%a0%b7%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1" class="header-mark"></a>怎样面向对象</h3><h3 id="31-类" class="headerLink">
-    <a href="#31-%e7%b1%bb" class="header-mark"></a>3.1 类</h3><h4 id="311-构造方法" class="headerLink">
+    <a href="#31-%e7%b1%bb" class="header-mark"></a>3.1 类</h3><p>执行顺序：</p>
+<ol>
+<li>静态代码块</li>
+<li>构造代码块</li>
+<li>构造方法</li>
+</ol>
+<h4 id="311-构造方法" class="headerLink">
     <a href="#311-%e6%9e%84%e9%80%a0%e6%96%b9%e6%b3%95" class="header-mark"></a>3.1.1 构造方法</h4><ol>
 <li>名称与类名相同。</li>
 <li>无返回值。</li>
@@ -1392,6 +1522,40 @@
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Circle</span><span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// 系统默认提供的构造函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="312-构造代码块" class="headerLink">
+    <a href="#312-%e6%9e%84%e9%80%a0%e4%bb%a3%e7%a0%81%e5%9d%97" class="header-mark"></a>3.1.2 构造代码块</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 每次创建对象时在构造方法之前执行。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="313-静态代码块" class="headerLink">
+    <a href="#313-%e9%9d%99%e6%80%81%e4%bb%a3%e7%a0%81%e5%9d%97" class="header-mark"></a>3.1.3 静态代码块</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 类加载时执行一次。
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
@@ -1435,7 +1599,40 @@
 </div>
 </div><h3 id="33-继承" class="headerLink">
     <a href="#33-%e7%bb%a7%e6%89%bf" class="header-mark"></a>3.3 继承</h3><h3 id="34-多态" class="headerLink">
-    <a href="#34-%e5%a4%9a%e6%80%81" class="header-mark"></a>3.4 多态</h3><h2 id="4-集合" class="headerLink">
+    <a href="#34-%e5%a4%9a%e6%80%81" class="header-mark"></a>3.4 多态</h3><ul>
+<li>子类继承父类，或者子类实现接口。</li>
+<li>子类进行方法重写。</li>
+<li>父类引用指向子类对象，调用父类中定义的方法，子类完成动作。</li>
+</ul>
+<h3 id="35-接口" class="headerLink">
+    <a href="#35-%e6%8e%a5%e5%8f%a3" class="header-mark"></a>3.5 接口</h3><ul>
+<li>无构造方法。</li>
+<li>所有变量都是常量<code>public static final</code>。</li>
+<li>所有方法都是抽象方法<code>public abstract</code>(JDK 7)。
+<ul>
+<li><code>public default</code>方法，可以有方法体（JDK 8）。若子类实现的多个接口存在相同的<code>default</code>方法，则子类必须重写该方法。</li>
+<li><code>public static</code>方法，可以有方法体（JDK 8）。该方法只能通过接口名调用，不能通过子类调用。</li>
+<li><code>private</code>方法，可以有方法体（JDK 9）。仅允许接口内使用。</li>
+</ul>
+</li>
+<li>子类<code>implements</code>接口，实现接口中所有抽象方法。</li>
+<li>子类可实现多接口。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Shape</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="nf">area</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="nf">perimeter</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-集合" class="headerLink">
     <a href="#4-%e9%9b%86%e5%90%88" class="header-mark"></a>4 集合</h2><p>可变容量的容器。</p>
 <h3 id="41-arraylist" class="headerLink">
     <a href="#41-arraylist" class="header-mark"></a>4.1 ArrayList</h3><ul>
@@ -1532,11 +1729,50 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="文件" class="headerLink">
-    <a href="#%e6%96%87%e4%bb%b6" class="header-mark"></a>文件</h2><ul>
-<li>构造方法：</li>
+</div><h2 id="字符串" class="headerLink">
+    <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2" class="header-mark"></a>字符串</h2><ul>
+<li>String 转 byte 数组</li>
 </ul>
 <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 使用平台的默认字符集
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">byte</span><span class="o">[]</span> <span class="nf">getBytes</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 指定字符集。UTF-8（中文3字节）、GBK（中文2字节）等
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">byte</span><span class="o">[]</span> <span class="n">getBytes</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">charsetName</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">byte</span><span class="o">[]</span> <span class="n">getBytes</span><span class="err">​</span><span class="o">(</span><span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>byte 数组转 String</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">String</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span><span class="o">,</span> <span class="n">String</span> <span class="n">charsetName</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">String</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">String</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">String</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">,</span> <span class="n">String</span> <span class="n">charsetName</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">String</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="文件" class="headerLink">
+    <a href="#%e6%96%87%e4%bb%b6" class="header-mark"></a>文件</h2><h3 id="构造方法" class="headerLink">
+    <a href="#%e6%9e%84%e9%80%a0%e6%96%b9%e6%b3%95" class="header-mark"></a>构造方法</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1548,10 +1784,8 @@
 </span></span><span class="line"><span class="cl"><span class="n">File</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">parent</span><span class="o">,</span> <span class="n">String</span> <span class="n">child</span><span class="o">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>路径判断</li>
-</ul>
-<div class="highlight"><div class="chroma">
+</div><h3 id="判断路径" class="headerLink">
+    <a href="#%e5%88%a4%e6%96%ad%e8%b7%af%e5%be%84" class="header-mark"></a>判断路径</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1573,10 +1807,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span> <span class="nf">isAbsolute</span><span class="o">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>获取路径</li>
-</ul>
-<div class="highlight"><div class="chroma">
+</div><h3 id="获取路径" class="headerLink">
+    <a href="#%e8%8e%b7%e5%8f%96%e8%b7%af%e5%be%84" class="header-mark"></a>获取路径</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1588,6 +1820,9 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 文件名加后缀
@@ -1600,12 +1835,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">String</span> <span class="nf">getPath</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 绝对路径
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">String</span> <span class="nf">getAbsolutePath</span><span class="o">()</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="c1">// 获取路径下所有路径（包括隐藏）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">String</span><span class="o">[]</span> <span class="nf">list</span><span class="o">()</span>    <span class="c1">// 只返回文件名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">File</span><span class="o">[]</span> <span class="nf">listFiles</span><span class="o">()</span> <span class="c1">// 文件名加路径（非绝对路径）
+</span></span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>创建</li>
-</ul>
-<div class="highlight"><div class="chroma">
+</div><h3 id="创建文件或文件夹" class="headerLink">
+    <a href="#%e5%88%9b%e5%bb%ba%e6%96%87%e4%bb%b6%e6%88%96%e6%96%87%e4%bb%b6%e5%a4%b9" class="header-mark"></a>创建文件或文件夹</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1623,10 +1859,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span> <span class="nf">mkdirs</span><span class="o">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>删除</li>
-</ul>
-<div class="highlight"><div class="chroma">
+</div><h3 id="删除文件或文件夹" class="headerLink">
+    <a href="#%e5%88%a0%e9%99%a4%e6%96%87%e4%bb%b6%e6%88%96%e6%96%87%e4%bb%b6%e5%a4%b9" class="header-mark"></a>删除文件或文件夹</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1636,13 +1870,685 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span> <span class="nf">delete</span><span class="o">()</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="io" class="headerLink">
+    <a href="#io" class="header-mark"></a>I/O</h2><h3 id="分类" class="headerLink">
+    <a href="#%e5%88%86%e7%b1%bb" class="header-mark"></a>分类</h3><p><strong>流向</strong></p>
+<ul>
+<li>输入流</li>
+<li>输出流</li>
+</ul>
+<p><strong>类型</strong></p>
+<ul>
+<li>字节流：所有文件。</li>
+<li>字符流：文本文件。</li>
+</ul>
+<h3 id="文件字节流" class="headerLink">
+    <a href="#%e6%96%87%e4%bb%b6%e5%ad%97%e8%8a%82%e6%b5%81" class="header-mark"></a>文件字节流</h3><h4 id="fileinputstream" class="headerLink">
+    <a href="#fileinputstream" class="header-mark"></a>FileInputStream​</h4><ul>
+<li>构造方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">FileInputStream</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FileNotFoundException</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileInputStream</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FileNotFoundException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>读</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">read</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="c1">// 读1个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 读取整个文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">while</span> <span class="o">((</span><span class="n">b</span> <span class="o">=</span> <span class="n">fis</span><span class="o">.</span><span class="na">read</span><span class="o">())</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">read</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">skip</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">n</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>关闭</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="fileoutputstream" class="headerLink">
+    <a href="#fileoutputstream" class="header-mark"></a>FileOutputStream​</h4><ul>
+<li>构造方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">FileOutputStream</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FileNotFoundException</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileOutputStream</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">append</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FileNotFoundException</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileOutputStream</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FileNotFoundException</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileOutputStream</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">append</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FileNotFoundException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>写</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="c1">// 写入对应字符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 写入换行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;\r\n&#34;</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span> <span class="c1">// windows
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>关闭</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="实战" class="headerLink">
+    <a href="#%e5%ae%9e%e6%88%98" class="header-mark"></a>实战</h4><ul>
+<li>文件复制</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">try</span> <span class="o">(</span><span class="n">FileInputStream</span> <span class="n">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="s">&#34;input&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">     <span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;output&#34;</span><span class="o">);)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">byte</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">1024</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">len</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">fis</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buffer</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="缓冲字节流" class="headerLink">
+    <a href="#%e7%bc%93%e5%86%b2%e5%ad%97%e8%8a%82%e6%b5%81" class="header-mark"></a>缓冲字节流</h3><h4 id="bufferedinputstream" class="headerLink">
+    <a href="#bufferedinputstream" class="header-mark"></a>BufferedInputStream</h4><ul>
+<li>构造方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// DEFAULT_BUFFER_SIZE = 8192
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">BufferedInputStream</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BufferedInputStream</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">,</span> <span class="kt">int</span> <span class="n">size</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>读</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">read</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="c1">// 读1个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 读取整个文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">while</span> <span class="o">((</span><span class="n">b</span> <span class="o">=</span> <span class="n">fis</span><span class="o">.</span><span class="na">read</span><span class="o">())</span> <span class="o">!=</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">read</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">reset</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">skip</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">n</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>关闭</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="bufferedoutputstream" class="headerLink">
+    <a href="#bufferedoutputstream" class="header-mark"></a>BufferedOutputStream</h4><ul>
+<li>构造方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// DEFAULT_BUFFER_SIZE = 8192
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">BufferedOutputStream</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">out</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BufferedOutputStream</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">out</span><span class="o">,</span> <span class="kt">int</span> <span class="n">size</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>写</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="c1">// 写入对应字符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">b</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 写入换行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">&#34;\r\n&#34;</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span> <span class="c1">// windows
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">flush</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>关闭</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="对象操作流" class="headerLink">
+    <a href="#%e5%af%b9%e8%b1%a1%e6%93%8d%e4%bd%9c%e6%b5%81" class="header-mark"></a>对象操作流</h3><h4 id="objectinputstream" class="headerLink">
+    <a href="#objectinputstream" class="header-mark"></a>ObjectInputStream</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">ObjectInputStream</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Object</span> <span class="nf">readObject</span><span class="o">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="objectoutputstream" class="headerLink">
+    <a href="#objectoutputstream" class="header-mark"></a>ObjectOutputStream</h4><ul>
+<li>需要对象实现<code>java.io.Serializable</code>接口</li>
+<li><code>private static final long serialVersionUID = 1L;</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">ObjectOutputStream</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">out</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">writeObject</span><span class="err">​</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="字符流" class="headerLink">
+    <a href="#%e5%ad%97%e7%ac%a6%e6%b5%81" class="header-mark"></a>字符流</h3><h4 id="reader" class="headerLink">
+    <a href="#reader" class="header-mark"></a>Reader</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span>	<span class="nf">read</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="n">CharBuffer</span> <span class="n">target</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">mark</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">readAheadLimit</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">boolean</span> <span class="nf">markSupported</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">transferTo</span><span class="err">​</span><span class="o">(</span><span class="n">Writer</span> <span class="n">out</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">skip</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">n</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">reset</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="writer" class="headerLink">
+    <a href="#writer" class="header-mark"></a>Writer</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Writer</span> <span class="n">append</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span> <span class="n">c</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Writer</span> <span class="n">append</span><span class="err">​</span><span class="o">(</span><span class="n">CharSequence</span> <span class="n">csq</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Writer</span> <span class="n">append</span><span class="err">​</span><span class="o">(</span><span class="n">CharSequence</span> <span class="n">csq</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">flush</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="文件字符流" class="headerLink">
+    <a href="#%e6%96%87%e4%bb%b6%e5%ad%97%e7%ac%a6%e6%b5%81" class="header-mark"></a>文件字符流</h3><h4 id="filereader" class="headerLink">
+    <a href="#filereader" class="header-mark"></a>FileReader</h4><ul>
+<li>构造方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">FileReader</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileReader</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileReader</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileReader</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="filewriter" class="headerLink">
+    <a href="#filewriter" class="header-mark"></a>FileWriter</h4><ul>
+<li>构造方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">FileWriter</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileWriter</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">append</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileWriter</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileWriter</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">append</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileWriter</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileWriter</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">append</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileWriter</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileWriter</span><span class="err">​</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">append</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="缓冲字符流" class="headerLink">
+    <a href="#%e7%bc%93%e5%86%b2%e5%ad%97%e7%ac%a6%e6%b5%81" class="header-mark"></a>缓冲字符流</h3><h4 id="bufferedreader" class="headerLink">
+    <a href="#bufferedreader" class="header-mark"></a>BufferedReader</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">BufferedReader</span><span class="err">​</span><span class="o">(</span><span class="n">Reader</span> <span class="n">in</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BufferedReader</span><span class="err">​</span><span class="o">(</span><span class="n">Reader</span> <span class="n">in</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sz</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">read</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="nf">readLine</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">lines</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">reset</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">skip</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">n</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="bufferedwriter" class="headerLink">
+    <a href="#bufferedwriter" class="header-mark"></a>BufferedWriter</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">BufferedWriter</span><span class="err">​</span><span class="o">(</span><span class="n">Writer</span> <span class="n">out</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BufferedWriter</span><span class="err">​</span><span class="o">(</span><span class="n">Writer</span> <span class="n">out</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sz</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">newLine</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">flush</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="实战-1" class="headerLink">
+    <a href="#%e5%ae%9e%e6%88%98-1" class="header-mark"></a>实战</h4><ul>
+<li>文件复制</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">try</span> <span class="o">(</span><span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;input&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">     <span class="n">BufferedWriter</span> <span class="n">bw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="s">&#34;output&#34;</span><span class="o">));)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">line</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="转换流" class="headerLink">
+    <a href="#%e8%bd%ac%e6%8d%a2%e6%b5%81" class="header-mark"></a>转换流</h3><h4 id="inputstreamreader" class="headerLink">
+    <a href="#inputstreamreader" class="header-mark"></a>InputStreamReader</h4><p>字节流 -&gt; 字符流</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">InputStreamReader</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">InputStreamReader</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">,</span> <span class="n">String</span> <span class="n">charsetName</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">InputStreamReader</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">cs</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">InputStreamReader</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">,</span> <span class="n">CharsetDecoder</span> <span class="n">dec</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">String</span>	<span class="nf">getEncoding</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="nf">read</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="n">read</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="outputstreamwriter" class="headerLink">
+    <a href="#outputstreamwriter" class="header-mark"></a>OutputStreamWriter</h4><p>字符流 -&gt; 字节流</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">OutputStreamWriter</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">out</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">OutputStreamWriter</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">out</span><span class="o">,</span> <span class="n">String</span> <span class="n">charsetName</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">OutputStreamWriter</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">out</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">cs</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">OutputStreamWriter</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">out</span><span class="o">,</span> <span class="n">CharsetEncoder</span> <span class="n">enc</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="nf">getEncoding</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">cbuf</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">write</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">,</span> <span class="kt">int</span> <span class="n">off</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">flush</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">close</span><span class="o">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="properties" class="headerLink">
+    <a href="#properties" class="header-mark"></a>Properties</h2><p><code>key</code>和<code>value</code>都是<code>String</code>的<code>Hashtable</code></p>
+<ul>
+<li>构造方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Properties</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">Properties</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">initialCapacity</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Properties</span><span class="err">​</span><span class="o">(</span><span class="n">Properties</span> <span class="n">defaults</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>添加/修改</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">setProperty</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Object</span> <span class="nf">put</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>删除</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">V</span> <span class="nf">remove</span><span class="o">(</span><span class="n">Object</span> <span class="n">key</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查询</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span>	<span class="nf">stringPropertyNames</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">Set</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">keySet</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Set</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;&gt;</span> <span class="nf">entrySet</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">boolean</span> <span class="nf">containsKey</span><span class="o">(</span><span class="n">Object</span> <span class="n">key</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">getProperty</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">getProperty</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">defaultValue</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Object</span> <span class="nf">get</span><span class="o">(</span><span class="n">Object</span> <span class="n">key</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Object</span> <span class="nf">getOrDefault</span><span class="o">(</span><span class="n">Object</span> <span class="n">key</span><span class="o">,</span> <span class="n">Object</span> <span class="n">defaultValue</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>序列化</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">load</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">inStream</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">load</span><span class="err">​</span><span class="o">(</span><span class="n">Reader</span> <span class="n">reader</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">loadFromXML</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">store</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">out</span><span class="o">,</span> <span class="n">String</span> <span class="n">comments</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">store</span><span class="err">​</span><span class="o">(</span><span class="n">Writer</span> <span class="n">writer</span><span class="o">,</span> <span class="n">String</span> <span class="n">comments</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">storeToXML</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">os</span><span class="o">,</span> <span class="n">String</span> <span class="n">comment</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">storeToXML</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">os</span><span class="o">,</span> <span class="n">String</span> <span class="n">comment</span><span class="o">,</span> <span class="n">String</span> <span class="n">encoding</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">storeToXML</span><span class="err">​</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">os</span><span class="o">,</span> <span class="n">String</span> <span class="n">comment</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># properties
+</span></span><span class="line"><span class="cl">key1=value1
+</span></span><span class="line"><span class="cl">key2=value2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE properties SYSTEM &#34;http://java.sun.com/dtd/properties.dtd&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&#34;key1&#34;</span><span class="nt">&gt;</span>value1<span class="nt">&lt;/entry&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&#34;key2&#34;</span><span class="nt">&gt;</span>value2<span class="nt">&lt;/entry&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-05-23</span>
+                <span>更新于 2022-05-24</span>
             </div>
             <div class="post-info-license"></div>
         </div>
