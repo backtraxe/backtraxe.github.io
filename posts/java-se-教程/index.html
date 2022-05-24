@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/java-se-%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-07T21:41:06+08:00" />
-<meta property="article:modified_time" content="2022-05-24T03:30:06+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-05-24T09:07:21+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java SE 教程"/>
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Java, 教程","wordcount":  8148 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-05-24T03:30:06+00:00","publisher": {
+        },"genre": "posts","keywords": "Java, 教程","wordcount":  8382 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-05-24T09:07:21+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -180,6 +180,7 @@
             <li><a href="#311-构造方法">3.1.1 构造方法</a></li>
             <li><a href="#312-构造代码块">3.1.2 构造代码块</a></li>
             <li><a href="#313-静态代码块">3.1.3 静态代码块</a></li>
+            <li><a href="#314-内部类">3.1.4 内部类</a></li>
           </ul>
         </li>
         <li><a href="#32-封装">3.2 封装</a></li>
@@ -257,13 +258,14 @@
       </ul>
     </li>
     <li><a href="#properties">Properties</a></li>
+    <li><a href="#lambda-表达式">Lambda 表达式</a></li>
   </ul>
 </nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java SE 教程</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-24">2022-05-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 8148 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-24">2022-05-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 8382 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 17 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -330,6 +332,7 @@
             <li><a href="#311-构造方法">3.1.1 构造方法</a></li>
             <li><a href="#312-构造代码块">3.1.2 构造代码块</a></li>
             <li><a href="#313-静态代码块">3.1.3 静态代码块</a></li>
+            <li><a href="#314-内部类">3.1.4 内部类</a></li>
           </ul>
         </li>
         <li><a href="#32-封装">3.2 封装</a></li>
@@ -407,6 +410,7 @@
       </ul>
     </li>
     <li><a href="#properties">Properties</a></li>
+    <li><a href="#lambda-表达式">Lambda 表达式</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="0-名词解释" class="headerLink">
@@ -1560,6 +1564,94 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h4 id="314-内部类" class="headerLink">
+    <a href="#314-%e5%86%85%e9%83%a8%e7%b1%bb" class="header-mark"></a>3.1.4 内部类</h4><ul>
+<li>内部类可以使用外部类中所有成员和方法（包括私有）。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Outer</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">class</span> <span class="nc">Inner</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 成员内部类
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Outer</span><span class="o">.</span><span class="na">Inner</span> <span class="n">oi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Outer</span><span class="o">().</span><span class="na">new</span> <span class="n">Inner</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Outer</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Inner</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 静态内部类
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Outer</span><span class="o">.</span><span class="na">Inner</span> <span class="n">oi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Outer</span><span class="o">.</span><span class="na">Inner</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Outer</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">method</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">class</span> <span class="nc">Inner</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 局部内部类，外界无法访问。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Outer</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Inner</span> <span class="n">inner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Inner</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 匿名内部类
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">method</span><span class="o">()</span> <span class="o">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">inner</span><span class="o">.</span><span class="na">method</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h3 id="32-封装" class="headerLink">
     <a href="#32-%e5%b0%81%e8%a3%85" class="header-mark"></a>3.2 封装</h3><p>隐藏实现细节，仅对外暴露公共的访问方式。可以提高代码的安全性和复用性。</p>
 <p>针对<code>private</code>修饰的成员变量，如果需要被其他类使用，需要提供<code>getXxx()</code>和<code>setXxx()</code>方法。Idea 可自动生成。</p>
@@ -2540,6 +2632,46 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&#34;key1&#34;</span><span class="nt">&gt;</span>value1<span class="nt">&lt;/entry&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&#34;key2&#34;</span><span class="nt">&gt;</span>value2<span class="nt">&lt;/entry&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="lambda-表达式" class="headerLink">
+    <a href="#lambda-%e8%a1%a8%e8%be%be%e5%bc%8f" class="header-mark"></a>Lambda 表达式</h2><ul>
+<li>方法传入参数为接口。</li>
+<li>接口有且只有一个抽象方法。</li>
+<li>不产生<code>.class</code>文件。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 无参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// return
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 一个参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// return
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 多个参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// return
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></div>

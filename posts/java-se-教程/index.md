@@ -785,6 +785,52 @@ public class Circle {
 }
 ```
 
+#### 3.1.4 内部类
+
+- 内部类可以使用外部类中所有成员和方法（包括私有）。
+
+```java
+class Outer {
+    class Inner {
+        // 成员内部类
+    }
+}
+
+Outer.Inner oi = new Outer().new Inner();
+```
+
+```java
+class Outer {
+    static class Inner {
+        // 静态内部类
+    }
+}
+
+Outer.Inner oi = new Outer.Inner();
+```
+
+```java
+class Outer {
+    void method() {
+        class Inner {
+            // 局部内部类，外界无法访问。
+        }
+    }
+}
+```
+
+```java
+class Outer {
+    Inner inner = new Inner() {
+        // 匿名内部类
+        @Override
+        public void method() {}
+    };
+
+    inner.method();
+}
+```
+
 ### 3.2 封装
 
 隐藏实现细节，仅对外暴露公共的访问方式。可以提高代码的安全性和复用性。
@@ -1384,5 +1430,28 @@ key2=value2
     <entry key="key1">value1</entry>
     <entry key="key2">value2</entry>
 </properties>
+```
+
+## Lambda 表达式
+
+- 方法传入参数为接口。
+- 接口有且只有一个抽象方法。
+- 不产生`.class`文件。
+
+```java
+// 无参数
+() -> {
+    // return
+}
+
+// 一个参数
+a -> {
+    // return
+}
+
+// 多个参数
+(a, b) -> {
+    // return
+}
 ```
 
