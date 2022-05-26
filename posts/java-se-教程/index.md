@@ -1166,8 +1166,6 @@ int	compareTo​(Date anotherDate)
 ```java
 import java.util.Calendar;
 
-Calendar calendar = Calendar.getInstance();
-
 Date getTime()
 void setTime​(Date date)
 
@@ -1184,6 +1182,7 @@ void set​(int year, int month, int date, int hourOfDay, int minute, int second
 
 void setFirstDayOfWeek​(int value)
 
+Calendar calendar = Calendar.getInstance();
 calendar.get(Calendar.YEAR);                  // 年
 calendar.get(Calendar.MONTH) + 1;             // 月
 calendar.get(Calendar.DAY_OF_MONTH);          // 日
