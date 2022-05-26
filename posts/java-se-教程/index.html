@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/java-se-%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-07T21:41:06+08:00" />
-<meta property="article:modified_time" content="2022-05-24T09:07:21+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-05-26T03:25:33+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java SE 教程"/>
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Java, 教程","wordcount":  8382 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-05-24T09:07:21+00:00","publisher": {
+        },"genre": "posts","keywords": "Java, 教程","wordcount":  10186 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-05-26T03:25:33+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -199,6 +199,19 @@
       </ul>
     </li>
     <li><a href="#字符串">字符串</a></li>
+    <li><a href="#常用库">常用库</a>
+      <ul>
+        <li><a href="#math">Math</a></li>
+        <li><a href="#system">System</a></li>
+        <li><a href="#object">Object</a></li>
+        <li><a href="#classt">Class<T></a></li>
+        <li><a href="#bigdecimal">BigDecimal</a></li>
+        <li><a href="#integer">Integer</a></li>
+        <li><a href="#date">Date</a></li>
+        <li><a href="#calendar">Calendar</a></li>
+        <li><a href="#simpledateformat">SimpleDateFormat</a></li>
+      </ul>
+    </li>
     <li><a href="#文件">文件</a>
       <ul>
         <li><a href="#构造方法">构造方法</a></li>
@@ -265,8 +278,8 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-24">2022-05-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 8382 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 17 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-26">2022-05-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 10186 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 21 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -351,6 +364,19 @@
       </ul>
     </li>
     <li><a href="#字符串">字符串</a></li>
+    <li><a href="#常用库">常用库</a>
+      <ul>
+        <li><a href="#math">Math</a></li>
+        <li><a href="#system">System</a></li>
+        <li><a href="#object">Object</a></li>
+        <li><a href="#classt">Class<T></a></li>
+        <li><a href="#bigdecimal">BigDecimal</a></li>
+        <li><a href="#integer">Integer</a></li>
+        <li><a href="#date">Date</a></li>
+        <li><a href="#calendar">Calendar</a></li>
+        <li><a href="#simpledateformat">SimpleDateFormat</a></li>
+      </ul>
+    </li>
     <li><a href="#文件">文件</a>
       <ul>
         <li><a href="#构造方法">构造方法</a></li>
@@ -1862,6 +1888,428 @@
 </span></span><span class="line"><span class="cl"><span class="n">String</span><span class="err">​</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">,</span> <span class="n">Charset</span> <span class="n">charset</span><span class="o">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="常用库" class="headerLink">
+    <a href="#%e5%b8%b8%e7%94%a8%e5%ba%93" class="header-mark"></a>常用库</h2><h3 id="math" class="headerLink">
+    <a href="#math" class="header-mark"></a>Math</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">E</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">PI</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">T</span> <span class="n">abs</span><span class="err">​</span><span class="o">(</span><span class="n">T</span> <span class="n">a</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">T</span> <span class="n">max</span><span class="err">​</span><span class="o">(</span><span class="n">T</span> <span class="n">a</span><span class="o">,</span> <span class="n">T</span> <span class="n">b</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">T</span> <span class="n">min</span><span class="err">​</span><span class="o">(</span><span class="n">T</span> <span class="n">a</span><span class="o">,</span> <span class="n">T</span> <span class="n">b</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">ceil</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span>  <span class="c1">// 向上取整
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">double</span> <span class="n">floor</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span> <span class="c1">// 向下取整
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">exp</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">pow</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">,</span> <span class="kt">double</span> <span class="n">b</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">log</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">log10</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">sin</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">cos</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="n">tan</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">double</span> <span class="nf">random</span><span class="o">()</span> <span class="c1">// [0.0, 1.0)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="system" class="headerLink">
+    <a href="#system" class="header-mark"></a>System</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">PrintStream</span> <span class="n">err</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">InputStream</span> <span class="n">in</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">PrintStream</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// System.setIn​(new InputStream(&#34;input&#34;));
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">void</span> <span class="n">setIn</span><span class="err">​</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">in</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// System.setOut(new PrintStream(&#34;output&#34;));
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">void</span> <span class="n">setOut</span><span class="err">​</span><span class="o">(</span><span class="n">PrintStream</span> <span class="n">out</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// System.exit(0);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">void</span>	<span class="n">exit</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">status</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span>	<span class="nf">gc</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">long</span> <span class="nf">currentTimeMillis</span><span class="o">()</span> <span class="c1">// 毫秒
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">void</span> <span class="n">arraycopy</span><span class="err">​</span><span class="o">(</span><span class="n">Object</span> <span class="n">src</span><span class="o">,</span> <span class="kt">int</span> <span class="n">srcPos</span><span class="o">,</span> <span class="n">Object</span> <span class="n">dest</span><span class="o">,</span> <span class="kt">int</span> <span class="n">destPos</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="object" class="headerLink">
+    <a href="#object" class="header-mark"></a>Object</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">protected</span> <span class="n">Object</span> <span class="nf">clone</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">boolean</span> <span class="n">equals</span><span class="err">​</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Deprecated
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">protected</span> <span class="kt">void</span>	<span class="nf">finalize</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Class</span><span class="o">&lt;?&gt;</span> <span class="n">getClass</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">notify</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">notifyAll</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">getClass</span><span class="o">().</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;@&#34;</span> <span class="o">+</span> <span class="n">Integer</span><span class="o">.</span><span class="na">toHexString</span><span class="o">(</span><span class="n">hashCode</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">wait</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">wait</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">timeoutMillis</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">wait</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">timeoutMillis</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nanos</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="classt" class="headerLink">
+    <a href="#classt" class="header-mark"></a>Class<T></h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="nf">getName</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">boolean</span> <span class="nf">isArray</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">boolean</span>	<span class="n">isInstance</span><span class="err">​</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">boolean</span>	<span class="nf">isInterface</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Constructor</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">getDeclaredConstructor</span><span class="err">​</span><span class="o">(</span><span class="n">Class</span><span class="o">&lt;?&gt;...</span> <span class="n">parameterTypes</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Constructor</span><span class="o">&lt;?&gt;[]</span> <span class="n">getDeclaredConstructors</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Field</span> <span class="n">getDeclaredField</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Field</span><span class="o">[]</span> <span class="nf">getDeclaredFields</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Method</span> <span class="n">getDeclaredMethod</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">Class</span><span class="o">&lt;?&gt;...</span> <span class="n">parameterTypes</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Method</span><span class="o">[]</span> <span class="nf">getDeclaredMethods</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">T</span> <span class="nf">newInstance</span><span class="o">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="bigdecimal" class="headerLink">
+    <a href="#bigdecimal" class="header-mark"></a>BigDecimal</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.math.BigDecimal</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">in</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span><span class="err">​</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">in</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="o">,</span> <span class="kt">int</span> <span class="n">len</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">val</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">val</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">val</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">val</span><span class="o">)</span> <span class="c1">// 推荐
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">BigDecimal</span><span class="err">​</span><span class="o">(</span><span class="n">BigInteger</span> <span class="n">val</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="nf">abs</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="n">max</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">val</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="n">min</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">val</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="n">pow</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="n">compareTo</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">val</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">boolean</span>	<span class="n">equals</span><span class="err">​</span><span class="o">(</span><span class="n">Object</span> <span class="n">x</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="n">add</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">augend</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="n">subtract</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">subtrahend</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="n">multiply</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">multiplicand</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="n">divide</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">divisor</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// RoundingMode.UP      进一法
+</span></span></span><span class="line"><span class="cl"><span class="c1">// RoundingMode.DOWN    去尾法
+</span></span></span><span class="line"><span class="cl"><span class="c1">// RoundingMode.HALF_UP 四舍五入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">BigDecimal</span> <span class="n">divide</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">divisor</span><span class="o">,</span> <span class="kt">int</span> <span class="n">scale</span><span class="o">,</span> <span class="n">RoundingMode</span> <span class="n">roundingMode</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span> <span class="n">remainder</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">divisor</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigDecimal</span><span class="o">[]</span> <span class="n">divideAndRemainder</span><span class="err">​</span><span class="o">(</span><span class="n">BigDecimal</span> <span class="n">divisor</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="nf">intValue</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="nf">longValue</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="nf">doubleValue</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">BigInteger</span> <span class="nf">toBigInteger</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="nf">toString</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">BigDecimal</span> <span class="n">valueOf</span><span class="err">​</span><span class="o">(</span><span class="kt">double</span> <span class="n">val</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">BigDecimal</span> <span class="n">valueOf</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">val</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="integer" class="headerLink">
+    <a href="#integer" class="header-mark"></a>Integer</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">BYTES</span>           <span class="c1">// 4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">int</span> <span class="n">MAX_VALUE</span>       <span class="c1">// 0x7fffffff 2147483647
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">int</span> <span class="n">MIN_VALUE</span>       <span class="c1">// 0x80000000 -2147483648
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">int</span> <span class="n">SIZE</span>            <span class="c1">// 32
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">TYPE</span> <span class="c1">// int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">compare</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">compareUnsigned</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="n">compareTo</span><span class="err">​</span><span class="o">(</span><span class="n">Integer</span> <span class="n">anotherInteger</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">bitCount</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>      <span class="c1">// 返回1的数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">int</span> <span class="n">highestOneBit</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="c1">// 保留最高位1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">int</span> <span class="n">lowestOneBit</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>  <span class="c1">// 保留最低位1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">numberOfLeadingZeros</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>  <span class="c1">// 前缀0数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kt">int</span> <span class="n">numberOfTrailingZeros</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="c1">// 后缀0数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">reverse</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">reverseBytes</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">parseInt</span><span class="err">​</span><span class="o">(</span><span class="n">CharSequence</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">beginIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">endIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">radix</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">parseInt</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kt">int</span> <span class="n">parseInt</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">radix</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">String</span> <span class="n">toString</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">String</span> <span class="n">toString</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">radix</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="date" class="headerLink">
+    <a href="#date" class="header-mark"></a>Date</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Date</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">Date</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">date</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Date</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="n">compareTo</span><span class="err">​</span><span class="o">(</span><span class="n">Date</span> <span class="n">anotherDate</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="calendar" class="headerLink">
+    <a href="#calendar" class="header-mark"></a>Calendar</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Calendar</span> <span class="n">calendar</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Date</span> <span class="nf">getTime</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">setTime</span><span class="err">​</span><span class="o">(</span><span class="n">Date</span> <span class="n">date</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="nf">getTimeInMillis</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">setTimeInMillis</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">add</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">field</span><span class="o">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">get</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">field</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">set</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">field</span><span class="o">,</span> <span class="kt">int</span> <span class="n">value</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">set</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="kt">int</span> <span class="n">month</span><span class="o">,</span> <span class="kt">int</span> <span class="n">date</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">set</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="kt">int</span> <span class="n">month</span><span class="o">,</span> <span class="kt">int</span> <span class="n">date</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hourOfDay</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">set</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="kt">int</span> <span class="n">month</span><span class="o">,</span> <span class="kt">int</span> <span class="n">date</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hourOfDay</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">,</span> <span class="kt">int</span> <span class="n">second</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">setFirstDayOfWeek</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">);</span>                  <span class="c1">// 年
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">)</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>             <span class="c1">// 月
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_MONTH</span><span class="o">);</span>          <span class="c1">// 日
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">(</span><span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">DAY_OF_WEEK</span><span class="o">)</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">%</span> <span class="n">7</span><span class="o">;</span> <span class="c1">// 周
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">HOUR_OF_DAY</span><span class="o">);</span>           <span class="c1">// 时
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MINUTE</span><span class="o">);</span>                <span class="c1">// 分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">);</span>                <span class="c1">// 秒
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="simpledateformat" class="headerLink">
+    <a href="#simpledateformat" class="header-mark"></a>SimpleDateFormat</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">SimpleDateFormat</span> <span class="n">df</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;yyyy年MM月dd日 周E HH:mm:ss&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="文件" class="headerLink">
     <a href="#%e6%96%87%e4%bb%b6" class="header-mark"></a>文件</h2><h3 id="构造方法" class="headerLink">
     <a href="#%e6%9e%84%e9%80%a0%e6%96%b9%e6%b3%95" class="header-mark"></a>构造方法</h3><div class="highlight"><div class="chroma">
@@ -2680,7 +3128,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-05-24</span>
+                <span>更新于 2022-05-26</span>
             </div>
             <div class="post-info-license"></div>
         </div>

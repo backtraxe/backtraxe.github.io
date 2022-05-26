@@ -977,6 +977,232 @@ String​(byte[] bytes, int offset, int length, String charsetName)
 String​(byte[] bytes, int offset, int length, Charset charset)
 ```
 
+## 常用库
+
+### Math
+
+```java
+static double E
+static double PI
+
+static T abs​(T a)
+static T max​(T a, T b)
+static T min​(T a, T b)
+
+static double ceil​(double a)  // 向上取整
+static double floor​(double a) // 向下取整
+
+static double exp​(double a)
+static double pow​(double a, double b)
+
+static double log​(double a)
+static double log10​(double a)
+
+static double sin​(double a)
+static double cos​(double a)
+static double tan​(double a)
+
+static double random() // [0.0, 1.0)
+```
+
+### System
+
+```java
+static PrintStream err
+static InputStream in
+static PrintStream out
+
+// System.setIn​(new InputStream("input"));
+static void setIn​(InputStream in)
+// System.setOut(new PrintStream("output"));
+static void setOut​(PrintStream out)
+
+// System.exit(0);
+static void	exit​(int status)
+static void	gc()
+
+static long currentTimeMillis() // 毫秒
+
+static void arraycopy​(Object src, int srcPos, Object dest, int destPos, int length)
+```
+
+### Object
+
+```java
+protected Object clone()
+
+boolean equals​(Object obj) {
+    return (this == obj);
+}
+
+// Deprecated
+protected void	finalize()
+
+Class<?> getClass()
+
+int hashCode()
+
+void notify()
+void notifyAll()
+
+String toString() {
+    return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+
+void wait()
+void wait​(long timeoutMillis)
+void wait​(long timeoutMillis, int nanos)
+```
+
+### Class<T>
+
+```java
+String getName()
+
+boolean isArray()
+boolean	isInstance​(Object obj)
+boolean	isInterface()
+
+Constructor<T> getDeclaredConstructor​(Class<?>... parameterTypes)
+Constructor<?>[] getDeclaredConstructors()
+
+Field getDeclaredField​(String name)
+Field[] getDeclaredFields()
+
+Method getDeclaredMethod​(String name, Class<?>... parameterTypes)
+Method[] getDeclaredMethods()
+
+T newInstance()
+```
+
+### BigDecimal
+
+```java
+import java.math.BigDecimal;
+
+BigDecimal​(char[] in)
+BigDecimal​(char[] in, int offset, int len)
+BigDecimal​(double val)
+BigDecimal​(int val)
+BigDecimal​(long val)
+BigDecimal​(String val) // 推荐
+BigDecimal​(BigInteger val)
+
+BigDecimal abs()
+
+BigDecimal max​(BigDecimal val)
+BigDecimal min​(BigDecimal val)
+BigDecimal pow​(int n)
+
+int	compareTo​(BigDecimal val)
+boolean	equals​(Object x)
+
+BigDecimal add​(BigDecimal augend)
+BigDecimal subtract​(BigDecimal subtrahend)
+BigDecimal multiply​(BigDecimal multiplicand)
+BigDecimal divide​(BigDecimal divisor)
+// RoundingMode.UP      进一法
+// RoundingMode.DOWN    去尾法
+// RoundingMode.HALF_UP 四舍五入
+BigDecimal divide​(BigDecimal divisor, int scale, RoundingMode roundingMode)
+BigDecimal remainder​(BigDecimal divisor)
+BigDecimal[] divideAndRemainder​(BigDecimal divisor)
+
+int	intValue()
+long longValue()
+double doubleValue()
+BigInteger toBigInteger()
+String toString()
+
+static BigDecimal valueOf​(double val)
+static BigDecimal valueOf​(long val)
+```
+
+### Integer
+
+```java
+static int BYTES           // 4
+static int MAX_VALUE       // 0x7fffffff 2147483647
+static int MIN_VALUE       // 0x80000000 -2147483648
+static int SIZE            // 32
+static Class<Integer> TYPE // int
+
+static int compare​(int x, int y)
+static int compareUnsigned​(int x, int y)
+int	compareTo​(Integer anotherInteger)
+
+static int bitCount​(int i)      // 返回1的数量
+static int highestOneBit​(int i) // 保留最高位1
+static int lowestOneBit​(int i)  // 保留最低位1
+
+static int numberOfLeadingZeros​(int i)  // 前缀0数量
+static int numberOfTrailingZeros​(int i) // 后缀0数量
+
+static int reverse​(int i)
+static int reverseBytes​(int i)
+
+static int parseInt​(CharSequence s, int beginIndex, int endIndex, int radix)
+static int parseInt​(String s)
+static int parseInt​(String s, int radix)
+
+static String toString​(int i)
+static String toString​(int i, int radix)
+```
+
+### Date
+
+```java
+import java.util.Date;
+
+Date()
+Date​(long date)
+Date​(String s)
+
+int	compareTo​(Date anotherDate)
+```
+
+### Calendar
+
+```java
+import java.util.Calendar;
+
+Calendar calendar = Calendar.getInstance();
+
+Date getTime()
+void setTime​(Date date)
+
+long getTimeInMillis()
+void setTimeInMillis​(long millis)
+
+void add​(int field, int amount)
+int get​(int field)
+void set​(int field, int value)
+
+void set​(int year, int month, int date)
+void set​(int year, int month, int date, int hourOfDay, int minute)
+void set​(int year, int month, int date, int hourOfDay, int minute, int second)
+
+void setFirstDayOfWeek​(int value)
+
+calendar.get(Calendar.YEAR);                  // 年
+calendar.get(Calendar.MONTH) + 1;             // 月
+calendar.get(Calendar.DAY_OF_MONTH);          // 日
+(calendar.get(Calendar.DAY_OF_WEEK) - 1) % 7; // 周
+calendar.get(Calendar.HOUR_OF_DAY);           // 时
+calendar.get(Calendar.MINUTE);                // 分
+calendar.get(Calendar.SECOND);                // 秒
+```
+
+### SimpleDateFormat
+
+```java
+import java.text.SimpleDateFormat;
+
+Date date = new Date();
+SimpleDateFormat df = new SimpleDateFormat("yyyy年MM月dd日 周E HH:mm:ss");
+df.format(date);
+```
+
 ## 文件
 
 ### 构造方法
