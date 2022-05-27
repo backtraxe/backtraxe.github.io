@@ -881,79 +881,6 @@ public interface Shape {
 }
 ```
 
-## 4 集合
-
-可变容量的容器。
-
-### 4.1 ArrayList
-
-- 可变数组。
-- **不能使用基本数据类型**。
-- 打印则直接遍历打印数组值，而不是打印地址。
-
-构造函数
-
-- `ArrayList()`
-- `ArrayList(int initialCapacity)`
-- `ArrayList(Collection<? extends E> c)`
-
-```java
-// 不指定类型，可添加任意类型
-ArrayList l1 = new ArrayList();
-// 指定类型
-ArrayList<Integer> l2 = new ArrayList<>();
-```
-
-增
-
-- `void	add(int index, E element)`
-- `boolean add(E e)`
-- `boolean addAll(int index, Collection<? extends E> c)`
-- `boolean addAll(Collection<? extends E> c)`
-
-删
-
-- `E remove(int index)`
-- `boolean remove(Object o)`：删除第一个出现的
-- `boolean removeAll(Collection<?> c)`
-- `void	clear()`
-
-```java
-for (int i = 0; i < list.size(); i++) {
-    if (list.get(i) == target) {
-        list.remove(i);
-        i--; // 集合删除元素后，后面元素整体前移一位。
-    }
-}
-```
-
-改
-
-- `E set(int index, E element)`
-
-查
-
-- `E get(int index)`
-- `boolean contains(Object o)`
-
-大小
-
-- `int size()`
-- `boolean isEmpty()`
-
-#### 4.1.1 遍历
-
-```java
-// IDEA 快捷键：list.fori
-for (int i = 0; i < list.size(); i++) {
-    list.get(i);
-}
-// IDEA 快捷键：list.forr
-for (int i = list.size() - 1; i >= 0; i--) {
-    list.get(i);
-}
-```
-
 ## 字符串
 
 - String 转 byte 数组
@@ -1149,16 +1076,30 @@ static String toString​(int i)
 static String toString​(int i, int radix)
 ```
 
-### Date
+### Date & SimpleDateFormat
 
 ```java
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
+// Date 类中的方法
 Date()
 Date​(long date)
 Date​(String s)
 
+long getTime()
+void setTime​(long time)
+
 int	compareTo​(Date anotherDate)
+
+// Date 转 String
+Date date1 = new Date();
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 E HH:mm:ss");
+sdf.format(date1); // 2022年05月27日 周五 13:57:41
+
+// String 转 Date
+String str = "2022年05月27日 周五 13:57:41";
+Date date2 = sdf.parse(str);
 ```
 
 ### Calendar
@@ -1192,14 +1133,76 @@ calendar.get(Calendar.MINUTE);                // 分
 calendar.get(Calendar.SECOND);                // 秒
 ```
 
-### SimpleDateFormat
+### DateTimeFormatter & LocalDateTime
 
 ```java
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-Date date = new Date();
-SimpleDateFormat df = new SimpleDateFormat("yyyy年MM月dd日 周E HH:mm:ss");
-df.format(date);
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日 E HH:mm:ss");
+LocalDateTime time = LocalDateTime.parse(str, formatter);
+
+// LocalDateTime 类中的方法
+String format​(DateTimeFormatter formatter)
+int getYear()
+int getMonthValue()      // [1, 12]
+Month getMonth()         // May
+int getDayOfMonth()      // [1, 31]
+int getDayOfYear()       // [1, 366]
+DayOfWeek getDayOfWeek() // FRIDAY
+int getHour()            // [0, 23]
+int getMinute()
+int getSecond()
+int getNano()
+
+static LocalDateTime of​(int year, int month, int dayOfMonth, int hour, int minute)
+static LocalDateTime of​(int year, int month, int dayOfMonth, int hour, int minute, int second)
+
+static LocalDateTime parse​(CharSequence text)
+static LocalDateTime parse​(CharSequence text, DateTimeFormatter formatter)
+
+LocalDateTime plusYears​(long years)
+LocalDateTime plusMonths​(long months)
+LocalDateTime plusDays​(long days)
+LocalDateTime plusHours​(long hours)
+LocalDateTime plusMinutes​(long minutes)
+LocalDateTime plusSeconds​(long seconds)
+LocalDateTime plusWeeks​(long weeks)
+
+LocalDateTime minusYears​(long years)
+LocalDateTime minusMonths​(long months)
+LocalDateTime minusDays​(long days)
+LocalDateTime minusHours​(long hours)
+LocalDateTime minusMinutes​(long minutes)
+LocalDateTime minusSeconds​(long seconds)
+LocalDateTime minusWeeks​(long weeks)
+
+LocalDateTime withYear​(int year)
+LocalDateTime withMonth​(int month)
+LocalDateTime withDayOfMonth​(int dayOfMonth)
+LocalDateTime withHour​(int hour)
+LocalDateTime withMinute​(int minute)
+LocalDateTime withSecond​(int second)
+LocalDateTime withDayOfYear​(int dayOfYear)
+
+LocalDate toLocalDate()
+LocalTime toLocalTime()
+```
+
+### Period &
+
+```java
+LocalDate startDate = LocalDate.of(2022, 2, 1);
+LocalDate endDate = LocalDate.of(2025, 11, 18);
+Period period = Period.between(startDate, endDate);
+period.getYears();
+period.getMonths();
+period.getDays();
+
+LocalDateTime startTime = LocalDateTime.of(2022, 2, 4, 5, 18, 23);
+LocalDateTime endTime = LocalDateTime.of(2030, 1, 30, 17, 24, 12);
+Duration duration = Duration.between(startTime, endTime);
+duration.toSeconds();
 ```
 
 ## 文件
@@ -1677,6 +1680,55 @@ a -> {
 // 多个参数
 (a, b) -> {
     // return
+}
+```
+
+## 异常
+
+### 分类
+
+- java.lang.Throwable
+    - java.lang.Error：严重错误
+    - java.lang.Exception
+        - java.lang.RuntimeException：运行时异常
+        - 编译时异常：编译器能够检查出的异常，需要进行异常处理
+
+### 异常处理
+
+```java
+try {
+
+} catch (Exception e) {
+
+} finally {
+    // 一定会执行，就算没有出现异常
+    // 即使 try 程序块中有 return 语句，也是在执行了 finally 语句块后再返回
+}
+```
+
+```java
+// 不处理，向上继续抛出
+void func() throws Exception {}
+```
+
+```java
+void func() {
+    // 主动抛出异常
+    throw new Exception();
+}
+```
+
+### 自定义异常
+
+```java
+class DIYException extends Exception {
+    public DIYException() {
+        super();
+    }
+
+    public DIYException(String message) {
+        super(message);
+    }
 }
 ```
 

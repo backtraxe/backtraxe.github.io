@@ -118,30 +118,67 @@ for (int i = 0; i < myColl.size(); i++) {
 
 ## List
 
+```java
+import java.util.List;
+```
+
 ### ArrayList
 
 ```java
 import java.util.ArrayList;
-import java.util.List;
 ```
 
+#### API
+
+**构造函数**
+
+- `ArrayList()`
+- `ArrayList(int initialCapacity)`
+- `ArrayList(Collection<? extends E> c)`
+
+**增**
+
+- `void	add(int index, E element)`
+- `boolean add(E e)`
+- `boolean addAll(int index, Collection<? extends E> c)`
+- `boolean addAll(Collection<? extends E> c)`
+
+**删**
+
+- `E remove(int index)`
+- `boolean remove(Object o)`：删除第一个出现的
+- `boolean removeAll(Collection<?> c)`
+- `void	clear()`
+
 ```java
-// 定义
-List<Integer> list = new ArrayList<>(); // 数组实现
-// 遍历1
 for (int i = 0; i < list.size(); i++) {
-    int x = list.get(i);
+    if (list.get(i) == target) {
+        list.remove(i);
+        i--; // 集合删除元素后，后面元素整体前移一位。
+    }
 }
-// 遍历2
-import java.util.Iterator;
+
 for (Iterator<Integer> it = list.iterator(); it.hasNext();) {
-    int x = it.next();
-}
-// 遍历3
-for (int x : list) {
-    //
+    int val = it.next();
+    if (val == target) {
+        it.remove();
+    }
 }
 ```
+
+**改**
+
+- `E set(int index, E element)`
+
+**查**
+
+- `E get(int index)`
+- `boolean contains(Object o)`
+
+**大小**
+
+- `int size()`
+- `boolean isEmpty()`
 
 #### 初始化
 
@@ -182,33 +219,189 @@ for (int x : list1) {
 }
 ```
 
+#### 源码
+
+{{<admonition tip "源码" false>}}
+```java
+public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable {
+
+    // AbstractList<E>
+    protected transient int modCount = 0;
+
+    // 默认容量
+    private static final int DEFAULT_CAPACITY = 10;
+
+    private static final Object[] EMPTY_ELEMENTDATA = {};
+
+    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+
+    transient Object[] elementData;
+
+    private int size;
+
+    public ArrayList(int initialCapacity) {
+        if (initialCapacity > 0) {
+            this.elementData = new Object[initialCapacity];
+        } else if (initialCapacity == 0) {
+            this.elementData = EMPTY_ELEMENTDATA;
+        } else {
+            throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
+        }
+    }
+
+    public ArrayList() {
+        this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+    }
+
+    public boolean add(E e) {
+        modCount++;
+        add(e, elementData, size);
+        return true;
+    }
+
+    private void add(E e, Object[] elementData, int s) {
+        if (s == elementData.length)
+            elementData = grow();
+        elementData[s] = e;
+        size = s + 1;
+    }
+
+    private Object[] grow() {
+        return grow(size + 1);
+    }
+
+    private Object[] grow(int minCapacity) {
+        return elementData = Arrays.copyOf(elementData, newCapacity(minCapacity));
+    }
+
+    private int newCapacity(int minCapacity) {
+        int oldCapacity = elementData.length;
+        // 扩容为原大小的 1.5 倍
+        int newCapacity = oldCapacity + (oldCapacity >> 1);
+        if (newCapacity - minCapacity <= 0) {
+            // 如果初始化时未指定大小
+            if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA)
+                // 默认大小为 10
+                return Math.max(DEFAULT_CAPACITY, minCapacity);
+            if (minCapacity < 0)
+                throw new OutOfMemoryError();
+            return minCapacity;
+        }
+        return (newCapacity - MAX_ARRAY_SIZE <= 0) ? newCapacity : hugeCapacity(minCapacity);
+    }
+
+    private static int hugeCapacity(int minCapacity) {
+        if (minCapacity < 0) // overflow
+            throw new OutOfMemoryError();
+        return (minCapacity > MAX_ARRAY_SIZE) ? Integer.MAX_VALUE : MAX_ARRAY_SIZE;
+    }
+
+    public <T> T[] toArray(T[] a) {
+        if (a.length < size)
+            return (T[]) Arrays.copyOf(elementData, size, a.getClass());
+        System.arraycopy(elementData, 0, a, 0, size);
+        if (a.length > size)
+            a[size] = null;
+        return a;
+    }
+}
+```
+{{< /admonition >}}
+
 ### LinkedList
 
 ```java
 import java.util.LinkedList;
-import java.util.List;
 ```
+
+#### API
+
+**构造方法**
 
 ```java
-// 定义
-List<Integer> b = new LinkedList<>(); // 链表实现
-List<Integer> c = List.of(1, 2, 3);
+
 ```
 
-### 4.3 方法
+**增**
 
-- `E get(int index)`：返回指定索引的元素
-- `E set(int index, E element)`：修改指定索引的元素，返回原来的元素
-- `boolean add(E element)`：添加到尾部
-- `E remove(Object element)`：只删除第一个匹配到的元素，返回删除的元素
-- `int indexOf(E element)`：返回第一个匹配到的元素的索引，失败返回 -1
-- `int lastIndexOf(E element)`：返回最后一个匹配到的元素的索引，失败返回 -1
-- `boolean containsAll(Collection<?> c)`：先将容器 c 转换为集合，再判断；只关注元素的值，不关注数量
-- `boolean addAll(Collection<? extends E> c)`：添加到尾部
-- `boolean removeAll(Collection<?> c)`：删除所有与容器 c 中具有相同值的元素；先将容器 c 转换为集合，再删除所有匹配项
-- `boolean retainAll(Collection<?> c)`：删除所有与容器 c 中具有不同值的元素；先将容器 c 转换为集合，再删除所有匹配项
-- `ListIterator<E> listIterator()`：返回列表迭代器，可双向迭代
-- `ListIterator<E> listIterator(int index)`：返回指定索引的列表迭代器，可双向迭代
+```java
+// 尾部添加
+boolean add​(E e)        // 一般 List 使用
+boolean offer​(E e)      // 一般 Queue 使用
+void addLast​(E e)       // 一般 LinkedList 使用
+boolean offerLast​(E e)  // 一般 Deque 使用
+
+// 首部添加
+void addFirst​(E e)      // 一般 LinkedList 使用
+boolean offerFirst​(E e) // 一般 Deque 使用
+void push​(E e)          // 一般 栈 使用
+
+// 指定位置添加
+void add​(int index, E element)
+
+// 添加集合
+boolean addAll​(Collection<? extends E> c)
+boolean addAll​(int index, Collection<? extends E> c)
+```
+
+**删**
+
+```java
+// 尾部删除
+E removeLast()  // 一般 LinkedList 使用
+E pollLast()    // 一般 Deque 使用
+
+// 首部删除
+E remove()      // 一般 List 使用
+E poll()        // 一般 Queue 使用
+E removeFirst() // 一般 LinkedList 使用
+E pollFirst()   // 一般 Deque 使用
+E pop()         // 一般 栈 使用
+
+// 指定位置删除
+E remove​(int index)
+
+// 指定元素删除
+boolean remove​(Object o)
+boolean removeFirstOccurrence​(Object o)
+boolean removeLastOccurrence​(Object o)
+
+// 清空
+void clear()
+```
+
+**改**
+
+```java
+E set​(int index, E element)
+```
+
+**查**
+
+```java
+// 尾部
+E getLast()   // 一般 List 使用
+E peekLast()  // 一般 List 使用
+
+// 指定位置
+E get​(int index)
+
+// 首部
+E getFirst()  // 一般 List 使用
+E peekFirst() // 一般 List 使用
+E peek()      // 一般 Queue 使用
+
+boolean contains​(Object o)
+int indexOf​(Object o)
+int lastIndexOf​(Object o)
+```
+
+**其他**
+
+```java
+ListIterator<E> listIterator​(int index)
+Iterator<E> descendingIterator()
+```
 
 ### 4.4 遍历
 
@@ -271,12 +464,6 @@ Integer[] array2 = list.toArray(Integer[]::new);
 Integer[] array = { 1, 2, 3 };
 List<Integer> list = List.of(array);
 // 转换后的 list 只读，不能增删或修改
-```
-
-### 排序
-
-```java
-
 ```
 
 ## Queue
@@ -967,7 +1154,7 @@ import java.util.Objects;
 public boolean equals(Object o) {
     if (o instanceof E) {
         E e = (E) o;
-        // 
+        //
     }
     return false;
 }
@@ -1041,7 +1228,7 @@ List<String> namesFlatStream = namesNested.stream()
         .collect(Collectors.toList());
 // count 终端操作
 long a = list.stream().count();
-// 
+//
 Stream<Integer> infiniteStream = Stream.iterate(2, i -> i * 2);
 List<Integer> collect = infiniteStream
     .skip(3)  // 跳过前 3 个元素

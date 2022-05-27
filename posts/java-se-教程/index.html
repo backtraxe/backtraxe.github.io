@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/java-se-%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-07T21:41:06+08:00" />
-<meta property="article:modified_time" content="2022-05-26T03:25:55+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-05-27T09:31:17+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java SE 教程"/>
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/"
-        },"genre": "posts","keywords": "Java, 教程","wordcount":  10185 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-05-26T03:25:55+00:00","publisher": {
+        },"genre": "posts","keywords": "Java, 教程","wordcount":  10915 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/java-se-%E6%95%99%E7%A8%8B\/","datePublished": "2021-02-07T21:41:06+08:00","dateModified": "2022-05-27T09:31:17+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -189,15 +189,6 @@
         <li><a href="#35-接口">3.5 接口</a></li>
       </ul>
     </li>
-    <li><a href="#4-集合">4 集合</a>
-      <ul>
-        <li><a href="#41-arraylist">4.1 ArrayList</a>
-          <ul>
-            <li><a href="#411-遍历">4.1.1 遍历</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
     <li><a href="#字符串">字符串</a></li>
     <li><a href="#常用库">常用库</a>
       <ul>
@@ -207,9 +198,10 @@
         <li><a href="#classt">Class<T></a></li>
         <li><a href="#bigdecimal">BigDecimal</a></li>
         <li><a href="#integer">Integer</a></li>
-        <li><a href="#date">Date</a></li>
+        <li><a href="#date--simpledateformat">Date &amp; SimpleDateFormat</a></li>
         <li><a href="#calendar">Calendar</a></li>
-        <li><a href="#simpledateformat">SimpleDateFormat</a></li>
+        <li><a href="#datetimeformatter--localdatetime">DateTimeFormatter &amp; LocalDateTime</a></li>
+        <li><a href="#period-">Period &amp;</a></li>
       </ul>
     </li>
     <li><a href="#文件">文件</a>
@@ -272,14 +264,21 @@
     </li>
     <li><a href="#properties">Properties</a></li>
     <li><a href="#lambda-表达式">Lambda 表达式</a></li>
+    <li><a href="#异常">异常</a>
+      <ul>
+        <li><a href="#分类-1">分类</a></li>
+        <li><a href="#异常处理">异常处理</a></li>
+        <li><a href="#自定义异常">自定义异常</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java SE 教程</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-26">2022-05-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 10185 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 21 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-05-27">2022-05-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 10915 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 22 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -354,15 +353,6 @@
         <li><a href="#35-接口">3.5 接口</a></li>
       </ul>
     </li>
-    <li><a href="#4-集合">4 集合</a>
-      <ul>
-        <li><a href="#41-arraylist">4.1 ArrayList</a>
-          <ul>
-            <li><a href="#411-遍历">4.1.1 遍历</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
     <li><a href="#字符串">字符串</a></li>
     <li><a href="#常用库">常用库</a>
       <ul>
@@ -372,9 +362,10 @@
         <li><a href="#classt">Class<T></a></li>
         <li><a href="#bigdecimal">BigDecimal</a></li>
         <li><a href="#integer">Integer</a></li>
-        <li><a href="#date">Date</a></li>
+        <li><a href="#date--simpledateformat">Date &amp; SimpleDateFormat</a></li>
         <li><a href="#calendar">Calendar</a></li>
-        <li><a href="#simpledateformat">SimpleDateFormat</a></li>
+        <li><a href="#datetimeformatter--localdatetime">DateTimeFormatter &amp; LocalDateTime</a></li>
+        <li><a href="#period-">Period &amp;</a></li>
       </ul>
     </li>
     <li><a href="#文件">文件</a>
@@ -437,6 +428,13 @@
     </li>
     <li><a href="#properties">Properties</a></li>
     <li><a href="#lambda-表达式">Lambda 表达式</a></li>
+    <li><a href="#异常">异常</a>
+      <ul>
+        <li><a href="#分类-1">分类</a></li>
+        <li><a href="#异常处理">异常处理</a></li>
+        <li><a href="#自定义异常">自定义异常</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="0-名词解释" class="headerLink">
@@ -1750,103 +1748,6 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="4-集合" class="headerLink">
-    <a href="#4-%e9%9b%86%e5%90%88" class="header-mark"></a>4 集合</h2><p>可变容量的容器。</p>
-<h3 id="41-arraylist" class="headerLink">
-    <a href="#41-arraylist" class="header-mark"></a>4.1 ArrayList</h3><ul>
-<li>可变数组。</li>
-<li><strong>不能使用基本数据类型</strong>。</li>
-<li>打印则直接遍历打印数组值，而不是打印地址。</li>
-</ul>
-<p>构造函数</p>
-<ul>
-<li><code>ArrayList()</code></li>
-<li><code>ArrayList(int initialCapacity)</code></li>
-<li><code>ArrayList(Collection&lt;? extends E&gt; c)</code></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 不指定类型，可添加任意类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ArrayList</span> <span class="n">l1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 指定类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">l2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>增</p>
-<ul>
-<li><code>void	add(int index, E element)</code></li>
-<li><code>boolean add(E e)</code></li>
-<li><code>boolean addAll(int index, Collection&lt;? extends E&gt; c)</code></li>
-<li><code>boolean addAll(Collection&lt;? extends E&gt; c)</code></li>
-</ul>
-<p>删</p>
-<ul>
-<li><code>E remove(int index)</code></li>
-<li><code>boolean remove(Object o)</code>：删除第一个出现的</li>
-<li><code>boolean removeAll(Collection&lt;?&gt; c)</code></li>
-<li><code>void	clear()</code></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">==</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">list</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">i</span><span class="o">--;</span> <span class="c1">// 集合删除元素后，后面元素整体前移一位。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>改</p>
-<ul>
-<li><code>E set(int index, E element)</code></li>
-</ul>
-<p>查</p>
-<ul>
-<li><code>E get(int index)</code></li>
-<li><code>boolean contains(Object o)</code></li>
-</ul>
-<p>大小</p>
-<ul>
-<li><code>int size()</code></li>
-<li><code>boolean isEmpty()</code></li>
-</ul>
-<h4 id="411-遍历" class="headerLink">
-    <a href="#411-%e9%81%8d%e5%8e%86" class="header-mark"></a>4.1.1 遍历</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// IDEA 快捷键：list.fori
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// IDEA 快捷键：list.forr
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
 </div><h2 id="字符串" class="headerLink">
     <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2" class="header-mark"></a>字符串</h2><ul>
 <li>String 转 byte 数组</li>
@@ -2211,25 +2112,53 @@
 </span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">String</span> <span class="n">toString</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">radix</span><span class="o">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="date" class="headerLink">
-    <a href="#date" class="header-mark"></a>Date</h3><div class="highlight"><div class="chroma">
+</div><h3 id="date--simpledateformat" class="headerLink">
+    <a href="#date--simpledateformat" class="header-mark"></a>Date &amp; SimpleDateFormat</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Date</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Date 类中的方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Date</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl"><span class="n">Date</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">date</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">Date</span><span class="err">​</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="nf">getTime</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">setTime</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">time</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span>	<span class="n">compareTo</span><span class="err">​</span><span class="o">(</span><span class="n">Date</span> <span class="n">anotherDate</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Date 转 String
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Date</span> <span class="n">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;yyyy年MM月dd日 E HH:mm:ss&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">sdf</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date1</span><span class="o">);</span> <span class="c1">// 2022年05月27日 周五 13:57:41
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// String 转 Date
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;2022年05月27日 周五 13:57:41&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Date</span> <span class="n">date2</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="calendar" class="headerLink">
@@ -2291,21 +2220,142 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">SECOND</span><span class="o">);</span>                <span class="c1">// 秒
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="simpledateformat" class="headerLink">
-    <a href="#simpledateformat" class="header-mark"></a>SimpleDateFormat</h3><div class="highlight"><div class="chroma">
+</div><h3 id="datetimeformatter--localdatetime" class="headerLink">
+    <a href="#datetimeformatter--localdatetime" class="header-mark"></a>DateTimeFormatter &amp; LocalDateTime</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.time.format.DateTimeFormatter</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="n">SimpleDateFormat</span> <span class="n">df</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;yyyy年MM月dd日 周E HH:mm:ss&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">DateTimeFormatter</span> <span class="n">formatter</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&#34;yyyy年MM月dd日 E HH:mm:ss&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">time</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">formatter</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// LocalDateTime 类中的方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">String</span> <span class="n">format</span><span class="err">​</span><span class="o">(</span><span class="n">DateTimeFormatter</span> <span class="n">formatter</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">getYear</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">getMonthValue</span><span class="o">()</span>      <span class="c1">// [1, 12]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Month</span> <span class="nf">getMonth</span><span class="o">()</span>         <span class="c1">// May
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">getDayOfMonth</span><span class="o">()</span>      <span class="c1">// [1, 31]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">getDayOfYear</span><span class="o">()</span>       <span class="c1">// [1, 366]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">DayOfWeek</span> <span class="nf">getDayOfWeek</span><span class="o">()</span> <span class="c1">// FRIDAY
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">getHour</span><span class="o">()</span>            <span class="c1">// [0, 23]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">getMinute</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">getSecond</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">getNano</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">LocalDateTime</span> <span class="n">of</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="kt">int</span> <span class="n">month</span><span class="o">,</span> <span class="kt">int</span> <span class="n">dayOfMonth</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">LocalDateTime</span> <span class="n">of</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="kt">int</span> <span class="n">month</span><span class="o">,</span> <span class="kt">int</span> <span class="n">dayOfMonth</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">,</span> <span class="kt">int</span> <span class="n">second</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">LocalDateTime</span> <span class="n">parse</span><span class="err">​</span><span class="o">(</span><span class="n">CharSequence</span> <span class="n">text</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="n">LocalDateTime</span> <span class="n">parse</span><span class="err">​</span><span class="o">(</span><span class="n">CharSequence</span> <span class="n">text</span><span class="o">,</span> <span class="n">DateTimeFormatter</span> <span class="n">formatter</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">plusYears</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">years</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">plusMonths</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">months</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">plusDays</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">days</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">plusHours</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">hours</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">plusMinutes</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">minutes</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">plusSeconds</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">seconds</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">plusWeeks</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">weeks</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">minusYears</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">years</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">minusMonths</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">months</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">minusDays</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">days</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">minusHours</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">hours</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">minusMinutes</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">minutes</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">minusSeconds</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">seconds</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">minusWeeks</span><span class="err">​</span><span class="o">(</span><span class="kt">long</span> <span class="n">weeks</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">withYear</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">withMonth</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">withDayOfMonth</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">dayOfMonth</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">withHour</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">withMinute</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">minute</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">withSecond</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">second</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">withDayOfYear</span><span class="err">​</span><span class="o">(</span><span class="kt">int</span> <span class="n">dayOfYear</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">LocalDate</span> <span class="nf">toLocalDate</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalTime</span> <span class="nf">toLocalTime</span><span class="o">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="period-" class="headerLink">
+    <a href="#period-" class="header-mark"></a>Period &amp;</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">LocalDate</span> <span class="n">startDate</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2022</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDate</span> <span class="n">endDate</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2025</span><span class="o">,</span> <span class="n">11</span><span class="o">,</span> <span class="n">18</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Period</span> <span class="n">period</span> <span class="o">=</span> <span class="n">Period</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">startDate</span><span class="o">,</span> <span class="n">endDate</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">period</span><span class="o">.</span><span class="na">getYears</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">period</span><span class="o">.</span><span class="na">getMonths</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">period</span><span class="o">.</span><span class="na">getDays</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2022</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">18</span><span class="o">,</span> <span class="n">23</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">LocalDateTime</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">2030</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">30</span><span class="o">,</span> <span class="n">17</span><span class="o">,</span> <span class="n">24</span><span class="o">,</span> <span class="n">12</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Duration</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">Duration</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">startTime</span><span class="o">,</span> <span class="n">endTime</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">duration</span><span class="o">.</span><span class="na">toSeconds</span><span class="o">();</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="文件" class="headerLink">
@@ -3120,13 +3170,100 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="异常" class="headerLink">
+    <a href="#%e5%bc%82%e5%b8%b8" class="header-mark"></a>异常</h2><h3 id="分类-1" class="headerLink">
+    <a href="#%e5%88%86%e7%b1%bb-1" class="header-mark"></a>分类</h3><ul>
+<li>java.lang.Throwable
+<ul>
+<li>java.lang.Error：严重错误</li>
+<li>java.lang.Exception
+<ul>
+<li>java.lang.RuntimeException：运行时异常</li>
+<li>编译时异常：编译器能够检查出的异常，需要进行异常处理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="异常处理" class="headerLink">
+    <a href="#%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86" class="header-mark"></a>异常处理</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 一定会执行，就算没有出现异常
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 即使 try 程序块中有 return 语句，也是在执行了 finally 语句块后再返回
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 不处理，向上继续抛出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">func</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">func</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 主动抛出异常
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="自定义异常" class="headerLink">
+    <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e5%bc%82%e5%b8%b8" class="header-mark"></a>自定义异常</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">DIYException</span> <span class="kd">extends</span> <span class="n">Exception</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">DIYException</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">DIYException</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-05-26</span>
+                <span>更新于 2022-05-27</span>
             </div>
             <div class="post-info-license"></div>
         </div>
