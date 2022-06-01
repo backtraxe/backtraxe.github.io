@@ -1376,9 +1376,40 @@ void quickSort(vector<int> &arr, int low, int high) {
 }
 ```
 
+{{< admonition tip "Java" false >}}
 ```java
+void quickSort(int[] arr) {
+    quickSort(arr, 0, arr.length - 1);
+}
 
+void quickSort(int[] arr, int low, int high) {
+    if (low >= high) return;
+    int mid = partition(arr, low, high);
+    quickSort(arr, low, mid - 1);
+    quickSort(arr, mid + 1, high);
+}
+
+int partition(int[] arr, int low, int high) {
+    int pivotID = (int) (Math.random() * (high - low + 1)) + low;
+    swap(arr, low, pivotID);
+    int pivot = arr[low];
+    while (low < high) {
+        while (low < high && arr[high] > pivot) high--;
+        swap(arr, low, high);
+        while (low < high && arr[low] <= pivot) low++;
+        swap(arr, low, high);
+    }
+    arr[low] = pivot;
+    return low;
+}
+
+void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
 ```
+{{< /admonition >}}
 
 ### 总结
 
@@ -1392,7 +1423,6 @@ void quickSort(vector<int> &arr, int low, int high) {
 | 堆排序 | $O\(n \\log n\)$ | 不稳定 |
 | 计数排序 | $O\(n\)$ | 稳定 |
 | 基数排序 | $O\(n\)$ | 稳定 |
-
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
 <table style="text-align:center">
