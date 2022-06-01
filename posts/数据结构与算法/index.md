@@ -1333,83 +1333,115 @@ void insertionSort(vector<int>& arr) {
 
 ### 10.4 归并排序
 
-```cpp
-void mergeSort() {
+#### 10.4.1 自顶向下
 
+```java
+static int[] copy;
+
+static void mergeSort(int[] arr) {
+    copy = new int[arr.length];
+    mergeSort(arr, 0, arr.length - 1);
 }
 
-void merge() {
+static void mergeSort(int[] arr, int low, int high) {
+    if (low >= high) return;
+    int mid = low + (high - low) / 2;
+    mergeSort(arr, low, mid);
+    mergeSort(arr, mid + 1, high);
+    merge(arr, low, mid, high);
+}
+
+static void merge(int[] arr, int low, int mid, int high) {
 
 }
+```
+
+#### 10.4.2 自底向上
+
+```java
+
 ```
 
 ### 10.5 快速排序
 
-**基本思想：**
-
-- 从数组中取出一个数，称之为基数（pivot）。
+- 在数组中随机取出一个数，称之为基数（pivot）。
 - 遍历数组，将比基数大的数字放到它的右边，比基数小的数字放到它的左边。遍历完成后，数组被分成了左右两个区域。
 - 将左右两个区域视为两个数组，重复前两个步骤，直到排序完成。
 
-```cpp
-// 把数组分为两半，返回分割中点
-int partition(vector<int> &arr, int low, int high) {
-    // [low, high]
-    int pivotId = low + rand() % (high - low + 1);
-    swap(arr[low], arr[pivotId]);
-    int pivot = arr[low];
-    while (low < right) {
-        while (low < high && arr[high] > pivot) high--;
-        arr[low] = arr[high];
-        while (low < high && arr[low] <= pivot) low++;
-        arr[high] = arr[low];
-    }
-    arr[low] = pivot;
-    return low;
-}
+#### 10.5.1 二切分
 
-void quickSort(vector<int> &arr, int low, int high) {
-    if (low >= high) return;
-    int mid = partition(arr, low, high);
-    quickSort(arr, low, mid - 1);
-    quickSort(arr, mid + 1, high);
-}
-```
-
-{{< admonition tip "Java" false >}}
 ```java
-void quickSort(int[] arr) {
+static void quickSort(int[] arr) {
     quickSort(arr, 0, arr.length - 1);
 }
 
-void quickSort(int[] arr, int low, int high) {
+static void quickSort(int[] arr, int low, int high) {
     if (low >= high) return;
-    int mid = partition(arr, low, high);
-    quickSort(arr, low, mid - 1);
-    quickSort(arr, mid + 1, high);
+    int pos = partition(arr, low, high);
+    quickSort(arr, low, pos - 1);
+    quickSort(arr, pos + 1, high);
 }
 
-int partition(int[] arr, int low, int high) {
+static int partition(int[] arr, int low, int high) {
     int pivotID = (int) (Math.random() * (high - low + 1)) + low;
     swap(arr, low, pivotID);
     int pivot = arr[low];
     while (low < high) {
         while (low < high && arr[high] > pivot) high--;
-        swap(arr, low, high);
         while (low < high && arr[low] <= pivot) low++;
-        swap(arr, low, high);
+        if (low < high) swap(arr, low, high);
     }
     arr[low] = pivot;
     return low;
 }
 
-void swap(int[] arr, int i, int j) {
+static void swap(int[] arr, int i, int j) {
     int temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
 }
 ```
-{{< /admonition >}}
+
+#### 10.5.2 三切分
+
+```java
+static void quickSort(int[] arr) {
+    quickSort(arr, 0, arr.length - 1);
+}
+
+static void quickSort(int[] arr, int low, int high) {
+    if (low >= high) return;
+    int[] pos = partition(arr, low, high);
+    quickSort(arr, low, pos[0] - 1);
+    quickSort(arr, pos[1] + 1, high);
+}
+
+static int[] partition(int[] arr, int low, int high) {
+    int pivotID = (int) (Math.random() * (high - low + 1)) + low;
+    swap(arr, low, pivotID);
+    int pivot = arr[low];
+    int mid = low + 1;
+    while (mid <= high) {
+        if (arr[mid] == pivot) {
+            mid++;
+        } else if (arr[mid] > pivot) {
+            swap(arr, mid, high);
+            high--;
+        } else {
+            swap(arr, low, mid);
+            low++;
+            mid++;
+        }
+    }
+    return new int[] { low, high };
+}
+
+static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+```
 
 ### 总结
 
