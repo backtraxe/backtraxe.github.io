@@ -1951,7 +1951,7 @@ Red Black Tree
 4. 红色结点的孩子是黑色。
 5. 任意结点到叶结点的路径都包含相同数量的黑色结点。
 
-{{< image src="/红黑树/tree.svg" width="100%" >}}
+{{< image src="/imgs/红黑树/tree.svg" width="100%" >}}
 
 6. 红黑树不是完美平衡二叉查找树，左右子树高度差可能大于1。
 
@@ -1959,11 +1959,11 @@ Red Black Tree
 
 - **左旋**：右孩子V变为当前结点P的父结点，当前结点P变为右孩子V的左孩子，右孩子V的左子树R变为当前结点的右子树。
 
-{{< image src="/红黑树/left_rotate.webp" width="100%" >}}
+{{< image src="/imgs/红黑树/left_rotate.webp" width="100%" >}}
 
 - **右旋**：左孩子F变为当前结点P的父结点，当前结点P变为左孩子F的右孩子，左孩子F的右子树K变为当前结点的左子树。
 
-{{< image src="/红黑树/right_rotate.webp" width="100%" >}}
+{{< image src="/imgs/红黑树/right_rotate.webp" width="100%" >}}
 
 - **变色**：结点黑红互转。
 
