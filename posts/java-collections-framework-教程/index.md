@@ -752,7 +752,7 @@ for (Iterator<Integer> it = set.descendingIterator(); it.hasNext();) {
 
 ## Map
 
-<img src="/Java-Collections-Framework-教程/Map家族.svg" alt="Map家族">
+<img src="/imgs/Java-Collections-Framework-教程/Map家族.svg">
 
 ### HashMap
 

@@ -15,23 +15,23 @@
 
 1. 插入U盘，然后打开balenaEtcher软件。
 
-![image-20201123194153284](hackintosh-install-tutorial.assets/image-20201123194153284.png)
+<img src="/imgs/黑苹果安装教程/image-20201123194153284.png" alt="步骤1">
 
 2. 点击`Select image`选择Mac OS镜像。
 
-![image-20201123194619134](hackintosh-install-tutorial.assets/image-20201123194619134.png)
+<img src="/imgs/黑苹果安装教程/image-20201123194619134.png" alt="步骤2">
 
 3. 软件会自动识别出你的U盘，最后点击`Flash!`。
 
-![image-20201123194643257](hackintosh-install-tutorial.assets/image-20201123194643257.png)
+<img src="/imgs/黑苹果安装教程/image-20201123194643257.png" alt="步骤3">
 
 4. 等待刻录完成（20min左右），之后会有一个完整性检测（15min左右）。
 
-![image-20201123200153948](hackintosh-install-tutorial.assets/image-20201123200153948.png)
+<img src="/imgs/黑苹果安装教程/image-20201123200153948.png" alt="步骤4">
 
 5. 当软件显示`Flash Complete!`时表示刻录成功。
 
-![image-20201123201524888](hackintosh-install-tutorial.assets/image-20201123201524888.png)
+<img src="/imgs/黑苹果安装教程/image-20201123201524888.png" alt="步骤5">
 
 ## 三、配置Clover引导驱动
 
@@ -96,8 +96,6 @@
     禁用VT-D。VT-d特别是IOMMU规范。扩展允许您访问虚拟机下的物理硬件（例如，运行Linux的系统可以在虚拟机上运行Windows。如果没有VT-d，则视频卡会被仿真，并且游戏速度会很慢。视频卡可以进入直通模式，并且可以在Windows下作为真实硬件（可以安装nvidia驱动程序）进行访问，并且视频卡的性能类似于运行本机Windows实时预览的情况。但是对于许多黑苹果用户，VT-D不会造成任何问题，但是如果您是新手，则尝试安装和配置Hackintosh禁用VT-D并安装。您可以在安装后根据需要启用VT-D。
 
 15. `Chipset`->`IOAPIC 24-119 Entries`->`Enabled`
-
-
 
 ## 六、黑苹果安装
 

@@ -5,12 +5,12 @@
 
 <!--more-->
 
-## 1 安装
+## 1.安装
 
 1. 到 [Github](https://github.com/gohugoio/hugo/releases/latest) 下载`hugo_extended_0.XX.X_Windows-64bit.zip`，解压并将`hugo.exe`所在目录添加到系统环境变量。
 2. 到 [Git 官网](https://git-scm.com/downloads) 下载安装 Git。
 
-## 2 创建网站
+## 2.创建网站
 
 ```bash
 hugo new site MyBlog
@@ -21,7 +21,7 @@ git submodule add https://github.com/HEIGE-PCloud/DoIt.git themes/DoIt
 
 可在 [Hugo Themes](https://themes.gohugo.io/) 找到更多主题。
 
-## 3 添加内容
+## 3.添加内容
 
 输入`hugo new posts/My-First-Blog.md`，然后打开刚创建的`My-First-Blog.md`，显示如下：
 
@@ -43,12 +43,12 @@ Hugo 的配置文件和文章中引用图片都是以`static`文件夹作为根�
 
 ### 3.2 Shortcodes
 
-- 图片：`{{</* image src="" caption="" */>}}`
-- 横幅：`{{</* admonition tip "" false */>}} {{</* /admonition */>}}`
-- 公式：`{{</* math */>}}$ ${{</* /math */>}}`
+- 图片：`{删除{< image src="" caption="" height="" width="" >}删除}`
+- 横幅：`{删除{< admonition tip "" false >}删除} {删除{< /admonition >}删除}`
+- 公式：`{删除{< math >}删除}$ ${删除{< /math >}删除}`
 - [扩展 Shortcodes](https://hugodoit.pages.dev/zh-cn/theme-documentation-extended-shortcodes/)
 
-## 4 本地部署
+## 4.本地部署
 
 ```bash
 hugo server/serve
@@ -59,7 +59,7 @@ hugo server -D  # 渲染草稿，即也渲染 draft: true 的内容
 
 > 网站部署后，当配置文件或博客内容发生更改时，页面会自动刷新，不用重新部署。
 
-## 5 主题自定义
+## 5.主题自定义
 
 主题配置文件为`MyBlog`根目录下的`config.toml`文件。
 
@@ -816,7 +816,7 @@ theme = "DoIt"
   taxonomyTerm = ["HTML"]
 ```
 
-## 6 发布
+## 6.发布
 
 ### 6.1 静态页面发布
 
@@ -879,7 +879,7 @@ jobs:
 
 `git clone --recursive https://github.com/backtraxe/backtraxe.github.io.data.git`
 
-## 7 全局详细配置
+## 7.全局详细配置
 
 ```toml
 # 域名
@@ -993,7 +993,7 @@ title = ""
 
 参考：[Configure Hugo](https://gohugo.io/getting-started/configuration/)
 
-## 8 参考
+## 8.参考
 
 1. [Quick Start | Hugo](https://gohugo.io/getting-started/quick-start/)
 2. [GitHub Pages 文档 - GitHub Docs](https://docs.github.com/cn/pages)

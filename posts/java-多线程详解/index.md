@@ -29,7 +29,7 @@ Java 线程在运行的生命周期中的指定时刻只可能处于下面 6 种
 
 线程在生命周期中并不是固定处于某一个状态而是随着代码的执行在不同状态之间切换。Java 线程状态变迁如下图所示：
 
-<img src="/Java多线程/Java线程状态图.jpeg" alt="Java 线程状态图">
+<img src="/imgs/Java多线程/Java线程状态图.jpeg" alt="Java 线程状态图">
 
 ## 线程池的优点
 
@@ -79,7 +79,7 @@ ThreadPoolExecutor​(int corePoolSize,
     - 如果存在空闲线程，则创建一个新的工作线程来执行任务。
     - 如果全部繁忙，则交给**饱和策略**来处理这个任务。
 
-<img src="/Java多线程/Java线程池处理流程.png" alt="Java 线程池处理流程">
+<img src="/imgs/Java多线程/Java线程池处理流程.png" alt="Java 线程池处理流程">
 
 ## 线程池源码分析
 
@@ -202,4 +202,3 @@ private boolean addWorker(Runnable firstTask, boolean core) {
 
 在上层，Java 程序会将应用分解为多个任务，然后使用应用级的调度器（Executor）将这些任务映射成固定数量的线程；在底层，操作系统内核将这些线程映射到硬件处理器上。
 
-##

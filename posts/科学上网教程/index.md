@@ -1,8 +1,6 @@
 # 科学上网教程
 
 
-外面的世界。
-
 <!--more-->
 
 ## 1.准备工作
@@ -90,15 +88,15 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 [Github](https://github.com/2dust/v2rayN)
 
-<img src="/科学上网/科学上网01.png" />
+<img src="/imgs/科学上网/科学上网01.png" />
 
-<img src="/科学上网/科学上网02.png" />
+<img src="/imgs/科学上网/科学上网02.png" />
 
-<img src="/科学上网/科学上网03.png" />
+<img src="/imgs/科学上网/科学上网03.png" />
 
-<img src="/科学上网/科学上网04.png" />
+<img src="/imgs/科学上网/科学上网04.png" />
 
-<img src="/科学上网/科学上网05.png" />
+<img src="/imgs/科学上网/科学上网05.png" />
 
 #### 3.1.2 Clash for Windows
 
@@ -126,27 +124,25 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 - Trojan-Go
 - NaiveProxy
 
-<img src="/科学上网/Qv2ray-01.png" />
+<img src="/imgs/科学上网/Qv2ray-01.png" />
 
-<img src="/科学上网/Qv2ray-02.png" />
+<img src="/imgs/科学上网/Qv2ray-02.png" />
 
-<img src="/科学上网/Qv2ray-03.png" />
+<img src="/imgs/科学上网/Qv2ray-03.png" />
 
-<img src="/科学上网/Qv2ray-04.png" />
+<img src="/imgs/科学上网/Qv2ray-04.png" />
 
-<img src="/科学上网/Qv2ray-05.png" />
+<img src="/imgs/科学上网/Qv2ray-05.png" />
 
-<img src="/科学上网/Qv2ray-06.png" />
+<img src="/imgs/科学上网/Qv2ray-06.png" />
 
-<img src="/科学上网/Qv2ray-07.png" />
+<img src="/imgs/科学上网/Qv2ray-07.png" />
 
-<img src="/科学上网/Qv2ray-08.png" />
+<img src="/imgs/科学上网/Qv2ray-08.png" />
 
-<img src="/科学上网/Qv2ray-09.png" />
+<img src="/imgs/科学上网/Qv2ray-09.png" />
 
 `QvTrojanGoPlugin.v1.0.1.Windows-x64.dll`、`QvTrojanPlugin.v2.0.0.Windows-x64.dll`
-
-
 
 ### 安卓
 
@@ -163,10 +159,6 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 #### Clash for Android
 
 [下载](https://github.com/Kr328/ClashForAndroid/releases)
-
-#### AnXray
-
-[下载](https://github.com/XTLS/AnXray/releases)
 
 #### SagerNet
 
