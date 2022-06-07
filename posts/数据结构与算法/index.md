@@ -1003,22 +1003,28 @@ class TreeNode {
     - 极大连通子图：
 - 二分图：能将所有顶点分为两个部分的图，每条边的两个顶点分别属于不同的部分。
 
-### 定义
+### 图的存储
 
 ```java
-// 结点
-class Vertex {
-    int id;
-    List<Vertex> neighbors;
-}
-// 邻接表 无边权
+// 1.邻接表（无边权）
+// adjList1[u] 表示顶点 u 的相邻顶点
 List<Integer>[] adjList1;
-// 邻接表 有边权
+
+// 2.邻接表 有边权
+// adjList2[u] = { {v1, w1}, {v2, w2} ... } 表示顶点 u 的相邻顶点
 List<int[]>[] adjList2;
-// 邻接表，查询效率更高
+
+// 3.邻接表（无边权，可快速查询某顶点是否相邻）
+// adjSet[u] 表示顶点 u 的相邻顶点
 TreeSet<Integer>[] adjSet;
-// 邻接矩阵
+
+// 4.邻接矩阵
+// adjMat[u][v] 表示顶点 u 到 顶点 v 的边的权值。
 int[][] adjMat;
+
+// 5.边集数组
+// edges[i] = { u, v, w } 表示第 i 条边，从顶点 u 到 顶点 v，权值为 w。
+int[][] edges;
 ```
 
 - 邻接表
@@ -1030,21 +1036,25 @@ int[][] adjMat;
     - 缺点：可以快速判断两个节点是否相邻
     - 适用于稠密图
 
+#### 链式邻接表
+
+```java
+
+```
+
 ### 遍历
 
 #### DFS
 
 ```java
-boolean[] vis;
+boolean[] vis;                                   // 判断顶点是否访问过，
 Deque<Integer> trace;                            // 记录当前路径
 boolean[] onPath;                                // 判断某顶点是否在当前路径上
 List<List<Integer>> traces = new LinkedList<>(); // 记录所有路径
 
 // 邻接表
 void dfs(List<Integer>[] graph, int begin, int end) {
-    if (vis[begin]) {
-        return;
-    }
+    // ===== 1.进入当前顶点
     // 访问当前顶点
     vis[begin] = true;
     onPath[begin] = true;
@@ -1059,12 +1069,15 @@ void dfs(List<Integer>[] graph, int begin, int end) {
         trace.pollLast();
         return;
     }
-    // 下个顶点
+    // 继续遍历
     for (int next : graph[begin]) {
         if (!vis[next]) {
+            // ===== 2.进入相邻顶点
             dfs(graph, next, end);
+            // ===== 3.从相邻顶点返回
         }
     }
+    // ===== 4.离开当前顶点
     // 回溯
     vis[begin] = false;
     onPath[begin] = false;
