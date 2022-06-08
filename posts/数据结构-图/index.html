@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">数据结构-图 - </title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="数据结构-图" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-08T16:51:46+08:00" />
+<meta property="article:modified_time" content="2022-06-08T13:51:39+00:00" /><meta property="og:site_name" content="traXe" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据结构-图"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="traXe">
+<meta name="apple-mobile-web-app-title" content="traXe">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/" /><link rel="prev" href="https://backtraxe.github.io/posts/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/" /><link rel="next" href="https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%93%BE%E8%A1%A8/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript>
+    
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "数据结构-图",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE\/"
+        },"genre": "posts","wordcount":  2614 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE\/","datePublished": "2022-06-08T16:51:46+08:00","dateModified": "2022-06-08T13:51:39+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Backtraxe"},"author": {
+                "@type": "Person",
+                "name": "Backtraxe"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">traXe</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/series/"> 系列 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/backtraxe" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" title="Select Language" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">traXe</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/series/" title="">系列</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/backtraxe" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="#" onclick="return false;" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" title="Select Language" onchange="location = this.value;"><option value="/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#术语表">术语表</a></li>
+        <li><a href="#图的存储">图的存储</a>
+          <ul>
+            <li><a href="#链式邻接表">链式邻接表</a></li>
+            <li><a href="#链式前向星">链式前向星</a></li>
+          </ul>
+        </li>
+        <li><a href="#图的遍历">图的遍历</a>
+          <ul>
+            <li><a href="#深度优先搜索dfs">深度优先搜索（DFS）</a></li>
+            <li><a href="#广度优先搜索bfs">广度优先搜索（BFS）</a></li>
+          </ul>
+        </li>
+        <li><a href="#flood-fill">Flood Fill</a>
+          <ul>
+            <li><a href="#岛屿数量">岛屿数量</a></li>
+            <li><a href="#封闭岛屿的数量">封闭岛屿的数量</a></li>
+            <li><a href="#1020-飞地的数量">1020. 飞地的数量</a></li>
+            <li><a href="#695-岛屿的最大面积">695. 岛屿的最大面积</a></li>
+            <li><a href="#1905-统计子岛屿">1905. 统计子岛屿</a></li>
+            <li><a href="#694-不同岛屿的数量">694. 不同岛屿的数量</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "wide")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">数据结构-图</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><i class="far fa-folder fa-fw"></i>数据结构</a>&nbsp;<a href="/categories/%E5%9B%BE/"><i class="far fa-folder fa-fw"></i>图</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-08">2022-06-08</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-06-08">2022-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2614 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#术语表">术语表</a></li>
+        <li><a href="#图的存储">图的存储</a>
+          <ul>
+            <li><a href="#链式邻接表">链式邻接表</a></li>
+            <li><a href="#链式前向星">链式前向星</a></li>
+          </ul>
+        </li>
+        <li><a href="#图的遍历">图的遍历</a>
+          <ul>
+            <li><a href="#深度优先搜索dfs">深度优先搜索（DFS）</a></li>
+            <li><a href="#广度优先搜索bfs">广度优先搜索（BFS）</a></li>
+          </ul>
+        </li>
+        <li><a href="#flood-fill">Flood Fill</a>
+          <ul>
+            <li><a href="#岛屿数量">岛屿数量</a></li>
+            <li><a href="#封闭岛屿的数量">封闭岛屿的数量</a></li>
+            <li><a href="#1020-飞地的数量">1020. 飞地的数量</a></li>
+            <li><a href="#695-岛屿的最大面积">695. 岛屿的最大面积</a></li>
+            <li><a href="#1905-统计子岛屿">1905. 统计子岛屿</a></li>
+            <li><a href="#694-不同岛屿的数量">694. 不同岛屿的数量</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="术语表" class="headerLink">
+    <a href="#%e6%9c%af%e8%af%ad%e8%a1%a8" class="header-mark"></a>术语表</h3><ul>
+<li>图（graph）</li>
+<li>边（edge）：连接两个顶点。
+<ul>
+<li>自环：起点和终点是同一个顶点的边。</li>
+<li>平行边：连接同一对顶点的两条边。</li>
+</ul>
+</li>
+<li>顶点（vertex）</li>
+<li>度（degree）：顶点连接的边的数量。
+<ul>
+<li>入度（in degree）：有向图专有，终点是当前顶点的边的数量。</li>
+<li>出度（out degree）：有向图专有，起点是当前顶点的边的数量。</li>
+</ul>
+</li>
+<li>路径（path）：由边连接的一系列顶点。
+<ul>
+<li>简单路径：无重复顶点的路径。</li>
+</ul>
+</li>
+<li>环：起点和终点相同的路径。
+<ul>
+<li>简单环：无重复顶点的环。</li>
+</ul>
+</li>
+</ul>
+<p>是否存在平行边：</p>
+<ul>
+<li>简单图：无平行边的图。</li>
+<li>多重图：存在平行边的图。</li>
+</ul>
+<p>边是否存在方向：</p>
+<ul>
+<li>
+<p>有向图：边有方向。</p>
+</li>
+<li>
+<p>无向图：边无方向。</p>
+</li>
+<li>
+<p>无环图：不存在环的图。</p>
+</li>
+<li>
+<p>子图：边和连接的顶点的子集。</p>
+</li>
+<li>
+<p>连通图：任意一个顶点都存在路径到达另一个任意顶点。</p>
+<ul>
+<li>连通子图：</li>
+<li>极大连通子图：</li>
+</ul>
+</li>
+<li>
+<p>二分图：能将所有顶点分为两个部分的图，每条边的两个顶点分别属于不同的部分。</p>
+</li>
+</ul>
+<h3 id="图的存储" class="headerLink">
+    <a href="#%e5%9b%be%e7%9a%84%e5%ad%98%e5%82%a8" class="header-mark"></a>图的存储</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 1.邻接表（无边权）
+</span></span></span><span class="line"><span class="cl"><span class="c1">// adjList1[u] 表示顶点 u 的相邻顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">adjList1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2.邻接表 有边权
+</span></span></span><span class="line"><span class="cl"><span class="c1">// adjList2[u] = { {v1, w1}, {v2, w2} ... } 表示顶点 u 的相邻顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;[]</span> <span class="n">adjList2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 3.邻接表（无边权，可快速查询某顶点是否相邻）
+</span></span></span><span class="line"><span class="cl"><span class="c1">// adjSet[u] 表示顶点 u 的相邻顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">adjSet</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 4.邻接矩阵
+</span></span></span><span class="line"><span class="cl"><span class="c1">// adjMat[u][v] 表示顶点 u 到 顶点 v 的边的权值。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">adjMat</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 5.边集数组
+</span></span></span><span class="line"><span class="cl"><span class="c1">// edges[i] = { u, v, w } 表示第 i 条边，从顶点 u 到 顶点 v，权值为 w。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">edges</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>邻接表
+<ul>
+<li>优点：占用的空间少</li>
+<li>缺点：无法快速判断两个节点是否相邻</li>
+<li>适用于稀疏图</li>
+</ul>
+</li>
+<li>邻接矩阵
+<ul>
+<li>优点：占用的空间多</li>
+<li>缺点：可以快速判断两个节点是否相邻</li>
+<li>适用于稠密图</li>
+</ul>
+</li>
+</ul>
+<h4 id="链式邻接表" class="headerLink">
+    <a href="#%e9%93%be%e5%bc%8f%e9%82%bb%e6%8e%a5%e8%a1%a8" class="header-mark"></a>链式邻接表</h4><p><strong>实现</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 边的定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">Edge</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 起点，终点，边权
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">u</span><span class="o">,</span> <span class="n">v</span><span class="o">,</span> <span class="n">w</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 边集数组
+</span></span></span><span class="line"><span class="cl"><span class="c1">// edges[j] 存储第 j 条边的 { 起点 u，终点 v，边权 w }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Edge</span><span class="o">[]</span> <span class="n">edges</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 或者 int[][] edges;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 表头数组
+</span></span></span><span class="line"><span class="cl"><span class="c1">// adjEdges[u] 存储 u 点的所有出边的编号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">adjEdges</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>可视化</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">输入：
+</span></span><span class="line"><span class="cl">6 5
+</span></span><span class="line"><span class="cl">4 3 90
+</span></span><span class="line"><span class="cl">1 4 30
+</span></span><span class="line"><span class="cl">5 6 60
+</span></span><span class="line"><span class="cl">1 5 20
+</span></span><span class="line"><span class="cl">5 2 70
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">边集数组：
+</span></span><span class="line"><span class="cl">0 { 4, 3, 90 }
+</span></span><span class="line"><span class="cl">1 { 3, 4, 90 }
+</span></span><span class="line"><span class="cl">2 { 1, 4, 30 }
+</span></span><span class="line"><span class="cl">3 { 4, 1, 30 }
+</span></span><span class="line"><span class="cl">4 { 5, 6, 60 }
+</span></span><span class="line"><span class="cl">5 { 6, 5, 60 }
+</span></span><span class="line"><span class="cl">6 { 1, 5, 20 }
+</span></span><span class="line"><span class="cl">7 { 5, 1, 20 }
+</span></span><span class="line"><span class="cl">8 { 5, 2, 70 }
+</span></span><span class="line"><span class="cl">9 { 2, 5, 70 }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">表头数组：
+</span></span><span class="line"><span class="cl">1 { 2, 6 }
+</span></span><span class="line"><span class="cl">2 { 9 }
+</span></span><span class="line"><span class="cl">3 { 1 }
+</span></span><span class="line"><span class="cl">4 { 0, 3 }
+</span></span><span class="line"><span class="cl">5 { 4, 7, 8 }
+</span></span><span class="line"><span class="cl">6 { 5 }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>特点</strong></p>
+<ul>
+<li>空间复杂度：$O(n+m)$</li>
+<li>适用于各种图。</li>
+<li>能够处理反向边，边的编号与 1 异或得到反向边。</li>
+</ul>
+<h4 id="链式前向星" class="headerLink">
+    <a href="#%e9%93%be%e5%bc%8f%e5%89%8d%e5%90%91%e6%98%9f" class="header-mark"></a>链式前向星</h4><p><strong>实现</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 边的定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">Edge</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 终点，边权，下一条边的编号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">v</span><span class="o">,</span> <span class="n">w</span><span class="o">,</span> <span class="n">ne</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 边集数组
+</span></span></span><span class="line"><span class="cl"><span class="c1">// edges[j] 存储第 j 条边的 { 终点 v，边权 w，下一条边的编号 ne }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Edge</span><span class="o">[]</span> <span class="n">edges</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 或者 int[][] edges;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 表头数组
+</span></span></span><span class="line"><span class="cl"><span class="c1">// firstEdge[u] 存储 u 点的第一条出边的编号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">[]</span> <span class="n">firstEdge</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 添加边
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">addEdge</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">u</span><span class="o">,</span> <span class="kt">int</span> <span class="n">v</span><span class="o">,</span> <span class="kt">int</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Edge</span> <span class="n">e</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Edge</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">e</span><span class="o">.</span><span class="na">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">e</span><span class="o">.</span><span class="na">w</span> <span class="o">=</span> <span class="n">w</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 头插法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">e</span><span class="o">.</span><span class="na">ne</span> <span class="o">=</span> <span class="n">firstEdge</span><span class="o">[</span><span class="n">u</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">edges</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">firstEdge</span><span class="o">[</span><span class="n">u</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>可视化</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">输入：
+</span></span><span class="line"><span class="cl">6 5
+</span></span><span class="line"><span class="cl">4 3 90
+</span></span><span class="line"><span class="cl">1 4 30
+</span></span><span class="line"><span class="cl">5 6 60
+</span></span><span class="line"><span class="cl">1 5 20
+</span></span><span class="line"><span class="cl">5 2 70
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">边集数组：
+</span></span><span class="line"><span class="cl">0 { 3, 90 }
+</span></span><span class="line"><span class="cl">1 { 3, 4, 90 }
+</span></span><span class="line"><span class="cl">2 { 1, 4, 30 }
+</span></span><span class="line"><span class="cl">3 { 4, 1, 30 }
+</span></span><span class="line"><span class="cl">4 { 5, 6, 60 }
+</span></span><span class="line"><span class="cl">5 { 6, 5, 60 }
+</span></span><span class="line"><span class="cl">6 { 1, 5, 20 }
+</span></span><span class="line"><span class="cl">7 { 5, 1, 20 }
+</span></span><span class="line"><span class="cl">8 { 5, 2, 70 }
+</span></span><span class="line"><span class="cl">9 { 2, 5, 70 }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">表头数组：
+</span></span><span class="line"><span class="cl">1 { 2, 6 }
+</span></span><span class="line"><span class="cl">2 { 9 }
+</span></span><span class="line"><span class="cl">3 { 1 }
+</span></span><span class="line"><span class="cl">4 { 0, 3 }
+</span></span><span class="line"><span class="cl">5 { 4, 7, 8 }
+</span></span><span class="line"><span class="cl">6 { 5 }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>特点</strong></p>
+<ul>
+<li>空间复杂度：$O(n+m)$</li>
+<li></li>
+</ul>
+<h3 id="图的遍历" class="headerLink">
+    <a href="#%e5%9b%be%e7%9a%84%e9%81%8d%e5%8e%86" class="header-mark"></a>图的遍历</h3><h4 id="深度优先搜索dfs" class="headerLink">
+    <a href="#%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%85%88%e6%90%9c%e7%b4%a2dfs" class="header-mark"></a>深度优先搜索（DFS）</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">boolean</span><span class="o">[]</span> <span class="n">vis</span><span class="o">;</span>                                   <span class="c1">// 判断顶点是否访问过，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Deque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">trace</span><span class="o">;</span>                            <span class="c1">// 记录当前路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">onPath</span><span class="o">;</span>                                <span class="c1">// 判断某顶点是否在当前路径上
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">traces</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span> <span class="c1">// 记录所有路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 邻接表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">int</span> <span class="n">begin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ===== 1.进入当前顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 访问当前顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trace</span><span class="o">.</span><span class="na">offerLast</span><span class="o">(</span><span class="n">begin</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 到达终点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">begin</span> <span class="o">==</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 防止已添加路径被修改
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">traces</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;(</span><span class="n">trace</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">trace</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 继续遍历
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">next</span> <span class="o">:</span> <span class="n">graph</span><span class="o">[</span><span class="n">begin</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(!</span><span class="n">vis</span><span class="o">[</span><span class="n">next</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// ===== 2.进入相邻顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">dfs</span><span class="o">(</span><span class="n">graph</span><span class="o">,</span> <span class="n">next</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// ===== 3.从相邻顶点返回
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ===== 4.离开当前顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trace</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">boolean</span><span class="o">[]</span> <span class="n">vis</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Deque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">trace</span><span class="o">;</span>                            <span class="c1">// 记录当前路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">onPath</span><span class="o">;</span>                                <span class="c1">// 判断某顶点是否在当前路径上
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">traces</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span> <span class="c1">// 记录所有路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 邻接矩阵
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">graph</span><span class="o">,</span> <span class="kt">int</span> <span class="n">begin</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 访问当前顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trace</span><span class="o">.</span><span class="na">offerLast</span><span class="o">(</span><span class="n">begin</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 到达终点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">begin</span> <span class="o">==</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 防止已添加路径被修改
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">traces</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;(</span><span class="n">trace</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">trace</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 下个顶点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">next</span> <span class="o">&lt;</span> <span class="n">graph</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">next</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(!</span><span class="n">vis</span><span class="o">[</span><span class="n">next</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">graph</span><span class="o">[</span><span class="n">begin</span><span class="o">][</span><span class="n">next</span><span class="o">]</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dfs</span><span class="o">(</span><span class="n">graph</span><span class="o">,</span> <span class="n">next</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 回溯
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vis</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">onPath</span><span class="o">[</span><span class="n">begin</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trace</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="广度优先搜索bfs" class="headerLink">
+    <a href="#%e5%b9%bf%e5%ba%a6%e4%bc%98%e5%85%88%e6%90%9c%e7%b4%a2bfs" class="header-mark"></a>广度优先搜索（BFS）</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">开始节点</span> <span class="n">s</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span> <span class="o">=</span> <span class="n">队列</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vis</span> <span class="o">=</span> <span class="n">集合</span><span class="o">/</span><span class="n">哈希表</span><span class="o">/</span><span class="n">布尔数组</span>
+</span></span><span class="line"><span class="cl">    <span class="n">将s添加到q中</span>
+</span></span><span class="line"><span class="cl">    <span class="n">将s添加到vis中</span><span class="o">/</span><span class="n">标记s为已访问</span>
+</span></span><span class="line"><span class="cl">    <span class="n">步数</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">q非空</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">q的每一个节点</span><span class="err">，</span><span class="n">记为h</span> <span class="c1"># 每次清空队列</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">满足结束条件</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">h的每个相邻节点x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">x未在vis中</span><span class="o">/</span><span class="n">x未访问</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">将x添加到q中</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">将x添加到vis中</span><span class="o">/</span><span class="n">标记x为已访问</span>
+</span></span><span class="line"><span class="cl">        <span class="n">步数</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 双向BFS</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">BiBFS</span><span class="p">(</span><span class="n">开始节点</span> <span class="n">s</span><span class="err">，</span><span class="n">结束节点</span> <span class="n">e</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s1</span> <span class="o">=</span> <span class="n">从s开始的搜索集合</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s2</span> <span class="o">=</span> <span class="n">从e开始的搜索集合</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vis</span> <span class="o">=</span> <span class="n">集合</span><span class="o">/</span><span class="n">哈希表</span><span class="o">/</span><span class="n">布尔数组</span>
+</span></span><span class="line"><span class="cl">    <span class="n">将s添加到s1中</span>
+</span></span><span class="line"><span class="cl">    <span class="n">将s添加到vis中</span><span class="o">/</span><span class="n">标记s为已访问</span>
+</span></span><span class="line"><span class="cl">    <span class="n">将e添加到s2中</span>
+</span></span><span class="line"><span class="cl">    <span class="n">将e添加到vis中</span><span class="o">/</span><span class="n">标记e为已访问</span>
+</span></span><span class="line"><span class="cl">    <span class="n">步数</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">s1非空</span> <span class="ow">and</span> <span class="n">s2非空</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">s1中元素比s2多</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 交换s1和s2</span>
+</span></span><span class="line"><span class="cl">            <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s3</span> <span class="o">=</span> <span class="n">过渡集合</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">s1的每一个节点</span><span class="err">，</span><span class="n">记为h</span> <span class="c1"># 每次清空队列</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">h在s2中存在</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">h的每个相邻节点x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">x未在vis中</span><span class="o">/</span><span class="n">x未访问</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">将x添加到s3中</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">将x添加到vis中</span><span class="o">/</span><span class="n">标记x为已访问</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 交换q1和q2（一边一轮）</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s1</span> <span class="o">=</span> <span class="n">s2</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s2</span> <span class="o">=</span> <span class="n">s3</span>
+</span></span><span class="line"><span class="cl">        <span class="n">步数</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="flood-fill" class="headerLink">
+    <a href="#flood-fill" class="header-mark"></a>Flood Fill</h3><h4 id="岛屿数量" class="headerLink">
+    <a href="#%e5%b2%9b%e5%b1%bf%e6%95%b0%e9%87%8f" class="header-mark"></a>岛屿数量</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span> <span class="n">dx</span> <span class="o">=</span> <span class="o">{</span><span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="o">-</span><span class="n">1</span><span class="o">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span> <span class="n">dy</span> <span class="o">=</span> <span class="o">{</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="o">-</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="n">n</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">numIslands</span><span class="o">(</span><span class="kt">char</span><span class="o">[][]</span> <span class="n">grid</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="n">grid</span><span class="o">[</span><span class="n">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">m</span><span class="o">][</span><span class="n">n</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;1&#39;</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">visited</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">res</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dfs</span><span class="o">(</span><span class="n">grid</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">,</span> <span class="n">visited</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="kt">char</span><span class="o">[][]</span> <span class="n">grid</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">visited</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">m</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">||</span> <span class="n">visited</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">||</span> <span class="n">grid</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;0&#39;</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">4</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">nextX</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">nextY</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dfs</span><span class="o">(</span><span class="n">grid</span><span class="o">,</span> <span class="n">nextX</span><span class="o">,</span> <span class="n">nextY</span><span class="o">,</span> <span class="n">visited</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="封闭岛屿的数量" class="headerLink">
+    <a href="#%e5%b0%81%e9%97%ad%e5%b2%9b%e5%b1%bf%e7%9a%84%e6%95%b0%e9%87%8f" class="header-mark"></a>封闭岛屿的数量</h4><p>将靠边的岛屿变为水，剩下的就是「封闭岛屿」。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">grid</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">m</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">||</span> <span class="n">grid</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">grid</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="c1">// 淹没
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">4</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">nextX</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">nextY</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dfs</span><span class="o">(</span><span class="n">grid</span><span class="o">,</span> <span class="n">nextX</span><span class="o">,</span> <span class="n">nextY</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="1020-飞地的数量" class="headerLink">
+    <a href="#1020-%e9%a3%9e%e5%9c%b0%e7%9a%84%e6%95%b0%e9%87%8f" class="header-mark"></a>1020. 飞地的数量</h4><p>先把靠边的陆地淹掉，然后去数剩下的陆地数量。</p>
+<h4 id="695-岛屿的最大面积" class="headerLink">
+    <a href="#695-%e5%b2%9b%e5%b1%bf%e7%9a%84%e6%9c%80%e5%a4%a7%e9%9d%a2%e7%a7%af" class="header-mark"></a>695. 岛屿的最大面积</h4><p>淹没岛屿的同时，记录这个岛屿的面积。</p>
+<h4 id="1905-统计子岛屿" class="headerLink">
+    <a href="#1905-%e7%bb%9f%e8%ae%a1%e5%ad%90%e5%b2%9b%e5%b1%bf" class="header-mark"></a>1905. 统计子岛屿</h4><p>岛屿 B 中存在一片陆地，在岛屿 A 的对应位置是海水，那么岛屿 B 就不是岛屿 A 的子岛。</p>
+<h4 id="694-不同岛屿的数量" class="headerLink">
+    <a href="#694-%e4%b8%8d%e5%90%8c%e5%b2%9b%e5%b1%bf%e7%9a%84%e6%95%b0%e9%87%8f" class="header-mark"></a>694. 不同岛屿的数量</h4><p>对于形状相同的岛屿，如果从同一起点出发，dfs 函数遍历的顺序肯定是一样的。</p>
+<p>分别用 1, 2, 3, 4 代表上下左右，用 -1, -2, -3, -4 代表上下左右的撤销。</p>
+<p>把二维矩阵中的「岛屿」进行转化，变成比如字符串这样的类型，然后利用 HashSet 这样的数据结构去重，最终得到不同的岛屿的个数。</p></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-06-08</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7/" class="prev" rel="prev" title="位运算技巧"><i class="fas fa-angle-left fa-fw"></i>位运算技巧</a>
+            <a href="/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%93%BE%E8%A1%A8/" class="next" rel="next" title="数据结构-链表">数据结构-链表<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/backtraxe" target="_blank" rel="noopener noreferrer">Backtraxe</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div><script>
+                    if('serviceWorker' in navigator) {
+                        navigator.serviceWorker
+                            .register('/sw.min.js', { scope: '/' })
+                            .then(function(registration) {
+                            });
+                
+                        navigator.serviceWorker
+                            .ready
+                            .then(function(registration) {
+                            });
+                    }
+                </script></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script></div>
+</body>
+
+</html>
