@@ -296,30 +296,23 @@ while (left < right)
 right = mid;
 ```
 
-- **大于等于/小于等于** vs **大于/小于**：
+- **大于等于** vs **小于等于** vs **大于** vs **小于**：
 
 ```java
-// 大于等于/小于等于
-if (nums[mid] < target)  // 大于等于
-if (nums[mid] > target)  // 小于等于
-
-// 大于/小于
-if (nums[mid] <= target) // 大于
-if (nums[mid] >= target) // 小于
-```
-
-- **大于等于/大于** vs **小于等于/小于**：
-
-```java
-// 大于等于/大于
-if (nums[mid] < target)  // 大于等于
-if (nums[mid] <= target) // 大于
+// 大于等于
+if (nums[mid] < target)
 return left;
 
-// 小于等于/小于
-if (nums[mid] > target)  // 小于等于
-if (nums[mid] >= target) // 小于
-return right;            // 闭区间
-return right - 1;        // 左闭右开
+// 小于等于
+if (nums[mid] > target)
+
+// 大于
+if (nums[mid] <= target)
+return left;
+
+ // 小于
+if (nums[mid] >= target)
+return right; // 闭区间
+return right - 1; // 左闭右开
 ```
 
