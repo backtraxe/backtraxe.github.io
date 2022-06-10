@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0069-x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-10T11:55:48+08:00" />
-<meta property="article:modified_time" content="2022-06-10T04:06:14+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-06-10T07:45:07+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="力扣 0069 X的平方根"/>
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E5%8A%9B%E6%89%A3-0069-x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9\/"
-        },"genre": "posts","keywords": "力扣, 数学, 二分","wordcount":  147 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/%E5%8A%9B%E6%89%A3-0069-x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9\/","datePublished": "2022-06-10T11:55:48+08:00","dateModified": "2022-06-10T04:06:14+00:00","publisher": {
+        },"genre": "posts","keywords": "力扣, 数学, 二分查找, 牛顿迭代法","wordcount":  485 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/%E5%8A%9B%E6%89%A3-0069-x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9\/","datePublished": "2022-06-10T11:55:48+08:00","dateModified": "2022-06-10T07:45:07+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -123,13 +123,15 @@
         <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
     <li><a href="#方法一数学">方法一：数学</a></li>
+    <li><a href="#方法二二分查找">方法二：二分查找</a></li>
+    <li><a href="#方法三牛顿迭代法">方法三：牛顿迭代法</a></li>
   </ul>
 </nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "wide")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">力扣 0069 X的平方根</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E5%8A%9B%E6%89%A3/"><i class="far fa-folder fa-fw"></i>力扣</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-10">2022-06-10</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-06-10">2022-06-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 147 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-10">2022-06-10</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-06-10">2022-06-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 485 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -139,6 +141,8 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#方法一数学">方法一：数学</a></li>
+    <li><a href="#方法二二分查找">方法二：二分查找</a></li>
+    <li><a href="#方法三牛顿迭代法">方法三：牛顿迭代法</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p><a href="https://leetcode.cn/problems/sqrtx/" target="_blank" rel="noopener noreffer">69. x 的平方根</a></p>
@@ -169,7 +173,93 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div>
+</div><ul>
+<li>时间复杂度：$ O(1) $</li>
+</ul>
+<br />
+<h2 id="方法二二分查找" class="headerLink">
+    <a href="#%e6%96%b9%e6%b3%95%e4%ba%8c%e4%ba%8c%e5%88%86%e6%9f%a5%e6%89%be" class="header-mark"></a>方法二：二分查找</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">mySqrt</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="o">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">((</span><span class="kt">long</span><span class="o">)</span> <span class="n">mid</span> <span class="o">*</span> <span class="n">mid</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="o">)</span> <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">right</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>时间复杂度：$ O(\log x) $</li>
+</ul>
+<br />
+<h2 id="方法三牛顿迭代法" class="headerLink">
+    <a href="#%e6%96%b9%e6%b3%95%e4%b8%89%e7%89%9b%e9%a1%bf%e8%bf%ad%e4%bb%a3%e6%b3%95" class="header-mark"></a>方法三：牛顿迭代法</h2><ul>
+<li>由 $\sqrt{x} = z$ 得 $z^2-x=0 \ (z&gt;0)$，则 $z$ 为 $f(z)=z^2-x$ 的零点。</li>
+<li>我们任取一个 $z_0$ 作为初始值。</li>
+<li>在每一步的迭代中，我们找到函数图像上的点 $(z_i, f(z_i))$，过该点作一条斜率为该点导数 $f&rsquo;(z_i)=2z_i$ 的直线</li>
+</ul>
+<p>$$g(z)=2z_i(z-z_i)+f(z_i)=2z_iz-z_i^2-x$$</p>
+<ul>
+<li>该直线与 x 轴的交点为 $(z_{i+1},0)$，即 $(\frac{x+z_i^2}{2z_i},0)$。</li>
+<li>经过多次迭代后，$z_i$ 会逐渐接近零点。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">mySqrt</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">double</span> <span class="n">C</span> <span class="o">=</span> <span class="n">x</span><span class="o">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">double</span> <span class="n">xi</span> <span class="o">=</span> <span class="n">0</span><span class="o">.</span><span class="na">5</span> <span class="o">*</span> <span class="o">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">C</span> <span class="o">/</span> <span class="n">x0</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">x0</span> <span class="o">-</span> <span class="n">xi</span><span class="o">)</span> <span class="o">&lt;</span> <span class="n">1e</span><span class="o">-</span><span class="n">7</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x0</span> <span class="o">=</span> <span class="n">xi</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">x0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>时间复杂度：$ O(\log x) $</li>
+</ul></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -188,7 +278,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%8A%9B%E6%89%A3/">力扣</a>,&nbsp;<a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>,&nbsp;<a href="/tags/%E4%BA%8C%E5%88%86/">二分</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%8A%9B%E6%89%A3/">力扣</a>,&nbsp;<a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>,&nbsp;<a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">二分查找</a>,&nbsp;<a href="/tags/%E7%89%9B%E9%A1%BF%E8%BF%AD%E4%BB%A3%E6%B3%95/">牛顿迭代法</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
