@@ -1,9 +1,9 @@
 # 力扣 0069 X的平方根
 
 
-<!--more-->
-
 [69. x 的平方根](https://leetcode.cn/problems/sqrtx/)
+
+<!--more-->
 
 ## 方法一：数学
 
@@ -61,15 +61,13 @@ $$g(z)=2z_i(z-z_i)+f(z_i)=2z_iz-z_i^2-x$$
 class Solution {
     public int mySqrt(int x) {
         if (x == 0) return 0;
-        double C = x, x0 = x;
+        double z0 = x;
         while (true) {
-            double xi = 0.5 * (x0 + C / x0);
-            if (Math.abs(x0 - xi) < 1e-7) {
-                break;
-            }
-            x0 = xi;
+            double zi = (x + z0 * z0) / (2 * z0);
+            if (Math.abs(z0 - zi) < 1e-7) break;
+            z0 = zi;
         }
-        return (int) x0;
+        return (int) z0;
     }
 }
 ```
