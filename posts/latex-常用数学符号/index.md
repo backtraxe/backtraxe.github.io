@@ -28,7 +28,9 @@
 |$\Psi$|`\Psi`|$\psi$|`\psi`|
 |$\Omega$|`\Omega`|$\omega$|`\omega`|
 
-$$\mathcal{L}、\mathbf{L}、\mathbb{L}、\ell、\mathrm{L}、\mathsf{L}、\mathtt{L}、\mathit{L}、\mathfrak{L}、\mathscr{L}$$
+## 字体
+
+$\mathcal{L}、\mathbf{L}、\mathbb{L}、\ell、\mathrm{L}、\mathsf{L}、\mathtt{L}、\mathit{L}、\mathfrak{L}、\mathscr{L}$
 
 ## 特殊符号
 
@@ -51,14 +53,6 @@ $$\mathcal{L}、\mathbf{L}、\mathbb{L}、\ell、\mathrm{L}、\mathsf{L}、\math
 |$_u^o$|`_u^o`|上下标|
 |$\overset{N}{\sum}$|`\overset{N}{\sum}`|正上标|
 |$\underset{i=1}{\sum}$|`\underset{i=1}{\sum}`|正下标|
-|$$|``||
-
-## 字体
-
-|符号|代码|解释|
-|:-:|:-:|:-:|
-|$\sqrt{x}$|`\sqrt{x}`|平方根|
-|$\sqrt[3]{x}$|`\sqrt[3]{x}`|三次方根|
 |$$|``||
 
 ## 逻辑符与集合论
@@ -132,7 +126,8 @@ $$\mathcal{L}、\mathbf{L}、\mathbb{L}、\ell、\mathrm{L}、\mathsf{L}、\math
 |$\sin$|`\sin`||
 |$\cos$|`\cos`||
 |$\tan$|`\tan`||
-|$$|``||
+|$\sqrt{x}$|`\sqrt{x}`|平方根|
+|$\sqrt[3]{x}$|`\sqrt[3]{x}`|三次方根|
 
 ## 矩阵
 

@@ -51,6 +51,8 @@ def fib(n):
 
 ### 数位DP
 
+## 实战
+
 ### 最长递增子序列（LIS）
 
 Longest Increasing Subsequence
@@ -138,5 +140,27 @@ int lengthOfLIS(int[] nums) {
     }
     return len;
 }
+```
+
+<br />
+
+### 统计不同回文子序列
+
+[730. 统计不同回文子序列](https://leetcode.cn/problems/count-different-palindromic-subsequences/)
+
+**方法一：三维DP**
+
+- `dp[x][i][j]`表示在字符串区间`s[i:j]（包含j）`中以字符`x`开头和结尾的不同回文串数量。
+- 则答案为求 $\sum_{i=0}^Cdp[x_i][0][n-1] \bmod 1000000007$，其中 $x_i \in S$，
+-
+
+```java
+
+```
+
+**方法二：二维DP**
+
+```java
+
 ```
 
