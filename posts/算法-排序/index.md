@@ -3,7 +3,93 @@
 
 <!--more-->
 
-### 10.1 选择排序
+## 1.基础
+
+### 1.1 术语介绍
+
+- **稳定排序**：相同大小的元素在排序前后保持相对顺序不变。
+- **不稳定排序**：相同大小的元素在排序前后的相对顺序发生变化。
+- **内部排序**：在内存中进行的排序。
+- **外部排序**：数据量太大不能全部读入内存，需要通过内存和磁盘结合进行的排序。
+
+<br />
+
+### 1.2 数组中元素交换的方法
+
+```java
+static void swap(int[] nums, int i, int j) {
+    int temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+}
+```
+
+```java
+static void swap(int[] nums, int i, int j) {
+    if (i == j) return;
+    nums[i] = nums[i] ^ nums[j];
+    nums[j] = nums[i] ^ nums[j];
+    nums[i] = nums[i] ^ nums[j];
+}
+```
+---
+
+## 2.冒泡排序
+
+### 2.1 原理
+
+1. 将整个数组划分为两个区域：未排序区、已排序区。数组左侧为未排序区，右侧为已排序区。
+2. 从左往右进行排序，当进行第一轮排序时，未排序区大小为 n，已排序区大小为 0。
+3. 每次比较相邻的两个数，若左侧的数字大于右侧的数字，则交换这两个数字。
+4. 当比较到未排序区的末尾时，未排序区的最后一个数字即为未排序区的最大数字，将其放入已排序区，则未排序区大小减 1，已排序区大小加 1，此时完成一轮排序。
+5. 当进行了 n - 1 轮排序后，未排序区的大小减为 1 时，排序结束。
+
+<br />
+
+### 2.2 优化
+
+- **限制区域（默认）**：每一轮只用比较未排序区的元素。当进行了 i 轮排序后，已排序区的大小为 i，未排序区的大小为 n - i。
+- **提前结束**：当某一轮未发生交换时，说明排序已经完成，可以提前结束。可设置一个布尔值记录一轮排序是否有发生交换。
+
+<br />
+
+### 2.3 代码
+
+```java
+// 未优化
+static void bubbleSort(int[] nums) {
+    int n = nums.length;
+    for (int epoch = 1; epoch < n; epoch++) {
+        for (int i = 0; i < n - epoch; i++) {
+            if (nums[i] > nums[i + 1]) {
+                swap(nums, i, i + 1);
+            }
+        }
+    }
+}
+```
+
+```java
+// 提前结束优化
+
+```
+
+<br />
+
+### 2.4 分析
+
+- 时间复杂度：$ O(n^2) $
+
+$$
+\sum_{epoch=1}^{n-1}\sum_{i=0}^{n-epoch-1}1=\sum_{epoch=1}^{n-1}(n-epoch-1)=
+$$
+
+- 空间复杂度：$ O(1) $
+- 稳定性：稳定
+
+---
+
+## 选择排序
 
 ```cpp
 void selectionSort(vector<int>& nums) {
@@ -333,7 +419,9 @@ static void swap(int[] arr, int i, int j) {
     </tr>
 </table>
 
-参考文章
+## 实战
+
+## 参考
 
 1. [当我谈排序时，我在谈些什么🤔](https://leetcode-cn.com/problems/sort-an-array/solution/dang-wo-tan-pai-xu-shi-wo-zai-tan-xie-shi-yao-by-s/)
 1. [复习基础排序算法（Java） - 排序数组 - 力扣（LeetCode）](https://leetcode-cn.com/problems/sort-an-array/solution/fu-xi-ji-chu-pai-xu-suan-fa-java-by-liweiwei1419/)
