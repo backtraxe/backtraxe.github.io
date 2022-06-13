@@ -50,13 +50,14 @@ static void swap(int[] nums, int i, int j) {
 
 - **限制区域（默认）**：每一轮只用比较未排序区的元素。当进行了 i 轮排序后，已排序区的大小为 i，未排序区的大小为 n - i。
 - **提前结束**：当某一轮未发生交换时，说明排序已经完成，可以提前结束。可设置一个布尔值记录一轮排序是否有发生交换。
+- **冒泡界优化**：若当前轮使多个元素有序，则下一轮只需比较之前的元素。
 
 <br />
 
 ### 2.3 代码
 
 ```java
-// 未优化
+// 1.未优化
 static void bubbleSort(int[] nums) {
     int n = nums.length;
     for (int epoch = 1; epoch < n; epoch++) {
@@ -70,8 +71,41 @@ static void bubbleSort(int[] nums) {
 ```
 
 ```java
-// 提前结束优化
+// 2.提前结束优化
+static void bubbleSort(int[] nums) {
+    int n = nums.length;
+    for (int epoch = 1; epoch < n; epoch++) {
+        boolean swapped = false;
+        for (int i = 0; i < n - epoch; i++) {
+            if (nums[i] > nums[i + 1]) {
+                swap(nums, i, i + 1);
+                swapped = true;
+            }
+        }
+        if (!swapped) break;
+    }
+}
+```
 
+```java
+// 3.冒泡界优化
+static void bubbleSort(int[] nums) {
+    int n = nums.length;
+    int firstSortedIndex = n - 1;
+    for (int epoch = 1; epoch < n; epoch++) {
+        boolean swapped = false;
+        int lastSwappedIndex;
+        for (int i = 0; i < firstSortedIndex; i++) {
+            if (nums[i] > nums[i + 1]) {
+                swap(nums, i, i + 1);
+                swapped = true;
+                lastSwappedIndex = i;
+            }
+        }
+        if (!swapped) break;
+        firstSortedIndex = lastSwappedIndex;
+    }
+}
 ```
 
 <br />
@@ -81,30 +115,25 @@ static void bubbleSort(int[] nums) {
 - 时间复杂度：$ O(n^2) $
 
 $$
-\sum_{epoch=1}^{n-1}\sum_{i=0}^{n-epoch-1}1=\sum_{epoch=1}^{n-1}(n-epoch-1)=
+\sum_{epoch=1}^{n-1}\sum_{i=0}^{n-epoch-1}1=\sum_{epoch=1}^{n-1}(n-epoch-1)=(n-2)+(n-3)+\cdots+0=\frac{(n-1)(n-2)}{2}
 $$
 
 - 空间复杂度：$ O(1) $
 - 稳定性：稳定
 
----
+<br />
 
-## 选择排序
+## 3.选择排序
 
-```cpp
-void selectionSort(vector<int>& nums) {
-    int n = nums.size();
-    for (int i = 0; i < n; i++) {
-        int minIdx = i;
-        for (int j = i + 1; j < n; j++) {
-            minIdx = (arr[j] < arr[minIdx]) ? j : minIdx;
-        }
-        int temp = arr[i];
-        arr[i] = arr[minIdx];
-        arr[minIdx] = temp;
-    }
-}
-```
+### 3.1 原理
+
+<br />
+
+### 3.2 优化
+
+<br />
+
+### 3.3 代码
 
 ```java
 void selectionSort(int[] nums) {
@@ -122,47 +151,24 @@ void selectionSort(int[] nums) {
     }
     return nums;
 }
-
-void swap(int[] nums, int a, int b) {
-    int temp = nums[a];
-    nums[a] = nums[b];
-    nums[b] = temp;
-}
 ```
 
-- 时间复杂度：$ O(n^2) $
-- 空间复杂度：$ O(1) $
+<br />
 
-特点：
-
-- 不稳定
-- 每一轮有一个元素（当前最小元素）归位
-
-### 10.2 冒泡排序
-
-```cpp
-void bubbleSort(vector<int>& arr) {
-    for (int step = 1; step < arr.size(); step++) {
-        for (int i = 0; i < arr.size() - step; i++) {
-            if (arr[i] > arr[i + 1]) {
-                int temp = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
-            }
-        }
-    }
-}
-```
+### 3.4 分析
 
 - 时间复杂度：$ O(n^2) $
+
+$$
+\sum_{epoch=1}^{n-1}\sum_{i=0}^{n-epoch-1}1=\sum_{epoch=1}^{n-1}(n-epoch-1)=(n-2)+(n-3)+\cdots+0=\frac{(n-1)(n-2)}{2}
+$$
+
 - 空间复杂度：$ O(1) $
+- 稳定性：不稳定
 
-特点：
+<br />
 
-- 稳定
-- 每一轮有一个元素（当前最大元素）归位
-
-### 10.3 插入排序
+## 4.插入排序
 
 ```cpp
 void insertionSort(vector<int>& arr) {
@@ -183,7 +189,13 @@ void insertionSort(vector<int>& arr) {
 
 - 稳定
 
-### 10.4 归并排序
+<br />
+
+## 5.希尔排序
+
+<br />
+
+## 6.归并排序
 
 #### 10.4.1 自顶向下
 
@@ -214,7 +226,7 @@ static void merge(int[] arr, int low, int mid, int high) {
 
 ```
 
-### 10.5 快速排序
+## 7.快速排序
 
 - 在数组中随机取出一个数，称之为基数（pivot）。
 - 遍历数组，将比基数大的数字放到它的右边，比基数小的数字放到它的左边。遍历完成后，数组被分成了左右两个区域。
@@ -287,15 +299,27 @@ static int[] partition(int[] arr, int low, int high) {
     }
     return new int[] { low, high };
 }
-
-static void swap(int[] arr, int i, int j) {
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-}
 ```
 
-### 总结
+<br />
+
+## 8.堆排序
+
+<br />
+
+## 9.计数排序
+
+<br />
+
+## 10.基数排序
+
+<br />
+
+## 11.桶排序
+
+<br />
+
+## 12.总结
 
 | 排序算法 | 时间复杂度 | 稳定性 |
 |:---:|:---:|:---:|
@@ -419,10 +443,11 @@ static void swap(int[] arr, int i, int j) {
     </tr>
 </table>
 
-## 实战
+## 13.实战
 
 ## 参考
 
 1. [当我谈排序时，我在谈些什么🤔](https://leetcode-cn.com/problems/sort-an-array/solution/dang-wo-tan-pai-xu-shi-wo-zai-tan-xie-shi-yao-by-s/)
 1. [复习基础排序算法（Java） - 排序数组 - 力扣（LeetCode）](https://leetcode-cn.com/problems/sort-an-array/solution/fu-xi-ji-chu-pai-xu-suan-fa-java-by-liweiwei1419/)
+1. [十大排序从入门到入赘 - 力扣（LeetCode）](https://leetcode.cn/circle/discuss/eBo9UB/)
 
