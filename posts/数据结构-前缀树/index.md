@@ -19,25 +19,77 @@
 **数组：**
 
 - 优点：访问结点快速。
-- 缺点：空间浪费。
+- 缺点：空间浪费。通过下标访问结点。
 
 **哈希表：**
 
-- 优点：通过字符来访问特定的子节点更为容易。
-- 缺点：
+- 优点：通过字符访问结点。节约空间。
+- 缺点：速度稍慢。
 
 ## 3.代码
 
 ```java
 class TrieNode {
-    static final int N = 26;
-    TrieNode[] children = new TrieNode[N];
+    static final int MAX_N = 26;
+    boolean isEnd = false;
+    TrieNode[] children = new TrieNode[MAX_N];
+}
+
+class Trie {
+    TrieNode root;
+
+    Trie() {
+        root = new TrieNode();
+    }
+
+    void insert(String s) {
+        // 插入字符串
+        TrieNode p = root;
+        for (char c : s.toCharArray()) {
+            int i = c - 'a';
+            if (p.children[i] == null)
+                p.children[i] = new TrieNode();
+            p = p.children[i];
+        }
+        p.isEnd = true;
+    }
+
+    boolean contains(String s) {
+        // 查找字符串 s 是否在树中
+        TrieNode p = root;
+        for (char c : s.toCharArray()) {
+            if (p.children[c - 'a'] == null)
+                return false;
+            p = p.children[c - 'a'];
+        }
+        return p.isEnd;
+    }
+
+    
 }
 ```
 
 ```java
 class TrieNode {
     Map<Character, TrieNode> children = new HashMap<>();
+    isEnd = false;
+}
+
+class Trie {
+    TrieNode root;
+
+    Trie() {
+        root = new TrieNode();
+    }
+
+    void insert(String s) {
+        TrieNode p = root;
+        for (char c : s.toCharArray()) {
+            p.children.putIfAbsent(c, new TrieNode());
+            p = p.children.get(c);
+        }
+        p.isEnd = true;
+    }
 }
 ```
 
