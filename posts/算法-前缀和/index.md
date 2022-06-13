@@ -3,7 +3,27 @@
 
 <!--more-->
 
-`prefixSum[high + 1] - prefixSum[low]`可以 $O(1)$ 的时间复杂度求出`nums`中`[low,high]`的区间和。
+## 1.介绍
+
+- 前缀和数组长度为原数组**长度加 1**
+- `nums[left] + nums[left + 1] + ... + nums[right] = prefixSum[right + 1] - prefixSum[left]`
+
+$$
+\sum_{i=left}^{right}nums[i]=prefixSum[right + 1]-prefixSum[left]
+$$
+
+<br />
+
+## 2.结果
+
+```text
+1 2 3 4 5     // nums
+0 1 3 6 10 15 // prefixSum
+```
+
+<br />
+
+## 3.代码
 
 ```java
 int[] getPrefixSum(int[] nums) {

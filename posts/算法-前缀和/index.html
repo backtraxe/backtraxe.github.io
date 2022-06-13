@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%89%8D%E7%BC%80%E5%92%8C/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-08T21:49:05+08:00" />
-<meta property="article:modified_time" content="2022-06-13T05:31:43+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-06-13T15:11:20+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="算法-前缀和"/>
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%89%8D%E7%BC%80%E5%92%8C\/"
-        },"genre": "posts","wordcount":  93 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%89%8D%E7%BC%80%E5%92%8C\/","datePublished": "2022-06-08T21:49:05+08:00","dateModified": "2022-06-13T05:31:43+00:00","publisher": {
+        },"genre": "posts","keywords": "算法, 前缀和","wordcount":  108 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%89%8D%E7%BC%80%E5%92%8C\/","datePublished": "2022-06-08T21:49:05+08:00","dateModified": "2022-06-13T15:11:20+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -120,21 +120,54 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents"></nav></div>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1介绍">1.介绍</a></li>
+    <li><a href="#2结果">2.结果</a></li>
+    <li><a href="#3代码">3.代码</a></li>
+  </ul>
+</nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "wide")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">算法-前缀和</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw"></i>算法</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-08">2022-06-08</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-06-13">2022-06-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 93 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-08">2022-06-08</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-06-13">2022-06-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 108 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p><code>prefixSum[high + 1] - prefixSum[low]</code>可以 $O(1)$ 的时间复杂度求出<code>nums</code>中<code>[low,high]</code>的区间和。</p>
-<div class="highlight"><div class="chroma">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1介绍">1.介绍</a></li>
+    <li><a href="#2结果">2.结果</a></li>
+    <li><a href="#3代码">3.代码</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1介绍" class="headerLink">
+    <a href="#1%e4%bb%8b%e7%bb%8d" class="header-mark"></a>1.介绍</h2><ul>
+<li>前缀和数组长度为原数组<strong>长度加 1</strong></li>
+<li><code>nums[left] + nums[left + 1] + ... + nums[right] = prefixSum[right + 1] - prefixSum[left]</code></li>
+</ul>
+<p>$$
+\sum_{i=left}^{right}nums[i]=prefixSum[right + 1]-prefixSum[left]
+$$</p>
+<br />
+<h2 id="2结果" class="headerLink">
+    <a href="#2%e7%bb%93%e6%9e%9c" class="header-mark"></a>2.结果</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">1 2 3 4 5     // nums
+</span></span><span class="line"><span class="cl">0 1 3 6 10 15 // prefixSum
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br />
+<h2 id="3代码" class="headerLink">
+    <a href="#3%e4%bb%a3%e7%a0%81" class="header-mark"></a>3.代码</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -175,7 +208,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>,&nbsp;<a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">前缀和</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -213,7 +246,8 @@
         </a>
     </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 
-<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script></div>
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":5,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
 </body>
 
 </html>
