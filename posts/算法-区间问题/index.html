@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-20T12:34:30+08:00" />
-<meta property="article:modified_time" content="2022-06-20T05:18:35+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-06-20T12:46:17+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="算法-区间问题"/>
@@ -20,7 +20,7 @@
 
 <meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" /><link rel="prev" href="https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0730-%E7%BB%9F%E8%AE%A1%E4%B8%8D%E5%90%8C%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" /><link rel="next" href="https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" /><link rel="prev" href="https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" /><link rel="next" href="https://backtraxe.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript>
     
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98\/"
-        },"genre": "posts","keywords": "算法, 区间合并","wordcount":  411 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98\/","datePublished": "2022-06-20T12:34:30+08:00","dateModified": "2022-06-20T05:18:35+00:00","publisher": {
+        },"genre": "posts","keywords": "算法, 区间合并","wordcount":  1032 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98\/","datePublished": "2022-06-20T12:34:30+08:00","dateModified": "2022-06-20T12:46:17+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -122,9 +122,10 @@
         <h2 class="toc-title">目录</h2>
         <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
-    <li><a href="#区间重叠">区间重叠</a></li>
-    <li><a href="#区间合并">区间合并</a></li>
-    <li><a href="#插入区间">插入区间</a></li>
+    <li><a href="#1区间重叠">1.区间重叠</a></li>
+    <li><a href="#2区间合并">2.区间合并</a></li>
+    <li><a href="#3插入区间">3.插入区间</a></li>
+    <li><a href="#4删除区间">4.删除区间</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav></div>
@@ -132,8 +133,8 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E7%AE%97%E6%B3%95/"><i class="far fa-folder fa-fw"></i>算法</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-20">2022-06-20</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-06-20">2022-06-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 411 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-20">2022-06-20</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-06-20">2022-06-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1032 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -141,16 +142,48 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#区间重叠">区间重叠</a></li>
-    <li><a href="#区间合并">区间合并</a></li>
-    <li><a href="#插入区间">插入区间</a></li>
+    <li><a href="#1区间重叠">1.区间重叠</a></li>
+    <li><a href="#2区间合并">2.区间合并</a></li>
+    <li><a href="#3插入区间">3.插入区间</a></li>
+    <li><a href="#4删除区间">4.删除区间</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="区间重叠" class="headerLink">
-    <a href="#%e5%8c%ba%e9%97%b4%e9%87%8d%e5%8f%a0" class="header-mark"></a>区间重叠</h2><br />
-<h2 id="区间合并" class="headerLink">
-    <a href="#%e5%8c%ba%e9%97%b4%e5%90%88%e5%b9%b6" class="header-mark"></a>区间合并</h2><p><a href="https://leetcode.cn/problems/merge-intervals/" target="_blank" rel="noopener noreffer">56. 合并区间</a></p>
+            </div><div class="content" id="content"><h2 id="1区间重叠" class="headerLink">
+    <a href="#1%e5%8c%ba%e9%97%b4%e9%87%8d%e5%8f%a0" class="header-mark"></a>1.区间重叠</h2><p><a href="https://leetcode.cn/problems/meeting-rooms" target="_blank" rel="noopener noreffer">252. 会议室</a></p>
+<ul>
+<li>按区间左端点升序排序。</li>
+<li>若下个区间的左端点小于上个区间的右端点，则两区间重叠。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">canAttendMeetings</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">intervals</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">intervals</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">-</span> <span class="n">b</span><span class="o">[</span><span class="n">0</span><span class="o">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">intervals</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">intervals</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">])</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br />
+<h2 id="2区间合并" class="headerLink">
+    <a href="#2%e5%8c%ba%e9%97%b4%e5%90%88%e5%b9%b6" class="header-mark"></a>2.区间合并</h2><p><a href="https://leetcode.cn/problems/merge-intervals/" target="_blank" rel="noopener noreffer">56. 合并区间</a></p>
 <p><strong>方法一：排序</strong></p>
 <ul>
 <li>按照区间的左端点升序排序。</li>
@@ -262,10 +295,139 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><br />
-<h2 id="插入区间" class="headerLink">
-    <a href="#%e6%8f%92%e5%85%a5%e5%8c%ba%e9%97%b4" class="header-mark"></a>插入区间</h2><h2 id="参考" class="headerLink">
+<h2 id="3插入区间" class="headerLink">
+    <a href="#3%e6%8f%92%e5%85%a5%e5%8c%ba%e9%97%b4" class="header-mark"></a>3.插入区间</h2><p><a href="https://leetcode.cn/problems/insert-interval/" target="_blank" rel="noopener noreffer">57. 插入区间</a></p>
+<ul>
+<li>二分查找待插入区间的左端点和右端点位置，合并这些区间。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">insert</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">intervals</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">newInterval</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">intervals</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 在 intervals 中查找最后一个右端点小于 newInterval 左端点的区间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 该区间（包含）及之前的区间不用合并
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">mid</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="o">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">mid</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">newInterval</span><span class="o">[</span><span class="n">0</span><span class="o">])</span> <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">start</span> <span class="o">=</span> <span class="n">right</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 在 intervals 中查找第一个左端点大于 newInterval 右端点的区间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 该区间（包含）及之后的区间不用合并
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">left</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">right</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="o">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">mid</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">newInterval</span><span class="o">[</span><span class="n">1</span><span class="o">])</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">end</span> <span class="o">=</span> <span class="n">left</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 合并区间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span><span class="o">[][]</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[(</span><span class="n">start</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">1</span> <span class="o">+</span> <span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">end</span><span class="o">)][</span><span class="n">2</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">start</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">ans</span><span class="o">[</span><span class="n">idx</span><span class="o">++]</span> <span class="o">=</span> <span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 防止越界, -1 &lt;= start &lt; n, 0 &lt;= end &lt;= n
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">ans</span><span class="o">[</span><span class="n">idx</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">newInterval</span><span class="o">[</span><span class="n">0</span><span class="o">],</span> <span class="n">start</span> <span class="o">+</span> <span class="n">1</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">?</span> <span class="n">intervals</span><span class="o">[</span><span class="n">start</span> <span class="o">+</span> <span class="n">1</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">:</span> <span class="n">newInterval</span><span class="o">[</span><span class="n">0</span><span class="o">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span><span class="o">[</span><span class="n">idx</span><span class="o">++][</span><span class="n">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">newInterval</span><span class="o">[</span><span class="n">1</span><span class="o">],</span> <span class="n">end</span> <span class="o">-</span> <span class="n">1</span> <span class="o">&gt;=</span> <span class="n">0</span> <span class="o">?</span> <span class="n">intervals</span><span class="o">[</span><span class="n">end</span> <span class="o">-</span> <span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">:</span> <span class="n">newInterval</span><span class="o">[</span><span class="n">1</span><span class="o">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">end</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">ans</span><span class="o">[</span><span class="n">idx</span><span class="o">++]</span> <span class="o">=</span> <span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br />
+<h2 id="4删除区间" class="headerLink">
+    <a href="#4%e5%88%a0%e9%99%a4%e5%8c%ba%e9%97%b4" class="header-mark"></a>4.删除区间</h2><p><a href="https://leetcode.cn/problems/non-overlapping-intervals/" target="_blank" rel="noopener noreffer">435. 无重叠区间</a></p>
+<ul>
+<li>按区间左端点升序排序。</li>
+<li>当两个区间重叠时，我们选择右端点更小的那个区间。（贪心）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">eraseOverlapIntervals</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">intervals</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">intervals</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">-</span> <span class="n">b</span><span class="o">[</span><span class="n">0</span><span class="o">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">intervals</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">intervals</span><span class="o">[</span><span class="n">pre</span><span class="o">][</span><span class="n">1</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// 区间重叠
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">if</span> <span class="o">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">intervals</span><span class="o">[</span><span class="n">pre</span><span class="o">][</span><span class="n">1</span><span class="o">])</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ans</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">pre</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br />
+<h2 id="参考" class="headerLink">
     <a href="#%e5%8f%82%e8%80%83" class="header-mark"></a>参考</h2><ul>
 <li><a href="https://mp.weixin.qq.com/s/ioUlNa4ZToCrun3qb4y4Ow" target="_blank" rel="noopener noreffer">秒懂力扣区间题目：重叠区间、合并区间、插入区间</a></li>
+<li><a href="https://leetcode.cn/problems/SsGoHC/solution/c-by-algo-goer-gzym/" target="_blank" rel="noopener noreffer">【C++】【高频考题】剑指 Offer II 074. 合并区间 题解：排序、扫描线基础题 - 合并区间 - 力扣（LeetCode）</a></li>
 </ul></div>
 
         <div class="post-footer" id="post-footer">
@@ -291,7 +453,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/%E5%8A%9B%E6%89%A3-0730-%E7%BB%9F%E8%AE%A1%E4%B8%8D%E5%90%8C%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="prev" rel="prev" title="力扣 0730 统计不同回文子序列"><i class="fas fa-angle-left fa-fw"></i>力扣 0730 统计不同回文子序列</a>
+    <div class="post-nav"><a href="/posts/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" class="prev" rel="prev" title="算法-贪心算法"><i class="fas fa-angle-left fa-fw"></i>算法-贪心算法</a>
             <a href="/posts/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="next" rel="next" title="学习资料🔝">学习资料🔝<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>

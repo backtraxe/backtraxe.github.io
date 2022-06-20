@@ -12,6 +12,13 @@
     </author><guid>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/</guid>
     <description><![CDATA[]]></description>
 </item><item>
+    <title>算法-贪心算法</title>
+    <link>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/</link>
+    <pubDate>Thu, 16 Jun 2022 16:03:49 &#43;0800</pubDate><author>
+        <name>Backtraxe</name>
+    </author><guid>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>算法-概率问题</title>
     <link>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E6%A6%82%E7%8E%87%E9%97%AE%E9%A2%98/</link>
     <pubDate>Thu, 09 Jun 2022 10:38:46 &#43;0800</pubDate><author>
@@ -66,13 +73,6 @@
     <pubDate>Wed, 08 Jun 2022 21:42:00 &#43;0800</pubDate><author>
         <name>Backtraxe</name>
     </author><guid>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>算法-约瑟夫环</title>
-    <link>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</link>
-    <pubDate>Wed, 08 Jun 2022 21:41:04 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
