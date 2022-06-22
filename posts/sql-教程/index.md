@@ -5,46 +5,38 @@
 
 <!--more-->
 
-## 一、数据库和表
+## 一、创建数据库和表
 
 > SQL关键字不区分大小写，为了区分可以使用大写（如：SELECT）。
 
-- 显示所有数据库：
-
 ```sql
-show databases;
-```
+-- 显示所有数据库
+SHOW DATABASES;
 
-- 选择数据库：
+-- 创建数据库
+create database <database>;
+create database if not exists <database>;
 
-```sql
+-- 选择数据库
 use <database>;
-```
 
-- 显示所有表：
-
-```sql
-show tables;
-```
-
-- 描述表中列信息：
-
-```sql
-describe <table>;
-show columns from <table>;
-```
-
-- 显示创建数据库的SQL语句：
-
-```sql
+-- 显示创建数据库的 SQL 语句
 show create database <database>;
 ```
 
-- 显示创建表的SQL语句：
-
 ```sql
+-- 显示当前数据库中的所有表
+show tables;
+
+-- 描述表中列信息
+describe <table>;
+show columns from <table>;
+
+-- 显示创建表的 SQL 语句
 show create table <table>;
 ```
+
+<br />
 
 ## 二、添加
 
