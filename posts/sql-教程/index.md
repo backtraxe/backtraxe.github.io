@@ -5,120 +5,124 @@
 
 <!--more-->
 
-## 一、创建数据库和表
+> SQL关键字不区分大小写。
 
-> SQL关键字不区分大小写，为了区分可以使用大写（如：SELECT）。
+## 一、数据库
+
+- **显示数据库**
 
 ```sql
--- 显示所有数据库
 SHOW DATABASES;
-
--- 创建数据库
-create database <database>;
-create database if not exists <database>;
-
--- 选择数据库
-use <database>;
-
--- 显示创建数据库的 SQL 语句
-show create database <database>;
 ```
 
+- **选择数据库**
+
 ```sql
--- 显示当前数据库中的所有表
-show tables;
+USE <database>;
+```
 
--- 描述表中列信息
-describe <table>;
-show columns from <table>;
+- **显示创建数据库的 SQL 语句**
 
--- 显示创建表的 SQL 语句
-show create table <table>;
+```sql
+SHOW CREATE DATABASE <database>;
+```
+
+- **创建数据库**
+
+```sql
+CREATE DATABASE <database>;
+CREATE DATABASE IF NOT EXISTS <database>;
+```
+
+- **删除数据库**
+
+```sql
+DROP DATABASE <database>;
 ```
 
 <br />
 
-## 二、添加
+## 二、表
+
+- **显示表**
 
 ```sql
-insert into <table> (<columns>) values (<values>);
+SHOW TABLES;
 ```
 
-## 三、删除
+- **描述表**
 
 ```sql
-delete from <table> where <condition>;
+DESCRIBE <table>;
+SHOW COLUMNS FROM <table>;
 ```
 
-## 四、修改
+- **显示创建表的 SQL 语句**
 
 ```sql
-update <table> set <column1>=<value1>, <column2>=<value2> where <condition>;
+SHOW CREATE TABLE <table>;
 ```
+
+- **创建表**
+
+```sql
+CREATE TABLE <table> (
+    <column1> INT NOT NULL AUTO_INCREMENT COMMENT 'column1',
+    <column2> CHAR(10) NOT NULL DEFAULT '' COMMENT 'column2',
+    <column3> VARCHAR(20) NULL COMMENT 'column3',
+    PRIMARY KEY (column1, column2)
+);
+```
+
+- **删除表**
+
+```sql
+DROP TABLE <table>;
+```
+
+<br />
+
+## 三、记录
+
+- **添加**
+
+```sql
+INSERT INTO <table> (<column1>, <column2>)
+VALUES (<values1>, <values2>);
+```
+
+- **删除**
+
+```sql
+DELETE FROM <table> WHERE <condition>;
+```
+
+- **修改**
+
+```sql
+UPDATE <table> SET <column1>=<value1>, <column2>=<value2> WHERE <condition>;
+```
+
+<br />
+
+### 3.1 查询
+
+- **条件查询**
+
+```sql
+SELECT <column1>, <column2> FROM <table> WHERE <condition>;
+SELECT * FROM <table> WHERE <condition>;
+```
+
+- **去除重复值**
+
+```sql
+SELECT DISTINCT <column1>, <column2> from <table>;
+```
+
+<br />
 
 ## 五、查询
-
-### 5.1 简单查询
-
-- 查询单列：
-
-```sql
-select <column> from <table>;
-```
-
-- 查询多列：
-
-```sql
-select <column1>, <column2> from <table>;
-```
-
-- 查询所有列：降低查询效率，不建议使用。
-
-```sql
-select * from <table>;
-```
-
-### 5.2 去除重复值
-
-```sql
-select distinct <columns> from <table>;
-```
-
-{{< admonition tip 示例 false >}}
-```sql
--- demo
--- +------+----------+
--- | id   | name     |
--- +------+----------+
--- |    1 | zhangsan |
--- |    1 | lisi     |
--- |    2 | zhangsan |
--- |    2 | lisi     |
--- +------+----------+
-```
-
-```sql
-select distinct id from demo;
--- +------+
--- | id   |
--- +------+
--- |    1 |
--- |    2 |
--- +------+
-```
-
-```sql
-select distinct id, name from demo;
--- +------+----------+
--- | id   | name     |
--- +------+----------+
--- |    1 | zhangsan |
--- |    1 | lisi     |
--- |    2 | zhangsan |
--- |    2 | lisi     |
--- +------+----------+
-```
-{{< /admonition >}}
 
 ### 5.3 指定结果行数
 
