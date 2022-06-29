@@ -29,7 +29,9 @@
 
 - 字体转换：[`萝卜工坊`](http://www.beautifulcarrot.com/)、[`Weird Fonts`](https://beizhedenglong.github.io/weird-fonts/)
 
-- LaTeX：[`Overleaf`](https://cn.overleaf.com/)
+- LaTeX
+  - [Overleaf](https://cn.overleaf.com/)：论文撰写
+  - [LaTeX公式编辑器](https://www.latexlive.com/)
 
 - 种子转磁力链接：[`Torrent Kitty`](https://cn.torrentkitty.tv/)
 
@@ -86,6 +88,7 @@
 - 图标：[`Worldvectorlogo`](https://worldvectorlogo.com/zh)、[`Iconduck`](https://iconduck.com/)、[`StickPNG`](https://www.stickpng.com/)、[`Iconfont`](https://www.iconfont.cn/)、[`设计之家`](https://www.sj33.cn/sc/)、[`Notion Icons 5.0`](https://notionv5.vyshnav.xyz/)
 
 - 配色：[`Color Hunt`](https://colorhunt.co/)、[`Color Palettes`](https://colorpalettes.net/)、[`Hello Color`](https://jxnblk.github.io/hello-color/)、[`NIPPON COLORS`](https://nipponcolors.com/)、[`中国色`](http://zhongguose.com/)、[`Blend`](http://colinkeany.com/blend/)
+  - [ColorSpace](https://mycolor.space/)：生成渐变色
 
 - 系统：[`Windows 11`](https://www.microsoft.com/zh-cn/software-download/windows11)
 
