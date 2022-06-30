@@ -326,10 +326,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class MySQLConnectionDemo {
-    // MySQL 8.0 以下版本 - JDBC 驱动名及数据库 URL
+    // MySQL 8.0 以下版本
     // private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/mysql_crash_course";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/demo";
 
     public static void main(String[] args) {
         try {
@@ -339,11 +339,11 @@ public class MySQLConnectionDemo {
             Connection conn = DriverManager.getConnection(DB_URL, "root", "12345678");
             // 执行 SQL
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from vendors");
+            ResultSet rs = stmt.executeQuery("select * from websites");
             while (rs.next()) {
-                int vendId = rs.getInt("vend_id");
-                String vendName = rs.getString("vend_name");
-                System.out.println(vendId + " " + vendName);
+                int websiteId = rs.getInt("website_id");
+                String websiteName = rs.getString("website_name");
+                System.out.println(websiteId + " " + websiteName);
             }
             // 关闭资源
             rs.close();

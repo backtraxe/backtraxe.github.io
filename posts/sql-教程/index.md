@@ -18,26 +18,26 @@ SHOW DATABASES;
 - **选择数据库**
 
 ```sql
-USE <database>;
-```
-
-- **显示创建数据库的 SQL 语句**
-
-```sql
-SHOW CREATE DATABASE <database>;
+USE db_name;
 ```
 
 - **创建数据库**
 
 ```sql
-CREATE DATABASE <database>;
-CREATE DATABASE IF NOT EXISTS <database>;
+CREATE DATABASE db_name;
+CREATE DATABASE IF NOT EXISTS db_name;
 ```
 
 - **删除数据库**
 
 ```sql
-DROP DATABASE <database>;
+DROP DATABASE db_name;
+```
+
+- **显示创建数据库的 SQL 语句**
+
+```sql
+SHOW CREATE DATABASE db_name;
 ```
 
 <br />
@@ -53,148 +53,223 @@ SHOW TABLES;
 - **描述表**
 
 ```sql
-DESCRIBE <table>;
-SHOW COLUMNS FROM <table>;
-```
-
-- **显示创建表的 SQL 语句**
-
-```sql
-SHOW CREATE TABLE <table>;
+DESCRIBE tb_name;
+SHOW COLUMNS FROM tb_name;
 ```
 
 - **创建表**
 
 ```sql
-CREATE TABLE <table> (
-    <column1> INT NOT NULL AUTO_INCREMENT COMMENT 'column1',
-    <column2> CHAR(10) NOT NULL DEFAULT '' COMMENT 'column2',
-    <column3> VARCHAR(20) NULL COMMENT 'column3',
-    PRIMARY KEY (column1, column2)
+CREATE TABLE tb_name (
+    col_1 type_1 cons_1,
+    col_2 type_2 cons_2,
+    cons_3,
+    cons_4
 );
+
+-- 使用旧表创建新表
+CREATE TABLE tb_new LIKE tb_old;
+```
+
+- **显示创建表的 SQL 语句**
+
+```sql
+SHOW CREATE TABLE tb_name;
 ```
 
 - **删除表**
 
 ```sql
-DROP TABLE <table>;
+DROP TABLE tb_name;
+```
+
+- **修改表名**
+
+```sql
+ALTER TABLE tb_old RENAME TO tb_new;
+```
+
+- **添加列**
+
+```sql
+ALTER TABLE tb_name ADD COLUMN col_ type_ cons_;
+```
+
+- **删除列**
+
+```sql
+ALTER TABLE tb_name DROP COLUMN col_;
+```
+
+- **修改列名**
+
+```sql
+ALTER TABLE tb_name RENAME col_old TO col_new;
+```
+
+- **添加约束**
+
+```sql
+ALTER TABLE tb_name ADD cons;
+
+-- 添加主键
+ALTER TABLE tb_name ADD PRIMARY KEY (col_);
+```
+
+- **删除约束**
+
+```sql
+ALTER TABLE tb_name DROP cons;
+
+-- 删除主键
+ALTER TABLE tb_name DROP PRIMARY KEY (col_);
+```
+
+- **创建索引**
+
+```sql
+CREATE INDEX idx_name ON ta_name (col_1, col_2);
+
+-- 唯一索引
+CREATE UNIQUE INDEX idx_name ON ta_name (col_1, col_2);
+```
+
+- **删除索引**
+
+```sql
+DROP INDEX idx_name;
 ```
 
 <br />
 
-## 三、记录
+## 三、修改数据
 
 - **添加**
 
 ```sql
-INSERT INTO <table> (<column1>, <column2>)
-VALUES (<values1>, <values2>);
+-- 添加多条记录
+INSERT INTO tb_name (col_1, col_2) VALUES (val_1_1, val_1_2), (val_2_1, val_2_2);
+
+-- 从其他表添加
+INSERT INTO tb_name_1 (col_1, col_2) SELECT col_1, col_2 FROM tb_name_2;
 ```
 
 - **删除**
 
 ```sql
-DELETE FROM <table> WHERE <condition>;
+-- 删除指定记录
+DELETE FROM tb_name WHERE cond_;
+
+-- 删除所有记录
+DELETE FROM tb_name;
+TRUNCATE TABLE tb_name;
 ```
 
 - **修改**
 
 ```sql
-UPDATE <table> SET <column1>=<value1>, <column2>=<value2> WHERE <condition>;
+UPDATE tb_name SET col_1=val_1, col_2=val_2 WHERE cond_;
 ```
 
 <br />
 
-### 3.1 查询
+## 四、查询数据
+
+### 4.1 单表查询
 
 - **条件查询**
 
 ```sql
-SELECT <column1>, <column2> FROM <table> WHERE <condition>;
-SELECT * FROM <table> WHERE <condition>;
+-- 指定列
+SELECT col_1, col_2 FROM tb_name WHERE cond_;
+
+-- 所有列
+SELECT * FROM tb_name;
 ```
 
-- **去除重复值**
+- **去重**
 
 ```sql
-SELECT DISTINCT <column1>, <column2> from <table>;
+SELECT DISTINCT col_ FROM tb_name;
+```
+
+- **分页**：`pos`从 0 开始。
+
+```sql
+-- [0, len)
+SELECT col_ FROM tb_name LIMIT len_;
+
+-- [pos, pos + len)
+SELECT col_ FROM tb_name LIMIT pos_, len_;
+SELECT col_ FROM tb_name LIMIT len_ OFFSET pos_;
+```
+
+- **排序**
+
+```sql
+-- 升序，ASC
+SELECT col_ FROM tb_name ORDER BY col_1;
+
+-- 降序
+SELECT col_ FROM tb_name ORDER BY col_1 DESC;
+
+-- 复杂排序
+SELECT col_ FROM tb_name ORDER BY col_1 DESC col_2 ASC;
 ```
 
 <br />
 
-## 五、查询
+### 4.2 函数
 
-### 5.3 指定结果行数
-
-`start`从0开始。
+- **数量**
 
 ```sql
-select <columns> from <table> limit <size>;
-select <columns> from <table> limit <start>, <size>;
-select <columns> from <table> limit <size> offset <start>;
+SELECT COUNT(*) FROM tb_name;
+SELECT COUNT(1) FROM tb_name;
 ```
 
-{{< admonition tip 示例 false >}}
-```sql
--- demo
--- +------+----------+
--- | id   | name     |
--- +------+----------+
--- |    1 | zhangsan |
--- |    1 | lisi     |
--- |    2 | zhangsan |
--- |    2 | lisi     |
--- +------+----------+
-```
+- **求和**
 
 ```sql
-select id, name from demo limit 2;
--- +------+----------+
--- | id   | name     |
--- +------+----------+
--- |    1 | zhangsan |
--- |    1 | lisi     |
--- +------+----------+
+SELECT SUM(col_) FROM tb_name;
 ```
+
+- **平均值**
 
 ```sql
-select id, name from demo limit 1, 2;
--- +------+----------+
--- | id   | name     |
--- +------+----------+
--- |    1 | lisi     |
--- |    2 | zhangsan |
--- +------+----------+
+SELECT AVG(col_) FROM tb_name;
 ```
+
+- **最大值**
 
 ```sql
-select id, name from demo limit 2 offset 1;
--- +------+----------+
--- | id   | name     |
--- +------+----------+
--- |    1 | lisi     |
--- |    2 | zhangsan |
--- +------+----------+
+SELECT MAX(col_) FROM tb_name;
 ```
-{{< /admonition >}}
 
-### 5.4 结果排序
-
-- 默认升序`asc`，`desc`表示降序，只针对当前列。
-- 优先排序靠前的列。
-- 排序的列不一定要显示。
+- **最小值**
 
 ```sql
-select <columns> from <table> order by <column>;
-select <column1> from <table> order by <column2> desc;
-select <column1>, <column2>, <column3> from <table> order by <column3> desc, <column1>;
+SELECT MIN(col_) FROM tb_name;
 ```
 
-### 5.5 条件查询
+<br />
+
+### 4.3 多表查询
 
 ```sql
-select <columns> from <table> where <condition>;
+--
+SELECT col_ FROM tb_1 INNER JOIN tb_2 ON cond_;
+
+SELECT col_ FROM tb_1 LEFT JOIN tb_2 ON cond_;
+
+SELECT col_ FROM tb_1 RIGHT JOIN tb_2 ON cond_;
+
+SELECT col_ FROM tb_1 INNER JOIN tb_2 ON cond_;
 ```
+
+<br />
+
+## 五、条件
 
 |操作符|说明|
 |:--:|:--:|
@@ -298,17 +373,6 @@ select id * 2 as id_double from demo;
 ```
 {{< /admonition >}}
 
-## 六、函数
+## 六、约束
 
-### 6.1 文本处理
-
-|函数|说明|
-|:--:|:--:|
-|`left()`|返回串左边的字符|
-
-### 6.2 日期和时间处理
-
-|函数|说明|
-|:--:|:--:|
-|`adddate()`|增加一个日期（天、周等）|
 
