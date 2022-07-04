@@ -5,59 +5,225 @@
 
 ## 在线工具
 
-- PDF：[`easy PDF`](https://easypdf.com/cn)、[`PDF24 Tools`](https://tools.pdf24.org/zh/)
-
-- 图片：[`iLoveIMG`](https://www.iloveimg.com/zh-cn)、[`图片放大`](https://bigjpg.com/)、[`图像优化`](https://zh.recompressor.com/)、[`图片去底`](https://www.aigei.com/bgremover)、[`GIF制作和编辑`](https://ezgif.com/)、[`魔术橡皮擦`](https://jpgrm.com/)、[`老照片修复`](https://jpghd.com/)
-
-- 视频：[`视频放大`](https://bigmp4.com/)
-
-- 音频：[`网易见外工作台`](https://jianwai.youdao.com/)
-
-- OCR：[`EasyScreenOCR`](https://online.easyscreenocr.com/ZH)、[`Online OCR`](https://www.onlineocr.net/zh_hans/)
-
-- 图标生成：[`小米风格Logo生成器`](https://mi-logo.lvwzhen.com)、[`图标制作大师`](https://geticon.cn/)、[`Favicon图标生成器`](https://realfavicongenerator.net/)
-
-- 背景生成：[`Figen`](https://figen.cc/)、[`SVG generator`](https://fffuel.co/)
-
-- 制作图表：[`ProcessOn`](https://processon.com/)
-
-- 计算器：[`Mathway`](https://www.mathway.com/zh/BasicMath)
-
-- Apple：[`比较全球Apple产品价格`](https://themacindex.com/)
-
-- Steam：[`Steam数据库`](https://steamdb.info/)
-
-- 字体转换：[`萝卜工坊`](http://www.beautifulcarrot.com/)、[`Weird Fonts`](https://beizhedenglong.github.io/weird-fonts/)
-
-- LaTeX
-  - [Overleaf](https://cn.overleaf.com/)：论文撰写
-  - [LaTeX公式编辑器](https://www.latexlive.com/)
-
-- 种子转磁力链接：[`Torrent Kitty`](https://cn.torrentkitty.tv/)
-
-- 磁力链接转种子：[`搜番`](https://sofan.pro/info/ee14f60549f81fc39f746d10ec68df392f223dfa.html)
+<table cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" rowspan="2">PDF</td>
+    <td align="center"><a href="https://easypdf.com/cn/" target="_blank">easy PDF</a></td>
+    <td align="center"><a href="https://tools.pdf24.org/zh/" target="_blank">PDF24 Tools</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.ilovepdf.com/zh-cn" target="_blank">iLovePDF</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="4">图片</td>
+    <td align="center"><a href="https://www.iloveimg.com/zh-cn" target="_blank">iLoveIMG</a></td>
+    <td align="center"><a href="https://bigjpg.com/" target="_blank">Bigjpg</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://zh.recompressor.com/" target="_blank">Recompressor</a></td>
+    <td align="center"><a href="https://www.aigei.com/bgremover" target="_blank">BgRemover</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://ezgif.com/" target="_blank">ezGIF</a></td>
+    <td align="center"><a href="https://jpgrm.com/" target="_blank">jpgRM</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://jpghd.com/" target="_blank">jpgHD</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">视频</td>
+    <td align="center"><a href="https://bigmp4.com/" target="_blank">bigmp4</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">音频</td>
+    <td align="center"><a href="https://jianwai.youdao.com/" target="_blank">网易见外</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">OCR</td>
+    <td align="center"><a href="https://online.easyscreenocr.com/ZH" target="_blank">EasyScreenOCR</a></td>
+    <td align="center"><a href="https://www.onlineocr.net/zh_hans/" target="_blank">Online OCR</a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="2">图标</td>
+    <td align="center"><a href="https://mi-logo.lvwzhen.com/" target="_blank">小米风格Logo</a></td>
+    <td align="center"><a href="https://geticon.cn/" target="_blank">图标制作</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://realfavicongenerator.net/" target="_blank">Favicon生成器</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">背景</td>
+    <td align="center"><a href="https://figen.cc/" target="_blank">Figen</a></td>
+    <td align="center"><a href="https://fffuel.co/" target="_blank">fffuel</a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">图表</td>
+    <td align="center"><a href="https://processon.com/" target="_blank">ProcessOn</a></td>
+    <td align="center"><a href="https://app.diagrams.net/" target="_blank">Diagram</a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">数学</td>
+    <td align="center"><a href="https://www.mathway.com/zh/BasicMath" target="_blank">Mathway</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">Apple</td>
+    <td align="center"><a href="https://themacindex.com/" target="_blank">The Mac index</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">Steam</td>
+    <td align="center"><a href="https://steamdb.info/" target="_blank">SteamDB</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">字体</td>
+    <td align="center"><a href="http://www.beautifulcarrot.com/" target="_blank">萝卜工坊</a></td>
+    <td align="center"><a href="https://beizhedenglong.github.io/weird-fonts/" target="_blank">Weird Fonts</a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">LaTeX</td>
+    <td align="center"><a href="https://cn.overleaf.com/" target="_blank">Overleaf</a></td>
+    <td align="center"><a href="https://www.latexlive.com/" target="_blank">公式编辑器</a></td>
+  </tr>
+</table>
 
 ## 在线娱乐
 
-- 影视：[`低端影视`](https://ddrk.me/)、[`奈菲影视`](https://www.nfmovies.com/)、[`看片狂人`](https://www.kpkuang.com/)、[`NO视频`](https://www.novipnoad.com/)
-
-- 动漫：[`AGE动漫`](http://www.age.tv/)、[`樱花动漫`](https://www.yhdmp.cc/)、[`ZzzFun动漫`](http://www.zzzfun.com/)、[`漫岛动漫`](https://www.mandao.tv/)、[`EDD动漫`](https://www.edddm.com/)
-
-- 漫画：[`漫画DB`](https://www.manhuadb.com/)、[`动漫之家`](https://www.dmzj.com/)、[`包子漫画`](https://www.baozimh.com/)
-
-- 小说：[`天天看小说`](https://www.ttkan.co/)
-
-- 体育：[`CCTV5`](https://tv.cctv.com/live/cctv5/)、[`JRKAN`](http://jrkankan.com/)
+<table cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" rowspan="2">影视</td>
+    <td align="center"><a href="https://ddrk.me/" target="_blank">低端影视</a></td>
+    <td align="center"><a href="https://www.nfmovies.com/" target="_blank">奈菲影视</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.kpkuang.com/" target="_blank">看片狂人</a></td>
+    <td align="center"><a href="https://www.novipnoad.com/" target="_blank">NO视频</a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="3">动漫</td>
+    <td align="center"><a href="http://www.age.tv/" target="_blank">AGE动漫</a></td>
+    <td align="center"><a href="https://www.yhdmp.cc/" target="_blank">樱花动漫</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://www.zzzfun.com/" target="_blank">ZzzFun</a></td>
+    <td align="center"><a href="https://www.mandao.tv/" target="_blank">漫岛动漫</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.edddm.com/" target="_blank">EDD动漫</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="2">漫画</td>
+    <td align="center"><a href="https://www.manhuadb.com/" target="_blank">漫画DB</a></td>
+    <td align="center"><a href="https://www.dmzj.com/" target="_blank">动漫之家</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.baozimh.com/" target="_blank">包子漫画</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">小说</td>
+    <td align="center"><a href="https://www.ttkan.co/" target="_blank">天天看小说</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">体育</td>
+    <td align="center"><a href="https://tv.cctv.com/live/cctv5/" target="_blank">CCTV5</a></td>
+    <td align="center"><a href="http://jrkankan.com/" target="_blank">JRKAN</a></td>
+  </tr>
+</table>
 
 ## 程序开发
 
-- 在线编译器：[`OnlineGDB`](https://www.onlinegdb.com/)、[`C++ shell`](http://cpp.sh/)、[`futurecoder`](https://github.com/alexmojaki/futurecoder)、[`KalkiCode`](https://kalkicode.com/online-code)
-
-- 可视化：[`Learn Git Branching`](https://learngitbranching.js.org/?locale=zh_CN)
-
-- 正则表达式：[`regex101`](https://regex101.com/)、[`RegexLearn`](https://github.com/aykutkardas/regexlearn.com)
-
-- 资源：[`吾爱破解`](https://www.52pojie.cn/)
+<table cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" rowspan="2">IDE</td>
+    <td align="center"><a href="https://www.onlinegdb.com/" target="_blank">OnlineGDB</a></td>
+    <td align="center"><a href="http://cpp.sh/" target="_blank">C++ shell</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/alexmojaki/futurecoder" target="_blank">futurecoder</a></td>
+    <td align="center"><a href="https://kalkicode.com/online-code" target="_blank">KalkiCode</a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">Git</td>
+    <td align="center"><a href="https://learngitbranching.js.org/?locale=zh_CN" target="_blank">Learn Git</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">正则</td>
+    <td align="center"><a href="https://regex101.com/" target="_blank">regex101</a></td>
+    <td align="center"><a href="https://regexlearn.com/" target="_blank">RegexLearn</a></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="1">破解</td>
+    <td align="center"><a href="https://www.52pojie.cn/" target="_blank">吾爱破解</a></td>
+    <td align="center"><a href="" target="_blank"></a></td>
+  </tr>
+</table>
 
 ## 资源下载
 
