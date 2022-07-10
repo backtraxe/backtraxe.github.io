@@ -363,3 +363,204 @@ undo log（回滚日志），保证事务的原子性。
 
 回滚日志会先于数据持久化到磁盘上。
 
+<br>
+
+## Java 集合框架
+
+<img src="/imgs/Java面试/Java集合框架类图.png">
+
+<br>
+
+### Arraylist 和 Vector 的区别
+
+- ArrayList 是 List 的主要实现类，底层使⽤ Object[] 存储，适⽤于频繁的查找⼯作，线程不安全。
+
+- Vector 是 List 的古⽼实现类，底层使⽤ Object[] 存储，线程安全的。
+
+<br>
+
+### RandomAccess 接⼝
+
+```java
+public interface RandomAccess {
+}
+```
+
+RandomAccess 接⼝用于标识实现这个接⼝的类具有随机访问功能。`ArrayList` 实现了 RandomAccess 接⼝， ⽽ `LinkedList` 没有实现。
+
+在 `binarySearch()` ⽅法中，它要判断传⼊的 list 是否 RandomAccess 的实例，如果是，调⽤ `indexedBinarySearch()` ⽅法，如果不是，那么调⽤ `iteratorBinarySearch()` ⽅法。
+
+```java
+public static <T> int binarySearch(List<? extends Comparable<? super T>> list, T key) {
+    if (list instanceof RandomAccess || list.size() < BINARYSEARCH_THRESHOLD)
+        return Collections.indexedBinarySearch(list, key);
+    else
+        return Collections.iteratorBinarySearch(list, key);
+}
+```
+
+<br>
+
+### Comparable 和 Comparator 的区别
+
+- `Comparable` 接口出自 java.lang 包，它有⼀个 `compareTo(Object obj)` 方法⽤来排序。
+
+```java
+interface Comparable {
+    int compareTo(Object obj);
+}
+```
+
+- `Comparator` 接口出自 java.util 包（需要导包），它有⼀个 `compare(Object obj1, Object obj2)` 方法⽤来排序。
+
+```java
+package java.util;
+
+interface Comparator {
+    int compare(Object obj1, Object obj2);
+}
+```
+
+- `compareTo(Object obj)` 方法和 `compare(Object obj1, Object obj2)` 方法的返回值 **小于 0** 代表升序， **大于 0** 代表降序。
+
+- `Collections.sort()`、`TreeSet`、`TreeMap`、`PriorityQueue`使用自定义类时必须实现 `Comparable` 接口或传入 `Comparator` 接口的实现类。
+
+<br>
+
+### HashMap 和 HashTable 的区别
+
+> HashTable 已被 ConcurrentHashMap 淘汰
+
+1. 是否线程安全
+    - HashMap 线程不安全
+    - HashTable 线程安全
+2. 效率
+    - HashMap 比 HashTable 效率高，因为 HashTable 线程安全
+3. 对 null 的⽀持
+    - HashMap 可以存储 null 的 key 和 value，但 null 作为 key 只能有⼀个，null 作为 value 可以有多个
+    - HashTable 不允许 null，否则抛出 NullPointerException
+4. 初始⼤⼩和扩充机制
+    - HashMap 默认初始⼤⼩为 16，当指定大小时扩充为 2 的幂次方，已使用 75% 空间时进行扩容，每次扩容变为 2 * n
+    - HashTable 默认初始⼤⼩为 11，每次扩容变为 2 * n + 1
+5. 底层数据结构
+    - JDK1.8 以后的 HashMap 在解决哈希冲突时有了较⼤的变化，当链表⻓度⼤于阈值（默认为 8）（将链表转换成红⿊树前会判断，如果当前数组的⻓度⼩于 64，那么会选择先进⾏数组扩容，⽽不是转换为红⿊树）时，将链表转化为红⿊树，以减少搜索时间。
+    - Hashtable 没有这样的机制。
+
+<br>
+
+### HashMap 的底层实现
+
+- 框架
+
+```java
+package java.util;
+
+public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable {
+    static class Node<K,V> implements Map.Entry<K,V> {} // 键值对，静态内部类
+    static final int hash(Object key) {}                // 哈希函数
+    static final int tableSizeFor(int cap) {}           // 扩充大小为 2 的幂次方
+    transient Node<K,V>[] table;                        // 底层数组实现
+    transient Set<Map.Entry<K,V>> entrySet;             // key 集合
+    transient int size;                                 // 已使用大小
+    transient int modCount;                             // 修改次数
+    int threshold;                                      // 大小
+    final float loadFactor;                             // 扩容阈值
+}
+```
+
+- 常量
+
+```java
+static final int DEFAULT_INITIAL_CAPACITY = 16; // 默认初始大小
+static final int MAXIMUM_CAPACITY = 1 << 30;    // 最大容量
+static final float DEFAULT_LOAD_FACTOR = 0.75f; // 默认扩容阈值
+static final int TREEIFY_THRESHOLD = 8;         // 链表变红黑树的链表结点数量阈值
+static final int UNTREEIFY_THRESHOLD = 6;       // 红黑树变链表的树结点数量阈值
+static final int MIN_TREEIFY_CAPACITY = 64;     // 链表变红黑树的总大小阈值
+```
+
+- 静态方法
+
+```java
+static final int hash(Object key) { // >= jdk 1.8
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+}
+
+static final int hash(Object key) { // jdk 1.7
+    int h = key.hashCode();
+    h ^= (h >>> 20) ^ (h >>> 12);
+    return h ^ (h >>> 7) ^ (h) >>> 4;
+}
+
+static final int tableSizeFor(int cap) {
+    // 扩充为 2 的幂次方
+    int n = -1 >>> Integer.numberOfLeadingZeros(cap - 1);
+    return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+}
+```
+
+- 构造方法
+
+```java
+public HashMap(int initialCapacity, float loadFactor) {
+    if (initialCapacity < 0)
+        throw new IllegalArgumentException("Illegal initial capacity: " + initialCapacity);
+    if (initialCapacity > MAXIMUM_CAPACITY)
+        initialCapacity = MAXIMUM_CAPACITY;
+    if (loadFactor <= 0 || Float.isNaN(loadFactor))
+        throw new IllegalArgumentException("Illegal load factor: " + loadFactor);
+    this.loadFactor = loadFactor;
+    this.threshold = tableSizeFor(initialCapacity);
+}
+
+public HashMap(int initialCapacity) {
+    this(initialCapacity, DEFAULT_LOAD_FACTOR);
+}
+
+public HashMap() {
+    this.loadFactor = DEFAULT_LOAD_FACTOR;
+}
+```
+
+-
+
+```java
+
+```
+
+<br>
+
+### 为什么 HashMap 的大小是 2 的幂次方
+
+每个 key 的 hash 值很大，需要通过取模，即 `hash(key) % n` 得到数组索引，当 n 是 2 的幂次方时通过 `(n - 1) & hash(key)` 可以更快速的进行取模。
+
+<br>
+
+### 为什么 HashMap 多线程会导致死循环
+
+<br>
+
+### ConcurrentHashMap 和 HashTable 的区别
+
+<br>
+
+### ConcurrentHashMap 的底层实现
+
+<br>
+
+### 快速失败（Fail-fast）
+
+<br>
+
+### 安全失败（Fail-safe）
+
+采⽤安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，⽽是先复制原有集合内容，在拷⻉的集合上进⾏遍历。所以，在遍历过程中对原集合所作的修改并不能被迭代器检测到，故不会抛出 `ConcurrentModificationException` 异常。
+
+<br>
+
+### Arrays.asList() 详解
+
+<br>
+
+

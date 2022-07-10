@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://backtraxe.github.io/posts/java-%E9%9D%A2%E8%AF%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-30T00:31:24+08:00" />
-<meta property="article:modified_time" content="2022-07-10T10:18:20+00:00" /><meta property="og:site_name" content="traXe" />
+<meta property="article:modified_time" content="2022-07-10T16:27:52+00:00" /><meta property="og:site_name" content="traXe" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java 面试"/>
@@ -35,8 +35,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/backtraxe.github.io\/posts\/java-%E9%9D%A2%E8%AF%95\/"
-        },"genre": "posts","keywords": "Java, 面试","wordcount":  7445 ,
-        "url": "https:\/\/backtraxe.github.io\/posts\/java-%E9%9D%A2%E8%AF%95\/","datePublished": "2021-03-30T00:31:24+08:00","dateModified": "2022-07-10T10:18:20+00:00","publisher": {
+        },"genre": "posts","keywords": "Java, 面试","wordcount":  8795 ,
+        "url": "https:\/\/backtraxe.github.io\/posts\/java-%E9%9D%A2%E8%AF%95\/","datePublished": "2021-03-30T00:31:24+08:00","dateModified": "2022-07-10T16:27:52+00:00","publisher": {
             "@type": "Organization",
             "name": "Backtraxe"},"author": {
                 "@type": "Person",
@@ -175,14 +175,30 @@
         </li>
       </ul>
     </li>
+    <li><a href="#java-集合框架">Java 集合框架</a>
+      <ul>
+        <li><a href="#arraylist-和-vector-的区别">Arraylist 和 Vector 的区别</a></li>
+        <li><a href="#randomaccess-接">RandomAccess 接⼝</a></li>
+        <li><a href="#comparable-和-comparator-的区别">Comparable 和 Comparator 的区别</a></li>
+        <li><a href="#hashmap-和-hashtable-的区别">HashMap 和 HashTable 的区别</a></li>
+        <li><a href="#hashmap-的底层实现">HashMap 的底层实现</a></li>
+        <li><a href="#为什么-hashmap-的大小是-2-的幂次方">为什么 HashMap 的大小是 2 的幂次方</a></li>
+        <li><a href="#为什么-hashmap-多线程会导致死循环">为什么 HashMap 多线程会导致死循环</a></li>
+        <li><a href="#concurrenthashmap-和-hashtable-的区别">ConcurrentHashMap 和 HashTable 的区别</a></li>
+        <li><a href="#concurrenthashmap-的底层实现">ConcurrentHashMap 的底层实现</a></li>
+        <li><a href="#快速失败fail-fast">快速失败（Fail-fast）</a></li>
+        <li><a href="#安全失败fail-safe">安全失败（Fail-safe）</a></li>
+        <li><a href="#arraysaslist-详解">Arrays.asList() 详解</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "wide")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java 面试</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/backtraxe" title="Author" target="_blank" rel="noopener noreffer author" class="author">Backtraxe</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-30">2021-03-30</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-07-10">2022-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7445 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-30">2021-03-30</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-07-10">2022-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 8795 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 18 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -241,6 +257,22 @@
             <li><a href="#undo-log">undo log</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#java-集合框架">Java 集合框架</a>
+      <ul>
+        <li><a href="#arraylist-和-vector-的区别">Arraylist 和 Vector 的区别</a></li>
+        <li><a href="#randomaccess-接">RandomAccess 接⼝</a></li>
+        <li><a href="#comparable-和-comparator-的区别">Comparable 和 Comparator 的区别</a></li>
+        <li><a href="#hashmap-和-hashtable-的区别">HashMap 和 HashTable 的区别</a></li>
+        <li><a href="#hashmap-的底层实现">HashMap 的底层实现</a></li>
+        <li><a href="#为什么-hashmap-的大小是-2-的幂次方">为什么 HashMap 的大小是 2 的幂次方</a></li>
+        <li><a href="#为什么-hashmap-多线程会导致死循环">为什么 HashMap 多线程会导致死循环</a></li>
+        <li><a href="#concurrenthashmap-和-hashtable-的区别">ConcurrentHashMap 和 HashTable 的区别</a></li>
+        <li><a href="#concurrenthashmap-的底层实现">ConcurrentHashMap 的底层实现</a></li>
+        <li><a href="#快速失败fail-fast">快速失败（Fail-fast）</a></li>
+        <li><a href="#安全失败fail-safe">安全失败（Fail-safe）</a></li>
+        <li><a href="#arraysaslist-详解">Arrays.asList() 详解</a></li>
       </ul>
     </li>
   </ul>
@@ -570,7 +602,302 @@ InnoDB 通过 锁机制、MVCC 等手段来保证事务的隔离性（ 默认支
 <h4 id="undo-log" class="headerLink">
     <a href="#undo-log" class="header-mark"></a>undo log</h4><p>undo log（回滚日志），保证事务的原子性。</p>
 <p>如果执行过程中遇到异常的话，我们直接利用回滚日志中的信息将数据回滚到修改之前的样子即可。</p>
-<p>回滚日志会先于数据持久化到磁盘上。</p></div>
+<p>回滚日志会先于数据持久化到磁盘上。</p>
+<br>
+<h2 id="java-集合框架" class="headerLink">
+    <a href="#java-%e9%9b%86%e5%90%88%e6%a1%86%e6%9e%b6" class="header-mark"></a>Java 集合框架</h2><img src="/imgs/Java面试/Java集合框架类图.png">
+<br>
+<h3 id="arraylist-和-vector-的区别" class="headerLink">
+    <a href="#arraylist-%e5%92%8c-vector-%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-mark"></a>Arraylist 和 Vector 的区别</h3><ul>
+<li>
+<p>ArrayList 是 List 的主要实现类，底层使⽤ Object[] 存储，适⽤于频繁的查找⼯作，线程不安全。</p>
+</li>
+<li>
+<p>Vector 是 List 的古⽼实现类，底层使⽤ Object[] 存储，线程安全的。</p>
+</li>
+</ul>
+<br>
+<h3 id="randomaccess-接" class="headerLink">
+    <a href="#randomaccess-%e6%8e%a5" class="header-mark"></a>RandomAccess 接⼝</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">RandomAccess</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>RandomAccess 接⼝用于标识实现这个接⼝的类具有随机访问功能。<code>ArrayList</code> 实现了 RandomAccess 接⼝， ⽽ <code>LinkedList</code> 没有实现。</p>
+<p>在 <code>binarySearch()</code> ⽅法中，它要判断传⼊的 list 是否 RandomAccess 的实例，如果是，调⽤ <code>indexedBinarySearch()</code> ⽅法，如果不是，那么调⽤ <code>iteratorBinarySearch()</code> ⽅法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="nf">binarySearch</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">T</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">list</span> <span class="k">instanceof</span> <span class="n">RandomAccess</span> <span class="o">||</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">BINARYSEARCH_THRESHOLD</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Collections</span><span class="o">.</span><span class="na">indexedBinarySearch</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Collections</span><span class="o">.</span><span class="na">iteratorBinarySearch</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h3 id="comparable-和-comparator-的区别" class="headerLink">
+    <a href="#comparable-%e5%92%8c-comparator-%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-mark"></a>Comparable 和 Comparator 的区别</h3><ul>
+<li><code>Comparable</code> 接口出自 java.lang 包，它有⼀个 <code>compareTo(Object obj)</code> 方法⽤来排序。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">interface</span> <span class="nc">Comparable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>Comparator</code> 接口出自 java.util 包（需要导包），它有⼀个 <code>compare(Object obj1, Object obj2)</code> 方法⽤来排序。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">java.util</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">interface</span> <span class="nc">Comparator</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj1</span><span class="o">,</span> <span class="n">Object</span> <span class="n">obj2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><code>compareTo(Object obj)</code> 方法和 <code>compare(Object obj1, Object obj2)</code> 方法的返回值 <strong>小于 0</strong> 代表升序， <strong>大于 0</strong> 代表降序。</p>
+</li>
+<li>
+<p><code>Collections.sort()</code>、<code>TreeSet</code>、<code>TreeMap</code>、<code>PriorityQueue</code>使用自定义类时必须实现 <code>Comparable</code> 接口或传入 <code>Comparator</code> 接口的实现类。</p>
+</li>
+</ul>
+<br>
+<h3 id="hashmap-和-hashtable-的区别" class="headerLink">
+    <a href="#hashmap-%e5%92%8c-hashtable-%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-mark"></a>HashMap 和 HashTable 的区别</h3><blockquote>
+<p>HashTable 已被 ConcurrentHashMap 淘汰</p>
+</blockquote>
+<ol>
+<li>是否线程安全
+<ul>
+<li>HashMap 线程不安全</li>
+<li>HashTable 线程安全</li>
+</ul>
+</li>
+<li>效率
+<ul>
+<li>HashMap 比 HashTable 效率高，因为 HashTable 线程安全</li>
+</ul>
+</li>
+<li>对 null 的⽀持
+<ul>
+<li>HashMap 可以存储 null 的 key 和 value，但 null 作为 key 只能有⼀个，null 作为 value 可以有多个</li>
+<li>HashTable 不允许 null，否则抛出 NullPointerException</li>
+</ul>
+</li>
+<li>初始⼤⼩和扩充机制
+<ul>
+<li>HashMap 默认初始⼤⼩为 16，当指定大小时扩充为 2 的幂次方，已使用 75% 空间时进行扩容，每次扩容变为 2 * n</li>
+<li>HashTable 默认初始⼤⼩为 11，每次扩容变为 2 * n + 1</li>
+</ul>
+</li>
+<li>底层数据结构
+<ul>
+<li>JDK1.8 以后的 HashMap 在解决哈希冲突时有了较⼤的变化，当链表⻓度⼤于阈值（默认为 8）（将链表转换成红⿊树前会判断，如果当前数组的⻓度⼩于 64，那么会选择先进⾏数组扩容，⽽不是转换为红⿊树）时，将链表转化为红⿊树，以减少搜索时间。</li>
+<li>Hashtable 没有这样的机制。</li>
+</ul>
+</li>
+</ol>
+<br>
+<h3 id="hashmap-的底层实现" class="headerLink">
+    <a href="#hashmap-%e7%9a%84%e5%ba%95%e5%b1%82%e5%ae%9e%e7%8e%b0" class="header-mark"></a>HashMap 的底层实现</h3><ul>
+<li>框架</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">java.util</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span><span class="n">V</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">AbstractMap</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span><span class="n">V</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span><span class="n">V</span><span class="o">&gt;,</span> <span class="n">Cloneable</span><span class="o">,</span> <span class="n">Serializable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span><span class="n">V</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span><span class="n">V</span><span class="o">&gt;</span> <span class="o">{}</span> <span class="c1">// 键值对，静态内部类
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">hash</span><span class="o">(</span><span class="n">Object</span> <span class="n">key</span><span class="o">)</span> <span class="o">{}</span>                <span class="c1">// 哈希函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">tableSizeFor</span><span class="o">(</span><span class="kt">int</span> <span class="n">cap</span><span class="o">)</span> <span class="o">{}</span>           <span class="c1">// 扩充大小为 2 的幂次方
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">transient</span> <span class="n">Node</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span><span class="n">V</span><span class="o">&gt;[]</span> <span class="n">table</span><span class="o">;</span>                        <span class="c1">// 底层数组实现
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">transient</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">K</span><span class="o">,</span><span class="n">V</span><span class="o">&gt;&gt;</span> <span class="n">entrySet</span><span class="o">;</span>             <span class="c1">// key 集合
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">transient</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>                                 <span class="c1">// 已使用大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">transient</span> <span class="kt">int</span> <span class="n">modCount</span><span class="o">;</span>                             <span class="c1">// 修改次数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">threshold</span><span class="o">;</span>                                      <span class="c1">// 大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">final</span> <span class="kt">float</span> <span class="n">loadFactor</span><span class="o">;</span>                             <span class="c1">// 扩容阈值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>常量</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAULT_INITIAL_CAPACITY</span> <span class="o">=</span> <span class="n">16</span><span class="o">;</span> <span class="c1">// 默认初始大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MAXIMUM_CAPACITY</span> <span class="o">=</span> <span class="n">1</span> <span class="o">&lt;&lt;</span> <span class="n">30</span><span class="o">;</span>    <span class="c1">// 最大容量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kd">final</span> <span class="kt">float</span> <span class="n">DEFAULT_LOAD_FACTOR</span> <span class="o">=</span> <span class="n">0</span><span class="o">.</span><span class="na">75f</span><span class="o">;</span> <span class="c1">// 默认扩容阈值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">TREEIFY_THRESHOLD</span> <span class="o">=</span> <span class="n">8</span><span class="o">;</span>         <span class="c1">// 链表变红黑树的链表结点数量阈值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">UNTREEIFY_THRESHOLD</span> <span class="o">=</span> <span class="n">6</span><span class="o">;</span>       <span class="c1">// 红黑树变链表的树结点数量阈值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MIN_TREEIFY_CAPACITY</span> <span class="o">=</span> <span class="n">64</span><span class="o">;</span>     <span class="c1">// 链表变红黑树的总大小阈值
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>静态方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">hash</span><span class="o">(</span><span class="n">Object</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// &gt;= jdk 1.8
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">h</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">(</span><span class="n">key</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">0</span> <span class="o">:</span> <span class="o">(</span><span class="n">h</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="na">hashCode</span><span class="o">())</span> <span class="o">^</span> <span class="o">(</span><span class="n">h</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">16</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">hash</span><span class="o">(</span><span class="n">Object</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// jdk 1.7
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h</span> <span class="o">^=</span> <span class="o">(</span><span class="n">h</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">20</span><span class="o">)</span> <span class="o">^</span> <span class="o">(</span><span class="n">h</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">12</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">h</span> <span class="o">^</span> <span class="o">(</span><span class="n">h</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">7</span><span class="o">)</span> <span class="o">^</span> <span class="o">(</span><span class="n">h</span><span class="o">)</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">4</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">tableSizeFor</span><span class="o">(</span><span class="kt">int</span> <span class="n">cap</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 扩充为 2 的幂次方
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="n">1</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">numberOfLeadingZeros</span><span class="o">(</span><span class="n">cap</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="o">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="n">MAXIMUM_CAPACITY</span><span class="o">)</span> <span class="o">?</span> <span class="n">MAXIMUM_CAPACITY</span> <span class="o">:</span> <span class="n">n</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>构造方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="nf">HashMap</span><span class="o">(</span><span class="kt">int</span> <span class="n">initialCapacity</span><span class="o">,</span> <span class="kt">float</span> <span class="n">loadFactor</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">initialCapacity</span> <span class="o">&lt;</span> <span class="n">0</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&#34;Illegal initial capacity: &#34;</span> <span class="o">+</span> <span class="n">initialCapacity</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">initialCapacity</span> <span class="o">&gt;</span> <span class="n">MAXIMUM_CAPACITY</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">initialCapacity</span> <span class="o">=</span> <span class="n">MAXIMUM_CAPACITY</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">loadFactor</span> <span class="o">&lt;=</span> <span class="n">0</span> <span class="o">||</span> <span class="n">Float</span><span class="o">.</span><span class="na">isNaN</span><span class="o">(</span><span class="n">loadFactor</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&#34;Illegal load factor: &#34;</span> <span class="o">+</span> <span class="n">loadFactor</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">loadFactor</span> <span class="o">=</span> <span class="n">loadFactor</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">threshold</span> <span class="o">=</span> <span class="n">tableSizeFor</span><span class="o">(</span><span class="n">initialCapacity</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="nf">HashMap</span><span class="o">(</span><span class="kt">int</span> <span class="n">initialCapacity</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">(</span><span class="n">initialCapacity</span><span class="o">,</span> <span class="n">DEFAULT_LOAD_FACTOR</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="nf">HashMap</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">loadFactor</span> <span class="o">=</span> <span class="n">DEFAULT_LOAD_FACTOR</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"></code></pre></td></tr></table>
+</div>
+</div><br>
+<h3 id="为什么-hashmap-的大小是-2-的幂次方" class="headerLink">
+    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88-hashmap-%e7%9a%84%e5%a4%a7%e5%b0%8f%e6%98%af-2-%e7%9a%84%e5%b9%82%e6%ac%a1%e6%96%b9" class="header-mark"></a>为什么 HashMap 的大小是 2 的幂次方</h3><p>每个 key 的 hash 值很大，需要通过取模，即 <code>hash(key) % n</code> 得到数组索引，当 n 是 2 的幂次方时通过 <code>(n - 1) &amp; hash(key)</code> 可以更快速的进行取模。</p>
+<br>
+<h3 id="为什么-hashmap-多线程会导致死循环" class="headerLink">
+    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88-hashmap-%e5%a4%9a%e7%ba%bf%e7%a8%8b%e4%bc%9a%e5%af%bc%e8%87%b4%e6%ad%bb%e5%be%aa%e7%8e%af" class="header-mark"></a>为什么 HashMap 多线程会导致死循环</h3><br>
+<h3 id="concurrenthashmap-和-hashtable-的区别" class="headerLink">
+    <a href="#concurrenthashmap-%e5%92%8c-hashtable-%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-mark"></a>ConcurrentHashMap 和 HashTable 的区别</h3><br>
+<h3 id="concurrenthashmap-的底层实现" class="headerLink">
+    <a href="#concurrenthashmap-%e7%9a%84%e5%ba%95%e5%b1%82%e5%ae%9e%e7%8e%b0" class="header-mark"></a>ConcurrentHashMap 的底层实现</h3><br>
+<h3 id="快速失败fail-fast" class="headerLink">
+    <a href="#%e5%bf%ab%e9%80%9f%e5%a4%b1%e8%b4%a5fail-fast" class="header-mark"></a>快速失败（Fail-fast）</h3><br>
+<h3 id="安全失败fail-safe" class="headerLink">
+    <a href="#%e5%ae%89%e5%85%a8%e5%a4%b1%e8%b4%a5fail-safe" class="header-mark"></a>安全失败（Fail-safe）</h3><p>采⽤安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，⽽是先复制原有集合内容，在拷⻉的集合上进⾏遍历。所以，在遍历过程中对原集合所作的修改并不能被迭代器检测到，故不会抛出 <code>ConcurrentModificationException</code> 异常。</p>
+<br>
+<h3 id="arraysaslist-详解" class="headerLink">
+    <a href="#arraysaslist-%e8%af%a6%e8%a7%a3" class="header-mark"></a>Arrays.asList() 详解</h3><br></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
