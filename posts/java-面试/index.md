@@ -450,53 +450,42 @@ interface Comparator {
 
 ### HashMap 的底层实现
 
-- 框架
+- 变量
 
 ```java
 package java.util;
 
-public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable {
-    static class Node<K,V> implements Map.Entry<K,V> {} // 键值对，静态内部类
-    static final int hash(Object key) {}                // 哈希函数
-    static final int tableSizeFor(int cap) {}           // 扩充大小为 2 的幂次方
-    transient Node<K,V>[] table;                        // 底层数组实现
-    transient Set<Map.Entry<K,V>> entrySet;             // key 集合
-    transient int size;                                 // 已使用大小
-    transient int modCount;                             // 修改次数
-    int threshold;                                      // 大小
-    final float loadFactor;                             // 扩容阈值
-}
-```
+public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable {
+    static class Node<K,V> implements Map.Entry<K,V> {
+        // 数组存放的元素，即链表结点
+        final int hash;
+        final K key;
+        V value;
+        Node<K,V> next;
+    }
 
-- 常量
+    static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
+        // 红黑树结点
+        TreeNode<K,V> parent;
+        TreeNode<K,V> left;
+        TreeNode<K,V> right;
+        TreeNode<K,V> prev;
+        boolean red;
+    }
 
-```java
-static final int DEFAULT_INITIAL_CAPACITY = 16; // 默认初始大小
-static final int MAXIMUM_CAPACITY = 1 << 30;    // 最大容量
-static final float DEFAULT_LOAD_FACTOR = 0.75f; // 默认扩容阈值
-static final int TREEIFY_THRESHOLD = 8;         // 链表变红黑树的链表结点数量阈值
-static final int UNTREEIFY_THRESHOLD = 6;       // 红黑树变链表的树结点数量阈值
-static final int MIN_TREEIFY_CAPACITY = 64;     // 链表变红黑树的总大小阈值
-```
+    static final int   DEFAULT_INITIAL_CAPACITY = 1 << 4; // 默认初始大小 16
+    static final int   MAXIMUM_CAPACITY = 1 << 30;        // 最大容量
+    static final float DEFAULT_LOAD_FACTOR = 0.75f;       // 默认扩容阈值
+    static final int   TREEIFY_THRESHOLD = 8;             // 链表变为红黑树时的链表结点数量阈值
+    static final int   MIN_TREEIFY_CAPACITY = 64;         // 链表变为红黑树时的数组大小阈值
+    static final int   UNTREEIFY_THRESHOLD = 6;           // 红黑树变为链表时的结点数量阈值
 
-- 静态方法
-
-```java
-static final int hash(Object key) { // >= jdk 1.8
-    int h;
-    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
-}
-
-static final int hash(Object key) { // jdk 1.7
-    int h = key.hashCode();
-    h ^= (h >>> 20) ^ (h >>> 12);
-    return h ^ (h >>> 7) ^ (h) >>> 4;
-}
-
-static final int tableSizeFor(int cap) {
-    // 扩充为 2 的幂次方
-    int n = -1 >>> Integer.numberOfLeadingZeros(cap - 1);
-    return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+    transient Node<K,V>[] table;                          // 底层数组
+    transient Set<Map.Entry<K,V>> entrySet;               // entry 集合
+    transient int size;                                   // 集合大小
+    transient int modCount;                               // 集合修改次数，实现 fail-fast
+    int threshold;                                        // 数组大小
+    final float loadFactor;                               // 数组扩容阈值
 }
 ```
 
@@ -523,10 +512,222 @@ public HashMap() {
 }
 ```
 
--
+- `hash()`
 
 ```java
+// >= jdk 1.8
+static final int hash(Object key) {
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+}
 
+// < jdk 1.8
+static final int hash(Object key) {
+    int h = key.hashCode();
+    h ^= (h >>> 20) ^ (h >>> 12);
+    return h ^ (h >>> 7) ^ (h) >>> 4;
+}
+```
+
+- `tableSizeFor()`
+
+```java
+static final int tableSizeFor(int cap) {
+    // 扩充为 2 的幂次方
+    int n = -1 >>> Integer.numberOfLeadingZeros(cap - 1);
+    return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+}
+```
+
+- `get()`、`containsKey()`
+
+```java
+public V get(Object key) {
+    Node<K,V> e;
+    return (e = getNode(hash(key), key)) == null ? null : e.value;
+}
+
+public boolean containsKey(Object key) {
+    return getNode(hash(key), key) != null;
+}
+
+final Node<K,V> getNode(int hash, Object key) {
+    Node<K,V> first; // 链表第一个结点 或 红黑树根节点
+    int n = table.length;
+    // 当 n 是 2 的幂次方时，(n - 1) & hash 等价于 hash % n
+    if (table != null && n > 0 && (first = table[(n - 1) & hash]) != null) {
+        K k = first.key;
+        if (first.hash == hash && (k == key || (key != null && key.equals(k))))
+            return first;
+        Node<K,V> e = first.next;
+        if (e != null) {
+            // 红黑树
+            if (first instanceof TreeNode)
+                return ((TreeNode<K,V>)first).getTreeNode(hash, key);
+            // 链表
+            do {
+                k = e.key;
+                if (e.hash == hash && (k == key || (key != null && key.equals(k))))
+                    return e;
+                e = e.next;
+            } while (e != null);
+        }
+    }
+    return null;
+}
+
+
+```
+
+- `put()`
+
+```java
+public V put(K key, V value) {
+    return putVal(hash(key), key, value, false, true);
+}
+
+final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
+    Node<K,V>[] tab = table;
+    int n = table.length;
+    if (tab == null || n == 0) {
+        // 检测是否为空
+        n = (tab = resize()).length;
+    }
+    int i = (n - 1) & hash;
+    Node<K,V> p = tab[i];
+    if (p == null) {
+        tab[i] = newNode(hash, key, value, null);
+    } else {
+        Node<K,V> e;
+        K k = p.key;
+        if (p.hash == hash && (k == key || (key != null && key.equals(k)))) {
+            e = p;
+        } else if (p instanceof TreeNode) {
+            e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+        } else {
+            for (int binCount = 0; ; ++binCount) {
+                // binCount 记录当前链表上已遍历的结点数量
+                e = p.next;
+                if (e == null) {
+                    // 未找到结点，进行添加
+                    p.next = newNode(hash, key, value, null);
+                    if (binCount >= TREEIFY_THRESHOLD - 1) {
+                        // 转为红黑树
+                        treeifyBin(tab, hash);
+                    }
+                    break;
+                }
+                k = e.key;
+                if (e.hash == hash && (k == key || (key != null && key.equals(k)))) {
+                    // 找到结点
+                    break;
+                }
+                // 继续下一个
+                p = e;
+            }
+        }
+        if (e != null) {
+            // key 已存在
+            V oldValue = e.value;
+            if (!onlyIfAbsent || oldValue == null) {
+                // 非 putIfAbsent()
+                e.value = value;
+            }
+            afterNodeAccess(e);
+            return oldValue;
+        }
+    }
+    ++modCount;
+    if (++size > threshold)
+        resize();
+    afterNodeInsertion(evict);
+    return null;
+}
+```
+
+- `resize()`：扩容
+
+```java
+final Node<K,V>[] resize() {
+    Node<K,V>[] oldTab = table;
+    int oldCap = (oldTab == null) ? 0 : oldTab.length;
+    int oldThr = threshold;
+    int newCap = 0;
+    int newThr = 0;
+    if (oldCap > 0) {
+        if (oldCap >= MAXIMUM_CAPACITY) {
+            // 已经最大，无法扩容
+            threshold = Integer.MAX_VALUE;
+            return oldTab;
+        } else if ((newCap = oldCap << 1) < MAXIMUM_CAPACITY &&
+                   oldCap >= DEFAULT_INITIAL_CAPACITY) {
+            // 扩容为 2 倍
+            newThr = oldThr << 1;
+        }
+    } else if (oldThr > 0) {
+        newCap = oldThr;
+    } else {
+        newCap = DEFAULT_INITIAL_CAPACITY;
+        newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
+    }
+    if (newThr == 0) {
+        float ft = (float)newCap * loadFactor;
+        newThr = (newCap < MAXIMUM_CAPACITY && ft < (float)MAXIMUM_CAPACITY ?
+                    (int)ft : Integer.MAX_VALUE);
+    }
+    threshold = newThr;
+    // 新建数组
+    Node<K,V>[] newTab = (Node<K,V>[]) new Node[newCap];
+    // 先替换原数组再拷贝对象
+    table = newTab;
+    if (oldTab != null) {
+        for (int j = 0; j < oldCap; ++j) {
+            Node<K,V> e = oldTab[j];
+            if (e != null) {
+                oldTab[j] = null;
+                if (e.next == null) {
+                    // rehash，重新计算再数组中的位置
+                    // 可能留在原位置（e.hash & (oldCap - 1)）
+                    // 也可能插入新位置（(e.hash & (oldCap - 1)) + oldCap）
+                    newTab[e.hash & (newCap - 1)] = e;
+                } else if (e instanceof TreeNode) {
+                    // 红黑树分裂
+                    ((TreeNode<K,V>) e).split(this, newTab, j, oldCap);
+                } else {
+                    Node<K,V> loHead = null, loTail = null;
+                    Node<K,V> hiHead = null, hiTail = null;
+                    Node<K,V> next;
+                    do {
+                        next = e.next;
+                        if ((e.hash & oldCap) == 0) {
+                            if (loTail == null)
+                                loHead = e;
+                            else
+                                loTail.next = e;
+                            loTail = e;
+                        }
+                        else {
+                            if (hiTail == null)
+                                hiHead = e;
+                            else
+                                hiTail.next = e;
+                            hiTail = e;
+                        }
+                    } while ((e = next) != null);
+                    if (loTail != null) {
+                        loTail.next = null;
+                        newTab[j] = loHead;
+                    }
+                    if (hiTail != null) {
+                        hiTail.next = null;
+                        newTab[j + oldCap] = hiHead;
+                    }
+                }
+            }
+        }
+    }
+    return newTab;
+}
 ```
 
 <br>
@@ -539,6 +740,14 @@ public HashMap() {
 
 ### 为什么 HashMap 多线程会导致死循环
 
+JDK 1.8 之前存在这个问题，因为并发下扩容时的 rehash 会造成元素之间会形成⼀个循环链表。
+
+> 当 HashMap 扩容时，HashMap 中的所有元素都需要被重新 hash 一遍，称为 rehash。
+
+```java
+
+```
+
 <br>
 
 ### ConcurrentHashMap 和 HashTable 的区别
@@ -549,18 +758,103 @@ public HashMap() {
 
 <br>
 
-### 快速失败（Fail-fast）
+### 快速失败（Fail-fast）和 安全失败（Fail-safe）
 
-<br>
-
-### 安全失败（Fail-safe）
+快速失败（fail-fast）是 Java 集合的⼀种错误检测机制。在使用迭代器对集合进⾏遍历的时候，
+- 多线程下，在操作非安全失败（fail-safe）的集合类时，可能触发 fail-fast 机制，导致抛出 `ConcurrentModificationException` 异常。
+- 单线程下，在遍历过程中对集合对象的内容进行修改，会触发 fail-fast 机制，导致抛出 `ConcurrentModificationException` 异常。
 
 采⽤安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，⽽是先复制原有集合内容，在拷⻉的集合上进⾏遍历。所以，在遍历过程中对原集合所作的修改并不能被迭代器检测到，故不会抛出 `ConcurrentModificationException` 异常。
 
 <br>
 
-### Arrays.asList() 详解
+### Arrays.asList() 和 List.of()
+
+- `Arrays.asList()` 返回的对象是 `java.util.Arrays` 类中的内部类 `java.util.Arrays$ArrayList`，而不是 `java.util.ArrayList`。`java.util.Arrays$ArrayList` 没有实现 `add()`、`remove()` 和 `clear()` 方法，但实现了 `set()` 方法，因此不能添加和删除元素，只能修改和读取元素。
+    - 传入的数组必须是对象数组，不能是基本类型数组。
+
+```java
+public class Arrays {
+    public static <T> List<T> asList(T... a) {
+        return new ArrayList<>(a);
+    }
+
+    private static class ArrayList<E> extends AbstractList<E> implements RandomAccess {
+        private final E[] a;
+
+        ArrayList(E[] array) {
+            a = Objects.requireNonNull(array);
+        }
+
+        public int     size() {}
+        public E       get(int index) {}
+        public E       set(int index, E element) {}
+        public int     indexOf(Object o) {}
+        public boolean contains(Object o) {}
+        public void    sort(Comparator<? super E> c) {}
+    }
+}
+
+public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
+    public void add(int index, E element) {
+        throw new UnsupportedOperationException();
+    }
+
+    public E remove(int index) {
+        throw new UnsupportedOperationException();
+    }
+}
+```
+
+- `List.of()` 返回的是 `AbstractImmutableList` 接口的实现类，该接口中所有修改操作（`add()`、`remove()`、`set()`等）全都会抛出异常。
+
+```java
+public interface List<E> extends Collection<E> {
+    static <E> List<E> of(E... elements) {
+        switch (elements.length) {
+            case 0:
+                return ImmutableCollections.emptyList();
+            case 1:
+                return new ImmutableCollections.List12<>(elements[0]);
+            case 2:
+                return new ImmutableCollections.List12<>(elements[0], elements[1]);
+            default:
+                return new ImmutableCollections.ListN<>(elements);
+        }
+    }
+}
+
+class ImmutableCollections {
+    static UnsupportedOperationException uoe() { return new UnsupportedOperationException(); }
+
+    static abstract class AbstractImmutableList<E> extends AbstractImmutableCollection<E> implements List<E>, RandomAccess {
+        @Override public void    add(int index, E element) { throw uoe(); }
+        @Override public boolean addAll(int index, Collection<? extends E> c) { throw uoe(); }
+        @Override public E       remove(int index) { throw uoe(); }
+        @Override public void    replaceAll(UnaryOperator<E> operator) { throw uoe(); }
+        @Override public E       set(int index, E element) { throw uoe(); }
+        @Override public void    sort(Comparator<? super E> c) { throw uoe(); }
+    }
+
+    static final class List12<E> extends AbstractImmutableList<E> implements Serializable {}
+
+    static final class ListN<E> extends AbstractImmutableList<E> implements Serializable {}
+}
+```
 
 <br>
+
+## Spring
+
+### Spring 特征
+
+- **轻量**
+    - 从大小与开销两方面而言 Spring 都是轻量的。完整的 Spring 框架可以在一个大小只有 1 MB 多的 jar 文件里发布，并且 Spring 所需的处理开销也是微不足道的。
+    - Spring 是非侵入式的。Spring 应用中的对象不依赖于 Spring 的特定类。
+- **控制反转（IoC，Inversion of Control）**
+    - Spring 通过一种称作控制反转的技术促进了低耦合。
+    - 当应用了 IoC，一个对象依赖的其他对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。
+- 
+
 
 
