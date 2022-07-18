@@ -5,6 +5,28 @@
 
 ## 在线工具
 
+<!-- <div style="line-height: 28px; display: flex;">
+    <div style="flex: 0 0 auto;">PDF：</div>
+    <div style="flex: 1 1 auto;">
+        <button onclick="window.open('https://easypdf.com/cn/')">easy PDF</button>
+        <button onclick="window.open('https://tools.pdf24.org/zh/')">PDF24 Tools</button>
+        <button onclick="window.open('https://www.ilovepdf.com/zh-cn')">iLovePDF</button>
+    </div>
+</div>
+
+<div style="line-height: 28px; display: flex;">
+    <div style="flex: 0 0 auto;">图片：</div>
+    <div style="flex: 1 1 auto;">
+        <button onclick="window.open('https://www.iloveimg.com/zh-cn')">iLoveIMG</button>
+        <button onclick="window.open('https://bigjpg.com/')">Bigjpg</button>
+        <button onclick="window.open('https://zh.recompressor.com/')">Recompressor</button>
+        <button onclick="window.open('https://www.aigei.com/bgremover')">BgRemover</button>
+        <button onclick="window.open('https://ezgif.com/')">ezGIF</button>
+        <button onclick="window.open('https://jpgrm.com/')">jpgRM</button>
+        <button onclick="window.open('https://jpghd.com/')">jpgHD</button>
+    </div>
+</div> -->
+
 PDF：[`easy PDF`](https://easypdf.com/cn/)|[`PDF24 Tools`](https://tools.pdf24.org/zh/)|[`iLovePDF`](https://www.ilovepdf.com/zh-cn)
 
 图片：[`iLoveIMG`](https://www.iloveimg.com/zh-cn)|[`Bigjpg`](https://bigjpg.com/)|[`Recompressor`](https://zh.recompressor.com/)|[`BgRemover`](https://www.aigei.com/bgremover)|[`ezGIF`](https://ezgif.com/)|[`jpgRM`](https://jpgrm.com/)|[`jpgHD`](https://jpghd.com/)
