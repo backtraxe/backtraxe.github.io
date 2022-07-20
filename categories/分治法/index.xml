@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>分治法 - 分类 - </title>
-        <link>https://backtraxe.github.io/categories/%E5%88%86%E6%B2%BB%E6%B3%95/</link>
-        <description>分治法 - 分类 - </description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Mon, 29 Mar 2021 21:42:07 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/%E5%88%86%E6%B2%BB%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
-    <title>力扣 0190 颠倒二进制位</title>
-    <link>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0190-%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D/</link>
-    <pubDate>Mon, 29 Mar 2021 21:42:07 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0190-%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D/</guid>
-    <description><![CDATA[<p><a href="https://leetcode-cn.com/problems/reverse-bits/" target="_blank" rel="noopener noreffer">题目链接</a></p>]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>分治法 - 分类 -</title><link>https://backtraxe.github.io/categories/%E5%88%86%E6%B2%BB%E6%B3%95/</link><description>分治法 - 分类 -</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor><webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Mon, 29 Mar 2021 21:42:07 +0800</lastBuildDate><atom:link href="https://backtraxe.github.io/categories/%E5%88%86%E6%B2%BB%E6%B3%95/" rel="self" type="application/rss+xml"/><item><title>力扣 0190 颠倒二进制位</title><link>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0190-%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D/</link><pubDate>Mon, 29 Mar 2021 21:42:07 +0800</pubDate><author><name>Backtraxe</name></author><guid>https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0190-%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D/</guid><description>&lt;p>&lt;a href="https://leetcode-cn.com/problems/reverse-bits/" target="_blank" rel="noopener noreffer">题目链接&lt;/a>&lt;/p></description></item></channel></rss>

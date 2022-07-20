@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>快速幂 - 标签 - </title>
-        <link>https://backtraxe.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
-        <description>快速幂 - 标签 - </description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 08 Jun 2022 21:42:45 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="self" type="application/rss+xml" /><item>
-    <title>算法-快速幂</title>
-    <link>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
-    <pubDate>Wed, 08 Jun 2022 21:42:45 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>快速幂 - 标签 -</title><link>https://backtraxe.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</link><description>快速幂 - 标签 -</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor><webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 08 Jun 2022 21:42:45 +0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="self" type="application/rss+xml"/><item><title>算法-快速幂</title><link>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%BF%AB%E9%80%9F%E5%B9%82/</link><pubDate>Wed, 08 Jun 2022 21:42:45 +0800</pubDate><author><name>Backtraxe</name></author><guid>https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid><description></description></item></channel></rss>

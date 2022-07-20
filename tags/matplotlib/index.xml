@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Matplotlib - 标签 - </title>
-        <link>https://backtraxe.github.io/tags/matplotlib/</link>
-        <description>Matplotlib - 标签 - </description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Fri, 13 May 2022 10:27:17 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/matplotlib/" rel="self" type="application/rss+xml" /><item>
-    <title>Matplotlib 教程</title>
-    <link>https://backtraxe.github.io/posts/matplotlib-%E6%95%99%E7%A8%8B/</link>
-    <pubDate>Fri, 13 May 2022 10:27:17 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/matplotlib-%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Matplotlib - 标签 -</title><link>https://backtraxe.github.io/tags/matplotlib/</link><description>Matplotlib - 标签 -</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor><webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Fri, 13 May 2022 10:27:17 +0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/matplotlib/" rel="self" type="application/rss+xml"/><item><title>Matplotlib 教程</title><link>https://backtraxe.github.io/posts/matplotlib-%E6%95%99%E7%A8%8B/</link><pubDate>Fri, 13 May 2022 10:27:17 +0800</pubDate><author><name>Backtraxe</name></author><guid>https://backtraxe.github.io/posts/matplotlib-%E6%95%99%E7%A8%8B/</guid><description></description></item></channel></rss>

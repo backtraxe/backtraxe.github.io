@@ -1,15 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>线段树 - 标签 - </title>
-        <link>https://backtraxe.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
-        <description>线段树 - 标签 - </description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 08 Jun 2022 21:30:08 &#43;0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
-    <title>数据结构-线段树</title>
-    <link>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
-    <pubDate>Wed, 08 Jun 2022 21:30:08 &#43;0800</pubDate><author>
-        <name>Backtraxe</name>
-    </author><guid>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>线段树 - 标签 -</title><link>https://backtraxe.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link><description>线段树 - 标签 -</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor><webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><lastBuildDate>Wed, 08 Jun 2022 21:30:08 +0800</lastBuildDate><atom:link href="https://backtraxe.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="self" type="application/rss+xml"/><item><title>数据结构-线段树</title><link>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</link><pubDate>Wed, 08 Jun 2022 21:30:08 +0800</pubDate><author><name>Backtraxe</name></author><guid>https://backtraxe.github.io/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid><description></description></item></channel></rss>

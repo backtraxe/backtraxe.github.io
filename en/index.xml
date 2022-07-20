@@ -1,10 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title></title>
-        <link>https://backtraxe.github.io/en/</link>
-        <description>The official documentation for the Hugo DoIt theme</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor>
-            <webMaster>backtraxe@gmail.com (Backtraxe)</webMaster>
-            <atom:link href="https://backtraxe.github.io/en/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title/><link>https://backtraxe.github.io/en/</link><description>The official documentation for the Hugo DoIt theme</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>backtraxe@gmail.com (Backtraxe)</managingEditor><webMaster>backtraxe@gmail.com (Backtraxe)</webMaster><atom:link href="https://backtraxe.github.io/en/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
