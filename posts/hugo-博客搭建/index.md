@@ -1,16 +1,29 @@
 # Hugo 博客搭建
 
 
-使用 Hugo 的 DoIt 主题搭建一个博客，并使用 Github Action 自动部署到 Github Pages。
+使用 Hugo 搭建一个博客，并使用 Github Action 自动部署到 Github Pages。
 
 <!--more-->
 
 ## 1.安装
 
-1. 到 [Github](https://github.com/gohugoio/hugo/releases/latest) 下载`hugo_extended_0.XX.X_Windows-64bit.zip`，解压并将`hugo.exe`所在目录添加到系统环境变量。
-2. 到 [Git 官网](https://git-scm.com/downloads) 下载安装 Git。
+- Windows
+  1. 到 [Github](https://github.com/gohugoio/hugo/releases/latest) 下载`hugo_extended_0.XX.X_Windows-64bit.zip`，解压并将`hugo.exe`所在目录添加到系统环境变量。
+  2. 到 [Git 官网](https://git-scm.com/downloads) 下载安装 Git。
+- Chocolatey (Windows)
+  - `choco install hugo-extended git`
+- Scoop (Windows)
+  - `scoop install hugo-extended git`
+- Homebrew (macOS)
+  - `brew install hugo git`
+
+
+<br>
 
 ## 2.创建网站
+
+1. 打开命令行，输入以下内容，其中`MyBlog`可修改。
+2. 在 [Hugo Themes](https://themes.gohugo.io/) 寻找更多主题。若更换别的主题，将 git 地址和 `DoIt` 替换。
 
 ```bash
 hugo new site MyBlog
@@ -19,11 +32,13 @@ git init
 git submodule add https://github.com/HEIGE-PCloud/DoIt.git themes/DoIt
 ```
 
-可在 [Hugo Themes](https://themes.gohugo.io/) 找到更多主题。
+<br>
 
 ## 3.添加内容
 
-输入`hugo new posts/My-First-Blog.md`，然后打开刚创建的`My-First-Blog.md`，显示如下：
+### 3.1 新建博客
+
+输入`hugo new posts/My-First-Blog.md`，然后打开`My-First-Blog.md`，显示如下：
 
 ```markdown
 ---
@@ -33,20 +48,106 @@ draft: true
 ---
 ```
 
-> 所有页面均作为草稿创建。文章完成后，如果想要渲染这些页面，请修改为`draft: false`。
+Markdown 语法见 <a href="../markdown-基本语法" target="_blank">Markdown 基本语法</a>。
 
-### 3.1 在文章中添加图片
+<br>
 
-Hugo 的配置文件和文章中引用图片都是以`static`文件夹作为根目录的。
+### 3.2 在文章中添加图片
 
-也就是说文章中插入`/xxx/yyy.jpg`，实际图片存放位置为`/static/xxx/yyy.jpg`。
+将图片存放于`static`文件夹。
+
+若图片路径为`static/xxx/yyy.jpg`，在博客中使用`/xxx/yyy.jpg`来显示图片。
+
+<br>
 
 ### 3.2 Shortcodes
 
-- 图片：`{删除{< image src="" caption="" height="" width="" >}删除}`
-- 横幅：`{删除{< admonition tip "" false >}删除} {删除{< /admonition >}删除}`
-- 公式：`{删除{< math >}删除}$ ${删除{< /math >}删除}`
-- [扩展 Shortcodes](https://hugodoit.pages.dev/zh-cn/theme-documentation-extended-shortcodes/)
+Hugo 专属，非 markdown 语法，参考 [扩展 Shortcodes](https://hugodoit.pages.dev/zh-cn/theme-documentation-extended-shortcodes/)。
+
+<br>
+
+#### 3.2.1 图片
+
+```markdown
+{{</* image src="" caption="" height="" width="" */>}}
+{{</* figure src="" link="" target="_blank" title="" caption="" height="" width="" */>}}
+```
+
+<br>
+
+#### 3.2.2 横幅
+
+- 横幅类型：`note`、`abstract`、`info`、`tip`、`success`、`question`、`warning`、`failure`、`danger`、`bug`、`example`、`quote`
+- 横幅标题
+- 横幅是否默认展开
+
+```markdown
+{{</* admonition note "" false */>}}
+横幅内容
+{{</* /admonition */>}}
+```
+
+{{< admonition note "note" false >}}{{< /admonition >}}
+{{< admonition abstract "abstract" false >}}{{< /admonition >}}
+{{< admonition info "info" false >}}{{< /admonition >}}
+{{< admonition tip "tip" false >}}{{< /admonition >}}
+{{< admonition success "success" false >}}{{< /admonition >}}
+{{< admonition question "question" false >}}{{< /admonition >}}
+{{< admonition warning "warning" false >}}{{< /admonition >}}
+{{< admonition failure "failure" false >}}{{< /admonition >}}
+{{< admonition danger "danger" false >}}{{< /admonition >}}
+{{< admonition bug "bug" false >}}{{< /admonition >}}
+{{< admonition example "example" false >}}{{< /admonition >}}
+{{< admonition quote "quote" false >}}{{< /admonition >}}
+
+<br>
+
+#### 3.2.3 公式
+
+```markdown
+{{</* math */>}}$ 行内公式 ${{</* /math */>}}
+```
+
+```markdown
+{{</* math */>}}
+$$
+公式块
+$$
+{{</* /math */>}}
+```
+
+<br>
+
+#### 3.2.4 代码
+
+- 文件类型
+- `linenostart`：起始行号
+- `hl_lines`：高亮行号（从 1 开始）
+
+```markdown
+{{</* highlight java "linenostart=5, hl_lines=5 7-9" */>}}
+代码块
+{{</* /highlight */>}}
+```
+
+{{< highlight markdown >}}
+```java {linenostart=5, hl_lines=[5,"7-9"]}
+代码块
+```
+{{< /highlight >}}
+
+<br>
+
+#### 3.2.5 gist
+
+- 用户名
+- gist ID
+
+```markdown
+{{</* gist backtraxe 9457ba6238b0a98237a17dae16c006b4 */>}}
+```
+
+<br>
 
 ## 4.本地部署
 
@@ -55,13 +156,15 @@ hugo server/serve
 hugo server -D  # 渲染草稿，即也渲染 draft: true 的内容
 ```
 
-浏览器打开 [localhost:1313](http://localhost:1313/) 即可看到部署在本地的网站。
+浏览器打开 [localhost:1313](http://localhost:1313/) 即可看到渲染后的网站。
 
-> 网站部署后，当配置文件或博客内容发生更改时，页面会自动刷新，不用重新部署。
+<br>
 
 ## 5.主题自定义
 
-主题配置文件为`MyBlog`根目录下的`config.toml`文件。
+主题配置文件为根目录下的`config.toml`文件。（也可以是`config.yaml`、`config.json`）
+
+<br>
 
 ### 5.1 简单配置
 
@@ -135,9 +238,11 @@ theme = "DoIt"
     noClasses = false
 ```
 
-### 高级配置（可选）
+<br>
 
-### [params]
+### 5.2 高级配置
+
+### 5.3 [params]
 
 ```toml
 [params]
@@ -816,19 +921,25 @@ theme = "DoIt"
   taxonomyTerm = ["HTML"]
 ```
 
+<br>
+
 ## 6.发布
 
 ### 6.1 静态页面发布
 
-输入`hugo`，渲染后的静态页面在 `./public` 文件夹中，可将该文件夹中的内容发布。
+输入`hugo`，渲染后的静态页面在`public`文件夹中，可将该文件夹中的内容复制到 Web 服务器进行发布。
 
-可用`-d/--destination`或在`config.toml`中修改`publishdir`来指定输出地址。
+可用`hugo -d/--destination`或在`config.toml`中修改`publishdir`来指定输出的文件夹。
+
+<br>
 
 ### 6.2 Github Pages 发布
 
-在 Github 新建两个仓库：`<USERNAME>.github.io.data` 存放内容，`<USERNAME>.github.io` 部署页面。
+1. 在 Github 新建两个仓库：
+    - `<USERNAME>.github.io.data` 用于存放内容，仓库名称随意，可设置为私有仓库。
+    - `<USERNAME>.github.io` 用于部署页面。
 
-其中，`<USERNAME>.github.io.data`可以设为私人仓库。
+2. 在`MyBlog`根目录下运行命令行，输入以下内容：
 
 ```bash
 git remote add origin https://github.com/backtraxe/backtraxe.github.io.data.git
@@ -837,47 +948,64 @@ git commit -m "init blog"
 git push --set-upstream origin master -f
 ```
 
-创建一个 [Personal access token](https://github.com/settings/tokens)，命名随意，勾选`repo`。
+3. 在 Github 中创建一个 [Personal access token](https://github.com/settings/tokens)，命名随意，勾选`repo`，复制其中内容。
 
-进入`<USERNAME>.github.io.data`仓库，点击`Settings`->`Secrets`，填入刚才的`token`；点击`Actions`->`New workflow`->`set up a workflow yourself`，写入如下内容。
+4. 进入`<USERNAME>.github.io.data`仓库，点击`Settings`->`Secrets`，名称为`ACCESS_TOKEN`，内容填入刚才复制的`token`。
+
+5. 然后点击`Actions`->`New workflow`->`set up a workflow yourself`，输入以下内容：
 
 ```yml
-name: Hugo Deploy  # 名称随意修改
+name: Hugo Deploy
 
 on:
   push:
-    branches: [ master ]  # 修改为你当前分支
+    branches: [ main ] # 指定分支
+
+  workflow_dispatch: # 允许手动启动
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # 指定系统版本
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2  # 克隆仓库
+      - name: 1. Checkout # 克隆仓库
+        uses: actions/checkout@v2
         with:
-          submodules: true  # 启用子模块
-          fetch-depth: 1
+          submodules: true # 启用子模块
+          fetch-depth: 0
 
-      - name: Setup Hugo  # 安装 hugo
+      - name: 2. Disable quotePath # 解决中文显示问题
+        run: git config --global core.quotePath false
+
+      - name: 3. Setup Hugo # 安装 hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'  # 指定 hugo 版本
+          hugo-version: 'latest'
+          extended: true
 
-      - name: Build Hugo  # hugo 生成网站
-        run: hugo
+      - name: 4. Build Hugo # 渲染页面
+        run: hugo --gc --minify --cleanDestinationDir
 
-      - name: Deploy Hugo  # 部署网站
+      - name: 5. Deploy Hugo # 将渲染后的页面复制到指定仓库，然后发布
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.ACCESS_TOKEN }}  # 与 secrets 里的 token 名称对应
+          personal_token: ${{ secrets.ACCESS_TOKEN }}  # 与 Secrets 的名称相同
           external_repository: backtraxe/backtraxe.github.io  # 指定发布的仓库
-          publish_branch: master  # 指定发布仓库的分支
+          publish_branch: main  # 指定发布仓库的分支
           publish_dir: ./public  # 指定要发布的目录
 ```
 
+<br>
+
 ### 6.3 环境迁移
 
-`git clone --recursive https://github.com/backtraxe/backtraxe.github.io.data.git`
+在新设备克隆仓库，同步所有内容。
+
+```bash
+git clone --recursive https://github.com/backtraxe/backtraxe.github.io.data.git
+```
+
+<br>
 
 ## 7.全局详细配置
 
@@ -991,15 +1119,16 @@ themesDir = "themes"
 title = ""
 ```
 
-参考：[Configure Hugo](https://gohugo.io/getting-started/configuration/)
+<br>
 
-## 8.参考
+## 参考
 
 1. [Quick Start | Hugo](https://gohugo.io/getting-started/quick-start/)
 2. [GitHub Pages 文档 - GitHub Docs](https://docs.github.com/cn/pages)
 3. [Host on GitHub - Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
-4. [主题文档 - 基本概念 - LoveIt](https://hugoloveit.com/zh-cn/theme-documentation-basics/)
+4. [开始使用 DoIt - 系列 - DoIt](https://hugodoit.pages.dev/zh-cn/series/getting-start/)
 5. [How to Create Your First Hugo Blog: a Practical Guide](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)
 6. [创建 GitHub Pages 站点 - Github](https://docs.github.com/cn/github/working-with-github-pages/creating-a-github-pages-site/)
 7. [使用Hugo和GitHub搭建博客 - Félix | Medium](https://zhangfelix.medium.com/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-cbd1d57fcfbf)
+8. [Configure Hugo | Hugo](https://gohugo.io/getting-started/configuration/)
 

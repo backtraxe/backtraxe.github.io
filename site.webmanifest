@@ -1,7 +1,6 @@
 {
-    "name": "Backtraxe's Blog",
-    "short_name": "traXe",
-    "start_url": "/",
+    "name": "Backtraxe",
+    "short_name": "Backtraxe",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -12,12 +11,9 @@
             "src": "/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
-        },
-        {
-            "src": "/apple-touch-icon.png",
-            "sizes": "180x180",
-            "type": "image/png",
-            "purpose": "any maskable"
         }
-    ]
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
 }

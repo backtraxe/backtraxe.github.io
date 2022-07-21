@@ -7,25 +7,23 @@
 
 ### 窗口化操作
 
-1. 打开`我的电脑`，右键点击左侧的`此电脑`，点击`属性`。
+1. 按`Win + R`，并输入`sysdm.cpl`。
 
-<img src="/imgs/环境配置/Windows添加环境变量01.png">
+<div align="center"><img src="/imgs/环境配置/Windows添加环境变量1.png"></div>
 
-2. 点击最下方的`高级系统设置`，然后点击`环境变量`。
+2. 选择`高级`，然后点击`环境变量`。
 
-<img src="/imgs/环境配置/Windows添加环境变量02.png">
+<div align="center"><img src="/imgs/环境配置/Windows添加环境变量2.png"></div>
 
-3. 修改系统变量：下方选择需要修改的变量，点击`编辑`，然后`新建`或者`编辑`变量。
+3. 在系统变量区中选择`Path`，点击`编辑`。
 
-<img src="/imgs/环境配置/Windows添加环境变量03.png">
+<div align="center"><img src="/imgs/环境配置/Windows添加环境变量3.png"></div>
 
-<img src="/imgs/环境配置/Windows添加环境变量04.png">
+4. 点击`新建`，输入程序的执行路径（绝对路径）。
 
-4. 新建系统变量：直接点击`新建`，输入`变量名`和`变量值`，然后`确定`。
+<div align="center"><img src="/imgs/环境配置/Windows添加环境变量4.png"></div>
 
-<img src="/imgs/环境配置/Windows添加环境变量05.png">
-
-<img src="/imgs/环境配置/Windows添加环境变量06.png">
+<br>
 
 ### 误删系统环境变量的补救措施
 
@@ -36,6 +34,8 @@
 1. **若已重启电脑**。手动恢复 PATH 到默认值`%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0`，其他值已丢失。
 
 参考：[如何恢复我删除的Path环境变量？](https://qastack.cn/superuser/523688/deleted-path-environment-variable-how-to-restore)
+
+<br>
 
 ## VS Code
 
