@@ -31,6 +31,20 @@ PDF：[`easy PDF`](https://easypdf.com/cn/)|[`PDF24 Tools`](https://tools.pdf24.
 
 图片：[`iLoveIMG`](https://www.iloveimg.com/zh-cn)|[`Bigjpg`](https://bigjpg.com/)|[`Recompressor`](https://zh.recompressor.com/)|[`BgRemover`](https://www.aigei.com/bgremover)|[`ezGIF`](https://ezgif.com/)|[`jpgRM`](https://jpgrm.com/)|[`jpgHD`](https://jpghd.com/)
 
+- [Remove Background by PhotoRoom](https://www.photoroom.com/background-remover/)：去除背景。
+- [Remove Background by ClipDrop](https://clipdrop.co/remove-background)：去除背景。
+- [Erase.bg by PixelBin.io](https://www.erase.bg/)：去除背景。
+
+- [Remove Objects by PhotoRoom](https://www.photoroom.com/tools/remove-object-from-photo/)：抠背景。
+- [CleanUp.pictures](https://cleanup.pictures/)：抠背景。
+
+- [Upscaler by ClipDrop](https://clipdrop.co/image-upscaler)：提高分辨率。
+- [Upscale.media by PixelBin.io](https://www.upscale.media/)：提高分辨率。
+
+- [Shrink.media by PixelBin.io](https://www.shrink.media/)：图片压缩。
+
+- [WatermarkRemover.io by PixelBin.io](https://www.watermarkremover.io/)：去除水印。
+
 视频：[`bigmp4`](https://bigmp4.com/)
 
 音频：[`网易见外`](tps://jianwai.youdao.com/)
@@ -40,6 +54,8 @@ OCR：[`EasyScreenOCR`](https://online.easyscreenocr.com/ZH)|[`Online OCR`](http
 图标：[`小米风格Logo`](https://mi-logo.lvwzhen.com/)|[`图标制作`](https://geticon.cn/)|[`Favicon生成器`](https://realfavicongenerator.net/)
 
 背景：[`Figen`](https://figen.cc/)|[`fffuel`](https://fffuel.co/)
+
+- [Meshy](https://meshgradient.in/)：Generate beautiful mesh gradients.
 
 图表：[`ProcessOn`](https://processon.com/)|[`Diagram`](https://app.diagrams.net/)
 
@@ -65,15 +81,29 @@ LaTeX：[`Overleaf`](https://cn.overleaf.com/)|[`公式编辑器`](https://www.l
 
 体育：[`CCTV5`](https://tv.cctv.com/live/cctv5/)|[`JRKAN`](http://jrkankan.com/)
 
+小说：[`小说排版助手`](https://vvsolo.github.io/)
+
+- [工具书](http://www.shubang.net/)：新华字典、汉语词典、英语词典、成语词典、诗词古文、作文大全、汉字笔顺、汉字组词、近义词、反义词、词语造句、双语小说、童话故事、谜语大全、谚语大全、歇后语大全、名人名言、周公解梦、实用工具、网名大全、好词好句、特殊符号。
+
 ## 程序开发
 
 IDE：[`OnlineGDB`](https://www.onlinegdb.com/)|[`C++ shell`](http://cpp.sh/)|[`futurecoder`](https://github.com/alexmojaki/futurecoder)|[`KalkiCode`](https://kalkicode.com/online-code)
+
+- [Compiler Explorer](https://godbolt.org/)：查看各种语言编译后的汇编代码或字节码。[Github](https://github.com/compiler-explorer/compiler-explorer)
 
 Git：[`Learn Git`](https://learngitbranching.js.org/?locale=zh_CN)
 
 正则表达式：[`regex101`](https://regex101.com/)|[`RegexLearn`](https://regexlearn.com/)
 
 破解：[`吾爱破解`](https://www.52pojie.cn/)
+
+- [数据结构和算法动态可视化](https://visualgo.net/zh)
+
+- [uiverse.io](https://uiverse.io/)：HTML 和 CSS 样式库。
+
+- [Carbon](https://carbon.now.sh/)：代码截图。
+
+- [CodeToImg](https://codetoimg.com/)：代码截图。
 
 ## 资源下载
 
@@ -99,9 +129,16 @@ Office：[`Word联盟`](http://www.wordlm.com/)|[`优品PPT`](https://www.ypppt.
 
 壁纸：[`极简壁纸1`](https://bz.zzzmh.cn/index)|[`极简壁纸2`](http://www.jijianzy.com/bz/)|[`Wallpaper Abyss`](https://wall.alphacoders.com/)|[`wallhaven`](https://wallhaven.cc/)
 
+- [Ocean of Wallpapers](https://oceanofwallpapers.com/)
+- [Rare Gallery](https://rare-gallery.com/)
+
 素材：[`Freepik`](https://www.freepik.com)|[`Storyset`](https://storyset.com/)|[`StickPNG`](https://www.stickpng.com/)
 
 图标：[`Worldvectorlogo`](https://worldvectorlogo.com/zh)|[`Iconduck`](https://iconduck.com/)|[`StickPNG`](https://www.stickpng.com/)|[`Iconfont`](https://www.iconfont.cn/)|[`设计之家`](https://www.sj33.cn/sc/)|[`Notion Icons 5.0`](https://notionv5.vyshnav.xyz/)
+
+- [iOS Icon Gallery](https://www.iosicongallery.com/)
+- [macOS Icon Gallery](https://www.macosicongallery.com/)
+- [watchOS Icon Gallery](https://www.watchosicongallery.com/)
 
 配色：[`Color Hunt`](https://colorhunt.co/)|[`Color Palettes`](https://colorpalettes.net/)|[`Hello Color`](https://jxnblk.github.io/hello-color/)|[`NIPPON COLORS`](https://nipponcolors.com/)|[`中国色`](http://zhongguose.com/)|[`Blend`](http://colinkeany.com/blend/)|[`ColorSpace`](https://mycolor.space/)
 

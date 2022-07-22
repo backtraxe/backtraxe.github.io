@@ -3,6 +3,114 @@
 
 <!--more-->
 
+## 简历
+
+- [vCard](https://github.com/codewithsadee/vcard-personal-portfolio)：vCard is a fully responsive personal portfolio website, responsive for all devices.
+
+## C++
+
+- [Modern CPP Tricks](https://github.com/rachitiitr/modern-cpp-tricks)：This is the list of modern CPP tricks often used in Coding Interviews and Competitive Programming.
+- [《Effective Modern C++》解读笔记](https://www.yuque.com/jtcheng/emcpp)
+
+## C/C++
+
+- [《Effective Debugging》中文版](https://github.com/Celthi/effective-debugging-zh)：Effective Debugging by Michael Yan，讲述了如何更有效率地调试大型程序（以C/C++为例）的方法和技能。书中例子不仅丰富而且都是从实际的工作经验提取，观点和方法有效且具有可行性。
+
+## Go
+
+- [《Go 入门指南》](https://github.com/unknwon/the-way-to-go_ZH_CN)：《The Way to Go》中文版。
+- [《Go 语言原本》](https://golang.design/under-the-hood/)：本书就是一本讨论 Go 语言源码工程中的技术原理及其演进历程的书籍。
+- [Golang-Internal-Notes](https://github.com/LeoYang90/Golang-Internal-Notes)：Go 源码分析。
+- [《玩转 GO》](https://github.com/hantmac/Mastering_Go_ZH_CN)：《Mastering GO》中文版。
+- [Go Course](https://github.com/karanpratapsingh/go-course)：Master the fundamentals and advanced features of the Go programming language.
+- [Golang 编译器代码浅析](https://gocompiler.shizhz.me/)
+- [《Go语言定制指南》](https://github.com/chai2010/go-ast-book)
+- [《µGo语言实现》](https://github.com/wa-lang/ugo-compiler-book)：从头开发一个迷你 Go 语言编译器。
+- [《Go 语言设计与实现》](https://draveness.me/golang/)
+- [Golang资料补给包](https://github.com/0voice/Introduction-to-Golang)
+- [《Go语言标准库》](https://github.com/polaris1119/The-Golang-Standard-Library-by-Example)：`2022/3/6`
+- [Go Standard Library By Example](https://github.com/theodesp/go-standard-library-by-example)：`2018/1/10`
+
+## 深度学习
+
+- [AI on Ubuntu Platform](https://github.com/aimuch/iAI)：AI 实验环境搭建和深度学习算法。
+- [《Neural Networks For Chess》](https://github.com/asdfjkl/neural_network_chess)
+
+## 数据库
+
+- [Let's Build a Simple Database](https://cstack.github.io/db_tutorial/)：Writing a sqlite clone from scratch in C.
+- [从零开始写数据库：500行代码实现 LSM 数据库](https://developer.aliyun.com/article/784800)
+- [Use The Index, Luke!](https://use-the-index-luke.com/)：A site explaining SQL indexing to developers.
+
+## 算法
+
+- [LeetCode难题代码和算法要点分析](https://github.com/wisdompeak/LeetCode)：C++/Python 实现。`2022/7/18`
+- [《Algorithms》](https://github.com/jeffgerickson/algorithms)：by Jeff Erickson.
+- [图解算法数据结构](https://github.com/krahets/LeetCode-Book)：《剑指 Offer》 Python, Java, C++ 解题代码，LeetBook《图解算法数据结构》配套代码仓。
+- [《Algorithms》](https://algs4.cs.princeton.edu/home/)：4th Edition by Robert Sedgewick and Kevin Wayne.
+- [《算法新解》](https://github.com/liuxinyu95/AlgoXY)
+- [1500 most common data structures and algorithms solutions](https://kalkicode.com/data-structure/1500-most-common-data-structures-and-algorithms-solutions)
+
+## 计算机网络
+
+- [不为人知的网络编程](http://www.52im.net/thread-1003-1-1.html)
+- [通透，23 个问题 TCP 疑难杂症全解析](https://www.cnblogs.com/yescode/p/13838568.html)
+
+## 操作系统
+
+- [](https://warsus.github.io/lions-/)
+
+## Linux
+
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+- [Linux内核学习资料](https://github.com/0voice/linux_kernel_wiki)
+- [Linux操作系统内核学习](https://ty-chen.github.io/categories/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%86%85%E6%A0%B8%E5%AD%A6%E4%B9%A0/)
+
+## 软件工程
+
+- [《Software Engineering at Google》中文版](https://github.com/qiangmzsx/Software-Engineering-at-Google)
+- [Google Style Guides](https://github.com/google/styleguide)：Style guides for Google-originated open-source projects.
+
+## 正则表达式
+
+- [Learn Regex the Easy Way](https://github.com/ziishaned/learn-regex)
+- [RegExp Example](https://github.com/jaywcjlove/regexp-example)：正则表达式实例搜集，通过实例来学习正则表达式。
+
+## Matplotlib
+
+- [40000 字！全网最强 Matplotlib 实操指南!](https://mp.weixin.qq.com/s/3iZhsZqknsBFXtJxV1jq7Q)
+
+## 区块链
+
+- [区块链黑暗森林自救手册](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)
+
+## 博客
+
+- [为什么这么设计系列文章](https://draven.co/whys-the-design/)
+- [Ops School Curriculum](https://www.opsschool.org/)：Ops School is a comprehensive program that will help you learn to be an operations engineer.
+
+## 工具
+
+- [DBER](https://github.com/findyourmagic/dber)：数据库建表工具。
+- [godeng](https://github.com/chenjiayao/godeng/)：生成各种类型的测试数据。
+- [RapidOCR (捷智OCR)](https://github.com/RapidAI/RapidOCR)
+- [F2](https://github.com/ayoisaiah/f2)：命令行批量重命名工具。
+- [Gradio](https://github.com/gradio-app/gradio)：Build Machine Learning Web Apps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{< admonition tip "未分类" false >}}
 - [设计数据密集型应用 - 中文翻译](https://github.com/Vonng/ddia)
 - [Awesome Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture)
@@ -11,7 +119,7 @@
 - [Awesome Roadmaps](https://github.com/liuchong/awesome-roadmaps)
 - [PptxGenJS](https://github.com/gitbrent/PptxGenJS): Create JavaScript PowerPoint Presentations
 - [程序员应该访问的最佳网站中文版](https://github.com/tuteng/Best-websites-a-programmer-should-visit-zh)
-{{< /admonition >}}
+
 
 ## 公开课
 
@@ -355,3 +463,6 @@
 ## 论文
 
 - [Paper Style Guide](https://github.com/huggingface/paper-style-guide)
+
+{{< /admonition >}}
+
