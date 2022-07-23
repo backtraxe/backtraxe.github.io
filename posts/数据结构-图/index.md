@@ -5,36 +5,42 @@
 
 ## 1.术语表
 
-- 图（graph）
-- 边（edge）：连接两个顶点。
-    - 自环：起点和终点是同一个顶点的边。
-    - 平行边：连接同一对顶点的两条边。
-- 顶点（vertex）
-- 度（degree）：顶点连接的边的数量。
-    - 入度（in degree）：有向图专有，终点是当前顶点的边的数量。
-    - 出度（out degree）：有向图专有，起点是当前顶点的边的数量。
-- 路径（path）：由边连接的一系列顶点。
-    - 简单路径：无重复顶点的路径。
-- 环：起点和终点相同的路径。
-    - 简单环：无重复顶点的环。
+图（graph）
 
-是否存在平行边：
-
-- 简单图：无平行边的图。
-- 多重图：存在平行边的图。
+**边（edge）**：连接两个顶点。
+- 自环：起点和终点是同一个顶点的边。
+- 平行边：连接同一对顶点的两条边。
 
 边是否存在方向：
-
 - 有向图：边有方向。
 - 无向图：边无方向。
 
-
+是否有环：
 - 无环图：不存在环的图。
-- 子图：边和连接的顶点的子集。
-- 连通图：任意一个顶点都存在路径到达另一个任意顶点。
-    - 连通子图：
-    - 极大连通子图：
-- 二分图：能将所有顶点分为两个部分的图，每条边的两个顶点分别属于不同的部分。
+
+顶点（vertex）
+
+**度（degree）**：顶点连接的边的数量。
+- 入度（indegree）：**终点**是当前顶点的**有向边**的数量（到达当前顶点）。
+- 出度（outdegree）：**起点**是当前顶点的**有向边**的数量（从当前顶点出发）。
+
+**路径（path）**：由边连接的一系列顶点。
+- 简单路径：无重复顶点的路径。
+
+**环（loop）**：起点和终点相同的路径。
+- 简单环：无重复顶点的环。
+
+是否存在平行边：
+- 简单图：无平行边的图。
+- 多重图：存在平行边的图。
+
+子图：边和连接的顶点的子集。
+
+**连通图**：任意一个顶点都存在路径到达另一个任意顶点。
+- 连通子图：
+- 极大连通子图：
+
+**二分图**：能将所有顶点分为两个部分的图，每条边的两个顶点分别属于不同的部分。
 
 <br>
 
@@ -42,9 +48,46 @@
 
 ### 2.1 邻接矩阵
 
+```java
+// mat[u][v] == true 表示顶点 u 到顶点 v 存在一条有向边，u 是起点，v 是终点
+boolean[][] mat = new boolean[n][n];
+
+// mat[u][v] == w 表示顶点 u 到顶点 v 的有向边的边权 w
+// 可将 mat[u][v] 赋值为 0 或 Integer.MAX_VALUE 表示 u 和 v 之间无边
+int[][] mat = new int[n][n];
+```
+
+- 优点：可快速判断两个顶点是否相邻
+- 缺点：占用空间大
+
 <br>
 
 ### 2.2 邻接表
+
+```java
+// graph[u] 存储从顶点 u 开始的所有边的终点集合
+// graph[u].get(i) == v 表示顶点 u 开始的第 i 条边的终点 v
+List<Integer>[] graph = new ArrayList[n];
+// graph[u].get(i)[0] == v, graph[u].get(i)[1] == w 表示顶点 u 开始的第 i 条边的终点 v，边权 w
+List<int[]>[] graph = new ArrayList[n];
+for (int i = 0; i < n; i++)
+    graph[i] = new ArrayList<>();
+
+// 快速判断两个顶点是否相邻
+Set<Integer>[] graph = new HashSet[n];
+Set<int[]>[] graph = new HashSet[n];
+for (int i = 0; i < n; i++)
+    graph[i] = new HashSet<>();
+
+// 快速判断两个顶点是否相邻，从顶点 u 开始的所有边的终点集合有序
+Set<Integer>[] graph = new TreeSet[n];
+Set<int[]>[] graph = new TreeSet[n];
+for (int i = 0; i < n; i++)
+    graph[i] = new TreeSet<>();
+```
+
+- 优点：占用空间小
+- 缺点：无法快速判断两个顶点是否相邻（用 Set 存储可解决）
 
 <br>
 
@@ -215,90 +258,30 @@ void addEdge(int i, int u, int v, int w) {
 **特点**
 
 - 空间复杂度：$O(n+m)$
--
+
+<br>
 
 ## 3.图的遍历
 
-#### 深度优先搜索（DFS）
+#### 3.1 深度优先搜索（DFS）
+
+Depth First Search
 
 ```java
-boolean[] vis;                                   // 判断顶点是否访问过，
-Deque<Integer> trace;                            // 记录当前路径
-boolean[] onPath;                                // 判断某顶点是否在当前路径上
-List<List<Integer>> traces = new LinkedList<>(); // 记录所有路径
-
-// 邻接表
-void dfs(List<Integer>[] graph, int begin, int end) {
-    // ===== 1.进入当前顶点
-    // 访问当前顶点
-    vis[begin] = true;
-    onPath[begin] = true;
-    trace.offerLast(begin);
-    // 到达终点
-    if (begin == end) {
-        // 防止已添加路径被修改
-        traces.add(new LinkedList<Integer>(trace));
-        // 回溯
-        vis[begin] = false;
-        onPath[begin] = false;
-        trace.pollLast();
-        return;
+void dfs(Graph graph, int u, boolean[] vis) {
+    vis[u] = true;
+    // 前序
+    for (int v : graph[u]) {
+        // 树枝
+        if (!vis[v]) dfs(graph, v, vis);
     }
-    // 继续遍历
-    for (int next : graph[begin]) {
-        if (!vis[next]) {
-            // ===== 2.进入相邻顶点
-            dfs(graph, next, end);
-            // ===== 3.从相邻顶点返回
-        }
-    }
-    // ===== 4.离开当前顶点
-    // 回溯
-    vis[begin] = false;
-    onPath[begin] = false;
-    trace.pollLast();
+    // 后序
 }
 ```
 
-```java
-boolean[] vis;
-Deque<Integer> trace;                            // 记录当前路径
-boolean[] onPath;                                // 判断某顶点是否在当前路径上
-List<List<Integer>> traces = new LinkedList<>(); // 记录所有路径
+<br>
 
-// 邻接矩阵
-void dfs(int[][] graph, int begin) {
-    if (vis[begin]) {
-        return;
-    }
-    // 访问当前顶点
-    vis[begin] = true;
-    onPath[begin] = true;
-    trace.offerLast(begin);
-    // 到达终点
-    if (begin == end) {
-        // 防止已添加路径被修改
-        traces.add(new LinkedList<Integer>(trace));
-        // 回溯
-        vis[begin] = false;
-        onPath[begin] = false;
-        trace.pollLast();
-        return;
-    }
-    // 下个顶点
-    for (int next = 0; next < graph.length; next++) {
-        if (!vis[next] && graph[begin][next] != 0) {
-            dfs(graph, next);
-        }
-    }
-    // 回溯
-    vis[begin] = false;
-    onPath[begin] = false;
-    trace.pollLast();
-}
-```
-
-#### 广度优先搜索（BFS）
+#### 3.2 广度优先搜索（BFS）
 
 ```python
 def BFS(开始节点 s):
@@ -346,6 +329,83 @@ def BiBFS(开始节点 s，结束节点 e):
         s2 = s3
         步数 += 1
 ```
+
+<br>
+
+
+## 4.环检测
+
+若下个待访问的顶点已在当前路径上，则说明存在环。
+
+[207. 课程表](https://leetcode.cn/problems/course-schedule/)
+
+- DFS：设置 `onPath` 数组表示顶点是否在当前访问路径上。
+
+```java
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        List<Integer>[] graph = new ArrayList[numCourses];
+        for (int i = 0; i < numCourses; i++)
+            graph[i] = new ArrayList<>();
+        boolean[] vis = new boolean[numCourses];
+        boolean[] onPath = new boolean[numCourses];
+        for (int[] course : prerequisites) // 建图
+            graph[course[1]].add(course[0]);
+        for (int u = 0; u < numCourses; u++) // DFS 遍历
+            if (!vis[u] && dfs(graph, u, vis, onPath))
+                return false;
+        return true;
+    }
+
+    boolean dfs(List<Integer>[] graph, int u, boolean[] vis, boolean[] onPath) {
+        // 返回是否存在环
+        vis[u] = true;
+        onPath[u] = true;
+        for (int v : graph[u]) {
+            if (onPath[v]) // 找到环
+                return true;
+            if (!vis[v] && dfs(graph, v, vis, onPath)) // 已找到环，剪枝
+                return true;
+        }
+        onPath[u] = false; // 回溯
+        return false;
+    }
+}
+```
+
+- DFS：用 `int[] vis` 中的不同值表示顶点的不同状态（未访问、访问中、已访问）。
+
+```java
+
+```
+
+- BFS：
+
+```java
+
+```
+
+<br>
+
+## 5.拓扑排序
+
+拓扑排序（Topological Sort）：得到有向图 $G$ 的顶点的一个排列，满足任意一条有向边 $(u,v)$，$u$ 在排列中都在 $v$ 前面，即相对顺序不变。
+
+[210. 课程表 II](https://leetcode.cn/problems/course-schedule-ii/)
+
+- DFS：
+
+```java
+
+```
+
+- BFS：
+
+```java
+
+```
+
+<br>
 
 ## 最小生成树
 
