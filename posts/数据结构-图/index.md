@@ -268,12 +268,20 @@ void addEdge(int i, int u, int v, int w) {
 Depth First Search
 
 ```java
+void traverse(Graph graph) {
+    int n = graph.length;
+    boolean[] vis = new boolean[n];
+    for (int u = 0; u < n; u++)
+        dfs(graph, u, vis);
+}
+
 void dfs(Graph graph, int u, boolean[] vis) {
     vis[u] = true;
     // 前序
     for (int v : graph[u]) {
         // 树枝
-        if (!vis[v]) dfs(graph, v, vis);
+        if (!vis[v])
+            dfs(graph, v, vis);
     }
     // 后序
 }
@@ -283,55 +291,74 @@ void dfs(Graph graph, int u, boolean[] vis) {
 
 #### 3.2 广度优先搜索（BFS）
 
-```python
-def BFS(开始节点 s):
-    q = 队列
-    vis = 集合/哈希表/布尔数组
-    将s添加到q中
-    将s添加到vis中/标记s为已访问
-    步数 = 0
-    while(q非空):
-        for q的每一个节点，记为h # 每次清空队列
-            if 满足结束条件:
-                return
-            for h的每个相邻节点x:
-                if x未在vis中/x未访问:
-                    将x添加到q中
-                    将x添加到vis中/标记x为已访问
-        步数 += 1
+Breadth First Search
+
+- BFS
+
+```java
+void traverse(Graph graph) {
+    int n = graph.length;
+    boolean[] vis = new boolean[n];
+    for (int u = 0; u < n; u++)
+        bfs(graph, u, vis);
+}
+
+void bfs(Graph graph, int start, boolean[] vis) {
+    Queue<Integer> queue = new Queue<>();
+    queue.offer(start);
+    vis[start] = true;
+    int step = 0;
+    while (!queue.isEmpty()) {
+        int size = queue.size();
+        while (size-- > 0) {
+            int u = queue.poll();
+            for (int v : graph[u]) {
+                // 此处可添加结束条件
+                if (!vis[v]) {
+                    vis[v] = true;
+                    queue.offer(v);
+                }
+            }
+        }
+        step++;
+    }
+}
 ```
 
-```python
-# 双向BFS
-def BiBFS(开始节点 s，结束节点 e):
-    s1 = 从s开始的搜索集合
-    s2 = 从e开始的搜索集合
-    vis = 集合/哈希表/布尔数组
-    将s添加到s1中
-    将s添加到vis中/标记s为已访问
-    将e添加到s2中
-    将e添加到vis中/标记e为已访问
-    步数 = 0
-    while(s1非空 and s2非空):
-        if s1中元素比s2多:
-            # 交换s1和s2
-            s1, s2 = s2, s1
-        s3 = 过渡集合
-        for s1的每一个节点，记为h # 每次清空队列
-            if h在s2中存在:
-                return
-            for h的每个相邻节点x:
-                if x未在vis中/x未访问:
-                    将x添加到s3中
-                    将x添加到vis中/标记x为已访问
-        # 交换q1和q2（一边一轮）
-        s1 = s2
-        s2 = s3
-        步数 += 1
+- 双向 BFS
+
+```java
+void bbfs(Graph graph, int start, int end, boolean[] vis) {
+    Set<Integer> que1 = new HashSet<>();
+    Set<Integer> que2 = new HashSet<>();
+    que1.add(start);
+    vis[start] = true;
+    que2.add(end);
+    vis[end] = true;
+    int step = 0;
+    while (!que1.isEmpty() && !que2.isEmpty()) {
+        if (que1.size() > que2.size()) {
+            // 优先遍历顶点多的队列
+            Set<Integer> que = que1;
+            que1 = que2;
+            que2 = que;
+        }
+        Set<Integer> que = new HashSet<>();
+        int size = que1.size();
+        while (size-- > 0) {
+            int u = que1.poll();
+            if ()
+            for (int v : graph[u]) {
+                if (!vis[v]) {
+                    vis[v] = true;
+                }
+            }
+        }
+    }
+}
 ```
 
 <br>
-
 
 ## 4.环检测
 
