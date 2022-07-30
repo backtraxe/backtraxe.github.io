@@ -23,6 +23,36 @@
 
 - [DB-TUTORIAL](https://dunwu.github.io/db-tutorial/)
 
+## Java 基础
+
+### Math.abs(Integer.MIN_VALUE)
+
+```java
+Math.abs(Integer.MIN_VALUE) == Integer.MIN_VALUE;
+```
+
+### 使用未初始化的变量
+
+使用未初始化的变量抛出编译异常。
+
+### 1 / 0 和 1 / 0.0 的区别？
+
+- `1 / 0` 抛出 `java.lang.ArithmeticException: / by zero` 异常。
+- `1 / 0.0` 返回 `Infinity`。
+
+### 为什么数组起始索引是 0 ？
+
+计算数组元素地址为数组起始地址加索引，将其实索引设为 1 会浪费第一个元素空间或者计算地址时需要减 1，不便于使用。
+
+### Java 方法参数传递为按值传递
+
+Java 将参数值的一个副本从调用端传递到方法。
+
+### 数组也是对象
+
+
+
+
 ## 数据库
 
 ### 数据库范式
@@ -854,7 +884,7 @@ class ImmutableCollections {
 - **控制反转（IoC，Inversion of Control）**
     - Spring 通过一种称作控制反转的技术促进了低耦合。
     - 当应用了 IoC，一个对象依赖的其他对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。
-- 
+-
 
 
 
