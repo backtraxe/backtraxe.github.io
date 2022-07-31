@@ -366,7 +366,7 @@ void bbfs(Graph graph, int start, int end, boolean[] vis) {
 
 [207. 课程表](https://leetcode.cn/problems/course-schedule/)
 
-- DFS：设置 `onPath` 数组表示顶点是否在当前访问路径上。
+### 4.1 DFS：布尔数组表示顶点是否在当前路径上
 
 ```java
 class Solution {
@@ -400,16 +400,72 @@ class Solution {
 }
 ```
 
-- DFS：用 `int[] vis` 中的不同值表示顶点的不同状态（未访问、访问中、已访问）。
+### 4.2 DFS：vis 数组中的不同值表示顶点的不同状态（未访问、访问中、已访问）。
 
 ```java
+class Solution {
+    List<List<Integer>> edges;
+    int[] visited;
+    boolean valid = true;
 
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        edges = new ArrayList<>();
+        for (int i = 0; i < numCourses; ++i)
+            edges.add(new ArrayList<>());
+        visited = new int[numCourses];
+        for (int[] info : prerequisites)
+            edges.get(info[1]).add(info[0]);
+        for (int i = 0; i < numCourses && valid; ++i)
+            if (visited[i] == 0)
+                dfs(i);
+        return valid;
+    }
+
+    public void dfs(int u) {
+        visited[u] = 1; // 当前路径上
+        for (int v: edges.get(u)) {
+            if (visited[v] == 0) {
+                dfs(v);
+                if (!valid) return;
+            } else if (visited[v] == 1) {
+                valid = false;
+                return;
+            }
+        }
+        visited[u] = 2; // 已访问
+    }
+}
 ```
 
-- BFS：
+### 4.3 BFS：每次删除入度为 0 的顶点
 
 ```java
-
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        List<List<Integer>> graph = new ArrayList<>();
+        for (int i = 0; i < numCourses; i++)
+            graph.add(new ArrayList<>());
+        int[] indegree = new int[numCourses]; // 入度
+        for (int[] edge : prerequisites) {
+            graph.get(edge[1]).add(edge[0]); // 方向无所谓
+            indegree[edge[0]]++;
+        }
+        Queue<Integer> queue = new ArrayDeque<>();
+        for (int i = 0; i < numCourses; i++)
+            if (indegree[i] == 0) queue.offer(i);
+        int visited = 0;
+        while (!queue.isEmpty()) {
+            visited++;
+            int u = queue.poll();
+            for (int v : edges.get(u)) {
+                --indeg[v];
+                if (indeg[v] == 0)
+                    queue.offer(v);
+            }
+        }
+        return visited == numCourses;
+    }
+}
 ```
 
 <br>
