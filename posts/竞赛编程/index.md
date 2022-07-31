@@ -53,6 +53,29 @@ class Main {
 }
 ```
 
+### 字符串
+
+```java
+// 字符串拼接
+s1 + s2
+// 长度
+int length()
+// 下标为 i 的字符
+int charAt(int i)
+// p 第一次出现的下标，未找到返回 -1
+int indexOf(String p)
+// 从下标 i 开始，p 第一次出现的下标，未找到返回 -1
+int indexOf(String p, int i)
+// 子串 [i,j - 1]
+String substring(int i, int j)
+// 分割字符串，支持正则表达式
+String[] split(String delim)
+// 比较字符串，小于返回 -1，相等返回 0，大于返回 1
+int compareTo(String t)
+// 比较字符串
+boolean equals(String t)
+```
+
 ### 数组
 
 ```java
@@ -70,9 +93,83 @@ for (int i = 0; i < 3; i++)
     arr5[i] = new User();
 ```
 
-### Map
+### 变长数组
 
-#### HashMap
+```java
+List<Integer> list = new ArrayList<>();
+```
+
+### 链表
+
+```java
+// 双向链表
+List<Integer> list = new LinkedList<>();
+```
+
+### 栈
+
+```java
+// 数组实现
+Deque<Integer> stack1 = new ArrayDeque<>();
+// 链表实现
+Deque<Integer> stack2 = new LinkedList<>();
+```
+
+API 1:
+
+- `boolean offerLast(E e)`：向栈顶添加元素。
+- `E pollLast()`：从栈顶删除元素并返回该元素，若栈为空返回 null。
+- `E peekLast()`：返回栈顶元素，若栈为空返回 null。
+
+API 2:
+
+- `void push(E e)`：向栈顶添加元素。
+- `E pop()`：从栈顶删除元素并返回该元素，若栈为空抛出`java.util.NoSuchElementException`。
+- `E peek()`：返回栈顶元素，若栈为空返回 null。
+
+### 队列
+
+#### 普通队列
+
+```java
+// 数组实现
+Queue<Integer> queue1 = new ArrayDeque<>();
+// 链表实现
+Queue<Integer> queue2 = new LinkedList<>();
+```
+
+- `boolean offer(E e)`：添加元素到队尾。
+- `E poll()`：从队头删除元素并返回该元素，若队列为空返回 null。
+- `E peek()`：返回队头元素，若队列为空返回 null。
+- `int size()`：返回队列中元素数量。
+- `boolean isEmpty()`：返回队列是否为空。
+
+```java
+// 遍历，不支持增强 for 循环和迭代器。
+while (!queue.isEmpty()) {
+    int e = queue.poll();
+}
+```
+
+#### 双端队列
+
+```java
+// 数组实现
+Deque<Integer> queue1 = new ArrayDeque<>();
+// 链表实现
+Deque<Integer> queue2 = new LinkedList<>();
+```
+
+- `boolean offerFirst(E e)`：队首添加元素。
+- `boolean offerLast(E e)`：队尾添加元素。
+- `E pollFirst()`：删除队首元素并返回，若队列为空返回 null。
+- `E pollLast()`：删除队尾元素并返回，若队列为空返回 null。
+- `E peekFirst()`：返回队首元素，若队列为空返回 null。
+- `E peekLast()`：返回队尾元素，若队列为空返回 null。
+
+### 哈希表
+
+#### 无序哈希表
 
 ##### 初始化
 
@@ -213,7 +310,7 @@ Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
 });
 ```
 
-#### TreeMap
+#### 有序哈希表
 
 ##### 初始化
 
@@ -268,9 +365,9 @@ higherKey("zzz");  // null
 
 ```
 
-### Set
+### 集合
 
-#### HashSet
+#### 无序集合
 
 ##### 初始化
 
@@ -284,7 +381,7 @@ higherKey("zzz");  // null
 
 ##### 排序
 
-#### TreeSet
+#### 有序集合
 
 ##### 初始化
 
@@ -316,28 +413,7 @@ TreeSet<Integer> set2 = new TreeSet<>((a, b) -> b - a);        // 降序
 
 使用同 [TreeMap](#遍历-1)。
 
-### String
-
-```java
-// 字符串拼接
-s1 + s2
-// 长度
-int length()
-// 下标为 i 的字符
-int charAt(int i)
-// p 第一次出现的下标，未找到返回 -1
-int indexOf(String p)
-// 从下标 i 开始，p 第一次出现的下标，未找到返回 -1
-int indexOf(String p, int i)
-// 子串 [i,j - 1]
-String substring(int i, int j)
-// 分割字符串，支持正则表达式
-String[] split(String delim)
-// 比较字符串，小于返回 -1，相等返回 0，大于返回 1
-int compareTo(String t)
-// 比较字符串
-boolean equals(String t)
-```
+### 优先队列
 
 ### 常量
 
@@ -362,15 +438,94 @@ String s = Integer.toBinaryString(123);
 
 ### 数据规模
 
-### 判断回文串
+### getMin 功能的栈
+
+1. 两个栈：一个存元素，一个存最小值。最小值可以同步存，也可以不同步。
+2. 一个栈：捆绑元素和最小值。
 
 ```java
-static boolean isPalindrome(String s) {
-    int n = s.length();
-    for (int i = 0; i < n / 2; i++)
-        if (s.charAt(i) != s.charAt(n - 1 - i))
-            return false;
-    return true;
+class MinStack {
+    Deque<Integer> stackData = new ArrayDeque<>();
+    Deque<Integer> stackMin = new ArrayDeque<>();
+
+    public void push(int e) {
+        stackData.push(e);
+        if (stackMin.isEmpty()) stackMin.push(e);
+        else stackMin.push(Math.min(e, getMin()));
+    }
+
+    public int pop() {
+        if (stackData.isEmpty()) throw new Exception("栈中没有元素");
+        stackMin.pop();
+        return stackData.pop();
+    }
+
+    public int peek() {
+        if (stackData.isEmpty()) throw new Exception("栈中没有元素");
+        return stackData.peek();
+    }
+
+    public int getMin() {
+        if (stackData.isEmpty()) throw new Exception("栈中没有元素");
+        return stackMin.peek();
+    }
 }
 ```
 
+### 两个栈组成队列
+
+```java
+class TwoStackQueue {
+    Deque<Integer> stackIn = new ArrayDeque<>();
+    Deque<Integer> stackOut = new ArrayDeque<>();
+
+    public void offer(int e) {
+        stackIn.push(e);
+    }
+
+    public int poll() {
+        check();
+        return stackOut.pop();
+    }
+
+    public int peek() {
+        check();
+        return stackOut.peek();
+    }
+
+    private void check() {
+        if (stackOut.isEmpty() && stackIn.isEmpty())
+            throw new Exception("队列中没有元素");
+        if (stackOut.isEmpty())
+            while (!stackIn.isEmpty())
+                stackOut.push(stackIn.pop());
+    }
+}
+```
+
+### 用递归函数和栈逆序一个栈
+
+```java
+static void reverseStack(Deque<Integer> stack) {
+    if (stack.isEmpty()) return;
+    int bottom = getAndRemoveBottom(stack);
+    reverseStack(stack);
+    stack.push(bottom);
+}
+
+static int getAndRemoveBottom(Deque<Integer> stack) {
+    int top = stack.poll();
+    if (stack.isEmpty()) return top;
+    else {
+        int bottom = getAndRemoveBottom(stack);
+        stack.push(top);
+        return bottom;
+    }
+}
+```
+
+### 猫狗队列
+
+```java
+
+```
