@@ -90,6 +90,7 @@ LaTeX：[`Overleaf`](https://cn.overleaf.com/)|[`公式编辑器`](https://www.l
 IDE：[`OnlineGDB`](https://www.onlinegdb.com/)|[`C++ shell`](http://cpp.sh/)|[`futurecoder`](https://github.com/alexmojaki/futurecoder)|[`KalkiCode`](https://kalkicode.com/online-code)
 
 - [Compiler Explorer](https://godbolt.org/)：查看各种语言编译后的汇编代码或字节码。[Github](https://github.com/compiler-explorer/compiler-explorer)
+- [Replit](https://replit.com/)：在线 IDE。
 
 Git：[`Learn Git`](https://learngitbranching.js.org/?locale=zh_CN)
 

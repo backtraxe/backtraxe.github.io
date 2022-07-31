@@ -217,17 +217,104 @@ Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
 
 ##### 初始化
 
-- ``：
+- `TreeMap​(Comparator<? super K> comparator)`：自定义排序规则。
 
 ```java
+// 降序
 Map<String, Integer> map = new TreeMap<>((a, b) -> b.compareTo(a));
 ```
 
 ##### 查询
 
+- `K floorKey(K key)`：返回最后一个小于等于 key 的键，若无返回 null。
+- `K ceilingKey(K key)`：返回第一个大于等于 key 的键，若无返回 null。
+- `K lowerKey(K key)`：返回最后一个小于 key 的键，若无返回 null。
+- `K higherKey(K key)`：返回第一个大于 key 的键，若无返回 null。
+- `K firstKey()`：返回第一个键，若空抛出`java.util.NoSuchElementException`。
+- `K lastKey()`：返回最后一个键，若空抛出`java.util.NoSuchElementException`。
+- `Map.Entry<K,​V> floorEntry(K key)`：返回最后一个小于等于 key 的键值对，若无返回 null。
+- `Map.Entry<K,​V> ceilingEntry(K key)`：返回第一个大于等于 key 的键值对，若无返回 null。
+- `Map.Entry<K,​V> higherEntry(K key)`：返回最后一个小于 key 的键值对，若无返回 null。
+- `Map.Entry<K,​V> lowerEntry(K key)`：返回第一个大于 key 的键值对，若无返回 null。
+- `Map.Entry<K,​V> firstEntry()`：返回第一个键值对，若空返回 null。
+- `Map.Entry<K,​V> lastEntry()`：返回最后一个键值对，若空返回 null。
+
+```java
+// {five=5, four=4, one=1, three=3, two=2}
+floorKey("one");   // one
+floorKey("six");   // one
+floorKey("aaa");   // null
+floorKey("zzz");   // two
+ceilingKey("one"); // one
+ceilingKey("six"); // three
+ceilingKey("aaa"); // five
+ceilingKey("zzz"); // null
+lowerKey("one");   // four
+lowerKey("six");   // one
+lowerKey("aaa");   // null
+lowerKey("zzz");   // two
+higherKey("one");  // three
+higherKey("six");  // three
+higherKey("aaa");  // five
+higherKey("zzz");  // null
+```
+
+##### 遍历
+
+- `NavigableSet<K> descendingKeySet()`
+- `NavigableMap<K,​V> descendingMap()`
+
 ```java
 
 ```
+
+### Set
+
+#### HashSet
+
+##### 初始化
+
+##### 添加
+
+##### 删除
+
+##### 查询
+
+##### 遍历
+
+##### 排序
+
+#### TreeSet
+
+##### 初始化
+
+- `TreeSet​(Collection<? extends E> c)`：使用其他容器进行初始化。
+- `TreeSet​(Comparator<? super E> comparator)`：自定义排序规则。
+
+```java
+TreeSet<Integer> set1 = new TreeSet<>(List.of(2, 1, 1, 3, 2)); // [1, 2, 3]
+TreeSet<Integer> set2 = new TreeSet<>((a, b) -> b - a);        // 降序
+```
+
+##### 查询
+
+- `E floor(E e)`：返回最后一个小于等于 e 的元素，若无返回 null。
+- `E ceiling(E e)`：返回第一个大于等于 e 的元素，若无返回 null。
+- `E lower(E e)`：返回最后一个小于 e 的元素，若无返回 null。
+- `E higher(E e)`：返回第一个大于 e 的元素，若无返回 null。
+- `E first()`：返回第一个元素，若无抛出`java.util.NoSuchElementException`。
+- `E last()`：返回最后一个元素，若无抛出`java.util.NoSuchElementException`。
+- `E pollFirst()`：删除并返回第一个元素，若无返回 null。
+- `E pollLast()`：删除并返回最后一个元素，若无返回 null。
+
+使用同 [TreeMap](#查询-1)。
+
+##### 遍历
+
+- `Iterator<E> descendingIterator()`
+- `NavigableSet<E> descendingSet()`
+
+使用同 [TreeMap](#遍历-1)。
 
 ### String
 
