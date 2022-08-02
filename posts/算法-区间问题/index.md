@@ -161,6 +161,82 @@ class Solution {
 }
 ```
 
+## 5. 区间合并、插入、删除综合
+
+[715. Range 模块](https://leetcode.cn/problems/range-module/)
+
+### 5.1 有序集合
+
+1. 随时保证有序集合中的区间不重叠。
+2. 插入区间 $[left, right)$：
+    1. 二分查找最后一个 $l_i \le left$，即 $l_i \le left && l_{i+1} \gt left$ 的区间 $[l_i, r_i)$
+        - 若
+        - 若
+        - 若
+        - 若
+    2. 
+3. 删除区间`[left, right)`：
+
+```java
+class RangeModule {
+    TreeMap<Integer, Integer> ranges = new TreeMap<>(); // {l=r}
+
+    public void addRange(int left, int right) {
+        Integer ll = ranges.floorKey(left);  // 左侧区间的左端点 ll <= left
+        Integer rl = ranges.floorKey(right); // 右侧区间的左端点 rl <= right
+        // [ll, lr) 和 [left, right) 区间重叠 ll <= left <= lr (ll < lr)
+        if (ll != null && ranges.get(ll) >= left) left = ll;
+        // [left, right) 和 [rl, rr) 区间重叠 rl <= right <= rr (rl < rr)
+        if (rl != null && ranges.get(rl) >= right) right = ranges.get(rl);
+        // 将 [left, right) 向两端扩充为合并后的区间
+        ranges.put(left, right);
+        // 迭代器删除被 [left, right) 包含的区间
+        var it = ranges.keySet().iterator();
+        while (it.hasNext()) {
+            int l = it.next();
+            int r = ranges.get(l);
+            if (left < l && r <= right) it.remove();
+        }
+    }
+
+    public boolean queryRange(int left, int right) {
+        Integer ll = ranges.floorKey(left); // 左侧区间的左端点 ll <= left
+        // 若 ll <= left < right <= lr，则返回 true
+        return ll == null ? false : right <= ranges.get(ll);
+    }
+
+    public void removeRange(int left, int right) {
+        Integer ll = ranges.lowerKey(left);  // 左侧区间的左端点 ll < left
+        Integer rl = ranges.lowerKey(right); // 右侧区间的左端点 rl < right
+        if (ll != null) {
+            int lr = ranges.get(ll);
+            if (lr > right) { // 分割区间 ll < left < right < lr
+                ranges.put(ll, left);
+                ranges.put(right, lr);
+            } else if (lr > left) { // 分割区间 ll < left < lr <= right
+                ranges.put(ll, left);
+            }
+        }
+        if (rl != null) {
+            int rr = ranges.get(rl);
+            // 若 rl < left，则 rl == ll，之前已经分割
+            if (rr > right) { // 分割区间 left <= rl < right < rr
+                ranges.put(rl, right); // 减小区间，便于删除
+                ranges.put(right, rr);
+            }
+        }
+        // 迭代器删除被 [left, right) 包含的区间
+        var it = ranges.keySet().iterator();
+        while (it.hasNext()) {
+            int l = it.next();
+            int r = ranges.get(l);
+            if (left <= l && r <= right)
+                it.remove();
+        }
+    }
+}
+```
+
 ## 参考
 
 - [秒懂力扣区间题目：重叠区间、合并区间、插入区间](https://mp.weixin.qq.com/s/ioUlNa4ZToCrun3qb4y4Ow)
