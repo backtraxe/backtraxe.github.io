@@ -55,26 +55,101 @@ class Main {
 
 ### 字符串
 
-```java
-// 字符串拼接
-s1 + s2
-// 长度
-int length()
-// 下标为 i 的字符
-int charAt(int i)
-// p 第一次出现的下标，未找到返回 -1
-int indexOf(String p)
-// 从下标 i 开始，p 第一次出现的下标，未找到返回 -1
-int indexOf(String p, int i)
-// 子串 [i,j - 1]
-String substring(int i, int j)
-// 分割字符串，支持正则表达式
-String[] split(String delim)
-// 比较字符串，小于返回 -1，相等返回 0，大于返回 1
-int compareTo(String t)
-// 比较字符串
-boolean equals(String t)
-```
+#### 构造方法
+
+- `String​(byte[] bytes)`
+- `String​(byte[] bytes, int offset, int length)`
+- `String​(char[] value)`
+- `String​(char[] value, int offset, int count)`
+- `String​(StringBuffer buffer)`
+- `String​(StringBuilder builder)`
+
+#### 常用方法
+
+- `int length()`：返回字符串长度。
+- `boolean isEmpty()`：字符串是否为空。
+- `String concat(String str)`：将 str 拼接到字符串末尾，等同于 +=。
+- `String repeat(int count)`：返回重复 count 次得到的字符串。
+
+#### 比较
+
+- `boolean equals(Object anObject)`：字符串是否相等。
+- `boolean equalsIgnoreCase(String anotherString)`：字符串是否相等，忽略大小写。
+- `boolean contentEquals(CharSequence cs)`：字符串是否相等（可比较 String、StringBuilder、StringBuffer）。
+- `int compareTo(String anotherString)`：比较字符串，小于返回 -1，相等返回 0，大于返回 1。
+- `int compareToIgnoreCase​(String str)`：比较字符串，忽略大小写，小于返回 -1，相等返回 0，大于返回 1。
+
+- `boolean startsWith(String prefix)`
+- `boolean startsWith(String prefix, int toffset)`
+- `boolean endsWith(String suffix)`
+- `boolean matches(String regex)`
+- `boolean contains(CharSequence s)`
+
+- `boolean isBlank()`：字符串是否为空白（由空格、制表符、换行符、回车符构成）。
+
+#### 查找
+
+- `char charAt(int index)`：返回索引 index 处的字符。
+
+- `int indexOf(int ch)`：返回字符 ch 第一次出现的索引，未找到返回 -1。
+- `int indexOf(int ch, int fromIndex)`：返回字符 ch 从 fromIndex 处第一次出现的索引，未找到返回 -1。
+- `int indexOf(String str)`：：返回字符串 str 第一次出现的索引，未找到返回 -1。
+- `int indexOf(String str, int fromIndex)`：返回字符串 str 从 fromIndex 处第一次出现的索引，未找到返回 -1。
+
+- `int lastIndexOf(int ch)`：返回字符 ch 最后一次出现的索引，未找到返回 -1。
+- `int lastIndexOf(int ch, int fromIndex)`：返回字符 ch 从 fromIndex 处最后一次出现的索引，未找到返回 -1。
+- `int lastIndexOf(String str)`：返回字符串 str 最后一次出现的索引，未找到返回 -1。
+- `int lastIndexOf(String str, int fromIndex)`：返回字符串 str 从 fromIndex 处最后一次出现的索引，未找到返回 -1。
+
+#### 替换
+
+- `String replace(char oldChar, char newChar)`：替换所有指定字符。
+- `String replace(CharSequence target, CharSequence replacement)`：替换所有字符串。
+- `String replaceAll(String regex, String replacement)`
+- `String replaceFirst(String regex, String replacement)`
+
+#### 分割/合并
+
+- `String[] split(String regex)`：按 regex 分割字符串，支持正则表达式。
+- `String[] split(String regex, int limit)`
+- `static String join(CharSequence delimiter, CharSequence... elements)`
+- `static String join(CharSequence delimiter, Iterable<? extends CharSequence> elements)`
+
+#### 处理
+
+- `String toLowerCase()`
+- `String toUpperCase()`
+- `String strip()`
+- `String stripLeading()`
+- `String stripTrailing()`
+- `String trim()`
+
+#### 子串
+
+- `String substring(int beginIndex)`：返回子串 s[beginIndex, n)。
+- `String substring(int beginIndex, int endIndex)`：返回子串 s[beginIndex, endIndex)。
+
+#### 类型转换
+
+- `static String valueOf(T t)`：基本数据类型 转 String。
+- `static String valueOf(char[] data)`：char[] 转 String。
+- `static String valueOf(char[] data, int offset, int count)`：c[offset, offset + count) 转 String。
+
+- `char[] toCharArray()`：String 转 char[]。
+- `void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)`：String 转 char[]。
+
+- `static String format(String format, Object... args)`：生成指定格式 String。
+
+#### 字符判断
+
+- `static boolean isDigit(char ch)`
+- `static boolean isLetter(char ch)`
+- `static boolean isLetterOrDigit(char ch)`
+- `static boolean isWhitespace(char ch)`
+- `static boolean isLowerCase(char ch)`
+- `static boolean isUpperCase(char ch)`
+- `static char toLowerCase(char ch)`
+- `static char toUpperCase(char ch)`
 
 ### 数组
 
