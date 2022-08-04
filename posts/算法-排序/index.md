@@ -249,7 +249,7 @@ static void merge(int[] arr, int low, int mid, int high) {
     - 交换两个元素。
 3. 将左右两个区域视为两个数组，重复前两个步骤，当子数组排序完成即整个数组排序完成。
 
-### 7.4 二切分实现
+### 7.4 标准快排实现
 
 ```java
 static void quickSort(int[] arr, int low, int high) {
@@ -281,51 +281,45 @@ static void quickSort(int[] arr, int low, int high) {
 }
 ```
 
-### 7.5 三切分实现
+### 7.5 三向切分快排实现
 
 将数组切分为三个部分：小于 pivot、等于 pivot、大于 pivot。
 
+- 当数组中存在重复元素时效率更高。
+- 每一轮确定 r - l + 1 个元素的位置。
+
 ```java
 static void quickSort(int[] arr, int low, int high) {
+    // [low, high]
     if (low >= high) return;
-    int[] pos = partition(arr, low, high);
-    quickSort(arr, low, pos[0] - 1);
-    quickSort(arr, pos[1] + 1, high);
-}
-
-static int[] partition(int[] arr, int low, int high) {
+    // 1. 随机选取 pivot
     int pivotIndex = low + (int) (Math.random() * (high - low + 1));
-    int temp = arr[low];
-    arr[low] = arr[pivotIndex];
-    arr[pivotIndex] = temp;
-    int pivot = arr[low];
-
-
-    
-
-
-
-
-
-
-
-
-
-
-    int mid = low + 1;
-    while (mid <= high) {
-        if (arr[mid] == pivot) {
-            mid++;
-        } else if (arr[mid] > pivot) {
-            swap(arr, mid, high);
-            high--;
+    // 2. partition
+    int pivot = arr[pivotIndex];
+    int l = low;
+    int m = low;
+    int r = high;
+    while (m <= r) {
+        if (arr[m] < pivot) {
+            swap(arr, l, m);
+            l++;
+            m++;
+        } else if (arr[m] > pivot) {
+            swap(arr, m, r);
+            r--;
         } else {
-            swap(arr, low, mid);
-            low++;
-            mid++;
+            m++;
         }
     }
-    return new int[] { low, high };
+    // 3. 递归子数组
+    quickSort(arr, low, l - 1);
+    quickSort(arr, r + 1, high);
+}
+
+static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
 }
 ```
 
