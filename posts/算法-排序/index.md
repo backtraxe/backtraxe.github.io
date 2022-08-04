@@ -228,51 +228,64 @@ static void merge(int[] arr, int low, int mid, int high) {
 
 ## 7.快速排序
 
-- 在数组中随机取出一个数，称之为基数（pivot）。
-- 遍历数组，将比基数大的数字放到它的右边，比基数小的数字放到它的左边。遍历完成后，数组被分成了左右两个区域。
-- 将左右两个区域视为两个数组，重复前两个步骤，直到排序完成。
+### 7.1 介绍
 
-#### 10.5.1 二切分
+与归并排序一样，快速排序也是一种利用 **分治思想** 的排序方法，确定 **主轴及分区** 是快速排序的核心操作。
+
+### 7.2 特点
+
+- 时间复杂度：平均/最优为 $O(n \log n)$，最坏为 $O(n^2)$。
+- 实现简单
+- **原地排序**
+- 每一轮确定一个元素的位置
+- **不稳定**
+
+### 7.3 步骤
+
+1. 在数组中随机取出一个数，称之为基数（pivot）。
+2. 遍历数组，将比基数大的数字放到它的右边，比基数小的数字放到它的左边。遍历完成后，数组被分成了左右两个区域。
+    - 从左向右遍历找到第一个大于等于基数的元素。
+    - 从右向左遍历找到第一个小于等于基数的元素。
+    - 交换两个元素。
+3. 将左右两个区域视为两个数组，重复前两个步骤，当子数组排序完成即整个数组排序完成。
+
+### 7.4 二切分实现
 
 ```java
-static void quickSort(int[] arr) {
-    quickSort(arr, 0, arr.length - 1);
-}
-
 static void quickSort(int[] arr, int low, int high) {
+    // [low, high]
     if (low >= high) return;
-    int pos = partition(arr, low, high);
-    quickSort(arr, low, pos - 1);
-    quickSort(arr, pos + 1, high);
-}
 
-static int partition(int[] arr, int low, int high) {
-    int pivotID = (int) (Math.random() * (high - low + 1)) + low;
-    swap(arr, low, pivotID);
+    // 1. 随机选取 pivot
+    int pivotIndex = low + (int) (Math.random() * (high - low + 1));
+    int temp = arr[low];
+    arr[low] = arr[pivotIndex];
+    arr[pivotIndex] = temp;
+
+    // 2. partition 划分
     int pivot = arr[low];
-    while (low < high) {
-        while (low < high && arr[high] > pivot) high--;
-        while (low < high && arr[low] <= pivot) low++;
-        if (low < high) swap(arr, low, high);
+    int l = low;
+    int r = high;
+    while (l < r) {
+        // pivot 在左侧则先右后左，pivot 在右侧则先左后右
+        while (l < r && arr[r] >= pivot) r--;
+        arr[l] = arr[r];
+        while (l < r && arr[l] <= pivot) l++;
+        arr[r] = arr[l];
     }
-    arr[low] = pivot;
-    return low;
-}
+    arr[l] = pivot;
 
-static void swap(int[] arr, int i, int j) {
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
+    // 3. 递归子数组
+    quickSort(arr, low, l - 1);
+    quickSort(arr, l + 1, high);
 }
 ```
 
-#### 10.5.2 三切分
+### 7.5 三切分实现
+
+将数组切分为三个部分：小于 pivot、等于 pivot、大于 pivot。
 
 ```java
-static void quickSort(int[] arr) {
-    quickSort(arr, 0, arr.length - 1);
-}
-
 static void quickSort(int[] arr, int low, int high) {
     if (low >= high) return;
     int[] pos = partition(arr, low, high);
@@ -281,9 +294,24 @@ static void quickSort(int[] arr, int low, int high) {
 }
 
 static int[] partition(int[] arr, int low, int high) {
-    int pivotID = (int) (Math.random() * (high - low + 1)) + low;
-    swap(arr, low, pivotID);
+    int pivotIndex = low + (int) (Math.random() * (high - low + 1));
+    int temp = arr[low];
+    arr[low] = arr[pivotIndex];
+    arr[pivotIndex] = temp;
     int pivot = arr[low];
+
+
+    
+
+
+
+
+
+
+
+
+
+
     int mid = low + 1;
     while (mid <= high) {
         if (arr[mid] == pivot) {
@@ -300,8 +328,6 @@ static int[] partition(int[] arr, int low, int high) {
     return new int[] { low, high };
 }
 ```
-
-<br />
 
 ## 8.堆排序
 
