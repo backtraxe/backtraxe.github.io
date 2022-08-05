@@ -582,7 +582,317 @@ class Solution {
 
 ### 2.3 中等
 
-#### 2.3.1
+#### 2.3.1 两数相加
+
+[2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)
+
+```java
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode();
+        ListNode p = dummy;
+        int carry = 0;
+        while (l1 != null || l2 != null || carry != 0) {
+            int addition = carry;
+            if (l1 != null) {
+                addition += l1.val;
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                addition += l2.val;
+                l2 = l2.next;
+            }
+            carry = addition / 10;
+            p.next = new ListNode(addition % 10);
+            p = p.next;
+        }
+        return dummy.next;
+    }
+}
+```
+
+#### 2.3.2 删除倒数第 N 个结点
+
+[19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)
+
+- 递归
+
+```java
+class Solution {
+    int index = 1; // 后序，表示当前是倒数第 index 个结点
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head == null) return null;
+        head.next = removeNthFromEnd(head.next, n);
+        if (n == index++) head = head.next; // 删除当前结点
+        return head;
+    }
+}
+```
+
+- 前后指针
+
+```java
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if (n <= 0) return head;
+        ListNode dummy = new ListNode(0, head);
+        ListNode p1 = head;
+        ListNode p2 = dummy;
+        while (n-- > 0 && p1 != null) p1 = p1.next;
+        while (p1 != null) {
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        if (n < 0) p2.next = p2.next.next; // 当 n 大于链表长度时什么也不做
+        return dummy.next;
+    }
+}
+```
+
+#### 2.3.3 两两交换相邻节点
+
+[24. 两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs/)
+
+- 递归
+
+```java
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode next = head.next;
+        head.next = swapPairs(next.next);
+        next.next = head;
+        return next;
+    }
+}
+```
+
+- 迭代
+
+```java
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        ListNode dummy = new ListNode(0, head);
+        ListNode prev = dummy;
+        ListNode curr = head;
+        while (curr != null && curr.next != null) {
+            ListNode next = curr.next.next;
+            prev.next = curr.next; // 当前组加入总链表
+            curr.next.next = curr; // 后结点指向前结点
+            curr.next = next;      // 前结点指向下一组
+            prev = curr;
+            curr = next;
+        }
+        return dummy.next;
+    }
+}
+```
+
+#### 2.3.4 旋转链表
+
+[61. 旋转链表](https://leetcode.cn/problems/rotate-list/)
+
+```java
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        if (head == null || k == 0) return head;
+        // 1. 求链表长度，同时获取链表尾部结点
+        int len = 1;
+        ListNode tail = head;
+        while (tail.next != null) {
+            len++;
+            tail = tail.next;
+        }
+        k %= len;
+        if (k == 0) return head;
+        // 2. 找到倒数第 k + 1 个结点
+        ListNode p = head;
+        for (int i = 1; i < len - k; i++) p = p.next;
+        // 3. 重新连接链表
+        tail.next = head;
+        head = p.next;
+        p.next = null;
+        return head;
+    }
+}
+```
+
+#### 2.3.5 删除有序链表中重复的元素
+
+[82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)
+
+- 递归
+
+```java
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode p = head.next;
+        while (p != null && head.val == p.val) p = p.next;
+        if (p == head.next) head.next = deleteDuplicates(head.next); // 无重复结点
+        else head = deleteDuplicates(p); // 删除重复结点
+        return head;
+    }
+}
+```
+
+- 迭代
+
+```java
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0, head);
+        ListNode prev = dummy;
+        ListNode curr = head;
+        while (curr != null) {
+            // 相邻结点相等 或 最后一个结点
+            if (curr.next == null || curr.val != curr.next.val) {
+                if (prev.next == curr) prev = curr; // 无重复结点
+                else prev.next = curr.next; // 删除重复结点
+            }
+            curr = curr.next;
+        }
+        return dummy.next;
+    }
+}
+```
+
+#### 2.3.6 按指定元素划分链表
+
+[86. 分隔链表](https://leetcode.cn/problems/partition-list/)
+
+- 拆分两链表，然后合并
+
+```java
+class Solution {
+    public ListNode partition(ListNode head, int x) {
+        ListNode small = new ListNode();
+        ListNode large = new ListNode();
+        ListNode p1 = small;
+        ListNode p2 = large;
+        while (head != null) {
+            if (head.val < x) {
+                p1.next = head;
+                p1 = p1.next;
+            } else {
+                p2.next = head;
+                p2 = p2.next;
+            }
+            head = head.next;
+        }
+        p2.next = null;
+        p1.next = large.next;
+        return small.next;
+    }
+}
+```
+
+#### 2.3.7 反转从 left 到 right 的链表节点
+
+[92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)
+
+- 递归
+
+```java
+class Solution {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if (left == right) return head;
+        if (left == 1) return reverseFrontN(head, right);
+        head.next = reverseBetween(head.next, left - 1, right - 1);
+        return head;
+    }
+
+    ListNode reverseFrontN(ListNode head, int n) {
+        // 反转前 n 个结点
+        if (head == null || head.next == null || n <= 1) return head;
+        ListNode newHead = reverseFrontN(head.next, n - 1);
+        ListNode next = head.next;
+        head.next = next.next;
+        next.next = head;
+        return newHead;
+    }
+}
+```
+
+- 迭代
+
+```java
+class Solution {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if (left == right) return head;
+        ListNode dummy = new ListNode(0, head);
+        // 1. 找到第 left - 1 个结点
+        ListNode front = dummy;
+        while (left > 1 && front != null) {
+            left--;
+            right--;
+            front = front.next;
+        }
+        // 2. 翻转从当前结点开始的 right 个结点
+        ListNode prev = front;
+        ListNode curr = front.next;
+        while (right-- > 0 && curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        // 3. 重新连接链表
+        front.next.next = curr; // 将 反转的链表 连接上 后面的链表
+        front.next = prev;      // 将 前面的链表 连接上 反转的链表
+        return dummy.next;
+    }
+}
+```
+
+#### 2.3.8
+
+[116. 填充每个节点的下一个右侧节点指针](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)
+
+#### 2.3.9
+
+[117. 填充每个节点的下一个右侧节点指针 II](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/)
+
+#### 2.3.10
+
+[138. 复制带随机指针的链表](https://leetcode.cn/problems/copy-list-with-random-pointer/)
+
+#### 2.3.11
+
+[142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)
+
+#### 2.3.12
+
+[143. 重排链表](https://leetcode.cn/problems/reorder-list/)
+
+#### 2.3.13
+
+[147. 对链表进行插入排序](https://leetcode.cn/problems/insertion-sort-list/)
+
+#### 2.3.14
+
+[148. 排序链表](https://leetcode.cn/problems/sort-list/)
+
+#### 2.3.15
+
+[328. 奇偶链表](https://leetcode.cn/problems/odd-even-linked-list/)
+
+#### 2.3.16
+
+[430. 扁平化多级双向链表](https://leetcode.cn/problems/flatten-a-multilevel-doubly-linked-list/)
+
+#### 2.3.17
+
+[445. 两数相加 II](https://leetcode.cn/problems/add-two-numbers-ii/)
+
+#### 2.3.18
+
+[1019. 链表中的下一个更大节点](https://leetcode.cn/problems/next-greater-node-in-linked-list/)
+
+#### 2.3.19
+
+[1171. 从链表中删去总和值为零的连续节点](https://leetcode.cn/problems/remove-zero-sum-consecutive-nodes-from-linked-list/)
 
 ### 2.4 困难
 
