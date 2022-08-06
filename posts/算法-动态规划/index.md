@@ -3,6 +3,8 @@
 
 <!--more-->
 
+## 1.基础
+
 Dynamic Programming
 
 **定义：**
@@ -51,7 +53,82 @@ def fib(n):
 
 ### 数位DP
 
-## 实战
+## 2.实战
+
+### 2.1 买卖股票的最佳时机
+
+[121. 买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)
+
+1. 定义状态：$dp[i]$ 表示前 $i$ 天的最大利润。
+2. 状态转移：
+
+$$
+dp[i] = max(dp[i-1], prices[i] - 前i-1天的最低价格)
+$$
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int ans = 0;
+        int minPrice = Integer.MAX_VALUE;
+        for (int price : prices) {
+            ans = Math.max(ans, price - minPrice);
+            minPrice = Math.min(minPrice, price);
+        }
+        return ans;
+    }
+}
+```
+
+[122. 买卖股票的最佳时机 II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
+
+1. 定义状态：$dp[i][0]$ 表示第 $i$ 天未持有股票的最大利润，$dp[i][1]$ 表示第 $i$ 天持有股票的最大利润。
+2. 状态转移：
+
+    - 未持有->未持有。
+    - 未持有->持有。（购买）
+    - 持有->未持有。（出售）
+    - 持有->持有。
+
+$$
+dp[i][0] = max(dp[i-1][0],dp[i-1][1] + prices[i]) \newline
+dp[i][1] = max(dp[i-1][1],dp[i-1][0] - prices[i])
+$$
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        int[][] dp = new int[n][2];
+        dp[0][1] = -prices[0];
+        for (int i = 1; i < n; i++) {
+            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
+            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
+        }
+        return dp[n - 1][0];
+    }
+}
+```
+
+3. 每一天的状态只与前一天的状态有关，可优化空间。
+
+```java
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        int[] dp = { 0, Integer.MIN_VALUE }; // 定义不存在的状态为负无穷
+        for (int price : prices) {
+            int[] temp = {
+                Math.max(dp[0], dp[1] + price),
+                Math.max(dp[1], dp[0] - price)
+            };
+            dp = temp;
+        }
+        return dp[0];
+    }
+}
+```
 
 ### 最长递增子序列（LIS）
 
