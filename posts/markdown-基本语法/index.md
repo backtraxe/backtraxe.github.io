@@ -248,7 +248,7 @@ int main() {
 }
 ```
 
-## 10.LaTeX公式
+## 10.公式
 
 ### 10.1 行内公式
 
@@ -261,24 +261,44 @@ $E=mc^2$
 ### 10.2 多行公式
 
 ```markdown
-$$\sum_{i=1}^n a_i=0$$
+$$
+\sum_{i=1}^n a_i=0
+$$
+```
 
 $$
+\sum_{i=1}^n a_i=0
+$$
+
+```markdown
+$$
 \begin{align}
-x &= v_0\cos\theta t \\
+x &= v_0\cos\theta t \newline
 y &= v_0\sin\theta t - \frac{1}{2}gt^2
 \end{align}
 $$
 ```
 
-$$\sum_{i=1}^n a_i=0$$
-
-{{< math >}}
 $$
 \begin{align}
-x &= v_0\cos\theta t \\
+x &= v_0\cos\theta t \newline
 y &= v_0\sin\theta t - \frac{1}{2}gt^2
 \end{align}
 $$
-{{< /math >}}
+
+```markdown
+$$
+\begin{aligned}
+x &= v_0\cos\theta t \newline
+y &= v_0\sin\theta t - \frac{1}{2}gt^2
+\end{aligned}
+$$
+```
+
+$$
+\begin{aligned}
+x &= v_0\cos\theta t \newline
+y &= v_0\sin\theta t - \frac{1}{2}gt^2
+\end{aligned}
+$$
 

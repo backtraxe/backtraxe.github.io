@@ -57,14 +57,33 @@ def fib(n):
 
 ### 2.1 买卖股票的最佳时机
 
+#### 2.1.1 买卖股票的最佳时机-最多1次
+
 [121. 买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)
 
 1. 定义状态：$dp[i]$ 表示前 $i$ 天的最大利润。
 2. 状态转移：
 
 $$
-dp[i] = max(dp[i-1], prices[i] - 前i-1天的最低价格)
+dp[i] = \max(dp[i-1], prices[i] - 前i-1天的最低价格)
 $$
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        int[] dp = new int[n];
+        int minPrice = prices[0];
+        for (int i = 1; i < n; i++) {
+            dp[i] = Math.max(dp[i - 1], prices[i] - minPrice);
+            minPrice = Math.min(minPrice, prices[i]);
+        }
+        return dp[n - 1];
+    }
+}
+```
+
+3. 空间优化：每一天的状态只与前一天的状态有关。
 
 ```java
 class Solution {
@@ -80,6 +99,8 @@ class Solution {
 }
 ```
 
+#### 2.1.2 买卖股票的最佳时机-无次数限制
+
 [122. 买卖股票的最佳时机 II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
 
 1. 定义状态：$dp[i][0]$ 表示第 $i$ 天未持有股票的最大利润，$dp[i][1]$ 表示第 $i$ 天持有股票的最大利润。
@@ -91,8 +112,8 @@ class Solution {
     - 持有->持有。
 
 $$
-dp[i][0] = max(dp[i-1][0],dp[i-1][1] + prices[i]) \newline
-dp[i][1] = max(dp[i-1][1],dp[i-1][0] - prices[i])
+dp[i][0] = \max(dp[i-1][0],dp[i-1][1] + prices[i]) \newline
+dp[i][1] = \max(dp[i-1][1],dp[i-1][0] - prices[i])
 $$
 
 ```java
@@ -110,14 +131,14 @@ class Solution {
 }
 ```
 
-3. 每一天的状态只与前一天的状态有关，可优化空间。
+3. 空间优化：每一天的状态只与前一天的状态有关。
 
 ```java
-
 class Solution {
     public int maxProfit(int[] prices) {
         int n = prices.length;
-        int[] dp = { 0, Integer.MIN_VALUE }; // 定义不存在的状态为负无穷
+        // 最开始不可能持有股票，状态不存在，置为负无穷
+        int[] dp = { 0, Integer.MIN_VALUE };
         for (int price : prices) {
             int[] temp = {
                 Math.max(dp[0], dp[1] + price),
@@ -128,6 +149,215 @@ class Solution {
         return dp[0];
     }
 }
+```
+
+#### 2.1.3 买卖股票的最佳时机-最多2次
+
+[123. 买卖股票的最佳时机 III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/)
+
+1. 定义状态：
+
+    - $dp[i][0][0]$ 表示第 $i$ 天**未持有**股票且前 $i$ 天未进行过购买的最大利润。
+    - $dp[i][1][0]$ 表示第 $i$ 天**未持有**股票且前 $i$ 天进行过 1 次购买的最大利润。
+    - $dp[i][2][0]$ 表示第 $i$ 天**未持有**股票且前 $i$ 天进行过 2 次购买的最大利润。
+    - $dp[i][0][1]$ 表示第 $i$ 天**持有**股票且前 $i$ 天未进行过购买的最大利润。
+    - $dp[i][1][1]$ 表示第 $i$ 天**持有**股票且前 $i$ 天进行过 1 次购买的最大利润。
+    - $dp[i][2][1]$ 表示第 $i$ 天**持有**股票且前 $i$ 天进行过 2 次购买的最大利润。
+
+2. 状态转移：
+
+    - 未持有->未持有。
+    - 未持有->持有。（购买，交易数+1）
+    - 持有->未持有。（出售）
+    - 持有->持有。
+
+$$
+\begin{aligned}
+dp[i][0][0] &= dp[i-1][0][0] \newline
+dp[i][1][0] &= \max(dp[i-1][1][0],dp[i-1][1][1] + prices[i]) \newline
+dp[i][2][0] &= \max(dp[i-1][2][0],dp[i-1][2][1] + prices[i]) \newline
+dp[i][0][1] &= -\infty \newline
+dp[i][1][1] &= \max(dp[i-1][1][1],dp[i-1][0][0] - prices[i]) \newline
+dp[i][2][1] &= \max(dp[i-1][2][1],dp[i-1][1][0] - prices[i]) \newline
+\end{aligned}
+$$
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        int[][][] dp = new int[n][3][2];
+        dp[0][0][1] = -100000; // 防止溢出
+        dp[0][1][1] = -prices[0];
+        dp[0][2][1] = -prices[0];
+        for (int i = 1; i < n; i++) {
+            dp[i][0][0] = dp[i - 1][0][0];
+            dp[i][1][0] = Math.max(dp[i - 1][1][0], dp[i - 1][1][1] + prices[i]);
+            dp[i][2][0] = Math.max(dp[i - 1][2][0], dp[i - 1][2][1] + prices[i]);
+            dp[i][0][1] = -100000; // 防止溢出
+            dp[i][1][1] = Math.max(dp[i - 1][1][1], dp[i - 1][0][0] - prices[i]);
+            dp[i][2][1] = Math.max(dp[i - 1][2][1], dp[i - 1][1][0] - prices[i]);
+        }
+        return dp[n - 1][2][0];
+    }
+}
+```
+
+3. 空间优化：每一天的状态只与前一天的状态有关。
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int sell1 = 0;                 // 已经卖出 1 次的最大利润，等价于 dp[i][1][0]
+        int sell2 = 0;                 // 已经卖出 2 次的最大利润，等价于 dp[i][2][0]
+        int buyy1 = Integer.MIN_VALUE; // 已经买入 1 次的最大利润，等价于 dp[i][1][1]
+        int buyy2 = Integer.MIN_VALUE; // 已经买入 2 次的最大利润，等价于 dp[i][2][1]
+        for (int price : prices) {
+            sell2 = Math.max(sell2, buyy2 + price);
+            buyy2 = Math.max(buyy2, sell1 - price);
+            sell1 = Math.max(sell1, buyy1 + price);
+            buyy1 = Math.max(buyy1, -price);
+        }
+        return sell2;
+    }
+}
+```
+
+#### 2.1.4 买卖股票的最佳时机-最多k次
+
+[188. 买卖股票的最佳时机 IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/)
+
+1. 定义状态：
+
+    - $dp[i][j][0]$ 表示第 $i$ 天**未持有**股票且前 $i$ 天进行过 $j$ 次购买的最大利润。
+    - $dp[i][j][1]$ 表示第 $i$ 天**持有**股票且前 $i$ 天进行过 $j$ 次购买的最大利润。
+
+2. 状态转移：
+
+    - 未持有->未持有。
+    - 未持有->持有。（购买，交易数+1）
+    - 持有->未持有。（出售）
+    - 持有->持有。
+
+$$
+\begin{aligned}
+dp[i][0][0] &= dp[i-1][0][0] \newline
+dp[i][j][0] &= \max(dp[i-1][j][0],dp[i-1][j][1] + prices[i]) \ (j \gt 0) \newline
+dp[i][0][1] &= -\infty \newline
+dp[i][j][1] &= \max(dp[i-1][j][1],dp[i-1][j-1][0] - prices[i]) \ (j \gt 0) \newline
+\end{aligned}
+$$
+
+```java
+class Solution {
+    public int maxProfit(int k, int[] prices) {
+        int n = prices.length;
+        if (n == 0) return 0;
+        int[][][] dp = new int[n][k + 1][2];
+        dp[0][0][1] = -100000; // 防止溢出
+        for (int i = 1; i <= k; i++) dp[0][i][1] = -prices[0];
+        for (int i = 1; i < n; i++) {
+            dp[i][0][0] = dp[i - 1][0][0];
+            dp[i][0][1] = -100000; // 防止溢出
+            for (int j = 1; j <= k; j++) {
+                dp[i][j][0] = Math.max(dp[i - 1][j][0], dp[i - 1][j][1] + prices[i]);
+                dp[i][j][1] = Math.max(dp[i - 1][j][1], dp[i - 1][j - 1][0] - prices[i]);
+            }
+        }
+        return dp[n - 1][k][0];
+    }
+}
+```
+
+3. 空间优化：每一天的状态只与前一天的状态有关。
+
+```java
+class Solution {
+    public int maxProfit(int k, int[] prices) {
+        int n = prices.length;
+        if (n == 0) return 0;
+        int[][] dp = new int[k + 1][2];
+        for (int i = 0; i <= k; i++)
+            dp[i][1] = -100000; // 防止溢出
+        for (int price : prices) {
+            for (int j = 1; j <= k; j++) {
+                dp[j][0] = Math.max(dp[j][0], dp[j][1] + price);
+                dp[j][1] = Math.max(dp[j][1], dp[j - 1][0] - price);
+            }
+        }
+        return dp[k][0];
+    }
+}
+```
+
+#### 2.1.5 买卖股票的最佳时机-冷冻期
+
+[309. 最佳买卖股票时机含冷冻期](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
+
+1. 定义状态：
+
+    - $dp[i][j][0]$ 表示第 $i$ 天**未持有**股票且前 $i$ 天进行过 $j$ 次购买的最大利润。
+    - $dp[i][j][1]$ 表示第 $i$ 天**持有**股票且前 $i$ 天进行过 $j$ 次购买的最大利润。
+
+2. 状态转移：
+
+    - 未持有->未持有。
+    - 未持有->持有。（购买，交易数+1）
+    - 持有->未持有。（出售）
+    - 持有->持有。
+
+$$
+\begin{aligned}
+dp[i][0][0] &= dp[i-1][0][0] \newline
+dp[i][j][0] &= \max(dp[i-1][j][0],dp[i-1][j][1] + prices[i]) \ (j \gt 0) \newline
+dp[i][0][1] &= -\infty \newline
+dp[i][j][1] &= \max(dp[i-1][j][1],dp[i-1][j-1][0] - prices[i]) \ (j \gt 0) \newline
+\end{aligned}
+$$
+
+```java
+
+```
+
+3. 空间优化：每一天的状态只与前一天的状态有关。
+
+```java
+
+```
+
+#### 2.1.6 买卖股票的最佳时机-手续费
+
+[714. 买卖股票的最佳时机含手续费](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
+
+1. 定义状态：
+
+    - $dp[i][j][0]$ 表示第 $i$ 天**未持有**股票且前 $i$ 天进行过 $j$ 次购买的最大利润。
+    - $dp[i][j][1]$ 表示第 $i$ 天**持有**股票且前 $i$ 天进行过 $j$ 次购买的最大利润。
+
+2. 状态转移：
+
+    - 未持有->未持有。
+    - 未持有->持有。（购买，交易数+1）
+    - 持有->未持有。（出售）
+    - 持有->持有。
+
+$$
+\begin{aligned}
+dp[i][0][0] &= dp[i-1][0][0] \newline
+dp[i][j][0] &= \max(dp[i-1][j][0],dp[i-1][j][1] + prices[i]) \ (j \gt 0) \newline
+dp[i][0][1] &= -\infty \newline
+dp[i][j][1] &= \max(dp[i-1][j][1],dp[i-1][j-1][0] - prices[i]) \ (j \gt 0) \newline
+\end{aligned}
+$$
+
+```java
+
+```
+
+3. 空间优化：每一天的状态只与前一天的状态有关。
+
+```java
+
 ```
 
 ### 最长递增子序列（LIS）
