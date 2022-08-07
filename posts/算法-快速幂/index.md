@@ -8,38 +8,34 @@
 - 快速求`x`的`n`次幂。
 - 时间复杂度：$O(\log n)$
 
-<br />
-
 ## 2.迭代写法
 
 ```java
 static double fastPow(double x, int n) {
-    if (x == 0)      return 0;
-    else if (x == 1) return 1.0;
+    if (x == 0) return 0;
+    if (x == 1) return 1;
     // 防止 n = -214748328 时，-n 溢出
     long nn = n;
-    double ans = 1.0;
     if (nn < 0) {
         x = 1 / x;
         nn = -nn;
     }
+    double ans = 1.0;
     while (nn > 0) {
-        if ((nn & 1) == 1) ans *= x;
+        if ((nn & 1) == 1) ans *= x; // nn % 2 == 1
         x *= x;
-        nn >>= 1;
+        nn >>= 1; // nn /= 2;
     }
     return ans;
 }
 ```
 
-<br />
-
 ## 3.递归写法
 
 ```java
 static double fastPow(double x, int n) {
-    if (x == 0)      return 0;
-    else if (x == 1) return 1.0;
+    if (x == 0) return 0;
+    if (x == 1) return 1;
     // 防止 n = -214748328 时，-n 溢出
     long nn = n;
     if (nn < 0) {
@@ -48,21 +44,15 @@ static double fastPow(double x, int n) {
     }
     return fastPow(x, nn);
 }
-```
 
-```java
 static double fastPow(double x, long n) {
-    if (n == 0)      return 1.0;
-    else if (n == 1) return x;
-    else {
-        double half = fastPow(x, n >> 1);
-        if ((n & 1) == 1) return half * half * x;
-        else              return half * half;
-    }
+    if (n == 0) return 1;
+    if (n == 1) return x;
+    double half = fastPow(x, n >> 1);
+    if ((n & 1) == 1) return half * half * x;
+    else              return half * half;
 }
 ```
-
-<br />
 
 ## 4.矩阵快速幂
 
@@ -100,8 +90,6 @@ static int[][] matMul(int[][] a, int[][] b) {
     return ans;
 }
 ```
-
-<br />
 
 ## 5.实战
 

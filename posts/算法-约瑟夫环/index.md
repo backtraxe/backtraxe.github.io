@@ -5,6 +5,8 @@
 
 [找出游戏的获胜者](https://leetcode.cn/problems/find-the-winner-of-the-circular-game/)
 
+## 原理
+
 **倒推法**
 
 1. 还剩`1`个人，此人获胜，下标为

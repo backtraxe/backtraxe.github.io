@@ -449,14 +449,41 @@ int lengthOfLIS(int[] nums) {
 }
 ```
 
-<br />
+### 统计不同回文子序列
 
 [力扣-0730-统计不同回文子序列](../../posts/力扣-0730-统计不同回文子序列/)
 
-{{< showcase
-title="Theme Documentation - Basics"
-summary="Discover what the Hugo - DoIt theme is all about and the core-concepts behind it."
-image="/theme-documentation-basics/featured-image.webp"
-link="/theme-documentation-basics"
->}}
+### 火柴拼正方形
+
+[473. 火柴拼正方形](https://leetcode.cn/problems/matchsticks-to-square/)
+
+- 状压DP
+
+```java
+class Solution {
+    public boolean makesquare(int[] matchsticks) {
+        int totalLen = Arrays.stream(matchsticks).sum();
+        if (totalLen % 4 != 0) {
+            return false;
+        }
+        int len = totalLen / 4, n = matchsticks.length;
+        int[] dp = new int[1 << n];
+        Arrays.fill(dp, -1);
+        dp[0] = 0;
+        for (int s = 1; s < (1 << n); s++) {
+            for (int k = 0; k < n; k++) {
+                if ((s & (1 << k)) == 0) {
+                    continue;
+                }
+                int s1 = s & ~(1 << k);
+                if (dp[s1] >= 0 && dp[s1] + matchsticks[k] <= len) {
+                    dp[s] = (dp[s1] + matchsticks[k]) % len;
+                    break;
+                }
+            }
+        }
+        return dp[(1 << n) - 1] == 0;
+    }
+}
+```
 

@@ -1,9 +1,9 @@
-# 算法-字符串
+# 算法-字符串匹配
 
 
 <!--more-->
 
-### 1 KMP 算法
+### 1.KMP 算法
 
 Knuth-Morris-Pratt 算法。
 
@@ -78,7 +78,7 @@ int kmpSearch(char[] text, char[] pattern) {
 1. [如何更好地理解和掌握 KMP 算法? - 知乎](https://www.zhihu.com/question/21923021/answer/281346746)
 1. [字符串匹配算法详解 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1770486)
 
-### 2 BM 算法
+### 2.BM 算法
 
 Boyer-Moore 算法。
 
@@ -192,7 +192,7 @@ int bmSearch(String text, String pattern) {
 1. [字符串匹配的Boyer-Moore算法 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html)
 1. [字符串匹配算法详解 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1770486)
 
-### 3 Sunday 算法
+### 3.Sunday 算法
 
 #### 原理
 
@@ -243,7 +243,7 @@ int sundaySearch(char[] text, char[] pattern) {
 
 1. [Sunday 解法 - 实现 strStr() - 力扣（LeetCode）](https://leetcode-cn.com/problems/implement-strstr/solution/python3-sundayjie-fa-9996-by-tes/)
 
-### 4. Rabin Karp 算法
+### 4.Rabin Karp 算法
 
 #### 原理
 
