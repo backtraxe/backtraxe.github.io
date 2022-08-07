@@ -81,12 +81,12 @@ class Solution {
 ```java
 class Solution {
     public long taskSchedulerII(int[] tasks, int space) {
-        HashMap<Integer, Long> map = new HashMap<>();
+        HashMap<Integer, Long> map = new HashMap<>(); // 任务起始时间
         long ans = 0;
         for (int task : tasks) {
-            long last = map.getOrDefault(task, -1L * space);
-            ans = Math.max(ans + 1, last + space + 1);
-            map.put(task, ans);
+            // 当前任务开始之前必须上个任务结束并且上个同类型任务间隔 space 天
+            ans = Math.max(ans + 1, map.getOrDefault(task, 0L));
+            map.put(task, ans + space + 1);
         }
         return ans;
     }
