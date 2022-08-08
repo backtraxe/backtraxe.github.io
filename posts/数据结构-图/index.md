@@ -289,8 +289,6 @@ void dfs(Graph graph, int u, boolean[] vis) {
 
 Breadth First Search
 
-- BFS
-
 ```java
 void traverse(Graph graph) {
     int n = graph.length;
@@ -541,42 +539,170 @@ int[][] kruskal() {
 
 ```
 
-<br>
+## Flood Fill 算法
 
-## Flood Fill
+### 小技巧
 
-#### 岛屿数量
+#### BFS 保存坐标
+
+- 数组保存。
 
 ```java
-int[] dx = {0, 1, 0, -1};
-int[] dy = {1, 0, -1, 0};
-int m, n;
+que.offer(new int[] { r, c });
+int[] p = que.poll();
+```
 
-public int numIslands(char[][] grid) {
-    m = grid.length;
-    n = grid[0].length;
-    boolean[][] visited = new boolean[m][n];
-    int res = 0;
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            if (grid[i][j] == '1' && !visited[i][j]) {
-                res++;
-                dfs(grid, i, j, visited);
+- 分开保存。
+
+```java
+que.offer(r);
+que.offer(c);
+int x = que.poll();
+int y = que.poll();
+```
+
+- 数学计算。
+
+```java
+que.offer(r * n + c); // n 是列宽
+int x = que.poll();
+int y = x % n;
+x /= n;
+```
+
+### 图像渲染
+
+[733. 图像渲染](https://leetcode.cn/problems/flood-fill/)
+
+- DFS
+
+```java
+class Solution {
+    int m, n;
+    int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+        if (image[sr][sc] == color) return image;
+        m = image.length;
+        n = image[0].length;
+        dfs(image, sr, sc, image[sr][sc], color);
+        return image;
+    }
+
+    void dfs(int[][] image, int r, int c, int oldColor, int newColor) {
+        if (r < 0 || r >= m || c < 0 || c >= n || image[r][c] != oldColor) return;
+        image[r][c] = newColor;
+        for (int[] d : dir)
+            dfs(image, r + d[0], c + d[1], oldColor, newColor);
+    }
+}
+```
+
+- BFS
+
+```java
+class Solution {
+    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+        if (image[sr][sc] == color) return image;
+        int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+        int oldColor = image[sr][sc];
+        int m = image.length;
+        int n = image[0].length;
+        Queue<Integer> que = new ArrayDeque<>();
+        que.offer(sr);
+        que.offer(sc);
+        while (!que.isEmpty()) {
+            int r = que.poll();
+            int c = que.poll();
+            image[r][c] = color;
+            for (int[] d : dir) {
+                int rr = r + d[0];
+                int cc = c + d[1];
+                if (rr >= 0 && rr < m && cc >= 0 && cc < n && image[rr][cc] == oldColor) {
+                    que.offer(rr);
+                    que.offer(cc);
+                }
             }
         }
+        return image;
     }
-    return res;
 }
+```
 
-void dfs(char[][] grid, int x, int y, boolean[][] visited) {
-    if (x < 0 || x >= m || y < 0 || y >= n || visited[x][y] || grid[x][y] == '0') {
-        return;
+### 岛屿数量
+
+[200. 岛屿数量](https://leetcode.cn/problems/number-of-islands/)
+
+- DFS
+
+```java
+class Solution {
+    int m, n;
+    int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+    public int numIslands(char[][] grid) {
+        m = grid.length;
+        n = grid[0].length;
+        int ans = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    ans++;
+                    dfs(grid, i, j);
+                }
+            }
+        }
+        return ans;
     }
-    visited[x][y] = true;
-    for (int i = 0; i < 4; i++) {
-        int nextX = x + dx[i];
-        int nextY = y + dy[i];
-        dfs(grid, nextX, nextY, visited);
+
+    void dfs(char[][] grid, int r, int c) {
+        if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] != '1') return;
+        grid[r][c] = '2';
+        for (int[] d : dir) dfs(grid, r + d[0], c + d[1]);
+    }
+}
+```
+
+- BFS
+
+```java
+class Solution {
+    int m, n;
+    int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+    public int numIslands(char[][] grid) {
+        m = grid.length;
+        n = grid[0].length;
+        int ans = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    ans++;
+                    bfs(grid, i, j);
+                }
+            }
+        }
+        return ans;
+    }
+
+    void bfs(char[][] grid, int r, int c) {
+        Queue<Integer> que = new ArrayDeque<>();
+        que.offer(r);
+        que.offer(c);
+        grid[r][c] = '2';
+        while (!que.isEmpty()) {
+            r = que.poll();
+            c = que.poll();
+            for (int[] d : dir) {
+                int rr = r + d[0];
+                int cc = c + d[1];
+                if (rr >= 0 && rr < m && cc >= 0 && cc < n && grid[rr][cc] == '1') {
+                    que.offer(rr);
+                    que.offer(cc);
+                    grid[rr][cc] = '2';
+                }
+            }
+        }
     }
 }
 ```
