@@ -7,10 +7,13 @@ LRU (Least Recently Used)
 
 最近最少使用算法。当容量满时，将最久没有使用过的缓存删除。
 
+## 实现
+
 ```java
 class Node {
     int key, val;
     Node prev, next;
+
     public Node(int key, int val) {
         this.key = key;
         this.val = val;
@@ -106,6 +109,71 @@ class LRUCache {
     }
 }
 ```
+
+```java
+class LRUCache {
+    class ListNode {
+        int key, val;
+        ListNode prev, next;
+
+        public ListNode(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
+    }
+
+    HashMap<Integer, ListNode> key2node;
+    ListNode head; // 双链表头结点
+    int capacity;
+
+    public LRUCache(int capacity) {
+        key2node = new HashMap<>();
+        head = new ListNode(0, 0);
+        head.prev = head.next = head; // 循环链表
+        this.capacity = capacity;
+    }
+
+    public int get(int key) {
+        ListNode node = key2node.get(key);
+        if (node == null) return -1;
+        // 取出 node
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+        // node 插入末尾
+        head.prev.next = node;
+        node.prev = head.prev;
+        node.next = head;
+        head.prev = node;
+        return node.val;
+    }
+
+    public void put(int key, int value) {
+        ListNode node = key2node.get(key);
+        if (node != null) {
+            // 取出 node
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+            node.val = value;
+        } else {
+            node = new ListNode(key, value);
+            key2node.put(key, node);
+        }
+        // node 插入末尾
+        head.prev.next = node;
+        node.prev = head.prev;
+        node.next = head;
+        head.prev = node;
+        if (key2node.size() > capacity) {
+            // 删除第一个结点
+            key2node.remove(head.next.key);
+            head.next = head.next.next;
+            head.next.prev = head;
+        }
+    }
+}
+```
+
+## API
 
 ```java
 class LRUCache {

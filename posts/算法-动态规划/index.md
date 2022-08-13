@@ -41,11 +41,173 @@ def fib(n):
 
 ### 线性DP
 
-### 二维DP
+#### 最长上升子序列（LIS）
+
+Longest Increasing Subsequence
+
+- 状态定义：
+
+$$
+dp[i]=s[0:i]的最长上升子序列长度
+$$
+
+- 状态初始化：
+
+$$
+dp[0] = 0
+$$
+
+- 状态转移方程：
+
+$$
+dp[i]=\max(dp[i],dp[j] + 1) \quad \text{if } j \lt i \text{ and } s_j \lt s_i
+$$
+
+#### 最长公共子序列（LCS）
+
+Longest Common Subsequence
+
+- 状态定义：
+
+$$
+dp[i][j]=x[0:i]和y[0:j]的最长公共子序列长度
+$$
+
+- 状态初始化：
+
+$$
+dp[i][0] = dp[0][j] = 0
+$$
+
+- 状态转移方程：
+
+$$
+dp[i+1][j+1]=
+\begin{aligned}
+\begin{cases}
+dp[i][j] + 1& \text{if } x_i = y_j \newline
+\max(dp[i+1][j],dp[i][j+1])& \text{if } x_i \ne y_j
+\end{cases}
+\end{aligned}
+$$
+
+#### 最长公共上升子序列（LCIS）
+
+Longest Common Increasing Subsequence
+
+- 状态定义：
+
+$$
+dp[i][j]=x[0:i]和y[0:j]的最长公共上升子序列长度
+$$
+
+- 状态初始化：
+
+$$
+dp[i][0] = dp[0][j] = 0
+$$
+
+- 状态转移方程：
+
+$$
+dp[i+1][j+1]=
+\begin{aligned}
+\begin{cases}
+dp[i][j] + 1& \text{if } x_i = y_j \newline
+\max(dp[i+1][j],dp[i][j+1])& \text{if } x_i \ne y_j
+\end{cases}
+\end{aligned}
+$$
+
+#### 最小编辑距离
+
+- 状态定义：
+
+$$
+dp[i][j]=x[0:i]到y[0:j]的最小操作次数
+$$
+
+- 状态初始化：
+
+$$
+\begin{aligned}
+dp[i][0] &= i \newline
+dp[0][j] &= j
+\end{aligned}
+$$
+
+- 状态转移方程：
+
+$$
+dp[i+1][j+1]=
+\begin{aligned}
+\begin{cases}
+dp[i][j]& \text{if } x_i = y_j \newline
+1+\min(dp[i+1][j],dp[i][j+1],dp[i][j])& \text{if } x_i \ne y_j
+\end{cases}
+\end{aligned}
+$$
 
 ### 背包问题
 
+#### 0-1 背包
+
+- 状态定义：
+
+$$
+dp[i][j]=只选前i个物品所能获得的最大价值
+$$
+
+- 状态初始化：
+
+$$
+dp[0] = 0
+$$
+
+- 状态转移方程：
+
+$$
+dp[i]=
+\begin{aligned}
+\begin{cases}
+dp[i-1] + v_i& \text{if } w + w_i \le W \newline
+1+\min(dp[i+1][j],dp[i][j+1],dp[i][j])& \text{if } x_i \ne y_j
+\end{cases}
+\end{aligned}
+$$
+
+#### 多重背包
+
+#### 完全背包
+
 ### 区间DP
+
+#### 最长回文子串
+
+- 状态定义：
+
+$$
+dp[i][j]=s[i:j+1]是否是回文串
+$$
+
+- 状态初始化：
+
+$$
+\begin{aligned}
+&dp[i][i] = true
+&dp[i][i+1] = true \quad \text{ if } s_i = s_{i+1}
+\end{aligned}
+$$
+
+- 状态转移方程：
+
+$$
+dp[i][i+j]=dp[i+1][i+j-1] \land s_i = s_{i+j}
+$$
+
+#### 括号匹配
+
+
 
 ### 树形DP
 
@@ -55,9 +217,11 @@ def fib(n):
 
 ## 2.实战
 
-### 2.1 买卖股票的最佳时机
+### 线性DP
 
-#### 2.1.1 买卖股票的最佳时机-最多1次
+#### 买卖股票的最佳时机
+
+##### 1 买卖股票的最佳时机-最多1次
 
 [121. 买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)
 
@@ -99,7 +263,7 @@ class Solution {
 }
 ```
 
-#### 2.1.2 买卖股票的最佳时机-无次数限制
+##### 2 买卖股票的最佳时机-无限制
 
 [122. 买卖股票的最佳时机 II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
 
@@ -151,7 +315,7 @@ class Solution {
 }
 ```
 
-#### 2.1.3 买卖股票的最佳时机-最多2次
+##### 3 买卖股票的最佳时机-最多2次
 
 [123. 买卖股票的最佳时机 III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/)
 
@@ -223,7 +387,7 @@ class Solution {
 }
 ```
 
-#### 2.1.4 买卖股票的最佳时机-最多k次
+##### 4 买卖股票的最佳时机-最多k次
 
 [188. 买卖股票的最佳时机 IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/)
 
@@ -290,7 +454,7 @@ class Solution {
 }
 ```
 
-#### 2.1.5 买卖股票的最佳时机-冷冻期
+##### 5 买卖股票的最佳时机-冷冻期
 
 [309. 最佳买卖股票时机含冷冻期](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
 
@@ -325,7 +489,7 @@ $$
 
 ```
 
-#### 2.1.6 买卖股票的最佳时机-手续费
+##### 6 买卖股票的最佳时机-手续费
 
 [714. 买卖股票的最佳时机含手续费](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 
@@ -360,7 +524,9 @@ $$
 
 ```
 
-### 最长递增子序列（LIS）
+
+
+#### 最长递增子序列（LIS）
 
 Longest Increasing Subsequence
 
@@ -449,15 +615,70 @@ int lengthOfLIS(int[] nums) {
 }
 ```
 
+#### 最长公共子序列（LCS）
+
+Longest Common Subsequence
+
+##### 最长公共子序列
+
+[1143. 最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/)
+
+##### 两个字符串的删除操作
+
+[583. 两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings/)
+
+##### 最长回文子序列
+
+[516. 最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/)
+
+##### 最短公共超序列
+
+[1092. 最短公共超序列](https://leetcode.cn/problems/shortest-common-supersequence/)
+
+#### 最长公共上升子序列（LCIS）
+
+Longest Common Increasing Subsequence
+
+
+
 ### 统计不同回文子序列
 
 [力扣-0730-统计不同回文子序列](../../posts/力扣-0730-统计不同回文子序列/)
 
-### 火柴拼正方形
+### 二维DP
+
+#### 最长公共子序列
+
+[1035. 不相交的线](https://leetcode.cn/problems/uncrossed-lines/)
+
+```java
+
+```
+
+#### 最小路径和
+
+[64. 最小路径和](https://leetcode.cn/problems/minimum-path-sum/)
+
+```java
+class Solution {
+    public int minPathSum(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        for (int i = 1; i < m; i++) grid[i][0] += grid[i - 1][0];
+        for (int j = 1; j < n; j++) grid[0][j] += grid[0][j - 1];
+        for (int i = 1; i < m; i++)
+            for (int j = 1; j < n; j++)
+                grid[i][j] += Math.min(grid[i - 1][j], grid[i][j - 1]);
+        return grid[m - 1][n - 1];
+    }
+}
+```
+
+### 状压DP
+
+#### 火柴拼正方形
 
 [473. 火柴拼正方形](https://leetcode.cn/problems/matchsticks-to-square/)
-
-- 状压DP
 
 ```java
 class Solution {
