@@ -366,7 +366,7 @@ class Solution {
 }
 ```
 
-### 4.2 DFS：vis 数组中的不同值表示顶点的不同状态（未访问、访问中、已访问）。
+### 4.2 DFS：vis 数组表示顶点的不同状态（未访问、访问中、已访问）
 
 ```java
 class Solution {
@@ -441,10 +441,11 @@ class Solution {
 拓扑排序（Topological Sort）：得到有向图 $G$ 的顶点的一个排列，满足任意一条有向边 $(u,v)$，$u$ 在排列中都在 $v$ 前面，即相对顺序不变。
 
 - DFS：后序添加顶点，然后逆序即可得到拓扑排序序列。（或者建图时颠倒每条边的起始顶点和结束顶点，则最后无需逆序）
+- BFS：每次添加入度为 0 的顶点
 
 [210. 课程表 II](https://leetcode.cn/problems/course-schedule-ii/)
 
-- DFS：
+### 5.1 DFS：后序遍历，然后逆序
 
 ```java
 class Solution {
@@ -483,7 +484,7 @@ class Solution {
 }
 ```
 
-- BFS：
+### 5.2 BFS：入度为 0 的顶点优先
 
 ```java
 class Solution {
@@ -521,38 +522,165 @@ class Solution {
 }
 ```
 
-## 最小生成树
+## 6.二分图
 
-### 克鲁斯卡尔
+二分图：一个图的顶点可分割为两个互不相交的子集，且每条边的两个顶点都分属于这两个子集。
+
+可以用两种颜色给顶点染色使得相邻顶点的颜色均不相同。
+
+[785. 判断二分图](https://leetcode.cn/problems/is-graph-bipartite/submissions/)
+
+### 6.1 DFS
 
 ```java
-int[][] kruskal() {
+class Solution {
+    public boolean isBipartite(int[][] graph) {
+        int n = graph.length;
+        int[] vis = new int[n];
+        for (int u = 0; u < n; u++) // 非连通图
+            if (vis[u] == 0 && !dfs(graph, u, vis, 1))
+                return false;
+        return true;
+    }
 
+    boolean dfs(int[][] graph, int u, int[] vis, int color) {
+        vis[u] = color;
+        for (int v : graph[u]) {
+            if (vis[u] == vis[v]) return false; // 相邻结点颜色相同
+            if (vis[v] == 0 && !dfs(graph, v, vis, -color)) // 两种颜色 1 -1
+                return false; // 剪枝
+        }
+        return true;
+    }
 }
 ```
 
-<br>
-
-### 普里姆
+### 6.2 BFS
 
 ```java
+class Solution {
+    public boolean isBipartite(int[][] graph) {
+        int n = graph.length;
+        int[] vis = new int[n];
+        for (int u = 0; u < n; u++) // 非连通图
+            if (vis[u] == 0 && !bfs(graph, u, vis))
+                return false;
+        return true;
+    }
 
+    boolean bfs(int[][] graph, int i, int[] vis) {
+        Queue<Integer> que = new ArrayDeque<>();
+        que.offer(i);
+        vis[i] = 1;
+        while (!que.isEmpty()) {
+            int size = que.size();
+            while (size-- > 0) {
+                int u = que.poll();
+                for (int v : graph[u]) {
+                    if (vis[u] == vis[v]) return false; // 相邻结点颜色相同
+                    if (vis[v] == 0) {
+                        vis[v] = -vis[u]; // 两种颜色 1 -1
+                        que.offer(v);
+                    }
+                }
+            }
+        }
+        return true;
+    }
+}
 ```
 
-## Flood Fill 算法
+## 7.Flood Fill 算法
 
-### 小技巧
+也称洪水扩散算法，从一个单元格向四周扩散。
 
-#### BFS 保存坐标
+[200. 岛屿数量](https://leetcode.cn/problems/number-of-islands/)
 
-- 数组保存。
+### 7.1 DFS
+
+```java
+class Solution {
+    public int numIslands(char[][] grid) {
+        int ans = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '1') {
+                    ans++;
+                    dfs(grid, i, j, '1', '2');
+                }
+            }
+        }
+        return ans;
+    }
+
+    void dfs(char[][] mat, int x, int y, char v1, char v2) {
+        if (x < 0 || x >= mat.length || y < 0 || y >= mat[0].length || mat[x][y] != v1) return;
+        mat[x][y] = v2;
+        dfs(mat, x - 1, y, v1, v2);
+        dfs(mat, x, y + 1, v1, v2);
+        dfs(mat, x + 1, y, v1, v2);
+        dfs(mat, x, y - 1, v1, v2);
+    }
+}
+```
+
+### 7.2 BFS
+
+```java
+class Solution {
+    int m, n;
+    Queue<Integer> que = new ArrayDeque<>();
+    int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+    public int numIslands(char[][] grid) {
+        m = grid.length;
+        n = grid[0].length;
+        int ans = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    ans++;
+                    bfs(grid, i, j, '1', '2');
+                }
+            }
+        }
+        return ans;
+    }
+
+    void bfs(char[][] mat, int x, int y, char v1, char v2) {
+        if (mat[x][y] != v1) return;
+        que.offer(x);
+        que.offer(y);
+        mat[x][y] = v2;
+        while (!que.isEmpty()) {
+            x = que.poll();
+            y = que.poll();
+            for (int[] d : dir) {
+                int xx = x + d[0];
+                int yy = y + d[1];
+                if (xx >= 0 && xx < m && yy >= 0 && yy < n && mat[xx][yy] == v1) {
+                    que.offer(xx);
+                    que.offer(yy);
+                    mat[xx][yy] = v2;
+                }
+            }
+        }
+    }
+}
+```
+
+#### 保存坐标的几种方式
+
+1. 数组保存。
 
 ```java
 que.offer(new int[] { r, c });
 int[] p = que.poll();
+p[0];
+p[1];
 ```
 
-- 分开保存。
+2. 分开保存。
 
 ```java
 que.offer(r);
@@ -561,7 +689,7 @@ int x = que.poll();
 int y = que.poll();
 ```
 
-- 数学计算。
+3. 数学计算。注意防止溢出。
 
 ```java
 que.offer(r * n + c); // n 是列宽
@@ -570,7 +698,195 @@ int y = x % n;
 x /= n;
 ```
 
-### 图像渲染
+## 8.最小生成树
+
+从一个 n 个顶点的连通图中生成包含 n 个顶点和 n - 1 条边，且边权之和最小的树。
+
+### 8.1 Kruskal 算法
+
+**步骤：**
+
+1. 将图 $G=(V,E)$ 中的所有边按照长度由小到大进行排序，等长的边可以按任意顺序。
+2. 初始化图 $G'=(V,\varnothing)$，从前向后扫描排序后的边，如果扫描到的边 $e$ 在 $G'$ 中连接了两个相异的连通块,则将它插入 $G'$ 中。
+3. 最后得到的图 $G'$ 就是图 $G$ 的最小生成树。
+
+**复杂度：**
+
+- 时间复杂度：$O(E \log E)$
+- 空间复杂度：$O(E)$
+
+```java
+int kruskal(Edge[] edges, int n) {
+    Arrays.sort(edges, (a, b) -> a.w - b.w);
+    UnionFind uf = new UnionFind(n);
+    int sum = 0;   // 边权和
+    int count = 0; // 已选边的数量
+    for (Edge e : edges) {
+        if (uf.isConnected(e.u, e.v)) continue;
+        uf.union(e.u, e.v);
+        sum += e.w;
+        if (++count == n - 1) break;
+    }
+    return sum;
+}
+
+class Edge {
+    int u, v, w; // 起点、终点、边权
+
+    public Edge(int u, int v, int w) {
+        this.u = u;
+        this.v = v;
+        this.w = w;
+    }
+}
+
+class UnionFind {
+    private int[] parent; // 指向父结点
+    private int size;     // 连通块的数量
+
+    public UnionFind(int n) {
+        parent = new int[n];
+        for (int i = 0; i < n; i++) parent[i] = i;
+        size = n;
+    }
+
+    public int find(int i) { // 寻找根结点
+        if (parent[i] != i)  // 路径压缩
+            parent[i] = find(parent[i]);
+        return parent[i];
+    }
+
+    public boolean isConnected(int i, int j) { // 判断是否连通
+        return find(i) == find(j);
+    }
+
+    public void union(int i, int j) { // 连通
+        if (find(i) != find(j)) size--;
+        parent[find(j)] = find(i);    // j 加入 i
+    }
+
+    public int size() {
+        return size;
+    }
+}
+```
+
+### 8.2 Prim 算法
+
+**步骤：**
+
+1. 初始化图 $G'=(\varnothing,\varnothing)$，随机选择一个顶点加入，得到 $G'=(V',\varnothing)$。
+2. 选择 $G'$ 中顶点到其他顶点边权最小的边，将边及其对应顶点加入 $G'$。
+3. 重复步骤 2 直到全部顶点都加入 $G'$，即 $G$ 的最小生成树。
+
+**复杂度：**
+
+- 时间复杂度：$O(E \log V)$
+- 空间复杂度：$O(E)$
+
+```java
+int prim(List<Edge>[] graph) {
+    int n = graph.length;
+    boolean[] vis = new boolean[n]; // 顶点是否已选择
+    int sum = 0;                    // 最小边权和
+    int u = 0;                      // 随机选择一个顶点
+    int count = 1;                  // 已选择顶点数量
+    PriorityQueue<Edge> pq = new PriorityQueue<>((a, b) -> a.w - b.w); // 按边权升序
+    vis[u] = true;
+    for (Edge e : graph[u])         // 连接未选择顶点的边才会添加
+        if (!vis[e.v]) pq.offer(e);
+    while (!pq.isEmpty()) {
+        Edge edge = pq.poll();
+        if (vis[edge.v]) continue;  // 跳过连接已选择顶点的边
+        u = edge.v;
+        sum += edge.w;
+        count++;
+        vis[u] = true;
+        for (Edge e : graph[u])
+            if (!vis[e.v]) pq.offer(e);
+        if (count == n) break;
+    }
+    return sum;
+}
+
+class Edge {
+    int u, v, w; // 起点、终点、边权
+
+    public Edge(int u, int v, int w) {
+        this.u = u;
+        this.v = v;
+        this.w = w;
+    }
+}
+```
+
+## 9.最短路径
+
+### 9.1 Dijkstra 算法
+
+**步骤：**
+
+1.
+
+**复杂度：**
+
+- 时间复杂度：$ O(E \log V) $
+- 空间复杂度：$ O(V+E) $
+
+```java
+int[] dijkstra(List<Edge>[] graph, int start) {
+    int n = graph.length;
+    int[] dis = new int[n]; // start 到所有顶点的最短距离
+    Arrays.fill(dis, 0x3f3f3f3f);
+    boolean[] vis = new boolean[n];
+    PriorityQueue<Edge> pq = new PriorityQueue<>((a, b) -> a.w - b.w);
+    int count = 1;
+    int u = start;
+    dis[start] = 0;
+    vis[start] = true;
+    for (Edge e : graph[u]) { // 连接未选择顶点的边才会添加
+        if (!vis[e.v]) pq.offer(e);
+        dis[e.v] = Math.min(dis[e.v], dis[u] + e.w);
+    }
+    while (!pq.isEmpty()) {
+        Edge edge = pq.poll();
+        if (vis[edge.v]) continue;
+        u = edge.v;
+        count++;
+        vis[u] = true;
+        for (Edge e : graph[u]) {
+            if (!vis[e.v]) pq.offer(e);
+            dis[e.v] = Math.min(dis[e.v], dis[u] + e.w);
+        }
+        if (count == n) break;
+    }
+    return dis;
+}
+
+class Edge {
+    int u, v, w; // 起点、终点、边权
+
+    public Edge(int u, int v, int w) {
+        this.u = u;
+        this.v = v;
+        this.w = w;
+    }
+}
+```
+
+### 9.2 SPFA 算法
+
+
+
+### 9.3 Bellman-Ford 算法
+
+### 9.4 A* 算法
+
+## 实战
+
+### Flood Fill
+
+#### 图像渲染
 
 [733. 图像渲染](https://leetcode.cn/problems/flood-fill/)
 
@@ -578,22 +894,19 @@ x /= n;
 
 ```java
 class Solution {
-    int m, n;
-    int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
-
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
         if (image[sr][sc] == color) return image;
-        m = image.length;
-        n = image[0].length;
         dfs(image, sr, sc, image[sr][sc], color);
         return image;
     }
 
-    void dfs(int[][] image, int r, int c, int oldColor, int newColor) {
-        if (r < 0 || r >= m || c < 0 || c >= n || image[r][c] != oldColor) return;
-        image[r][c] = newColor;
-        for (int[] d : dir)
-            dfs(image, r + d[0], c + d[1], oldColor, newColor);
+    void dfs(int[][] image, int x, int y, int v1, int v2) {
+        if (x < 0 || x >= image.length || y < 0 || y >= image[0].length || image[x][y] != v1) return;
+        image[x][y] = v2;
+        dfs(image, x - 1, y, v1, v2);
+        dfs(image, x, y + 1, v1, v2);
+        dfs(image, x + 1, y, v1, v2);
+        dfs(image, x, y - 1, v1, v2);
     }
 }
 ```
@@ -604,11 +917,11 @@ class Solution {
 class Solution {
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
         if (image[sr][sc] == color) return image;
-        int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
         int oldColor = image[sr][sc];
         int m = image.length;
         int n = image[0].length;
         Queue<Integer> que = new ArrayDeque<>();
+        int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
         que.offer(sr);
         que.offer(sc);
         while (!que.isEmpty()) {
@@ -629,7 +942,9 @@ class Solution {
 }
 ```
 
-### 岛屿数量
+- [并查集](../数据结构-并查集/#图像渲染)
+
+#### 岛屿数量
 
 [200. 岛屿数量](https://leetcode.cn/problems/number-of-islands/)
 
@@ -637,28 +952,26 @@ class Solution {
 
 ```java
 class Solution {
-    int m, n;
-    int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
-
     public int numIslands(char[][] grid) {
-        m = grid.length;
-        n = grid[0].length;
         int ans = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == '1') {
                     ans++;
-                    dfs(grid, i, j);
+                    dfs(grid, i, j, '1', '2');
                 }
             }
         }
         return ans;
     }
 
-    void dfs(char[][] grid, int r, int c) {
-        if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] != '1') return;
-        grid[r][c] = '2';
-        for (int[] d : dir) dfs(grid, r + d[0], c + d[1]);
+    void dfs(char[][] grid, int x, int y, char v1, char v2) {
+        if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || grid[x][y] != v1) return;
+        grid[x][y] = v2;
+        dfs(grid, x - 1, y, v1, v2);
+        dfs(grid, x, y + 1, v1, v2);
+        dfs(grid, x + 1, y, v1, v2);
+        dfs(grid, x, y - 1, v1, v2);
     }
 }
 ```
@@ -668,6 +981,7 @@ class Solution {
 ```java
 class Solution {
     int m, n;
+    Queue<Integer> que = new ArrayDeque<>();
     int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
 
     public int numIslands(char[][] grid) {
@@ -678,34 +992,283 @@ class Solution {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1') {
                     ans++;
-                    bfs(grid, i, j);
+                    bfs(grid, i, j, '1', '2');
                 }
             }
         }
         return ans;
     }
 
-    void bfs(char[][] grid, int r, int c) {
-        Queue<Integer> que = new ArrayDeque<>();
-        que.offer(r);
-        que.offer(c);
-        grid[r][c] = '2';
+    void bfs(char[][] grid, int x, int y, char v1, char v2) {
+        que.offer(x);
+        que.offer(y);
+        grid[x][y] = v2;
         while (!que.isEmpty()) {
-            r = que.poll();
-            c = que.poll();
+            x = que.poll();
+            y = que.poll();
             for (int[] d : dir) {
-                int rr = r + d[0];
-                int cc = c + d[1];
-                if (rr >= 0 && rr < m && cc >= 0 && cc < n && grid[rr][cc] == '1') {
-                    que.offer(rr);
-                    que.offer(cc);
-                    grid[rr][cc] = '2';
+                int xx = x + d[0];
+                int yy = y + d[1];
+                if (xx >= 0 && xx < m && yy >= 0 && yy < n && grid[xx][yy] == v1) {
+                    que.offer(xx);
+                    que.offer(yy);
+                    grid[xx][yy] = v2;
                 }
             }
         }
     }
 }
 ```
+
+- [并查集](../数据结构-并查集/#岛屿数量)
+
+#### 被围绕的区域
+
+[130. 被围绕的区域](https://leetcode.cn/problems/surrounded-regions/)
+
+- DFS
+
+```java
+class Solution {
+    public void solve(char[][] board) {
+        int m = board.length;
+        int n = board[0].length;
+        // 1.将边缘连通块改为其他值
+        for (int i = 0; i < m; i++) {
+            dfs(board, i, 0, 'O', '#');
+            dfs(board, i, n - 1, 'O', '#');
+        }
+        for (int j = 0; j < n; j++) {
+            dfs(board, 0, j, 'O', '#');
+            dfs(board, m - 1, j, 'O', '#');
+        }
+        // 2.修改中间连通块
+        for (int i = 1; i + 1 < m; i++)
+            for (int j = 1; j + 1 < n; j++)
+                if (board[i][j] == 'O')
+                    board[i][j] = 'X';
+        // 3.还原边缘连通块
+        for (int i = 0; i < m; i++) {
+            dfs(board, i, 0, '#', 'O');
+            dfs(board, i, n - 1, '#', 'O');
+        }
+        for (int j = 0; j < n; j++) {
+            dfs(board, 0, j, '#', 'O');
+            dfs(board, m - 1, j, '#', 'O');
+        }
+    }
+
+    void dfs(char[][] board, int x, int y, char v1, char v2) {
+        if (x < 0 || x >= board.length || y < 0 || y >= board[0].length || board[x][y] != v1) return;
+        board[x][y] = v2;
+        dfs(board, x + 1, y, v1, v2);
+        dfs(board, x, y + 1, v1, v2);
+        dfs(board, x - 1, y, v1, v2);
+        dfs(board, x, y - 1, v1, v2);
+    }
+}
+```
+
+- BFS
+
+```java
+class Solution {
+    int m, n;
+    Queue<Integer> que = new ArrayDeque<>();
+    int[][] dir = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+    public void solve(char[][] board) {
+        m = board.length;
+        n = board[0].length;
+        // 1.将边缘连通块改为其他值
+        for (int i = 0; i < m; i++) {
+            bfs(board, i, 0, 'O', '#');
+            bfs(board, i, n - 1, 'O', '#');
+        }
+        for (int j = 0; j < n; j++) {
+            bfs(board, 0, j, 'O', '#');
+            bfs(board, m - 1, j, 'O', '#');
+        }
+        // 2.修改中间连通块
+        for (int i = 1; i + 1 < m; i++)
+            for (int j = 1; j + 1 < n; j++)
+                if (board[i][j] == 'O')
+                    board[i][j] = 'X';
+        // 3.还原边缘连通块
+        for (int i = 0; i < m; i++) {
+            bfs(board, i, 0, '#', 'O');
+            bfs(board, i, n - 1, '#', 'O');
+        }
+        for (int j = 0; j < n; j++) {
+            bfs(board, 0, j, '#', 'O');
+            bfs(board, m - 1, j, '#', 'O');
+        }
+    }
+
+    void bfs(char[][] mat, int x, int y, char v1, char v2) {
+        if (mat[x][y] != v1) return;
+        que.offer(x);
+        que.offer(y);
+        mat[x][y] = v2;
+        while (!que.isEmpty()) {
+            x = que.poll();
+            y = que.poll();
+            for (int[] d : dir) {
+                int xx = x + d[0];
+                int yy = y + d[1];
+                if (xx >= 0 && xx < m && yy >= 0 && yy < n && mat[xx][yy] == v1) {
+                    que.offer(xx);
+                    que.offer(yy);
+                    mat[xx][yy] = v2;
+                }
+            }
+        }
+    }
+}
+```
+
+- [并查集](../数据结构-并查集/#被围绕的区域)
+
+### 最小生成树
+
+#### 连接所有点的最小费用
+
+[1584. 连接所有点的最小费用](https://leetcode.cn/problems/min-cost-to-connect-all-points/)
+
+- Kruskal
+
+```java
+class Solution {
+    public int minCostConnectPoints(int[][] points) {
+        int n = points.length;
+        Edge[] edges = new Edge[n * (n - 1) / 2];
+        int k = 0;
+        for (int i = 0; i < n; i++)
+            for (int j = i + 1; j < n; j++)
+                edges[k++] = new Edge(i, j, manhattanDistance(points[i], points[j]));
+        return kruskal(edges, n);
+    }
+
+    int kruskal(Edge[] edges, int n) {
+        Arrays.sort(edges, (a, b) -> a.w - b.w);
+        UnionFind uf = new UnionFind(n);
+        int sum = 0;   // 边权和
+        int count = 0; // 已选边的数量
+        for (Edge e : edges) {
+            if (uf.isConnected(e.u, e.v)) continue;
+            uf.union(e.u, e.v);
+            sum += e.w;
+            if (++count == n - 1) break;
+        }
+        return sum;
+    }
+
+    int manhattanDistance(int[] x, int[] y) {
+        return Math.abs(x[0] - y[0]) + Math.abs(x[1] - y[1]);
+    }
+}
+
+class Edge {
+    int u, v, w; // 起点、终点、边权
+
+    public Edge(int u, int v, int w) {
+        this.u = u;
+        this.v = v;
+        this.w = w;
+    }
+}
+
+class UnionFind {
+    private int[] parent; // 指向父结点
+    private int size;     // 连通块的数量
+
+    public UnionFind(int n) {
+        parent = new int[n];
+        for (int i = 0; i < n; i++) parent[i] = i;
+        size = n;
+    }
+
+    public int find(int i) { // 寻找根结点
+        if (parent[i] != i)  // 路径压缩
+            parent[i] = find(parent[i]);
+        return parent[i];
+    }
+
+    public boolean isConnected(int i, int j) { // 判断是否连通
+        return find(i) == find(j);
+    }
+
+    public void union(int i, int j) { // 连通
+        if (find(i) != find(j)) size--;
+        parent[find(j)] = find(i);    // j 加入 i
+    }
+
+    public int size() {
+        return size;
+    }
+}
+```
+
+- Prim
+
+```java
+class Solution {
+    public int minCostConnectPoints(int[][] points) {
+        int n = points.length;
+        List<Edge>[] graph = new ArrayList[n];
+        for (int i = 0; i < n; i++)
+            graph[i] = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int dis = manhattanDistance(points[i], points[j]);
+                graph[i].add(new Edge(i, j, dis));
+                graph[j].add(new Edge(j, i, dis));
+            }
+        }
+        return prim(graph);
+    }
+
+    int prim(List<Edge>[] graph) {
+        int n = graph.length;
+        boolean[] vis = new boolean[n]; // 顶点是否已选择
+        int sum = 0;                    // 最小边权和
+        int u = 0;                      // 随机选择一个顶点
+        int count = 1;                  // 已选择顶点数量
+        vis[u] = true;
+        PriorityQueue<Edge> pq = new PriorityQueue<>((a, b) -> a.w - b.w); // 按边权升序
+        while (count < n) {
+            for (Edge e : graph[u])     // 连接未选择顶点的边才会添加
+                if (!vis[e.v]) pq.offer(e);
+            if (pq.isEmpty()) break;
+            Edge e;
+            do {
+                e = pq.poll(); // 跳过没有连接未选择顶点的边
+            } while (!pq.isEmpty() && vis[e.v]);
+            u = e.v;
+            vis[u] = true;
+            sum += e.w;
+            count++;
+        }
+        return sum;
+    }
+
+    int manhattanDistance(int[] x, int[] y) {
+        return Math.abs(x[0] - y[0]) + Math.abs(x[1] - y[1]);
+    }
+}
+
+class Edge {
+    int u, v, w; // 起点、终点、边权
+
+    public Edge(int u, int v, int w) {
+        this.u = u;
+        this.v = v;
+        this.w = w;
+    }
+}
+```
+
+### 其他
 
 #### 封闭岛屿的数量
 
