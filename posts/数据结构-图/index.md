@@ -824,9 +824,14 @@ class Edge {
 
 ### 9.1 Dijkstra 算法
 
+- 单源最短路径
+- 不能处理负边权
+
 **步骤：**
 
-1.
+1. 从起点开始，将起点加入小根堆。
+2. 若从当前顶点到相邻顶点的距离小于“到相邻顶点的最短距离”，则更新到相邻顶点的最短距离，同时将相邻顶点加入小根堆。
+3. 重复步骤 2，直到没有顶点的最短距离得到更新。
 
 **复杂度：**
 
@@ -837,34 +842,78 @@ class Edge {
 int[] dijkstra(List<Edge>[] graph, int start) {
     int n = graph.length;
     int[] dis = new int[n]; // start 到所有顶点的最短距离
-    Arrays.fill(dis, 0x3f3f3f3f);
-    boolean[] vis = new boolean[n];
-    PriorityQueue<Edge> pq = new PriorityQueue<>((a, b) -> a.w - b.w);
-    int count = 1;
-    int u = start;
+    Arrays.fill(dis, 0x3f3f3f3f); // 防止溢出
+    PriorityQueue<Vertex> pq = new PriorityQueue<>((a, b) -> a.dis - b.dis);
     dis[start] = 0;
-    vis[start] = true;
-    for (Edge e : graph[u]) { // 连接未选择顶点的边才会添加
-        if (!vis[e.v]) pq.offer(e);
-        dis[e.v] = Math.min(dis[e.v], dis[u] + e.w);
-    }
+    pq.offer(new Vertex(start, 0));
     while (!pq.isEmpty()) {
-        Edge edge = pq.poll();
-        if (vis[edge.v]) continue;
-        u = edge.v;
-        count++;
-        vis[u] = true;
-        for (Edge e : graph[u]) {
-            if (!vis[e.v]) pq.offer(e);
-            dis[e.v] = Math.min(dis[e.v], dis[u] + e.w);
+        Vertex u = pq.poll();
+        if (dis[u.id] < u.dis) continue;
+        for (Edge e : graph[u.id]) {
+            if (dis[e.v] > dis[u.id] + e.w) { // 更新最短路径
+                dis[e.v] = dis[u.id] + e.w;
+                pq.offer(new Vertex(e.v, dis[e.v]));
+            }
         }
-        if (count == n) break;
     }
     return dis;
 }
 
 class Edge {
-    int u, v, w; // 起点、终点、边权
+    public int u, v, w; // 起点、终点、边权
+
+    public Edge(int u, int v, int w) {
+        this.u = u;
+        this.v = v;
+        this.w = w;
+    }
+}
+
+class Vertex {
+    public int id, dis; // 顶点编号、start 到该点的距离
+
+    public Vertex(int id, int dis) {
+        this.id = id;
+        this.dis = dis;
+    }
+}
+```
+
+### 9.2 SPFA 算法
+
+- 能够处理负边权
+- 不能处理负环，能够判断负环
+
+```java
+int[] spfa(List<Edge>[] graph, int start) {
+
+}
+```
+
+### 9.3 Bellman-Ford 算法
+
+- 单源最短路径
+- 能够处理负边权
+- 能够检测负环
+- 时间复杂度：$ O(V*E) $
+
+```java
+int[] bellmanFord(List<Edge>[] graph, Edge[] edges, int start) {
+    int n = graph.length;
+    int[] dis = new int[n];
+    Arrays.fill(dis, 0x3f3f3f3f);
+    dis[start] = 0;
+    for (int k = 1; k < n; k++)
+        for (Edge e : edges)
+            dis[e.v] = Math.min(dis[e.v], dis[e.u] + e.w);
+    for (Edge e : edges)
+        if (dis[e.v] > dis[e.u] + e.w) // 存在负环
+            return null;
+    return dis;
+}
+
+class Edge {
+    public int u, v, w; // 起点、终点、边权
 
     public Edge(int u, int v, int w) {
         this.u = u;
@@ -874,13 +923,39 @@ class Edge {
 }
 ```
 
-### 9.2 SPFA 算法
+### 9.4 Floyd 算法
 
+- 多源最短路径
+- 可处理负边权
+- 时间复杂度：$ O(V^3) $
 
+```java
+void floyd(List<Edge>[] graph) {
+    // 转为邻接矩阵
+    int n = graph.length;
+    int[][] dis = new int[n][n];
+    for (int i = 0; i < n; i++)
+        for (Edge e : graph[u])
+            dis[e.u][e.v] = e.w;
+    // 矩阵 n 次方，将每个顶点都作为中间顶点
+    for (int k = 0; k < n; k++)
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                dis[i][j] = Math.max(dis[i][k] + dis[k][j]);
+}
 
-### 9.3 Bellman-Ford 算法
+class Edge {
+    public int u, v, w; // 起点、终点、边权
 
-### 9.4 A* 算法
+    public Edge(int u, int v, int w) {
+        this.u = u;
+        this.v = v;
+        this.w = w;
+    }
+}
+```
+
+### 9.5 A* 算法
 
 ## 实战
 
@@ -1307,4 +1382,8 @@ void dfs(int[][] grid, int x, int y) {
 分别用 1, 2, 3, 4 代表上下左右，用 -1, -2, -3, -4 代表上下左右的撤销。
 
 把二维矩阵中的「岛屿」进行转化，变成比如字符串这样的类型，然后利用 HashSet 这样的数据结构去重，最终得到不同的岛屿的个数。
+
+## 参考
+
+- [《算法（第4版）》]()
 
