@@ -1,4 +1,4 @@
-# 算法-二分搜索
+# 算法-二分查找
 
 
 <!--more-->
@@ -8,9 +8,7 @@
 - 要求序列**非递减**，即`nums[i - 1] <= nums[i]`
 - 时间复杂度：$O(\log n)$
 
-<br />
-
-## 2.等于指定值的下标
+## 2.等于指定值
 
 - **返回值：**
 
@@ -30,7 +28,7 @@ binarySearch(nums, 8); // -1
 
 - **闭区间写法：**
 
-```java {hl_lines=[5, 6, 10]}
+```java
 static int binarySearch(int[] nums, int target) {
     // 二分查找等于 target 的下标
     // 闭区间 [left, right]
@@ -48,7 +46,7 @@ static int binarySearch(int[] nums, int target) {
 
 - **左闭右开写法：**
 
-```java {hl_lines=[5, 6, 10]}
+```java
 static int binarySearch(int[] nums, int target) {
     // 二分查找等于 target 的下标
     // 左闭右开 [left, right)
@@ -64,9 +62,7 @@ static int binarySearch(int[] nums, int target) {
 }
 ```
 
-<br />
-
-## 3.第一个大于指定值的下标
+## 3.第一个大于指定值
 
 - **返回值：**
 
@@ -86,7 +82,7 @@ higher(nums, 8); // 5
 
 - **闭区间写法：**
 
-```java {hl_lines=[5, 6, 8, 9]}
+```java
 static int higher(int[] nums, int target) {
     // 二分查找第一个大于 target 的下标
     // 闭区间 [left, right]
@@ -103,7 +99,7 @@ static int higher(int[] nums, int target) {
 
 - **左闭右开写法：**
 
-```java {hl_lines=[5, 6, 8, 9]}
+```java
 static int higher(int[] nums, int target) {
     // 二分查找第一个大于 target 的下标
     // 左闭右开 [left, right)
@@ -118,9 +114,7 @@ static int higher(int[] nums, int target) {
 }
 ```
 
-<br />
-
-## 4.第一个大于等于指定值的下标
+## 4.第一个大于等于指定值
 
 - **返回值：**
 
@@ -140,7 +134,7 @@ ceiling(nums, 8); // 5
 
 - **闭区间写法：**
 
-```java {hl_lines=[5, 6, 8, 9]}
+```java
 static int ceiling(int[] nums, int target) {
     // 二分查找第一个大于等于 target 的下标
     // 闭区间 [left, right]
@@ -157,7 +151,7 @@ static int ceiling(int[] nums, int target) {
 
 - **左闭右开写法：**
 
-```java {hl_lines=[5, 6, 8, 9]}
+```java
 static int ceiling(int[] nums, int target) {
     // 二分查找第一个大于等于 target 的下标
     // 左闭右开 [left, right)
@@ -172,9 +166,7 @@ static int ceiling(int[] nums, int target) {
 }
 ```
 
-<br />
-
-## 5.最后一个小于指定值的下标
+## 5.最后一个小于指定值
 
 - **返回值：**
 
@@ -194,7 +186,7 @@ lower(nums, 8); // 4
 
 - **闭区间写法：**
 
-```java {hl_lines=[5, 6, 8, 9, 11]}
+```java
 static int lower(int[] nums, int target) {
     // 二分查找第一个小于 target 的下标
     // 闭区间 [left, right]
@@ -211,7 +203,7 @@ static int lower(int[] nums, int target) {
 
 - **左闭右开写法：**
 
-```java {hl_lines=[5, 6, 8, 9, 11]}
+```java
 static int lower(int[] nums, int target) {
     // 二分查找第一个小于 target 的下标
     // 左闭右开 [left, right)
@@ -226,9 +218,7 @@ static int lower(int[] nums, int target) {
 }
 ```
 
-<br />
-
-## 6.最后一个小于等于指定值的下标
+## 6.最后一个小于等于指定值
 
 - **返回值：**
 
@@ -248,7 +238,7 @@ floor(nums, 8); // 4
 
 - **闭区间写法：**
 
-```java {hl_lines=[5, 6, 8, 9, 11]}
+```java
 static int floor(int[] nums, int target) {
     // 二分查找最后一个小于等于 target 的下标
     // 闭区间 [left, right]
@@ -265,7 +255,7 @@ static int floor(int[] nums, int target) {
 
 - **左闭右开写法：**
 
-```java {hl_lines=[5, 6, 8, 9, 11]}
+```java
 static int floor(int[] nums, int target) {
     // 二分查找最后一个小于等于 target 的下标
     // 左闭右开 [left, right)
@@ -279,8 +269,6 @@ static int floor(int[] nums, int target) {
     return right - 1;
 }
 ```
-
-<br />
 
 ## 7.总结
 
@@ -319,4 +307,7 @@ if (nums[mid] < target)  // left
 return right;            // 闭区间
 return right - 1;        // 左闭右开
 ```
+
+## 参考
+
 

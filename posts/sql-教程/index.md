@@ -173,7 +173,7 @@ UPDATE tb_name SET col_1=val_1, col_2=val_2 WHERE cond_;
 
 <br />
 
-## 四、查询数据
+## 四、查询
 
 ### 4.1 单表查询
 
@@ -219,52 +219,60 @@ SELECT col_ FROM tb_name ORDER BY col_1 DESC col_2 ASC;
 
 <br />
 
-### 4.2 函数
-
-- **数量**
-
-```sql
-SELECT COUNT(*) FROM tb_name;
-SELECT COUNT(1) FROM tb_name;
-```
-
-- **求和**
-
-```sql
-SELECT SUM(col_) FROM tb_name;
-```
-
-- **平均值**
-
-```sql
-SELECT AVG(col_) FROM tb_name;
-```
-
-- **最大值**
-
-```sql
-SELECT MAX(col_) FROM tb_name;
-```
-
-- **最小值**
-
-```sql
-SELECT MIN(col_) FROM tb_name;
-```
-
-<br />
+### 4.2
 
 ### 4.3 多表查询
 
 ```sql
---
+-- 返回 tb_1 和 tb_2 的交集
 SELECT col_ FROM tb_1 INNER JOIN tb_2 ON cond_;
-
+-- 返回 tb_1 减去 tb_1 和 tb_2 的交集
 SELECT col_ FROM tb_1 LEFT JOIN tb_2 ON cond_;
-
+-- 返回 tb_2 减去 tb_1 和 tb_2 的交集
 SELECT col_ FROM tb_1 RIGHT JOIN tb_2 ON cond_;
+-- 返回 tb_1 和 tb_2 的笛卡尔积
+SELECT col_ FROM tb_1 CROSS JOIN tb_2 ON cond_;
+```
 
-SELECT col_ FROM tb_1 INNER JOIN tb_2 ON cond_;
+```sql
+select * from test1;
+-- +------+------+
+-- | r1   | r2   |
+-- +------+------+
+-- |    1 |    1 |
+-- |    1 |    2 |
+-- +------+------+
+select * from test2;
+-- +------+------+
+-- | r1   | r2   |
+-- +------+------+
+-- |    1 |    2 |
+-- |    2 |    2 |
+-- +------+------+
+select * from test1, test2;
+-- +------+------+------+------+
+-- | r1   | r2   | r1   | r2   |
+-- +------+------+------+------+
+-- |    1 |    2 |    1 |    2 |
+-- |    1 |    1 |    1 |    2 |
+-- |    1 |    2 |    2 |    2 |
+-- |    1 |    1 |    2 |    2 |
+-- +------+------+------+------+
+select * from test1, test2 where test1.r1 = test2.r1;
+-- +------+------+------+------+
+-- | r1   | r2   | r1   | r2   |
+-- +------+------+------+------+
+-- |    1 |    2 |    1 |    2 |
+-- |    1 |    1 |    1 |    2 |
+-- +------+------+------+------+
+select * from test1 inner join test2 on test1.r1 = test2.r1;
+-- +------+------+------+------+
+-- | r1   | r2   | r1   | r2   |
+-- +------+------+------+------+
+-- |    1 |    2 |    1 |    2 |
+-- |    1 |    1 |    1 |    2 |
+-- +------+------+------+------+
+
 ```
 
 <br />
@@ -375,4 +383,48 @@ select id * 2 as id_double from demo;
 
 ## 六、约束
 
+## 函数
 
+逻辑语句：
+
+- `IF(condition, true_value, false_value)`：条件语句 condition 为真返回 true_value 否则返回 false_value。
+- `CASE col_name WHEN case1 THEN value1 WHEN case2 THEN value2 ELSE value3 END`：switch 语句。
+- `IFNULL(query, null_value)`：若查询 query 返回 null，则返回 null_value，否则返回 query 的值。
+
+数值：
+
+- `ROUND(value)`：四舍五入。
+- `FLOOR(value)`：去尾法。
+- `CEIL(value)`：进一法。同`CEILING`。
+- `FORMAT(value, n)`：保留 n 位小数。
+
+统计量：
+
+- `COUNT(col_name) | COUNT(1) | COUNT(*)`：行数。
+- `SUM(col_name)`：求和。
+- `AVG(col_name)`：平均值。
+- `MAX(col_name)`：最大值。
+- `MIN(col_name)`：最小值。
+
+字符串：
+
+- `LENGTH(str)`：返回 str 长度。
+- `CHAR_LENGTH(str)`：返回非 ASCII 码字符串长度。比如'你好'返回 2。
+- `LEFT(str, n)`：返回 str 长度为 n 的前缀子串。
+- `RIGHT(str, n)`：返回 str 长度为 n 的后缀子串。
+- `SUBSTRING(str, start)`：返回 str 从第 start 个字符开始直到末尾的子串。同`SUBSTR`。
+- `SUBSTRING(str, start, len)`：返回 str 从第 start 个字符开始长度为 len 的子串。同`SUBSTR`。
+- `CONCAT(s1, s2, ...)`：返回拼接后的字符串，不限制参数数量。
+- `CONCAT_WS(c, s1, s2, ...)`：用分隔符 c 将字符串拼接起来。
+- `LOWER(str)`：转为小写。
+- `UPPER(str)`：转为大写。
+- `TRIM(str)`：去掉两侧空白字符。
+- `REVERSE(str)`：翻转字符串。
+
+日期：
+
+- `DATEDIFF(date1, date2)`：返回 date1 减去 date2 的天数。
+
+## 参考
+
+- [MySQL :: MySQL 8.0 Reference Manual :: 12 Functions and Operators](https://dev.mysql.com/doc/refman/8.0/en/functions.html)

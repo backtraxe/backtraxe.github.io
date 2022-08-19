@@ -1,4 +1,4 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title class=pjax-title>设计模式教程 - Backtraxe' World</title><meta name=Description content="Hugo DoIt 主题官方文档"><meta property="og:title" content="设计模式教程"><meta property="og:description" content="设计模式（Design Pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。"><meta property="og:type" content="article"><meta property="og:url" content="https://backtraxe.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-22T17:18:39+08:00"><meta property="article:modified_time" content="2022-05-02T00:46:39+08:00"><meta property="og:site_name" content="Backtraxe' World"><meta name=twitter:card content="summary"><meta name=twitter:title content="设计模式教程"><meta name=twitter:description content="设计模式（Design Pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。"><meta name=application-name content="traXe"><meta name=apple-mobile-web-app-title content="traXe"><meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/><link rel=prev href=https://backtraxe.github.io/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/><link rel=next href=https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"设计模式教程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B\/"},"genre":"posts","keywords":"设计模式","wordcount":765,"url":"https:\/\/backtraxe.github.io\/posts\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B\/","datePublished":"2021-08-22T17:18:39+08:00","dateModified":"2022-05-02T00:46:39+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark")}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else"auto"==="light"||"auto"==="dark"||"auto"==="black"?(setTheme("auto"),saveTheme("auto")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")]</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Backtraxe' World">traXe</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/series/>系列 </a><a class=menu-item href=/categories/documentation/>文档 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=https://github.com/backtraxe title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><a href=# onclick=return!1 class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title class=pjax-title>设计模式教程 - Backtraxe' World</title><meta name=Description content="Hugo DoIt 主题官方文档"><meta property="og:title" content="设计模式教程"><meta property="og:description" content="设计模式（Design Pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。"><meta property="og:type" content="article"><meta property="og:url" content="https://backtraxe.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-22T17:18:39+08:00"><meta property="article:modified_time" content="2022-08-20T04:13:19+08:00"><meta property="og:site_name" content="Backtraxe' World"><meta name=twitter:card content="summary"><meta name=twitter:title content="设计模式教程"><meta name=twitter:description content="设计模式（Design Pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。"><meta name=application-name content="traXe"><meta name=apple-mobile-web-app-title content="traXe"><meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/><link rel=prev href=https://backtraxe.github.io/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/><link rel=next href=https://backtraxe.github.io/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"设计模式教程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B\/"},"genre":"posts","keywords":"设计模式","wordcount":3292,"url":"https:\/\/backtraxe.github.io\/posts\/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B\/","datePublished":"2021-08-22T17:18:39+08:00","dateModified":"2022-08-20T04:13:19+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark")}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else"auto"==="light"||"auto"==="dark"||"auto"==="black"?(setTheme("auto"),saveTheme("auto")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")]</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Backtraxe' World">traXe</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/series/>系列 </a><a class=menu-item href=/categories/documentation/>文档 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=https://github.com/backtraxe title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><a href=# onclick=return!1 class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
 <select class=language-select title="Select Language" id=language-select-desktop onchange="location=this.value"><option value=/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/ selected>简体中文</option></select>
 </a><span class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
 <a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
@@ -10,9 +10,217 @@
 <span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/series/ title>系列</a><a class=menu-item href=/categories/documentation/ title>文档</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=https://github.com/backtraxe title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
 <i class="fas fa-adjust fa-fw"></i>
 </a><a href=# onclick=return!1 class=menu-item title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
-<select class=language-select title="Select Language" onchange="location=this.value"><option value=/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/ selected>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#1单例模式>1.单例模式</a><ul><li><a href=#11-定义与特点>1.1 定义与特点</a></li><li><a href=#12-优点与缺点>1.2 优点与缺点</a></li><li><a href=#13-应用场景>1.3 应用场景</a></li><li><a href=#14-代码实现>1.4 代码实现</a><ul><li><a href=#141-懒汉式>1.4.1 懒汉式</a></li><li><a href=#142-饿汉式>1.4.2 饿汉式</a></li></ul></li></ul></li><li><a href=#2代理模式>2.代理模式</a><ul><li><a href=#21-定义与特点>2.1 定义与特点</a></li><li><a href=#22-优点与缺点>2.2 优点与缺点</a></li><li><a href=#23-应用场景>2.3 应用场景</a></li><li><a href=#24-代码实现>2.4 代码实现</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","wide")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">设计模式教程</h1><div class=post-meta><div class=post-meta-line><span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=https://github.com/backtraxe title=Author target=_blank rel="noopener noreffer author" class=author>Backtraxe</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-08-22>2021-08-22</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2022-05-02>2022-05-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 765 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#1单例模式>1.单例模式</a><ul><li><a href=#11-定义与特点>1.1 定义与特点</a></li><li><a href=#12-优点与缺点>1.2 优点与缺点</a></li><li><a href=#13-应用场景>1.3 应用场景</a></li><li><a href=#14-代码实现>1.4 代码实现</a><ul><li><a href=#141-懒汉式>1.4.1 懒汉式</a></li><li><a href=#142-饿汉式>1.4.2 饿汉式</a></li></ul></li></ul></li><li><a href=#2代理模式>2.代理模式</a><ul><li><a href=#21-定义与特点>2.1 定义与特点</a></li><li><a href=#22-优点与缺点>2.2 优点与缺点</a></li><li><a href=#23-应用场景>2.3 应用场景</a></li><li><a href=#24-代码实现>2.4 代码实现</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><div class=content id=content><div class="details admonition note open"><div class="details-summary admonition-title"><i class="icon fas fa-pencil-alt fa-fwnote"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>本文最后更新于 <span class=timeago datetime=2022-05-02T00:46:39 title="May 2, 2022">2022-05-02</span>，文中内容可能已过时。</div></div></div><p>设计模式（Design Pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。</p><h2 id=1单例模式 class=headerLink><a href=#1%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f class=header-mark></a>1.单例模式</h2><p>Singleton Pattern</p><h3 id=11-定义与特点 class=headerLink><a href=#11-%e5%ae%9a%e4%b9%89%e4%b8%8e%e7%89%b9%e7%82%b9 class=header-mark></a>1.1 定义与特点</h3><p><strong>定义：</strong></p><p>一个类只有一个实例。</p><p><strong>特点：</strong></p><ul><li>单例类只有一个实例对象。</li><li>单例对象必须由单例类自行创建。</li><li>单例类对外提供一个访问该单例的全局访问点。</li></ul><h3 id=12-优点与缺点 class=headerLink><a href=#12-%e4%bc%98%e7%82%b9%e4%b8%8e%e7%bc%ba%e7%82%b9 class=header-mark></a>1.2 优点与缺点</h3><p><strong>优点：</strong></p><ul><li>减少内存开销。</li><li>避免对资源的多重占用。</li><li>优化对共享资源的访问。</li></ul><p><strong>缺点：</strong></p><ul><li>单例模式一般没有接口，扩展困难。扩展必须修改代码，违背开闭原则。</li><li>在并发测试中，单例模式不利于代码调试。在调试过程中，如果单例中的代码没有执行完，也不能模拟生成一个新的对象。</li><li>单例模式的功能代码通常写在一个类中，如果功能设计不合理，则很容易违背单一职责原则。</li></ul><h3 id=13-应用场景 class=headerLink><a href=#13-%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af class=header-mark></a>1.3 应用场景</h3><ul><li>需要频繁创建的类，使用单例可以降低系统的内存压力，减少 GC。</li><li>某类只要求生成一个对象的时候，如一个班中的班长、每个人的身份证号等。</li><li>某类创建实例时占用资源较多，或实例化耗时较长，且经常使用。</li><li>某类需要频繁实例化，而创建的对象又频繁被销毁的时候，如多线程的线程池、网络连接池等。</li><li>频繁访问数据库或文件的对象。</li><li>对于一些控制硬件级别的操作，或者从系统上来讲应当是单一控制逻辑的操作，如果有多个实例，则系统会完全乱套。</li><li>当对象需要被共享的场合。由于单例模式只允许创建一个对象，共享该对象可以节省内存，并加快对象访问速度。如 Web 中的配置对象、数据库的连接池等。</li></ul><h3 id=14-代码实现 class=headerLink><a href=#14-%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0 class=header-mark></a>1.4 代码实现</h3><h4 id=141-懒汉式 class=headerLink><a href=#141-%e6%87%92%e6%b1%89%e5%bc%8f class=header-mark></a>1.4.1 懒汉式</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<select class=language-select title="Select Language" onchange="location=this.value"><option value=/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%95%99%E7%A8%8B/ selected>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#1介绍>1.介绍</a></li><li><a href=#2构建型模式>2.构建型模式</a><ul><li><a href=#21-工厂模式>2.1 工厂模式</a><ul><li><a href=#211-简单工厂模式>2.1.1 简单工厂模式</a></li><li><a href=#212-工厂方法模式>2.1.2 工厂方法模式</a></li><li><a href=#213-抽象工厂模式>2.1.3 抽象工厂模式</a></li></ul></li><li><a href=#22-单例模式>2.2 单例模式</a><ul><li><a href=#221-饿汉式>2.2.1 饿汉式</a></li><li><a href=#222-懒汉式静态变量>2.2.2 懒汉式：静态变量</a></li><li><a href=#223-懒汉式静态内部类>2.2.3 懒汉式：静态内部类</a></li></ul></li><li><a href=#23-建造者模式>2.3 建造者模式</a></li><li><a href=#24>2.4</a></li></ul></li><li><a href=#2代理模式>2.代理模式</a><ul><li><a href=#21-定义与特点>2.1 定义与特点</a></li><li><a href=#22-优点与缺点>2.2 优点与缺点</a></li><li><a href=#23-应用场景>2.3 应用场景</a></li><li><a href=#24-代码实现>2.4 代码实现</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","wide")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">设计模式教程</h1><div class=post-meta><div class=post-meta-line><span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=https://github.com/backtraxe title=Author target=_blank rel="noopener noreffer author" class=author>Backtraxe</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-series>系列 <a href=/series/%E7%A7%8B%E6%8B%9B/><i class="far fa-list-alt fa-fw"></i>秋招</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-08-22>2021-08-22</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2022-08-20>2022-08-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3292 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div></div><div class="details series-nav open"><div class="details-summary series-title"><span>系列 - 秋招</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content series-content"><nav><ul><li><span class=active>设计模式教程</span></li></ul></nav></div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#1介绍>1.介绍</a></li><li><a href=#2构建型模式>2.构建型模式</a><ul><li><a href=#21-工厂模式>2.1 工厂模式</a><ul><li><a href=#211-简单工厂模式>2.1.1 简单工厂模式</a></li><li><a href=#212-工厂方法模式>2.1.2 工厂方法模式</a></li><li><a href=#213-抽象工厂模式>2.1.3 抽象工厂模式</a></li></ul></li><li><a href=#22-单例模式>2.2 单例模式</a><ul><li><a href=#221-饿汉式>2.2.1 饿汉式</a></li><li><a href=#222-懒汉式静态变量>2.2.2 懒汉式：静态变量</a></li><li><a href=#223-懒汉式静态内部类>2.2.3 懒汉式：静态内部类</a></li></ul></li><li><a href=#23-建造者模式>2.3 建造者模式</a></li><li><a href=#24>2.4</a></li></ul></li><li><a href=#2代理模式>2.代理模式</a><ul><li><a href=#21-定义与特点>2.1 定义与特点</a></li><li><a href=#22-优点与缺点>2.2 优点与缺点</a></li><li><a href=#23-应用场景>2.3 应用场景</a></li><li><a href=#24-代码实现>2.4 代码实现</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><div class=content id=content><p>设计模式（Design Pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。</p><h2 id=1介绍 class=headerLink><a href=#1%e4%bb%8b%e7%bb%8d class=header-mark></a>1.介绍</h2><p>面向对象五大基本原则：</p><ul><li><strong>单一职责原则（Single Responsibility Principle，SRP）</strong>：一个类的功能要单一，不能包罗万象。</li><li><strong>开放封闭原则（Open-Close Principle，OCP）</strong>：一个模块在扩展性方面应该是开放的而在更改性方面应该是封闭的。比如：一个网络模块，原来只实现了服务端功能，而现在要加入客户端功能，那么应当在不用修改服务端功能代码的前提下，就能够增加客户端功能的实现代码，这要求在设计之初，就应当将服务端和客户端分开，公共部分抽象出来。</li><li><strong>里式替换原则（Liskov Substitution Principle，LSP）</strong>：子类应当可以替换父类并出现在父类能够出现的任何地方。</li><li><strong>依赖倒置原则（Dependency Inversion Principle，DIP）</strong>：具体依赖抽象，上层依赖下层。假设B是较A低的模块，但B需要使用到A的功能，这个时候，B不应当直接使用A中的具体类： 而应当由B定义一个抽象接口，并由A来实现这个抽象接口，B只使用这个抽象接口：这样就达到了依赖倒置的目的，B也解除了对A的依赖，反过来是A依赖于B定义的抽象接口。通过上层模块难以避免依赖下层模块，假如B也直接依赖A的实现，那么就可能造成循环依赖。一个常见的问题就是编译A模块时需要直接包含到B模块的cpp文件，而编译B时同样要直接包含到A的cpp文件。</li><li><strong>接口分离原则（Interface Segregation Principle，ISP)</strong>：模块间要通过抽象接口隔离开，而不是通过具体的类强耦合起来。</li></ul><p>设计模式的六大原则：</p><ul><li><strong>开闭原则</strong>：一个软件实体如类、模块和函数应该对修改封闭，对扩展开放。</li><li><strong>单一职责原则</strong>：一个类只做一件事，一个类应该只有一个引起它修改的原因。</li><li><strong>里氏替换原则</strong>：子类应该可以完全替换父类。也就是说在使用继承时，只扩展新功能，而不要破坏父类原有的功能。</li><li><strong>依赖倒置原则</strong>：细节应该依赖于抽象，抽象不应依赖于细节。把抽象层放在程序设计的高层，并保持稳定，程序的细节变化由低层的实现层来完成。</li><li><strong>迪米特法则（Law Of Demeter，LOD）</strong>：又名“最少知道原则”，一个类不应知道自己操作的类的细节，尽量降低类与类之间的耦合。</li><li><strong>接口隔离原则</strong>：客户端不应依赖它不需要的接口。如果一个接口在实现时，部分方法由于冗余被客户端空实现，则应该将接口拆分，让实现类只需依赖自己需要的接口方法。</li></ul><h2 id=2构建型模式 class=headerLink><a href=#2%e6%9e%84%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f class=header-mark></a>2.构建型模式</h2><p>Creational Patterns</p><h3 id=21-工厂模式 class=headerLink><a href=#21-%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f class=header-mark></a>2.1 工厂模式</h3><p>Factory Pattern</p><p>构建对象最常用的方式是 new 一个对象。然而每 new 一个对象，相当于调用者多知道了一个类，增加了类与类之间的联系，不利于程序的松耦合。工厂模式便是用于封装对象构建过程的设计模式。</p><h4 id=211-简单工厂模式 class=headerLink><a href=#211-%e7%ae%80%e5%8d%95%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f class=header-mark></a>2.1.1 简单工厂模式</h4><p>Simple Factory Pattern</p><p>当我们需要创建一个对象时，不直接 new 这个对象，而是通过提供对象信息给对象工厂，然后由工厂提供创建的对象。这样调用者无需关心对象的创建细节，实现了解耦。</p><ul><li>用户</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>User</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>eat</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>FruitFactory</span> <span class=n>fruitFactory</span> <span class=o>=</span> <span class=k>new</span> <span class=n>FruitFactory</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>Fruit</span> <span class=n>apple</span> <span class=o>=</span> <span class=n>fruitFactory</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=s>&#34;苹果&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>apple</span><span class=o>.</span><span class=na>eat</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>Fruit</span> <span class=n>pear</span> <span class=o>=</span> <span class=n>fruitFactory</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=s>&#34;梨&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>pear</span><span class=o>.</span><span class=na>eat</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>水果工厂</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>FruitFactory</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Fruit</span> <span class=nf>create</span><span class=o>(</span><span class=n>String</span> <span class=n>type</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>switch</span> <span class=o>(</span><span class=n>type</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=s>&#34;苹果&#34;</span><span class=o>:</span> <span class=k>return</span> <span class=k>new</span> <span class=n>Apple</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=k>case</span> <span class=s>&#34;梨&#34;</span><span class=o>:</span> <span class=k>return</span> <span class=k>new</span> <span class=n>Pear</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=k>default</span><span class=o>:</span> <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalArgumentException</span><span class=o>(</span><span class=s>&#34;暂时没有这种水果&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>水果</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>abstract</span> <span class=kd>class</span> <span class=nc>Fruit</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Apple</span> <span class=kd>extends</span> <span class=n>Fruit</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Pear</span> <span class=kd>extends</span> <span class=n>Fruit</span> <span class=o>{}</span>
+</span></span></code></pre></td></tr></table></div></div><p>优点：</p><ul><li>封装了对象创建细节，调用者无需关心对象的创建细节，实现了解耦。</li></ul><p>缺点：</p><ul><li>如果需要生产的产品过多，此模式会导致工厂类过于庞大，承担过多的职责，变成超级类。当苹果生产过程需要修改时，要来修改此工厂。梨子生产过程需要修改时，也要来修改此工厂。也就是说这个类不止一个引起修改的原因，违背了单一职责原则。</li><li>当要生产新的产品时，必须在工厂类中添加新的分支。而开闭原则告诉我们：类应该对修改封闭。我们希望在添加新功能时，只需增加新的类，而不是修改既有的类，违背了开闭原则。</li></ul><h4 id=212-工厂方法模式 class=headerLink><a href=#212-%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f class=header-mark></a>2.1.2 工厂方法模式</h4><p>Factory Method Pattern</p><p>为了解决简单工厂的缺点，工厂方法模式应运而生，它规定每个产品都有一个专属工厂。</p><ul><li>用户</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>User</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>eat</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Fruit</span> <span class=n>apple</span> <span class=o>=</span> <span class=k>new</span> <span class=n>AppleFactory</span><span class=o>().</span><span class=na>create</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>apple</span><span class=o>.</span><span class=na>eat</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>Fruit</span> <span class=n>pear</span> <span class=o>=</span> <span class=k>new</span> <span class=n>PearFactory</span><span class=o>().</span><span class=na>create</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>pear</span><span class=o>.</span><span class=na>eat</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>苹果工厂</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>AppleFactory</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Fruit</span> <span class=nf>create</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>new</span> <span class=n>Apple</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>梨工厂</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>PearFactory</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Fruit</span> <span class=nf>create</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>new</span> <span class=n>Pear</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>优点：</p><ul><li>封装了对象创建细节。</li></ul><p>缺点：</p><ul><li>将调用者与创建对象解耦的同时，引入了调用者和对象工厂之间的耦合。</li></ul><h4 id=213-抽象工厂模式 class=headerLink><a href=#213-%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f class=header-mark></a>2.1.3 抽象工厂模式</h4><p>Abstract Factory Pattern</p><p>定义一个工厂接口，提供创建方法，然后由具体工厂去实现该方法。</p><ul><li>用户</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>User</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>eat</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>FruitFactory</span> <span class=n>fruitFactory</span> <span class=o>=</span> <span class=k>new</span> <span class=n>AppleFactory</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>Fruit</span> <span class=n>apple</span> <span class=o>=</span> <span class=n>fruitFactory</span><span class=o>.</span><span class=na>create</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>apple</span><span class=o>.</span><span class=na>eat</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>fruitFactory</span> <span class=o>=</span> <span class=k>new</span> <span class=n>PearFactory</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>Fruit</span> <span class=n>pear</span> <span class=o>=</span> <span class=n>fruitFactory</span><span class=o>.</span><span class=na>create</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>pear</span><span class=o>.</span><span class=na>eat</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>工厂接口</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>interface</span> <span class=nc>FruitFactory</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>Fruit</span> <span class=nf>create</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>苹果工厂</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>AppleFactory</span> <span class=kd>implements</span> <span class=n>FruitFactory</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Fruit</span> <span class=nf>create</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>new</span> <span class=n>Apple</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>梨工厂</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>PearFactory</span> <span class=kd>implements</span> <span class=n>FruitFactory</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Fruit</span> <span class=nf>create</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>new</span> <span class=n>Pear</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>优点：</p><ul><li>实现调用者与创建对象的解耦，也实现了调用者与具体对象工厂的解耦。</li><li>只需少量代码即可无缝切换创建对象的具体工厂类。</li></ul><p>缺点：</p><ul><li>当需要新增功能时，所有实现了工厂接口的具体工厂都必须实现新增的抽象方法，代码修改量巨大。</li></ul><h3 id=22-单例模式 class=headerLink><a href=#22-%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f class=header-mark></a>2.2 单例模式</h3><p>Singleton Pattern</p><p>当一个类全局只需要一个实例时，即可使用单例模式。</p><p>不能自行创建，可通过指定方法获取该实例。</p><p>优点：</p><ul><li>减少内存开销。</li><li>避免对资源的多重占用。</li><li>优化对共享资源的访问。</li></ul><p>缺点：</p><ul><li>单例模式一般没有接口，扩展困难。扩展必须修改代码，违背开闭原则。</li><li>在并发测试中，单例模式不利于代码调试。在调试过程中，如果单例中的代码没有执行完，也不能模拟生成一个新的对象。</li><li>单例模式的功能代码通常写在一个类中，如果功能设计不合理，则很容易违背单一职责原则。</li></ul><p>用户使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Singleton</span> <span class=n>instance</span> <span class=o>=</span> <span class=n>Singleton</span><span class=o>.</span><span class=na>getInstance</span><span class=o>();</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=221-饿汉式 class=headerLink><a href=#221-%e9%a5%bf%e6%b1%89%e5%bc%8f class=header-mark></a>2.2.1 饿汉式</h4><p>实例在声明时便初始化，即使不使用。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Singleton</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=n>Singleton</span> <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Singleton</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=nf>Singleton</span><span class=o>()</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=n>Singleton</span> <span class=nf>getInstance</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>instance</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=222-懒汉式静态变量 class=headerLink><a href=#222-%e6%87%92%e6%b1%89%e5%bc%8f%e9%9d%99%e6%80%81%e5%8f%98%e9%87%8f class=header-mark></a>2.2.2 懒汉式：静态变量</h4><p>实例在第一次获取时才初始化，减少内存占用和减少类初始化时间。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Singleton</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>volatile</span> <span class=n>Singleton</span> <span class=n>instance</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=nf>Singleton</span><span class=o>()</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=n>Singleton</span> <span class=nf>getInstance</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>instance</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=kd>synchronized</span> <span class=o>(</span><span class=n>Singleton</span><span class=o>.</span><span class=na>class</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>instance</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Singleton</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>instance</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>为什么使用 synchronized ？</strong></p><p>如果有多个线程同一时间调用 getInstance 方法，instance 变量可能会被实例化多次。为了保证线程安全，我们需要给判空过程加上锁。</p><p><strong>为什么使用两次 if 判断？</strong></p><p>如果外面不做空检查，当多个线程调用 getInstance 时，每次都需要执行 synchronized 同步方法，这样会严重影响程序的执行效率。所以更好的做法是在同步之前，再加上一层检查。</p><p>如果里面不做空检查，可能会有两个线程同时通过了外面的空检查，然后在一个线程 new 出实例后，第二个线程进入锁中又 new 出一个实例，导致创建多个实例。</p><p><strong>为什么使用 volatile ？</strong></p><p>JVM 底层为了优化程序运行效率，可能会对我们的代码进行指令重排序，在一些特殊情况下会导致出现空指针，为了防止这个问题，更进一步的优化是给 instance 变量加上 volatile 关键字。</p><p><code>instance = new Singleton()</code>实际上执行了三条重要的指令：</p><ol><li>分配对象的内存空间。</li><li>初始化对象。</li><li>将变量 instance 指向刚分配的内存空间。</li></ol><p>在这个过程中，如果第二条指令和第三条指令发生了重排序，可能导致 instance 还未初始化时，其他线程提前通过双检锁外层的 null 检查，获取到“不为 null，但还没有执行初始化”的 instance 对象，发生空指针异常。</p><h4 id=223-懒汉式静态内部类 class=headerLink><a href=#223-%e6%87%92%e6%b1%89%e5%bc%8f%e9%9d%99%e6%80%81%e5%86%85%e9%83%a8%e7%b1%bb class=header-mark></a>2.2.3 懒汉式：静态内部类</h4><p>静态内部类实现。内部类会在使用时才被加载，并且 JVM 会保证内部类只会被加载一次。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Singleton</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>Inner</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kd>static</span> <span class=n>Singleton</span> <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Singleton</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=nf>Singleton</span><span class=o>()</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Singleton</span> <span class=nf>getInstance</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>Inner</span><span class=o>.</span><span class=na>instance</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=23-建造者模式 class=headerLink><a href=#23-%e5%bb%ba%e9%80%a0%e8%80%85%e6%a8%a1%e5%bc%8f class=header-mark></a>2.3 建造者模式</h3><p>Builder Pattern</p><p>建造者模式用于创建过程稳定，但配置多变的对象。</p><p>用户不能通过 new 创建对象，只能通过 Builder 构建。对于必须配置的属性，通过 Builder 的构造方法传入，可选的属性通过 Builder 的链式调用方法传入，如果不配置，将使用默认配置。</p><ul><li><p>用户</p></li><li></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -30,42 +238,62 @@
 </span><span class=lnt>16
 </span><span class=lnt>17
 </span><span class=lnt>18
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>LazySingleton</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>    <span class=c1>// 保证 instance 在所有线程中同步
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>volatile</span> <span class=n>LazySingleton</span> <span class=n>instance</span><span class=o>;</span>
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>MikeTea</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>String</span> <span class=n>type</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>int</span> <span class=n>size</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>boolean</span> <span class=n>ice</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1>// private 避免类在外部被实例化
-</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>private</span> <span class=nf>LazySingleton</span><span class=o>()</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=nf>MikeTea</span><span class=o>()</span> <span class=o>{}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>LazySingleton</span> <span class=nf>getInstance</span><span class=o>()</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>instance</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>            <span class=kd>synchronized</span> <span class=o>(</span><span class=n>LazySingleton</span><span class=o>.</span><span class=na>class</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>instance</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>                    <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>LazySingleton</span><span class=o>();</span>
-</span></span><span class=line><span class=cl>                <span class=o>}</span>
-</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=nf>MikeTea</span><span class=o>(</span><span class=n>Builder</span> <span class=n>builder</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>type</span> <span class=o>=</span> <span class=n>builder</span><span class=o>.</span><span class=na>type</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>size</span> <span class=o>=</span> <span class=n>builder</span><span class=o>.</span><span class=na>size</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>ice</span> <span class=o>=</span> <span class=n>builder</span><span class=o>.</span><span class=na>ice</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>Builder</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>private</span> <span class=n>String</span> <span class=n>type</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>private</span> <span class=kt>int</span> <span class=n>size</span> <span class=o>=</span> <span class=n>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>private</span> <span class=kt>boolean</span> <span class=n>ice</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=nf>Builder</span><span class=o>(</span><span class=n>String</span> <span class=n>type</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>this</span><span class=o>.</span><span class=na>type</span> <span class=o>=</span> <span class=n>type</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>instance</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=n>Builder</span> <span class=nf>size</span><span class=o>(</span><span class=kt>int</span> <span class=n>size</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>this</span><span class=o>.</span><span class=na>size</span> <span class=o>=</span> <span class=n>size</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=k>this</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=n>Builder</span> <span class=nf>ice</span><span class=o>(</span><span class=kt>boolean</span> <span class=n>ice</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>this</span><span class=o>.</span><span class=na>ice</span> <span class=o>=</span> <span class=n>ice</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=k>this</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=n>MikeTea</span> <span class=nf>create</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=k>new</span> <span class=n>MikeTea</span><span class=o>(</span><span class=k>this</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h4 id=142-饿汉式 class=headerLink><a href=#142-%e9%a5%bf%e6%b1%89%e5%bc%8f class=header-mark></a>1.4.2 饿汉式</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>HungrySingleton</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>HungrySingleton</span> <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HungrySingleton</span><span class=o>();</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=nf>HungrySingleton</span><span class=o>()</span> <span class=o>{}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>HungrySingleton</span> <span class=nf>getInstance</span><span class=o>()</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>instance</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>    <span class=o>}</span>
-</span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=2代理模式 class=headerLink><a href=#2%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f class=header-mark></a>2.代理模式</h2><p>Proxy Pattern</p><h3 id=21-定义与特点 class=headerLink><a href=#21-%e5%ae%9a%e4%b9%89%e4%b8%8e%e7%89%b9%e7%82%b9 class=header-mark></a>2.1 定义与特点</h3><p><strong>定义：</strong></p><p><strong>特点：</strong></p><h3 id=22-优点与缺点 class=headerLink><a href=#22-%e4%bc%98%e7%82%b9%e4%b8%8e%e7%bc%ba%e7%82%b9 class=header-mark></a>2.2 优点与缺点</h3><h3 id=23-应用场景 class=headerLink><a href=#23-%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af class=header-mark></a>2.3 应用场景</h3><h3 id=24-代码实现 class=headerLink><a href=#24-%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0 class=header-mark></a>2.4 代码实现</h3><h2 id=参考 class=headerLink><a href=#%e5%8f%82%e8%80%83 class=header-mark></a>参考</h2><ol><li><a href=https://design-patterns.readthedocs.io/zh_CN/latest/index.html target=_blank rel="noopener noreffer">图说设计模式 — Graphic Design Patterns</a></li><li><a href=https://www.runoob.com/design-pattern/design-pattern-tutorial.html target=_blank rel="noopener noreffer">设计模式 - 菜鸟教程</a></li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2022-05-02</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/>设计模式</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/ class=prev rel=prev title="UML 类图教程"><i class="fas fa-angle-left fa-fw"></i>UML 类图教程</a>
+</span></span></code></pre></td></tr></table></div></div><h3 id=24 class=headerLink><a href=#24 class=header-mark></a>2.4</h3><h2 id=2代理模式 class=headerLink><a href=#2%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f class=header-mark></a>2.代理模式</h2><p>Proxy Pattern</p><h3 id=21-定义与特点 class=headerLink><a href=#21-%e5%ae%9a%e4%b9%89%e4%b8%8e%e7%89%b9%e7%82%b9 class=header-mark></a>2.1 定义与特点</h3><p><strong>定义：</strong></p><p><strong>特点：</strong></p><h3 id=22-优点与缺点 class=headerLink><a href=#22-%e4%bc%98%e7%82%b9%e4%b8%8e%e7%bc%ba%e7%82%b9 class=header-mark></a>2.2 优点与缺点</h3><h3 id=23-应用场景 class=headerLink><a href=#23-%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af class=header-mark></a>2.3 应用场景</h3><h3 id=24-代码实现 class=headerLink><a href=#24-%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0 class=header-mark></a>2.4 代码实现</h3><h2 id=参考 class=headerLink><a href=#%e5%8f%82%e8%80%83 class=header-mark></a>参考</h2><ol><li><a href=https://design-patterns.readthedocs.io/zh_CN/latest/index.html target=_blank rel="noopener noreffer">图说设计模式 — Graphic Design Patterns</a></li><li><a href=https://www.runoob.com/design-pattern/design-pattern-tutorial.html target=_blank rel="noopener noreffer">设计模式 - 菜鸟教程</a></li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2022-08-20</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/>设计模式</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/uml-%E7%B1%BB%E5%9B%BE%E6%95%99%E7%A8%8B/ class=prev rel=prev title="UML 类图教程"><i class="fas fa-angle-left fa-fw"></i>UML 类图教程</a>
 <a href=/posts/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/ class=next rel=next title=评价指标>评价指标<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://github.com/backtraxe target=_blank rel="noopener noreferrer">Backtraxe</a></span></div><div class=footer-line></div><div class=footer-line></div></div><script>"serviceWorker"in navigator&&(navigator.serviceWorker.register("/sw.min.js",{scope:"/"}).then(function(){}),navigator.serviceWorker.ready.then(function(){}))</script></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/fuse/fuse.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/tablesort/tablesort.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js defer></script></div><div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:20},comment:{},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},table:{sort:!0}}</script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script></div></body></html>
