@@ -63,6 +63,30 @@ static int[] getMonoStack(int[] nums) {
 }
 ```
 
+### 2.3 同时计算上一个和下一个元素的下标
+
+```java
+static int[][] getMonoStack(int[] nums) {
+    int n = nums.length;
+    int[][] ans = new int[2][n];
+    Arrays.fill(ans[1], -1);
+    Deque<Integer> st = new ArrayDeque<>();
+    for (int i = 0; i < n; i++) {
+        // 上个更大的元素的下标 + 下个大于等于的元素的下标
+        while (!st.isEmpty() && nums[st.peek()] <= nums[i]) ans[1][st.pop()] = i;
+        // 上个大于等于的元素的下标 + 下个更大的元素的下标
+        while (!st.isEmpty() && nums[st.peek()] <  nums[i]) ans[1][st.pop()] = i;
+        // 上个更小的元素的下标 + 下个小于等于的元素的下标
+        while (!st.isEmpty() && nums[st.peek()] >= nums[i]) ans[1][st.pop()] = i;
+        // 上个小于等于的元素的下标 + 下个更小的元素的下标
+        while (!st.isEmpty() && nums[st.peek()] >  nums[i]) ans[1][st.pop()] = i;
+        ans[0][i] = st.isEmpty() ? -1 : st.peek();
+        st.push(i); // 存下标
+    }
+    return ans;
+}
+```
+
 ## 3.存元素
 
 ### 3.1 下一个元素
