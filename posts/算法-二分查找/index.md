@@ -308,6 +308,78 @@ return right;            // 闭区间
 return right - 1;        // 左闭右开
 ```
 
+## 8.实战
+
+### 二分查找
+
+[704. 二分查找](https://leetcode.cn/problems/binary-search/)
+
+```java
+class Solution {
+    public int search(int[] nums, int target) {
+        return binarySearch(nums, target);
+    }
+
+    static int binarySearch(int[] nums, int target) {
+        // 二分查找等于 target 的下标
+        // 左闭右开 [left, right)
+        int left = 0;
+        int right = nums.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target)     return mid;
+            else if (nums[mid] < target) left = mid + 1;
+            else                         right = mid;
+        }
+        return -1;
+    }
+}
+```
+
+### 第一个错误的版本
+
+[278. 第一个错误的版本](https://leetcode.cn/problems/first-bad-version/)
+
+```java
+public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        int l = 1;
+        int r = n;
+        while (l < r) {
+            int m = l + (r - l) / 2;
+            if (isBadVersion(m)) r = m;
+            else l = m + 1;
+        }
+        return l;
+    }
+}
+```
+
+### 搜索插入位置
+
+[35. 搜索插入位置](https://leetcode.cn/problems/search-insert-position/)
+
+```java
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        return ceiling(nums, target);
+    }
+
+    static int ceiling(int[] nums, int target) {
+        // 二分查找第一个大于等于 target 的下标
+        // 左闭右开 [left, right)
+        int left = 0;
+        int right = nums.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] >= target) right = mid;
+            else                     left = mid + 1;
+        }
+        return left;
+    }
+}
+```
+
 ## 参考
 
 

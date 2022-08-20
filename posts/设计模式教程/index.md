@@ -7,22 +7,21 @@
 
 ## 1.介绍
 
-面向对象五大基本原则：
+面向对象的特点是:
 
-- **单一职责原则（Single Responsibility Principle，SRP）**：一个类的功能要单一，不能包罗万象。
-- **开放封闭原则（Open-Close Principle，OCP）**：一个模块在扩展性方面应该是开放的而在更改性方面应该是封闭的。比如：一个网络模块，原来只实现了服务端功能，而现在要加入客户端功能，那么应当在不用修改服务端功能代码的前提下，就能够增加客户端功能的实现代码，这要求在设计之初，就应当将服务端和客户端分开，公共部分抽象出来。
-- **里式替换原则（Liskov Substitution Principle，LSP）**：子类应当可以替换父类并出现在父类能够出现的任何地方。
-- **依赖倒置原则（Dependency Inversion Principle，DIP）**：具体依赖抽象，上层依赖下层。假设B是较A低的模块，但B需要使用到A的功能，这个时候，B不应当直接使用A中的具体类： 而应当由B定义一个抽象接口，并由A来实现这个抽象接口，B只使用这个抽象接口：这样就达到了依赖倒置的目的，B也解除了对A的依赖，反过来是A依赖于B定义的抽象接口。通过上层模块难以避免依赖下层模块，假如B也直接依赖A的实现，那么就可能造成循环依赖。一个常见的问题就是编译A模块时需要直接包含到B模块的cpp文件，而编译B时同样要直接包含到A的cpp文件。
-- **接口分离原则（Interface Segregation Principle，ISP)**：模块间要通过抽象接口隔离开，而不是通过具体的类强耦合起来。
+- 可维护
+- 可复用
+- 可扩展
+- 灵活性好
 
 设计模式的六大原则：
 
-- **开闭原则**：一个软件实体如类、模块和函数应该对修改封闭，对扩展开放。
-- **单一职责原则**：一个类只做一件事，一个类应该只有一个引起它修改的原因。
-- **里氏替换原则**：子类应该可以完全替换父类。也就是说在使用继承时，只扩展新功能，而不要破坏父类原有的功能。
-- **依赖倒置原则**：细节应该依赖于抽象，抽象不应依赖于细节。把抽象层放在程序设计的高层，并保持稳定，程序的细节变化由低层的实现层来完成。
-- **迪米特法则（Law Of Demeter，LOD）**：又名“最少知道原则”，一个类不应知道自己操作的类的细节，尽量降低类与类之间的耦合。
-- **接口隔离原则**：客户端不应依赖它不需要的接口。如果一个接口在实现时，部分方法由于冗余被客户端空实现，则应该将接口拆分，让实现类只需依赖自己需要的接口方法。
+- **开闭原则（Open-Closed Principle，OCP）**：一个软件实体如类、模块和函数应该对修改封闭，对扩展开放。
+- **单一职责原则（Single Responsibility Principle，SRP）**：一个类只做一件事，一个类应该只有一个引起它修改的原因。
+- **里氏替换原则（Liskov Substitution Principle，LSP）**：子类应该可以完全替换父类。也就是说在使用继承时，只扩展新功能，而不要破坏父类原有的功能。
+- **依赖倒置原则（Dependence Inversion Principle，DIP）**：细节应该依赖于抽象，抽象不应依赖于细节。把抽象层放在程序设计的高层，并保持稳定，程序的细节变化由低层的实现层来完成。
+- **迪米特法则（Law of Demeter，LoD）**：又名“最少知道原则”，一个类不应知道自己操作的类的细节，尽量降低类与类之间的耦合。
+- **接口隔离原则（Interface Segregation Principle，ISP）**：客户端不应依赖它不需要的接口。如果一个接口在实现时，部分方法由于冗余被客户端空实现，则应该将接口拆分，让实现类只需依赖自己需要的接口方法。
 
 ## 2.构建型模式
 
@@ -307,9 +306,20 @@ Builder Pattern
 
 用户不能通过 new 创建对象，只能通过 Builder 构建。对于必须配置的属性，通过 Builder 的构造方法传入，可选的属性通过 Builder 的链式调用方法传入，如果不配置，将使用默认配置。
 
+使用建造者模式的好处是不用担心忘了指定某个配置，保证了构建过程是稳定的。
+
 - 用户
 
--
+```java
+class User {
+    public void buyMilkTea() {
+        MilkTea milkTea = new MilkTea().Builder("原味奶茶").build();
+        MilkTea mongoMilkTea = new MilkTea.Builder("杨枝甘露").size(2).ice(true).build();
+    }
+}
+```
+
+- 对象
 
 ```java
 class MikeTea {
@@ -351,28 +361,334 @@ class MikeTea {
 }
 ```
 
+### 2.4 原型模式
 
-### 2.4
+Prototype Pattern
 
+用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
 
+简单来说就是深拷贝复制对象。
 
+- 用户
 
+```java
+class User {
+    public void buyMilkTea() throws CloneNotSupportedException {
+        // 两杯一样的
+        MilkTea milkTea1 = new MilkTea("蜂蜜柚子茶", true);
+        MilkTea milkTea2 = milkTea1.clone();
+    }
+}
+```
 
-## 2.代理模式
+- 对象
+
+```java
+class MilkTea implements Cloneable {
+    private String type;
+    private boolean ice;
+
+    public MilkTea(String type, boolean ice) {
+        this.type = type;
+        this.ice = ice;
+    }
+
+    @Override
+    public MilkTea clone() throws CloneNotSupportedException {
+        return (MilkTea) super.clone();
+    }
+}
+```
+
+## 3.结构型模式
+
+Structural Patterns
+
+### 3.1 适配器模式
+
+Adapter Pattern
+
+将一个类的接口转换成用户希望的另一个接口，使得原本由于接口不兼容而不能一起工作的那些类能一起工作。
+
+适配器模式适用于有相关性但不兼容的结构，源接口通过一个中间件转换后才可以适用于目标接口，这个转换过程就是适配，这个中间件就称之为适配器。
+
+只有在遇到接口无法修改时才应该考虑适配器模式。如果接口可以修改，那么将接口改为一致的方式会让程序结构更加良好。
+
+- Lightning
+
+```java
+class Lightning {
+    public void transmit() {
+        System.out.println("正在使用 Lightning 传输数据");
+    }
+}
+```
+
+- USB-C
+
+```java
+class USBC {
+    public void transmit() {
+        System.out.println("正在使用 USB-C 传输数据");
+    }
+}
+```
+
+- 电脑
+
+```java
+class PC {
+    // 电脑只有 USB-C 接口
+    public void connect(USBC plug) {
+        plug.transmit();
+    }
+}
+```
+
+- Lightning 转 USB-C 适配器
+
+```java
+class LightningToUSBCAdapter extends USBC {
+    private Lightning plug;
+
+    public LightningToUSBCAdapter(Lightning plug) {
+        this.plug = plug;
+    }
+
+    @Override
+    public void transmit() {
+        plug.transmit();
+    }
+}
+```
+
+- 用户
+
+```java
+class User {
+    public void transmitData() {
+        PC pc = new PC();
+        pc.connect(new USBC());
+        pc.connect(new LightningToUSBCAdapter(new Lightning()));
+    }
+}
+```
+
+### 3.2 桥接模式
+
+Bridge Pattern
+
+将抽象部分与它的实现部分分离，使它们都可以独立地变化。它是一种对象结构型模式，又称为柄体模式或接口模式。
+
+- 图形
+
+```java
+interface Shape {
+    void draw();
+}
+```
+
+- 矩形
+
+```java
+class Rectangle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("画矩形");
+    }
+}
+```
+
+- 三角形
+
+```java
+class Triangle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("画三角形");
+    }
+}
+```
+
+- 圆形
+
+```java
+class Circle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("画圆");
+    }
+}
+```
+
+### 3.3 组合模式
+
+Composite Pattern
+
+组合模式：又叫部分整体模式，是用于把一组相似的对象当作一个单一的对象。组合模式依据树形结构来组合对象，用来表示部分以及整体层次。这种类型的设计模式属于结构型模式，它创建了对象组的树形结构。
+
+组合模式用于整体与部分的结构，当整体与部分有相似的结构，在操作时可以被一致对待时，就可以使用组合模式。
+
+- **透明方式**：在 Component 中声明所有管理子对象的方法，包括 add 、remove 等，这样继承自 Component 的子类都具备了 add、remove 方法。对于外界来说叶节点和枝节点是透明的，它们具备完全一致的接口。
+- **安全方式**：在 Component 中不声明 add 和 remove 等管理子对象的方法，这样叶节点就无需实现它，只需在枝节点中实现管理子对象的方法即可。
+
+安全方式和透明方式各有好处，在使用组合模式时，需要根据实际情况决定。但大多数使用组合模式的场景都是采用的透明方式，虽然它有点不安全，但是客户端无需做任何判断来区分是叶子结点还是枝节点。
+
+### 3.4 装饰模式
+
+Decorator Pattern
+
+动态地给一个对象增加一些额外的职责，就增加对象功能来说，装饰模式比生成子类实现更为灵活。其别名也可以称为包装器，与适配器模式的别名相同，但它们适用于不同的场合。根据翻译的不同，装饰模式也有人称之为“油漆工模式”。
+
+- 增强一个类原有的功能。
+- 为一个类添加新的功能。
+- 不会改变原有的类功能。
+
+没有修改原有的功能，只是扩展了新的功能，这种模式在装饰模式中称之为半透明装饰模式。
+
+这个装饰类对客户端来说是可见的、不透明的。而被装饰者可以是实现了指定接口的任意对象，所以被装饰者对客户端是不可见的、透明的。由于一半透明，一半不透明，所以称之为半透明装饰模式。
+
+半透明装饰模式中，我们无法多次装饰。
+
+Java I/O 的设计框架便是使用的装饰者模式。
+
+### 3.5 外观模式
+
+Facade Pattern
+
+外部与一个子系统的通信必须通过一个统一的外观对象进行，为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。外观模式又称为门面模式。
+
+外观模式就是这么简单，它使得两种不同的类不用直接交互，而是通过一个中间件——也就是外观类——间接交互。外观类中只需要暴露简洁的接口，隐藏内部的细节，所以说白了就是封装的思想。
+
+### 3.6 享元模式
+
+Flyweight Pattern
+
+运用共享技术有效地支持大量细粒度对象的复用。系统只使用少量的对象，而这些对象都很相似，状态变化很小，可以实现对象的多次复用。由于享元模式要求能够共享的对象必须是细粒度对象，因此它又称为轻量级模式。
+
+享元模式的主要目的是实现对象的共享，即共享池，当系统中对象多的时候可以减少内存的开销，通常与工厂模式一起使用。FlyWeightFactory 负责创建和管理享元单元，当一个客户端请求时，工厂需要检查当前对象池中是否有符合条件的对象，如果有，就返回已经存在的对象，如果没有，则创建一个新对象，FlyWeight是超类。
+
+### 3.7 代理模式
 
 Proxy Pattern
 
-### 2.1 定义与特点
+代理模式：给某一个对象提供一个代理，并由代理对象控制对原对象的引用。
 
-**定义：**
+- 静态代理：包装方法
 
-**特点：**
+```java
+interface Shape {
+    void draw(String color);
+    void erase();
+}
 
-### 2.2 优点与缺点
+class Circle implements Shape {
+    @Override
+    public void draw(String color) {
+        System.out.println("画" + color + "圆");
+    }
 
-### 2.3 应用场景
+    @Override
+    public void erase() {
+        System.out.println("擦除图形");
+    }
+}
 
-### 2.4 代码实现
+class CircleProxy implements Shape {
+    private final Circle circle;
+
+    public CircleProxy(Circle circle) {
+        this.circle = circle;
+    }
+
+    @Override
+    public void draw(String color) {
+        System.out.println("准备作画");
+        circle.draw(color);
+        System.out.println("结束作画");
+    }
+
+    @Override
+    public void erase() {
+        System.out.println("准备擦除");
+        circle.erase();
+        System.out.println("擦除完毕");
+    }
+}
+
+class User {
+    public void drawing() {
+        Circle circle = new Circle();
+        circle.draw("红色");
+        circle.erase();
+        CircleProxy proxy = new CircleProxy(circle);
+        proxy.draw("红色");
+        proxy.erase();
+    }
+}
+```
+
+- 动态代理：反射
+
+```java
+interface Shape {
+    void draw(String color);
+    void erase();
+}
+
+class Circle implements Shape {
+    @Override
+    public void draw(String color) {
+        System.out.println("画" + color + "圆");
+    }
+
+    @Override
+    public void erase() {
+        System.out.println("擦除图形");
+    }
+}
+
+class CircleProxy implements InvocationHandler {
+    private Circle circle;
+
+    public Shape getInstance(Circle circle) {
+        this.circle = circle;
+        return (Shape) Proxy.newProxyInstance(circle.getClass().getClassLoader(), circle.getClass().getInterfaces(), this);
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Object result = null;
+        if (method.getName().equals("draw")) {
+            System.out.println("开始作画");
+            method.invoke(circle, args);
+            System.out.println("结束作画");
+        } else if (method.getName().equals("erase")) {
+            System.out.println("开始擦除");
+            method.invoke(circle, args);
+            System.out.println("擦除完毕");
+        }
+        return result;
+    }
+}
+
+class User {
+    public void drawing() {
+        Circle circle = new Circle();
+        circle.draw("红色");
+        circle.erase();
+        Shape proxy = new CircleProxy().getInstance(circle);
+        proxy.draw("红色");
+        proxy.erase();
+    }
+}
+```
+
+## 4.行为型模式
+
+Behavioral Patterns
+
+
 
 ## 参考
 

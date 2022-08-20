@@ -1204,6 +1204,42 @@ class Solution {
 
 - [并查集](../数据结构-并查集/#被围绕的区域)
 
+#### 岛屿的最大面积
+
+[695. 岛屿的最大面积](https://leetcode.cn/problems/max-area-of-island/)
+
+- DFS
+
+```java
+class Solution {
+    public int maxAreaOfIsland(int[][] grid) {
+        int ans = 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        for (int i = 0; i < m; i++)
+            for (int j = 0; j < n; j++)
+                if (grid[i][j] == 1)
+                    ans = Math.max(ans, dfs(grid, i, j, 1, 2));
+        return ans;
+    }
+
+    int dfs(int[][] mat, int x, int y, int v1, int v2) {
+        if (x < 0 || x >= mat.length || y < 0 || y >= mat[0].length || mat[x][y] != v1) return 0;
+        mat[x][y] = v2;
+        int ans = 1;
+        ans += dfs(mat, x - 1, y, v1, v2);
+        ans += dfs(mat, x, y + 1, v1, v2);
+        ans += dfs(mat, x + 1, y, v1, v2);
+        ans += dfs(mat, x, y - 1, v1, v2);
+        return ans;
+    }
+}
+```
+
+- BFS
+
+- 并查集
+
 ### 最小生成树
 
 #### 连接所有点的最小费用
