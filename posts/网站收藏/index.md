@@ -71,9 +71,20 @@ LaTeX：[`Overleaf`](https://cn.overleaf.com/)|[`公式编辑器`](https://www.l
 
 ## 在线娱乐
 
-影视：[`低端影视`](https://ddrk.me/)|[`奈菲影视`](/www.nfmovies.com/)|[`看片狂人`](https://www.kpkuang.com/)|[`NO视频`](https://www.novipnoad.com/)
+影视：
 
-动漫：[`AGE动漫`](http://www.age.tv/)|[`樱花动漫`](https://www.yhdmp.cc/)|[`ZzzFun`](http://www.zzzfun.com/)|[`漫岛动漫`](https://www.mandao.tv/)|[`EDD动漫`](https://www.edddm.com/)
+- [低端影视](https://ddys.tv/)
+- [奈菲影视](https://www.nfyingshi.com/)
+- [看片狂人](https://www.kpkuang.de/)
+- [NO视频](https://www.novipnoad.com/)
+
+动漫：
+
+- [AGE动漫](https://www.agemys.cc/)
+- [樱花动漫](https://www.yhdmp.cc/)
+- [ZzzFun动漫视频网](http://www.zzzfun.com/)
+- [漫岛动漫](https://www.mandao.tv/)
+- [EDD动漫](https://www.edddm.com/)
 
 漫画：[`漫画DB`](https://www.manhuadb.com/)|[`动漫之家`](https://www.dmzj.com/)|[`包子漫画`](https://www.baozimh.com/)
 
