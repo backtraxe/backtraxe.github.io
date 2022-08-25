@@ -27,34 +27,42 @@
     </div>
 </div> -->
 
-PDF：[`easy PDF`](https://easypdf.com/cn/)|[`PDF24 Tools`](https://tools.pdf24.org/zh/)|[`iLovePDF`](https://www.ilovepdf.com/zh-cn)
+PDF：
 
-图片：[`iLoveIMG`](https://www.iloveimg.com/zh-cn)|[`Bigjpg`](https://bigjpg.com/)|[`Recompressor`](https://zh.recompressor.com/)|[`BgRemover`](https://www.aigei.com/bgremover)|[`ezGIF`](https://ezgif.com/)|[`jpgRM`](https://jpgrm.com/)|[`jpgHD`](https://jpghd.com/)
+- [iLovePDF](https://www.ilovepdf.com/zh-cn)：合并PDF、拆分PDF、压缩PDF、编辑PDF、旋转PDF、重排PDF、PDF转Office、Office转PDF、PDF转JPG、JPG转PDF、HTML转PDF、PDF加密/解密、PDF签名、PDF水印。
+- [easy PDF](https://easypdf.com/cn/)
+- [PDF24 Tools](https://tools.pdf24.org/zh/)
 
-- [Remove Background by PhotoRoom](https://www.photoroom.com/background-remover/)：去除背景。
-- [Remove Background by ClipDrop](https://clipdrop.co/remove-background)：去除背景。
-- [Erase.bg by PixelBin.io](https://www.erase.bg/)：去除背景。
+图片：
 
-- [Remove Objects by PhotoRoom](https://www.photoroom.com/tools/remove-object-from-photo/)：抠背景。
-- [CleanUp.pictures](https://cleanup.pictures/)：抠背景。
+- ClipDrop：[去除背景](https://clipdrop.co/remove-background)、[图片放大](https://clipdrop.co/image-upscaler)、[魔法消除](https://clipdrop.co/cleanup)。
+- PhotoRoom：[去除背景](https://www.photoroom.com/background-remover/)、[魔法消除](https://www.photoroom.com/tools/remove-object-from-photo/)、[模糊背景](https://www.photoroom.com/tools/blur-background/)。
+- PixelBin.io：[去除背景](https://www.erase.bg/)、[图片放大](https://www.upscale.media/)、[图片压缩](https://www.shrink.media/)、[去除水印](https://www.watermarkremover.io/)。
+- ：[图片放大](https://bigjpg.com/)、[魔法消除](https://jpgrm.com/)、[老照片修复](https://jpghd.com/)
+- [Recompressor](https://zh.recompressor.com/)：图片压缩。
+- [PIX FIX](https://zh.pixfix.com/)：JPG去噪。
+- [iLoveIMG](https://www.iloveimg.com/zh-cn)：压缩图片、调整图片大小、裁剪图片、格式转换、旋转图片、添加水印、HTML转图片。
+- [ezGIF](https://ezgif.com/)：制作GIF、视频转GIF、调整GIF大小、裁剪GIF、旋转GIF、压缩GIF、图片webp互相转换。
 
-- [Upscaler by ClipDrop](https://clipdrop.co/image-upscaler)：提高分辨率。
-- [Upscale.media by PixelBin.io](https://www.upscale.media/)：提高分辨率。
-
-- [Shrink.media by PixelBin.io](https://www.shrink.media/)：图片压缩。
-
-- [WatermarkRemover.io by PixelBin.io](https://www.watermarkremover.io/)：去除水印。
-
-视频：[`bigmp4`](https://bigmp4.com/)
+视频：[bigmp4](https://bigmp4.com/)
 
 音频：[`网易见外`](tps://jianwai.youdao.com/)
 
-OCR：[`EasyScreenOCR`](https://online.easyscreenocr.com/ZH)|[`Online OCR`](https://www.onlineocr.net/zh_hans/)
+OCR：
 
-图标：[`小米风格Logo`](https://mi-logo.lvwzhen.com/)|[`图标制作`](https://geticon.cn/)|[`Favicon生成器`](https://realfavicongenerator.net/)
+- [EasyScreenOCR](https://online.easyscreenocr.com/ZH)
+- [Online OCR](https://www.onlineocr.net/zh_hans/)
 
-背景：[`Figen`](https://figen.cc/)|[`fffuel`](https://fffuel.co/)
+图标：
 
+- [小米风格Logo](https://mi-logo.lvwzhen.com/)
+- [图标制作](https://geticon.cn/)|
+- [Favicon生成器](https://realfavicongenerator.net/)
+
+背景：
+
+- [Figen](https://figen.cc/)
+- [fffuel](https://fffuel.co/)
 - [Meshy](https://meshgradient.in/)：Generate beautiful mesh gradients.
 
 图表：[`ProcessOn`](https://processon.com/)|[`Diagram`](https://app.diagrams.net/)
@@ -139,8 +147,12 @@ Office：[`Word联盟`](http://www.wordlm.com/)|[`优品PPT`](https://www.ypppt.
 
 图片：[`Unsplash`](https://unsplash.com)|[`DeviantArt`](https://www.deviantart.com)|[`Pinterest`](https://www.pinterest.com)|[`天空之城`](https://www.skypixel.com/)|[`NegativeSpace`](https://negativespace.co/)|[`Free Stock Images`](https://www.freestockimages.ru/)
 
-壁纸：[`极简壁纸1`](https://bz.zzzmh.cn/index)|[`极简壁纸2`](http://www.jijianzy.com/bz/)|[`Wallpaper Abyss`](https://wall.alphacoders.com/)|[`wallhaven`](https://wallhaven.cc/)
+壁纸：
 
+- [极简壁纸1](https://bz.zzzmh.cn/index)
+- [极简壁纸2](http://www.jijianzy.com/bz/)
+- [Wallpaper Abyss](https://wall.alphacoders.com/)
+- [wallhaven](https://wallhaven.cc/)
 - [Ocean of Wallpapers](https://oceanofwallpapers.com/)
 - [Rare Gallery](https://rare-gallery.com/)
 

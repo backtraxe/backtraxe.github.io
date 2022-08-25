@@ -1,4 +1,4 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title class=pjax-title>算法-双指针 - Backtraxe' World</title><meta name=Description content="Hugo DoIt 主题官方文档"><meta property="og:title" content="算法-双指针"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-08-04T19:17:37+08:00"><meta property="article:modified_time" content="2022-08-21T02:20:10+08:00"><meta property="og:site_name" content="Backtraxe' World"><meta name=twitter:card content="summary"><meta name=twitter:title content="算法-双指针"><meta name=twitter:description content><meta name=application-name content="traXe"><meta name=apple-mobile-web-app-title content="traXe"><meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/><link rel=prev href=https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0015-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/><link rel=next href=https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-1545-%E6%89%BE%E5%87%BA%E7%AC%ACn%E4%B8%AA%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%ACk%E4%BD%8D/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"算法-双指针","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88\/"},"genre":"posts","keywords":"算法, 双指针","wordcount":958,"url":"https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88\/","datePublished":"2022-08-04T19:17:37+08:00","dateModified":"2022-08-21T02:20:10+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark")}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else"auto"==="light"||"auto"==="dark"||"auto"==="black"?(setTheme("auto"),saveTheme("auto")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")]</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Backtraxe' World">Backtraxe's World</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/series/>系列 </a><a class=menu-item href=/categories/documentation/>文档 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=https://github.com/backtraxe title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><a href=# onclick=return!1 class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title class=pjax-title>算法-双指针 - Backtraxe' World</title><meta name=Description content="Hugo DoIt 主题官方文档"><meta property="og:title" content="算法-双指针"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-08-04T19:17:37+08:00"><meta property="article:modified_time" content="2022-08-26T01:20:30+08:00"><meta property="og:site_name" content="Backtraxe' World"><meta name=twitter:card content="summary"><meta name=twitter:title content="算法-双指针"><meta name=twitter:description content><meta name=application-name content="traXe"><meta name=apple-mobile-web-app-title content="traXe"><meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://backtraxe.github.io/posts/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/><link rel=prev href=https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-0015-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/><link rel=next href=https://backtraxe.github.io/posts/%E5%8A%9B%E6%89%A3-1545-%E6%89%BE%E5%87%BA%E7%AC%ACn%E4%B8%AA%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%ACk%E4%BD%8D/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"算法-双指针","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88\/"},"genre":"posts","keywords":"算法, 双指针","wordcount":2231,"url":"https:\/\/backtraxe.github.io\/posts\/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88\/","datePublished":"2022-08-04T19:17:37+08:00","dateModified":"2022-08-26T01:20:30+08:00","publisher":{"@type":"Organization","name":"Backtraxe"},"author":{"@type":"Person","name":"Backtraxe"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark")}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else"auto"==="light"||"auto"==="dark"||"auto"==="black"?(setTheme("auto"),saveTheme("auto")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")]</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Backtraxe' World">Backtraxe's World</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/series/>系列 </a><a class=menu-item href=/categories/documentation/>文档 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=https://github.com/backtraxe title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><a href=# onclick=return!1 class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
 <select class=language-select title="Select Language" id=language-select-desktop onchange="location=this.value"><option value=/posts/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/ selected>简体中文</option></select>
 </a><span class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
 <a href=# onclick=return!1 class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
@@ -10,10 +10,10 @@
 <span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# onclick=return!1 class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/series/ title>系列</a><a class=menu-item href=/categories/documentation/ title>文档</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=https://github.com/backtraxe title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><a href=# onclick=return!1 class="menu-item theme-switch" title=切换主题>
 <i class="fas fa-adjust fa-fw"></i>
 </a><a href=# onclick=return!1 class=menu-item title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
-<select class=language-select title="Select Language" onchange="location=this.value"><option value=/posts/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/ selected>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#1首尾双指针>1.首尾双指针</a></li><li><a href=#2快慢双指针>2.快慢双指针</a></li><li><a href=#3二路归并>3.二路归并</a></li><li><a href=#3三指针>3.三指针</a></li><li><a href=#4-k-路归并>4. k 路归并</a></li><li><a href=#实战>实战</a><ul><li><a href=#有序数组的平方>有序数组的平方</a></li><li><a href=#移动零>移动零</a></li><li><a href=#两数之和-ii---输入有序数组>两数之和 II - 输入有序数组</a></li><li><a href=#反转字符串>反转字符串</a></li><li><a href=#链表的中间结点>链表的中间结点</a></li><li><a href=#删除链表的倒数第-n-个结点>删除链表的倒数第 N 个结点</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","wide")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">算法-双指针</h1><div class=post-meta><div class=post-meta-line><span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=https://github.com/backtraxe title=Author target=_blank rel="noopener noreffer author" class=author>Backtraxe</a>
-</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E7%AE%97%E6%B3%95/><i class="far fa-folder fa-fw"></i>算法</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-08-04>2022-08-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2022-08-21>2022-08-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 958 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#1首尾双指针>1.首尾双指针</a></li><li><a href=#2快慢双指针>2.快慢双指针</a></li><li><a href=#3二路归并>3.二路归并</a></li><li><a href=#3三指针>3.三指针</a></li><li><a href=#4-k-路归并>4. k 路归并</a></li><li><a href=#实战>实战</a><ul><li><a href=#有序数组的平方>有序数组的平方</a></li><li><a href=#移动零>移动零</a></li><li><a href=#两数之和-ii---输入有序数组>两数之和 II - 输入有序数组</a></li><li><a href=#反转字符串>反转字符串</a></li><li><a href=#链表的中间结点>链表的中间结点</a></li><li><a href=#删除链表的倒数第-n-个结点>删除链表的倒数第 N 个结点</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><div class=content id=content><h2 id=1首尾双指针 class=headerLink><a href=#1%e9%a6%96%e5%b0%be%e5%8f%8c%e6%8c%87%e9%92%88 class=header-mark></a>1.首尾双指针</h2><ul><li>要求数组有序。</li></ul><p><strong>两数之和：</strong></p><p><a href=https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/ target=_blank rel="noopener noreffer">167. 两数之和 II - 输入有序数组</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<select class=language-select title="Select Language" onchange="location=this.value"><option value=/posts/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88/ selected>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#1首尾双指针>1.首尾双指针</a></li><li><a href=#2快慢双指针>2.快慢双指针</a></li><li><a href=#3二路归并>3.二路归并</a></li><li><a href=#3三指针>3.三指针</a></li><li><a href=#4-k-路归并>4. k 路归并</a></li><li><a href=#实战>实战</a><ul><li><a href=#移动零>🟩移动零</a></li><li><a href=#链表的中间结点>🟩链表的中间结点</a></li><li><a href=#反转字符串>🟩反转字符串</a></li><li><a href=#有序数组的平方>🟩有序数组的平方</a></li><li><a href=#盛最多水的容器>🟨盛最多水的容器</a></li><li><a href=#删除链表的倒数第-n-个结点>🟨删除链表的倒数第 N 个结点</a></li><li><a href=#两数之和-ii>🟨两数之和 II</a></li><li><a href=#两数之和>🟨两数之和</a></li><li><a href=#两数之和-iii>🟩两数之和 III</a></li><li><a href=#两数之和-iv>🟩两数之和 IV</a></li><li><a href=#小于-k-的两数之和>🟩小于 K 的两数之和</a></li><li><a href=#三数之和>🟨三数之和</a></li><li><a href=#最接近的三数之和>🟨最接近的三数之和</a></li><li><a href=#较小的三数之和>🟨较小的三数之和</a></li><li><a href=#四数之和>🟨四数之和</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle","wide")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">算法-双指针</h1><div class=post-meta><div class=post-meta-line><span class=post-author><i class="author fas fa-user-circle fa-fw"></i><a href=https://github.com/backtraxe title=Author target=_blank rel="noopener noreffer author" class=author>Backtraxe</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/categories/%E7%AE%97%E6%B3%95/><i class="far fa-folder fa-fw"></i>算法</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-08-04>2022-08-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2022-08-26>2022-08-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2231 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#1首尾双指针>1.首尾双指针</a></li><li><a href=#2快慢双指针>2.快慢双指针</a></li><li><a href=#3二路归并>3.二路归并</a></li><li><a href=#3三指针>3.三指针</a></li><li><a href=#4-k-路归并>4. k 路归并</a></li><li><a href=#实战>实战</a><ul><li><a href=#移动零>🟩移动零</a></li><li><a href=#链表的中间结点>🟩链表的中间结点</a></li><li><a href=#反转字符串>🟩反转字符串</a></li><li><a href=#有序数组的平方>🟩有序数组的平方</a></li><li><a href=#盛最多水的容器>🟨盛最多水的容器</a></li><li><a href=#删除链表的倒数第-n-个结点>🟨删除链表的倒数第 N 个结点</a></li><li><a href=#两数之和-ii>🟨两数之和 II</a></li><li><a href=#两数之和>🟨两数之和</a></li><li><a href=#两数之和-iii>🟩两数之和 III</a></li><li><a href=#两数之和-iv>🟩两数之和 IV</a></li><li><a href=#小于-k-的两数之和>🟩小于 K 的两数之和</a></li><li><a href=#三数之和>🟨三数之和</a></li><li><a href=#最接近的三数之和>🟨最接近的三数之和</a></li><li><a href=#较小的三数之和>🟨较小的三数之和</a></li><li><a href=#四数之和>🟨四数之和</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav></div></div><div class=content id=content><h2 id=1首尾双指针 class=headerLink><a href=#1%e9%a6%96%e5%b0%be%e5%8f%8c%e6%8c%87%e9%92%88 class=header-mark></a>1.首尾双指针</h2><ul><li>要求数组有序。</li></ul><p><strong>两数之和：</strong></p><p><a href=https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/ target=_blank rel="noopener noreffer">167. 两数之和 II - 输入有序数组</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -153,7 +153,7 @@
 </span></span><span class=line><span class=cl>    <span class=n>arr</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>=</span> <span class=n>arr</span><span class=o>[</span><span class=n>j</span><span class=o>];</span>
 </span></span><span class=line><span class=cl>    <span class=n>arr</span><span class=o>[</span><span class=n>j</span><span class=o>]</span> <span class=o>=</span> <span class=n>temp</span><span class=o>;</span>
 </span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=4-k-路归并 class=headerLink><a href=#4-k-%e8%b7%af%e5%bd%92%e5%b9%b6 class=header-mark></a>4. k 路归并</h2><h2 id=实战 class=headerLink><a href=#%e5%ae%9e%e6%88%98 class=header-mark></a>实战</h2><h3 id=有序数组的平方 class=headerLink><a href=#%e6%9c%89%e5%ba%8f%e6%95%b0%e7%bb%84%e7%9a%84%e5%b9%b3%e6%96%b9 class=header-mark></a>有序数组的平方</h3><p><a href=https://leetcode.cn/problems/squares-of-a-sorted-array/ target=_blank rel="noopener noreffer">977. 有序数组的平方</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h2 id=4-k-路归并 class=headerLink><a href=#4-k-%e8%b7%af%e5%bd%92%e5%b9%b6 class=header-mark></a>4. k 路归并</h2><h2 id=实战 class=headerLink><a href=#%e5%ae%9e%e6%88%98 class=header-mark></a>实战</h2><h3 id=移动零 class=headerLink><a href=#%e7%a7%bb%e5%8a%a8%e9%9b%b6 class=header-mark></a>🟩移动零</h3><p><a href=https://leetcode.cn/problems/move-zeroes/ target=_blank rel="noopener noreffer">283. 移动零</a></p><ul><li>快慢双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -167,54 +167,12 @@
 </span><span class=lnt>12
 </span><span class=lnt>13
 </span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span><span class=o>[]</span> <span class=nf>sortedSquares</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>        <span class=kt>int</span><span class=o>[]</span> <span class=n>ans</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[</span><span class=n>n</span><span class=o>];</span>
-</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>k</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=o>(</span><span class=n>i</span> <span class=o>&lt;=</span> <span class=n>j</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>Math</span><span class=o>.</span><span class=na>abs</span><span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>])</span> <span class=o>&gt;</span> <span class=n>Math</span><span class=o>.</span><span class=na>abs</span><span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>]))</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>                <span class=n>ans</span><span class=o>[</span><span class=n>k</span><span class=o>--]</span> <span class=o>=</span> <span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>*</span> <span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>++];</span>
-</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>                <span class=n>ans</span><span class=o>[</span><span class=n>k</span><span class=o>--]</span> <span class=o>=</span> <span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>]</span> <span class=o>*</span> <span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>--];</span>
-</span></span><span class=line><span class=cl>            <span class=o>}</span>
-</span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ans</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>    <span class=o>}</span>
-</span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=移动零 class=headerLink><a href=#%e7%a7%bb%e5%8a%a8%e9%9b%b6 class=header-mark></a>移动零</h3><p><a href=https://leetcode.cn/problems/move-zeroes/ target=_blank rel="noopener noreffer">283. 移动零</a></p><ul><li>快慢双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>moveZeroes</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=c1>// 指向 0
-</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>n</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>!=</span> <span class=n>0</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>                <span class=n>swap</span><span class=o>(</span><span class=n>nums</span><span class=o>,</span> <span class=n>i</span><span class=o>,</span> <span class=n>j</span><span class=o>);</span>
-</span></span><span class=line><span class=cl>                <span class=n>j</span><span class=o>++;</span>
-</span></span><span class=line><span class=cl>            <span class=o>}</span>
-</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>!=</span> <span class=n>0</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>                <span class=n>swap</span><span class=o>(</span><span class=n>nums</span><span class=o>,</span> <span class=n>i</span><span class=o>,</span> <span class=n>j</span><span class=o>++);</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>swap</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>,</span> <span class=kt>int</span> <span class=n>i</span><span class=o>,</span> <span class=kt>int</span> <span class=n>j</span><span class=o>)</span> <span class=o>{</span>
@@ -223,51 +181,7 @@
 </span></span><span class=line><span class=cl>        <span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>]</span> <span class=o>=</span> <span class=n>temp</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=两数之和-ii---输入有序数组 class=headerLink><a href=#%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c-ii---%e8%be%93%e5%85%a5%e6%9c%89%e5%ba%8f%e6%95%b0%e7%bb%84 class=header-mark></a>两数之和 II - 输入有序数组</h3><p><a href=https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/ target=_blank rel="noopener noreffer">167. 两数之和 II - 输入有序数组</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span><span class=o>[]</span> <span class=nf>twoSum</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>numbers</span><span class=o>,</span> <span class=kt>int</span> <span class=n>target</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>r</span> <span class=o>=</span> <span class=n>numbers</span><span class=o>.</span><span class=na>length</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=o>(</span><span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>            <span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=n>numbers</span><span class=o>[</span><span class=n>l</span><span class=o>]</span> <span class=o>+</span> <span class=n>numbers</span><span class=o>[</span><span class=n>r</span><span class=o>];</span>
-</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&gt;</span> <span class=n>target</span><span class=o>)</span> <span class=n>r</span><span class=o>--;</span>
-</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&lt;</span> <span class=n>target</span><span class=o>)</span> <span class=n>l</span><span class=o>++;</span>
-</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=k>return</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[]</span> <span class=o>{</span> <span class=n>l</span> <span class=o>+</span> <span class=n>1</span><span class=o>,</span> <span class=n>r</span> <span class=o>+</span> <span class=n>1</span> <span class=o>};</span>
-</span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>    <span class=o>}</span>
-</span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=反转字符串 class=headerLink><a href=#%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6%e4%b8%b2 class=header-mark></a>反转字符串</h3><p><a href=https://leetcode.cn/problems/reverse-string/ target=_blank rel="noopener noreffer">344. 反转字符串</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>reverseString</span><span class=o>(</span><span class=kt>char</span><span class=o>[]</span> <span class=n>s</span><span class=o>)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>r</span> <span class=o>=</span> <span class=n>s</span><span class=o>.</span><span class=na>length</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=o>;</span> <span class=n>l</span><span class=o>++,</span> <span class=n>r</span><span class=o>--)</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>            <span class=kt>char</span> <span class=n>temp</span> <span class=o>=</span> <span class=n>s</span><span class=o>[</span><span class=n>l</span><span class=o>];</span>
-</span></span><span class=line><span class=cl>            <span class=n>s</span><span class=o>[</span><span class=n>l</span><span class=o>]</span> <span class=o>=</span> <span class=n>s</span><span class=o>[</span><span class=n>r</span><span class=o>];</span>
-</span></span><span class=line><span class=cl>            <span class=n>s</span><span class=o>[</span><span class=n>r</span><span class=o>]</span> <span class=o>=</span> <span class=n>temp</span><span class=o>;</span>
-</span></span><span class=line><span class=cl>        <span class=o>}</span>
-</span></span><span class=line><span class=cl>    <span class=o>}</span>
-</span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=链表的中间结点 class=headerLink><a href=#%e9%93%be%e8%a1%a8%e7%9a%84%e4%b8%ad%e9%97%b4%e7%bb%93%e7%82%b9 class=header-mark></a>链表的中间结点</h3><p><a href=https://leetcode.cn/problems/middle-of-the-linked-list/ target=_blank rel="noopener noreffer">876. 链表的中间结点</a></p><ul><li>快慢双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h3 id=链表的中间结点 class=headerLink><a href=#%e9%93%be%e8%a1%a8%e7%9a%84%e4%b8%ad%e9%97%b4%e7%bb%93%e7%82%b9 class=header-mark></a>🟩链表的中间结点</h3><p><a href=https://leetcode.cn/problems/middle-of-the-linked-list/ target=_blank rel="noopener noreffer">876. 链表的中间结点</a></p><ul><li>快慢双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -289,7 +203,77 @@
 </span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>slow</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=删除链表的倒数第-n-个结点 class=headerLink><a href=#%e5%88%a0%e9%99%a4%e9%93%be%e8%a1%a8%e7%9a%84%e5%80%92%e6%95%b0%e7%ac%ac-n-%e4%b8%aa%e7%bb%93%e7%82%b9 class=header-mark></a>删除链表的倒数第 N 个结点</h3><p><a href=https://leetcode.cn/problems/remove-nth-node-from-end-of-list/ target=_blank rel="noopener noreffer">19. 删除链表的倒数第 N 个结点</a></p><ul><li>快慢双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h3 id=反转字符串 class=headerLink><a href=#%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6%e4%b8%b2 class=header-mark></a>🟩反转字符串</h3><p><a href=https://leetcode.cn/problems/reverse-string/ target=_blank rel="noopener noreffer">344. 反转字符串</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>reverseString</span><span class=o>(</span><span class=kt>char</span><span class=o>[]</span> <span class=n>s</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>r</span> <span class=o>=</span> <span class=n>s</span><span class=o>.</span><span class=na>length</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=o>;</span> <span class=n>l</span><span class=o>++,</span> <span class=n>r</span><span class=o>--)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=kt>char</span> <span class=n>temp</span> <span class=o>=</span> <span class=n>s</span><span class=o>[</span><span class=n>l</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>            <span class=n>s</span><span class=o>[</span><span class=n>l</span><span class=o>]</span> <span class=o>=</span> <span class=n>s</span><span class=o>[</span><span class=n>r</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>            <span class=n>s</span><span class=o>[</span><span class=n>r</span><span class=o>]</span> <span class=o>=</span> <span class=n>temp</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=有序数组的平方 class=headerLink><a href=#%e6%9c%89%e5%ba%8f%e6%95%b0%e7%bb%84%e7%9a%84%e5%b9%b3%e6%96%b9 class=header-mark></a>🟩有序数组的平方</h3><p><a href=https://leetcode.cn/problems/squares-of-a-sorted-array/ target=_blank rel="noopener noreffer">977. 有序数组的平方</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span><span class=o>[]</span> <span class=nf>sortedSquares</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span><span class=o>[]</span> <span class=n>ans</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[</span><span class=n>n</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>k</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>j</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;=</span> <span class=n>j</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>Math</span><span class=o>.</span><span class=na>abs</span><span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>])</span> <span class=o>&gt;</span> <span class=n>Math</span><span class=o>.</span><span class=na>abs</span><span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>]))</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>ans</span><span class=o>[</span><span class=n>k</span><span class=o>--]</span> <span class=o>=</span> <span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>*</span> <span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>++];</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>ans</span><span class=o>[</span><span class=n>k</span><span class=o>--]</span> <span class=o>=</span> <span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>]</span> <span class=o>*</span> <span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>--];</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ans</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=盛最多水的容器 class=headerLink><a href=#%e7%9b%9b%e6%9c%80%e5%a4%9a%e6%b0%b4%e7%9a%84%e5%ae%b9%e5%99%a8 class=header-mark></a>🟨盛最多水的容器</h3><p><a href=https://leetcode.cn/problems/container-with-most-water/ target=_blank rel="noopener noreffer">11. 盛最多水的容器</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span> <span class=nf>maxArea</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>height</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>ans</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>r</span> <span class=o>=</span> <span class=n>height</span><span class=o>.</span><span class=na>length</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>ans</span> <span class=o>=</span> <span class=n>Math</span><span class=o>.</span><span class=na>max</span><span class=o>(</span><span class=n>ans</span><span class=o>,</span> <span class=n>Math</span><span class=o>.</span><span class=na>min</span><span class=o>(</span><span class=n>height</span><span class=o>[</span><span class=n>l</span><span class=o>],</span> <span class=n>height</span><span class=o>[</span><span class=n>r</span><span class=o>])</span> <span class=o>*</span> <span class=o>(</span><span class=n>r</span> <span class=o>-</span> <span class=n>l</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>height</span><span class=o>[</span><span class=n>l</span><span class=o>]</span> <span class=o>&lt;=</span> <span class=n>height</span><span class=o>[</span><span class=n>r</span><span class=o>])</span> <span class=n>l</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=n>r</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ans</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=删除链表的倒数第-n-个结点 class=headerLink><a href=#%e5%88%a0%e9%99%a4%e9%93%be%e8%a1%a8%e7%9a%84%e5%80%92%e6%95%b0%e7%ac%ac-n-%e4%b8%aa%e7%bb%93%e7%82%b9 class=header-mark></a>🟨删除链表的倒数第 N 个结点</h3><p><a href=https://leetcode.cn/problems/remove-nth-node-from-end-of-list/ target=_blank rel="noopener noreffer">19. 删除链表的倒数第 N 个结点</a></p><ul><li>快慢双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -317,6 +301,416 @@
 </span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>dummy</span><span class=o>.</span><span class=na>next</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl><span class=o>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=参考 class=headerLink><a href=#%e5%8f%82%e8%80%83 class=header-mark></a>参考</h2></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2022-08-21</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E7%AE%97%E6%B3%95/>算法</a>,&nbsp;<a href=/tags/%E5%8F%8C%E6%8C%87%E9%92%88/>双指针</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/%E5%8A%9B%E6%89%A3-0015-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/ class=prev rel=prev title="力扣 0015 三数之和"><i class="fas fa-angle-left fa-fw"></i>力扣 0015 三数之和</a>
+</span></span></code></pre></td></tr></table></div></div><h3 id=两数之和-ii class=headerLink><a href=#%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c-ii class=header-mark></a>🟨两数之和 II</h3><p><a href=https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/ target=_blank rel="noopener noreffer">167. 两数之和 II - 输入有序数组</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span><span class=o>[]</span> <span class=nf>twoSum</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>numbers</span><span class=o>,</span> <span class=kt>int</span> <span class=n>target</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>r</span> <span class=o>=</span> <span class=n>numbers</span><span class=o>.</span><span class=na>length</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=n>numbers</span><span class=o>[</span><span class=n>l</span><span class=o>]</span> <span class=o>+</span> <span class=n>numbers</span><span class=o>[</span><span class=n>r</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>==</span> <span class=n>target</span><span class=o>)</span> <span class=k>return</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[]</span> <span class=o>{</span> <span class=n>l</span> <span class=o>+</span> <span class=n>1</span><span class=o>,</span> <span class=n>r</span> <span class=o>+</span> <span class=n>1</span> <span class=o>};</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&gt;</span> <span class=n>target</span><span class=o>)</span> <span class=n>r</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=n>l</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=两数之和 class=headerLink><a href=#%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c class=header-mark></a>🟨两数之和</h3><p><a href=https://leetcode.cn/problems/two-sum/ target=_blank rel="noopener noreffer">1. 两数之和</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span><span class=o>[]</span> <span class=nf>twoSum</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>,</span> <span class=kt>int</span> <span class=n>target</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span><span class=o>[][]</span> <span class=n>arr</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[</span><span class=n>n</span><span class=o>][</span><span class=n>2</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>n</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>arr</span><span class=o>[</span><span class=n>i</span><span class=o>][</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>            <span class=n>arr</span><span class=o>[</span><span class=n>i</span><span class=o>][</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=n>i</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>Arrays</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>arr</span><span class=o>,</span> <span class=o>(</span><span class=n>a</span><span class=o>,</span> <span class=n>b</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=n>a</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>-</span> <span class=n>b</span><span class=o>[</span><span class=n>0</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>r</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=n>arr</span><span class=o>[</span><span class=n>l</span><span class=o>][</span><span class=n>0</span><span class=o>]</span> <span class=o>+</span> <span class=n>arr</span><span class=o>[</span><span class=n>r</span><span class=o>][</span><span class=n>0</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>==</span> <span class=n>target</span><span class=o>)</span> <span class=k>return</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[]</span> <span class=o>{</span> <span class=n>arr</span><span class=o>[</span><span class=n>l</span><span class=o>][</span><span class=n>1</span><span class=o>],</span> <span class=n>arr</span><span class=o>[</span><span class=n>r</span><span class=o>][</span><span class=n>1</span><span class=o>]</span> <span class=o>};</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&gt;</span> <span class=n>target</span><span class=o>)</span> <span class=n>r</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=n>l</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=两数之和-iii class=headerLink><a href=#%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c-iii class=header-mark></a>🟩两数之和 III</h3><p><a href=https://leetcode.cn/problems/two-sum-iii-data-structure-design/ target=_blank rel="noopener noreffer">170. 两数之和 III - 数据结构设计</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>TwoSum</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;</span> <span class=n>arr</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>boolean</span> <span class=n>sorted</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>add</span><span class=o>(</span><span class=kt>int</span> <span class=n>number</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>arr</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>number</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>sorted</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>find</span><span class=o>(</span><span class=kt>int</span> <span class=n>value</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(!</span><span class=n>sorted</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>Collections</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>arr</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=n>sorted</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>r</span> <span class=o>=</span> <span class=n>arr</span><span class=o>.</span><span class=na>size</span><span class=o>()</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=n>arr</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>l</span><span class=o>)</span> <span class=o>+</span> <span class=n>arr</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>r</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>==</span> <span class=n>value</span><span class=o>)</span> <span class=k>return</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&gt;</span> <span class=n>value</span><span class=o>)</span> <span class=n>r</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=n>l</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=两数之和-iv class=headerLink><a href=#%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c-iv class=header-mark></a>🟩两数之和 IV</h3><p><a href=https://leetcode.cn/problems/two-sum-iv-input-is-a-bst/ target=_blank rel="noopener noreffer">653. 两数之和 IV - 输入二叉搜索树</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>findTarget</span><span class=o>(</span><span class=n>TreeNode</span> <span class=n>root</span><span class=o>,</span> <span class=kt>int</span> <span class=n>k</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>root</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>Deque</span><span class=o>&lt;</span><span class=n>TreeNode</span><span class=o>&gt;</span> <span class=n>seq</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayDeque</span><span class=o>&lt;&gt;();</span> <span class=c1>// 中序遍历
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>Deque</span><span class=o>&lt;</span><span class=n>TreeNode</span><span class=o>&gt;</span> <span class=n>rev</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayDeque</span><span class=o>&lt;&gt;();</span> <span class=c1>// 逆序的中序遍历
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>seq</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>root</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>rev</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>root</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=kt>boolean</span> <span class=n>goLeft</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=kt>boolean</span> <span class=n>goRight</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=o>(!</span><span class=n>seq</span><span class=o>.</span><span class=na>isEmpty</span><span class=o>()</span> <span class=o>&amp;&amp;</span> <span class=o>!</span><span class=n>rev</span><span class=o>.</span><span class=na>isEmpty</span><span class=o>())</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>goLeft</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>TreeNode</span> <span class=n>p</span> <span class=o>=</span> <span class=n>seq</span><span class=o>.</span><span class=na>peek</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=k>while</span> <span class=o>(</span><span class=n>p</span><span class=o>.</span><span class=na>left</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>seq</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>p</span><span class=o>.</span><span class=na>left</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                    <span class=n>p</span> <span class=o>=</span> <span class=n>p</span><span class=o>.</span><span class=na>left</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>goRight</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>TreeNode</span> <span class=n>p</span> <span class=o>=</span> <span class=n>rev</span><span class=o>.</span><span class=na>peek</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=k>while</span> <span class=o>(</span><span class=n>p</span><span class=o>.</span><span class=na>right</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>rev</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>p</span><span class=o>.</span><span class=na>right</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                    <span class=n>p</span> <span class=o>=</span> <span class=n>p</span><span class=o>.</span><span class=na>right</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=n>TreeNode</span> <span class=n>head</span> <span class=o>=</span> <span class=n>seq</span><span class=o>.</span><span class=na>peek</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=n>TreeNode</span> <span class=n>tail</span> <span class=o>=</span> <span class=n>rev</span><span class=o>.</span><span class=na>peek</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>head</span> <span class=o>==</span> <span class=n>tail</span><span class=o>)</span> <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=n>head</span><span class=o>.</span><span class=na>val</span> <span class=o>+</span> <span class=n>tail</span><span class=o>.</span><span class=na>val</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>==</span> <span class=n>k</span><span class=o>)</span> <span class=k>return</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&gt;</span> <span class=n>k</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>rev</span><span class=o>.</span><span class=na>pop</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=n>goLeft</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=n>goRight</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>seq</span><span class=o>.</span><span class=na>pop</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=n>goLeft</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=n>goRight</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>goLeft</span> <span class=o>&amp;&amp;</span> <span class=n>head</span><span class=o>.</span><span class=na>right</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=n>seq</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>head</span><span class=o>.</span><span class=na>right</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=n>goLeft</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>goRight</span> <span class=o>&amp;&amp;</span> <span class=n>tail</span><span class=o>.</span><span class=na>left</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=n>rev</span><span class=o>.</span><span class=na>push</span><span class=o>(</span><span class=n>tail</span><span class=o>.</span><span class=na>left</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=n>goRight</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=小于-k-的两数之和 class=headerLink><a href=#%e5%b0%8f%e4%ba%8e-k-%e7%9a%84%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c class=header-mark></a>🟩小于 K 的两数之和</h3><p><a href=https://leetcode.cn/problems/two-sum-less-than-k/ target=_blank rel="noopener noreffer">1099. 小于 K 的两数之和</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span> <span class=nf>twoSumLessThanK</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>,</span> <span class=kt>int</span> <span class=n>k</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Arrays</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>nums</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>ans</span> <span class=o>=</span> <span class=o>-</span><span class=n>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>l</span> <span class=o>=</span> <span class=n>0</span><span class=o>,</span> <span class=n>r</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>l</span> <span class=o>&lt;</span> <span class=n>r</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>l</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>r</span><span class=o>]</span> <span class=o>&gt;=</span> <span class=n>k</span><span class=o>)</span> <span class=n>r</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>ans</span> <span class=o>=</span> <span class=n>Math</span><span class=o>.</span><span class=na>max</span><span class=o>(</span><span class=n>ans</span><span class=o>,</span> <span class=n>nums</span><span class=o>[</span><span class=n>l</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>r</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>                <span class=n>l</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ans</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=三数之和 class=headerLink><a href=#%e4%b8%89%e6%95%b0%e4%b9%8b%e5%92%8c class=header-mark></a>🟨三数之和</h3><p><a href=https://leetcode.cn/problems/3sum/ target=_blank rel="noopener noreffer">15. 三数之和</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>List</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;&gt;</span> <span class=nf>threeSum</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Arrays</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>nums</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>List</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;&gt;</span> <span class=n>ans</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>n</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// 相同元素只选择第一个
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span> <span class=o>(</span><span class=n>i</span> <span class=o>&gt;</span> <span class=n>0</span> <span class=o>&amp;&amp;</span> <span class=n>nums</span><span class=o>[</span><span class=n>i</span> <span class=o>-</span> <span class=n>1</span><span class=o>]</span> <span class=o>==</span> <span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>])</span> <span class=k>continue</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>i</span> <span class=o>+</span> <span class=n>1</span><span class=o>,</span> <span class=n>k</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=n>k</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>k</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>==</span> <span class=n>0</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>ans</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>i</span><span class=o>],</span> <span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>++],</span> <span class=n>nums</span><span class=o>[</span><span class=n>k</span><span class=o>--]));</span>
+</span></span><span class=line><span class=cl>                    <span class=c1>// 避免重复
+</span></span></span><span class=line><span class=cl><span class=c1></span>                    <span class=k>while</span> <span class=o>(</span><span class=n>j</span> <span class=o>&lt;</span> <span class=n>k</span> <span class=o>&amp;&amp;</span> <span class=n>nums</span><span class=o>[</span><span class=n>j</span><span class=o>]</span> <span class=o>==</span> <span class=n>nums</span><span class=o>[</span><span class=n>j</span> <span class=o>-</span> <span class=n>1</span><span class=o>]</span> <span class=o>&amp;&amp;</span> <span class=n>nums</span><span class=o>[</span><span class=n>k</span><span class=o>]</span> <span class=o>==</span> <span class=n>nums</span><span class=o>[</span><span class=n>k</span> <span class=o>+</span> <span class=n>1</span><span class=o>])</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                        <span class=n>j</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>                        <span class=n>k</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>                    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&gt;</span> <span class=n>0</span><span class=o>)</span> <span class=n>k</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>                <span class=k>else</span> <span class=n>j</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ans</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=最接近的三数之和 class=headerLink><a href=#%e6%9c%80%e6%8e%a5%e8%bf%91%e7%9a%84%e4%b8%89%e6%95%b0%e4%b9%8b%e5%92%8c class=header-mark></a>🟨最接近的三数之和</h3><p><a href=https://leetcode.cn/problems/3sum-closest/ target=_blank rel="noopener noreffer">16. 最接近的三数之和</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span> <span class=nf>threeSumClosest</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>,</span> <span class=kt>int</span> <span class=n>target</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Arrays</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>nums</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>ans</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>minDiff</span> <span class=o>=</span> <span class=n>Integer</span><span class=o>.</span><span class=na>MAX_VALUE</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>a</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>a</span> <span class=o>&lt;</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>a</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// 重复元素只选第一个
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span> <span class=o>(</span><span class=n>a</span> <span class=o>&gt;</span> <span class=n>0</span> <span class=o>&amp;&amp;</span> <span class=n>nums</span><span class=o>[</span><span class=n>a</span> <span class=o>-</span> <span class=n>1</span><span class=o>]</span> <span class=o>==</span> <span class=n>nums</span><span class=o>[</span><span class=n>a</span><span class=o>])</span> <span class=k>continue</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>b</span> <span class=o>=</span> <span class=n>a</span> <span class=o>+</span> <span class=n>1</span><span class=o>,</span> <span class=n>c</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>b</span> <span class=o>&lt;</span> <span class=n>c</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=kt>int</span> <span class=n>diff</span> <span class=o>=</span> <span class=n>nums</span><span class=o>[</span><span class=n>a</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>b</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>c</span><span class=o>]</span> <span class=o>-</span> <span class=n>target</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>diff</span> <span class=o>==</span> <span class=n>0</span><span class=o>)</span> <span class=k>return</span> <span class=n>target</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>Math</span><span class=o>.</span><span class=na>abs</span><span class=o>(</span><span class=n>diff</span><span class=o>)</span> <span class=o>&lt;</span> <span class=n>minDiff</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>ans</span> <span class=o>=</span> <span class=n>diff</span> <span class=o>+</span> <span class=n>target</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                    <span class=n>minDiff</span> <span class=o>=</span> <span class=n>Math</span><span class=o>.</span><span class=na>abs</span><span class=o>(</span><span class=n>diff</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>diff</span> <span class=o>&gt;</span> <span class=n>0</span><span class=o>)</span> <span class=n>c</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>                <span class=k>else</span> <span class=n>b</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ans</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=较小的三数之和 class=headerLink><a href=#%e8%be%83%e5%b0%8f%e7%9a%84%e4%b8%89%e6%95%b0%e4%b9%8b%e5%92%8c class=header-mark></a>🟨较小的三数之和</h3><p><a href=https://leetcode.cn/problems/3sum-smaller/ target=_blank rel="noopener noreffer">259. 较小的三数之和</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span> <span class=nf>threeSumSmaller</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>,</span> <span class=kt>int</span> <span class=n>target</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Arrays</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>nums</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>ans</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>a</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>a</span> <span class=o>&lt;</span> <span class=n>n</span><span class=o>;</span> <span class=n>a</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>b</span> <span class=o>=</span> <span class=n>a</span> <span class=o>+</span> <span class=n>1</span><span class=o>,</span> <span class=n>c</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>b</span> <span class=o>&lt;</span> <span class=n>c</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=kt>int</span> <span class=n>sum</span> <span class=o>=</span> <span class=n>nums</span><span class=o>[</span><span class=n>a</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>b</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>c</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&gt;=</span> <span class=n>target</span><span class=o>)</span> <span class=n>c</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>                <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>ans</span> <span class=o>+=</span> <span class=n>c</span> <span class=o>-</span> <span class=n>b</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                    <span class=n>b</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ans</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=四数之和 class=headerLink><a href=#%e5%9b%9b%e6%95%b0%e4%b9%8b%e5%92%8c class=header-mark></a>🟨四数之和</h3><p><a href=https://leetcode.cn/problems/4sum/ target=_blank rel="noopener noreffer">18. 四数之和</a></p><ul><li>首尾双指针</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Solution</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>List</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;&gt;</span> <span class=nf>fourSum</span><span class=o>(</span><span class=kt>int</span><span class=o>[]</span> <span class=n>nums</span><span class=o>,</span> <span class=kt>int</span> <span class=n>target</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>Arrays</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>nums</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>List</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;&gt;</span> <span class=n>ans</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>nums</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>a</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>a</span> <span class=o>&lt;</span> <span class=n>n</span><span class=o>;</span> <span class=n>a</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// 重复元素只选第一个
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span> <span class=o>(</span><span class=n>a</span> <span class=o>&gt;</span> <span class=n>0</span> <span class=o>&amp;&amp;</span> <span class=n>nums</span><span class=o>[</span><span class=n>a</span> <span class=o>-</span> <span class=n>1</span><span class=o>]</span> <span class=o>==</span> <span class=n>nums</span><span class=o>[</span><span class=n>a</span><span class=o>])</span> <span class=k>continue</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>b</span> <span class=o>=</span> <span class=n>a</span> <span class=o>+</span> <span class=n>1</span><span class=o>;</span> <span class=n>b</span> <span class=o>&lt;</span> <span class=n>n</span><span class=o>;</span> <span class=n>b</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// 重复元素只选第一个
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=k>if</span> <span class=o>(</span><span class=n>b</span> <span class=o>&gt;</span> <span class=n>a</span> <span class=o>+</span> <span class=n>1</span> <span class=o>&amp;&amp;</span> <span class=n>nums</span><span class=o>[</span><span class=n>b</span> <span class=o>-</span> <span class=n>1</span><span class=o>]</span> <span class=o>==</span> <span class=n>nums</span><span class=o>[</span><span class=n>b</span><span class=o>])</span> <span class=k>continue</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>c</span> <span class=o>=</span> <span class=n>b</span> <span class=o>+</span> <span class=n>1</span><span class=o>,</span> <span class=n>d</span> <span class=o>=</span> <span class=n>n</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>c</span> <span class=o>&lt;</span> <span class=n>d</span><span class=o>;)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=kt>long</span> <span class=n>sum</span> <span class=o>=</span> <span class=o>(</span><span class=kt>long</span><span class=o>)</span> <span class=n>nums</span><span class=o>[</span><span class=n>a</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>b</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>c</span><span class=o>]</span> <span class=o>+</span> <span class=n>nums</span><span class=o>[</span><span class=n>d</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>                    <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>==</span> <span class=n>target</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                        <span class=n>ans</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>List</span><span class=o>.</span><span class=na>of</span><span class=o>(</span><span class=n>nums</span><span class=o>[</span><span class=n>a</span><span class=o>],</span> <span class=n>nums</span><span class=o>[</span><span class=n>b</span><span class=o>],</span> <span class=n>nums</span><span class=o>[</span><span class=n>c</span><span class=o>++],</span> <span class=n>nums</span><span class=o>[</span><span class=n>d</span><span class=o>--]));</span>
+</span></span><span class=line><span class=cl>                        <span class=c1>// 避免重复
+</span></span></span><span class=line><span class=cl><span class=c1></span>                        <span class=k>while</span> <span class=o>(</span><span class=n>c</span> <span class=o>&lt;</span> <span class=n>d</span> <span class=o>&amp;&amp;</span> <span class=n>nums</span><span class=o>[</span><span class=n>c</span> <span class=o>-</span> <span class=n>1</span><span class=o>]</span> <span class=o>==</span> <span class=n>nums</span><span class=o>[</span><span class=n>c</span><span class=o>]</span> <span class=o>&amp;&amp;</span> <span class=n>nums</span><span class=o>[</span><span class=n>d</span><span class=o>]</span> <span class=o>==</span> <span class=n>nums</span><span class=o>[</span><span class=n>d</span> <span class=o>+</span> <span class=n>1</span><span class=o>])</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                            <span class=n>c</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>                            <span class=n>d</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>                        <span class=o>}</span>
+</span></span><span class=line><span class=cl>                    <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>sum</span> <span class=o>&gt;</span> <span class=n>target</span><span class=o>)</span> <span class=n>d</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>                    <span class=k>else</span> <span class=n>c</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ans</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=参考 class=headerLink><a href=#%e5%8f%82%e8%80%83 class=header-mark></a>参考</h2></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2022-08-26</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E7%AE%97%E6%B3%95/>算法</a>,&nbsp;<a href=/tags/%E5%8F%8C%E6%8C%87%E9%92%88/>双指针</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/%E5%8A%9B%E6%89%A3-0015-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/ class=prev rel=prev title="力扣 0015 三数之和"><i class="fas fa-angle-left fa-fw"></i>力扣 0015 三数之和</a>
 <a href=/posts/%E5%8A%9B%E6%89%A3-1545-%E6%89%BE%E5%87%BA%E7%AC%ACn%E4%B8%AA%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%ACk%E4%BD%8D/ class=next rel=next title="力扣 1545 找出第N个二进制字符串中的第K位">力扣 1545 找出第N个二进制字符串中的第K位<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://github.com/backtraxe target=_blank rel="noopener noreferrer">Backtraxe</a></span></div><div class=footer-line></div><div class=footer-line></div></div><script>"serviceWorker"in navigator&&(navigator.serviceWorker.register("/sw.min.js",{scope:"/"}).then(function(){}),navigator.serviceWorker.ready.then(function(){}))</script></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/fuse/fuse.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/tablesort/tablesort.min.js></script><script type=text/javascript src=/lib/topbar/topbar.min.js></script><script type=text/javascript src=/lib/pjax/pjax.min.js></script><script type=text/javascript src=/js/theme.min.js defer></script></div><div class=pjax-assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:20},comment:{},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},table:{sort:!0}}</script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script></div></body></html>
