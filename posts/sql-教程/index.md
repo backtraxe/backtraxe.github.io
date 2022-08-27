@@ -385,28 +385,31 @@ select id * 2 as id_double from demo;
 
 ## 函数
 
-逻辑语句：
+**流程控制：**
 
-- `IF(condition, true_value, false_value)`：条件语句 condition 为真返回 true_value 否则返回 false_value。
-- `CASE col_name WHEN case1 THEN value1 WHEN case2 THEN value2 ELSE value3 END`：switch 语句。
-- `IFNULL(query, null_value)`：若查询 query 返回 null，则返回 null_value，否则返回 query 的值。
+- `CASE val WHEN val1 THEN res1 [WHEN val2 THEN res2 ...] [ELSE res] END`：switch 语句，无匹配返回 NULL。
+- `CASE WHEN cond1 THEN res1 [WHEN cond2 THEN res2 ...] [ELSE res] END`：多重 if 语句，无匹配返回 NULL。
+- `IF(expr1, expr2, expr3)`：若 expr1 为真返回 expr2 否则返回 expr3。
+- `IFNULL(expr1, expr2)`：若 expr1 为 NULL，则返回 expr2，否则返回 expr1。
+- `NULLIF(expr1, expr2)`：若 expr1 = expr2，返回 NULL，否则返回 expr1。
 
-数值：
+**数值：**
 
-- `ROUND(value)`：四舍五入。
-- `FLOOR(value)`：去尾法。
-- `CEIL(value)`：进一法。同`CEILING`。
-- `FORMAT(value, n)`：保留 n 位小数。
+- `ROUND(x) | ROUND(x, d)`：四舍五入，保留 d 位小数，默认取整。
+- `FLOOR(x)`：去尾法，取整。
+- `CEILING(x)`：进一法，取整。同`CEIL`。
+- `FORMAT(x, d)`：保留 d 位小数，然后转为字符串。
 
-统计量：
+**统计量：**
 
-- `COUNT(col_name) | COUNT(1) | COUNT(*)`：行数。
+- `COUNT(expr) | COUNT(DISTINCT expr)`：行数（不包括 NULL），去重后行数（不包括 NULL）。
+- `COUNT(*) | COUNT(1)`：行数（包括 NULL）。
 - `SUM(col_name)`：求和。
 - `AVG(col_name)`：平均值。
 - `MAX(col_name)`：最大值。
 - `MIN(col_name)`：最小值。
 
-字符串：
+**字符串：**
 
 - `LENGTH(str)`：返回 str 长度。
 - `CHAR_LENGTH(str)`：返回非 ASCII 码字符串长度。比如'你好'返回 2。
@@ -421,7 +424,7 @@ select id * 2 as id_double from demo;
 - `TRIM(str)`：去掉两侧空白字符。
 - `REVERSE(str)`：翻转字符串。
 
-日期：
+**日期：**
 
 - `DATEDIFF(date1, date2)`：返回 date1 减去 date2 的天数。
 

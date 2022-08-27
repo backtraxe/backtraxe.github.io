@@ -3,9 +3,7 @@
 
 <!--more-->
 
-## 准备
-
-### 安装 Docker Engine
+## 1.安装 Docker
 
 ```bash
 # 卸载旧版本
@@ -24,28 +22,16 @@ sudo docker run hello-world
 docker --version
 ```
 
-### 安装 docker-compose
-
-```bash
-# 将 2.9.0 替换为最新版本
-curl -L https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
-# 测试
-docker-compose --version
-```
-
-## RSS 搭建
-
-### Miniflux
+## 2.Docker 部署 Miniflux
 
 1. 准备配置文件。
 
 ```bash
-vim docker-compose.yml
+vim miniflux.yml
 ```
 
 2. 填入以下内容。
     - 将第 6 行的`80`改为自定义端口号。
-    - 将第 13 行的`admin`改为自定义用户名。
     - 将第 14 行的`test123`改为自定义密码。
 
 ```yaml
@@ -53,6 +39,8 @@ version: '3.4'
 services:
   miniflux:
     image: miniflux/miniflux:latest
+    container_name: miniflux
+    restart: always
     ports:
       - "80:8080"
     depends_on:
@@ -65,6 +53,8 @@ services:
       - ADMIN_PASSWORD=test123
   db:
     image: postgres:latest
+    container_name: postgres
+    restart: always
     environment:
       - POSTGRES_USER=miniflux
       - POSTGRES_PASSWORD=secret
@@ -82,15 +72,17 @@ volumes:
 
 ```bash
 # 启动
-docker-compose up -d
+docker compose -f miniflux.yml up -d db
+docker compose -f miniflux.yml up -d
+```
+
+```bash
 # 查看容器状态
 docker ps -a
 # 当 miniflux 对应的 STATUS 为以下状态时，即正在运行
 # CONTAINER ID   IMAGE                      COMMAND                  CREATED       STATUS                 PORTS      NAMES
 # 01393843e9e8   miniflux/miniflux:latest   "/usr/bin/miniflux"      2 hours ago   Up 2 hours                        root-miniflux-1
 # e40d1929924a   postgres:latest            "docker-entrypoint.s…"   2 hours ago   Up 2 hours (healthy)   5432/tcp   root-db-1
-# 否则可以手动启动容器
-docker start 01393843e9e8
 ```
 
 4. 配置。
@@ -98,24 +90,18 @@ docker start 01393843e9e8
     - 访问`http://ip:port`，输入刚才自定义的用户名和密码。
     - 在设置界面设置启用 fever，并设置用户名和密码。
 
-## RSSHub 搭建
-
-### docker-compose 搭建
+## 3.Docker 部署 RSSHub
 
 ```bash
 # 下载 docker-compose.yml
-wget https://raw.githubusercontent.com/DIYgod/RSSHub/master/docker-compose.yml
+wget https://raw.githubusercontent.com/DIYgod/RSSHub/master/docker-compose.yml -O rsshub.yml
 # 创建 volume 持久化 Redis 缓存
 docker volume create redis-data
 # 启动
-docker-compose up -d
+docker compose -f rsshub.yml up -d
 ```
 
-### Vercel 搭建
-
-[部署](https://vercel.com/import/project?template=https://github.com/DIYgod/RSSHub)
-
-## 客户端
+## 4.客户端
 
 Fever API:
 - url: `http://ip:port/fever/`
