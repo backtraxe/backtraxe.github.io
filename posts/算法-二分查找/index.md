@@ -380,6 +380,41 @@ class Solution {
 }
 ```
 
+### 🟥阶乘函数后 K 个零
+
+[793. 阶乘函数后 K 个零](https://leetcode.cn/problems/preimage-size-of-factorial-zeroes-function/)
+
+- 一个数字末尾 0 的数量就是其因子中 10 的数量，也就是 2 的数量和 5 的数量的更小值。
+- x! 的因子中 5 的数量一定少于 2 的数量，所以 x! 的末尾有 k 个 0 即因子中 5 的数量为 k。
+- 形如 f * 5 的数，每个数字在阶乘中贡献 1 个 5。
+- 形如 f * 25 的数，每个数字在阶乘中额外贡献 1 个 5，共贡献了 2 个 5。
+- 形如 f * 125 的数，每个数字在阶乘中额外贡献 1 个 5，共贡献了 3 个 5。
+- ...
+- 总结，形如 f * 5 ^ p 的数，每个数字在阶乘中共贡献了 p 个 5。
+- 数 f * 5、f * 5 + 1、f * 5 + 2、f * 5 + 3、f * 5 + 4 中因子 5 的数量不变，所以若 k 合法，则返回 5，若 k 不合法，则返回 0。
+
+```java
+class Solution {
+    public int preimageSizeFZF(int k) {
+        int l = 0;
+        int r = k;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+            long x = m * 5L;
+            int cnt = 0;
+            while (x > 0) {
+                cnt += x / 5;
+                x /= 5;
+            }
+            if (cnt == k) return 5;
+            else if (cnt > k) r = m - 1;
+            else l = m + 1;
+        }
+        return 0;
+    }
+}
+```
+
 ## 参考
 
 

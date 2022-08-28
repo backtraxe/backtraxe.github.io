@@ -441,84 +441,52 @@ class Solution {
 拓扑排序（Topological Sort）：得到有向图 $G$ 的顶点的一个排列，满足任意一条有向边 $(u,v)$，$u$ 在排列中都在 $v$ 前面，即相对顺序不变。
 
 - DFS：后序添加顶点，然后逆序即可得到拓扑排序序列。（或者建图时颠倒每条边的起始顶点和结束顶点，则最后无需逆序）
-- BFS：每次添加入度为 0 的顶点
-
-[210. 课程表 II](https://leetcode.cn/problems/course-schedule-ii/)
-
-### 5.1 DFS：后序遍历，然后逆序
 
 ```java
-class Solution {
-    List<List<Integer>> graph;
-    int[] vis;
-    int[] ans;
-    int index;
+List<Integer> topoSort(List<Set<Integer>> graph) {
+    // 存在环则返回 null
+    int n = graph.size();
+    List<Integer> topo = new ArrayList<>();
+    int[] vis = new int[n];
+    for (int u = 0; u < n; u++)
+        if (vis[u] == 0 && dfs(graph, u, topo, vis))
+            return null;
+    return topo;
+}
 
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        graph = new ArrayList<>(numCourses);
-        for (int i = 0; i < numCourses; i++)
-            graph.add(new ArrayList<>());
-        for (int[] pre : prerequisites)
-            graph.get(pre[0]).add(pre[1]);    // 逆序建图
-            // graph.get(pre[1]).add(pre[0]); // 顺序建图
-        // index = numCourses - 1; // 顺序建图
-        vis = new int[numCourses];
-        ans = new int[numCourses];
-        for (int i = 0; i < numCourses; i++)
-            if (vis[i] == 0 && dfs(i)) // 存在环
-                return new int[0];
-        return ans;
+boolean dfs(List<Set<Integer>> graph, int u, List<Integer> topo, int[] vis) {
+    // 返回有向图中是否存在环
+    vis[u] = 1;
+    for (int v : graph.get(u)) {
+        if (vis[v] == 1) return true;
+        if (vis[v] == 0 && dfs(graph, v, topo, vis)) return true;
     }
-
-    boolean dfs(int u) {
-        vis[u] = 1;
-        for (int v : graph.get(u)) {
-            if (vis[v] == 0 && dfs(v)) return true; // 剪枝
-            else if (vis[v] == 1) return true;      // 存在环
-        }
-        vis[u] = 2;
-        ans[index++] = u;
-        // ans[index--] = u; // 顺序建图
-        return false;
-    }
+    topo.add(u);
+    vis[u] = 2;
+    return false;
 }
 ```
 
-### 5.2 BFS：入度为 0 的顶点优先
+- BFS：每次添加入度为 0 的顶点
 
 ```java
-class Solution {
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        List<List<Integer>> graph = new ArrayList<>(numCourses);
-        for (int i = 0; i < numCourses; i++)
-            graph.add(new ArrayList<>());
-        int[] indegree = new int[numCourses];
-        for (int[] pre : prerequisites) {
-            indegree[pre[0]]++;
-            graph.get(pre[1]).add(pre[0]);
-        }
-        int[] ans = new int[numCourses];
-        int index = 0;
-        Queue<Integer> que = new ArrayDeque<>();
-        int count = 0;
-        for (int i = 0; i < numCourses; i++)
-            if (indegree[i] == 0) {
-                que.offer(i);
-                ans[index++] = i;
-            }
-        while (!que.isEmpty()) {
-            int u = que.poll();
-            count++;
-            for (int v : graph.get(u)) {
-                indegree[v]--;
-                if (indegree[v] == 0) {
-                    que.offer(v);
-                    ans[index++] = v;
-                }
-            }
-        }
-        return count == numCourses ? ans : new int[0];
+List<Integer> topoSort(List<Set<Integer>> graph) {
+    // 存在环则返回 null
+    int n = graph.size();
+    int[] ind = new int[n];
+    for (Set<Integer> u : graph)
+        for (int v : u) ind[v]++;
+    List<Integer> topo = new ArrayList<>();
+    Queue<Integer> que = new ArrayDeque<>();
+    for (int u = 0; u < n; u++)
+        if (ind[u] == 0) que.offer(u);
+    while (!que.isEmpty()) {
+        int u = que.poll();
+        topo.add(u);
+        for (int v : graph.get(u))
+            if (--ind[v] == 0) que.offer(v);
     }
+    return topo.size() == n ? topo : null;
 }
 ```
 
@@ -958,6 +926,105 @@ class Edge {
 ### 9.5 A* 算法
 
 ## 实战
+
+### 拓扑排序
+
+#### 🟨课程表
+
+[207. 课程表](https://leetcode.cn/problems/course-schedule/)
+
+#### 🟨课程表 II
+
+[210. 课程表 II](https://leetcode.cn/problems/course-schedule-ii/)
+
+- DFS
+
+```java
+class Solution {
+    List<List<Integer>> graph;
+    int[] vis;
+    int[] ans;
+    int index;
+
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        graph = new ArrayList<>(numCourses);
+        for (int i = 0; i < numCourses; i++)
+            graph.add(new ArrayList<>());
+        for (int[] pre : prerequisites)
+            graph.get(pre[0]).add(pre[1]);    // 逆序建图
+            // graph.get(pre[1]).add(pre[0]); // 顺序建图
+        // index = numCourses - 1; // 顺序建图
+        vis = new int[numCourses];
+        ans = new int[numCourses];
+        for (int i = 0; i < numCourses; i++)
+            if (vis[i] == 0 && dfs(i)) // 存在环
+                return new int[0];
+        return ans;
+    }
+
+    boolean dfs(int u) {
+        vis[u] = 1;
+        for (int v : graph.get(u)) {
+            if (vis[v] == 0 && dfs(v)) return true; // 剪枝
+            else if (vis[v] == 1) return true;      // 存在环
+        }
+        vis[u] = 2;
+        ans[index++] = u;
+        // ans[index--] = u; // 顺序建图
+        return false;
+    }
+}
+```
+
+- BFS
+
+```java
+class Solution {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        List<List<Integer>> graph = new ArrayList<>(numCourses);
+        for (int i = 0; i < numCourses; i++)
+            graph.add(new ArrayList<>());
+        int[] indegree = new int[numCourses];
+        for (int[] pre : prerequisites) {
+            indegree[pre[0]]++;
+            graph.get(pre[1]).add(pre[0]);
+        }
+        int[] ans = new int[numCourses];
+        int index = 0;
+        Queue<Integer> que = new ArrayDeque<>();
+        int count = 0;
+        for (int i = 0; i < numCourses; i++)
+            if (indegree[i] == 0) {
+                que.offer(i);
+                ans[index++] = i;
+            }
+        while (!que.isEmpty()) {
+            int u = que.poll();
+            count++;
+            for (int v : graph.get(u)) {
+                indegree[v]--;
+                if (indegree[v] == 0) {
+                    que.offer(v);
+                    ans[index++] = v;
+                }
+            }
+        }
+        return count == numCourses ? ans : new int[0];
+    }
+}
+```
+
+#### 🟥课程表 III
+
+[630. 课程表 III](https://leetcode.cn/problems/course-schedule-iii/)
+
+#### 🟨课程表 IV
+
+[1462. 课程表 IV](https://leetcode.cn/problems/course-schedule-iv/)
+
+####
+
+####
 
 ### Flood Fill
 
