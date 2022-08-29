@@ -12,8 +12,6 @@
 - **内部排序**：在内存中进行的排序。
 - **外部排序**：数据量太大不能全部读入内存，需要通过内存和磁盘结合进行的排序。
 
-<br />
-
 ### 1.2 数组中元素交换的方法
 
 ```java
@@ -23,16 +21,6 @@ static void swap(int[] nums, int i, int j) {
     nums[j] = temp;
 }
 ```
-
-```java
-static void swap(int[] nums, int i, int j) {
-    if (i == j) return;
-    nums[i] = nums[i] ^ nums[j];
-    nums[j] = nums[i] ^ nums[j];
-    nums[i] = nums[i] ^ nums[j];
-}
-```
----
 
 ## 2.冒泡排序
 
@@ -44,15 +32,11 @@ static void swap(int[] nums, int i, int j) {
 4. 当比较到未排序区的末尾时，未排序区的最后一个数字即为未排序区的最大数字，将其放入已排序区，则未排序区大小减 1，已排序区大小加 1，此时完成一轮排序。
 5. 当进行了 n - 1 轮排序后，未排序区的大小减为 1 时，排序结束。
 
-<br />
-
 ### 2.2 优化
 
 - **限制区域（默认）**：每一轮只用比较未排序区的元素。当进行了 i 轮排序后，已排序区的大小为 i，未排序区的大小为 n - i。
 - **提前结束**：当某一轮未发生交换时，说明排序已经完成，可以提前结束。可设置一个布尔值记录一轮排序是否有发生交换。
 - **冒泡界优化**：若当前轮使多个元素有序，则下一轮只需比较之前的元素。
-
-<br />
 
 ### 2.3 代码
 
@@ -60,13 +44,10 @@ static void swap(int[] nums, int i, int j) {
 // 1.未优化
 static void bubbleSort(int[] nums) {
     int n = nums.length;
-    for (int epoch = 1; epoch < n; epoch++) {
-        for (int i = 0; i < n - epoch; i++) {
-            if (nums[i] > nums[i + 1]) {
+    for (int epoch = 1; epoch < n; epoch++)
+        for (int i = 0; i < n - epoch; i++)
+            if (nums[i] > nums[i + 1])
                 swap(nums, i, i + 1);
-            }
-        }
-    }
 }
 ```
 
@@ -108,8 +89,6 @@ static void bubbleSort(int[] nums) {
 }
 ```
 
-<br />
-
 ### 2.4 分析
 
 - 时间复杂度：$ O(n^2) $
@@ -121,109 +100,185 @@ $$
 - 空间复杂度：$ O(1) $
 - 稳定性：稳定
 
-<br />
-
 ## 3.选择排序
 
-### 3.1 原理
+### 3.1 介绍
 
-<br />
+将数组分为排序区（当前索引以前部分）和未排序区（当前索引及以后部分），每次将未排序区中的最小元素和未排序区的第一个元素进行交换，然后将该元素加入排序区。
 
-### 3.2 优化
+### 3.2 特点
 
-<br />
+- 时间复杂度：$ O(n ^ 2) $
+- 空间复杂度：$ O(1) $
+- 非稳定排序
+- 原地排序
+- 每一轮排序至少确定一个元素的位置
 
-### 3.3 代码
+### 3.3 步骤
+
+1. 将数组分为排序区（当前索引以前部分）和未排序区（当前索引及以后部分），每次将未排序区中的最小元素和未排序区的第一个元素进行交换，然后将该元素加入排序区。
+2. 重复步骤 1，直到未排序区没有元素。
+
+### 3.4 代码
 
 ```java
-void selectionSort(int[] nums) {
-    int len = nums.length;
-    // 循环不变量：[0, i) 有序，且该区间里所有元素就是最终排定的样子
-    for (int i = 0; i < len - 1; i++) {
-        // 选择区间 [i, len - 1] 里最小的元素的索引，交换到下标 i
+static void selectionSort(int[] arr) {
+    int n = arr.length;
+    // 排序区：[0, i)，未排序区：[i, n)
+    for (int i = 0; i < n; i++) {
         int minIdx = i;
-        for (int j = i + 1; j < len; j++) {
-            if (nums[j] < nums[minIdx]) {
-                minIdx = j;
-            }
-        }
-        swap(nums, i, minIdx);
+        for (int j = i + 1; j < n; j++)
+            if (arr[j] < arr[minIdx]) minIdx = j;
+        int temp = arr[i];
+        arr[i] = arr[minIdx];
+        arr[minIdx] = temp;
     }
-    return nums;
 }
 ```
 
-<br />
-
-### 3.4 分析
-
-- 时间复杂度：$ O(n^2) $
-
-$$
-\sum_{epoch=1}^{n-1}\sum_{i=0}^{n-epoch-1}1=\sum_{epoch=1}^{n-1}(n-epoch-1)=(n-2)+(n-3)+\cdots+0=\frac{(n-1)(n-2)}{2}
-$$
-
-- 空间复杂度：$ O(1) $
-- 稳定性：不稳定
-
-<br />
-
 ## 4.插入排序
 
-```cpp
-void insertionSort(vector<int>& arr) {
-    for (int i = 1; i < arr.size(); i++) {
-        int temp = arr[i], j;
-        for (j = i - 1; j >= 0 && arr[j] > arr[i]; j--) {
+### 4.1 介绍
+
+将数组分为排序区（当前索引以前部分）和未排序区（当前索引及以后部分），每次将未排序区中的第一个元素插入到排序区中的对应位置。
+
+### 4.2 特点
+
+- 时间复杂度：$ O(n ^ 2) $
+- 空间复杂度：$ O(1) $
+- 稳定排序
+- 原地排序
+
+### 4.3 步骤
+
+1. 将数组分为排序区（当前索引以前部分）和未排序区（当前索引及以后部分）。
+2. 若当前索引元素比前一个元素小，则将前一个元素后移一位。
+3. 重复步骤 2，直到没有上一个元素或者上一个元素小于等于当前元素为止，在当前位置插入该元素。
+4. 重复步骤 2 和 3，直到未排序区没有元素。
+
+### 4.4 代码
+
+```java
+static void insertionSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 1; i < n; i++) {
+        int temp = arr[i];
+        int j = i - 1;
+        for (; j >= 0 && arr[j] > temp; j--)
             arr[j + 1] = arr[j];
-        }
         arr[j + 1] = temp;
     }
 }
 ```
 
-- 时间复杂度：$ O(n^2) $
-- 空间复杂度：$ O(1) $
-
-特点：
-
-- 稳定
-
-<br />
-
 ## 5.希尔排序
 
-<br />
+### 5.1 介绍
 
-## 6.归并排序
+改进插入排序，将插入排序中相邻元素比较改为间隔为 h 的元素进行比较，使数组中任意间隔为 h 的元素都有序。只要最后按 h = 1 进行插入排序，就能将数组排序。对于每个 h，使用插入排序独立进行排序。
 
-#### 10.4.1 自顶向下
+一般取 h = 1 / 2 * (3 * k - 1)，称为**递增序列**。
+
+### 5.2 特点
+
+- 时间复杂度：$ O(n ^ {\frac{3}{2}}) $
+- 空间复杂度：$ O(1) $
+- 稳定排序
+- 原地排序
+
+### 5.3 代码
 
 ```java
-static int[] copy;
-
-static void mergeSort(int[] arr) {
-    copy = new int[arr.length];
-    mergeSort(arr, 0, arr.length - 1);
-}
-
-static void mergeSort(int[] arr, int low, int high) {
-    if (low >= high) return;
-    int mid = low + (high - low) / 2;
-    mergeSort(arr, low, mid);
-    mergeSort(arr, mid + 1, high);
-    merge(arr, low, mid, high);
-}
-
-static void merge(int[] arr, int low, int mid, int high) {
-
+static void shellSort(int[] arr) {
+    int n = arr.length;
+    int h = 1;
+    while (h < n / 3) h = 3 * h - 1; // 1, 4, 13, 40, 121, ...
+    while (h >= 1) {
+        for (int i = h; i < n; i++) {
+            int temp = arr[i];
+            int j = i - h;
+            for (; j >= 0 && arr[j] > temp; j -= h) // 间隔为 h 的插入排序
+                arr[j + h] = arr[j];
+            arr[j + h] = temp;
+        }
+        h /= 3;
+    }
 }
 ```
 
-#### 10.4.2 自底向上
+## 6.归并排序
+
+### 6.1 介绍
+
+使用分治的思想将数组划分为大小相等的两部分，然后分别对这两部分进行排序，再将有序的这两部分归并成大的有序数组。
+
+### 6.2 特点
+
+- 时间复杂度：$ O(n \log n) $
+- 空间复杂度：$ O(n) $，需要一个辅助数组帮助进行归并。
+- 稳定排序
+- 非原地排序
+
+### 6.3 步骤
+
+1. 将数组按中间位置分为前后两个部分。
+2. 递归对前后两部分进行排序。
+3. 将有序的前后两部分归并为有序数组。
+
+### 6.1 自顶向下
 
 ```java
+static void mergeSort(int[] arr) {
+    int[] copy = new int[arr.length];
+    mergeSort(arr, 0, arr.length, copy);
+}
 
+static void mergeSort(int[] arr, int low, int high, int[] copy) {
+    // [low, high)
+    if (low + 1 >= high) return;
+    int mid = low + (high - low) / 2;
+    mergeSort(arr, low, mid, copy);
+    mergeSort(arr, mid, high, copy);
+    merge(arr, low, mid, high, copy);
+}
+
+static void merge(int[] arr, int low, int mid, int high, int[] copy) {
+    // 将 [low, mid) 和 [mid, high) 归并
+    int i = low;
+    int j = mid;
+    for (int k = low; k < high; k++) copy[k] = arr[k];
+    for (int k = low; k < high; k++) {
+        if (i >= mid)               arr[k] = copy[j++];
+        else if (j >= high)         arr[k] = copy[i++];
+        else if (copy[i] < copy[j]) arr[k] = copy[i++];
+        else                        arr[k] = copy[j++];
+    }
+}
+```
+
+### 6.2 自底向上
+
+```java
+static void mergeSort(int[] arr) {
+    int n = arr.length;
+    int[] copy = new int[n];
+    for (int sz = 1; sz < n; sz *= 2) // [i, i + sz) [i + sz, i + sz * 2)
+        for (int i = 0; i + sz <= n; i += sz * 2)
+            merge(arr, i, i + sz, Math.min(i + sz * 2, n), copy);
+}
+
+static void merge(int[] arr, int low, int mid, int high, int[] copy) {
+    // 将 [low, mid) 和 [mid, high) 归并
+    int i = low;
+    int j = mid;
+    for (int k = low; k < high; k++) copy[k] = arr[k];
+    for (int k = low; k < high; k++) {
+        if (i >= mid)               arr[k] = copy[j++];
+        else if (j >= high)         arr[k] = copy[i++];
+        else if (copy[i] < copy[j]) arr[k] = copy[i++];
+        else                        arr[k] = copy[j++];
+    }
+}
 ```
 
 ## 7.快速排序
@@ -238,7 +293,7 @@ static void merge(int[] arr, int low, int mid, int high) {
 - 实现简单
 - **原地排序**
 - 每一轮确定一个元素的位置
-- **不稳定**
+- **非稳定排序**
 
 ### 7.3 步骤
 
@@ -249,20 +304,32 @@ static void merge(int[] arr, int low, int mid, int high) {
     - 交换两个元素。
 3. 将左右两个区域视为两个数组，重复前两个步骤，当子数组排序完成即整个数组排序完成。
 
-### 7.4 标准快排实现
+### 7.4 标准快排
 
 ```java
+static void quickSort(int[] arr) {
+    quickSort(arr, 0, arr.length - 1);
+}
+
 static void quickSort(int[] arr, int low, int high) {
     // [low, high]
     if (low >= high) return;
 
-    // 1. 随机选取 pivot
-    int pivotIndex = low + (int) (Math.random() * (high - low + 1));
+    // 1. 随机选取 pivot，并交换到第 1 个
+    int pid = low + (int) (Math.random() * (high - low + 1));
     int temp = arr[low];
-    arr[low] = arr[pivotIndex];
-    arr[pivotIndex] = temp;
+    arr[low] = arr[pid];
+    arr[pid] = temp;
 
     // 2. partition 划分
+    pid = partition(arr, low, high);
+
+    // 3. 递归子数组
+    quickSort(arr, low, pid - 1);
+    quickSort(arr, pid + 1, high);
+}
+
+static int partition(int[] arr, int low, int high) {
     int pivot = arr[low];
     int l = low;
     int r = high;
@@ -274,14 +341,76 @@ static void quickSort(int[] arr, int low, int high) {
         arr[r] = arr[l];
     }
     arr[l] = pivot;
-
-    // 3. 递归子数组
-    quickSort(arr, low, l - 1);
-    quickSort(arr, l + 1, high);
+    return l;
 }
 ```
 
-### 7.5 三向切分快排实现
+- partition 的其他实现方法
+
+```java
+static int partition(int[] arr, int low, int high) {
+    int pivot = arr[low];
+    int l = low;
+    int r = high + 1;
+    while (true) {
+        while (l < high && arr[++l] < pivot);
+        while (low < r && arr[--r] > pivot);
+        if (l >= r) break;
+        swap(arr, l, r);
+    }
+    swap(arr, low, r);
+    return r;
+}
+
+static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+```
+
+- 非递归实现
+
+```java
+static void quickSort(int[] arr) {
+    Deque<Integer> st = new ArrayDeque<>();
+    // [low, high]
+    st.push(0);
+    st.push(arr.length - 1);
+
+    while (!st.isEmpty()) {
+        int high = st.poll();
+        int low = st.poll();
+        if (low >= high) continue;
+        int pid = low + (int) (Math.random() * (high - low + 1));
+        int temp = arr[low];
+        arr[low] = arr[pid];
+        arr[pid] = temp;
+        pid = partition(arr, low, high);
+        st.push(low);
+        st.push(pid - 1);
+        st.push(pid + 1);
+        st.push(high);
+    }
+}
+
+static int partition(int[] arr, int low, int high) {
+    int pivot = arr[low];
+    int l = low;
+    int r = high;
+    while (l < r) {
+        // pivot 在左侧则先右后左，pivot 在右侧则先左后右
+        while (l < r && arr[r] >= pivot) r--;
+        arr[l] = arr[r];
+        while (l < r && arr[l] <= pivot) l++;
+        arr[r] = arr[l];
+    }
+    arr[l] = pivot;
+    return l;
+}
+```
+
+### 7.5 三向切分快排
 
 将数组切分为三个部分：小于 pivot、等于 pivot、大于 pivot。
 
@@ -289,27 +418,24 @@ static void quickSort(int[] arr, int low, int high) {
 - 每一轮确定 r - l + 1 个元素的位置。
 
 ```java
+static void quickSort(int[] arr) {
+    quickSort(arr, 0, arr.length - 1);
+}
+
 static void quickSort(int[] arr, int low, int high) {
     // [low, high]
     if (low >= high) return;
     // 1. 随机选取 pivot
-    int pivotIndex = low + (int) (Math.random() * (high - low + 1));
+    int pid = low + (int) (Math.random() * (high - low + 1));
     // 2. partition
-    int pivot = arr[pivotIndex];
+    int pivot = arr[pid];
     int l = low;
     int m = low;
     int r = high;
     while (m <= r) {
-        if (arr[m] < pivot) {
-            swap(arr, l, m);
-            l++;
-            m++;
-        } else if (arr[m] > pivot) {
-            swap(arr, m, r);
-            r--;
-        } else {
-            m++;
-        }
+        if (arr[m] < pivot) swap(arr, l++, m++);
+        else if (arr[m] > pivot) swap(arr, m, r--);
+        else m++;
     }
     // 3. 递归子数组
     quickSort(arr, low, l - 1);
@@ -325,7 +451,82 @@ static void swap(int[] arr, int i, int j) {
 
 ## 8.堆排序
 
-<br />
+### 8.1 介绍
+
+利用二叉堆实现一个能够插入元素、快速找出最大（或最小）元素的数据结构。
+
+- 饿汉式：不保证元素的顺序，在需要找出最大（或最小）的元素时才采取行动。
+- 懒汉式：保证元素的相对顺序，则可快速找出最大（或最小）的元素。
+
+### 8.2 特点
+
+- 时间复杂度：$ O(n \log n) $
+- 空间复杂度：$ O(1) $
+
+|数据结构|插入元素|删除最值|
+|:---:|:---:|:---:|
+|有序数组|$O(n)$|$O(1)$|
+|无需数组|$O(1)$|$O(n)$|
+|二叉堆|$O(\log n)$|$O(\log n)$|
+|理想情况|$O(1)$|$O(1)$|
+
+### 8.3 步骤
+
+1. 使用数组实现最大堆（或最小堆）。
+    - 用数组实现一棵完全二叉树，根结点为 arr[1]，arr[k] 的父结点为 arr[k / 2]，左孩子为 arr[k * 2]，右孩子为 arr[k * 2 + 1]。
+    - 若为最大堆（或最小堆），父结点的值大于（或小于）等于两个孩子的值。
+2. 建堆（堆的有序化）。
+    - 上浮：当堆底添加了一个新元素时，需要**自下而上**恢复堆。
+    - 下沉：当堆顶被删除而用堆底元素替换时，需要**自上而下**恢复堆。
+3. 插入。
+    - 将新元素加到数组末尾，增大堆的大小，然后从该位置进行上浮操作。
+4. 删除最值。
+    - 将根结点元素和数组末尾元素交换，减小堆的大小，然后从根结点开始下沉操作。
+
+### 8.4 代码
+
+```java
+static void heapSort(int[] arr) {
+    int n = arr.length;
+    int[] heap = new int[n + 1];
+    for (int i = 0; i < n; i++)
+        heap[i + 1] = arr[i];
+    for (int i = n / 2; i >= 1; i--)
+        sink(arr, i);
+}
+
+class MaxPQ {
+    private int[] pq;
+    private int n;
+
+    public MaxPQ(int n) {
+        pq = new int[n + 1];
+    }
+
+
+}
+
+
+static void swim(int[] arr, int k) {
+    // 将位置为 k 的结点向上浮动
+    while (k > 1 && arr[k / 2] < arr[k]) {
+        swap(arr, k / 2, k);
+        k /= 2;
+    }
+}
+
+static void sink(int[] arr, int k) {
+    // 将位置为 k 的结点向下沉
+    int n = arr.length;
+    while (k * 2 <= n) {
+        int k2 = k * 2;
+        if (k2 < n && arr[k2] < arr[k2 + 1]) k2++;
+        if (arr[k] > arr[k2]) break;
+        swap(arr, k, k2);
+        k = k2;
+    }
+}
+```
 
 ## 9.计数排序
 
