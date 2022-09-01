@@ -486,45 +486,42 @@ static void swap(int[] arr, int i, int j) {
 ### 8.4 代码
 
 ```java
-static void heapSort(int[] arr) {
+public static void heapSort(int[] arr) {
     int n = arr.length;
     int[] heap = new int[n + 1];
-    for (int i = 0; i < n; i++)
-        heap[i + 1] = arr[i];
-    for (int i = n / 2; i >= 1; i--)
-        sink(arr, i);
-}
-
-class MaxPQ {
-    private int[] pq;
-    private int n;
-
-    public MaxPQ(int n) {
-        pq = new int[n + 1];
+    for (int i = 1; i <= n; i++) {
+        heap[i] = arr[i - 1];
+        swim(heap, i, i);
     }
-
-
+    for (int i = n; i >= 1; i--) {
+        swap(heap, 1, i);
+        sink(heap, i - 1, 1);
+    }
+    for (int i = 1; i <= n; i++)
+        arr[i - 1] = heap[i];
 }
 
-
-static void swim(int[] arr, int k) {
-    // 将位置为 k 的结点向上浮动
-    while (k > 1 && arr[k / 2] < arr[k]) {
-        swap(arr, k / 2, k);
+private static void swim(int[] heap, int n, int k) {
+    while (k > 1 && heap[k / 2] < heap[k]) {
+        swap(heap, k / 2, k);
         k /= 2;
     }
 }
 
-static void sink(int[] arr, int k) {
-    // 将位置为 k 的结点向下沉
-    int n = arr.length;
-    while (k * 2 <= n) {
-        int k2 = k * 2;
-        if (k2 < n && arr[k2] < arr[k2 + 1]) k2++;
-        if (arr[k] > arr[k2]) break;
-        swap(arr, k, k2);
-        k = k2;
+private static void sink(int[] heap, int n, int k) {
+    while (k * 2 < n) {
+        int i = k * 2;
+        if (i + 1 < n && heap[i] < heap[i + 1]) i++;
+        if (heap[k] >= heap[i]) break;
+        swap(heap, k, i);
+        k = i;
     }
+}
+
+private static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
 }
 ```
 

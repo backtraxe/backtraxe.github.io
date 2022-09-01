@@ -3,11 +3,11 @@
 
 <!--more-->
 
-## 1.简介
+## 1.介绍
 
-快速找到每个元素附近第一个大于/大于等于/小于/小于等于的元素或者其下标。
+单调栈可以帮助快速找到每个元素**之前/之后第一个大于/大于等于/小于/小于等于当前元素**的元素或者其下标。
 
-## 2.存下标
+## 2.单调栈存储下标
 
 ### 2.1 下一个元素的下标
 
@@ -63,7 +63,7 @@ static int[] getMonoStack(int[] nums) {
 }
 ```
 
-### 2.3 同时计算上一个和下一个元素的下标
+### 2.3 上一个和下一个元素的下标
 
 ```java
 static int[][] getMonoStack(int[] nums) {
@@ -87,7 +87,7 @@ static int[][] getMonoStack(int[] nums) {
 }
 ```
 
-## 3.存元素
+## 3.单调栈存储元素
 
 ### 3.1 下一个元素
 
@@ -170,7 +170,28 @@ while (!st.isEmpty() && ... >  nums[i])
 
 ## 5.实战
 
-### 下一个更大元素 I
+### 🟩商品折扣后的最终价格
+
+[1475. 商品折扣后的最终价格](https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/)
+
+```java
+class Solution {
+    public int[] finalPrices(int[] prices) {
+        int n = prices.length;
+        int[] ans = new int[n];
+        // 单调栈，找到下个小于等于当前值的元素
+        Deque<Integer> st = new ArrayDeque<>();
+        for (int i = n - 1; i >= 0; i--) {
+            while (!st.isEmpty() && st.peek() > prices[i]) st.pop();
+            ans[i] = prices[i] - (st.isEmpty() ? 0 : st.peek());
+            st.push(prices[i]);
+        }
+        return ans;
+    }
+}
+```
+
+### 🟩下一个更大元素 I
 
 [496. 下一个更大元素 I](https://leetcode.cn/problems/next-greater-element-i/)
 
@@ -203,7 +224,7 @@ class Solution {
 }
 ```
 
-### 下一个更大元素 II
+### 🟨下一个更大元素 II
 
 [503. 下一个更大元素 II](https://leetcode.cn/problems/next-greater-element-ii/)
 
@@ -223,7 +244,7 @@ class Solution {
 }
 ```
 
-### 每日温度
+### 🟨每日温度
 
 [739. 每日温度](https://leetcode.cn/problems/daily-temperatures/)
 

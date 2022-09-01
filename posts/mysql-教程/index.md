@@ -1,4 +1,4 @@
-# MySQL 教程
+# MySQL
 
 
 <!--more-->

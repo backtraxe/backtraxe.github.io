@@ -217,15 +217,123 @@ TreeNode insert(TreeNode root, int val) {
 - 若删除结点为叶结点，直接删除。
 - 若删除结点为非叶结点，将左子树最大结点或者右子树最小结点移至当前位置。
 
-{{< admonition tip "递归" false >}}
+## 实战
+
+### 🟩二叉树的所有路径
+
+[257. 二叉树的所有路径](https://leetcode.cn/problems/binary-tree-paths/)
+
+```java
+class Solution {
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> ans = new ArrayList<>();
+        char[] path = new char[512];
+        dfs(root, path, 0, ans);
+        return ans;
+    }
+
+    void dfs(TreeNode root, char[] path, int idx, List<String> allPath) {
+        if (root == null) return;
+        String s = Integer.toString(root.val);
+        for (int i = 0; i < s.length(); i++) path[idx++] = s.charAt(i);
+        if (root.left == null && root.right == null) {
+            allPath.add(String.valueOf(path, 0, idx));
+        } else {
+            path[idx++] = '-';
+            path[idx++] = '>';
+            dfs(root.left, path, idx, allPath);
+            dfs(root.right, path, idx, allPath);
+        }
+    }
+}
+```
+
+### 🟨求和路径
+
+[面试题 04.12. 求和路径](https://leetcode.cn/problems/paths-with-sum-lcci/)
+
+```java
+class Solution {
+    public int pathSum(TreeNode root, int sum) {
+        if (root == null) return 0;
+        return dfs(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
+    }
+
+    int dfs(TreeNode root, int sum) {
+        // 查找从 root 开始的路径
+        if (root == null) return 0;
+        sum -= root.val;
+        return (sum == 0 ? 1 : 0) + dfs(root.left, sum) + dfs(root.right, sum);
+    }
+}
+```
+
+### 🟩路径总和
+
+[112. 路径总和](https://leetcode.cn/problems/path-sum/)
+
+### 🟨路径总和 II
+
+[113. 路径总和 II](https://leetcode.cn/problems/path-sum-ii/)
+
+### 🟨路径总和 III
+
+[437. 路径总和 III](https://leetcode.cn/problems/path-sum-iii/)
+
+### 🟨从叶结点开始的最小字符串
+
+[988. 从叶结点开始的最小字符串](https://leetcode.cn/problems/smallest-string-starting-from-leaf/)
+
+### 🟥二叉树中的最大路径和
+
+[124. 二叉树中的最大路径和](https://leetcode.cn/problems/binary-tree-maximum-path-sum/)
+
+### 🟨最长同值路径
+
+[687. 最长同值路径](https://leetcode.cn/problems/longest-univalue-path/)
+
+```java
+class Solution {
+    public int longestUnivaluePath(TreeNode root) {
+        return dfs(root)[0];
+    }
+
+    int[] dfs(TreeNode root) {
+        // { 最长同值路径的长度，以根结点为端点的同值路径的长度 }
+        if (root == null) return new int[] { 0, 0 };
+        int[] leftAns = dfs(root.left);
+        int[] rightAns = dfs(root.right);
+        // 最长同值路径可能在左子树上，也可能在右子树上，取两者的更大值
+        int maxLen = Math.max(leftAns[0], rightAns[0]); // 最长同值路径的长度
+        int rootLen = 0; // 以 root 结点为端点的同值路径的长度
+        int leftVal = root.left == null ? Integer.MAX_VALUE : root.left.val;
+        int rightVal = root.right == null ? Integer.MAX_VALUE : root.right.val;
+        if (root.val == leftVal && root.val == rightVal) {
+            // 当左孩子、右孩子和 root 的值相同时，可以形成一条经过根结点的同值路径
+            // 此时，以根结点为端点的同值路径只能选择左右子树中的更长的路径
+            maxLen = Math.max(maxLen, 2 + leftAns[1] + rightAns[1]);
+            rootLen = 1 + Math.max(leftAns[1], rightAns[1]);
+        } else if (root.val == leftVal) {
+            // 当左孩子和 root 的值相同时，以左孩子为端点的同值路径可以添加 root 结点
+            rootLen = 1 + leftAns[1];
+        } else if (root.val == rightVal) {
+            // 当右孩子和 root 的值相同时，以右孩子为端点的同值路径可以添加 root 结点
+            rootLen = 1 + rightAns[1];
+        }
+        return new int[] { Math.max(maxLen, rootLen), rootLen };
+    }
+}
+```
+
+### 🟩二叉树的直径
+
+[543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)
+
 ```java
 
 ```
-{{< /admonition >}}
 
-{{< admonition tip "迭代" false >}}
-```java
+## 参考
 
-```
-{{< /admonition >}}
+1. [一篇文章解决所有二叉树路径问题（问题分析+分类模板+题目剖析） - 最长同值路径 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-univalue-path/solution/yi-pian-wen-zhang-jie-jue-suo-you-er-cha-94j7/)
 
