@@ -3,7 +3,7 @@
 
 <!--more-->
 
-### 1.KMP 算法
+## KMP 算法
 
 Knuth-Morris-Pratt 算法。
 
@@ -78,7 +78,7 @@ int kmpSearch(char[] text, char[] pattern) {
 1. [如何更好地理解和掌握 KMP 算法? - 知乎](https://www.zhihu.com/question/21923021/answer/281346746)
 1. [字符串匹配算法详解 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1770486)
 
-### 2.BM 算法
+## BM 算法
 
 Boyer-Moore 算法。
 
@@ -192,7 +192,7 @@ int bmSearch(String text, String pattern) {
 1. [字符串匹配的Boyer-Moore算法 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html)
 1. [字符串匹配算法详解 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1770486)
 
-### 3.Sunday 算法
+## Sunday 算法
 
 #### 原理
 
@@ -243,75 +243,79 @@ int sundaySearch(char[] text, char[] pattern) {
 
 1. [Sunday 解法 - 实现 strStr() - 力扣（LeetCode）](https://leetcode-cn.com/problems/implement-strstr/solution/python3-sundayjie-fa-9996-by-tes/)
 
-### 4.Rabin Karp 算法
+## Rabin Karp
 
-#### 原理
+### 原理
 
-- 主串`text`长度为`n`，匹配串`pattern`长度为`m`。
+使用字符串哈希算法将字符串比较转化为整数比较。然后通过滚动计算哈希来降低时间复杂度。最后防止出现哈希冲突，再朴素比较一遍。
 
-- 使用字符串哈希算法将字符串比较转化为整数比较。然后通过滚动计算哈希来降低时间复杂度。最后防止出现哈希冲突，再朴素比较一遍。
+- 区间`[i,j]`的哈希值为
 
-- 区间`[a,b]`的哈希值为
+$$
+hash1 = s[i] \times K^{j-i} + s[i+1] \times K^{j-i-1} + \cdots + s[j-1] \times K + s[j]
+$$
 
-$$hash1=text[a] \times k^{b-a} + \cdots + text[b] \times k^{0}$$
+- 区间`[i+1,j+1]`的哈希值为
 
-- 区间`[a+1,b+1]`的哈希值为
-
-$$hash2=text[a+1] \times k^{b-a} + \cdots + text[b+1] \times k^{0}$$
-
-$$hash2=(hash1-text[a] \times k^{b-a}) \times k + text[b + 1] \times k^{0}$$
+$$
+\begin{aligned}
+hash2 &= s[i+1] \times K^{j-i} + \cdots + s[j-1] \times K^2 + s[j] \times K + s[j+1] \newline
+&= hash1 \times K - s[i] \times K^{j-i+1} + s[j+1] \newline
+&= hash1 \times K - s[i] \times G + s[j+1] \quad (G = K^{j-i+1})
+\end{aligned}
+$$
 
 - 如果字符串过长，最后计算哈希可能会溢出。为了解决这个问题，使用取余。
 
-$$hash2=((hash1-text[a] \times k^{b-a} \mod q) \times k + text[b + 1] \times k^{0}) \mod q$$
+$$
+\begin{aligned}
+hash2 &= (hash1 \times K - s[i] \times G + s[j+1]) \bmod Q \newline
+hash2 &= (hash2 + Q) \bmod Q
+\end{aligned}
+$$
 
-- 最后，`k`取一个大于`text[i]`取值范围的质数即可。
+- 其中，$K$ 和 $Q$ 分别取合适的质数即可。并且预处理出 $G = K^{j-i+1}$，减少时间复杂度。
 
-- 时间复杂度：`O(n + m)`
+- 时间复杂度：$O(n + m)$，文本串 $text$ 长度为 $n$，模式串 $pattern$ 长度为 $m$。
 
-#### 代码
+### 实现
 
 ```java
-int rkSearch(char[] text, char[] pattern) {
-    int n = text.length;
-    int m = pattern.length;
-    final int MOD = (int) 1e7 + 7; // 取余
-    final int K = 31; // 任意数字即可，一般为质数
-    final int POWER = (int) Math.pow(K, m - 1) % MOD;
+static int strStr(String s, String p) {
+    int n = s.length();
+    int m = p.length();
+    if (n < m) return -1;
+    int Q = 10000007;
+    int K = 107;
+    int G = 1;
+    int sHash = 0;
     int pHash = 0;
-    int tHash = 0;
     for (int i = 0; i < m; i++) {
-        pHash = (pHash * K + pattern[i]) % MOD;
-        tHash = (tHash * K + text[i]) % MOD;
+        sHash = (sHash * K + s.charAt(i)) % Q;
+        if (sHash < 0) sHash += Q;
+        pHash = (pHash * K + p.charAt(i)) % Q;
+        if (pHash < 0) pHash += Q;
+        G = (G * K) % Q;
+        if (G < 0) G += Q;
     }
-    for (int i = 0; i + m <= n; i++) {
-        if (pHash == tHash) {
-            boolean equal = true;
-            // 二次判断，防止哈希冲突
-            for (int j = 0; j < m; j++) {
-                if (text[i + j] != pattern[j]) {
-                    equal = false;
-                    break;
-                }
-            }
-            if (equal) {
-                return i;
-            }
-        }
-        if (i + m >= n) {
-            break;
-        }
-        // 滚动计算哈希
-        tHash = ((tHash - text[i] * POWER % MOD) * K + text[i + m]) % MOD;
-        if (tHash < 0) {
-            tHash += MOD;
-        }
+    if (equals(s, p, 0, sHash, pHash)) return 0;
+    for (int i = 1; i + m <= n; i++) {
+        sHash = (sHash * K - s.charAt(i - 1) * G + s.charAt(i + m - 1)) % Q;
+        if (sHash < 0) sHash += Q;
+        if (equals(s, p, i, sHash, pHash)) return i;
     }
     return -1;
 }
+
+static boolean equals(String s, String p, int k, int sHash, int pHash) {
+    if (sHash != pHash) return false;
+    for (int i = 0; i < p.length(); i++)
+        if (s.charAt(i + k) != p.charAt(i)) return false;
+    return true;
+}
 ```
 
-#### 参考
+## 参考
 
 1. [字符串匹配算法-Rabin Karp算法 | coolcao的小站](https://coolcao.com/2020/08/20/rabin-karp/)
 1. [简单易懂的Rabin Karp算法详解！ - 实现 strStr() - 力扣（LeetCode）](https://leetcode-cn.com/problems/implement-strstr/solution/yi-dong-de-rabin-karpsuan-fa-hao-xiang-mei-ren-xie/)

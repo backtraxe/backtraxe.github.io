@@ -3,7 +3,7 @@
 
 <!--more-->
 
-### 基础
+## 基础
 
 满二叉树：一个高度为 d 的二叉树，有 $2^d-1$ 个节点。即除叶节点外，每个节点都有两个孩子，即节点的出度只为 0 或 2。
 
@@ -12,147 +12,304 @@
 > - 二叉树第 $i$ 层最多有 $2^{i-1}$ 个节点。
 > - 高度为 $d$ 的二叉树最多有 $2^d-1$ 个节点。
 
-### 定义
+## 定义
 
-```python
-class TreeNode(object):
-	def __init__(self, value):
-		self.lchild = None
-        self.rchild = None
-        self.value = 0
-```
+```java
+class TreeNode {
+    public int val;
+    public TreeNode left, right;
 
-### 遍历
+    public TreeNode() {}
 
-#### 前序遍历
+    public TreeNode(int val) {
+        this.val = val;
+    }
 
-递归法：
-
-```cpp
-void preorder(TreeNode* root) {
-    if (!root) return;
-    // 处理节点值 root->val
-    preorder(root->left);
-    preorder(root->right);
-}
-```
-
-非递归法：
-
-`压栈先右后左`
-
-```cpp
-void preorder(TreeNode* root) {
-    if (!root) return;
-    stack<TreeNode*> st;
-    st.push(root);
-    while (!st.empty()) {
-        root = st.top();
-        st.pop();
-        // 处理节点值 root->val
-        if (root->right) st.push(root->right);
-        if (root->left) st.push(root->left);
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }
 ```
 
-```cpp
-void preorder(TreeNode* root) {
-    stack<TreeNode*> st;
-    whilt (root || !st.empty()) {
-        if (root) {
-            // 处理节点值 root->val
+```java
+//       3
+//     /   \
+//    1     5
+//     \   / \
+//      2 4   6
+TreeNode n2 = new TreeNode(2);
+TreeNode n1 = new TreeNode(1, null, n2);
+TreeNode n4 = new TreeNode(4);
+TreeNode n6 = new TreeNode(6);
+TreeNode n5 = new TreeNode(5, n4, n6);
+TreeNode n3 = new TreeNode(3, n1, n5);
+```
+
+## 遍历
+
+### 前序遍历
+
+- 递归：根左右
+
+```java
+List<Integer> preorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    dfs(root, ans);
+    return ans;
+}
+
+void dfs(TreeNode root, List<Integer> ans) {
+    if (root == null) return;
+    ans.add(root.val);
+    dfs(root.left, ans);
+    dfs(root.right, ans);
+}
+```
+
+- 递归：带结点深度
+
+```java
+List<Integer> preorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    dfs(root, 0, ans);
+    return ans;
+}
+
+void dfs(TreeNode root, int depth, List<Integer> ans) {
+    if (root == null) return;
+    ans.add(root.val);
+    dfs(root.left, depth + 1, ans);
+    dfs(root.right, depth + 1, ans);
+}
+```
+
+- 非递归：栈根右左
+
+```java
+List<Integer> preorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    if (root == null) return ans;
+    Deque<TreeNode> st = new ArrayDeque<>();
+    st.push(root);
+    while (!st.isEmpty()) {
+        TreeNode p = st.pop();
+        ans.add(p.val);
+        if (p.right != null) st.push(p.right);
+        if (p.left != null) st.push(p.left);
+    }
+    return ans;
+}
+```
+
+### 中序遍历
+
+- 递归：左根右
+
+```java
+List<Integer> inorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    dfs(root, ans);
+    return ans;
+}
+
+void dfs(TreeNode root, List<Integer> ans) {
+    if (root == null) return;
+    dfs(root.left, ans);
+    ans.add(root.val);
+    dfs(root.right, ans);
+}
+```
+
+- 递归：带结点深度
+
+```java
+List<Integer> inorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    dfs(root, 0, ans);
+    return ans;
+}
+
+void dfs(TreeNode root, int depth, List<Integer> ans) {
+    if (root == null) return;
+    dfs(root.left, depth + 1, ans);
+    ans.add(root.val);
+    dfs(root.right, depth + 1, ans);
+}
+```
+
+- 非递归：有左则左，无左则根，有右继续
+
+```java
+List<Integer> inorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    if (root == null) return ans;
+    Deque<TreeNode> st = new ArrayDeque<>();
+    while (!st.isEmpty() || root != null) {
+        while (root != null) {
             st.push(root);
-            root = root->left;
+            root = root.left;
+        }
+        TreeNode p = st.pop();
+        ans.add(p.val);
+        root = p.right;
+    }
+    return ans;
+}
+```
+
+### 后序遍历
+
+- 递归：左右根
+
+```java
+List<Integer> postorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    dfs(root, ans);
+    return ans;
+}
+
+void dfs(TreeNode root, List<Integer> ans) {
+    if (root == null) return;
+    dfs(root.left, ans);
+    dfs(root.right, ans);
+    ans.add(root.val);
+}
+```
+
+- 递归：带结点深度
+
+```java
+List<Integer> postorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    dfs(root, 0, ans);
+    return ans;
+}
+
+void dfs(TreeNode root, int depth, List<Integer> ans) {
+    if (root == null) return;
+    dfs(root.left, depth + 1, ans);
+    dfs(root.right, depth + 1, ans);
+    ans.add(root.val);
+}
+```
+
+- 非递归：栈根左右，最后逆序
+
+```java
+List<Integer> postorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    if (root == null) return ans;
+    Deque<TreeNode> st = new ArrayDeque<>();
+    st.push(root);
+    while (!st.isEmpty()) {
+        TreeNode p = st.pop();
+        ans.add(p.val);
+        if (p.left != null) st.push(p.left);
+        if (p.right != null) st.push(p.right);
+    }
+    // Collections.reverse(ans);
+    for (int i = 0, j = ans.size() - 1; i < j; i++, j--) {
+        // Collections.swap(ans, i, j);
+        int temp = ans.get(i);
+        ans.set(i, ans.get(j));
+        ans.set(j, temp);
+    }
+    return ans;
+}
+```
+
+- 非递归：栈根左右，首部添加，无需逆序
+
+```java
+List<Integer> postorder(TreeNode root) {
+    List<Integer> ans = new LinkedList<>();
+    if (root == null) return ans;
+    Deque<TreeNode> st = new ArrayDeque<>();
+    st.push(root);
+    while (!st.isEmpty()) {
+        TreeNode p = st.pop();
+        ans.add(0, p.val);
+        if (p.left != null) st.push(p.left);
+        if (p.right != null) st.push(p.right);
+    }
+    return ans;
+}
+```
+
+- 非递归：记录上个结点
+
+```java
+List<Integer> postorder(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    if (root == null) return ans;
+    Deque<TreeNode> st = new ArrayDeque<>();
+    TreeNode prev = null;
+    while (!st.isEmpty() || root != null) {
+        while (root != null) {
+            st.push(root);
+            root = root.left;
+        }
+        TreeNode p = st.peek();
+        if (p.right != null && p.right != prev) {
+            root = p.right;
         } else {
-            root = st.top()->right;
+            ans.add(p.val);
             st.pop();
         }
+        prev = p;
     }
+    return ans;
 }
 ```
 
-#### 中序遍历
+### 层序遍历
 
-- 对于二叉搜索树，中序遍历可以得到一个递增的有序序列
+- BFS
 
-递归法：
-
-```cpp
-void inorder(TreeNode* root) {
-    if (!root) return;
-    inorder(root->left);
-    // 处理节点值 root->val
-    inorder(root->right);
-}
-```
-
-非递归法：
-
-```cpp
-void inorder(TreeNode* root) {
-    stack<TreeNode*> st;
-    while (root || !st.empty()) {
-        if (root) {
-            st.push(root);
-            root = root->left;
-        } else {
-            // 处理节点值 st.top()->val
-            root = st.top()->right;
-            st.pop();
+```java
+List<List<Integer>> levelOrder(TreeNode root) {
+    List<List<Integer>> ans = new ArrayList<>();
+    if (root == null) return ans;
+    Queue<TreeNode> que = new ArrayDeque<>();
+    que.offer(root);
+    int depth = 0;
+    while (!que.isEmpty()) {
+        int size = que.size();
+        List<Integer> level = new ArrayList<>();
+        while (size-- > 0) {
+            root = que.poll();
+            level.add(root.val);
+            if (root.left != null) que.offer(root.left);
+            if (root.right != null) que.offer(root.right);
         }
+        depth++;
+        ans.add(level);
     }
+    return ans;
 }
 ```
 
-#### 后序遍历
+- DFS
 
-- 后序遍历是删除节点时的顺序
-- 可以配合栈来计算表达式树
+```java
+List<List<Integer>> levelOrder(TreeNode root) {
+    List<List<Integer>> ans = new ArrayList<>();
+    dfs(root, 0, ans);
+    return ans;
+}
 
-递归法：
-
-```cpp
-void postorder(TreeNode* root) {
-    if (!root) return;
-    postorder(root->left);
-    postorder(root->right);
-    // 处理节点值 root->val
+void dfs(TreeNode root, int depth, List<List<Integer>> ans) {
+    if (root == null) return;
+    if (depth == ans.size()) ans.add(new ArrayList<>());
+    ans.get(depth).add(root.val);
+    dfs(root.left, depth + 1, ans);
+    dfs(root.right, depth + 1, ans);
 }
 ```
 
-非递归法：
-
-`前序遍历的非递归方法先左后右，最后逆序即可`
-
-```cpp
-void postorder(TreeNode* root) {
-    if (!root) return;
-    vector<int> res;  // 保存遍历结果
-    stack<TreeNode*> st;
-    st.push(root);
-    while (!st.empty()) {
-        root = st.top();
-        st.pop();
-        res.push_back(root->val);  // 保存节点值
-        if (root->left) st.push(st->left);
-        if (root->right) st.push(st->right);
-    }
-    reverse(res.begin(), res.end());  // 逆序
-}
-```
-
-```cpp
-
-```
-
-#### 层序遍历
-
-```cpp
-
-```
-
-### 二叉搜索树
+## 二叉搜索树
 
 Binary Search Tree，BST
 
@@ -335,5 +492,6 @@ class Solution {
 
 ## 参考
 
-1. [一篇文章解决所有二叉树路径问题（问题分析+分类模板+题目剖析） - 最长同值路径 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-univalue-path/solution/yi-pian-wen-zhang-jie-jue-suo-you-er-cha-94j7/)
+1. [「代码随想录」帮你对二叉树不再迷茫，彻底吃透前中后序递归法（递归三部曲）和迭代法（不统一写法与统一写法） - 二叉树的后序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-postorder-traversal/solution/bang-ni-dui-er-cha-shu-bu-zai-mi-mang-che-di-chi-t/)
+2. [一篇文章解决所有二叉树路径问题（问题分析+分类模板+题目剖析） - 最长同值路径 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-univalue-path/solution/yi-pian-wen-zhang-jie-jue-suo-you-er-cha-94j7/)
 

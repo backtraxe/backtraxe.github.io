@@ -27,7 +27,7 @@ $$
 
 ```
 
-### 链表随机节点
+### 🟨链表随机节点
 
 [382. 链表随机节点](https://leetcode.cn/problems/linked-list-random-node/)
 
@@ -36,21 +36,27 @@ $$
 ```java
 class Solution {
     ListNode head;
+    Random random;
 
     public Solution(ListNode head) {
         this.head = head;
+        random = new Random();
     }
 
     public int getRandom() {
-        int len = 1;
+        int i = 1;
         int ans = 0;
-        for (ListNode p = head; p != null; p = p.next) {
-            if ((int) (Math.random() * len) == 0) // 1 / i 的概率选中
-                ans = p.val;
-            len++;
+        for (ListNode node = head; node != null; node = node.next) {
+            // 1/i 的概率选中（替换为答案）
+            if (random.nextInt(i) == 0) ans = node.val;
+            ++i;
         }
         return ans;
     }
 }
 ```
+
+## 参考
+
+1. [链表随机节点 - 链表随机节点 - 力扣（LeetCode）](https://leetcode.cn/problems/linked-list-random-node/solution/lian-biao-sui-ji-jie-dian-by-leetcode-so-x6it/)
 
