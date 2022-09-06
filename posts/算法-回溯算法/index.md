@@ -330,3 +330,26 @@ void dfs(int[] nums) {
 }
 ```
 
+## 实战
+
+### 🟨所有可能的路径
+
+[797. 所有可能的路径](https://leetcode.cn/problems/all-paths-from-source-to-target/)
+
+```java
+class Solution {
+    public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+        List<List<Integer>> ans = new ArrayList<>();
+        dfs(graph, 0, new ArrayList<>(), ans);
+        return ans;
+    }
+
+    void dfs(int[][] graph, int u, List<Integer> path, List<List<Integer>> ans) {
+        path.add(u);
+        if (u == graph.length - 1) ans.add(new ArrayList<>(path));
+        else for (int v : graph[u]) dfs(graph, v, path, ans);
+        path.remove(path.size() - 1);
+    }
+}
+```
+

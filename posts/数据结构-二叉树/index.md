@@ -490,8 +490,41 @@ class Solution {
 
 ```
 
+### 🟨寻找重复的子树
+
+- 哈希表
+- 二叉树序列化
+
+[652. 寻找重复的子树](https://leetcode.cn/problems/find-duplicate-subtrees/)
+
+```java
+class Solution {
+    int id = 1; // 自增 id
+    HashMap<String, Integer> map = new HashMap<>(); // 二叉树序列号 -> 自增 id
+    HashMap<String, Integer> cnt = new HashMap<>(); // 二叉树序列号 -> 二叉树数量
+    List<TreeNode> ans = new ArrayList<>();
+
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        dfs(root);
+        return ans;
+    }
+
+    int dfs(TreeNode root) {
+        if (root == null) return 0;
+        // 二叉树序列化值
+        String code = root.val + "/" + dfs(root.left) + "/" + dfs(root.right);
+        // 将相同结构的二叉树映射为相同值，用于减小 code 的长度
+        int nodeId = map.computeIfAbsent(code, k -> id++);
+        cnt.put(code, cnt.getOrDefault(code, 0) + 1);
+        // 第二次出现
+        if (cnt.get(code) == 2) ans.add(root);
+        return nodeId;
+    }
+}
+```
+
 ## 参考
 
 1. [「代码随想录」帮你对二叉树不再迷茫，彻底吃透前中后序递归法（递归三部曲）和迭代法（不统一写法与统一写法） - 二叉树的后序遍历 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-postorder-traversal/solution/bang-ni-dui-er-cha-shu-bu-zai-mi-mang-che-di-chi-t/)
-2. [一篇文章解决所有二叉树路径问题（问题分析+分类模板+题目剖析） - 最长同值路径 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-univalue-path/solution/yi-pian-wen-zhang-jie-jue-suo-you-er-cha-94j7/)
+1. [一篇文章解决所有二叉树路径问题（问题分析+分类模板+题目剖析） - 最长同值路径 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-univalue-path/solution/yi-pian-wen-zhang-jie-jue-suo-you-er-cha-94j7/)
 

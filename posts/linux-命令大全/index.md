@@ -8,68 +8,6 @@
 - `Tab` 补全命令
 - `Ctrl + C` 停止当前运行中的程序
 
-## grep
-
-Global search REgular expression and Print out the line
-
-打印指定模式匹配到的所有行，支持正则表达式。
-
-```bash
-grep [OPTION]... PATTERNS [FILE]...
-```
-
-默认支持正则表达式语法：`^ $ . * []`
-
-|参数|含义|
-|:---:|:---:|
-|`--color=auto`|高亮匹配内容|
-|`-E`|使用扩展正则表达式，支持：`+ ? \| () {}`|
-|`-i`|忽略大小写|
-|`-w`|只匹配整个单词|
-|`-x`|只匹配整行|
-|`-v`|打印未匹配的所有行|
-|`-m NUM`|指定打印行数|
-|`-H`|打印文件名|
-|`-n`|打印行号|
-|`-c`|打印行数|
-|`-o`|只打印匹配到的内容，而不是整行|
-|`-r`|递归匹配|
-|`-l`|打印有匹配行的文件名|
-|`-L`|打印无匹配行的文件名|
-
-[正则表达式教程](../正则表达式教程/)
-
-```bash
-# 匹配空行
-grep "^$" <FILE>
-
-# 匹配非空行
-grep -v "^$" <FILE>
-
-# 统计匹配行数
-grep -c <PATTERN> <FILE>
-
-# 统计匹配次数
-grep -o <PATTERN> <FILE> | wc -l
-
-# 打印注释行
-grep "^#.*" <FILE>
-```
-
-## sed
-
-Stream EDitor
-
-
-
-```bash
-sed [OPTION]... {script-only-if-no-other-script} [input-file]...
-```
-
-
-
-## awk
-
 ## ls
 
 显示目录内容。
@@ -117,24 +55,6 @@ ls -m
 - `w`，写入权限。二进制为`010`，十进制即`2`。
 - `x`，执行权限。二进制为`001`，十进制即`1`。
 
-## scp
-
-在本地主机和远程主机之间传输文件。
-
-```bash
-# 本地主机的文件上传到远程主机
-# 单个文件
-scp <file> <user>@<ip>:<path> -P <ssh_port>
-# 目录
-scp -r <folder> <user>@<ip>:<path> -P <ssh_port>
-
-# 远程主机的文件下载到本地主机
-# 单个文件
-scp <user>@<ip>:<file> <path> -P <ssh_port>
-# 目录
-scp -r <user>@<ip>:<folder> <path> -P <ssh_port>
-```
-
 ## ssh
 
 远程登录。
@@ -154,6 +74,138 @@ ssh-keygen
 ssh-copy-id <user>@<ip>:<port>
 # 或者手动将公钥添加到服务器的 ~/.ssh/authorized_keys 文件
 ```
+
+## scp
+
+在本地主机和远程主机之间传输文件。
+
+```bash
+# 本地主机的文件上传到远程主机
+# 单个文件
+scp <file> <user>@<ip>:<path> -P <ssh_port>
+# 目录
+scp -r <folder> <user>@<ip>:<path> -P <ssh_port>
+
+# 远程主机的文件下载到本地主机
+# 单个文件
+scp <user>@<ip>:<file> <path> -P <ssh_port>
+# 目录
+scp -r <user>@<ip>:<folder> <path> -P <ssh_port>
+```
+
+## grep
+
+Global search REgular expression and Print out the line
+
+打印指定模式匹配到的所有行，支持多文件、正则表达式。
+
+```bash
+grep [OPTION]... PATTERNS [FILE]...
+```
+
+默认支持正则表达式语法：`^ $ . * []`
+
+|参数|含义|
+|:---:|:---:|
+|`--color=auto`|高亮匹配内容|
+|`-E`|使用扩展正则表达式，支持：`+ ? \| () {}`|
+|`-i`|忽略大小写|
+|`-w`|只匹配整个单词|
+|`-x`|只匹配整行|
+|`-v`|打印未匹配的所有行|
+|`-m NUM`|指定打印行数|
+|`-H`|打印文件名|
+|`-n`|打印行号|
+|`-c`|打印行数|
+|`-o`|只打印匹配到的内容，而不是整行|
+|`-r`|递归匹配|
+|`-l`|打印有匹配行的文件名|
+|`-L`|打印无匹配行的文件名|
+
+[正则表达式教程](../正则表达式教程/)
+
+```bash
+# 匹配空行
+grep "^$" <FILE>
+
+# 匹配非空行
+grep -v "^$" <FILE>
+
+# 统计匹配行数
+grep -c <PATTERN> <FILE>
+
+# 统计匹配次数
+grep -o <PATTERN> <FILE> | wc -l
+
+# 打印注释行
+grep "^#.*" <FILE>
+```
+
+## sed
+
+Stream EDitor
+
+对文件内容进行增删改查，支持正则表达式。
+
+```bash
+sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+```
+
+默认支持正则表达式语法：`^ $ . * []`
+
+|参数|含义|
+|:---:|:---:|
+|`--color=auto`|高亮匹配内容|
+|`-E`|使用扩展正则表达式，支持：`+ ? \| () {}`|
+|`-n`|只输出匹配内容|
+|`-i`|输出同时修改文件内容|
+|`-e`|多个规则依次匹配|
+
+|内置命令符|含义|
+|:---:|:---:|
+|`a`|append，指定行后面追加|
+|`d`|delete，删除|
+|`i`|insert，指定行前面插入|
+|`p`|print，打印|
+|`/模式/操作`|匹配模式，然后进行操作|
+|`s/替换前/替换后/g`|替换，支持正则表达式，`g`表示全局匹配|
+
+- 指定行号
+
+```bash
+# 打印第二行和第三行
+sed -n "2,3p" <FILE>
+
+# 删除第二行和第三行
+sed -i "2,3d" <FILE>
+
+# 打印第二行开始的三行
+sed -n "2,+3p" <FILE>
+
+# 删除第二行开始的三行
+sed -i "2,+3d" <FILE>
+
+# 打印第二行到最后一行
+sed -n "2,$p" <FILE>
+
+# 删除第二行到最后一行
+sed -i "2,$d" <FILE>
+```
+
+- 指定内容
+
+```bash
+# 打印匹配到的行
+sed -n "/<PATTERN>/p" <FILE>
+# 删除匹配到的行
+sed -i "/<PATTERN>/d" <FILE>
+
+#
+```
+
+## awk
+
+## ps
 
 ## 参考
 

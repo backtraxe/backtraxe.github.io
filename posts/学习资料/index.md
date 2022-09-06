@@ -3,6 +3,10 @@
 
 <!--more-->
 
+## 优质博客
+
+- [编程技术系列文章 · 构建我的被动收入](https://www.bmpi.dev/dev/)
+
 ## 简历
 
 - [vCard](https://github.com/codewithsadee/vcard-personal-portfolio)：vCard is a fully responsive personal portfolio website, responsive for all devices.
