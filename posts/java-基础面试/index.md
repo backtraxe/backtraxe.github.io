@@ -1,9 +1,25 @@
-# Java 基础
+# Java 基础面试
 
 
 <!--more-->
 
+## 数值
+
+### Math.abs(Integer.MIN_VALUE)
+
+```java
+Math.abs(Integer.MIN_VALUE) == Integer.MIN_VALUE;
+```
+
+### 1 / 0 和 1 / 0.0 的区别？
+
+- `1 / 0` 抛出 `java.lang.ArithmeticException: / by zero` 异常。
+- `1 / 0.0` 返回 `Infinity`。
+
+
 ## 容器
+
+<img src="/imgs/Java面试/Java集合框架类图.png">
 
 ### ArrayList
 
@@ -107,7 +123,7 @@ private static int hugeCapacity(int minCapacity) {
 }
 ```
 
-### ArrayList 和 LinkedList 比较
+### ArrayList 和 LinkedList
 
 - `ArrayList`
     1. 基于数组，需要分配连续空间。
@@ -378,11 +394,18 @@ public class HashMap<K,V> extends AbstractMap<K,V> {
         afterNodeInsertion(evict);
         return null;
     }
-
-
-
 }
 ```
+
+#### 为什么 HashMap 的大小是 2 的幂次方
+
+每个 key 的 hash 值很大，需要通过取模，即 `hash(key) % n` 得到数组索引，当 n 是 2 的幂次方时通过 `(n - 1) & hash(key)` 可以更快速的进行取模。
+
+#### 为什么 HashMap 多线程会导致死循环
+
+JDK 1.8 之前存在这个问题，因为并发下扩容时的 rehash 会造成元素之间会形成⼀个循环链表。
+
+> 当 HashMap 扩容时，HashMap 中的所有元素都需要被重新 hash 一遍，称为 rehash。
 
 ### fail-fast 和 fail-safe
 
@@ -496,6 +519,103 @@ public class CopyOnWriteArrayList<E> {
     final void setArray(Object[] a) {
         array = a;
     }
+}
+```
+
+### Comparable 和 Comparator
+
+- `Comparable` 接口出自 java.lang 包，它有⼀个 `compareTo(Object obj)` 方法⽤来排序。
+
+```java
+interface Comparable {
+    int compareTo(Object obj);
+}
+```
+
+- `Comparator` 接口出自 java.util 包（需要导包），它有⼀个 `compare(Object obj1, Object obj2)` 方法⽤来排序。
+
+```java
+package java.util;
+
+interface Comparator {
+    int compare(Object obj1, Object obj2);
+}
+```
+
+- `compareTo(Object obj)` 方法和 `compare(Object obj1, Object obj2)` 方法的返回值 **小于 0** 代表升序， **大于 0** 代表降序。
+- `Collections.sort()`、`TreeSet`、`TreeMap`、`PriorityQueue`使用自定义类时必须实现 `Comparable` 接口或传入 `Comparator` 接口的实现类。
+
+### Arrays.asList() 和 List.of()
+
+- `Arrays.asList()` 返回的对象是 `java.util.Arrays` 类中的内部类 `java.util.Arrays$ArrayList`，而不是 `java.util.ArrayList`。`java.util.Arrays$ArrayList` 没有实现 `add()`、`remove()` 和 `clear()` 方法，但实现了 `set()` 方法，因此不能添加和删除元素，只能修改和读取元素。
+    - 传入的数组必须是对象数组，不能是基本类型数组。
+
+```java
+public class Arrays {
+    public static <T> List<T> asList(T... a) {
+        return new ArrayList<>(a);
+    }
+
+    private static class ArrayList<E> extends AbstractList<E> implements RandomAccess {
+        private final E[] a;
+
+        ArrayList(E[] array) {
+            a = Objects.requireNonNull(array);
+        }
+
+        public int     size() {}
+        public E       get(int index) {}
+        public E       set(int index, E element) {}
+        public int     indexOf(Object o) {}
+        public boolean contains(Object o) {}
+        public void    sort(Comparator<? super E> c) {}
+    }
+}
+
+public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
+    public void add(int index, E element) {
+        throw new UnsupportedOperationException();
+    }
+
+    public E remove(int index) {
+        throw new UnsupportedOperationException();
+    }
+}
+```
+
+- `List.of()` 返回的是 `AbstractImmutableList` 接口的实现类，该接口中所有修改操作（`add()`、`remove()`、`set()`等）全都会抛出异常。
+
+```java
+public interface List<E> extends Collection<E> {
+    static <E> List<E> of(E... elements) {
+        switch (elements.length) {
+            case 0:
+                return ImmutableCollections.emptyList();
+            case 1:
+                return new ImmutableCollections.List12<>(elements[0]);
+            case 2:
+                return new ImmutableCollections.List12<>(elements[0], elements[1]);
+            default:
+                return new ImmutableCollections.ListN<>(elements);
+        }
+    }
+}
+
+class ImmutableCollections {
+    static UnsupportedOperationException uoe() { return new UnsupportedOperationException(); }
+
+    static abstract class AbstractImmutableList<E> extends AbstractImmutableCollection<E> implements List<E>, RandomAccess {
+        @Override public void    add(int index, E element) { throw uoe(); }
+        @Override public boolean addAll(int index, Collection<? extends E> c) { throw uoe(); }
+        @Override public E       remove(int index) { throw uoe(); }
+        @Override public void    replaceAll(UnaryOperator<E> operator) { throw uoe(); }
+        @Override public E       set(int index, E element) { throw uoe(); }
+        @Override public void    sort(Comparator<? super E> c) { throw uoe(); }
+    }
+
+    static final class List12<E> extends AbstractImmutableList<E> implements Serializable {}
+
+    static final class ListN<E> extends AbstractImmutableList<E> implements Serializable {}
 }
 ```
 

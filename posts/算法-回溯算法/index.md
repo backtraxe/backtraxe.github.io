@@ -3,113 +3,66 @@
 
 <!--more-->
 
-```python
-结果集合
+## 排列 & 组合 & 子集
 
-def backtrack(当前路径, 可选择列表):
-    if 可选择列表为空:
-        结果集合添加当前路径
-        return
+### 无重 & 不放回
 
-    for 当前选择 in 可选择列表:
-        当前路径添加当前选择
-        可选择列表删除当前选择
-        backtrack(当前路径, 可选择列表)
-        当前路径撤销当前选择
-        可选择列表添加当前选择
-```
-
-### 排列&组合&子集问题
-
-#### 无重复元素&元素不可重复选择
-
-子集
+- 子集
 
 ```java
-List<List<Integer>> ans = new ArrayList<>();
-LinkedList<Integer> set = new LinkedList<>();
-
-/**
- * @param nums 元素唯一的数组
- * @return 所有子集的集合
- */
-List<List<Integer>> subsets(int[] nums) {
-    dfs(nums, 0);
+static List<List<Integer>> subsets(int[] nums) {
+    // 返回无重数组的所有子集
+    List<List<Integer>> ans = new ArrayList<>();
+    LinkedList<Integer> set = new LinkedList<>();
+    dfs(nums, 0, set, ans);
     return ans;
 }
 
-/**
- * @param nums 元素唯一的数组
- * @param start 可选择元素范围[start, nums.length)
- */
-void dfs(int[] nums, int start) {
-    // 前序添加
+static void dfs(int[] nums, int start, List<List<Integer>> ans, LinkedList<Integer> set) {
     ans.add(new LinkedList<>(set));
     for (int i = start; i < nums.length; i++) {
-        set.add(nums[index]);
+        set.add(nums[i]);
         dfs(nums, i + 1);
-        // 回溯
         set.pollLast();
     }
 }
 ```
 
-组合
+- 组合
 
 ```java
-List<List<Integer>> ans = new ArrayList<>();
-LinkedList<Integer> set = new LinkedList<>();
-
-/**
- * @param n 元素范围[1, n]
- * @param k 组合中元素个数
- * @return 所有长度为 k 的组合的集合
- */
-List<List<Integer>> combine(int n, int k) {
-    dfs(n, k, 0);
+static List<List<Integer>> combinations(int n, int k) {
+    // 返回 0-n 中所有 k 个数构成的组合
+    List<List<Integer>> ans = new ArrayList<>();
+    LinkedList<Integer> set = new LinkedList<>();
+    dfs(n, k, 0, ans, set);
     return ans;
 }
 
-/**
- * @param n     元素范围[1, n]
- * @param k     组合中元素个数
- * @param start 可选择元素范围[start, n]
- */
-void dfs(int n, int k, int start) {
+static void dfs(int n, int k, int start, List<List<Integer>> ans, LinkedList<Integer> set) {
     if (set.size() == k) {
         ans.add(new LinkedList<>(set));
         return;
     }
     for (int i = start; i <= n; i++) {
         set.add(i);
-        dfs(n, k, i + 1);
-        // 回溯
+        dfs(n, k, i + 1, ans, set);
         set.pollLast();
     }
 }
 ```
 
-排列
+- 排列
 
-```java {hl_lines=[26]}
-List<List<Integer>> ans = new ArrayList<>();
-LinkedList<Integer> set = new LinkedList<>();
-boolean[] vis;
-
-/**
- * @param nums 元素唯一的数组
- * @return 所有排列的集合
- */
-List<List<Integer>> permute(int[] nums) {
-    vis = new boolean[nums.length];
-    dfs(nums);
+```java
+static List<List<Integer>> permutations(int[] nums) {
+    // 返回无重数组的全部排列
+    List<List<Integer>> ans = new ArrayList<>();
+    dfs(nums, ans, new LinkedList<>(), new boolean[nums.length]);
     return ans;
 }
 
-/**
- * @param nums 元素唯一的数组
- */
-void dfs(int[] nums) {
+static void dfs(int[] nums, List<List<Integer>> ans, LinkedList<Integer> set, boolean[] vis) {
     int n = nums.length;
     if (set.size() == n) {
         ans.add(new LinkedList<>(set));
@@ -117,43 +70,30 @@ void dfs(int[] nums) {
     }
     for (int i = 0; i < n; i++) {
         // 防止重复选
-        if (!vis[i]) {
-            vis[i] = true;
-            set.add(nums[i]);
-            dfs(nums);
-            // 回溯
-            set.pollLast();
-            vis[i] = false;
-        }
+        if (vis[i]) continue;
+        vis[i] = true;
+        set.add(nums[i]);
+        dfs(nums, ans, set, vis);
+        set.pollLast();
+        vis[i] = false;
     }
 }
 ```
 
-#### 无重复元素&元素可以重复选择
+### 无重 & 有放回
 
-组合
+- 组合
 
 ```java
 List<List<Integer>> ans = new ArrayList<>();
 LinkedList<Integer> set = new LinkedList<>();
 
-/**
- * @param candidates 无重复元素的数组
- * @param target     目标和
- * @return 所有和为 target 的组合的集合（元素可重复）
- */
 List<List<Integer>> combinationSum(int[] candidates, int target) {
     Arrays.sort(candidates);
     dfs(candidates, target, 0, 0);
     return ans;
 }
 
-/**
- * @param candidates 有序数组
- * @param target     目标和
- * @param start      可选择元素范围[start, candidates.length)
- * @param sum        当前元素和
- */
 void dfs(int[] candidates, int target, int start, int sum) {
     if (sum == target) {
         ans.add(new LinkedList<>(set));
@@ -171,24 +111,17 @@ void dfs(int[] candidates, int target, int start, int sum) {
 }
 ```
 
-排列
+- 排列
 
 ```java
 List<List<Integer>> ans = new ArrayList<>();
 LinkedList<Integer> set = new LinkedList<>();
 
-/**
- * @param nums 无重复元素的数组
- * @return 所有排列的集合（可重复选择元素）
- */
 List<List<Integer>> permuteDup(int[] nums) {
     dfs(nums);
     return ans;
 }
 
-/**
- * @param nums 无重复元素的数组
- */
 void dfs(int[] nums) {
     int n = nums.length;
     if (set.size() == n) {
@@ -204,28 +137,20 @@ void dfs(int[] nums) {
 }
 ```
 
-#### 有重复元素&元素不可重复选择
+### 有重 & 不放回
 
-子集
+- 子集
 
 ```java
 List<List<Integer>> ans = new ArrayList<>();
 LinkedList<Integer> set = new LinkedList<>();
 
-/**
- * @param nums 可能存在重复元素的数组
- * @return 所有非重复子集的集合
- */
 List<List<Integer>> subsetsWithDup(int[] nums) {
     Arrays.sort(nums);
     dfs(nums, 0);
     return ans;
 }
 
-/**
- * @param nums  有序数组
- * @param start 可选择元素范围[start, nums.length)
- */
 void dfs(int[] nums, int start) {
     ans.add(new LinkedList<>(set));
     for (int i = start; i < nums.length; i++) {
@@ -241,29 +166,18 @@ void dfs(int[] nums, int start) {
 }
 ```
 
-组合
+- 组合
 
-```java {hl_lines=[29]}
+```java
 List<List<Integer>> ans = new ArrayList<>();
 LinkedList<Integer> set = new LinkedList<>();
 
-/**
- * @param candidates 可能存在重复元素的正数数组
- * @param target     目标和
- * @return 所有和为 target 的组合的集合
- */
 List<List<Integer>> combinationSum2(int[] candidates, int target) {
     Arrays.sort(candidates);
     dfs(candidates, target, 0, 0);
     return ans;
 }
 
-/**
- * @param candidates 有序数组
- * @param target     目标和
- * @param start      可选择元素范围[start, candidates.length)
- * @param sum        当前元素和
- */
 void dfs(int[] candidates, int target, int start, int sum) {
     if (sum == target) {
         ans.add(new LinkedList<>(set));
@@ -285,17 +199,13 @@ void dfs(int[] candidates, int target, int start, int sum) {
 }
 ```
 
-排列
+- 排列
 
-```java {hl_lines=[29]}
+```java
 List<List<Integer>> ans = new ArrayList<>();
 LinkedList<Integer> set = new LinkedList<>();
 boolean[] vis;
 
-/**
- * @param nums 可能存在重复元素的数组
- * @return 所有排列的集合
- */
 List<List<Integer>> permuteUnique(int[] nums) {
     vis = new boolean[nums.length];
     Arrays.sort(nums);
@@ -303,9 +213,6 @@ List<List<Integer>> permuteUnique(int[] nums) {
     return ans;
 }
 
-/**
- * @param nums 有序数组
- */
 void dfs(int[] nums) {
     int n = nums.length;
     if (set.size() == n) {
