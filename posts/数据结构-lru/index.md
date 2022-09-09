@@ -177,28 +177,28 @@ class LRUCache {
 
 ```java
 class LRUCache {
-    private LinkedHashMap<Integer, Integer> map;
+    private LinkedHashMap<Integer, Integer> data;
     private int capacity;
 
     public LRUCache(int capacity) {
-        map = new LinkedHashMap<>();
+        this.data = new LinkedHashMap<>();
         this.capacity = capacity;
     }
 
     public int get(int key) {
-        int val = map.getOrDefault(key, -1);
-        if (map.containsKey(key)) {
-            map.remove(key);
-            map.put(key, val);
+        int val = data.getOrDefault(key, -1);
+        if (data.containsKey(key)) {
+            data.remove(key);
+            data.put(key, val);
         }
         return val;
     }
 
     public void put(int key, int value) {
-        map.remove(key);
-        map.put(key, value);
-        if (map.size() > this.capacity) {
-            map.remove(map.keySet().iterator().next());
+        data.remove(key);
+        data.put(key, value);
+        if (data.size() > this.capacity) {
+            data.remove(data.keySet().iterator().next());
         }
     }
 }

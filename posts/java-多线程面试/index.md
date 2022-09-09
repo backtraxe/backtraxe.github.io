@@ -1,4 +1,4 @@
-# Java 多线程
+# Java 多线程面试
 
 
 <!--more-->
@@ -15,16 +15,11 @@
 
 Java 线程在运行的生命周期中的指定时刻只可能处于下面 6 种不同状态的其中一个状态：
 
-- **初始（New）**
-
-- **运行（Runnable）**
-
-- **等待（Waiting）**
-
-- **超时等待（Timed Waiting）**
-
-- **阻塞（Blocked）**
-
+- **创建（New）**：还未`start()`的线程。
+- **可运行（Runnable）**：调用`start()`后的线程，可能正在运行，也可能在排队等待时间片。
+- **阻塞（Blocked）**：等待获取`monitor`锁，进入`synchronized`块或方法。
+- **等待（Waiting）**：等待被唤醒，在调用`wait()`、`join()`、`park()`后。
+- **超时等待（Timed Waiting）**：等待被唤醒，超时自动唤醒，在调用`wait(long)`、`join(long)`、`parkNanos(long)`、`parkUntil(long)`后。
 - **终止（Terminated）**
 
 线程在生命周期中并不是固定处于某一个状态而是随着代码的执行在不同状态之间切换。Java 线程状态变迁如下图所示：
