@@ -895,3 +895,75 @@ try {
 1. 调度反射方法，最终是由jvm执行invoke0()执行
 
 ## 注解
+
+## 对象克隆
+
+### 深拷贝 & 浅拷贝
+
+**浅拷贝（ShallowClone）**：
+- 若变量是基本数据类型，则复制一份给克隆对象。
+- 若变量是引用类型，则将引用对象的**地址**复制一份给克隆对象，也就是说原型对象和克隆对象指向相同的内存地址。
+**深拷贝（DeepClone）**：
+- 无论变量是基本数据类型还是引用类型，都复制一份给克隆对象。
+
+### clone() 方法
+
+实现的`clone()`需要满足以下条件均为真：
+1. `x.clone() != x`，强制。
+2. `x.clone().getClass() == x.getClass()`，非强制。
+3. `x.clone().equals(x)`，非强制。
+
+```java
+public class Object {
+    @HotSpotIntrinsicCandidate
+    protected native Object clone() throws CloneNotSupportedException;
+}
+```
+
+```java
+class Book implements Cloneable {
+    public String name;
+    public Person author; // 类中包含引用对象
+    public int rating;
+
+    public Book(String name, Person author, int rating) {
+        this.name = name;
+        this.author = author;
+        this.rating = rating;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        // 深拷贝
+        Book book = (Book) super.clone();
+        book.author = (Person) author.clone(); // 引用对象也需要调用 clone()
+        return book;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("《%s》%s，%d分", name, author, rating);
+    }
+}
+
+class Person implements Cloneable {
+    public String name;
+    public int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s%d岁", name, age);
+    }
+}
+```
+

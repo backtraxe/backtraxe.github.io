@@ -327,111 +327,184 @@ void bfs(Graph graph, int start, boolean[] vis) {
 
 ## 4.环检测
 
-- DFS：若下个待访问的顶点在当前访问路径上，则说明存在环。
-- BFS：若存在顶点未被访问，则说明存在环。
+### 4.1 有向图
 
-[207. 课程表](https://leetcode.cn/problems/course-schedule/)
+[Detect cycle in a directed graph | Practice | GeeksforGeeks](https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1)
 
-### 4.1 DFS：布尔数组表示顶点是否在当前路径上
+- DFS
 
 ```java
 class Solution {
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        List<Integer>[] graph = new ArrayList[numCourses];
-        for (int i = 0; i < numCourses; i++)
-            graph[i] = new ArrayList<>();
-        boolean[] vis = new boolean[numCourses];
-        boolean[] onPath = new boolean[numCourses];
-        for (int[] course : prerequisites) // 建图
-            graph[course[1]].add(course[0]);
-        for (int u = 0; u < numCourses; u++) // DFS 遍历
-            if (!vis[u] && dfs(graph, u, vis, onPath))
-                return false;
-        return true;
+    static boolean isCyclic(List<List<Integer>> graph) {
+        // 判断有向图中是否存在环
+        int n = graph.size();
+        int[] vis = new int[n];
+        for (int u = 0; u < n; u++) // 对每个连通分量都进行判断
+            if (vis[u] == 0 && dfs(graph, u, vis))
+                return true;
+        return false;
     }
 
-    boolean dfs(List<Integer>[] graph, int u, boolean[] vis, boolean[] onPath) {
-        // 返回是否存在环
-        vis[u] = true;
-        onPath[u] = true;
-        for (int v : graph[u]) {
-            if (onPath[v]) // 找到环
-                return true;
-            if (!vis[v] && dfs(graph, v, vis, onPath)) // 已找到环，剪枝
-                return true;
+    static boolean dfs(List<List<Integer>> graph, int u, int[] vis) {
+        // 判断有向图从顶点 u 开始是否存在环
+        vis[u] = 1;
+        for (int v : graph.get(u)) {
+            if (vis[v] == 1) return true;
+            else if (vis[v] == 0 && dfs(graph, v, vis)) return true;
         }
-        onPath[u] = false; // 回溯
+        vis[u] = 2;
         return false;
     }
 }
 ```
 
-### 4.2 DFS：vis 数组表示顶点的不同状态（未访问、访问中、已访问）
+- BFS
 
 ```java
 class Solution {
-    List<List<Integer>> edges;
-    int[] visited;
-    boolean valid = true;
-
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        edges = new ArrayList<>();
-        for (int i = 0; i < numCourses; ++i)
-            edges.add(new ArrayList<>());
-        visited = new int[numCourses];
-        for (int[] info : prerequisites)
-            edges.get(info[1]).add(info[0]);
-        for (int i = 0; i < numCourses && valid; ++i)
-            if (visited[i] == 0)
-                dfs(i);
-        return valid;
-    }
-
-    public void dfs(int u) {
-        visited[u] = 1; // 当前路径上
-        for (int v: edges.get(u)) {
-            if (visited[v] == 0) { // 未访问
-                dfs(v);
-                if (!valid) return;
-            } else if (visited[v] == 1) {
-                valid = false;
-                return;
+    static boolean isCyclic(List<List<Integer>> graph) {
+        // 判断有向图中是否存在环
+        int n = graph.size();
+        // 计算入度
+        int[] ind = new int[n];
+        for (List<Integer> uAdj : graph)
+            for (int v : uAdj)
+                ind[v]++;
+        // 每次将入度为 0 的顶点加入队列，同时记录顶点数量
+        Queue<Integer> que = new ArrayDeque<>();
+        int cnt = 0;
+        for (int u = 0; u < n; u++) {
+            if (ind[u] == 0) {
+                que.offer(u);
+                cnt++;
             }
         }
-        visited[u] = 2; // 已访问
+        while (!que.isEmpty()) {
+            int u = que.poll();
+            for (int v : graph.get(u)) {
+                if (--ind[v] == 0) {
+                    que.offer(v);
+                    cnt++;
+                }
+            }
+        }
+        return cnt < n;
     }
 }
 ```
 
-### 4.3 BFS：每次删除入度为 0 的顶点
+### 4.2 无向图
+
+[Detect cycle in an undirected graph | Practice | GeeksforGeeks](https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1)
+
+- 并查集
 
 ```java
 class Solution {
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        List<List<Integer>> graph = new ArrayList<>();
-        for (int i = 0; i < numCourses; i++)
-            graph.add(new ArrayList<>());
-        int[] indegree = new int[numCourses]; // 入度
-        for (int[] edge : prerequisites) {
-            graph.get(edge[1]).add(edge[0]); // 方向无所谓
-            indegree[edge[0]]++;
-        }
-        // bfs
-        Queue<Integer> queue = new ArrayDeque<>();
-        for (int i = 0; i < numCourses; i++)
-            if (indegree[i] == 0) // 入度为 0
-                queue.offer(i);
-        int visited = 0; // 已访问顶点数量
-        while (!queue.isEmpty()) {
-            visited++;
-            int u = queue.poll();
+    static boolean isCyclic(List<List<Integer>> graph) {
+        // 判断无向图中是否存在环
+        UnionFind uf = new UnionFind(n);
+        for (int u = 0; u < graph.size(); u++) {
             for (int v : graph.get(u)) {
-                indegree[v]--;
-                if (indegree[v] == 0) // 入度为 0
-                    queue.offer(v);
+                if (u < v) {
+                    if (uf.isConnected(u, v)) return true;
+                    uf.union(u, v);
+                }
             }
         }
-        return visited == numCourses; // 若有顶点未访问则存在环
+        return false;
+    }
+}
+
+class UnionFind {
+    public int[] parent;
+    public int size;
+
+    public UnionFind(int n) {
+        this.parent = new int[n];
+        this.size = n;
+        for (int i = 0; i < n; i++)
+            parent[i] = i;
+    }
+
+    public int find(int x) {
+        if (parent[x] != x)
+            parent[x] = find(parent[x]);
+        return parent[x];
+    }
+
+    public boolean isConnected(int x, int y) {
+        return find(x) == find(y);
+    }
+
+    public void union(int x, int y) {
+        int px = find(x);
+        int py = find(y);
+        if (px != py) size--;
+        parent[py] = px;
+    }
+}
+```
+
+- DFS
+
+```java
+class Solution {
+    static boolean isCyclic(List<List<Integer>> graph) {
+        // 判断无向图中是否存在环
+        int n = graph.size();
+        int[] vis = new int[n];
+        for (int u = 0; u < n; u++) // 对每个连通分量都进行判断
+            if (vis[u] == 0 && dfs(graph, u, -1, vis))
+                return true;
+        return false;
+    }
+
+    static boolean dfs(List<List<Integer>> graph, int u, int pre, int[] vis) {
+        // 判断无向图从顶点 u 开始是否存在环
+        vis[u] = 1;
+        for (int v : graph.get(u)) {
+            if (v == pre) continue;
+            else if (vis[v] == 1) return true;
+            else if (vis[v] == 0 && dfs(graph, v, u, vis)) return true;
+        }
+        vis[u] = 2;
+        return false;
+    }
+}
+```
+
+- BFS
+
+```java
+class Solution {
+    static boolean isCyclic(List<List<Integer>> graph) {
+        // 判断无向图中是否存在环
+        int n = graph.size();
+        // 计算顶点的度数
+        int[] ind = new int[n];
+        for (List<Integer> uAdj : graph)
+            for (int v : uAdj)
+                ind[v]++;
+        // 每次将度数为 1 的顶点加入队列，同时记录顶点数量
+        Queue<Integer> que = new ArrayDeque<>();
+        int cnt = 0;
+        for (int u = 0; u < n; u++) {
+            if (ind[u] <= 1) { // 包含孤立顶点
+                que.offer(u);
+                cnt++;
+            }
+        }
+        while (!que.isEmpty()) {
+            int u = que.poll();
+            for (int v : graph.get(u)) {
+                if (--ind[v] == 1) {
+                    que.offer(v);
+                    cnt++;
+                }
+            }
+        }
+        return cnt < n;
     }
 }
 ```
@@ -927,11 +1000,59 @@ class Edge {
 
 ## 实战
 
-### 拓扑排序
+### 环检测
 
 #### 🟨课程表
 
 [207. 课程表](https://leetcode.cn/problems/course-schedule/)
+
+```java
+
+```
+
+#### 🟨以图判树
+
+[261. 以图判树](https://leetcode.cn/problems/graph-valid-tree/)
+
+- DFS
+
+```java
+class Solution {
+    public boolean validTree(int n, int[][] edges) {
+        List<List<Integer>> graph = new ArrayList<>(n);
+        for (int i = 0; i < n; i++) graph.add(new ArrayList<>());
+        for (int[] e : edges) {
+            graph.get(e[0]).add(e[1]);
+            graph.get(e[1]).add(e[0]);
+        }
+        return !isCyclic(graph);
+    }
+
+    static boolean isCyclic(List<List<Integer>> graph) {
+        int n = graph.size();
+        int[] vis = new int[n];
+        if (dfs(graph, 0, -1, vis)) return true;
+        for (int x : vis)
+            if (x == 0)
+                return true;
+        return false;
+    }
+
+    static boolean dfs(List<List<Integer>> graph, int u, int pre, int[] vis) {
+        // 判断无向图从顶点 u 开始是否存在环
+        vis[u] = 1;
+        for (int v : graph.get(u)) {
+            if (v == pre) continue;
+            else if (vis[v] == 1) return true;
+            else if (vis[v] == 0 && dfs(graph, v, u, vis)) return true;
+        }
+        vis[u] = 2;
+        return false;
+    }
+}
+```
+
+### 拓扑排序
 
 #### 🟨课程表 II
 

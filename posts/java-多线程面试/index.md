@@ -11,28 +11,95 @@
 
 - **线程**：与进程相似，但线程是一个比进程更小的执行单位。一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享同一块内存空间和一组系统资源，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。
 
-## 线程的基本状态
+## 线程
+
+### Java 线程的 6 个基本状态
 
 Java 线程在运行的生命周期中的指定时刻只可能处于下面 6 种不同状态的其中一个状态：
 
 - **创建（New）**：还未`start()`的线程。
 - **可运行（Runnable）**：调用`start()`后的线程，可能正在运行，也可能在排队等待时间片。
 - **阻塞（Blocked）**：等待获取`monitor`锁，进入`synchronized`块或方法。
-- **等待（Waiting）**：等待被唤醒，在调用`wait()`、`join()`、`park()`后。
-- **超时等待（Timed Waiting）**：等待被唤醒，超时自动唤醒，在调用`wait(long)`、`join(long)`、`parkNanos(long)`、`parkUntil(long)`后。
-- **终止（Terminated）**
+- **等待（Waiting）**：等待被唤醒，在调用`wait()`、`join()`、`LockSupport.park()`后。
+- **超时等待（Timed Waiting）**：等待被唤醒，超时自动唤醒，在调用`wait(long)`、`join(long)`、`LockSupport.parkNanos(long)`、`LockSupport.parkUntil(long)`后。
+- **终止（Terminated）**：执行结束后。
 
 线程在生命周期中并不是固定处于某一个状态而是随着代码的执行在不同状态之间切换。Java 线程状态变迁如下图所示：
 
 <img src="/imgs/Java多线程/Java线程状态图.jpeg" alt="Java 线程状态图">
 
-## 线程池的优点
+### Runnable & Callable
+
+1. 实现`Callable`接口需要重写`call()`方法，实现`Runnable`接口需要重写`run()`方法。
+2. `Callable`的任务有返回值，而`Runnable`的任务无返回值。
+3. `call()`方法抛出异常，`run()`方法不抛出。
+4. 运行`Callable`任务可以拿到一个`FutureTask`对象，表示异步计算的结果。它提供了检查计算是否完成的方法，以等待计算的完成，并检索计算的结果。通过`FutureTask`对象可以了解任务执行情况，可取消任务的执行，还可获取执行结果。
+
+### 创建线程
+
+1. 继承`Thread`类，实现`run()`方法，创建对象。
+
+```java
+class Thread1 extends Thread {
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
+    }
+}
+
+Thread t1 = new Thread1();
+t1.setName("t1");
+t1.start();
+```
+
+2. 实现`Runnable`接口，实现`run()`方法，传入`Runnable`对象。
+
+```java
+class Thread2 implements Runnable {
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
+    }
+}
+
+Thread t2 = new Thread(new Thread2(), "t2");
+t2.start();
+
+// 等价于
+Thread t22 = new Thread(() -> {
+    System.out.println(Thread.currentThread().getName());
+}, "t22");
+t22.start();
+```
+
+3. 实现`Callable`接口，实现`call()`方法，使用`FutureTask`进行包装，支持接收返回值。
+
+```java
+class Thread3 implements Callable<String> {
+    @Override
+    public String call() throws Exception {
+        return Thread.currentThread().getName();
+    }
+}
+
+FutureTask<String> ft = new FutureTask<>(new Thread3());
+Thread t3 = new Thread(ft, "t3");
+t3.start();
+try {
+    System.out.println(ft.get());
+} catch (Exception e) {
+    e.printStackTrace();
+}
+```
+
+## 线程池
+
+### 线程池的优点
 
 - 线程是稀缺资源，使用线程池可以减少创建和销毁线程的次数，每个工作线程都可以重复使用。
-
 - 可以根据系统的承受能力，调整线程池中工作线程的数量，防止因为消耗过多内存导致服务器崩溃。
 
-## 创建线程池
+### 创建线程池
 
 ```java
 ThreadPoolExecutor​(int corePoolSize,
@@ -45,38 +112,30 @@ ThreadPoolExecutor​(int corePoolSize,
 ```
 
 - `corePoolSize`：线程池核心线程数量
-
 - `maximumPoolSize`：线程池最大线程数量
-
 - `keepAliveTime`：当活跃线程数大于核心线程数时，空闲的多余线程最大存活时间
-
 - `unit`：存活时间的单位
-
 - `workQueue`：存放任务的队列
-
 - `threadFactory`：线程工厂
-
 - `handler`：超出线程范围和队列容量的任务的处理程序
 
-## 线程池原理
+### 线程池原理
 
 提交一个任务到线程池中，线程池的处理流程如下：
 
 1. 判断线程池里的**核心线程**是否都在执行任务。
     - 如果核心线程空闲或者还有核心线程没有被创建，则创建一个新的工作线程来执行任务。
     - 如果核心线程都在执行任务，则进入下个流程。
-
 2. 线程池判断**工作队列**是否已满。
     - 如果工作队列未满，则将新提交的任务存储在这个工作队列里。
     - 如果工作队列已满，则进入下个流程。
-
 3. 判断线程池里的**线程**是否都处于工作状态。
     - 如果存在空闲线程，则创建一个新的工作线程来执行任务。
     - 如果全部繁忙，则交给**饱和策略**来处理这个任务。
 
 <img src="/imgs/Java多线程/Java线程池处理流程.png" alt="Java 线程池处理流程">
 
-## 线程池源码分析
+### 线程池源码分析
 
 - `ThreadPoolExecutor`的`execute()`方法
 
@@ -177,21 +236,18 @@ private boolean addWorker(Runnable firstTask, boolean core) {
 }
 ```
 
-## 线程池饱和策略
+### 线程池饱和策略
 
 `RejectedExecutionHandler`
 
 当队列和线程池都满了，说明线程池处于饱和状态，那么必须对新提交的任务采用一种特殊的策略来进行处理。这个策略默认配置是`AbortPolicy`，表示无法处理新的任务而抛出异常。Java 提供了 4 种策略：
 
-1. `AbortPolicy`：直接抛出异常
+1. `AbortPolicy`：直接抛出异常。
+2. `CallerRunsPolicy`：只用调用所在的线程运行任务。
+3. `DiscardOldestPolicy`：丢弃队列里最早的一个任务，并执行当前任务。
+4. `DiscardPolicy`：不处理，直接丢弃。
 
-2. `CallerRunsPolicy`：只用调用所在的线程运行任务
-
-3. `DiscardOldestPolicy`：丢弃队列里最早的一个任务，并执行当前任务
-
-4. `DiscardPolicy`：不处理，丢弃
-
-## Executor框架的两级调度模型
+### Executor 框架的两级调度模型
 
 在 HotSpot VM 的模型中，Java 线程被一对一映射为本地操作系统线程。Java 线程启动时会创建一个本地操作系统线程，当 Java 线程终止时，对应的操作系统线程也被销毁回收，而操作系统会调度所有线程并将它们分配给可用的 CPU。
 
