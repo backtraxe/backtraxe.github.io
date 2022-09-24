@@ -69,3 +69,28 @@ ffmpeg -i input.mp4 -ss 4.5 -vframes 1 output.png
 ffmpeg -i input.mp4 -ss 4.5 -vframes 10 output%d.png
 ```
 
+## 压缩视频
+
+改变帧率，设置为 20fps
+
+```bash
+ffmpeg -i input.mp4 -r 20 output.mp4
+```
+
+指定文件大小，设置最大值为 15MB
+
+```bash
+ffmpeg -i input.mp4 -fs 15MB output.mp4
+```
+
+改变分辨率，设置为 1280x720
+
+```bash
+ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4
+```
+
+改变码率，设置为 1.5Mb/s
+
+```bash
+ffmpeg -i input.mp4 -b:v 1.5M output.mp4
+```
