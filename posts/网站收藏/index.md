@@ -5,28 +5,6 @@
 
 ## 在线工具
 
-<!-- <div style="line-height: 28px; display: flex;">
-    <div style="flex: 0 0 auto;">PDF：</div>
-    <div style="flex: 1 1 auto;">
-        <button onclick="window.open('https://easypdf.com/cn/')">easy PDF</button>
-        <button onclick="window.open('https://tools.pdf24.org/zh/')">PDF24 Tools</button>
-        <button onclick="window.open('https://www.ilovepdf.com/zh-cn')">iLovePDF</button>
-    </div>
-</div>
-
-<div style="line-height: 28px; display: flex;">
-    <div style="flex: 0 0 auto;">图片：</div>
-    <div style="flex: 1 1 auto;">
-        <button onclick="window.open('https://www.iloveimg.com/zh-cn')">iLoveIMG</button>
-        <button onclick="window.open('https://bigjpg.com/')">Bigjpg</button>
-        <button onclick="window.open('https://zh.recompressor.com/')">Recompressor</button>
-        <button onclick="window.open('https://www.aigei.com/bgremover')">BgRemover</button>
-        <button onclick="window.open('https://ezgif.com/')">ezGIF</button>
-        <button onclick="window.open('https://jpgrm.com/')">jpgRM</button>
-        <button onclick="window.open('https://jpghd.com/')">jpgHD</button>
-    </div>
-</div> -->
-
 PDF：
 
 - [iLovePDF](https://www.ilovepdf.com/zh-cn)：合并PDF、拆分PDF、压缩PDF、编辑PDF、旋转PDF、重排PDF、PDF转Office、Office转PDF、PDF转JPG、JPG转PDF、HTML转PDF、PDF加密/解密、PDF签名、PDF水印。
@@ -56,7 +34,7 @@ OCR：
 图标：
 
 - [小米风格Logo](https://mi-logo.lvwzhen.com/)
-- [图标制作](https://geticon.cn/)|
+- [图标制作](https://geticon.cn/)
 - [Favicon生成器](https://realfavicongenerator.net/)
 
 背景：
@@ -65,17 +43,31 @@ OCR：
 - [fffuel](https://fffuel.co/)
 - [Meshy](https://meshgradient.in/)：Generate beautiful mesh gradients.
 
-图表：[`ProcessOn`](https://processon.com/)|[`Diagram`](https://app.diagrams.net/)
+图表：
+- [ProcessOn](https://processon.com/)
+- [Diagram](https://app.diagrams.net/)
 
-数学：[`Mathway`](https://www.mathway.com/zh/BasicMath)
+数学：
 
-Apple：[`The Mac index`](https://themacindex.com/)
+- [Mathway](https://www.mathway.com/zh/BasicMath)
 
-Steam：[`SteamDB`](https://steamdb.info/)
+Apple：
 
-字体：[`萝卜工坊`](http://www.beautifulcarrot.com/)|[`Weird Fonts`](https://beizhedenglong.github.io/weird-fonts/)
+- [The Mac index](https://themacindex.com/)
 
-LaTeX：[`Overleaf`](https://cn.overleaf.com/)|[`公式编辑器`](https://www.latexlive.com/)
+Steam：
+
+- [SteamDB](https://steamdb.info/)
+
+字体：
+
+- [萝卜工坊](http://www.beautifulcarrot.com/)
+- [Weird Fonts](https://beizhedenglong.github.io/weird-fonts/)
+
+LaTeX：
+
+- [Overleaf](https://cn.overleaf.com/)
+- [公式编辑器](https://www.latexlive.com/)
 
 ## 在线娱乐
 
@@ -94,58 +86,134 @@ LaTeX：[`Overleaf`](https://cn.overleaf.com/)|[`公式编辑器`](https://www.l
 - [漫岛动漫](https://www.mandao.tv/)
 - [EDD动漫](https://www.edddm.com/)
 
-漫画：[`漫画DB`](https://www.manhuadb.com/)|[`动漫之家`](https://www.dmzj.com/)|[`包子漫画`](https://www.baozimh.com/)
+漫画：
 
-小说：[`天天看小说`](https://www.ttkan.co/)
+- [漫画DB](https://www.manhuadb.com/)
+- [动漫之家](https://www.dmzj.com/)
+- [包子漫画](https://www.baozimh.com/)
 
-体育：[`CCTV5`](https://tv.cctv.com/live/cctv5/)|[`JRKAN`](http://jrkankan.com/)
+小说：
 
-小说：[`小说排版助手`](https://vvsolo.github.io/)
+- [天天看小说](https://www.ttkan.co/)
+
+体育：
+
+- [CCTV5](https://tv.cctv.com/live/cctv5/)
+- [JRKAN](http://jrkankan.com/)
+
+小说：
+
+- [小说排版助手](https://vvsolo.github.io/)
+
+工具书：
 
 - [工具书](http://www.shubang.net/)：新华字典、汉语词典、英语词典、成语词典、诗词古文、作文大全、汉字笔顺、汉字组词、近义词、反义词、词语造句、双语小说、童话故事、谜语大全、谚语大全、歇后语大全、名人名言、周公解梦、实用工具、网名大全、好词好句、特殊符号。
 
 ## 程序开发
 
-IDE：[`OnlineGDB`](https://www.onlinegdb.com/)|[`C++ shell`](http://cpp.sh/)|[`futurecoder`](https://github.com/alexmojaki/futurecoder)|[`KalkiCode`](https://kalkicode.com/online-code)
+IDE：
 
+- [OnlineGDB](https://www.onlinegdb.com/)
+- [C++ shell](http://cpp.sh/)
+- [futurecoder](https://github.com/alexmojaki/futurecoder)
+- [KalkiCode](https://kalkicode.com/online-code)
 - [Compiler Explorer](https://godbolt.org/)：查看各种语言编译后的汇编代码或字节码。[Github](https://github.com/compiler-explorer/compiler-explorer)
 - [Replit](https://replit.com/)：在线 IDE。
 
-Git：[`Learn Git`](https://learngitbranching.js.org/?locale=zh_CN)
+Git：
 
-正则表达式：[`regex101`](https://regex101.com/)|[`RegexLearn`](https://regexlearn.com/)
+- [Learn Git](https://learngitbranching.js.org/?locale=zh_CN)
 
-破解：[`吾爱破解`](https://www.52pojie.cn/)
+正则表达式：
+
+- [regex101](https://regex101.com/)
+- [RegexLearn](https://regexlearn.com/)
+
+破解：
+
+- [吾爱破解](https://www.52pojie.cn/)
+
+可视化：
 
 - [数据结构和算法动态可视化](https://visualgo.net/zh)
 
+HTML & CSS：
+
 - [uiverse.io](https://uiverse.io/)：HTML 和 CSS 样式库。
 
-- [Carbon](https://carbon.now.sh/)：代码截图。
+代码转图片
 
+- [Carbon](https://carbon.now.sh/)：代码截图。
 - [CodeToImg](https://codetoimg.com/)：代码截图。
 
 ## 资源下载
 
-搜索：[`搜番`](https://sofan.icu/)|[`磁力爬`](https://www.cilipa.com/)|[`八爪鱼`](https://磁搜.com/)
+搜索：
 
-影视：[`高清MP4`](https://www.mp4fan.org/)|[`片源网`](http://pianyuan.org/)|[`BT天堂`](https://www.bt-tt.com/)|[`WebHD`](https://webhd.cc/)|[`FIX字幕侠`](https://www.zimuxia.cn/)|[`牛牛美剧`](http://www.nnmeiju.com/)|[`音范丝`](https://www.yinfans.net/)|[`Nyaa`](https://nyaa.si/)|[`RARBG`](https://rarbg.to/)|[`纪录片天地`](http://www.jlpcn.net/)|[`BTNull`](https://www.btnull.org/)
+- [搜番](https://sofan.icu/)
+- [磁力爬](https://www.cilipa.com/)
+- [八爪鱼](https://磁搜.com/)
 
-动漫：[`动漫领域`](https://dmly.me/)|[`肥羊-Raws`](https://fy-raws.org/resource_lists/)|[`动漫花园`](https://share.dmhy.org/)|[`萌番组`](https://bangumi.moe/)|[`不移之火`](https://www.byzhihuo.com/)
+影视：
 
-trackers：[`ngosang/trackerslist`](https://github.com/ngosang/trackerslist)|[`ACGTracker`](http://acgtracker.com/)
+- [高清MP4](https://www.mp4fan.org/)
+- [片源网](http://pianyuan.org/)
+- [BT天堂](https://www.bt-tt.com/)
+- [WebHD](https://webhd.cc/)
+- [FIX字幕侠](https://www.zimuxia.cn/)
+- [牛牛美剧](http://www.nnmeiju.com/)
+- [音范丝](https://www.yinfans.net/)
+- [Nyaa](https://nyaa.si/)
+- [RARBG](https://rarbg.to/)
+- [纪录片天地](http://www.jlpcn.net/)
+- [BTNull](https://www.btnull.org/)
 
-字幕：[`SubHD`](https://subhd.tv/)|[`字幕库`](http://zimuku.org/)|[`A4k字幕网`](https://www.a4k.net/)
+动漫：
 
-体育：[`90分钟足球网`](http://90oo.com/)
+- [动漫领域](https://dmly.me/)
+- [肥羊-Raws](https://fy-raws.org/resource_lists/)
+- [动漫花园](https://share.dmhy.org/)
+- [萌番组](https://bangumi.moe/)
+- [不移之火](https://www.byzhihuo.com/)
 
-小说：[`知轩藏书`](http://zxcs.me/)
+trackers：
 
-游戏：[`叽哩叽哩`](https://www.jiligamefun.com/)
+- [trackerslist](https://github.com/ngosang/trackerslist)
+- [ACGTracker](http://acgtracker.com/)
 
-Office：[`Word联盟`](http://www.wordlm.com/)|[`优品PPT`](https://www.ypppt.com)|[`PPT超级市场`](https://ppt.sotary.com)|[`第1PPT`](http://www.1ppt.com)
+字幕：
 
-图片：[`Unsplash`](https://unsplash.com)|[`DeviantArt`](https://www.deviantart.com)|[`Pinterest`](https://www.pinterest.com)|[`天空之城`](https://www.skypixel.com/)|[`NegativeSpace`](https://negativespace.co/)|[`Free Stock Images`](https://www.freestockimages.ru/)
+- [SubHD](https://subhd.tv/)
+- [字幕库](http://zimuku.org/)
+- [A4k字幕网](https://www.a4k.net/)
+
+体育：
+
+- [90分钟足球网](http://90oo.com/)
+
+小说：
+
+- [知轩藏书](http://zxcs.me/)
+
+游戏：
+
+- [叽哩叽哩](https://www.jiligamefun.com/)
+
+Office：
+
+- [Word联盟](http://www.wordlm.com/)
+- [优品PPT](https://www.ypppt.com)
+- [PPT超级市场](https://ppt.sotary.com)
+- [第1PPT](http://www.1ppt.com)
+
+图片：
+
+- [Unsplash](https://unsplash.com)
+- [DeviantArt](https://www.deviantart.com)
+- [Pinterest](https://www.pinterest.com)
+- [天空之城](https://www.skypixel.com/)
+- [NegativeSpace](https://negativespace.co/)
+- [Free Stock Images](https://www.freestockimages.ru/)
 
 壁纸：
 
@@ -156,17 +224,37 @@ Office：[`Word联盟`](http://www.wordlm.com/)|[`优品PPT`](https://www.ypppt.
 - [Ocean of Wallpapers](https://oceanofwallpapers.com/)
 - [Rare Gallery](https://rare-gallery.com/)
 
-素材：[`Freepik`](https://www.freepik.com)|[`Storyset`](https://storyset.com/)|[`StickPNG`](https://www.stickpng.com/)
+素材：
 
-图标：[`Worldvectorlogo`](https://worldvectorlogo.com/zh)|[`Iconduck`](https://iconduck.com/)|[`StickPNG`](https://www.stickpng.com/)|[`Iconfont`](https://www.iconfont.cn/)|[`设计之家`](https://www.sj33.cn/sc/)|[`Notion Icons 5.0`](https://notionv5.vyshnav.xyz/)
+- [Freepik](https://www.freepik.com)
+- [Storyset](https://storyset.com/)
+- [StickPNG](https://www.stickpng.com/)
 
+图标：
+
+- [Worldvectorlogo](https://worldvectorlogo.com/zh)
+- [Iconduck](https://iconduck.com/)
+- [StickPNG](https://www.stickpng.com/)
+- [Iconfont](https://www.iconfont.cn/)
+- [设计之家](https://www.sj33.cn/sc/)
+- [Notion Icons 5.0](https://notionv5.vyshnav.xyz/)
 - [iOS Icon Gallery](https://www.iosicongallery.com/)
 - [macOS Icon Gallery](https://www.macosicongallery.com/)
 - [watchOS Icon Gallery](https://www.watchosicongallery.com/)
 
-配色：[`Color Hunt`](https://colorhunt.co/)|[`Color Palettes`](https://colorpalettes.net/)|[`Hello Color`](https://jxnblk.github.io/hello-color/)|[`NIPPON COLORS`](https://nipponcolors.com/)|[`中国色`](http://zhongguose.com/)|[`Blend`](http://colinkeany.com/blend/)|[`ColorSpace`](https://mycolor.space/)
+配色：
 
-系统：[`Windows 11`](https://www.microsoft.com/zh-cn/software-download/windows11)
+- [Color Hunt](https://colorhunt.co/)
+- [Color Palettes](https://colorpalettes.net/)
+- [Hello Color](https://jxnblk.github.io/hello-color/)
+- [NIPPON COLORS](https://nipponcolors.com/)
+- [中国色](http://zhongguose.com/)
+- [Blend](http://colinkeany.com/blend/)
+- [ColorSpace](https://mycolor.space/)
+
+系统：
+
+- [Windows 11](https://www.microsoft.com/zh-cn/software-download/windows11)
 
 ## 导航资讯
 

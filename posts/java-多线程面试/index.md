@@ -262,7 +262,7 @@ private boolean addWorker(Runnable firstTask, boolean core) {
 - 提供了 ArrayBlockingQueue、SynchorousQueue 或针对特定场景的 PriorityBlockingQueue 等，各种并发队列实现。
 - 强大的 Executor 框架，可以创建各种不同类型的线程池，调度任务运行等。
 
-## synchronized 关键字
+## synchronized
 
 ### synchronized 原理
 
@@ -353,6 +353,26 @@ CAS 具有原子性，它的原子性由 CPU 硬件指令实现保证，即使�
 1. 乐观锁只能保证一个共享变量的原子操作。如果有多个共享变量，乐观锁将变得力不从心，但互斥锁能轻易解决，不管对象数量多少及对象颗粒度大小。
 2. 长时间自旋可能导致开销大。假如 CAS 长时间不成功而一直自旋，会给 CPU 带来很大的开销。
 3. ABA 问题。CAS 的核心思想是通过比对内存值与预期值是否一致而判断内存值是否被改过，但这个判断逻辑不严谨，假如内存值原来是 A，后来被改为 B，最后又被改成了 A，则 CAS 认为此内存值并没有发生改变，但实际上是有被其他线程改过的，这种情况对依赖过程值的情景的运算结果影响很大。解决的思路是引入版本号，每次变量更新都把版本号加一。
+
+## volatile
+
+### volatile 作用
+
+- `volatile`在指令之间插入**内存屏障**+**缓存一致性协议**，保证按照特定顺序执行和某些变量的**可见性**。
+- `volatile`通过内存屏障通知 CPU 和编译器**阻止指令重排优化**来维持**有序性**。
+
+### Java 内存屏障
+
+- `LoadLoad`屏障：对于这样的语句`Load1; LoadLoad; Load2`，在`Load2`及后续读取操作要读取的数据被访问前，保证`Load1`要读取的数据被读取完毕。
+- `StoreStore`屏障：对于这样的语句`Store1; StoreStore; Store2`，在`Store2`及后续写入操作执行前，保证`Store1`的写入操作对其它处理器可见。
+- `LoadStore`屏障：对于这样的语句`Load1; LoadStore; Store2`，在`Store2`及后续写入操作被刷出前，保证`Load1`要读取的数据被读取完毕。
+- `StoreLoad`屏障：对于这样的语句`Store1; StoreLoad; Load2`，在`Load2`及后续所有读取操作执行前，保证`Store1`的写入对所有处理器可见。它的开销是四种屏障中最大的。在大多数处理器的实现中，这个屏障是个万能屏障，兼具其它三种内存屏障的功能。
+
+### volatile 语义的内存屏障
+
+- 在每个`volatile`写操作前插入`StoreStore`屏障，在写操作后插入`StoreLoad`屏障。
+- 在每个`volatile`读操作前插入`LoadLoad`屏障，在读操作后插入`LoadStore`屏障。
+- 由于内存屏障的作用，避免了`volatile`变量和其它指令重排序、线程之间实现了通信，使得`volatile`表现出了锁的特性。
 
 ## 可重入锁 ReentrantLock
 
@@ -481,5 +501,100 @@ public class Solution {
 ```
 
 ## AQS
+
+## ThreadLocal 和 InheritableThreadLocal
+
+使资源不再共享，每个线程拥有一份拷贝的资源，实现了线程间隔离。
+
+**原理：**
+
+- 每个线程内部有`threadLocals`和`inheritableThreadLocals`两个属性，这是两个`Map`。其中`threadLocals`实现了线程间隔离，`inheritableThreadLocals`则可以将父线程中`threadLocals`的内容赋值给子线程，实现了父子线程数据传递。
+- 当添加`ThreadLocal`属性时，将`ThreadLocal`对象作为 key，添加到了当前线程的`threadLocals`中。
+- 当获取`ThreadLocal`属性时，实际上是从当前线程的`threadLocals`中获取。
+
+```java
+public class ThreadLocal {
+    public T get() {
+        Thread t = Thread.currentThread();
+        ThreadLocalMap map = getMap(t);
+        if (map != null) {
+            ThreadLocalMap.Entry e = map.getEntry(this);
+            if (e != null) {
+                T result = (T) e.value;
+                return result;
+            }
+        }
+        return setInitialValue(); // null
+    }
+
+    public void set(T value) {
+        Thread t = Thread.currentThread();
+        ThreadLocalMap map = getMap(t);
+        if (map != null) {
+            map.set(this, value);
+        } else {
+            createMap(t, value);
+        }
+    }
+
+    public void remove() {
+        ThreadLocalMap m = getMap(Thread.currentThread());
+        if (m != null) {
+            m.remove(this);
+        }
+    }
+
+    ThreadLocalMap getMap(Thread t) {
+        return t.threadLocals;
+    }
+
+    void createMap(Thread t, T firstValue) {
+        t.threadLocals = new ThreadLocalMap(this, firstValue);
+    }
+
+    static ThreadLocalMap createInheritedMap(ThreadLocalMap parentMap) {
+        return new ThreadLocalMap(parentMap); // 复制一份
+    }
+
+    static class ThreadLocalMap {
+        static class Entry extends WeakReference<ThreadLocal<?>> {
+            Object value;
+
+            Entry(ThreadLocal<?> k, Object v) {
+                super(k);
+                value = v;
+            }
+        }
+
+        private static final int INITIAL_CAPACITY = 16;
+        private Entry[] table; // 开放寻址法解决哈希冲突
+    }
+}
+
+public class InheritableThreadLocal<T> extends ThreadLocal<T> {
+    protected T childValue(T parentValue) {
+        return parentValue;
+    }
+
+    ThreadLocalMap getMap(Thread t) {
+       return t.inheritableThreadLocals;
+    }
+
+    void createMap(Thread t, T firstValue) {
+        t.inheritableThreadLocals = new ThreadLocalMap(this, firstValue);
+    }
+}
+
+public class Thread implements Runnable {
+    private Thread(..., boolean inheritThreadLocals) { // true
+        Thread parent = currentThread();
+        if (inheritThreadLocals && parent.inheritableThreadLocals != null)
+            this.inheritableThreadLocals = ThreadLocal.createInheritedMap(parent.inheritableThreadLocals);
+    }
+
+    ThreadLocal.ThreadLocalMap threadLocals = null;
+    ThreadLocal.ThreadLocalMap inheritableThreadLocals = null;
+}
+```
 
 
