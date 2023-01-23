@@ -5,50 +5,20 @@
 
 ## 1.准备工作
 
-- VPS：推荐`CN2 GIA`线路，其次`CN2`
-  - [BandwagonHost](https://bandwagonhost.com/), [备用](https://bwh88.net/)
+- VPS：`CN2 GIA-E` > `CN2 GIA` > `CN2 GT` > `CN2` > `KVM`
+  - [BandwagonHost](https://bandwagonhost.com/)
   - [Vultr](https://www.vultr.com/)
-  - [DigitalOcean](https://www.digitalocean.com/)
-  - [三优云](https://uuuvps.com/)
 - 域名
   - 免费：[Freenom](https://www.freenom.com/)
-  - 付费：[NameSilo](https://www.namesilo.com/), [GoDaddy](https://www.godaddy.com/)
+  - 付费：[NameSilo](https://www.namesilo.com/)
 - DNS & CDN：
   - [Cloudflare](https://www.cloudflare.com/)
 
 ## 2.服务端
 
-### 2.1 v2ray-agent
-
-[Github](https://github.com/mack-a/v2ray-agent)
-
-支持协议：
-
-1. VLESS + TCP + TLS
-1. VLESS + TCP + xtls-rprx-direct【推荐】
-1. VLESS + gRPC + TLS
-1. VLESS + WS + TLS
-1. Trojan + TCP + TLS【推荐】
-1. Trojan + TCP + xtls-rprx-direct【推荐】
-1. Trojan + gRPC + TLS
-1. VMess + WS + TLS
-
-安装：
-
-```bash
-wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh" && chmod 700 /root/install.sh && /root/install.sh
-```
-
-查看配置：`vasma`
-
-### 2.2 Xray_onekey
+### 2.1 Xray_onekey
 
 [Github](https://github.com/wulabing/Xray_onekey)
-
-支持协议：
-
-1. VLESS + TCP + XTLS/TLS
-1. VLESS + TCP + XTLS/TLS 及 VLESS + WS + TLS 回落并存模式
 
 安装：
 
@@ -56,21 +26,15 @@ wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-
 wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/wulabing/Xray_onekey/main/install.sh" && chmod +x install.sh && bash install.sh
 ```
 
-查看配置：同安装
+查看配置：
 
-### 2.3 x-ui
+```bash
+~/install.sh
+```
+
+### 2.2 x-ui
 
 [Github](https://github.com/vaxilu/x-ui)
-
-支持协议：
-
-1. vmess
-1. vless
-1. trojan
-1. shadowsocks
-1. dokodemo-door
-1. socks
-1. http
 
 安装：
 
@@ -78,13 +42,17 @@ wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.c
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
 
-查看配置：`x-ui`
+查看配置：
+
+```bash
+x-ui
+```
 
 ## 3.客户端
 
 ### 3.1 Windows
 
-#### 3.1.1 v2rayN
+#### v2rayN
 
 [Github](https://github.com/2dust/v2rayN)
 
@@ -98,69 +66,33 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 <img src="/imgs/科学上网/科学上网05.png" />
 
-#### 3.1.2 Clash for Windows
+#### Clash for Windows
 
-[下载](https://github.com/Fndroid/clash_for_windows_pkg/releases)
+[Github](https://github.com/Fndroid/clash_for_windows_pkg/releases)
 
-#### Qv2ray
 
-[下载](https://github.com/Qv2ray/Qv2ray/releases)
 
-内核：
-- [v2ray](https://github.com/v2fly/v2ray-core/releases)
-- [xray](https://github.com/XTLS/Xray-core/releases)
-- [trojan-go](https://github.com/p4gefau1t/trojan-go/releases)
+### 3.2 安卓
 
-插件：
-- [Trojan](https://github.com/Qv2ray/QvPlugin-Trojan/releases)
-- [Trojan-Go](https://github.com/Qv2ray/QvPlugin-Trojan-Go/releases)
+#### v2rayNG
 
-支持协议：
-- Vmess (V2ray)
-- Vless (Xray)
-- SS (Shadowsocks)
-- SSR (ShadowsocksR)
-- Trojan
-- Trojan-Go
-- NaiveProxy
-
-<img src="/imgs/科学上网/Qv2ray-01.png" />
-
-<img src="/imgs/科学上网/Qv2ray-02.png" />
-
-<img src="/imgs/科学上网/Qv2ray-03.png" />
-
-<img src="/imgs/科学上网/Qv2ray-04.png" />
-
-<img src="/imgs/科学上网/Qv2ray-05.png" />
-
-<img src="/imgs/科学上网/Qv2ray-06.png" />
-
-<img src="/imgs/科学上网/Qv2ray-07.png" />
-
-<img src="/imgs/科学上网/Qv2ray-08.png" />
-
-<img src="/imgs/科学上网/Qv2ray-09.png" />
-
-`QvTrojanGoPlugin.v1.0.1.Windows-x64.dll`、`QvTrojanPlugin.v2.0.0.Windows-x64.dll`
-
-### 安卓
-
-#### V2rayNG
-
-[下载](https://github.com/2dust/v2rayNG/releases)
-
-#### igniter
-
-只支持 Trojan
-
-[下载](https://github.com/trojan-gfw/igniter/releases)
+- [Github](https://github.com/2dust/v2rayNG/releases)
+- [Google Play](https://play.google.com/store/apps/details?id=com.v2ray.ang)
 
 #### Clash for Android
 
-[下载](https://github.com/Kr328/ClashForAndroid/releases)
+- [Github](https://github.com/Kr328/ClashForAndroid/releases)
+- [Google Play](https://play.google.com/store/apps/details?id=com.github.kr328.clash)
 
-#### SagerNet
+### 3.3 iOS
 
-[下载](https://github.com/SagerNet/SagerNet/releases)
+#### Shadowrocket
 
+### 3.4 macOS
+
+#### Clash for Windows
+
+## 参考
+
+1. [在 WSL 2 中访问主机代理 - Geek 成长录](https://blog.rogerkung-win.top/posts/38819/)
+1. [WSL2内使用windows的v2ray代理配置方式。 - 知乎](https://zhuanlan.zhihu.com/p/414627975)

@@ -3,6 +3,26 @@
 
 <!--more-->
 
+## 关键字
+
+- 数据类型（9）：`boolean`、`byte`、`char`、`short`、`int`、`long`、`float`、`double`、`void`
+- 保留数值（3）：`null`、`true`、`false`
+- 循环语句（6）：`while`、`do`、`for`、`continue`、`break`、`goto`
+- 分支语句（5）：`if`、`else`、`switch`、`case`、`default`
+- 其他语句（3）：`instanceof`、`assert`、`return`
+- 访问限制（3）：`public`、`protected`、`private`
+- 其他修饰（4）：`static`、`final`、`abstract`、`native`
+- 异常处理（5）：`try`、`catch`、`finally`、`throw`、`throws`
+- 面向对象（8）：`class`、`interface`、`enum`、`extends`、`implements`、`this`、`super`、`new`
+- 包（2）：`package`、`import`
+- 多线程（3）：`volatile`、`synchronized`、`transient`
+- 保留关键字（2）：`const`, `strictfp`
+
+> 1. 关键字不能作为变量名。
+> 1. 变量名只能以字母、`_`和`$`开始。
+> 1. 变量名只能包含数字、字母、`_`和`$`。
+> 1. 内部保留关键字：`_`。
+
 ## 数值
 
 ### Math.abs(Integer.MIN_VALUE)

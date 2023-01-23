@@ -129,11 +129,9 @@
 
 ## Python
 
-> 建议安装`3.8`版本
-
 1. [Python 官网](https://www.python.org/downloads/)
-1. [Miniconda 官网](https://docs.conda.io/en/latest/miniconda.html)
-1. [Anaconda 官网](https://www.anaconda.com/products/individual#Downloads)
+2. [Miniconda 官网](https://docs.conda.io/en/latest/miniconda.html)
+3. [Anaconda 官网](https://www.anaconda.com/products/individual#Downloads)
 
 ### pip 设置代理
 
