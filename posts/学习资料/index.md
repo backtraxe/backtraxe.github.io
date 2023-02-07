@@ -21,39 +21,32 @@
   - [浙江大学课程攻略共享计划](https://github.com/QSCTech/zju-icicles)
 - [Awesome Roadmaps](https://github.com/liuchong/awesome-roadmaps)
 
-
 ## 算法
 
+- 网站
+  - [力扣](https://leetcode.cn/)
+  - [牛客网](https://www.nowcoder.com/)
+  - [Codeforces](https://codeforces.com/)
+  - [AtCoder](https://atcoder.jp/)
 - 书籍
-  - [《Algorithms》](https://github.com/jeffgerickson/algorithms)：by Jeff Erickson.
-  - [《Algorithms》](https://algs4.cs.princeton.edu/home/)：4th Edition by Robert Sedgewick and Kevin Wayne.
-  - [《算法新解》](https://github.com/liuxinyu95/AlgoXY)
+  - [《Algorithms》](https://algs4.cs.princeton.edu/home/)
 - 刷题
   - [LeetCode难题代码和算法要点分析](https://github.com/wisdompeak/LeetCode)：C++。
+  - [LeetCode 101](https://github.com/changgyhub/leetcode_101)：C++。
+  - [C++算法编程指南](https://majorli.github.io/algo_guide/index.html)
   - [图解算法数据结构](https://github.com/krahets/LeetCode-Book)：《剑指 Offer》解题代码，C++/Java/Python。
   - [1500 most common data structures and algorithms solutions](https://kalkicode.com/data-structure/1500-most-common-data-structures-and-algorithms-solutions)：常用代码片段，所有语言实现。
+  - [labuladong 的算法小抄](https://github.com/labuladong/fucking-algorithm)：[在线阅读](https://labuladong.github.io/algo)
+  - [算法珠玑](https://github.com/soulmachine/algorithm-essentials)：[在线阅读](https://algorithm-essentials.soulmachine.me/)
 - [Awesome Algorithms](https://github.com/tayllan/awesome-algorithms)
 - [The Algorithms](https://the-algorithms.com/)
-- [labuladong 的算法小抄](https://github.com/labuladong/fucking-algorithm)：
-    - [GitHub Pages](https://labuladong.github.io/algo)
-    - [Gitbook](https://labuladong.gitbook.io/algo)
-    - [Gitee Pages](https://labuladong.gitee.io/algo)
-- [算法珠玑](https://github.com/soulmachine/algorithm-essentials)：
-    - [在线](https://algorithm-essentials.soulmachine.me/)
-- [LeetCode 101](https://github.com/changgyhub/leetcode_101): 一个面向有C++编程基础，但缺乏刷题经验的读者的教科书和工具书（不适合编程小白喔）。
-- [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/home/)
-- [Algorithms by Jeff Erickson](https://github.com/jeffgerickson/algorithms)
-- [Competitive-Programming-Resources](https://github.com/kunal-kushwaha/Competitive-Programming-Resources)
-- [Algorithm Guide](https://github.com/Xunzhuo/Algorithm-Guide): 程序员必知必会的算法和数据结构
 - [不懂动态规划？21道 LeetCode题目带你学会动态规划！](https://juejin.cn/post/7000909761336049671)
 - [五万字《十大排序算法》动图讲解](https://blog.csdn.net/WhereIsHeroFrom/article/details/119976287)
 - [Learn-Algorithms](https://github.com/nonstriater/Learn-Algorithms): 算法学习笔记
-- [algorithm-note](https://github.com/Dairongpeng/algorithm-note): 数据结构与算法的讲解及代码实现，[在线阅读](https://dairongpeng.github.io/algorithm-note/)
-- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
-- [C++算法编程指南](https://majorli.github.io/algo_guide/index.html)
 - [Best Resources to Learn Data Structures and Algorithms](https://www.mltut.com/best-resources-to-learn-data-structures-and-algorithms/)
 - [DSA-Bootcamp-Java](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java)
-- [《algorithm-note》中文版](https://github.com/Dairongpeng/algorithm-note)
+- 可视化
+  - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 
 ## 编程语言
 
@@ -120,22 +113,19 @@
 - [Golang资料补给包](https://github.com/0voice/Introduction-to-Golang)
 - [《Go语言标准库》](https://github.com/polaris1119/The-Golang-Standard-Library-by-Example)：`2022/3/6`
 - [Go Standard Library By Example](https://github.com/theodesp/go-standard-library-by-example)：`2018/1/10`
+- 算法
+  - [《algorithm-note》中文版](https://github.com/Dairongpeng/algorithm-note)：[在线阅读](https://www.yuque.com/dairongpeng/no7xzv/zw88wn)，Go。
 
-### HTML & CSS
+### HTML/CSS/JS/TS
 
 - [Learn to Code HTML & CSS](https://learn.shayhowe.com/)
+- [code-segment](https://github.com/eveningwater/code-segment)
 - [50 Projects in 50 Days - HTML/CSS and JavaScript](https://github.com/bradtraversy/50projects50days)
-
-### Javascript
-
 - [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript): Clean Code concepts adapted for JavaScript
 - [带你入门前端工程](https://github.com/woai3c/introduction-to-front-end-engineering):
     - [国内访问（Gitee）](https://woai3c.gitee.io/introduction-to-front-end-engineering)
     - [国外访问（Github）](https://woai3c.github.io/introduction-to-front-end-engineering/)
 - [图解 React 源码系列](https://github.com/7kms/react-illustration-series): 图解 React 源码，用大量配图的方式，致力于将 React 原理表述清楚。
-
-### Typescript
-
 - [深入理解 TypeScript](https://github.com/jkchao/typescript-book-chinese):
     - [TypeScript Deep Dive](https://github.com/basarat/typescript-book/)的中文翻译版
     - [在线阅读](https://jkchao.github.io/typescript-book-chinese/)
@@ -150,6 +140,7 @@
   - [不为人知的网络编程](http://www.52im.net/thread-1003-1-1.html)
   - [通透，23 个问题 TCP 疑难杂症全解析](https://www.cnblogs.com/yescode/p/13838568.html)
   - [计算机网络知识点全面总结](https://blog.csdn.net/Royalic/article/details/119985591)
+  - [How to hide your IP address](https://educatedguesswork.org/posts/traffic-relaying/)
 - 数据库
   - [SQLBolt](https://sqlbolt.com/): interactive lessons and exercises
   - [设计数据密集型应用](https://markrepo.github.io/database/2022/01/13/DDIA/)
@@ -163,6 +154,8 @@
     - [Linux命令行与Shell脚本教程](https://github.com/ArchLinuxStudio/ShellTutorial)
     - [explainshell.com](https://explainshell.com/)
     - [Linux常用命令行小技巧](https://qianngchn.github.io/wiki/7.html)
+    - [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
+    - [Linux Upskill Challenge](https://github.com/livialima/linuxupskillchallenge)
   - 内核
     - [Linux内核学习资料](https://github.com/0voice/linux_kernel_wiki)
     - [Linux操作系统内核学习](https://ty-chen.github.io/categories/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%86%85%E6%A0%B8%E5%AD%A6%E4%B9%A0/)
@@ -195,11 +188,16 @@
   - [Docker Getting Started Tutorial](https://github.com/docker/getting-started): Docker入门。
 - 区块链
   - [区块链黑暗森林自救手册](https://github.com/slowmist/Blockchain-dark-forest-selfguard-handbook)
+- 音视频开发
+  - [《FFmpeg原理》](https://ffmpeg.xianwaizhiyin.net/)
 
 ## 求职面试
 
 - 简历
-  - [vCard](https://github.com/codewithsadee/vcard-personal-portfolio)：vCard is a fully responsive personal portfolio website, responsive for all devices.
+  - [vCard](https://github.com/codewithsadee/vcard-personal-portfolio)：Personal portfolio.
+  - [FlowCV](https://flowcv.com/)
+  - [Make a Resume in LaTeX!](https://drshika.me/2022/04/15/latex-resumes)
+  - [How to Write a Kickass Resume](https://docs.google.com/document/u/1/d/e/2PACX-1vQpvbP8lzPvZrNvrX58UlacpQiLgh1fBQYfOS2pEJZvp-zOb9uKQJYKSsDQ6mJWoPf3H09OmdrLDcaK/pub)
 - [CS-Notes](https://github.com/CyC2018/CS-Notes)：
     - [在线](http://www.cyc2018.xyz/)
 - [Coding Interview University](https://github.com/jwasham/coding-interview-university)：
@@ -207,6 +205,9 @@
 - [2021笔试面试题](https://github.com/0voice/campus_recruitmen_questions)
 - [Google’s Tech Dev Guide](https://techdevguide.withgoogle.com/): grow your technical skills, supplement your coursework, and prepare for interviews.
 - [awesome-cs-books](https://github.com/imarvinle/awesome-cs-books): 经典编程书籍大全，涵盖：计算机系统与网络、系统架构、算法与数据结构、前端开发、后端开发、移动开发、数据库、测试、项目与团队、程序员职业修炼、求职面试等
+- [Career Guru99](https://career.guru99.com/)：Top Interview Questions and Answers.
+- 扩展知识
+  - [这几种神级性能优化手段，你用过几个？](https://mp.weixin.qq.com/s/2ITElIvMp5OaBhRn1lT_PQ)
 
 ## AI
 
@@ -216,8 +217,18 @@
 - [AI算法工程师手册](http://www.huaxiaozhuan.com/)
 - [AI on Ubuntu Platform](https://github.com/aimuch/iAI)：AI 实验环境搭建和深度学习算法。
 - [《Neural Networks For Chess》](https://github.com/asdfjkl/neural_network_chess)
+- [Brandon Rohrer's Blog](https://e2eml.school/blog.html)
 
 ### 教程
+
+- [Deep Learning Tuning Playbook](https://github.com/google-research/tuning_playbook)：深度学习模型调优指南。
+
+
+
+
+
+
+
 
 - [工业界的推荐系统](https://github.com/wangshusen/RecommenderSystem)
 - [Modern Deep Learning Techniques Applied to Natural Language Processing](https://nlpoverview.com/)

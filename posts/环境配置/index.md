@@ -23,8 +23,6 @@
 
 <div align="center"><img src="/imgs/环境配置/Windows添加环境变量4.png"></div>
 
-<br>
-
 ### 误删系统环境变量的补救措施
 
 1. **若未关闭当前CMD**。输入`echo %PATH%`会显示原来的 PATH 值。
@@ -34,8 +32,6 @@
 1. **若已重启电脑**。手动恢复 PATH 到默认值`%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0`，其他值已丢失。
 
 参考：[如何恢复我删除的Path环境变量？](https://qastack.cn/superuser/523688/deleted-path-environment-variable-how-to-restore)
-
-<br>
 
 ## VS Code
 
@@ -129,9 +125,9 @@
 
 ## Python
 
-1. [Python 官网](https://www.python.org/downloads/)
-2. [Miniconda 官网](https://docs.conda.io/en/latest/miniconda.html)
-3. [Anaconda 官网](https://www.anaconda.com/products/individual#Downloads)
+1. [Python官网](https://www.python.org/downloads/)
+1. [Miniconda官网](https://docs.conda.io/en/latest/miniconda.html)
+1. [Anaconda官网](https://www.anaconda.com/products/individual#Downloads)
 
 ### pip 设置代理
 

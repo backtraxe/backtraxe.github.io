@@ -48,6 +48,7 @@
   - [Yout](https://yout.com/)：YouTube、Twitter、Facebook
   - [AddYoutube](https://addyoutube.com/)：YouTube
   - [DownSub](https://downsub.com/)：YouTube、Bilibili、Facebook
+  - [SavePorn](https://www.saveporn.net/zh/)
 - 图标：
   - [小米风格Logo](https://mi-logo.lvwzhen.com/)
   - [图标制作](https://geticon.cn/)
@@ -97,7 +98,6 @@
   - [漫画DB](https://www.manhuadb.com/)
   - [动漫之家](https://www.dmzj.com/)
   - [包子漫画](https://www.baozimh.com/)
-  - [Mox.moe](https://mox.moe/)
 - 小说：
   - [天天看小说](https://www.ttkan.co/)
 - 体育：
@@ -128,9 +128,19 @@
   - [数据结构和算法动态可视化](https://visualgo.net/zh)
 - HTML & CSS：
   - [uiverse.io](https://uiverse.io/)：HTML 和 CSS 样式库。
-- 代码转图片
+- 代码截图
   - [Carbon](https://carbon.now.sh/)
   - [CodeToImg](https://codetoimg.com/)
+- 代码格式化
+  - [Code Beautify](https://codebeautify.org/)
+- API 文档
+  - [DevDocs](https://devdocs.io/)
+- VIM
+  - [VIM Adventures](https://vim-adventures.com/)：Learn VIM while playing a game.
+  - [Interactive Vim tutorial](https://www.openvim.com/)
+- [Glyphs](https://x.withseismic.com/glyphs)：特殊符号。
+- [IT Tools](https://it-tools.tech/)：常用开发工具合集。
+- [CodeCode](https://codecode.codes/)：智能分析程序时空复杂度。
 
 ## 资源下载
 
@@ -157,6 +167,8 @@
   - [动漫花园](https://share.dmhy.org/)
   - [萌番组](https://bangumi.moe/)
   - [不移之火](https://www.byzhihuo.com/)
+- 漫画：
+  - [Mox.moe](https://mox.moe/)
 - trackers：
   - [trackerslist](https://github.com/ngosang/trackerslist)
   - [ACGTracker](http://acgtracker.com/)
@@ -164,6 +176,7 @@
   - [SubHD](https://subhd.tv/)
   - [字幕库](http://zimuku.org/)
   - [A4k字幕网](https://www.a4k.net/)
+  - [射手网(伪)](https://assrt.net/)
 - 体育：
   - [90分钟足球网](http://90oo.com/)
 - 书籍：
@@ -204,6 +217,7 @@
   - [iOS Icon Gallery](https://www.iosicongallery.com/)
   - [macOS Icon Gallery](https://www.macosicongallery.com/)
   - [watchOS Icon Gallery](https://www.watchosicongallery.com/)
+  - [Lucide](https://lucide.dev/)
 - 配色：
   - [Color Hunt](https://colorhunt.co/)
   - [Color Palettes](https://colorpalettes.net/)
