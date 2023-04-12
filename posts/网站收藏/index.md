@@ -242,6 +242,7 @@
 ## 软件APP
 
 - 安卓：
+  - [Uptodown](https://cn.uptodown.com/)
   - [APKMirror](https://www.apkmirror.com/)
   - [APKCombo](https://apkcombo.com/zh/)
   - [果核剥壳](https://www.ghpym.com/)
