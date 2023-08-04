@@ -7,36 +7,24 @@
 
 ## 跨平台
 
-1. [Mark Text](https://github.com/marktext/marktext)：简洁美观的 Markdown 编辑器。`开源` `免费`
 1. [Visual Studio Code](https://github.com/microsoft/vscode)：代码编辑器。`开源` `免费`
 1. [JetBrains Toolbox App](https://www.jetbrains.com/toolbox-app/)：JetBrains IDE 管理器。 `学生免费`
-1. [PDF Reader Pro](https://www.pdfreaderpro.com/)：阅读、编辑、注释、转换和签署 PDF 的最佳 PDF 软件。 `付费`
+1. [PDF Reader Pro](https://www.pdfreaderpro.com/)：PDF 编辑器。 `付费`
 
 ## macOS
 
-1. [Homebrew](https://github.com/Homebrew/brew)：适用于 macOS（或 Linux）缺失的软件包的管理器。 `开源` `免费`
-    - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-1. [Hex Fiend](https://github.com/HexFiend/HexFiend)：适用于 macOS 的快速且智能的开源十六进制编辑器。 `开源` `免费`
-    - `brew install --cask hex-fiend`
-1. [Mounty for NTFS](https://mounty.app/)：在 macOS 下以读写模式重新挂载写保护的 NTFS 卷的小工具。 `免费`
-    - `brew install --cask mounty`
-1. [Android File Transfer](https://www.android.com/filetransfer/)：在 Mac 计算机和 Android 设备之间浏览和传输文件。 `免费`
-    - `brew install --cask android-file-transfer`
-1. [IINA](https://github.com/iina/iina)：适用于 macOS 的现代媒体播放器。 `开源` `免费`
-    - `brew install --cask iina`
-1. [OpenInTerminal-Lite](https://github.com/Ji4n1ng/OpenInTerminal)：适用于 macOS 的 Finder 工具栏应用程序，用于在终端、iTerm、Hyper 或 Alacritty 中打开当前目录。 `开源` `免费`
-    - `brew install --cask openinterminal-lite`
-    - `brew install --cask openineditor-lite`
-1. [MacZip](https://ezip.awehunt.com/)：专为 macOS 而设计的压缩软件. `免费`
-    - `brew install --cask maczip`
-1. [CheatSheet](https://www.mediaatelier.com/CheatSheet/)：适用于 macOS 的列出当前应用程序所有快捷键的工具。 `免费`
-    - `brew install --cask cheatsheet`
-1. [腾讯柠檬清理](https://lemon.qq.com/)：适用于 macOS 的磁盘清理工具。 `免费`
-1. [QSpace](https://qspace.awehunt.com/zh-cn/index.html)：一款简洁高效的多视图文件管理器。 `付费`
-1. [Alfred](https://www.alfredapp.com/)：通过自定义操作控制你的 Mac 电脑，提高工作效率。 `付费`
-1. [Downie](https://software.charliemonroe.net/downie/)：适用于 macOS 的视频下载工具。 `付费`
-1. [Dash](https://kapeli.com/dash)：API 文档浏览器和代码片段管理器。 `付费`
+1. [Homebrew](https://brew.sh/)：软件包管理器。 `开源` `免费`
+1. [Android File Transfer](https://www.android.com/filetransfer/)：和 Android 之间传输文件。 `免费`
+    - `brew install android-file-transfer`
+1. [IINA](https://github.com/iina/iina)：视频播放器。 `开源` `免费`
+    - `brew install iina`
+1. [OpenInTerminal-Lite](https://github.com/Ji4n1ng/OpenInTerminal)：访达插件，在终端/编辑器中打开当前目录。 `开源` `免费`
+    - `brew install openinterminal-lite`
+    - `brew install openineditor-lite`
 1. [shottr](https://shottr.cc/)：截图、滚动截图、抠图、测距、OCR、取色。 `免费`
+1. [maccy](https://maccy.app/)：剪贴板历史记录。 `免费` `开源`
+    - `brew install maccy`
+1. [MonitorControl](https://github.com/MonitorControl/MonitorControl)：外接显示器亮度控制。 `免费` `开源`
 
 ### macOS 破解软件下载
 
@@ -98,8 +86,3 @@
 1. [Augmented Steam](https://microsoftedge.microsoft.com/addons/detail/augmented-steam/dnpjkgmekpilchdgolfifobohlohlioc?hl=zh-CN)
 
 > Edge 浏览器也可到 Chrome 网上应用店安装扩展。
-
-
-
-https://github.com/beekeeper-studio/beekeeper-studio
-
