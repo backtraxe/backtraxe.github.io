@@ -234,6 +234,23 @@ sed -n "/<PATTERN>/p" <FILE>
 sed -i "/<PATTERN>/d" <FILE>
 ```
 
+## split
+
+切分文件。
+
+```bash
+# 按文件大小切分文件
+# 生成文件名 <split_name>aa, <split_name>ab, <split_name>ac, ...
+split -b 100m <file_name> <split_name>
+
+# 按文件行数切分文件
+# 生成文件名 <split_name>aa, <split_name>ab, <split_name>ac, ...
+split -l 100 <file_name> <split_name>
+
+# 合并文件
+cat <split_name>* > <file_name>
+```
+
 ## kill
 
 进程通信。
