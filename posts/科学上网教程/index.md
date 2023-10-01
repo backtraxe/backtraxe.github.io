@@ -92,7 +92,29 @@ x-ui
 
 #### Clash for Windows
 
+## 4.代理配置
+
+```bash
+# global proxy
+vim ~/.zshrc
+# export __host_ip=$(cat /etc/resolv.conf | grep -oP '(?<=nameserver\ ).*')
+# export __proxy_1=socks://$__host_ip:10808
+# export __proxy_2=http://$__host_ip:10809
+# export http_proxy=$__proxy_2
+# export HTTP_PROXY=$__proxy_2
+# export https_proxy=$__proxy_2
+# export HTTPS_PROXY=$__proxy_2
+# export all_proxy=$__proxy_2
+# export ALL_PROXY=$__proxy_2
+source ~/.zshrc
+
+# snap proxy
+sudo snap set system proxy.http=$__proxy_2
+sudo snap set system proxy.https=$__proxy_2
+```
+
 ## 参考
 
 1. [在 WSL 2 中访问主机代理 - Geek 成长录](https://blog.rogerkung-win.top/posts/38819/)
 1. [WSL2内使用windows的v2ray代理配置方式。 - 知乎](https://zhuanlan.zhihu.com/p/414627975)
+

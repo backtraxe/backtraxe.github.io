@@ -87,10 +87,10 @@ git merge <branch-name>
 git config --global user.name "backtraxe"
 git config --global user.email "backtraxe@gmail.com"
 # 生成密钥
-ssh-keygen -t rsa -C "backtraxe@gmail.com"
+ssh-keygen -t ed25519 -C "backtraxe@gmail.com"
 ```
 
-2. 进入`$HOME/.ssh`文件夹，复制公钥`id_rsa.pub`文件中的内容。
+2. 进入`~/.ssh`文件夹，复制公钥`id_ed25519.pub`文件中的内容。
 
 3. 回到网页进行配置，点击右上角头像。
 

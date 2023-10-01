@@ -10,13 +10,14 @@
 - Windows
   1. 到 [Github](https://github.com/gohugoio/hugo/releases/latest) 下载`hugo_extended_0.XX.X_Windows-64bit.zip`，解压并将`hugo.exe`所在目录添加到系统环境变量。
   2. 到 [Git 官网](https://git-scm.com/downloads) 下载安装 Git。
-- Chocolatey (Windows)
-  - `choco install hugo-extended git`
-- Scoop (Windows)
-  - `scoop install hugo-extended git`
+  - Chocolatey (Windows)
+    - `choco install hugo-extended git`
+  - Scoop (Windows)
+    - `scoop install hugo-extended git`
 - Homebrew (macOS)
   - `brew install hugo git`
-
+- Snap (Linux)
+  - `sudo snap install hugo`
 
 <br>
 
@@ -77,7 +78,19 @@ Hugo 专属，非 markdown 语法，参考 [扩展 Shortcodes](https://hugodoit.
 
 #### 3.2.2 横幅
 
-- 横幅类型：`note`、`abstract`、`info`、`tip`、`success`、`question`、`warning`、`failure`、`danger`、`bug`、`example`、`quote`
+- 横幅类型：
+  - `note`
+  - `abstract`
+  - `info`
+  - `tip`
+  - `success`
+  - `question`
+  - `warning`
+  - `failure`
+  - `danger`
+  - `bug`
+  - `example`
+  - `quote`
 - 横幅标题
 - 横幅是否默认展开
 
@@ -87,18 +100,18 @@ Hugo 专属，非 markdown 语法，参考 [扩展 Shortcodes](https://hugodoit.
 {{</* /admonition */>}}
 ```
 
-{{< admonition note "note" false >}}{{< /admonition >}}
+{{< admonition note     "note"     false >}}{{< /admonition >}}
 {{< admonition abstract "abstract" false >}}{{< /admonition >}}
-{{< admonition info "info" false >}}{{< /admonition >}}
-{{< admonition tip "tip" false >}}{{< /admonition >}}
-{{< admonition success "success" false >}}{{< /admonition >}}
+{{< admonition info     "info"     false >}}{{< /admonition >}}
+{{< admonition tip      "tip"      false >}}{{< /admonition >}}
+{{< admonition success  "success"  false >}}{{< /admonition >}}
 {{< admonition question "question" false >}}{{< /admonition >}}
-{{< admonition warning "warning" false >}}{{< /admonition >}}
-{{< admonition failure "failure" false >}}{{< /admonition >}}
-{{< admonition danger "danger" false >}}{{< /admonition >}}
-{{< admonition bug "bug" false >}}{{< /admonition >}}
-{{< admonition example "example" false >}}{{< /admonition >}}
-{{< admonition quote "quote" false >}}{{< /admonition >}}
+{{< admonition warning  "warning"  false >}}{{< /admonition >}}
+{{< admonition failure  "failure"  false >}}{{< /admonition >}}
+{{< admonition danger   "danger"   false >}}{{< /admonition >}}
+{{< admonition bug      "bug"      false >}}{{< /admonition >}}
+{{< admonition example  "example"  false >}}{{< /admonition >}}
+{{< admonition quote    "quote"    false >}}{{< /admonition >}}
 
 <br>
 
