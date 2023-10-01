@@ -260,48 +260,48 @@
 </span><span class=lnt>40
 </span><span class=lnt>41
 </span><span class=lnt>42
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-conf data-lang=conf><span class=line><span class=cl><span class=nv>server</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=nv>listen</span> <span class=nv>443</span> <span class=nv>ssl</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>server_name</span> <span class=nv>rsshub.backtraxe.top</span><span class=p>;</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>server {
+</span></span><span class=line><span class=cl>    listen 443 ssl;
+</span></span><span class=line><span class=cl>    server_name rsshub.backtraxe.top;
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_certificate</span> <span class=s>&#34;/etc/nginx/ssl/backtraxe.top/fullchain.cer&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_certificate_key</span> <span class=s>&#34;/etc/nginx/ssl/backtraxe.top/backtraxe.top.key&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_session_cache</span> <span class=nv>shared</span><span class=err>:</span><span class=nv>SSL</span><span class=err>:</span><span class=nv>1m</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_session_timeout</span>  <span class=nv>10m</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_ciphers</span> <span class=nv>HIGH</span><span class=err>:!</span><span class=nv>aNULL</span><span class=err>:!</span><span class=nv>MD5</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_prefer_server_ciphers</span> <span class=kc>on</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    ssl_certificate &#34;/etc/nginx/ssl/backtraxe.top/fullchain.cer&#34;;
+</span></span><span class=line><span class=cl>    ssl_certificate_key &#34;/etc/nginx/ssl/backtraxe.top/backtraxe.top.key&#34;;
+</span></span><span class=line><span class=cl>    ssl_session_cache shared:SSL:1m;
+</span></span><span class=line><span class=cl>    ssl_session_timeout  10m;
+</span></span><span class=line><span class=cl>    ssl_ciphers HIGH:!aNULL:!MD5;
+</span></span><span class=line><span class=cl>    ssl_prefer_server_ciphers on;
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>location</span> <span class=err>/</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=nv>proxy_set_header</span> <span class=nv>Host</span> <span class=err>$</span><span class=nv>http_host</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>        <span class=nv>proxy_pass</span> <span class=nv>http</span><span class=err>://</span><span class=mf>127.0.0.1</span><span class=err>:</span><span class=nv>1200</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>    location / {
+</span></span><span class=line><span class=cl>        proxy_set_header Host $http_host;
+</span></span><span class=line><span class=cl>        proxy_pass http://127.0.0.1:1200;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nv>server</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=nv>listen</span> <span class=nv>443</span> <span class=nv>ssl</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>server_name</span> <span class=nv>rss.backtraxe.top</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>server {
+</span></span><span class=line><span class=cl>    listen 443 ssl;
+</span></span><span class=line><span class=cl>    server_name rss.backtraxe.top;
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_certificate</span> <span class=s>&#34;/etc/nginx/ssl/backtraxe.top/fullchain.cer&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_certificate_key</span> <span class=s>&#34;/etc/nginx/ssl/backtraxe.top/backtraxe.top.key&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_session_cache</span> <span class=nv>shared</span><span class=err>:</span><span class=nv>SSL</span><span class=err>:</span><span class=nv>1m</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_session_timeout</span>  <span class=nv>10m</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_ciphers</span> <span class=nv>HIGH</span><span class=err>:!</span><span class=nv>aNULL</span><span class=err>:!</span><span class=nv>MD5</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>ssl_prefer_server_ciphers</span> <span class=kc>on</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    ssl_certificate &#34;/etc/nginx/ssl/backtraxe.top/fullchain.cer&#34;;
+</span></span><span class=line><span class=cl>    ssl_certificate_key &#34;/etc/nginx/ssl/backtraxe.top/backtraxe.top.key&#34;;
+</span></span><span class=line><span class=cl>    ssl_session_cache shared:SSL:1m;
+</span></span><span class=line><span class=cl>    ssl_session_timeout  10m;
+</span></span><span class=line><span class=cl>    ssl_ciphers HIGH:!aNULL:!MD5;
+</span></span><span class=line><span class=cl>    ssl_prefer_server_ciphers on;
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>location</span> <span class=err>/</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=nv>proxy_set_header</span> <span class=nv>Host</span> <span class=err>$</span><span class=nv>http_host</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>        <span class=nv>proxy_pass</span> <span class=nv>http</span><span class=err>://</span><span class=mf>127.0.0.1</span><span class=err>:</span><span class=nv>8888</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>    location / {
+</span></span><span class=line><span class=cl>        proxy_set_header Host $http_host;
+</span></span><span class=line><span class=cl>        proxy_pass http://127.0.0.1:8888;
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nv>server</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=nv>listen</span> <span class=nv>80</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=nv>listen</span> <span class=err>[::]:</span><span class=nv>80</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>server {
+</span></span><span class=line><span class=cl>    listen 80;
+</span></span><span class=line><span class=cl>    listen [::]:80;
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>server_name</span> <span class=nv>backtraxe.top</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    server_name backtraxe.top;
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nv>return</span> <span class=nv>301</span> <span class=nv>https</span><span class=err>://$</span><span class=nv>http_host</span><span class=err>$</span><span class=nv>request_uri</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>    return 301 https://$http_host$request_uri;
+</span></span><span class=line><span class=cl>}
 </span></span></code></pre></td></tr></table></div></div><h2 id=4配置客户端 class=headerLink><a href=#4%e9%85%8d%e7%bd%ae%e5%ae%a2%e6%88%b7%e7%ab%af class=header-mark></a>4.配置客户端</h2><p>Fever API:</p><ul><li>url: <code>http://ip:port/fever/</code></li><li>username: <code>自定义 fever 的用户名</code></li><li>password: <code>自定义 fever 的密码</code></li></ul><h2 id=参考 class=headerLink><a href=#%e5%8f%82%e8%80%83 class=header-mark></a>参考</h2><ol><li><a href=https://docs.docker.com/engine/install/ubuntu/ target=_blank rel="noopener noreferrer">Install Docker Engine on Ubuntu | Docker Documentation</a></li><li><a href=https://miniflux.app/docs/installation.html#docker target=_blank rel="noopener noreferrer">Docker Installation | Miniflux Installation Instructions</a></li><li><a href=https://zoomyale.com/2018/miniflux_rss/ target=_blank rel="noopener noreferrer">用Miniflux自建轻便好用的RSS服务</a></li><li><a href=https://docs.rsshub.app/install/#docker-compose-bu-shu target=_blank rel="noopener noreferrer">Docker Compose 部署 | RSSHub</a></li><li><a href rel></a></li></ol><p><a href=https://www.psay.cn/toss/126.html target=_blank rel="noopener noreferrer">https://www.psay.cn/toss/126.html</a>
 <a href=https://cloud.tencent.com/developer/article/1840147 target=_blank rel="noopener noreferrer">https://cloud.tencent.com/developer/article/1840147</a>
 <a href=https://suzuhafan.com/tutorials/acmesh-use-cloudflare-to-create-ssl.html target=_blank rel="noopener noreferrer">https://suzuhafan.com/tutorials/acmesh-use-cloudflare-to-create-ssl.html</a>
@@ -309,5 +309,5 @@
 <a href=https://learnku.com/articles/13496/lets-encrypt-pan-domain-name-application-and-configuration target=_blank rel="noopener noreferrer">https://learnku.com/articles/13496/lets-encrypt-pan-domain-name-application-and-configuration</a>
 <a href=https://luyuhuang.tech/2020/06/03/cloudflare-free-https.html target=_blank rel="noopener noreferrer">https://luyuhuang.tech/2020/06/03/cloudflare-free-https.html</a>
 <a href=https://mincong.io/cn/nginx-subdomains/ target=_blank rel="noopener noreferrer">https://mincong.io/cn/nginx-subdomains/</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2023-01-23</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/rss/>RSS</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/%E5%8A%9B%E6%89%A3-0005-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/ class=prev rel=prev title="力扣 0005 最长回文子串"><i class="fas fa-angle-left fa-fw"></i>力扣 0005 最长回文子串</a>
-<a href=/posts/spring-%E5%85%A8%E5%AE%B6%E6%A1%B6%E9%9D%A2%E8%AF%95/ class=next rel=next title="Spring 家族">Spring 家族<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.118.2">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.4.0"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://github.com/backtraxe target=_blank rel="noopener noreferrer">Backtraxe</a></span></div><div class=footer-line></div><div class=footer-line></div></div><script>"serviceWorker"in navigator&&(navigator.serviceWorker.register("/sw.min.js",{scope:"/"}).then(function(){}),navigator.serviceWorker.ready.then(function(){}))</script></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+<a href=/posts/spring-%E5%85%A8%E5%AE%B6%E6%A1%B6%E9%9D%A2%E8%AF%95/ class=next rel=next title="Spring 家族">Spring 家族<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.119.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.4.0"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2023</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://github.com/backtraxe target=_blank rel="noopener noreferrer">Backtraxe</a></span></div><div class=footer-line></div><div class=footer-line></div></div><script>"serviceWorker"in navigator&&(navigator.serviceWorker.register("/sw.min.js",{scope:"/"}).then(function(){}),navigator.serviceWorker.ready.then(function(){}))</script></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:20},comment:{},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.3,type:"fuse",useExtendedSearch:!1},table:{sort:!0}}</script><script type=text/javascript src=/lib/tablesort/tablesort.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/js/theme.min.js defer></script></div></body></html>
